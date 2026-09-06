@@ -11,8 +11,8 @@
 
 <br><strong>Informe del Trabajo Final</strong><br><br>
 
-<strong>Startup:  </strong><br>
-<strong>Producto: </strong><br>
+<strong>Startup: Centinela Labs </strong><br>
+<strong>Producto: SCURIOT </strong><br>
 
 
 
@@ -169,19 +169,29 @@ _Pendiente de desarrollo._
 
 # Capítulo I: Introducción
 
-_Pendiente de desarrollo._
-
 ## 1.1. Startup Profile
-
-_Pendiente de desarrollo._
 
 ### 1.1.1. Descripción de la Startup
 
-_Pendiente de desarrollo._
+Centinela Labs es una startup peruana de base tecnológica, especializada en el desarrollo de soluciones de seguridad física inteligente mediante la integración de Internet de las Cosas (IoT), Edge Computing, Cloud Computing e Inteligencia Artificial. Nace de la identificación de una brecha crítica en el mercado de seguridad privada: los sistemas de videovigilancia tradicionales son reactivos, dependen de la revisión manual de grabaciones y ofrecen tiempos de respuesta demasiado lentos frente a una intrusión real.
+
+Su producto insignia, SURIOT, es una plataforma de monitoreo de seguridad que utiliza visión por computadora e IA para identificar personas en tiempo real, validar su autorización de acceso mediante reconocimiento facial y biometría, y activar de forma automática protocolos de respuesta ante amenazas detectadas: activación de alarmas, notificación inmediata a centrales de monitoreo, fuerzas de seguridad o el propietario, registro y rastreo de la persona no autorizada dentro del perímetro cubierto por los dispositivos, y ejecución de protocolos de contención controlada de accesos, siempre en cumplimiento de normativas de seguridad y evacuación.
+
+La misión de Centinela Labs es reducir el tiempo entre la detección de una amenaza y la respuesta efectiva ante ella, combinando dispositivos embebidos de bajo costo, procesamiento en el borde (edge) para decisiones de baja latencia, y una nube centralizada que permite escalabilidad, análisis histórico y gestión remota multi-sede. Su visión es posicionarse como la alternativa latinoamericana de referencia en seguridad inteligente accesible, dirigida inicialmente a negocios (comercios, condominios, oficinas) y, en una segunda etapa, al segmento residencial.
+
+Como startup, Centinela Labs opera bajo un modelo de negocio escalable basado en suscripción (SaaS) por dispositivo/sede monitoreada, complementado con la venta del hardware IoT (el dispositivo prototipo de la solución), buscando un crecimiento sostenido apoyado en tecnologías open-source y una arquitectura distribuida que facilita la incorporación de nuevos clientes sin rediseñar la solución.
 
 ### 1.1.2. Perfiles de integrantes del equipo
 
-_Pendiente de desarrollo._
+| Miembro | Descripción|
+|---|---|
+| <img src="docs/assets/chaper1/IMGs/members/Rommel.jpeg" width="200"/> |**Hurtado Balcazar Rommel Daniel - U202517474** <br><br> Soy Rommel Hurtado Balcázar, tengo 23 años y estudio Ingeniería de Software en el 7to ciclo. Me considero un líder técnico orientado a la resolución de problemas, con capacidad para tomar decisiones y guiar al equipo hacia los objetivos del proyecto.<br><br>Cuento con experiencia en desarrollo fullstack, manejando tanto frontend como backend. En el lado del servidor trabajo principalmente con Java, y en el frontend utilizo React. Además, tengo conocimientos en bases de datos relacionales con SQL y no relacionales con MongoDB, así como experiencia con Node.js, Python y HTML/CSS.<br><br>He desarrollado proyectos propios fuera del ámbito universitario, lo que me ha dado una visión completa del ciclo de desarrollo de software. También me desenvuelvo en inglés a nivel intermedio-avanzado, lo que me permite acceder a documentación técnica y comunicarme en entornos internacionales. |
+| member 2| -Descripcion- |
+| member 3| -Descripcion-|
+| member 4| -Descripcion-|
+| member 5| -Descripcion-|
+| memberv 6| -Descripcion-|
+| member 7| -Descripcion-|
 
 ## 1.2. Solution Profile
 
