@@ -183,7 +183,15 @@ Como startup, Centinela Labs opera bajo un modelo de negocio escalable basado en
 
 ### 1.1.2. Perfiles de integrantes del equipo
 
-_Pendiente de desarrollo._
+| Miembro | Descripción|
+|---|---|
+| <img src="docs/assets/chaper1/IMGs/members/Rommel.jpeg" width="200"/> |**Hurtado Balcazar Rommel Daniel - U202517474** <br><br> Soy Rommel Hurtado Balcázar, tengo 23 años y estudio Ingeniería de Software en el 7to ciclo. Me considero un líder técnico orientado a la resolución de problemas, con capacidad para tomar decisiones y guiar al equipo hacia los objetivos del proyecto.<br><br>Cuento con experiencia en desarrollo fullstack, manejando tanto frontend como backend. En el lado del servidor trabajo principalmente con Java, y en el frontend utilizo React. Además, tengo conocimientos en bases de datos relacionales con SQL y no relacionales con MongoDB, así como experiencia con Node.js, Python y HTML/CSS.<br><br>He desarrollado proyectos propios fuera del ámbito universitario, lo que me ha dado una visión completa del ciclo de desarrollo de software. También me desenvuelvo en inglés a nivel intermedio-avanzado, lo que me permite acceder a documentación técnica y comunicarme en entornos internacionales. |
+| member 2| -Descripcion- |
+| member 3| -Descripcion-|
+| member 4| -Descripcion-|
+| member 5| -Descripcion-|
+| memberv 6| -Descripcion-|
+| member 7| -Descripcion-|
 
 ## 1.2. Solution Profile
 
