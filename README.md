@@ -255,23 +255,119 @@ Las empresas industriales, logísticas y comerciales de mediana escala en el Per
 
 ### 1.2.2. Lean UX Process
 
-_Pendiente de desarrollo._
+A partir de los antecedentes, la problemática y las restricciones descritas en la sección anterior, el equipo aplicó el Lean UX Process propuesto por Jeff Gothelf y Josh Seiden para pasar de una problemática validada por fuentes externas a un conjunto de creencias explícitas (assumptions) sobre el negocio y los usuarios, y de ahí a hypothesis statements verificables mediante experimentación. Este proceso se desarrolla considerando el dominio completo del problema (seguridad patrimonial industrial y logística) y no un segmento en particular, tal como lo exige la técnica para una iniciativa nueva (brand new initiative).
 
 #### 1.2.2.1. Lean UX Problem Statements
 
-_Pendiente de desarrollo._
+Se elabora un único Problem Statement para todo el proyecto, considerando de forma agregada a los distintos segmentos identificados (fábricas, plantas de producción, almacenes, centros de distribución y oficinas corporativas de empresas industriales, logísticas y comerciales de mediana escala), utilizando la versión del template correspondiente a una iniciativa nueva (brand new initiative):
+
+> The current state of **industrial and logistics asset security in Peru** has focused mainly on **medium-sized industrial, logistics and commercial companies that protect their facilities through human surveillance and passive CCTV, reviewing footage only after an incident has already occurred**.
+>
+> What existing products/services fail to address is **the gap between the magnitude of the patrimonial risk these companies face — extensive facilities, multiple access points, high-value machinery and inventory — and their real capacity to access proactive, scalable and economically viable security systems, which today are priced and designed mainly for large corporations**.
+>
+> Our product/service will address this gap by **combining low-cost IoT devices installed at critical points (access points, perimeters, storage zones), edge computing for low-latency local decisions, and a centralized cloud platform that enables real-time threat identification, automatic access validation to restricted zones, and immediate activation of response protocols**.
+>
+> Our initial focus will be **medium-sized industrial and logistics companies located in Lima Metropolitana, with physical facilities that include restricted-access zones such as warehouses, production lines, and loading/unloading areas**.
+>
+> We'll know we are successful when we see **these companies subscribing to and renewing the platform, a measurable reduction in the time between an intrusion attempt and the activation of a response protocol, and an increase in the number of security events that are correctly logged, notified and resolved compared to their previous manual process**.
 
 #### 1.2.2.2. Lean UX Assumptions
 
-_Pendiente de desarrollo._
+Siguiendo el Lean UX Process, se identificaron múltiples assumptions (creencias) organizadas en los 5 tipos definidos por el curso. Cada assumption se redacta como un enunciado de creencia, no como una pregunta.
+
+**Business Assumptions**
+
+- Centinela Labs puede posicionarse como la alternativa peruana de seguridad patrimonial inteligente para pymes industriales, un segmento hoy desatendido por las soluciones de seguridad de gama alta.
+- Un modelo de suscripción (SaaS) por sede o perímetro monitoreado, complementado con la venta del dispositivo IoT prototipo, es financieramente viable para sostener el crecimiento del negocio sin depender de rondas de inversión iniciales elevadas.
+- El equipo cuenta con las capacidades técnicas necesarias (IoT, edge computing, inteligencia artificial, desarrollo fullstack web y mobile) para construir y operar la plataforma sin depender de proveedores externos críticos.
+- Es posible ofrecer un precio de suscripción significativamente menor al de los sistemas de seguridad avanzados orientados a grandes corporaciones, manteniendo un margen operativo sostenible.
+- El uso de tecnologías open-source y una arquitectura distribuida permiten incorporar nuevas empresas cliente sin rediseñar la solución, reduciendo el costo marginal de escalar a nuevas sedes o clientes.
+
+**Business Outcome Assumptions**
+
+- Incremento sostenido en el número de empresas industriales y logísticas suscritas a la plataforma durante los primeros meses de operación comercial.
+- Reducción en la tasa de cancelación (churn) de clientes suscritos, en comparación con el nivel de rotación típico de contratos de seguridad tradicionales en pymes.
+- Disminución progresiva del costo de adquisición de cliente (CAC) conforme la plataforma gana reconocimiento en el sector industrial y logístico de Lima Metropolitana.
+- Incremento en el número de sedes gestionadas simultáneamente por un mismo cliente, como indicador de expansión dentro de la misma cuenta (upsell).
+- Aumento en la tasa de renovación de suscripción al finalizar el primer periodo contratado.
+
+**User Assumptions**
+
+- Los administradores de seguridad patrimonial de empresas industriales y logísticas serán los usuarios principales, encargados de configurar zonas y dispositivos, y de revisar alertas.
+- El personal de vigilancia in situ actuará como usuario operativo, recibiendo y atendiendo en campo las alertas generadas por el sistema.
+- Los gerentes o dueños de las pymes industriales serán usuarios secundarios, interesados en reportes agregados y en la relación costo-beneficio de la suscripción, más que en la operación diaria.
+- Los usuarios acceden principalmente desde una aplicación móvil durante rondas de vigilancia en planta, y desde el dashboard web cuando están en oficina o supervisando de forma remota.
+- Proveedores y visitantes de las instalaciones son identificados por el sistema como actores del dominio, pero no son usuarios directos de la plataforma.
+
+**User Outcome and Benefit Assumptions**
+
+- Los administradores de seguridad reducen el tiempo dedicado a la revisión pasiva de grabaciones, porque el sistema únicamente les notifica los eventos relevantes.
+- El personal de vigilancia responde más rápido ante una intrusión real gracias a alertas automáticas e inmediatas, en lugar de depender de rondas periódicas o revisión posterior.
+- Los gerentes de las pymes industriales obtienen evidencia trazable y auditable de los incidentes de seguridad, reduciendo su exposición legal y facilitando el reporte a aseguradoras y autoridades.
+- Los administradores logran supervisar la seguridad de múltiples sedes desde un mismo panel centralizado, sin necesidad de contratar personal de seguridad adicional por cada ubicación.
+- Los usuarios perciben la plataforma como una herramienta de seguridad accesible económicamente frente a las soluciones de seguridad de gama alta dirigidas a grandes corporaciones.
+
+**Feature Assumptions**
+
+- Un módulo de identificación de accesos y monitoreo de dispositivos en tiempo (casi) real permitirá distinguir el estado de zonas y puntos de acceso críticos dentro de las instalaciones.
+- Un módulo de registro y validación de zonas y dispositivos (zonas restringidas, puntos de acceso) reducirá la dependencia exclusiva de personal de vigilancia para controlar el ingreso a áreas críticas.
+- Un motor de generación de alertas basado en reglas sobre las lecturas de los sensores permitirá activar de forma automática la notificación ante un evento de intrusión detectado.
+- Un registro histórico y trazable de eventos y lecturas de telemetría permitirá auditar incidentes de seguridad y generar evidencia para investigación interna y reporte a autoridades o aseguradoras.
+- Un dashboard Web (y, en una siguiente iteración, una aplicación Mobile) de monitoreo permitirá visualizar de forma centralizada el estado de zonas, dispositivos y alertas.
+- Una arquitectura de gestión remota multi-sede sobre la Cloud API permitirá a un mismo administrador supervisar varias plantas o almacenes desde una sola cuenta.
 
 #### 1.2.2.3. Lean UX Hypothesis Statements
 
-_Pendiente de desarrollo._
+Se elabora un hypothesis statement por cada Feature Assumption identificada, siguiendo el template del curso:
+
+> **HS-01 — Identificación de accesos y monitoreo de dispositivos**
+> We believe we will achieve **an increase in the number of industrial and logistics companies subscribed to the platform**
+> If **security administrators and on-site guards**
+> Attain **real-time visibility of the status of critical access points and devices within their facilities**
+> With **a device and access-point status monitoring module integrated with the Cloud API**.
+
+> **HS-02 — Validación de zonas y dispositivos**
+> We believe we will achieve **a reduction in customer churn among subscribed companies**
+> If **security administrators**
+> Attain **a decrease in unauthorized access incidents to restricted zones without relying exclusively on human guards**
+> With **a zone and device registration module for restricted areas and access points**.
+
+> **HS-03 — Alertas basadas en reglas**
+> We believe we will achieve **an increase in subscription renewal rate at the end of the first contracted period**
+> If **on-site security personnel and designated company officers**
+> Attain **a faster response time to a detected intrusion compared to traditional passive surveillance**
+> With **a rule-based alert engine that automatically notifies stakeholders when a security event is detected**.
+
+> **HS-04 — Registro histórico y trazable**
+> We believe we will achieve **a decrease in the legal and financial exposure of subscribed companies**
+> If **company managers and security administrators**
+> Attain **trustworthy, auditable evidence of security incidents for internal investigation and reporting to authorities and insurers**
+> With **a traceable historical event and telemetry log persisted per device and zone**.
+
+> **HS-05 — Dashboard de monitoreo**
+> We believe we will achieve **an increase in the number of sites managed per client account**
+> If **security administrators**
+> Attain **centralized visibility of the status of zones, devices, and alerts without needing dedicated on-site staff at every location**
+> With **a Web monitoring dashboard integrated with the Cloud API, extended later with a Mobile application**.
+
+> **HS-06 — Gestión remota multi-sede**
+> We believe we will achieve **an increase in monthly recurring revenue per client through account expansion**
+> If **company managers overseeing more than one facility**
+> Attain **the ability to supervise multiple plants or warehouses from a single account**
+> With **a multi-site remote management architecture built on the Cloud API**.
 
 #### 1.2.2.4. Lean UX Canvas
 
-_Pendiente de desarrollo._
+| Elemento | Contenido |
+|---|---|
+| **1. Business Problem** <br> (Problema de negocio) | Las pymes industriales y logísticas de Lima Metropolitana están expuestas a un nivel significativo de robos e intrusiones patrimoniales, pero dependen de esquemas de seguridad reactivos (vigilancia humana, CCTV pasivo) porque los sistemas tecnológicos avanzados del mercado están orientados y priceados para grandes corporaciones. |
+| **2. Business Outcomes** <br> (Resultados de negocio) | Incremento en el número de empresas suscritas y en sedes gestionadas por cuenta; reducción de la tasa de cancelación (churn); disminución del costo de adquisición de cliente (CAC); aumento en la tasa de renovación de suscripción. |
+| **3. Users** <br> (Usuarios) | Administradores de seguridad patrimonial (usuario principal), personal de vigilancia in situ (usuario operativo), gerentes/dueños de la pyme industrial (usuario secundario). |
+| **4. User Outcomes & Benefits** <br> (Resultados y beneficios para el usuario) | Menor tiempo dedicado a revisión pasiva de grabaciones; respuesta más rápida ante intrusiones reales; evidencia trazable y auditable de incidentes; supervisión centralizada de múltiples sedes sin personal adicional. |
+| **5. Solutions** <br> (Soluciones / Features) | Monitoreo de estado de zonas y dispositivos; registro/validación de zonas y dispositivos restringidos; motor de alertas basado en reglas; registro histórico trazable de eventos; dashboard Web (y luego Mobile); gestión remota multi-sede. |
+| **6. Hypotheses** <br> (Hipótesis) | HS-01 a HS-06 (ver sección 1.2.2.3), una por cada Feature Assumption identificada. |
+| **7. What's the most important thing we need to learn first?** <br> (Lo más importante que aprender primero) | Si un administrador de seguridad de una pyme industrial confía lo suficiente en una alerta generada automáticamente por sensores IoT como para activar un protocolo de respuesta sin verificación humana previa, y si el precio de suscripción propuesto es percibido como accesible frente a la vigilancia tradicional. |
+| **8. What's the least amount of work we can do to learn the next most important thing?** <br> (El experimento mínimo viable) | Un prototipo de la cadena dispositivo → Edge API → Cloud API → dashboard Web, con un solo tipo de sensor y una sola zona simulada, presentado a administradores de seguridad de 2 o 3 pymes industriales para validar percepción de confianza y de precio, sin necesidad de desplegar el hardware final ni la aplicación móvil. |
 
 ## 1.3. Segmentos objetivo
 
