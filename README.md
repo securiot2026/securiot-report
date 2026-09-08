@@ -255,15 +255,15 @@ Las empresas industriales, logísticas y comerciales de mediana escala en el Per
 
 ### 1.2.2. Lean UX Process
 
-Con la problemática y las restricciones ya delimitadas, esta sección recorre el Lean UX Process de Jeff Gothelf y Josh Seiden: del problema a un conjunto de creencias explícitas (assumptions) sobre el negocio y los usuarios, y de ahí a hypothesis statements que puedan verificarse con experimentos concretos. El proceso se trabaja sobre el dominio completo del problema —seguridad patrimonial industrial y logística—, no sobre un segmento aislado, porque el curso pide la versión del template para una iniciativa nueva (brand new initiative), que exige justamente esa mirada agregada.
+El Lean UX Process de Jeff Gothelf y Josh Seiden convierte la problemática de la sección anterior en creencias explícitas (assumptions) sobre el negocio y los usuarios, y esas creencias en hypothesis statements que se pueden verificar con experimentos concretos. El análisis cubre todo el dominio del problema (seguridad patrimonial industrial y logística) y no un segmento por separado, porque el curso pide la versión del template para una iniciativa nueva (brand new initiative), pensada justamente para esa mirada agregada.
 
 #### 1.2.2.1. Lean UX Problem Statements
 
-El proyecto tiene un único Problem Statement, que agrega a todos los segmentos identificados (fábricas, plantas de producción, almacenes, centros de distribución y oficinas corporativas de empresas industriales, logísticas y comerciales de mediana escala). El template exigido por el curso para una iniciativa nueva debe completarse en inglés, tal como aparece en el enunciado del proyecto:
+El proyecto tiene un único Problem Statement, que agrupa a todos los segmentos identificados (fábricas, plantas de producción, almacenes, centros de distribución y oficinas corporativas de empresas industriales, logísticas y comerciales de mediana escala). El template exigido por el curso para una iniciativa nueva se completa en inglés, tal como aparece en el enunciado del proyecto:
 
 > The current state of **industrial and logistics asset security in Peru** has focused mainly on **medium-sized industrial, logistics and commercial companies that protect their facilities through human surveillance and passive CCTV, reviewing footage only after an incident has already occurred**.
 >
-> What existing products/services fail to address is **the gap between the magnitude of the patrimonial risk these companies face — extensive facilities, multiple access points, high-value machinery and inventory — and their real capacity to access proactive, scalable and economically viable security systems, which today are priced and designed mainly for large corporations**.
+> What existing products/services fail to address is **the gap between the magnitude of the patrimonial risk these companies face (extensive facilities, multiple access points, high-value machinery and inventory) and their real capacity to access proactive, scalable and economically viable security systems, which today are priced and designed mainly for large corporations**.
 >
 > Our product/service will address this gap by **combining low-cost IoT devices installed at critical points (access points, perimeters, storage zones), edge computing for low-latency local decisions, and a centralized cloud platform that enables real-time threat identification, automatic access validation to restricted zones, and immediate activation of response protocols**.
 >
@@ -271,7 +271,7 @@ El proyecto tiene un único Problem Statement, que agrega a todos los segmentos 
 >
 > We'll know we are successful when we see **these companies subscribing to and renewing the platform, a measurable reduction in the time between an intrusion attempt and the activation of a response protocol, and an increase in the number of security events that are correctly logged, notified and resolved compared to their previous manual process**.
 
-En español, el mismo Problem Statement se lee así: hoy la seguridad patrimonial industrial y logística en el Perú descansa casi por completo en vigilancia humana y CCTV pasivo, que reacciona revisando grabaciones después de ocurrido el incidente, nunca antes. Lo que el mercado no resuelve es la brecha entre el tamaño real del riesgo que enfrentan estas empresas —instalaciones extensas, múltiples accesos, maquinaria e inventario de alto valor— y su capacidad real de pagar por sistemas de seguridad proactivos y escalables, que hoy están pensados y priceados solo para grandes corporaciones. SecurIoT cierra esa brecha combinando dispositivos IoT de bajo costo en los puntos críticos, edge computing para decisiones locales de baja latencia, y una nube centralizada que identifica amenazas en tiempo real, valida accesos a zonas restringidas y activa protocolos de respuesta de forma automática. El foco inicial son empresas industriales y logísticas medianas de Lima Metropolitana con zonas de acceso restringido —almacenes, líneas de producción, áreas de carga y descarga—, y el éxito se mide en suscripciones que se renuevan, en menos tiempo entre una intrusión y la activación del protocolo de respuesta, y en más eventos de seguridad correctamente registrados, notificados y resueltos frente al proceso manual anterior.
+En español, el mismo Problem Statement dice lo siguiente. Hoy la seguridad patrimonial industrial y logística en el Perú descansa casi por completo en vigilancia humana y CCTV pasivo, que reacciona revisando grabaciones después de ocurrido el incidente, nunca antes. Lo que el mercado no resuelve es la brecha entre el tamaño real del riesgo que enfrentan estas empresas (instalaciones extensas, múltiples accesos, maquinaria e inventario de alto valor) y su capacidad real de pagar por sistemas de seguridad proactivos y escalables, que hoy están diseñados y con precios pensados solo para grandes corporaciones. SecurIoT cierra esa brecha combinando dispositivos IoT de bajo costo en los puntos críticos, edge computing para decisiones locales de baja latencia, y una nube centralizada que identifica amenazas en tiempo real, valida accesos a zonas restringidas y activa protocolos de respuesta de forma automática. El foco inicial son empresas industriales y logísticas medianas de Lima Metropolitana, con zonas de acceso restringido como almacenes, líneas de producción y áreas de carga y descarga. El éxito se mide en suscripciones que se renuevan, en menos tiempo entre una intrusión y la activación del protocolo de respuesta, y en más eventos de seguridad correctamente registrados, notificados y resueltos frente al proceso manual anterior.
 
 #### 1.2.2.2. Lean UX Assumptions
 
@@ -281,7 +281,7 @@ El curso pide organizar los assumptions en 5 tipos. Cada uno se redacta como una
 
 - Centinela Labs puede posicionarse como la alternativa peruana de seguridad patrimonial inteligente para pymes industriales, un segmento que las soluciones de gama alta no atienden hoy.
 - El modelo de suscripción por sede o perímetro monitoreado, sumado a la venta del dispositivo IoT, alcanza para sostener el crecimiento del negocio sin necesidad de una ronda de inversión inicial grande.
-- El equipo tiene las capacidades técnicas —IoT, edge computing, inteligencia artificial, desarrollo fullstack web y mobile— para construir y operar la plataforma sin depender de un proveedor externo crítico.
+- El equipo tiene las capacidades técnicas (IoT, edge computing, inteligencia artificial, desarrollo fullstack web y mobile) para construir y operar la plataforma sin depender de un proveedor externo crítico.
 - Se puede cobrar bastante menos que los sistemas de seguridad avanzados orientados a grandes corporaciones y aun así mantener un margen operativo sano.
 - Apoyarse en tecnologías open-source y una arquitectura distribuida deja incorporar nuevas empresas cliente sin rediseñar la solución, así que el costo de sumar una sede o un cliente nuevo no crece al mismo ritmo.
 
@@ -315,14 +315,14 @@ El curso pide organizar los assumptions en 5 tipos. Cada uno se redacta como una
 - Registrar y validar zonas y dispositivos restringidos quita la dependencia exclusiva del personal de vigilancia para controlar quién entra a un área crítica.
 - Un motor de alertas basado en reglas sobre las lecturas de los sensores activa la notificación apenas se detecta una intrusión, sin esperar a que alguien revise nada.
 - Un registro histórico y trazable de eventos y lecturas de telemetría es la base para auditar un incidente o armar el reporte a autoridades y aseguradoras.
-- Un dashboard Web —y, más adelante, una aplicación Mobile— centraliza el estado de zonas, dispositivos y alertas en un solo lugar.
+- Un dashboard Web, y más adelante una aplicación Mobile, centraliza el estado de zonas, dispositivos y alertas en un solo lugar.
 - Gestionar varias sedes de forma remota desde la misma Cloud API permite que un administrador supervise más de una planta o almacén sin cambiar de herramienta.
 
 #### 1.2.2.3. Lean UX Hypothesis Statements
 
 Cada Feature Assumption tiene su hypothesis statement correspondiente, siguiendo el template del curso (también en inglés):
 
-> **HS-01 — Identificación de accesos y monitoreo de dispositivos**
+> **HS-01: Identificación de accesos y monitoreo de dispositivos**
 > We believe we will achieve **an increase in the number of industrial and logistics companies subscribed to the platform**
 > If **security administrators and on-site guards**
 > Attain **real-time visibility of the status of critical access points and devices within their facilities**
@@ -330,7 +330,7 @@ Cada Feature Assumption tiene su hypothesis statement correspondiente, siguiendo
 >
 > *Creemos que lograremos más empresas industriales y logísticas suscritas si los administradores de seguridad y el personal de vigilancia obtienen visibilidad en tiempo real del estado de los puntos de acceso y dispositivos críticos, con un módulo de monitoreo de estado integrado a la Cloud API.*
 
-> **HS-02 — Validación de zonas y dispositivos**
+> **HS-02: Validación de zonas y dispositivos**
 > We believe we will achieve **a reduction in customer churn among subscribed companies**
 > If **security administrators**
 > Attain **a decrease in unauthorized access incidents to restricted zones without relying exclusively on human guards**
@@ -338,7 +338,7 @@ Cada Feature Assumption tiene su hypothesis statement correspondiente, siguiendo
 >
 > *Creemos que lograremos menor cancelación de clientes suscritos si los administradores de seguridad reducen los accesos no autorizados a zonas restringidas sin depender solo de personal de vigilancia, con un módulo de registro de zonas y dispositivos.*
 
-> **HS-03 — Alertas basadas en reglas**
+> **HS-03: Alertas basadas en reglas**
 > We believe we will achieve **an increase in subscription renewal rate at the end of the first contracted period**
 > If **on-site security personnel and designated company officers**
 > Attain **a faster response time to a detected intrusion compared to traditional passive surveillance**
@@ -346,7 +346,7 @@ Cada Feature Assumption tiene su hypothesis statement correspondiente, siguiendo
 >
 > *Creemos que lograremos más renovaciones al cierre del primer periodo contratado si el personal de vigilancia y los responsables designados responden más rápido a una intrusión que con vigilancia pasiva tradicional, con un motor de alertas basado en reglas que notifica automáticamente al detectar el evento.*
 
-> **HS-04 — Registro histórico y trazable**
+> **HS-04: Registro histórico y trazable**
 > We believe we will achieve **a decrease in the legal and financial exposure of subscribed companies**
 > If **company managers and security administrators**
 > Attain **trustworthy, auditable evidence of security incidents for internal investigation and reporting to authorities and insurers**
@@ -354,7 +354,7 @@ Cada Feature Assumption tiene su hypothesis statement correspondiente, siguiendo
 >
 > *Creemos que lograremos menor exposición legal y financiera para las empresas suscritas si gerentes y administradores de seguridad cuentan con evidencia confiable y auditable de cada incidente, con un registro histórico trazable de eventos y telemetría por dispositivo y zona.*
 
-> **HS-05 — Dashboard de monitoreo**
+> **HS-05: Dashboard de monitoreo**
 > We believe we will achieve **an increase in the number of sites managed per client account**
 > If **security administrators**
 > Attain **centralized visibility of the status of zones, devices, and alerts without needing dedicated on-site staff at every location**
@@ -362,7 +362,7 @@ Cada Feature Assumption tiene su hypothesis statement correspondiente, siguiendo
 >
 > *Creemos que lograremos más sedes gestionadas por cada cuenta cliente si los administradores de seguridad obtienen visibilidad centralizada del estado de zonas, dispositivos y alertas sin necesitar personal dedicado en cada sede, con un dashboard Web integrado a la Cloud API, extendido después con una aplicación Mobile.*
 
-> **HS-06 — Gestión remota multi-sede**
+> **HS-06: Gestión remota multi-sede**
 > We believe we will achieve **an increase in monthly recurring revenue per client through account expansion**
 > If **company managers overseeing more than one facility**
 > Attain **the ability to supervise multiple plants or warehouses from a single account**
