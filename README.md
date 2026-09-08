@@ -444,7 +444,79 @@ A través de esta aproximación estructurada, se busca transformar los testimoni
 
 ### 2.2.1. Diseño de entrevistas
 
-_Pendiente de desarrollo._
+### Segmento 1: Administrador de Seguridad Patrimonial (Segmento Principal)
+
+_Objetivo: Validar la complejidad de la gestión multi-zona, fallos en la detección actual, tiempos de reacción y la necesidad de trazabilidad para auditorías/denuncias._
+
+1.  ¿Cómo está estructurado actualmente el sistema de monitoreo y control de accesos en las distintas sedes o áreas críticas (almacenes, producción, carga)?
+    
+2.  En el día a día, ¿Cuáles son los puntos ciegos o las mayores dificultades que tienen para identificar si una persona que circula por una zona restringida está realmente autorizada?
+    
+3.  ¿Qué tan frecuentes son las falsas alarmas con su equipamiento actual y cuánto tiempo/recursos les toma verificar cada evento?
+    
+4.  Cuénteme sobre la última vez que detectaron una presencia no autorizada o sospechosa dentro de la planta: ¿Cuánto tardaron en enterarse y cuál fue el protocolo inmediato?
+    
+5.  ¿Tienen forma de restringir o bloquear accesos de forma remota/inmediata cuando se confirma una intrusión, o depende 100% de la intervención física del guardia?
+    
+6.   Al momento de investigar un robo ¿Qué tan difícil es recopilar grabaciones, registros de horas y evidencia concluyente?
+    
+7.   ¿Qué tan flexible o complejo resulta hoy dar de alta o baja permisos de acceso para personal temporal, contratistas o cambios de turno rotativo?
+    
+8.  ¿Por qué medios coordinan las emergencias con los agentes de campo y qué fallas de comunicación suelen presentarse en situaciones críticas?
+    
+9.  ¿Qué indicadores clave (KPIs) le exige la gerencia respecto a la seguridad patrimonial y qué tan fácil le resulta elaborarlos hoy en día?
+    
+10.  Si implementaran una solución con IA y visión computarizada para automatizar alertas y trazabilidad, ¿Cuál sería su principal inquietud o requisito técnico indispensable?
+    
+
+### Segmento 2: Personal de Vigilancia In Situ (Segmento Operativo)
+
+_Objetivo: Validar la usabilidad móvil en campo, tiempos de traslado, claridad de las notificaciones de alerta y protocolos de seguridad física del guardia._
+
+1.  ¿Cómo realiza sus recorridos habituales y cómo registra actualmente que pasó por cada punto de control o zona restringida?
+    
+2.  Cuando ocurre una anomalía o alguien entra donde no debe, ¿Cómo le avisan a usted mientras está en ronda (radio, llamada, sirena)?
+    
+3.  Al recibir un aviso de posible intruso, ¿Qué información recibe antes de llegar al punto? (¿Sabe con anticipación cuántas personas son, cómo van vestidas o en qué punto exacto están?)
+    
+4.  Desde que se dispara una alerta hasta que usted llega físicamente al lugar comprometido, ¿Cuánto tiempo suele pasar y qué obstáculos encuentra en el camino?
+    
+5.  Al intervenir a alguien sospechoso en una zona sensible (ej. almacén de noche), ¿Cómo comprueba en ese instante si es un trabajador con permiso o un intruso?
+    
+6.  Durante su servicio, ¿Utiliza un teléfono móvil corporativo o personal para tareas de trabajo? ¿Qué limitaciones técnicas enfrenta (batería, señal, dificultad para usarlo en movimiento)?
+    
+7.  Si confirma que hay una intrusión en curso, ¿Cuál es el paso a paso exacto que tiene ordenado seguir y a quién debe reportar primero?
+    
+8.  ¿Con qué frecuencia tiene que desplazarse a un punto por una alarma que resultó ser un animal, un error de sensor o un empleado fuera de hora?
+    
+9. Al finalizar su turno o tras atender un evento, ¿Cómo redacta el informe de novedades? ¿Cuánto tiempo le toma llenar ese reporte?
+    
+10.  Si tuviera una app en el celular que le enviara la foto de la persona detectada y la zona exacta de la intrusión en tiempo real, ¿Qué características debería tener para que le sea verdaderamente útil y no un estorbo durante la guardia?
+    
+
+### Segmento 3: Gerente o Dueño de Pyme Industrial  (Segmento Secundario)
+
+_Objetivo: Validar la justificación económica (ROI), mitigación del riesgo patrimonial, valor de los reportes ejecutivos y disposición a un modelo de suscripción SaaS._
+
+1.  En el último año, ¿Cuáles han sido las mayores preocupaciones o pérdidas económicas vinculadas a robos e intrusiones en sus instalaciones?
+    
+2.  ¿Cómo compone actualmente su inversión en seguridad (empresas de guardianía, cámaras pasivas, mantenimiento) y siente que ese gasto realmente previene pérdidas o solo reacciona cuando ya ocurrieron?
+    
+3.  Como director general, ¿con qué frecuencia revisa el estado de la seguridad de sus plantas/almacenes y qué tipo de información ejecutiva le llega a su escritorio?
+    
+4.  ¿Su empresa cuenta actualmente con póliza de seguro patrimonial contra robo? En caso afirmativo o negativo, ¿Qué dificultades o costos elevados ha encontrado al respecto?
+    
+5.  ¿Qué impacto económico o de paralización de planta le generaría un incidente de intrusión en zonas críticas (ej. cuarto de tableros, líneas de producción o almacén de producto terminado)?
+    
+6.  Cuando está de viaje o fuera de la oficina, ¿Cómo se asegura de que los protocolos de seguridad y las rondas se están cumpliendo de forma efectiva?
+    
+7.  ¿Cómo evaluaría una solución tecnológica que reduzca la dependencia del factor humano o complemente la vigilancia con IA para evitar pérdidas patrimoniales?
+    
+8. Para justificar la contratación de un software por suscripción mensual en seguridad patrimonial, ¿Qué métricas o resultados concretos necesitaría ver reflejados?
+    
+9.  Al evaluar proveedores de tecnología o seguridad, ¿Cuáles son sus mayores temores (costos ocultos, fallas de soporte, complejidad de instalación en la infraestructura existente)?
+    
+10.  ¿Qué datos estratégicos le gustaría ver en un tablero de control mensual para sentirse seguro de renovar el servicio (ej. reducción de incidentes, tiempos de respuesta, accesos fuera de horario)?
 
 ### 2.2.2. Registro de entrevistas
 
