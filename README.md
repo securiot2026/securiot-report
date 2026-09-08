@@ -432,7 +432,15 @@ _Pendiente de desarrollo._
 
 ## 2.2. Entrevistas
 
-_Pendiente de desarrollo._
+El presente capítulo expone el proceso de investigación cualitativa llevado a cabo con los tres segmentos objetivo del proyecto, con el propósito de comprender a profundidad sus necesidades, comportamientos, puntos de dolor y expectativas frente al problema planteado. Para garantizar la validez metodológica y la utilidad de los hallazgos en las etapas posteriores del proyecto, el contenido se estructura en tres secciones fundamentales:
+
+-   **Diseño de entrevistas:** Detalla la formulación de las preguntas para cada segmento, asegurando que las preguntas respondan a necesidades, experiencias y opiniones que tengan los entrevistados en relación a nuestra solución y a la problemática que resuelve.
+    
+-   **Registro de entrevistas:** Presenta la evidencia documental realizada a partir del trabajo de campo, incluyendo datos generales de los entrevistados, capturas de las sesiones y resúmenes clave de las conversaciones.
+    
+-   **Análisis de entrevistas:** Sistematiza los datos cualitativos recopilados mediante la identificación de patrones de comportamiento y oportunidades directas para la definición de los artefactos de diseño y la solución tecnológica que se va a  implementar.    
+
+A través de esta aproximación estructurada, se busca transformar los testimonios individuales de cada segmento en fundamentos concretos y accionables para la toma de decisiones de diseño y desarrollo.
 
 ### 2.2.1. Diseño de entrevistas
 
