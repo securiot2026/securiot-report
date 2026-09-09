@@ -560,7 +560,7 @@ La especificación de requisitos de SECURIOT traduce los segmentos objetivo, las
 
 ## 3.1. User Stories
 
-Las User Stories se agrupan en ocho épicas alineadas con las seis Feature Assumptions del Lean UX Canvas (sección 1.2.2.2), más una épica de Landing Page y una de Technical Stories, tal como exige la entrega. Cada historia se redacta en español y sus criterios de aceptación se expresan como escenarios Gherkin en inglés (`Given / When / Then`), siguiendo el estándar del curso.
+Las User Stories se agrupan en ocho épicas alineadas con las seis Feature Assumptions del Lean UX Canvas (sección 1.2.2.2), más una épica de Landing Page y una de Technical Stories. Cada historia se redacta en español y sus criterios de aceptación se expresan como escenarios Gherkin en inglés (`Given / When / Then`).
 
 ### Épica EP-01: Monitoreo de estado de zonas y dispositivos (HS-01)
 
@@ -830,35 +830,7 @@ El Impact Mapping (técnica de Gojko Adzic) conecta el objetivo de negocio de SE
   <img alt="Impact Mapping de SECURIOT" src="docs/assets/securiot-impact-map.svg" width="900"/>
 </div>
 
-```mermaid
-mindmap
-  root((GOAL: +20% suscripciones y 80% renovación en 12 meses))
-    Administrador de Seguridad
-      (Deja de revisar grabaciones por rutina)
-        EP-01 Monitoreo en tiempo real
-        EP-03 Motor de alertas
-      (Confía en alertas automáticas sin verificación previa)
-        EP-03 Motor de alertas
-        EP-04 Registro trazable
-      (Supervisa varias sedes desde un solo panel)
-        EP-06 Gestion multi-sede
-        EP-05 Dashboard Web
-    Personal de Vigilancia
-      (Responde mas rapido a una intrusion real)
-        EP-03 Notificacion inmediata
-        US-14 App movil
-      (Ejecuta el protocolo desde el celular en ronda)
-        US-14 App movil
-        US-09 Cierre de alerta
-    Gerente / Dueno de la pyme
-      (Percibe el servicio como accesible y renueva)
-        EP-05 Dashboard de indicadores
-      (Usa evidencia trazable con aseguradoras y autoridades)
-        EP-04 Registro historico
-        US-11 Exportacion de incidente
-```
-
-La siguiente tabla presenta el mismo Impact Mapping en formato estructurado, útil para trasladarlo a una herramienta visual (UXPressia / Miro) y para su lectura directa:
+El Impact Mapping se detalla en la siguiente tabla:
 
 | Goal (Why) | Actor (Who) | Impact (How) | Deliverable (What) |
 |---|---|---|---|
@@ -869,8 +841,6 @@ La siguiente tabla presenta el mismo Impact Mapping en formato estructurado, út
 | | Personal de Vigilancia | Ejecuta el protocolo desde el celular en ronda | US-14 App móvil · US-09 Cierre de alerta |
 | | Gerente / Dueño | Percibe el servicio como accesible y renueva | EP-05 Dashboard de indicadores |
 | | Gerente / Dueño | Usa evidencia trazable con aseguradoras y autoridades | EP-04 Registro histórico · US-11 Exportación de incidente |
-
-> **Nota:** El diagrama Mermaid es la versión versionable en el repositorio. La versión visual final para el informe se reconstruirá en UXPressia y se exportará como imagen a `docs/assets/`, siguiendo la convención del equipo.
 
 ## 3.3. Product Backlog
 
@@ -916,8 +886,6 @@ El Product Backlog consolida las User Stories de la sección 3.1 priorizadas y e
 | P1 | 10 | 53 |
 | P2 | 6 | 27 |
 | **Total** | **23** | **114** |
-
-> **Nota:** La estimación es inicial y se refinará en cada Sprint Planning (sección 6.2). Las Technical Stories (EP-08) se priorizan alto por ser habilitadoras de la cadena dispositivo → Edge API → Cloud API → dashboard definida como experimento mínimo viable en el Lean UX Canvas.
 
 # Capítulo IV: Solution Software Design
 
