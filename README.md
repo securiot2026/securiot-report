@@ -556,19 +556,358 @@ _Pendiente de desarrollo._
 
 # Capítulo III: Requirements Specification
 
-_Pendiente de desarrollo._
+La especificación de requisitos de SECURIOT traduce los segmentos objetivo, las Feature Assumptions y las Hypothesis Statements del Capítulo I en artefactos accionables para el desarrollo: User Stories con criterios de aceptación en formato Gherkin, un Impact Mapping que conecta el objetivo de negocio con las funcionalidades, y un Product Backlog priorizado y estimado con Story Points. Los actores considerados corresponden a los tres segmentos objetivo (ver sección 1.3): **Administrador de Seguridad Patrimonial** (usuario principal), **Personal de Vigilancia in situ** (usuario operativo) y **Gerente/Dueño de la pyme industrial** (usuario secundario), además del **Visitante** de la Landing Page y de las Technical Stories que sostienen la plataforma.
 
 ## 3.1. User Stories
 
-_Pendiente de desarrollo._
+Las User Stories se agrupan en ocho épicas alineadas con las seis Feature Assumptions del Lean UX Canvas (sección 1.2.2.2), más una épica de Landing Page y una de Technical Stories, tal como exige la entrega. Cada historia se redacta en español y sus criterios de aceptación se expresan como escenarios Gherkin en inglés (`Given / When / Then`), siguiendo el estándar del curso.
+
+### Épica EP-01: Monitoreo de estado de zonas y dispositivos (HS-01)
+
+**US-01 — Registro de dispositivo IoT en una zona**
+**Como** administrador de seguridad patrimonial **quiero** registrar un dispositivo IoT y asociarlo a una zona restringida **para** monitorear ese punto de acceso desde la plataforma.
+
+```gherkin
+Scenario: Successful device registration in a zone
+  Given the administrator is authenticated on the web dashboard
+  And is on the "Devices" section of a selected site
+  When they register a new device with a valid identifier and assign it to a restricted zone
+  Then the device appears in the zone's device list with status "online"
+  And the device starts reporting telemetry to the Cloud API
+```
+
+**US-02 — Monitoreo en tiempo real del estado de zonas y dispositivos**
+**Como** administrador de seguridad **quiero** ver en tiempo real el estado de las zonas y dispositivos de una sede **para** identificar de un vistazo qué punto de acceso está comprometido.
+
+```gherkin
+Scenario: Real-time status is displayed
+  Given the administrator is viewing the monitoring panel of a site
+  When a device changes its status from "online" to "alarm"
+  Then the panel updates that device within 5 seconds without a manual refresh
+  And the affected zone is highlighted as compromised
+```
+
+**US-03 — Detalle de un dispositivo**
+**Como** administrador de seguridad **quiero** abrir el detalle de un dispositivo **para** revisar sus últimas lecturas y su configuración.
+
+```gherkin
+Scenario: View device detail
+  Given the administrator selects a device from the list
+  When the device detail view opens
+  Then it shows the device identifier, zone, current status and the last telemetry readings
+```
+
+### Épica EP-02: Registro y validación de zonas y accesos restringidos (HS-02)
+
+**US-04 — Registro de zona restringida**
+**Como** administrador de seguridad **quiero** registrar una zona restringida **para** definir dónde se controlarán los accesos.
+
+```gherkin
+Scenario: Register a restricted zone
+  Given the administrator is on the "Zones" section of a site
+  When they create a zone with a name, location and access level
+  Then the zone is saved and becomes available to associate devices and authorized people
+```
+
+**US-05 — Validación automática de acceso a zona restringida**
+**Como** personal de vigilancia **quiero** que el sistema valide automáticamente si una persona detectada está autorizada **para** no depender solo de la inspección manual.
+
+```gherkin
+Scenario: Access granted for an authorized person
+  Given a device detects a person entering a restricted zone
+  When the person matches the zone's authorized list
+  Then the event is logged as "authorized access"
+  And no intrusion alert is raised
+
+Scenario: Access denied for an unidentified person
+  Given a device detects a person entering a restricted zone
+  When the person does not match the zone's authorized list
+  Then an intrusion alert is raised for that zone
+```
+
+**US-06 — Gestión de personas autorizadas**
+**Como** administrador de seguridad **quiero** administrar la lista de personas autorizadas por zona **para** mantener actualizado quién puede ingresar.
+
+```gherkin
+Scenario: Add an authorized person to a zone
+  Given the administrator is managing a restricted zone
+  When they add a person with valid identification data
+  Then that person is included in the zone's authorized list for future validations
+```
+
+### Épica EP-03: Motor de alertas basado en reglas (HS-03)
+
+**US-07 — Configuración de reglas de alerta**
+**Como** administrador de seguridad **quiero** configurar reglas de alerta sobre las lecturas de los sensores **para** que la notificación se dispare apenas se detecte una intrusión.
+
+```gherkin
+Scenario: Create an alert rule
+  Given the administrator is on the "Alert rules" section
+  When they define a rule with a condition, a target zone and a severity level
+  Then the rule is activated and evaluated against incoming telemetry
+```
+
+**US-08 — Notificación inmediata de intrusión**
+**Como** personal de vigilancia **quiero** recibir una notificación inmediata ante una intrusión detectada **para** trasladarme al punto de acceso comprometido sin esperar una ronda.
+
+```gherkin
+Scenario: Guard receives an intrusion notification
+  Given an active alert rule for a restricted zone
+  When an intrusion event matches that rule
+  Then the on-site guard receives a push notification within 10 seconds
+  And the notification includes the zone, device and timestamp
+```
+
+**US-09 — Atención y cierre de una alerta**
+**Como** personal de vigilancia **quiero** actualizar el estado de una alerta que atendí **para** dejar registro de la respuesta ejecutada.
+
+```gherkin
+Scenario: Update alert status after response
+  Given the guard opens an active alert
+  When they mark it as "attended" and add a response note
+  Then the alert changes to "attended" with the guard, note and timestamp recorded
+```
+
+### Épica EP-04: Registro histórico y trazabilidad (HS-04)
+
+**US-10 — Consulta del historial de eventos**
+**Como** administrador de seguridad **quiero** consultar el historial de eventos filtrado por sede, zona y fecha **para** auditar lo ocurrido.
+
+```gherkin
+Scenario: Filter the event history
+  Given the administrator is on the "Event history" section
+  When they filter by site, zone and a date range
+  Then the list shows only the events matching the filters, ordered by most recent
+```
+
+**US-11 — Exportación de reporte de incidente**
+**Como** gerente de la pyme **quiero** exportar un reporte trazable de un incidente **para** presentarlo a la aseguradora o a las autoridades.
+
+```gherkin
+Scenario: Export an incident report
+  Given a logged security incident with its associated events and telemetry
+  When the manager exports the incident report
+  Then a document is generated with the timeline, involved devices and evidence references
+```
+
+**US-12 — Telemetría histórica por dispositivo**
+**Como** administrador de seguridad **quiero** ver la telemetría histórica de un dispositivo **para** analizar su comportamiento en el tiempo.
+
+```gherkin
+Scenario: View historical telemetry
+  Given the administrator opens a device detail
+  When they select a past date range
+  Then the historical readings for that device are displayed for the selected period
+```
+
+### Épica EP-05: Dashboard Web y aplicación Mobile (HS-05)
+
+**US-13 — Dashboard de indicadores**
+**Como** gerente de la pyme **quiero** un dashboard con indicadores agregados **para** evaluar si el servicio justifica su costo.
+
+```gherkin
+Scenario: View aggregated indicators
+  Given the manager is authenticated
+  When they open the dashboard
+  Then it shows the number of active alerts, incidents by zone and response times for their sites
+```
+
+**US-14 — Aplicación móvil para el personal de vigilancia**
+**Como** personal de vigilancia **quiero** usar la app móvil durante mis rondas **para** recibir alertas y atenderlas desde el celular.
+
+```gherkin
+Scenario: Attend an alert from the mobile app
+  Given the guard is logged into the mobile app
+  When an intrusion alert arrives
+  Then the app shows the alert detail and lets the guard mark it as attended in the field
+```
+
+**US-15 — Autenticación de usuarios**
+**Como** usuario de la plataforma **quiero** autenticarme de forma segura **para** acceder solo a la información de mi empresa.
+
+```gherkin
+Scenario: Successful authentication
+  Given a registered user with valid credentials
+  When they log in
+  Then they access only the sites and data belonging to their organization
+```
+
+### Épica EP-06: Gestión remota multi-sede (HS-06)
+
+**US-16 — Administración de múltiples sedes**
+**Como** administrador de seguridad **quiero** gestionar varias sedes desde una sola cuenta **para** supervisar más de una planta o almacén sin cambiar de herramienta.
+
+```gherkin
+Scenario: Manage multiple sites from one account
+  Given an administrator responsible for more than one site
+  When they access their account
+  Then they can list and manage all sites assigned to their organization
+```
+
+**US-17 — Cambio de sede activa en el panel**
+**Como** administrador de seguridad **quiero** cambiar la sede activa en el panel **para** enfocar el monitoreo en una instalación específica.
+
+```gherkin
+Scenario: Switch active site
+  Given the administrator manages several sites
+  When they select a different site in the panel
+  Then the zones, devices and alerts shown correspond to the selected site
+```
+
+### Épica EP-07: Landing Page (captación y comunicación de valor)
+
+**US-18 — Comprensión de la propuesta de valor**
+**Como** visitante de la Landing Page **quiero** entender qué resuelve SECURIOT **para** decidir si es relevante para mi empresa.
+
+```gherkin
+Scenario: Value proposition is clear
+  Given a visitor opens the landing page
+  When the page loads
+  Then it presents the problem, the SECURIOT solution and its main benefits for industrial SMEs
+```
+
+**US-19 — Solicitud de demostración / contacto**
+**Como** visitante interesado **quiero** solicitar una demo o dejar mis datos de contacto **para** que el equipo comercial se comunique conmigo.
+
+```gherkin
+Scenario: Submit a demo request
+  Given a visitor is on the landing page
+  When they submit the contact form with valid data
+  Then the request is registered and a confirmation message is shown
+```
+
+**US-20 — Landing accesible y multilenguaje**
+**Como** visitante **quiero** que la Landing Page sea accesible y esté disponible en español e inglés **para** consultarla sin barreras de idioma ni de accesibilidad.
+
+```gherkin
+Scenario: Language and accessibility support
+  Given a visitor opens the landing page
+  When they switch the language selector
+  Then the content is shown in the chosen language (Spanish/English)
+  And the page meets basic accessibility criteria (labels, contrast and keyboard navigation)
+```
+
+### Épica EP-08: Technical Stories (plataforma y cumplimiento)
+
+**US-21 — Procesamiento en el borde tolerante a desconexión**
+**Como** integrante técnico del equipo **quiero** que la Edge API procese y reencole la telemetría cuando se pierde conexión con la nube **para** no perder eventos de seguridad ante fallas de red.
+
+```gherkin
+Scenario: Edge buffers telemetry while offline
+  Given the Edge API loses connection with the Cloud API
+  When devices keep reporting telemetry
+  Then the Edge API stores the readings locally
+  And forwards them to the Cloud API once the connection is restored
+```
+
+**US-22 — Despliegue con contenedores y CI/CD**
+**Como** integrante técnico del equipo **quiero** empaquetar los servicios con Docker y automatizar el despliegue **para** garantizar entornos reproducibles siguiendo GitFlow.
+
+```gherkin
+Scenario: Containerized build and deploy
+  Given the source code of a service on the develop branch
+  When the pipeline builds the Docker image
+  Then the image is produced and the service can be deployed in a reproducible environment
+```
+
+**US-23 — Cumplimiento de protección de datos personales**
+**Como** integrante técnico del equipo **quiero** tratar las imágenes y datos de personas conforme a la Ley N° 29733 y privacidad por diseño **para** cumplir la normativa peruana de protección de datos.
+
+```gherkin
+Scenario: Personal data is handled under compliance rules
+  Given the platform processes images and identification data of people
+  When these data are stored or transmitted
+  Then access is restricted, the data are protected, and their treatment complies with Law N° 29733
+```
 
 ## 3.2. Impact Mapping
 
-_Pendiente de desarrollo._
+El Impact Mapping (técnica de Gojko Adzic) conecta el objetivo de negocio de SECURIOT con las funcionalidades a construir, respondiendo cuatro preguntas encadenadas: **Why** (Goal) → **Who** (Actors) → **How** (Impacts, cambios de comportamiento) → **What** (Deliverables, features/User Stories). El objetivo se deriva de los *Business Outcomes* del Lean UX Canvas (sección 1.2.2.4).
+
+> **Goal (Why):** Aumentar en un **20% las suscripciones activas** de pymes industriales y logísticas y alcanzar una **tasa de renovación del 80%** al cierre del primer periodo contratado, durante los primeros 12 meses de operación en Lima Metropolitana.
+
+```mermaid
+mindmap
+  root((GOAL: +20% suscripciones y 80% renovación en 12 meses))
+    Administrador de Seguridad
+      (Deja de revisar grabaciones por rutina)
+        EP-01 Monitoreo en tiempo real
+        EP-03 Motor de alertas
+      (Confía en alertas automáticas sin verificación previa)
+        EP-03 Motor de alertas
+        EP-04 Registro trazable
+      (Supervisa varias sedes desde un solo panel)
+        EP-06 Gestion multi-sede
+        EP-05 Dashboard Web
+    Personal de Vigilancia
+      (Responde mas rapido a una intrusion real)
+        EP-03 Notificacion inmediata
+        US-14 App movil
+      (Ejecuta el protocolo desde el celular en ronda)
+        US-14 App movil
+        US-09 Cierre de alerta
+    Gerente / Dueno de la pyme
+      (Percibe el servicio como accesible y renueva)
+        EP-05 Dashboard de indicadores
+      (Usa evidencia trazable con aseguradoras y autoridades)
+        EP-04 Registro historico
+        US-11 Exportacion de incidente
+```
+
+La siguiente tabla presenta el mismo Impact Mapping en formato estructurado, útil para trasladarlo a una herramienta visual (UXPressia / Miro) y para su lectura directa:
+
+| Goal (Why) | Actor (Who) | Impact (How) | Deliverable (What) |
+|---|---|---|---|
+| **+20% suscripciones y 80% renovación en 12 meses** | Administrador de Seguridad | Deja de revisar grabaciones por rutina | EP-01 Monitoreo tiempo real · EP-03 Motor de alertas |
+| | Administrador de Seguridad | Confía en alertas automáticas sin verificación previa | EP-03 Motor de alertas · EP-04 Registro trazable |
+| | Administrador de Seguridad | Supervisa varias sedes desde un solo panel | EP-06 Gestión multi-sede · EP-05 Dashboard |
+| | Personal de Vigilancia | Responde más rápido a una intrusión real | EP-03 Notificación inmediata · US-14 App móvil |
+| | Personal de Vigilancia | Ejecuta el protocolo desde el celular en ronda | US-14 App móvil · US-09 Cierre de alerta |
+| | Gerente / Dueño | Percibe el servicio como accesible y renueva | EP-05 Dashboard de indicadores |
+| | Gerente / Dueño | Usa evidencia trazable con aseguradoras y autoridades | EP-04 Registro histórico · US-11 Exportación de incidente |
+
+> **Nota:** El diagrama Mermaid es la versión versionable en el repositorio. La versión visual final para el informe se reconstruirá en UXPressia y se exportará como imagen a `docs/assets/`, siguiendo la convención del equipo.
 
 ## 3.3. Product Backlog
 
-_Pendiente de desarrollo._
+El Product Backlog consolida las User Stories de la sección 3.1 priorizadas y estimadas con **Story Points** (escala de Fibonacci: 1, 2, 3, 5, 8). La prioridad usa la escala del cronograma del equipo (**P0** crítico → **P3** deseable) y se ordena de mayor a menor prioridad. El *Sprint sugerido* propone una distribución inicial para el Sprint Planning.
+
+| # | Épica | ID | User Story | Prioridad | Story Points | Sprint sugerido |
+|---|---|---|---|---|---|---|
+| 1 | EP-01 | US-01 | Registro de dispositivo IoT en una zona | P0 | 5 | Sprint 1 |
+| 2 | EP-01 | US-02 | Monitoreo en tiempo real de zonas y dispositivos | P0 | 5 | Sprint 1 |
+| 3 | EP-02 | US-04 | Registro de zona restringida | P0 | 3 | Sprint 1 |
+| 4 | EP-02 | US-05 | Validación automática de acceso a zona restringida | P0 | 8 | Sprint 1 |
+| 5 | EP-03 | US-08 | Notificación inmediata de intrusión | P0 | 5 | Sprint 1 |
+| 6 | EP-05 | US-15 | Autenticación de usuarios | P0 | 3 | Sprint 1 |
+| 7 | EP-08 | US-23 | Cumplimiento de protección de datos (Ley N° 29733) | P0 | 5 | Sprint 1 |
+| 8 | EP-03 | US-07 | Configuración de reglas de alerta | P1 | 8 | Sprint 2 |
+| 9 | EP-03 | US-09 | Atención y cierre de una alerta | P1 | 3 | Sprint 2 |
+| 10 | EP-01 | US-03 | Detalle de un dispositivo | P1 | 3 | Sprint 2 |
+| 11 | EP-02 | US-06 | Gestión de personas autorizadas | P1 | 5 | Sprint 2 |
+| 12 | EP-04 | US-10 | Consulta del historial de eventos | P1 | 5 | Sprint 2 |
+| 13 | EP-05 | US-13 | Dashboard de indicadores | P1 | 5 | Sprint 2 |
+| 14 | EP-05 | US-14 | Aplicación móvil para vigilancia | P1 | 8 | Sprint 2 |
+| 15 | EP-07 | US-18 | Comprensión de la propuesta de valor (Landing) | P1 | 3 | Sprint 2 |
+| 16 | EP-08 | US-21 | Procesamiento en el borde tolerante a desconexión | P1 | 8 | Sprint 2 |
+| 17 | EP-08 | US-22 | Despliegue con contenedores y CI/CD | P1 | 5 | Sprint 2 |
+| 18 | EP-04 | US-11 | Exportación de reporte de incidente | P2 | 5 | Sprint 3 |
+| 19 | EP-04 | US-12 | Telemetría histórica por dispositivo | P2 | 3 | Sprint 3 |
+| 20 | EP-06 | US-16 | Administración de múltiples sedes | P2 | 8 | Sprint 3 |
+| 21 | EP-06 | US-17 | Cambio de sede activa en el panel | P2 | 3 | Sprint 3 |
+| 22 | EP-07 | US-19 | Solicitud de demostración / contacto (Landing) | P2 | 3 | Sprint 3 |
+| 23 | EP-07 | US-20 | Landing accesible y multilenguaje | P2 | 5 | Sprint 3 |
+
+**Resumen de estimación**
+
+| Prioridad | N° de historias | Story Points |
+|---|---|---|
+| P0 | 7 | 34 |
+| P1 | 10 | 53 |
+| P2 | 6 | 27 |
+| **Total** | **23** | **114** |
+
+> **Nota:** La estimación es inicial y se refinará en cada Sprint Planning (sección 6.2). Las Technical Stories (EP-08) se priorizan alto por ser habilitadoras de la cadena dispositivo → Edge API → Cloud API → dashboard definida como experimento mínimo viable en el Lean UX Canvas.
 
 # Capítulo IV: Solution Software Design
 
