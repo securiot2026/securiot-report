@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1390" height="710" viewBox="0 0 1390 710" font-family="Segoe UI, Arial, sans-serif">
+  <rect x="0" y="0" width="1390" height="710" fill="#ffffff"/>
+  <text x="20" y="30" font-size="20" font-weight="700" fill="#1f2937">Impact Mapping — SECURIOT</text>
+  <text x="20" y="52" font-size="13" fill="#6b7280">Why (Goal) → Who (Actor) → How (Impact) → What (Deliverable)</text>
+
+  <!-- column headers -->
+  <text x="140" y="80" font-size="12" font-weight="700" fill="#64748b" text-anchor="middle">GOAL (Why)</text>
+  <text x="405" y="80" font-size="12" font-weight="700" fill="#64748b" text-anchor="middle">ACTOR (Who)</text>
+  <text x="710" y="80" font-size="12" font-weight="700" fill="#64748b" text-anchor="middle">IMPACT (How)</text>
+  <text x="1140" y="80" font-size="12" font-weight="700" fill="#64748b" text-anchor="middle">DELIVERABLE (What)</text>
+
+  <!-- connectors: goal -> actors -->
+  <g stroke="#94a3b8" stroke-width="1.5" fill="none">
+    <path d="M260,370 C285,370 285,190 300,190"/>
+    <path d="M260,370 C285,370 285,415 300,415"/>
+    <path d="M260,370 C285,370 285,595 300,595"/>
+    <!-- admin -> impacts 1,2,3 -->
+    <path d="M510,190 C535,190 535,100 550,100"/>
+    <path d="M510,190 C535,190 535,190 550,190"/>
+    <path d="M510,190 C535,190 535,280 550,280"/>
+    <!-- vigilancia -> impacts 4,5 -->
+    <path d="M510,415 C535,415 535,370 550,370"/>
+    <path d="M510,415 C535,415 535,460 550,460"/>
+    <!-- gerente -> impacts 6,7 -->
+    <path d="M510,595 C535,595 535,550 550,550"/>
+    <path d="M510,595 C535,595 535,640 550,640"/>
+    <!-- impacts -> deliverables (straight) -->
+    <path d="M870,100 L910,100"/>
+    <path d="M870,190 L910,190"/>
+    <path d="M870,280 L910,280"/>
+    <path d="M870,370 L910,370"/>
+    <path d="M870,460 L910,460"/>
+    <path d="M870,550 L910,550"/>
+    <path d="M870,640 L910,640"/>
+  </g>
+
+  <!-- GOAL -->
+  <rect x="20" y="295" width="240" height="150" rx="10" fill="#1f3a5f"/>
+  <text x="140" y="345" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">GOAL</text>
+  <text x="140" y="372" font-size="13" fill="#e2e8f0" text-anchor="middle">+20% suscripciones</text>
+  <text x="140" y="392" font-size="13" fill="#e2e8f0" text-anchor="middle">80% renovación</text>
+  <text x="140" y="412" font-size="13" fill="#e2e8f0" text-anchor="middle">en 12 meses</text>
+
+  <!-- ACTORS -->
+  <g>
+    <rect x="300" y="157" width="210" height="66" rx="9" fill="#2a9d8f"/>
+    <text x="405" y="184" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">Administrador</text>
+    <text x="405" y="203" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">de Seguridad</text>
+
+    <rect x="300" y="382" width="210" height="66" rx="9" fill="#2a9d8f"/>
+    <text x="405" y="409" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">Personal de</text>
+    <text x="405" y="428" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">Vigilancia</text>
+
+    <rect x="300" y="562" width="210" height="66" rx="9" fill="#2a9d8f"/>
+    <text x="405" y="589" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">Gerente /</text>
+    <text x="405" y="608" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">Dueño</text>
+  </g>
+
+  <!-- IMPACTS -->
+  <g font-size="12.5" fill="#3b2f00">
+    <rect x="550" y="68" width="320" height="64" rx="9" fill="#e9c46a"/>
+    <text x="710" y="104" text-anchor="middle">Deja de revisar grabaciones por rutina</text>
+
+    <rect x="550" y="158" width="320" height="64" rx="9" fill="#e9c46a"/>
+    <text x="710" y="194" text-anchor="middle">Confía en alertas automáticas</text>
+
+    <rect x="550" y="248" width="320" height="64" rx="9" fill="#e9c46a"/>
+    <text x="710" y="284" text-anchor="middle">Supervisa varias sedes en un panel</text>
+
+    <rect x="550" y="338" width="320" height="64" rx="9" fill="#e9c46a"/>
+    <text x="710" y="374" text-anchor="middle">Responde más rápido a una intrusión</text>
+
+    <rect x="550" y="428" width="320" height="64" rx="9" fill="#e9c46a"/>
+    <text x="710" y="464" text-anchor="middle">Ejecuta el protocolo desde el móvil</text>
+
+    <rect x="550" y="518" width="320" height="64" rx="9" fill="#e9c46a"/>
+    <text x="710" y="554" text-anchor="middle">Percibe el servicio accesible y renueva</text>
+
+    <rect x="550" y="608" width="320" height="64" rx="9" fill="#e9c46a"/>
+    <text x="710" y="644" text-anchor="middle">Usa evidencia trazable de incidentes</text>
+  </g>
+
+  <!-- DELIVERABLES -->
+  <g font-size="12.5" fill="#1f2937">
+    <rect x="910" y="76" width="460" height="48" rx="8" fill="#edf2f4" stroke="#cbd5e1"/>
+    <text x="1140" y="105" text-anchor="middle">EP-01 Monitoreo tiempo real · EP-03 Motor de alertas</text>
+
+    <rect x="910" y="166" width="460" height="48" rx="8" fill="#edf2f4" stroke="#cbd5e1"/>
+    <text x="1140" y="195" text-anchor="middle">EP-03 Motor de alertas · EP-04 Registro trazable</text>
+
+    <rect x="910" y="256" width="460" height="48" rx="8" fill="#edf2f4" stroke="#cbd5e1"/>
+    <text x="1140" y="285" text-anchor="middle">EP-06 Gestión multi-sede · EP-05 Dashboard Web</text>
+
+    <rect x="910" y="346" width="460" height="48" rx="8" fill="#edf2f4" stroke="#cbd5e1"/>
+    <text x="1140" y="375" text-anchor="middle">EP-03 Notificación inmediata · US-14 App móvil</text>
+
+    <rect x="910" y="436" width="460" height="48" rx="8" fill="#edf2f4" stroke="#cbd5e1"/>
+    <text x="1140" y="465" text-anchor="middle">US-14 App móvil · US-09 Cierre de alerta</text>
+
+    <rect x="910" y="526" width="460" height="48" rx="8" fill="#edf2f4" stroke="#cbd5e1"/>
+    <text x="1140" y="555" text-anchor="middle">EP-05 Dashboard de indicadores</text>
+
+    <rect x="910" y="616" width="460" height="48" rx="8" fill="#edf2f4" stroke="#cbd5e1"/>
+    <text x="1140" y="645" text-anchor="middle">EP-04 Registro histórico · US-11 Exportación</text>
+  </g>
+</svg>

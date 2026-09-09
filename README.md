@@ -826,6 +826,10 @@ El Impact Mapping (técnica de Gojko Adzic) conecta el objetivo de negocio de SE
 
 > **Goal (Why):** Aumentar en un **20% las suscripciones activas** de pymes industriales y logísticas y alcanzar una **tasa de renovación del 80%** al cierre del primer periodo contratado, durante los primeros 12 meses de operación en Lima Metropolitana.
 
+<div align="center">
+  <img alt="Impact Mapping de SECURIOT" src="docs/assets/securiot-impact-map.svg" width="900"/>
+</div>
+
 ```mermaid
 mindmap
   root((GOAL: +20% suscripciones y 80% renovación en 12 meses))
