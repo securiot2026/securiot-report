@@ -878,6 +878,10 @@ El Product Backlog consolida las User Stories de la sección 3.1 priorizadas y e
 
 **Tablero del Product Backlog (Trello):** https://trello.com/b/EzAo1DBl/securiot-product-backlog
 
+<div align="center">
+  <img alt="Product Backlog de SECURIOT" src="docs/assets/securiot-product-backlog.svg" width="960"/>
+</div>
+
 | # | Épica | ID | User Story | Prioridad | Story Points | Sprint sugerido |
 |---|---|---|---|---|---|---|
 | 1 | EP-01 | US-01 | Registro de dispositivo IoT en una zona | P0 | 5 | Sprint 1 |

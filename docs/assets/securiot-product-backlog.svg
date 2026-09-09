@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1370" height="760" viewBox="0 0 1370 760" font-family="Segoe UI, Arial, sans-serif">
+  <rect x="0" y="0" width="1370" height="760" fill="#ffffff"/>
+  <text x="20" y="30" font-size="20" font-weight="700" fill="#1f2937">Product Backlog — SECURIOT</text>
+  <text x="20" y="52" font-size="13" fill="#6b7280">23 User Stories · 114 Story Points · prioridad P0 (rojo) · P1 (naranja) · P2 (amarillo)</text>
+
+  <!-- Columns backgrounds -->
+  <rect x="20"  y="70" width="430" height="670" rx="10" fill="#f1f5f9"/>
+  <rect x="470" y="70" width="430" height="670" rx="10" fill="#f1f5f9"/>
+  <rect x="920" y="70" width="430" height="670" rx="10" fill="#f1f5f9"/>
+
+  <!-- Column headers -->
+  <text x="235" y="98" font-size="15" font-weight="700" fill="#1f2937" text-anchor="middle">Sprint 1 — 7 US · 34 SP</text>
+  <text x="685" y="98" font-size="15" font-weight="700" fill="#1f2937" text-anchor="middle">Sprint 2 — 10 US · 53 SP</text>
+  <text x="1135" y="98" font-size="15" font-weight="700" fill="#1f2937" text-anchor="middle">Sprint 3 — 6 US · 27 SP</text>
+
+  <!-- ===== SPRINT 1 (P0 red) ===== -->
+  <g>
+    <g transform="translate(35,112)"><rect width="400" height="48" rx="7" fill="#ffffff" stroke="#cbd5e1"/><rect width="6" height="48" rx="3" fill="#e63946"/><text x="18" y="20" font-size="12.5" font-weight="700" fill="#1f2937">US-01 · 5 SP · P0</text><text x="18" y="38" font-size="12" fill="#475569">Registro de dispositivo IoT en una zona</text></g>
+    <g transform="translate(35,172)"><rect width="400" height="48" rx="7" fill="#ffffff" stroke="#cbd5e1"/><rect width="6" height="48" rx="3" fill="#e63946"/><text x="18" y="20" font-size="12.5" font-weight="700" fill="#1f2937">US-02 · 5 SP · P0</text><text x="18" y="38" font-size="12" fill="#475569">Monitoreo en tiempo real de zonas/dispositivos</text></g>
+    <g transform="translate(35,232)"><rect width="400" height="48" rx="7" fill="#ffffff" stroke="#cbd5e1"/><rect width="6" height="48" rx="3" fill="#e63946"/><text x="18" y="20" font-size="12.5" font-weight="700" fill="#1f2937">US-04 · 3 SP · P0</text><text x="18" y="38" font-size="12" fill="#475569">Registro de zona restringida</text></g>
+    <g transform="translate(35,292)"><rect width="400" height="48" rx="7" fill="#ffffff" stroke="#cbd5e1"/><rect width="6" height="48" rx="3" fill="#e63946"/><text x="18" y="20" font-size="12.5" font-weight="700" fill="#1f2937">US-05 · 8 SP · P0</text><text x="18" y="38" font-size="12" fill="#475569">Validación automática de acceso a zona</text></g>
+    <g transform="translate(35,352)"><rect width="400" height="48" rx="7" fill="#ffffff" stroke="#cbd5e1"/><rect width="6" height="48" rx="3" fill="#e63946"/><text x="18" y="20" font-size="12.5" font-weight="700" fill="#1f2937">US-08 · 5 SP · P0</text><text x="18" y="38" font-size="12" fill="#475569">Notificación inmediata de intrusión</text></g>
+    <g transform="translate(35,412)"><rect width="400" height="48" rx="7" fill="#ffffff" stroke="#cbd5e1"/><rect width="6" height="48" rx="3" fill="#e63946"/><text x="18" y="20" font-size="12.5" font-weight="700" fill="#1f2937">US-15 · 3 SP · P0</text><text x="18" y="38" font-size="12" fill="#475569">Autenticación de usuarios</text></g>
+    <g transform="translate(35,472)"><rect width="400" height="48" rx="7" fill="#ffffff" stroke="#cbd5e1"/><rect width="6" height="48" rx="3" fill="#e63946"/><text x="18" y="20" font-size="12.5" font-weight="700" fill="#1f2937">US-23 · 5 SP · P0</text><text x="18" y="38" font-size="12" fill="#475569">Cumplimiento datos (Ley N° 29733)</text></g>
+  </g>
+
+  <!-- ===== SPRINT 2 (P1 orange) ===== -->
+  <g>
+    <g transform="translate(485,112)"><rect width="400" height="48" rx="7" fill="#ffffff" stroke="#cbd5e1"/><rect width="6" height="48" rx="3" fill="#f4a261"/><text x="18" y="20" font-size="12.5" font-weight="700" fill="#1f2937">US-07 · 8 SP · P1</text><text x="18" y="38" font-size="12" fill="#475569">Configuración de reglas de alerta</text></g>
+    <g transform="translate(485,172)"><rect width="400" height="48" rx="7" fill="#ffffff" stroke="#cbd5e1"/><rect width="6" height="48" rx="3" fill="#f4a261"/><text x="18" y="20" font-size="12.5" font-weight="700" fill="#1f2937">US-09 · 3 SP · P1</text><text x="18" y="38" font-size="12" fill="#475569">Atención y cierre de una alerta</text></g>
+    <g transform="translate(485,232)"><rect width="400" height="48" rx="7" fill="#ffffff" stroke="#cbd5e1"/><rect width="6" height="48" rx="3" fill="#f4a261"/><text x="18" y="20" font-size="12.5" font-weight="700" fill="#1f2937">US-03 · 3 SP · P1</text><text x="18" y="38" font-size="12" fill="#475569">Detalle de un dispositivo</text></g>
+    <g transform="translate(485,292)"><rect width="400" height="48" rx="7" fill="#ffffff" stroke="#cbd5e1"/><rect width="6" height="48" rx="3" fill="#f4a261"/><text x="18" y="20" font-size="12.5" font-weight="700" fill="#1f2937">US-06 · 5 SP · P1</text><text x="18" y="38" font-size="12" fill="#475569">Gestión de personas autorizadas</text></g>
+    <g transform="translate(485,352)"><rect width="400" height="48" rx="7" fill="#ffffff" stroke="#cbd5e1"/><rect width="6" height="48" rx="3" fill="#f4a261"/><text x="18" y="20" font-size="12.5" font-weight="700" fill="#1f2937">US-10 · 5 SP · P1</text><text x="18" y="38" font-size="12" fill="#475569">Consulta del historial de eventos</text></g>
+    <g transform="translate(485,412)"><rect width="400" height="48" rx="7" fill="#ffffff" stroke="#cbd5e1"/><rect width="6" height="48" rx="3" fill="#f4a261"/><text x="18" y="20" font-size="12.5" font-weight="700" fill="#1f2937">US-13 · 5 SP · P1</text><text x="18" y="38" font-size="12" fill="#475569">Dashboard de indicadores</text></g>
+    <g transform="translate(485,472)"><rect width="400" height="48" rx="7" fill="#ffffff" stroke="#cbd5e1"/><rect width="6" height="48" rx="3" fill="#f4a261"/><text x="18" y="20" font-size="12.5" font-weight="700" fill="#1f2937">US-14 · 8 SP · P1</text><text x="18" y="38" font-size="12" fill="#475569">Aplicación móvil para vigilancia</text></g>
+    <g transform="translate(485,532)"><rect width="400" height="48" rx="7" fill="#ffffff" stroke="#cbd5e1"/><rect width="6" height="48" rx="3" fill="#f4a261"/><text x="18" y="20" font-size="12.5" font-weight="700" fill="#1f2937">US-18 · 3 SP · P1</text><text x="18" y="38" font-size="12" fill="#475569">Propuesta de valor (Landing)</text></g>
+    <g transform="translate(485,592)"><rect width="400" height="48" rx="7" fill="#ffffff" stroke="#cbd5e1"/><rect width="6" height="48" rx="3" fill="#f4a261"/><text x="18" y="20" font-size="12.5" font-weight="700" fill="#1f2937">US-21 · 8 SP · P1</text><text x="18" y="38" font-size="12" fill="#475569">Edge tolerante a desconexión</text></g>
+    <g transform="translate(485,652)"><rect width="400" height="48" rx="7" fill="#ffffff" stroke="#cbd5e1"/><rect width="6" height="48" rx="3" fill="#f4a261"/><text x="18" y="20" font-size="12.5" font-weight="700" fill="#1f2937">US-22 · 5 SP · P1</text><text x="18" y="38" font-size="12" fill="#475569">Despliegue con Docker y CI/CD</text></g>
+  </g>
+
+  <!-- ===== SPRINT 3 (P2 yellow) ===== -->
+  <g>
+    <g transform="translate(935,112)"><rect width="400" height="48" rx="7" fill="#ffffff" stroke="#cbd5e1"/><rect width="6" height="48" rx="3" fill="#e9c46a"/><text x="18" y="20" font-size="12.5" font-weight="700" fill="#1f2937">US-11 · 5 SP · P2</text><text x="18" y="38" font-size="12" fill="#475569">Exportación de reporte de incidente</text></g>
+    <g transform="translate(935,172)"><rect width="400" height="48" rx="7" fill="#ffffff" stroke="#cbd5e1"/><rect width="6" height="48" rx="3" fill="#e9c46a"/><text x="18" y="20" font-size="12.5" font-weight="700" fill="#1f2937">US-12 · 3 SP · P2</text><text x="18" y="38" font-size="12" fill="#475569">Telemetría histórica por dispositivo</text></g>
+    <g transform="translate(935,232)"><rect width="400" height="48" rx="7" fill="#ffffff" stroke="#cbd5e1"/><rect width="6" height="48" rx="3" fill="#e9c46a"/><text x="18" y="20" font-size="12.5" font-weight="700" fill="#1f2937">US-16 · 8 SP · P2</text><text x="18" y="38" font-size="12" fill="#475569">Administración de múltiples sedes</text></g>
+    <g transform="translate(935,292)"><rect width="400" height="48" rx="7" fill="#ffffff" stroke="#cbd5e1"/><rect width="6" height="48" rx="3" fill="#e9c46a"/><text x="18" y="20" font-size="12.5" font-weight="700" fill="#1f2937">US-17 · 3 SP · P2</text><text x="18" y="38" font-size="12" fill="#475569">Cambio de sede activa en el panel</text></g>
+    <g transform="translate(935,352)"><rect width="400" height="48" rx="7" fill="#ffffff" stroke="#cbd5e1"/><rect width="6" height="48" rx="3" fill="#e9c46a"/><text x="18" y="20" font-size="12.5" font-weight="700" fill="#1f2937">US-19 · 3 SP · P2</text><text x="18" y="38" font-size="12" fill="#475569">Solicitud de demo / contacto (Landing)</text></g>
+    <g transform="translate(935,412)"><rect width="400" height="48" rx="7" fill="#ffffff" stroke="#cbd5e1"/><rect width="6" height="48" rx="3" fill="#e9c46a"/><text x="18" y="20" font-size="12.5" font-weight="700" fill="#1f2937">US-20 · 5 SP · P2</text><text x="18" y="38" font-size="12" fill="#475569">Landing accesible y multilenguaje</text></g>
+  </g>
+</svg>
