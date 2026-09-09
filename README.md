@@ -872,6 +872,8 @@ La siguiente tabla presenta el mismo Impact Mapping en formato estructurado, út
 
 El Product Backlog consolida las User Stories de la sección 3.1 priorizadas y estimadas con **Story Points** (escala de Fibonacci: 1, 2, 3, 5, 8). La prioridad usa la escala del cronograma del equipo (**P0** crítico → **P3** deseable) y se ordena de mayor a menor prioridad. El *Sprint sugerido* propone una distribución inicial para el Sprint Planning.
 
+**Tablero del Product Backlog (Trello):** https://trello.com/b/EzAo1DBl/securiot-product-backlog
+
 | # | Épica | ID | User Story | Prioridad | Story Points | Sprint sugerido |
 |---|---|---|---|---|---|---|
 | 1 | EP-01 | US-01 | Registro de dispositivo IoT en una zona | P0 | 5 | Sprint 1 |
