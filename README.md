@@ -827,8 +827,10 @@ El Impact Mapping (técnica de Gojko Adzic) conecta el objetivo de negocio de SE
 > **Goal (Why):** Aumentar en un **20% las suscripciones activas** de pymes industriales y logísticas y alcanzar una **tasa de renovación del 80%** al cierre del primer periodo contratado, durante los primeros 12 meses de operación en Lima Metropolitana.
 
 <div align="center">
-  <img alt="Impact Mapping de SECURIOT" src="docs/assets/securiot-impact-map.svg" width="900"/>
+  <img alt="Impact Mapping de SECURIOT" src="docs/assets/securiot-impact-map.png" width="900"/>
 </div>
+
+**Tablero (Miro):** https://miro.com/app/board/uXjVHpKEo50=/
 
 El Impact Mapping se detalla en la siguiente tabla:
 
