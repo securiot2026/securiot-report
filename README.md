@@ -295,11 +295,343 @@ _Pendiente de desarrollo._
 
 ## 2.2. Entrevistas
 
-_Pendiente de desarrollo._
+El presente apartado expone el proceso de investigación cualitativa dirigido a los tres segmentos objetivo de SECURIOT, con el propósito de comprender sus necesidades, comportamientos, objetivos, frustraciones y experiencias relacionadas con la seguridad patrimonial.
+
+La investigación mediante entrevistas permitirá obtener información directamente de representantes de cada segmento, evitando basar las decisiones del proyecto únicamente en los supuestos iniciales del equipo. Los resultados obtenidos servirán posteriormente como base para la elaboración de los User Persona, User Task Matrix, User Journey Maps, Empathy Maps y demás artefactos del proceso de Needfinding.
+
+El proceso de entrevistas se organiza en tres etapas:
+
+- **Diseño de entrevistas:** definición de las preguntas principales y complementarias dirigidas a cada segmento objetivo.
+- **Registro de entrevistas:** documentación de las entrevistas realizadas, incluyendo información del participante, evidencia audiovisual y resumen descriptivo de sus respuestas.
+- **Análisis de entrevistas:** identificación de patrones y características comunes dentro de cada segmento a partir de los datos reales obtenidos durante las entrevistas.
 
 ### 2.2.1. Diseño de entrevistas
 
-_Pendiente de desarrollo._
+Con el propósito de comprender las necesidades, comportamientos, objetivos y puntos de dolor de los segmentos objetivo de SECURIOT, se diseñaron entrevistas semiestructuradas dirigidas a representantes de los siguientes segmentos:
+
+- Administrador de Seguridad Patrimonial.
+- Personal de Vigilancia In Situ.
+- Gerente o Dueño de Pyme Industrial.
+
+Las entrevistas están conformadas por preguntas principales, que serán formuladas a todos los participantes pertenecientes a un mismo segmento, y preguntas complementarias, que permitirán profundizar en determinadas respuestas cuando sea necesario.
+
+La entrevista se orientará inicialmente a comprender la situación actual del participante, sus actividades, herramientas, problemas y experiencias. La propuesta de SECURIOT será presentada únicamente después de explorar el contexto actual del entrevistado, con la finalidad de evitar condicionar sus respuestas.
+
+Asimismo, se recopilará información objetiva y subjetiva que permita posteriormente construir los arquetipos correspondientes a cada segmento.
+
+#### Información general del entrevistado
+
+Antes de iniciar las preguntas específicas de cada segmento, se recopilarán los siguientes datos:
+
+- Nombres y apellidos.
+- Edad.
+- Género.
+- Distrito de residencia.
+- Estado civil y composición familiar, de manera opcional.
+- Ocupación.
+- Cargo actual.
+- Sector de la empresa en la que trabaja.
+- Años de experiencia en su actividad.
+- Breve descripción de su trayectoria profesional.
+- Dispositivos que utiliza con mayor frecuencia.
+- Aplicaciones, plataformas y canales digitales utilizados habitualmente.
+- Herramientas o marcas tecnológicas que utiliza o reconoce dentro de su actividad laboral.
+
+Durante la entrevista también se buscará identificar características relacionadas con sus habilidades, comportamiento frente a la tecnología, objetivos, frustraciones y forma de tomar decisiones.
+
+#### Segmento 1: Administrador de Seguridad Patrimonial
+
+**Objetivo de la entrevista:** Comprender cómo se gestiona actualmente la seguridad de las instalaciones, cuáles son las principales dificultades relacionadas con el monitoreo, control de accesos y respuesta ante incidentes, y qué información requiere el administrador para supervisar y tomar decisiones.
+
+**Preguntas principales y complementarias**
+
+1. **¿Podría contarnos cuál es su cargo y qué responsabilidades tiene relacionadas con la seguridad de la organización?**
+   - ¿Cuántas instalaciones o áreas se encuentran bajo su responsabilidad?
+   - ¿Participa directamente en la elección o evaluación de sistemas de seguridad?
+   - ¿Con cuánto personal de seguridad suele coordinar?
+
+2. **¿Cómo está organizado actualmente el sistema de seguridad y control de accesos de la empresa?**
+   - ¿Utilizan vigilancia humana?
+   - ¿Utilizan cámaras de seguridad?
+   - ¿Cuentan con alarmas?
+   - ¿Utilizan controles biométricos o tarjetas?
+   - ¿Utilizan algún software de monitoreo?
+
+3. **¿Cómo controlan actualmente quién puede ingresar a zonas restringidas como almacenes, áreas de producción o zonas de carga?**
+   - ¿Existen diferentes niveles de autorización?
+   - ¿Cómo manejan trabajadores temporales, contratistas o visitantes?
+   - ¿Cómo se actualizan o eliminan los permisos?
+
+4. **¿Cuáles son las principales dificultades que tienen para determinar si una persona que se encuentra en una zona restringida está realmente autorizada?**
+   - ¿Existen puntos ciegos?
+   - ¿Depende de que una persona reconozca al trabajador?
+   - ¿Han ocurrido errores de identificación?
+
+5. **Cuénteme sobre alguna situación reciente en la que hayan detectado un acceso no autorizado o una actividad sospechosa. ¿Cómo se enteraron y qué ocurrió después?**
+   - ¿Cuánto tiempo tardaron en detectarlo?
+   - ¿Quién recibió la primera alerta?
+   - ¿Cómo se comunicó al personal de seguridad?
+   - ¿Qué procedimiento siguieron?
+
+6. **¿Con qué frecuencia reciben falsas alarmas o alertas que finalmente no representan una amenaza?**
+   - ¿Qué suele provocarlas?
+   - ¿Cuánto tiempo toma verificar cada una?
+   - ¿Considera que afectan la atención que se presta a futuras alertas?
+
+7. **Cuando ocurre un incidente, ¿cómo recopilan posteriormente la evidencia necesaria para investigarlo?**
+   - ¿Revisan grabaciones?
+   - ¿Revisan registros de acceso?
+   - ¿Utilizan reportes elaborados por el personal?
+   - ¿Cuánto tiempo suele tomar encontrar toda la información?
+
+8. **¿Cómo coordinan actualmente una emergencia con el personal de vigilancia?**
+   - ¿Utilizan radio?
+   - ¿Teléfono?
+   - ¿WhatsApp?
+   - ¿Alguna aplicación?
+   - ¿Qué problemas de comunicación suelen aparecer?
+
+9. **¿Qué información o indicadores utiliza para evaluar el nivel de seguridad de una sede?**
+   - Número de incidentes.
+   - Tiempo de respuesta.
+   - Accesos fuera de horario.
+   - Zonas con mayor cantidad de eventos.
+
+10. **Si administra más de una sede, ¿cómo realiza actualmente la supervisión de todas ellas?**
+    - ¿Debe ingresar a diferentes sistemas?
+    - ¿Puede revisar información remotamente?
+    - ¿Qué dificultades presenta supervisar varias instalaciones?
+
+11. **¿Qué dispositivos y herramientas digitales utiliza con mayor frecuencia para realizar su trabajo?**
+    - ¿Computadora?
+    - ¿Smartphone?
+    - ¿Tablet?
+    - ¿Qué navegador utiliza habitualmente?
+    - ¿Qué medio prefiere para recibir información urgente?
+
+12. **¿Qué parte del proceso actual de seguridad le gustaría mejorar primero y por qué?**
+
+**Exploración de la propuesta**
+
+13. **¿Qué opinión tendría sobre una solución capaz de detectar posibles accesos no autorizados y notificar automáticamente al personal responsable?**
+    - ¿En qué situaciones le resultaría útil?
+    - ¿En qué situaciones no confiaría en ella?
+    - ¿Qué tipo de verificación consideraría necesaria?
+
+14. **¿Cuál sería su principal preocupación al implementar una solución basada en sensores, cámaras o inteligencia artificial?**
+    - Confiabilidad.
+    - Privacidad.
+    - Falsas alarmas.
+    - Costos.
+    - Integración con sistemas existentes.
+
+15. **¿Qué tendría que ofrecer una solución como esta para que usted realmente considerara utilizarla dentro de su organización?**
+
+---
+
+#### Segmento 2: Personal de Vigilancia In Situ
+
+**Objetivo de la entrevista:** Comprender cómo se realizan las tareas de vigilancia y control de accesos durante una jornada de trabajo, cuáles son las principales dificultades para identificar incidentes y qué información permitiría responder con mayor rapidez y seguridad.
+
+**Preguntas principales y complementarias**
+
+1. **¿Podría contarnos cómo es normalmente una jornada de trabajo para usted?**
+   - ¿Qué zonas supervisa?
+   - ¿Realiza rondas?
+   - ¿Supervisa cámaras?
+   - ¿Controla ingresos?
+
+2. **¿Cómo realiza sus recorridos habituales y cómo registra que pasó por los diferentes puntos de control?**
+   - ¿Utiliza registros manuales?
+   - ¿Utiliza algún dispositivo?
+   - ¿Utiliza alguna aplicación?
+
+3. **Cuando ocurre una anomalía o alguien ingresa donde no debería, ¿cómo recibe actualmente el aviso?**
+   - Radio.
+   - Llamada.
+   - Sirena.
+   - Mensaje.
+   - Comunicación presencial.
+
+4. **Cuando recibe una alerta, ¿qué información conoce antes de llegar al lugar?**
+   - ¿Ubicación exacta?
+   - ¿Cantidad de personas?
+   - ¿Imagen de la persona?
+   - ¿Tipo de evento?
+
+5. **Desde que recibe el aviso hasta que llega al lugar del incidente, ¿cuánto tiempo suele pasar?**
+   - ¿Qué factores pueden retrasarlo?
+   - ¿La distancia?
+   - ¿Problemas de comunicación?
+   - ¿Falta de información?
+   - ¿Dificultades para acceder a determinadas zonas?
+
+6. **Cuando encuentra a una persona en una zona restringida, ¿cómo determina si realmente tiene autorización para estar allí?**
+   - ¿Debe consultar a un supervisor?
+   - ¿Revisa algún registro?
+   - ¿Solicita identificación?
+   - ¿Existen situaciones donde resulte difícil verificarlo?
+
+7. **Si confirma una posible intrusión, ¿qué procedimiento debe seguir?**
+   - ¿A quién informa primero?
+   - ¿Debe esperar alguna autorización?
+   - ¿Qué acciones puede realizar directamente?
+
+8. **¿Con qué frecuencia atiende alertas que finalmente resultan no ser una amenaza real?**
+   - ¿Qué suele provocarlas?
+   - ¿Animales?
+   - ¿Errores de sensores?
+   - ¿Personal fuera de horario?
+   - ¿Cómo afecta esto su trabajo?
+
+9. **¿Qué dificultades encuentra cuando debe supervisar varias zonas, accesos o cámaras al mismo tiempo?**
+
+10. **Después de atender un incidente, ¿cómo registra lo sucedido?**
+    - ¿Redacta un informe?
+    - ¿El registro es manual o digital?
+    - ¿Cuánto tiempo le toma?
+    - ¿Debe adjuntar alguna evidencia?
+
+11. **¿Utiliza un teléfono móvil durante sus actividades de trabajo?**
+    - ¿Es personal o corporativo?
+    - ¿Tiene problemas de batería?
+    - ¿Presenta problemas de señal?
+    - ¿El tamaño de pantalla representa alguna dificultad?
+    - ¿Es difícil utilizarlo durante una ronda?
+
+12. **¿Qué aplicaciones o medios digitales utiliza habitualmente para comunicarse durante su turno?**
+
+13. **¿Cómo se siente al utilizar una herramienta tecnológica nueva dentro del trabajo?**
+    - ¿Suele adaptarse rápidamente?
+    - ¿Qué hace que una aplicación sea fácil o difícil de utilizar?
+    - ¿Prefiere instrucciones visuales, texto, sonidos u otro tipo de interacción?
+
+14. **Si pudiera mejorar una sola parte de su trabajo diario relacionada con la seguridad, ¿cuál sería?**
+
+**Exploración de la propuesta**
+
+15. **¿Qué opinión tendría sobre una aplicación que le avisara inmediatamente cuando se detecta un posible acceso no autorizado y le indicara dónde está ocurriendo?**
+    - ¿Qué información debería mostrar?
+    - ¿Necesitaría una fotografía?
+    - ¿Nivel de riesgo?
+    - ¿Hora?
+    - ¿Zona exacta?
+
+16. **¿Qué tendría que tener una alerta para que realmente le resulte útil y no termine siendo una distracción durante su trabajo?**
+
+17. **¿Qué situaciones cree que un sistema automático podría interpretar incorrectamente y deberían ser revisadas por una persona?**
+
+---
+
+#### Segmento 3: Gerente o Dueño de Pyme Industrial
+
+**Objetivo de la entrevista:** Comprender cómo la gerencia evalúa económicamente la seguridad patrimonial, qué impacto tienen los incidentes sobre el negocio y qué factores influyen en la decisión de contratar y mantener una solución tecnológica mediante un modelo de suscripción.
+
+**Preguntas principales y complementarias**
+
+1. **¿Podría contarnos brevemente sobre la empresa que dirige y su responsabilidad dentro de ella?**
+   - ¿A qué sector pertenece?
+   - ¿Cuántas sedes tiene?
+   - ¿Cuántos trabajadores aproximadamente?
+   - ¿Cuenta con almacenes, plantas o instalaciones con zonas restringidas?
+
+2. **Actualmente, ¿cuáles son sus principales preocupaciones respecto a la seguridad de las instalaciones y activos de la empresa?**
+
+3. **¿Qué medidas de seguridad utiliza actualmente la organización?**
+   - Vigilancia.
+   - Cámaras.
+   - Alarmas.
+   - Seguros.
+   - Controles de acceso.
+
+4. **¿Cómo evalúa actualmente si la inversión que realiza en seguridad está dando buenos resultados?**
+   - ¿Utiliza indicadores?
+   - ¿Se revisan incidentes?
+   - ¿Se compara el gasto con las pérdidas evitadas?
+
+5. **¿Algún incidente de seguridad podría afectar significativamente las operaciones de la empresa? ¿De qué manera?**
+   - Pérdidas de inventario.
+   - Daño de maquinaria.
+   - Paralización de operaciones.
+   - Problemas legales.
+   - Afectación a clientes.
+
+6. **¿Qué información relacionada con seguridad recibe actualmente de los responsables de las instalaciones?**
+   - ¿Con qué frecuencia?
+   - ¿Recibe reportes?
+   - ¿Recibe indicadores?
+   - ¿Solo se le informa cuando ocurre un incidente?
+
+7. **Cuando se encuentra fuera de la empresa, ¿cómo supervisa que los protocolos de seguridad se estén cumpliendo?**
+
+8. **¿La empresa cuenta actualmente con algún tipo de seguro patrimonial?**
+
+   En caso afirmativo:
+   - ¿Qué factores influyeron en la decisión de contratarlo?
+   - ¿Qué dificultades encontró?
+
+   En caso negativo:
+   - ¿Qué factores han influido para no contratarlo?
+
+9. **¿Qué factores considera más importantes cuando evalúa contratar un nuevo proveedor de seguridad o tecnología?**
+   - Costo.
+   - Confiabilidad.
+   - Soporte.
+   - Facilidad de implementación.
+   - Integración.
+   - Privacidad.
+
+10. **¿Qué tendría que demostrar una solución tecnológica para justificar un pago mensual por suscripción?**
+
+11. **¿Qué información le gustaría recibir periódicamente para evaluar si una solución de seguridad está generando valor?**
+    - Incidentes detectados.
+    - Tiempo de respuesta.
+    - Accesos fuera de horario.
+    - Comparaciones entre sedes.
+    - Tendencias mensuales.
+
+12. **Cuando toma decisiones sobre tecnología para la empresa, ¿qué dispositivos, plataformas o fuentes de información utiliza habitualmente?**
+
+13. **¿Qué suele generar mayor desconfianza cuando evalúa contratar una nueva solución tecnológica para la empresa?**
+
+14. **Si pudiera mejorar un único aspecto de la seguridad patrimonial de su empresa, ¿qué elegiría y por qué?**
+
+**Exploración de la propuesta**
+
+15. **¿Qué opinión tendría sobre complementar la vigilancia existente con un sistema que detecte automáticamente posibles accesos no autorizados y registre los incidentes?**
+
+16. **¿Qué resultados tendría que observar después de utilizar una solución como esta para considerar que vale la pena mantenerla?**
+
+17. **Si una solución permitiera supervisar varias instalaciones desde un único sistema, ¿qué información necesitaría visualizar para confiar en ella?**
+
+---
+
+#### Preguntas de cierre
+
+Al finalizar cada entrevista se realizarán las siguientes preguntas abiertas:
+
+1. **¿Existe algún problema relacionado con la seguridad de su organización o trabajo que considere importante y que no hayamos mencionado?**
+
+2. **¿Hay alguna experiencia, necesidad o recomendación adicional que considere importante para nuestra investigación?**
+
+Estas preguntas permitirán identificar aspectos que no hayan sido contemplados inicialmente por el equipo y reducir el riesgo de limitar los hallazgos únicamente a los supuestos establecidos previamente.
+
+#### Criterios para la ejecución de las entrevistas
+
+Durante las entrevistas se considerarán las siguientes buenas prácticas:
+
+- Priorizar preguntas abiertas.
+- Evitar sugerir respuestas al participante.
+- Solicitar ejemplos o experiencias reales cuando sea posible.
+- No presentar detalladamente SECURIOT antes de explorar la problemática actual.
+- Utilizar las preguntas complementarias cuando sea necesario profundizar en una respuesta.
+- No asumir que todos los participantes experimentan los mismos problemas.
+- Permitir que el participante amplíe aspectos que considere relevantes.
+- Solicitar autorización antes de registrar la entrevista en video.
+
+La entrevista seguirá el siguiente orden:
+
+**Caracterización → Contexto actual → Tareas → Problemas → Experiencias reales → Objetivos y necesidades → Tecnología y canales → Exploración de la propuesta → Cierre.**
 
 ### 2.2.2. Registro de entrevistas
 
