@@ -23,6 +23,7 @@
 |---|---|
 | Hurtado Balcazar Rommel Daniel | U202517474 |
 | Nikaido Vargas Javier Masaru | U20221G099 |
+| Salcedo Champi Matias Rodolfo | U202319698 |
 
 
 <strong> 19 de Septiembre de 2026</strong><br>
@@ -190,7 +191,7 @@ Como startup, Centinela Labs opera bajo un modelo de negocio escalable basado en
 |---|---|
 | <img src="docs/assets/chaper1/IMGs/members/Rommel.jpeg" width="200"/> | **Hurtado Balcazar Rommel Daniel - U202517474** <br><br> Soy Rommel Hurtado Balcázar, tengo 23 años y estudio Ingeniería de Software en el 7to ciclo. Me considero un líder técnico orientado a la resolución de problemas, con capacidad para tomar decisiones y guiar al equipo hacia los objetivos del proyecto.<br><br>Cuento con experiencia en desarrollo fullstack, manejando tanto frontend como backend. En el lado del servidor trabajo principalmente con Java, y en el frontend utilizo React. Además, tengo conocimientos en bases de datos relacionales con SQL y no relacionales con MongoDB, así como experiencia con Node.js, Python y HTML/CSS.<br><br>He desarrollado proyectos propios fuera del ámbito universitario, lo que me ha dado una visión completa del ciclo de desarrollo de software. También me desenvuelvo en inglés a nivel intermedio-avanzado, lo que me permite acceder a documentación técnica y comunicarme en entornos internacionales. |
 | <img src="docs/assets/chaper1/IMGs/members/Javier.jpeg" width="200"/> | **Nikaido Vargas Javier Masaru - U20221G099** <br><br> Soy Javier Masaru Nikaido Vargas, estudiante de Ingeniería de Software del 8to ciclo de la Universidad Peruana de Ciencias Aplicadas. Me caracterizo por trabajar de manera organizada y planificada, procurando realizar mis actividades con anticipación y mantener un ritmo de trabajo constante y ordenado.<br><br>Prefiero desarrollar mis responsabilidades con tranquilidad, distribuyendo adecuadamente el tiempo disponible para evitar retrasos y cumplir con los objetivos establecidos. Considero que la organización, la responsabilidad y el cumplimiento oportuno de las tareas son aspectos importantes para contribuir de manera efectiva al trabajo en equipo. |
-| member 3 | -Descripcion- |
+| <img src="docs/assets/chaper1/IMGs/members/matias.jpg" width="200"/> | **Salcedo Champi Matias Rodolfo - U202319698** <br><br> Soy Matias Salcedo Champi, tengo 21 años y estudio Ingeniería de Software en el 7mo ciclo. Soy un estudiante con experiencia en el desarrollo de aplicaciones móviles y web, y me gusta involucrarme en todas las etapas del ciclo de desarrollo, desde el levantamiento de requisitos hasta la implementación.<br><br>En el desarrollo móvil trabajo con Flutter y Dart, y en el backend utilizo Node.js y Express.js. Manejo bases de datos tanto relacionales, con PostgreSQL, como no relacionales, con MongoDB. Además, uso Git y GitHub para el control de versiones y el trabajo colaborativo en equipo, siguiendo el flujo GitFlow del proyecto.<br><br>He participado en proyectos de investigación y desarrollo, lo que me ha permitido fortalecer mi capacidad de análisis y mi visión integral del proceso de construcción de software. Aporto al equipo en la especificación de requisitos y en la definición del producto, contribuyendo a que la solución responda a las necesidades reales de los usuarios. |
 | member 4 | -Descripcion- |
 | member 5 | -Descripcion- |
 | member 6 | -Descripcion- |
