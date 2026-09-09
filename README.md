@@ -19,7 +19,8 @@
 
 ### Team Members:
 
-Hurtado Balcazar Rommel Daniel     u202517474
+Hurtado Balcazar Rommel Daniel     U202517474
+Nikaido Vargas Javier Masaru       U20221G099
 
 
 <strong> 19 de Septiembre de 2026</strong><br>
