@@ -524,10 +524,10 @@ _Objetivo: Validar la justificación económica (ROI), mitigación del riesgo pa
 
 ### - Segmento objetivo 1 ( Administrador de Seguridad Patrimonial)
 
-Entrevista 1 (Bianca Beltrán) Inicio: 00:00  - Duración: 4:20
+Entrevista 1 (Bianca Beltrán) Inicio: 00:00  - Duración: 4:23
 
 <p align="center">
-  <img src="" alt="seg1_entrevista1" />
+  <img src="docs/assets/chapter2/IMGs/interviews/seg1/interview1.png" width="700"/>
 </p>
 
 - Nombre: Bianca Beltrán
@@ -547,7 +547,7 @@ Finaliza expresando interés en incorporar una solución con visión computariza
 Entrevista 2 (Nadia Cardenas) Inicio: 00:00  - Duración: 4:20
 
 <p align="center">
-  <img src="docs/assets/chaper2/IMGs/interviews/seg1/interview2.png" width="700"/>
+  <img src="docs/assets/chapter2/IMGs/interviews/seg1/interview2.png" width="700"/>
 </p>
 
 - Nombre: Nadia Cardenas
@@ -567,7 +567,7 @@ Finaliza mostrando una postura favorable hacia una solución automatizada con vi
 Entrevista 3 (Dante Zavala) Inicio: 00:00  - Duración: 4:19
 
 <p align="center">
-  <img src="docs/assets/chaper2/IMGs/interviews/seg1/interview3.png" width="700"/>
+  <img src="docs/assets/chapter2/IMGs/interviews/seg1/interview3.png" width="700"/>
 </p>
 
 - Nombre: Dante Zavala
