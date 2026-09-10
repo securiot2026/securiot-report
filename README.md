@@ -586,7 +586,14 @@ _Pendiente de desarrollo._
 
 #### 4.1.1.1. Candidate Context Discovery
 
-_Pendiente de desarrollo._
+Agrupamos los eventos y comandos del dominio segun quien es dueno de la decision de negocio, no segun el repositorio de codigo donde vive hoy. De ese analisis salen cuatro contextos delimitados:
+
+1. **Identidad y Acceso**: quien puede entrar al sistema y con que credenciales.
+2. **Gestion de Zonas y Dispositivos**: que zonas existen, que dispositivos estan asignados a cada una y quien es su propietario.
+3. **Monitoreo y Alertas**: que paso en una zona (lecturas de sensores) y si eso amerita una alerta.
+4. **Deteccion y Relay de Borde**: que ve la camara en el sitio, si eso es una persona u objeto no permitido, y como reaccionar en el momento (pan/tilt, cerradura, buzzer) sin depender de la nube.
+
+Monitoreo y Alertas y Deteccion y Relay de Borde son los subdominios core: ahi vive la logica que distingue a SecurIoT de un CRUD generico de sensores. Identidad y Acceso es un subdominio generico (JWT estandar, sin reglas propias del negocio). Gestion de Zonas y Dispositivos es subdominio de soporte: necesario para que los otros dos tengan sentido, pero no es, por si solo, la ventaja del producto.
 
 #### 4.1.1.2. Domain Message Flows Modeling
 
@@ -594,71 +601,374 @@ _Pendiente de desarrollo._
 
 #### 4.1.1.3. Bounded Context Canvases
 
-_Pendiente de desarrollo._
+**Identidad y Acceso**
+
+| Campo | Detalle |
+|---|---|
+| Proposito | Autenticar usuarios y emitir el token que el resto de la plataforma confia sin volver a consultar este contexto |
+| Clasificacion estrategica | Generico |
+| Lenguaje ubicuo | Usuario, credenciales, token de acceso |
+| Entidad raiz | `User` (email, passwordHash) |
+| Contrato publicado | `POST /auth/login` devuelve un `access_token` JWT firmado; los demas contextos lo validan localmente contra `JWT_SECRET`, sin llamada de vuelta |
+| Implementado en | `securiot-cloud-api/src/auth`, `src/users` |
+
+**Gestion de Zonas y Dispositivos**
+
+| Campo | Detalle |
+|---|---|
+| Proposito | Mantener el catalogo de zonas del cliente y los dispositivos IoT asignados a cada una, incluyendo la emision del `apiKey` de dispositivo |
+| Clasificacion estrategica | Soporte |
+| Lenguaje ubicuo | Zona, Dispositivo, Propietario, apiKey |
+| Entidades raiz | `Zone`, `Device` |
+| Reglas de negocio | Un dispositivo pertenece a una unica zona; una zona pertenece a un unico usuario propietario; el `apiKey` se muestra completo una sola vez, al crear el dispositivo |
+| Implementado en | `securiot-cloud-api/src/zones`, `src/devices` |
+
+**Monitoreo y Alertas** (core)
+
+| Campo | Detalle |
+|---|---|
+| Proposito | Ingerir lecturas de sensores de forma idempotente y evaluar reglas de negocio que conviertan una lectura riesgosa en una alerta accionable |
+| Clasificacion estrategica | Core |
+| Lenguaje ubicuo | Lectura (Reading), Alerta (Alert), Regla de alerta, Severidad, Estado |
+| Entidades raiz | `Reading`, `Alert` |
+| Reglas de negocio | Ingestion idempotente por `reading_id` (constraint unica); cada lectura dispara `evaluateRule`, que hoy cubre `door_contact_open` y esta pensada para crecer a mas reglas por tipo de sensor; una alerta es unica por lectura |
+| Implementado en | `securiot-cloud-api/src/telemetry`, `src/alerts` |
+
+**Deteccion y Relay de Borde** (core)
+
+| Campo | Detalle |
+|---|---|
+| Proposito | Recibir lecturas y frames de camara del dispositivo fisico, correr deteccion local con debounce, decidir la accion inmediata (pan/tilt, cerradura, alerta local) y reenviar las lecturas a la nube tolerando cortes de red |
+| Clasificacion estrategica | Core |
+| Lenguaje ubicuo | Frame, Deteccion, Debounce, Buffer, Relay, Cooldown |
+| Entidades raiz (locales, SQLite) | Lectura bufferizada, Evento de deteccion |
+| Reglas de negocio | Buffer local con reintento y backoff cuando la nube no responde; relay idempotente por `reading_id`; cooldown entre acciones de cerradura para el mismo dispositivo |
+| Implementado en | `securiot-edge-api/app` (`ingest.py`, `detection.py`, `debounce.py`, `relay.py`, `frames.py`, `pan_tilt.py`) |
 
 ### 4.1.2. Context Mapping
 
-_Pendiente de desarrollo._
+```mermaid
+flowchart LR
+  IAM["Identidad y Acceso\n(generico)"]
+  ZD["Gestion de Zonas\ny Dispositivos\n(soporte)"]
+  MA["Monitoreo y Alertas\n(core)"]
+  EDR["Deteccion y Relay\nde Borde\n(core)"]
+  DEV(["Dispositivo fisico\nESP32-CAM"])
+
+  IAM -- "Customer/Supplier: id de usuario como lenguaje publicado" --> ZD
+  ZD -- "Customer/Supplier: id de zona/dispositivo como referencia opaca" --> MA
+  EDR -- "Customer/Supplier + Anticorruption Layer: el relay traduce su modelo local al contrato POST /telemetry" --> MA
+  DEV -- "Conformist: implementa el contrato HTTP de Edge tal cual, sin traduccion propia" --> EDR
+```
+
+Ningun contexto llama al de Identidad y Acceso en tiempo de ejecucion mas alla del login: el JWT es autocontenido y cada contexto lo valida por su cuenta contra el mismo secreto compartido, asi que la relacion con Identidad y Acceso es de tipo Published Language mas que de llamada activa. Monitoreo y Alertas y Gestion de Zonas y Dispositivos hoy comparten una unica base PostgreSQL, lo cual simplifica el MVP pero es una decision a revisar si el sistema crece a multiples clientes con aislamiento de datos mas estricto.
 
 ### 4.1.3. Software Architecture
 
-_Pendiente de desarrollo._
+SecurIoT es un sistema distribuido de cuatro capas: aplicaciones cliente (Web App en Angular y Mobile App en Flutter), un servicio de nube (Cloud API en NestJS con PostgreSQL), un servicio de borde por instalacion (Edge API en Flask con buffer local SQLite) y firmware embebido (ESP32-CAM). Los siguientes diagramas siguen el modelo C4 (Landscape, Context, Container, Deployment) y estan expresados en Mermaid.
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram
 
-_Pendiente de desarrollo._
+```mermaid
+C4Context
+  title Diagrama de Panorama del Sistema (System Landscape) - SecurIoT
+
+  Person(operador, "Operador de Seguridad", "Monitorea zonas, dispositivos y alertas desde un puesto de control")
+  Person(guardia, "Guardia de Campo", "Recibe y atiende alertas en movimiento")
+  Person(visitante, "Visitante Web", "Conoce el producto SecurIoT")
+
+  Enterprise_Boundary(b0, "Centinela Labs") {
+    System(securiot, "SecurIoT Platform", "Monitoreo de accesos, zonas restringidas y activos mediante sensores IoT, edge computing y cloud computing")
+    System(landing, "SecurIoT Landing Page", "Sitio de marketing estatico, sin integracion con la plataforma")
+  }
+
+  System_Ext(dispositivo, "Dispositivo ESP32-CAM", "Sensor perimetral con camara, PIR, reed switch y ultrasonico, instalado en el sitio del cliente")
+
+  Rel(operador, securiot, "Monitorea y administra", "HTTPS")
+  Rel(guardia, securiot, "Consulta y reacciona a alertas", "HTTPS")
+  Rel(visitante, landing, "Visita", "HTTPS")
+  Rel(dispositivo, securiot, "Envia lecturas de sensores y frames de camara", "HTTP/JSON")
+```
+
+La plataforma no depende de sistemas externos de terceros (sin pasarelas de pago, SMS o email en el alcance actual). La Landing Page es un sitio informativo aislado, sin llamadas a la API.
 
 #### 4.1.3.2. Software Architecture Context Level Diagrams
 
-_Pendiente de desarrollo._
+```mermaid
+C4Context
+  title Diagrama de Contexto - SecurIoT Platform
+
+  Person(operador, "Operador de Seguridad", "Usa el Web App para dashboard, zonas, dispositivos y alertas")
+  Person(guardia, "Guardia de Campo", "Usa el Mobile App para alertas y estado de zonas/dispositivos en movimiento")
+
+  System_Boundary(sb, "SecurIoT Platform") {
+    System(platform, "SecurIoT Platform", "Ingesta de telemetria, deteccion de intrusos y generacion de alertas para zonas y activos")
+  }
+
+  System_Ext(esp32, "Dispositivo ESP32-CAM", "Firmware embebido con sensores PIR, reed switch, ultrasonico y camara")
+
+  Rel(operador, platform, "Autentica, consulta y administra", "HTTPS/JSON, JWT")
+  Rel(guardia, platform, "Autentica y consulta", "HTTPS/JSON, JWT")
+  Rel(esp32, platform, "Envia lecturas y frames; recibe comandos de pan/tilt, cerradura y alerta local", "HTTP/JSON multipart")
+```
 
 #### 4.1.3.3. Software Architecture Container Level Diagrams
 
-_Pendiente de desarrollo._
+```mermaid
+C4Container
+  title Diagrama de Contenedores - SecurIoT Platform
+
+  Person(operador, "Operador de Seguridad")
+  Person(guardia, "Guardia de Campo")
+  Person(visitante, "Visitante Web")
+
+  System_Boundary(sb, "SecurIoT Platform") {
+    Container(landing, "Landing Page", "HTML/CSS/JS estatico, Nginx", "Sitio de marketing publico del producto")
+    Container(webapp, "Web App", "Angular 22, Angular Material", "Dashboard de monitoreo: zonas, dispositivos, alertas, autenticacion")
+    Container(mobileapp, "Mobile App", "Flutter/Dart", "App movil para guardias: alertas, zonas y dispositivos, distribuida via Firebase App Distribution")
+    Container(cloudapi, "Cloud API", "NestJS + TypeORM", "API REST/OpenAPI: autenticacion JWT, usuarios, zonas, dispositivos, telemetria y alertas")
+    ContainerDb(clouddb, "Cloud Database", "PostgreSQL", "Persiste usuarios, zonas, dispositivos, lecturas y alertas")
+    Container(edgeapi, "Edge API", "Flask + Peewee", "Servicio de borde por instalacion: recibe lecturas y frames, ejecuta deteccion y reenvia a la nube")
+    ContainerDb(edgedb, "Edge Buffer DB", "SQLite", "Buffer local de lecturas no sincronizadas, tolerante a cortes de red")
+    Container(firmware, "Firmware ESP32-CAM", "C++/Arduino", "Captura frames y lecturas de sensores; actua pan/tilt, cerradura y alerta local")
+  }
+
+  Rel(operador, webapp, "Usa", "HTTPS")
+  Rel(guardia, mobileapp, "Usa", "HTTPS")
+  Rel(visitante, landing, "Visita", "HTTPS")
+
+  Rel(webapp, cloudapi, "Consume API REST", "JSON/HTTPS, JWT Bearer")
+  Rel(mobileapp, cloudapi, "Consume API REST", "JSON/HTTPS, JWT Bearer")
+  Rel(cloudapi, clouddb, "Lee y escribe", "TypeORM/SQL")
+
+  Rel(firmware, edgeapi, "POST /ingest, POST /frames", "HTTP/JSON multipart, X-Device-Key")
+  Rel(edgeapi, firmware, "Responde pan_delta, tilt_delta, door_action, alert", "HTTP/JSON")
+  Rel(edgeapi, edgedb, "Bufferea lecturas locales", "Peewee/SQL")
+  Rel(edgeapi, cloudapi, "Reenvia lecturas, relay con retry/backoff, idempotente por reading_id", "HTTPS/JSON, X-Device-Key")
+```
 
 #### 4.1.3.4. Software Architecture Deployment Diagrams
 
-_Pendiente de desarrollo._
+```mermaid
+C4Deployment
+  title Diagrama de Despliegue - SecurIoT Platform
+
+  Deployment_Node(cliente_pc, "PC/Laptop del Operador", "Navegador"){
+    Container(webbrowser, "Web App (build estatico)", "Angular, servido via Nginx", "SPA de monitoreo")
+  }
+
+  Deployment_Node(cliente_movil, "Smartphone del Guardia", "Android/iOS"){
+    Container(mobileappd, "Mobile App", "Flutter", "APK/IPA instalado via Firebase App Distribution")
+  }
+
+  Deployment_Node(cloud, "Cloud Hosting", "Docker / VPS o PaaS"){
+    Deployment_Node(cloudapicontainer, "Contenedor Cloud API", "Docker, Node.js 20"){
+      Container(cloudapid, "Cloud API", "NestJS", "API REST/OpenAPI")
+    }
+    Deployment_Node(pgcontainer, "Contenedor PostgreSQL", "Docker, Postgres 16"){
+      ContainerDb(pgd, "Cloud Database", "PostgreSQL", "Datos persistentes")
+    }
+    Deployment_Node(landingcontainer, "Contenedor Landing", "Docker, Nginx"){
+      Container(landingd, "Landing Page", "HTML/CSS/JS estatico", "Sitio de marketing")
+    }
+  }
+
+  Deployment_Node(sitio, "Instalacion del Cliente (on-site)", "Edge host, Docker"){
+    Deployment_Node(edgecontainer, "Contenedor Edge API", "Docker, Python 3.12"){
+      Container(edgeapid, "Edge API", "Flask + Peewee", "Ingesta, deteccion y relay local")
+      ContainerDb(edgedbd, "Edge Buffer DB", "SQLite", "Archivo local")
+    }
+    Deployment_Node(dispositivofisico, "Dispositivo ESP32-CAM", "AI-Thinker, WiFi"){
+      Container(firmwared, "Firmware", "C++/Arduino-ESP32", "Sensores, camara, servos, buzzer/LED")
+    }
+  }
+
+  Rel(webbrowser, cloudapid, "HTTPS/JSON")
+  Rel(mobileappd, cloudapid, "HTTPS/JSON")
+  Rel(cloudapid, pgd, "TypeORM/SQL")
+  Rel(firmwared, edgeapid, "HTTP/JSON multipart, WiFi LAN")
+  Rel(edgeapid, edgedbd, "SQL local")
+  Rel(edgeapid, cloudapid, "HTTPS/JSON, Internet")
+```
 
 ## 4.2. Tactical-Level Domain-Driven Design
 
 _Pendiente de desarrollo._
 
-### 4.2.1. Bounded Context: <Nombre del Bounded Context>
+### 4.2.1. Bounded Context: Monitoreo y Alertas
 
-_Pendiente de desarrollo._
+Elegimos este contexto para el detalle tactico porque es el subdominio core de la Cloud API: convierte lecturas crudas de sensores en alertas que el operador realmente usa. Vive en `securiot-cloud-api/src/telemetry` y `src/alerts`.
 
 #### 4.2.1.1. Domain Layer
 
-_Pendiente de desarrollo._
+- `Reading` (raiz de agregado): `readingId` (unico), `deviceId`, `zoneId`, `sensorType`, `value`, `recordedAt`. La unicidad de `readingId` es el invariante central: garantiza que reenviar la misma lectura, algo que pasa seguido por el retry del relay de borde, nunca la duplica.
+- `Alert` (raiz de agregado): referencia a `zone`, `device` y, opcionalmente, a la `reading` que la origino; ademas `ruleType`, `severity`, `status` y `message`. Tambien tiene `readingId` unico, asi que una lectura genera como maximo una alerta.
+- Regla de dominio `evaluateRule`: hoy implementa una unica regla, `door_contact_open` (sensor `door_contact` con valor `open` genera una alerta de severidad `medium`). El metodo esta separado de la insercion de la lectura justamente para poder agregar mas reglas sin tocar el flujo de ingestion.
 
 #### 4.2.1.2. Interface Layer
 
-_Pendiente de desarrollo._
+| Endpoint | Guard | Descripcion |
+|---|---|---|
+| `POST /api/v1/telemetry` | `DeviceApiKeyGuard` (header `X-Device-Key`) | Ingesta una lectura, idempotente por `reading_id` |
+| `GET /api/v1/telemetry` | `JwtAuthGuard` | Lista lecturas filtrables por `device_id`, `zone_id` y rango de fechas |
+| `GET /api/v1/alerts` | `JwtAuthGuard` | Lista alertas de las zonas del usuario autenticado, filtrables por zona, dispositivo y estado |
+
+Los cuerpos de request se validan con DTOs de `class-validator` (`CreateReadingDto`, `QueryReadingsDto`, `QueryAlertsDto`) y cada endpoint esta documentado con decoradores de `@nestjs/swagger`.
 
 #### 4.2.1.3. Application Layer
 
-_Pendiente de desarrollo._
+- `TelemetryService.ingest(dto, device)`: inserta la lectura con `INSERT ... ON CONFLICT DO NOTHING` (`orIgnore`) y delega la evaluacion de reglas a `AlertsService.evaluateRule`. Ambos pasos ocurren en la misma llamada, para que el operador vea la alerta apenas el dispositivo reporta.
+- `TelemetryService.findAll(query)`: consulta de lecturas con filtros opcionales.
+- `AlertsService.evaluateRule(reading)`: aplica la regla de dominio y persiste la alerta si corresponde, tambien con `orIgnore` para respetar la unicidad por `readingId`.
+- `AlertsService.findAllForOwner(ownerId, query)`: hace join contra `Zone` para devolver solo alertas de zonas del usuario autenticado, sin exponer datos de otros clientes.
 
 #### 4.2.1.4. Infrastructure Layer
 
-_Pendiente de desarrollo._
+- `Repository<Reading>` y `Repository<Alert>` de TypeORM, sobre PostgreSQL en produccion (SQLite como fallback de desarrollo local, ver `src/config/typeorm.config.ts`).
+- `DeviceApiKeyGuard`: valida el header `X-Device-Key` contra la tabla `devices`, cruzando hacia el contexto de Gestion de Zonas y Dispositivos.
+- `JwtAuthGuard` + `JwtStrategy`: validan el JWT emitido por Identidad y Acceso sin llamarlo en tiempo de ejecucion.
 
 #### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
 
-_Pendiente de desarrollo._
+```mermaid
+C4Component
+  title Componentes - Bounded Context Monitoreo y Alertas
+
+  Container_Boundary(cloudapi, "Cloud API") {
+    Component(telemetryCtrl, "TelemetryController", "NestJS Controller", "POST/GET /telemetry")
+    Component(alertsCtrl, "AlertsController", "NestJS Controller", "GET /alerts")
+    Component(deviceGuard, "DeviceApiKeyGuard", "NestJS Guard", "Valida X-Device-Key contra Device")
+    Component(jwtGuard, "JwtAuthGuard", "NestJS Guard", "Valida JWT emitido por Identidad y Acceso")
+    Component(telemetrySvc, "TelemetryService", "NestJS Service", "Ingesta idempotente y consulta de lecturas")
+    Component(alertsSvc, "AlertsService", "NestJS Service", "Evaluacion de reglas y consulta de alertas")
+    ComponentDb(readingRepo, "Reading Repository", "TypeORM Repository", "Persistencia de lecturas")
+    ComponentDb(alertRepo, "Alert Repository", "TypeORM Repository", "Persistencia de alertas")
+  }
+
+  ContainerDb(clouddb, "Cloud Database", "PostgreSQL")
+  Container_Ext(edgeapi, "Edge API", "Flask", "Reenvia lecturas via relay")
+  Container_Ext(webmobile, "Web App / Mobile App", "Angular / Flutter", "Consultan lecturas y alertas")
+
+  Rel(edgeapi, telemetryCtrl, "POST /telemetry", "HTTPS/JSON, X-Device-Key")
+  Rel(webmobile, telemetryCtrl, "GET /telemetry", "HTTPS/JSON, JWT")
+  Rel(webmobile, alertsCtrl, "GET /alerts", "HTTPS/JSON, JWT")
+
+  Rel(telemetryCtrl, deviceGuard, "Usa")
+  Rel(telemetryCtrl, jwtGuard, "Usa (en GET)")
+  Rel(alertsCtrl, jwtGuard, "Usa")
+
+  Rel(telemetryCtrl, telemetrySvc, "Delega")
+  Rel(alertsCtrl, alertsSvc, "Delega")
+  Rel(telemetrySvc, alertsSvc, "evaluateRule(reading)")
+  Rel(telemetrySvc, readingRepo, "Lee y escribe")
+  Rel(alertsSvc, alertRepo, "Lee y escribe")
+  Rel(readingRepo, clouddb, "SQL")
+  Rel(alertRepo, clouddb, "SQL")
+```
 
 #### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
 
-_Pendiente de desarrollo._
-
 #### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
 
-_Pendiente de desarrollo._
+```mermaid
+classDiagram
+  class Reading {
+    +string id
+    +string readingId
+    +string deviceId
+    +string zoneId
+    +string sensorType
+    +unknown value
+    +Date recordedAt
+    +Date createdAt
+  }
+
+  class Alert {
+    +string id
+    +string zoneId
+    +string deviceId
+    +string readingId
+    +string ruleType
+    +string severity
+    +string status
+    +string message
+    +Date createdAt
+  }
+
+  class Device {
+    <<external, contexto Zonas y Dispositivos>>
+    +string id
+  }
+
+  class Zone {
+    <<external, contexto Zonas y Dispositivos>>
+    +string id
+  }
+
+  Reading "1" --> "1" Device : deviceId
+  Reading "1" --> "1" Zone : zoneId
+  Alert "1" --> "1" Device : deviceId
+  Alert "1" --> "1" Zone : zoneId
+  Alert "0..1" --> "0..1" Reading : readingId (SET NULL al borrar)
+```
 
 #### 4.2.1.6.2. Bounded Context Database Design Diagram
 
-_Pendiente de desarrollo._
+```mermaid
+erDiagram
+  USERS ||--o{ ZONES : owns
+  ZONES ||--o{ DEVICES : contains
+  DEVICES ||--o{ READINGS : reports
+  ZONES ||--o{ READINGS : located_in
+  DEVICES ||--o{ ALERTS : triggers
+  ZONES ||--o{ ALERTS : located_in
+  READINGS |o--o| ALERTS : originates
+
+  USERS {
+    uuid id PK
+    string email UK
+    string passwordHash
+    timestamp createdAt
+  }
+  ZONES {
+    uuid id PK
+    string name
+    string location
+    uuid ownerId FK
+    timestamp createdAt
+    timestamp updatedAt
+  }
+  DEVICES {
+    uuid id PK
+    string name
+    string apiKey UK
+    uuid zoneId FK
+    timestamp createdAt
+  }
+  READINGS {
+    uuid id PK
+    string readingId UK
+    uuid deviceId FK
+    uuid zoneId FK
+    string sensorType
+    json value
+    timestamp recordedAt
+    timestamp createdAt
+  }
+  ALERTS {
+    uuid id PK
+    uuid zoneId FK
+    uuid deviceId FK
+    uuid readingId FK "UK, nullable"
+    string ruleType
+    string severity
+    string status
+    string message
+    timestamp createdAt
+  }
+```
+
+`USERS`, `ZONES` y `DEVICES` pertenecen a otros bounded contexts (Identidad y Acceso, y Gestion de Zonas y Dispositivos) y se muestran aqui solo como referencia, porque hoy las cinco tablas viven en la misma base PostgreSQL. `READINGS` y `ALERTS` son las tablas propias de este contexto.
 
 # Capítulo V: Solution UI/UX Design
 
