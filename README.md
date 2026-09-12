@@ -748,7 +748,23 @@ _Pendiente de desarrollo._
 
 ### 2.3.1. User Personas
 
-_Pendiente de desarrollo._
+Las siguientes User Personas sintetizan los patrones identificados en las entrevistas de los segmentos Administrador de Seguridad Patrimonial y Personal de Vigilancia In Situ. Cada ficha representa un arquetipo construido a partir de los objetivos, necesidades, frustraciones, comportamientos, herramientas y motivaciones documentados en el apartado 2.2.
+
+#### Administrador de Seguridad Patrimonial
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/user-personas/user-persona-administrador-seguridad.png" alt="User Persona del Administrador de Seguridad Patrimonial" width="1100"/>
+</p>
+
+**Interpretación analítica.** Este arquetipo necesita confianza operativa antes que mayor cantidad de información: las alertas deben ser oportunas, precisas y verificables. La compatibilidad con la infraestructura existente, la reducción de falsos positivos, la trazabilidad y el cumplimiento de las normas de evacuación condicionan la aceptación de SECURIOT.
+
+#### Personal de Vigilancia In Situ
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/user-personas/user-persona-vigilante.png" alt="User Persona del Personal de Vigilancia In Situ" width="1100"/>
+</p>
+
+**Interpretación analítica.** Este arquetipo opera bajo presión, en movimiento y con conectividad limitada. SECURIOT debe priorizar información inmediata y fácil de interpretar, reducir los pasos durante la atención y considerar las restricciones reales de batería, señal, ruido e iluminación del entorno industrial.
 
 ### 2.3.2. User Task Matrix
 
