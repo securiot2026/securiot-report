@@ -784,7 +784,48 @@ _Pendiente de desarrollo._
 
 ## 2.5. Ubiquitous Language
 
-_Pendiente de desarrollo._
+El Ubiquitous Language de SECURIOT unifica los términos utilizados por el equipo y los stakeholders dentro del dominio de seguridad física, control de accesos y monitoreo de instalaciones. Este glosario establece un significado común para cada concepto y evita interpretaciones diferentes durante el análisis, diseño y validación de la solución.
+
+| Term | Spanish Equivalent | Definition |
+|---|---|---|
+| Access Authorization | Autorización de acceso | Permiso vigente asignado a una persona para ingresar a una sede, zona de seguridad o área restringida bajo las condiciones establecidas por la organización. |
+| Access Control | Control de accesos | Conjunto de verificaciones y medidas empleadas para regular la entrada y salida de personas o vehículos en una sede o zona. |
+| Access Point | Punto de acceso | Lugar físico por el que una persona o vehículo entra o sale de una sede o zona, como una puerta, portón, torniquete o bahía de carga. |
+| Access Validation | Validación de acceso | Comprobación realizada ante un intento de ingreso para determinar si la persona posee una autorización de acceso válida. |
+| Alert | Alerta | Notificación que requiere evaluación o acción del personal de seguridad porque una detección o lectura cumple una regla de alerta. |
+| Alert Rule | Regla de alerta | Condición del negocio que determina cuándo una detección o lectura debe generar una alerta y con qué severidad. |
+| Alert Severity | Severidad de alerta | Clasificación del nivel de urgencia o riesgo asociado a una alerta, utilizada para priorizar la respuesta. |
+| Alert Status | Estado de alerta | Situación de una alerta dentro de su atención operativa, que permite conocer si continúa activa o ya fue atendida. |
+| Alarm | Alarma | Señal audible o visual activada localmente en una instalación para advertir sobre una situación que requiere atención. |
+| Authorized Person | Persona autorizada | Persona cuya identidad ha sido validada y que posee permiso vigente para ingresar a una sede o área determinada. |
+| Camera | Cámara | Equipo que captura imágenes o video de una zona para apoyar la identificación de personas y la verificación de eventos. |
+| Contractor | Contratista | Persona externa que realiza labores temporales dentro de una instalación y cuyo acceso debe autorizarse según la zona y actividad asignadas. |
+| Detection | Detección | Identificación de la presencia de una persona, objeto o condición relevante dentro de una zona supervisada. Una detección no constituye por sí sola una intrusión. |
+| Device | Dispositivo | Unidad física instalada en un punto de acceso, perímetro o zona para observar condiciones del entorno y apoyar acciones de seguridad. |
+| Event Traceability | Trazabilidad de eventos | Capacidad de reconstruir qué ocurrió, dónde, cuándo y qué acciones se realizaron durante un evento de seguridad. |
+| Evidence | Evidencia | Conjunto de imágenes, videos, registros y datos horarios conservados para investigar y sustentar un incidente de seguridad. |
+| False Alarm | Falsa alarma | Alerta o alarma que, luego de ser verificada, no corresponde a una intrusión ni a una amenaza real. |
+| Incident Report | Reporte de incidente | Documento que reúne la secuencia de hechos, las zonas y personas involucradas, las acciones ejecutadas y la evidencia disponible de un incidente. |
+| Intrusion | Intrusión | Presencia o ingreso no autorizado de una persona dentro del perímetro de una sede o en un área restringida. |
+| Monitoring Center | Centro de monitoreo | Espacio desde el cual el personal de seguridad supervisa cámaras, zonas, alertas y comunicaciones de una o más instalaciones. |
+| Multi-Site Monitoring | Monitoreo multisede | Supervisión centralizada de la seguridad de varias sedes pertenecientes a una misma organización. |
+| On-Site Security Guard | Personal de vigilancia in situ | Usuario operativo que realiza rondas, verifica alertas en campo, controla accesos y ejecuta el protocolo de respuesta dentro de la instalación. |
+| Perimeter | Perímetro | Límite físico exterior de una sede cuya vulneración puede representar un ingreso no autorizado. |
+| Protected Asset | Activo protegido | Bien de valor que debe resguardarse frente a robos, daños o accesos indebidos, como inventario, maquinaria, insumos o equipos. |
+| Response Protocol | Protocolo de respuesta | Secuencia de acciones que el personal responsable debe ejecutar después de detectar o confirmar una amenaza o intrusión. |
+| Restricted Area | Área restringida | Zona de seguridad cuyo ingreso exige una autorización específica debido al valor de sus activos, la sensibilidad de sus operaciones o el riesgo asociado. |
+| Security Administrator | Administrador de seguridad patrimonial | Responsable de supervisar la seguridad de una o más sedes, gestionar zonas y accesos, revisar alertas y consolidar evidencia e indicadores. |
+| Security Event | Evento de seguridad | Hecho registrado dentro de una sede relacionado con un acceso, una detección o una condición observada por un dispositivo. |
+| Security Incident | Incidente de seguridad | Evento de seguridad confirmado que compromete o pone en riesgo personas, activos u operaciones y requiere respuesta o investigación. |
+| Security Patrol | Ronda de vigilancia | Recorrido periódico realizado por el personal de vigilancia para comprobar el estado de puntos de control y zonas de una instalación. |
+| Security Zone | Zona de seguridad | Área física delimitada dentro de una sede que se administra y supervisa como una unidad de seguridad; puede contener uno o más dispositivos y no necesariamente es de acceso restringido. |
+| Sensor | Sensor | Componente de un dispositivo que observa una condición física, como movimiento, apertura o distancia, y produce una lectura. |
+| Sensor Reading | Lectura de sensor | Observación producida por un sensor en un momento determinado y asociada al dispositivo y la zona donde se originó. |
+| Site | Sede | Instalación física administrada como una ubicación independiente, como una planta, fábrica, almacén, centro de distribución u oficina corporativa. |
+| Threat | Amenaza | Persona, presencia o situación que puede comprometer la seguridad de los activos, las personas o la continuidad de las operaciones. |
+| Unauthorized Access | Acceso no autorizado | Intento o ingreso realizado por una persona que no posee autorización válida para la sede o zona correspondiente. |
+| Unidentified Person | Persona no identificada | Persona detectada cuya identidad no puede determinarse con la información disponible y que debe ser validada antes de autorizar su acceso. |
+| Visitor | Visitante | Persona externa que ingresa temporalmente a una instalación y requiere autorización para acceder a las zonas permitidas. |
 
 # Capítulo III: Requirements Specification
 
