@@ -606,6 +606,22 @@ Finaliza mostrando una actitud receptiva hacia la implementación de una aplicac
 
 ---
 
+Entrevista 2 (Christopher Cabán) Inicio: 00:00  - Duración: 4:11
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/interviews/seg2/interview2.png" width="700"/>
+</p>
+
+- Nombre: Christopher Cabán
+- Edad: 41 años
+- Distrito de residencia: Los Olivos
+
+Resumen de Entrevista : 
+
+A partir de la entrevista realizada a Christopher Cabán, de 41 años y residente de Los Olivos, se identificó que el entrevistado se desempeña como vigilante de seguridad privada en una planta metalmecánica y almacén de insumos en su mismo distrito, cubriendo turnos rotativos tanto diurnos como nocturnos. Describe que su labor involucra el control de accesos peatonales y vehiculares, así como la respuesta a incidencias en talleres y patios mediante rondas horarias registradas con un llavero RFID en tres puntos fijos, recurriendo a anotaciones manuales en una libreta de campo cuando la congestión de camiones retrasa su recorrido.  Manifiesta una constante incertidumbre y sensación de riesgo al atender alertas de posibles intrusos, ya que la caseta le avisa por radio o WhatsApp sin brindarle detalles previos sobre la cantidad de sujetos o su perfil, obligándolo a acudir a oscuras únicamente con su linterna. Señala que llegar al punto comprometido le toma entre 2 y 5 minutos, enfrentando obstáculos como materiales dispersos en el suelo, zonas poco iluminadas y rejas con cadenas o candados desgastados que se atascan. Asimismo, expone frustración por el desgaste operativo que conllevan entre 4 y 5 falsas alarmas por noche generadas por aves, roedores u operarios no avisados. Explica que validar la identidad del personal en planta es difícil debido al uso de overoles, cascos y mascarillas, dependiendo de dictar los datos por radio a garita. En cuanto al aspecto técnico, utiliza su propio celular Android enfrentando problemas de consumo rápido de batería y pérdida total de señal bajo las planchas de fierro de los galpones, mientras que el cierre de informes le toma hasta 40 minutos a mano en el cuaderno de novedades tras un siniestro.  Finaliza manifestando una recepción muy favorable hacia una solución móvil que notifique intrusiones en tiempo real, precisando que la aplicación debe ser de respuesta rápida, evitar solicitudes reiteradas de credenciales, emitir una alarma con volumen muy alto incluso en modo silencio, y proyectar la fotografía del intruso junto a su ubicación exacta mediante un solo toque en pantalla.
+
+---
+
 ### 2.2.3. Análisis de entrevistas
 
 _Pendiente de desarrollo._
