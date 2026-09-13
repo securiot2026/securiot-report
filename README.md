@@ -638,19 +638,32 @@ La entrevista seguirá el siguiente orden:
 
 ### 2.2.2. Registro de entrevistas
 
-### - Segmento objetivo 1 ( Administrador de Seguridad Patrimonial)
+En esta sección se presenta el registro de las entrevistas realizadas a representantes de los tres segmentos objetivo de SECURIOT. Para cada participante se incluyen sus datos generales, la evidencia visual de la sesión, el enlace correspondiente a la grabación y un resumen descriptivo de los principales hallazgos obtenidos.
 
-Entrevista 1 (Bianca Beltrán) Inicio: 00:00  - Duración: 4:23
+Todas las entrevistas fueron realizadas de manera virtual mediante **Google Meet**. Las grabaciones correspondientes se almacenan en **Google Drive**.
+
+#### Segmento 1: Administrador de Seguridad Patrimonial
+
+##### Entrevista 1: Bianca Beltrán
+
+| Dato | Información |
+|---|---|
+| **Nombres y apellidos** | Bianca Beltrán |
+| **Edad** | 42 años |
+| **Distrito de residencia** | Ate |
+| **Segmento** | Administrador de Seguridad Patrimonial |
+| **Medio de entrevista** | Google Meet |
+| **Inicio** | 00:00 |
+| **Duración** | 4:23 |
+| **Video de la entrevista** | [Ver entrevista en Google Drive](https://drive.google.com/drive/folders/1jC7MRUZ4k6w8-7biKTMAuQqbS1o10VYm?usp=sharing) |
+
+**Evidencia de entrevista**
 
 <p align="center">
-  <img src="docs/assets/chapter2/IMGs/interviews/seg1/interview1.png" width="700"/>
+  <img src="docs/assets/chapter2/IMGs/interviews/seg1/interview1.png" alt="Entrevista a Bianca Beltrán" width="700"/>
 </p>
 
-- Nombre: Bianca Beltrán
-- Edad: 42 años
-- Distrito de residencia: Ate
-
-Resumen de Entrevista : 
+**Resumen de la entrevista**
 
 A partir de la entrevista realizada a Bianca Beltrán, de 42 años y residente de Ate, se identificó que la entrevistada se desempeña como Jefe de Seguridad Patrimonial en una planta industrial de manufactura y producción ubicada en su mismo distrito. Describe que supervisa múltiples sedes bajo un esquema mixto y fragmentado, contando con un centro de control con 40 cámaras análogas e IP y molinetes biométricos para el personal fijo, pero señala que los ingresos vehiculares y áreas de carga se gestionan mediante cuadernos físicos y grabadores locales independientes con enlaces VPN inestables.
 
@@ -660,17 +673,26 @@ Finaliza expresando interés en incorporar una solución con visión computariza
 
 ---
 
-Entrevista 2 (Nadia Cardenas) Inicio: 00:00  - Duración: 4:20
+##### Entrevista 2: Nadia Cardenas
+
+| Dato | Información |
+|---|---|
+| **Nombres y apellidos** | Nadia Cardenas |
+| **Edad** | 52 años |
+| **Distrito de residencia** | Lurin |
+| **Segmento** | Administrador de Seguridad Patrimonial |
+| **Medio de entrevista** | Google Meet |
+| **Inicio** | 00:00 |
+| **Duración** | 4:20 |
+| **Video de la entrevista** | [Ver entrevista en Google Drive](https://drive.google.com/drive/folders/1jC7MRUZ4k6w8-7biKTMAuQqbS1o10VYm?usp=sharing) |
+
+**Evidencia de entrevista**
 
 <p align="center">
-  <img src="docs/assets/chapter2/IMGs/interviews/seg1/interview2.png" width="700"/>
+  <img src="docs/assets/chapter2/IMGs/interviews/seg1/interview2.png" alt="Entrevista a Nadia Cardenas" width="700"/>
 </p>
 
-- Nombre: Nadia Cardenas
-- Edad: 52 años
-- Distrito de residencia: Lurin
-
-Resumen de Entrevista : 
+**Resumen de la entrevista**
 
 A partir de la entrevista realizada a Nadia Cárdenas, de 52 años y residente de Lurín, se identificó que la entrevistada se desempeña como Jefa de Seguridad Patrimonial en un centro de distribución logístico y almacén de frío en su mismo distrito. Describe que su operación diaria abarca la supervisión de un predio de 12,000 m² mediante un sistema mixto de 64 cámaras IP y dos NVRs en un cuarto de monitoreo, pero señala que el control en las áreas más sensibles (cámaras de frío, almacén de valor y 18 bahías de carga) depende principalmente de candados mecánicos, supervisión visual y registros manuales en papel.
 
@@ -680,17 +702,26 @@ Finaliza mostrando una postura favorable hacia una solución automatizada con vi
 
 ---
 
-Entrevista 3 (Dante Zavala) Inicio: 00:00  - Duración: 4:19
+##### Entrevista 3: Dante Zavala
+
+| Dato | Información |
+|---|---|
+| **Nombres y apellidos** | Dante Zavala |
+| **Edad** | 53 años |
+| **Distrito de residencia** | El Callao |
+| **Segmento** | Administrador de Seguridad Patrimonial |
+| **Medio de entrevista** | Google Meet |
+| **Inicio** | 00:00 |
+| **Duración** | 4:19 |
+| **Video de la entrevista** | [Ver entrevista en Google Drive](https://drive.google.com/drive/folders/1jC7MRUZ4k6w8-7biKTMAuQqbS1o10VYm?usp=sharing) |
+
+**Evidencia de entrevista**
 
 <p align="center">
-  <img src="docs/assets/chapter2/IMGs/interviews/seg1/interview3.png" width="700"/>
+  <img src="docs/assets/chapter2/IMGs/interviews/seg1/interview3.png" alt="Entrevista a Dante Zavala" width="700"/>
 </p>
 
-- Nombre: Dante Zavala
-- Edad: 53 años
-- Distrito de residencia: El Callao
-
-Resumen de Entrevista : 
+**Resumen de la entrevista**
 
 A partir de la entrevista realizada a Dante Zavala, de 53 años y residente de El Callao, se identificó que el entrevistado se desempeña como Coordinador de Seguridad Integral en un complejo metalmecánico y patio de fundición en su mismo distrito. Describe que su rutina laboral implica custodiar un predio de casi 15,000 m² con insumos de alto valor (como cobre y bronce) mediante una caseta de monitoreo con 32 cámaras mayoritariamente análogas, pero señala que el resguardo de las zonas críticas depende de candados y llaves físicas, torniquetes peatonales para personal fijo y revisiones manuales con cuadernos en los accesos de carga.
 
@@ -700,19 +731,28 @@ Finaliza expresando interés en una plataforma con visión computarizada e IA pa
 
 ---
 
-### - Segmento objetivo 2 (Personal de Vigilancia In Situ)
+#### Segmento 2: Personal de Vigilancia In Situ
 
-Entrevista 1 (Julieta Cordero) Inicio: 00:00  - Duración: 3:29
+##### Entrevista 1: Julieta Cordero
+
+| Dato | Información |
+|---|---|
+| **Nombres y apellidos** | Julieta Cordero |
+| **Edad** | 40 años |
+| **Distrito de residencia** | Villa El Salvador |
+| **Segmento** | Personal de Vigilancia In Situ |
+| **Medio de entrevista** | Google Meet |
+| **Inicio** | 00:00 |
+| **Duración** | 3:29 |
+| **Video de la entrevista** | [Ver entrevista en Google Drive](https://drive.google.com/drive/folders/1jC7MRUZ4k6w8-7biKTMAuQqbS1o10VYm?usp=sharing) |
+
+**Evidencia de entrevista**
 
 <p align="center">
-  <img src="docs/assets/chapter2/IMGs/interviews/seg2/interview1.png" width="700"/>
+  <img src="docs/assets/chapter2/IMGs/interviews/seg2/interview1.png" alt="Entrevista a Julieta Cordero" width="700"/>
 </p>
 
-- Nombre: Julieta Cordero
-- Edad: 40 años
-- Distrito de residencia: Villa El Salvador
-
-Resumen de Entrevista : 
+**Resumen de la entrevista**
 
 A partir de la entrevista realizada a Julieta Cordero, de 40 años y residente de Villa El Salvador, se identificó que la entrevistada labora como agente de seguridad en un centro logístico ubicado en su mismo distrito, cumpliendo turnos nocturnos rotativos de 12 horas a cargo del patrullaje perimetral y la atención primaria de alertas. Describe que realiza rondas a pie cada 45 minutos marcando puntos de control con un bastón electrónico, cuyo reporte se descarga de forma manual en garita al finalizar la jornada.
 
@@ -722,29 +762,342 @@ Finaliza mostrando una actitud receptiva hacia la implementación de una aplicac
 
 ---
 
-Entrevista 2 (Christopher Cabán) Inicio: 00:00  - Duración: 4:11
+##### Entrevista 2: Christopher Cabán
+
+| Dato | Información |
+|---|---|
+| **Nombres y apellidos** | Christopher Cabán |
+| **Edad** | 41 años |
+| **Distrito de residencia** | Los Olivos |
+| **Segmento** | Personal de Vigilancia In Situ |
+| **Medio de entrevista** | Google Meet |
+| **Inicio** | 00:00 |
+| **Duración** | 4:11 |
+| **Video de la entrevista** | [Ver entrevista en Google Drive](https://drive.google.com/drive/folders/1jC7MRUZ4k6w8-7biKTMAuQqbS1o10VYm?usp=sharing) |
+
+**Evidencia de entrevista**
 
 <p align="center">
-  <img src="docs/assets/chapter2/IMGs/interviews/seg2/interview2.png" width="700"/>
+  <img src="docs/assets/chapter2/IMGs/interviews/seg2/interview2.png" alt="Entrevista a Christopher Cabán" width="700"/>
 </p>
 
-- Nombre: Christopher Cabán
-- Edad: 41 años
-- Distrito de residencia: Los Olivos
-
-Resumen de Entrevista : 
+**Resumen de la entrevista**
 
 A partir de la entrevista realizada a Christopher Cabán, de 41 años y residente de Los Olivos, se identificó que el entrevistado se desempeña como vigilante de seguridad privada en una planta metalmecánica y almacén de insumos en su mismo distrito, cubriendo turnos rotativos tanto diurnos como nocturnos. Describe que su labor involucra el control de accesos peatonales y vehiculares, así como la respuesta a incidencias en talleres y patios mediante rondas horarias registradas con un llavero RFID en tres puntos fijos, recurriendo a anotaciones manuales en una libreta de campo cuando la congestión de camiones retrasa su recorrido.  Manifiesta una constante incertidumbre y sensación de riesgo al atender alertas de posibles intrusos, ya que la caseta le avisa por radio o WhatsApp sin brindarle detalles previos sobre la cantidad de sujetos o su perfil, obligándolo a acudir a oscuras únicamente con su linterna. Señala que llegar al punto comprometido le toma entre 2 y 5 minutos, enfrentando obstáculos como materiales dispersos en el suelo, zonas poco iluminadas y rejas con cadenas o candados desgastados que se atascan. Asimismo, expone frustración por el desgaste operativo que conllevan entre 4 y 5 falsas alarmas por noche generadas por aves, roedores u operarios no avisados. Explica que validar la identidad del personal en planta es difícil debido al uso de overoles, cascos y mascarillas, dependiendo de dictar los datos por radio a garita. En cuanto al aspecto técnico, utiliza su propio celular Android enfrentando problemas de consumo rápido de batería y pérdida total de señal bajo las planchas de fierro de los galpones, mientras que el cierre de informes le toma hasta 40 minutos a mano en el cuaderno de novedades tras un siniestro.  Finaliza manifestando una recepción muy favorable hacia una solución móvil que notifique intrusiones en tiempo real, precisando que la aplicación debe ser de respuesta rápida, evitar solicitudes reiteradas de credenciales, emitir una alarma con volumen muy alto incluso en modo silencio, y proyectar la fotografía del intruso junto a su ubicación exacta mediante un solo toque en pantalla.
 
 ---
 
+##### Entrevista 3: Samuel Alzamora
+
+| Dato | Información |
+|---|---|
+| **Nombres y apellidos** | Samuel Alzamora |
+| **Edad** | 20 años |
+| **Distrito de residencia** | San Isidro |
+| **Segmento** | Personal de Vigilancia In Situ |
+| **Medio de entrevista** | Google Meet |
+| **Inicio** | 00:00 |
+| **Duración** | 4:46 |
+| **Video de la entrevista** | [Ver entrevista en Google Drive](https://drive.google.com/drive/folders/1jC7MRUZ4k6w8-7biKTMAuQqbS1o10VYm?usp=sharing) |
+
+**Evidencia de entrevista**
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/interviews/seg2/samuel-alzamora.png" alt="Entrevista a Samuel Alzamora" width="700"/>
+</p>
+
+**Resumen de la entrevista**
+
+A partir de la entrevista realizada a Samuel Alzamora, de 20 años y residente de San Isidro, se identificó que el entrevistado pertenece al segmento de Personal de Vigilancia In Situ y desarrolla actividades relacionadas con la supervisión de accesos, verificación del ingreso de personas y realización de rondas dentro de las instalaciones.
+
+Durante una jornada habitual utiliza diferentes herramientas para realizar sus funciones, principalmente cámaras de seguridad, radio y teléfono celular. También se emplean registros para documentar ingresos y novedades ocurridas durante el turno. Respecto al control de accesos, indicó que cuando una persona intenta ingresar a una zona restringida es necesario verificar su identificación y, en situaciones donde existe alguna duda, consultar con un supervisor o responsable del área, proceso que puede generar demoras cuando la información necesaria no se encuentra disponible inmediatamente.
+
+Ante una situación sospechosa, el personal puede enterarse mediante observación directa durante las rondas, a través de las cámaras de seguridad o mediante comunicación por radio. Después de identificar el evento, debe verificarse lo ocurrido y comunicarlo al supervisor correspondiente para continuar con el protocolo establecido. Una de las principales dificultades identificadas es la imposibilidad de supervisar simultáneamente todas las zonas y cámaras, ya que mientras realiza una ronda física resulta complicado mantener vigilancia constante sobre los demás puntos de la instalación.
+
+Samuel considera que, frente a una posible intrusión, la información más importante es conocer la ubicación exacta del evento, el tipo de alerta y, cuando sea posible, disponer de una imagen de la persona detectada. En cuanto al uso de tecnología, utiliza principalmente celular y radio, aunque señala posibles limitaciones relacionadas con la cobertura de señal y con la dificultad de revisar una pantalla mientras realiza rondas o desplazamientos.
+
+Respecto a SECURIOT, considera que las alertas deben ser rápidas, claras y contener únicamente información relevante. Asimismo, destacó la importancia de reducir las falsas alarmas, debido a que un exceso de notificaciones incorrectas podría disminuir la atención prestada a futuros eventos. Finalmente, señaló que una solución de seguridad debería ser sencilla de utilizar, especialmente durante situaciones de emergencia, donde el personal necesita conocer rápidamente qué ocurrió, dónde ocurrió y qué acción debe realizar.
+
+---
+
+#### Segmento 3: Gerente o Dueño de Pyme Industrial
+
+##### Entrevista 1: Marco Salvador
+
+| Dato | Información |
+|---|---|
+| **Nombres y apellidos** | Marco Salvador |
+| **Edad** | 20 años |
+| **Distrito de residencia** | Villa María del Triunfo |
+| **Segmento** | Gerente o Dueño de Pyme Industrial |
+| **Medio de entrevista** | Google Meet |
+| **Inicio** | 00:00 |
+| **Duración** | 13:09 |
+| **Video de la entrevista** | [Ver entrevista en Google Drive](https://drive.google.com/drive/folders/1jC7MRUZ4k6w8-7biKTMAuQqbS1o10VYm?usp=sharing) |
+
+**Evidencia de entrevista**
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/interviews/seg3/marco-salvador.png" alt="Entrevista a Marco Salvador" width="700"/>
+</p>
+
+**Resumen de la entrevista**
+
+A partir de la entrevista realizada a Marco Salvador, de 20 años y residente de Villa María del Triunfo, se identificó que participa en la administración de una pequeña empresa familiar del sector comercial, apoyando principalmente en actividades administrativas, supervisión de operaciones y toma de decisiones relacionadas con gastos y mejoras del negocio. Durante sus actividades utiliza principalmente un teléfono celular y una computadora, mientras que WhatsApp y el correo electrónico se encuentran entre sus principales medios de comunicación.
+
+Respecto a la seguridad patrimonial, señaló que una de sus principales preocupaciones es el ingreso de personas no autorizadas y la posibilidad de pérdida de productos o equipos. La empresa utiliza cámaras de seguridad, cerraduras y mecanismos de control de ingreso. Asimismo, indicó que cuando se encuentra fuera de las instalaciones depende principalmente de llamadas, mensajes o de la revisión de cámaras para conocer el estado de la empresa, por lo que considera útil disponer de una herramienta que centralice la información y permita consultar remotamente el estado de la seguridad.
+
+Al evaluar nuevas tecnologías, considera importantes factores como la confiabilidad, el costo, la facilidad de instalación y el soporte. En relación con SECURIOT, destacó principalmente la utilidad de recibir alertas en tiempo real indicando qué ocurrió y en qué zona se produjo el evento. También manifestó preocupación respecto a las falsas alarmas, debido a que una cantidad excesiva de notificaciones incorrectas podría provocar que los usuarios dejen de prestar atención a las alertas.
+
+---
+
+##### Entrevista 2: Aldair Salas
+
+| Dato | Información |
+|---|---|
+| **Nombres y apellidos** | Aldair Salas |
+| **Edad** | 21 años |
+| **Distrito de residencia** | San Borja |
+| **Segmento** | Gerente o Dueño de Pyme Industrial |
+| **Medio de entrevista** | Google Meet |
+| **Inicio** | 00:00 |
+| **Duración** | 14:42 |
+| **Video de la entrevista** | [Ver entrevista en Google Drive](https://drive.google.com/drive/folders/1jC7MRUZ4k6w8-7biKTMAuQqbS1o10VYm?usp=sharing) |
+
+**Evidencia de entrevista**
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/interviews/seg3/aldair-salas.png" alt="Entrevista a Aldair Salas" width="700"/>
+</p>
+
+**Resumen de la entrevista**
+
+A partir de la entrevista realizada a Aldair Salas, de 21 años y residente de San Borja, se identificó que participa en la administración de un negocio familiar dedicado a la distribución y comercialización de productos. Sus actividades se encuentran relacionadas principalmente con la organización de operaciones, compras, control de gastos y coordinación con el personal.
+
+Su principal preocupación en materia de seguridad se relaciona con la protección de las zonas donde se almacena mercadería y con evitar que personas ingresen a espacios para los que no poseen autorización. Actualmente se utilizan diferentes mecanismos de seguridad, como cámaras, cerraduras, iluminación y control humano de accesos. Uno de los problemas identificados es que las herramientas utilizadas se encuentran separadas entre sí, obligando a consultar distintas fuentes de información.
+
+Aldair considera beneficioso disponer de una plataforma que permita visualizar remotamente y desde un único lugar el estado de las diferentes instalaciones. En relación con SECURIOT, valoró especialmente la posibilidad de centralizar las alertas y mantener un registro automático de los incidentes. También considera importante que la plataforma sea sencilla de utilizar y que los usuarios reciban una adecuada capacitación para aprovechar sus funcionalidades.
+
+---
+
+##### Entrevista 3: Dania Cárdenas
+
+| Dato | Información |
+|---|---|
+| **Nombres y apellidos** | Dania Cárdenas |
+| **Edad** | 21 años |
+| **Distrito de residencia** | Miraflores |
+| **Segmento** | Gerente o Dueño de Pyme Industrial |
+| **Medio de entrevista** | Google Meet |
+| **Inicio** | 00:00 |
+| **Duración** | 4:57 |
+| **Video de la entrevista** | [Ver entrevista en Google Drive](https://drive.google.com/drive/folders/1jC7MRUZ4k6w8-7biKTMAuQqbS1o10VYm?usp=sharing) |
+
+**Evidencia de entrevista**
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/interviews/seg3/dania-cardenas.png" alt="Entrevista a Dania Cárdenas" width="700"/>
+</p>
+
+**Resumen de la entrevista**
+
+A partir de la entrevista realizada a Dania Cárdenas, de 21 años y residente de Miraflores, se identificó que participa en la administración de una pequeña empresa familiar, apoyando principalmente en la coordinación de actividades, supervisión general de las operaciones y control de determinados gastos.
+
+Entre sus principales preocupaciones se encuentra el ingreso de personas no autorizadas a determinadas áreas y la protección de productos y equipos que permanecen dentro de las instalaciones. La empresa utiliza cámaras de seguridad, cerraduras y controles manuales de ingreso. Para comunicar situaciones fuera de lo habitual se utilizan principalmente llamadas telefónicas y aplicaciones de mensajería.
+
+Dania considera que uno de los principales problemas de los mecanismos tradicionales es que las cámaras permiten observar o revisar lo sucedido, pero siguen dependiendo de que una persona detecte que algo está ocurriendo. Respecto a SECURIOT, identificó las alertas inmediatas en dispositivos móviles como una de las funcionalidades de mayor valor. Considera que deberían comunicar de manera clara qué ocurrió y dónde ocurrió. Asimismo, considera importante disponer de un historial de incidentes que permita evaluar con el tiempo la efectividad de las medidas de seguridad.
+
+---
+
 ### 2.2.3. Análisis de entrevistas
 
-_Pendiente de desarrollo._
+El análisis de las entrevistas se realizó de manera independiente para cada uno de los tres segmentos objetivo de SECURIOT. En total se consideraron **9 entrevistas**, distribuidas equitativamente en **3 participantes por segmento**.
+
+Debido al tamaño de la muestra, los porcentajes presentados tienen un propósito descriptivo y representan únicamente los patrones encontrados entre los participantes entrevistados. Para cada segmento, una coincidencia entre los tres entrevistados representa el **100%**, entre dos representa el **66.7%** y en un entrevistado representa el **33.3%**.
+
+---
+
+#### Análisis del Segmento 1: Administrador de Seguridad Patrimonial
+
+El segmento de Administradores de Seguridad Patrimonial estuvo compuesto por tres participantes con edades de **42, 52 y 53 años**, obteniéndose una edad promedio de aproximadamente **49 años**. Los entrevistados desarrollan actividades de supervisión de seguridad dentro de instalaciones industriales, logísticas o productivas y poseen responsabilidad sobre sistemas de vigilancia, accesos y respuesta ante incidentes.
+
+A partir de las entrevistas se identificó una fuerte dependencia de infraestructuras de seguridad compuestas por múltiples herramientas que no necesariamente se encuentran integradas. Los tres entrevistados mencionaron el uso combinado de cámaras, controles físicos, registros manuales y personal de vigilancia.
+
+| Característica identificada | Entrevistados | Porcentaje |
+|---|---:|---:|
+| Utilizan sistemas de seguridad compuestos por diferentes herramientas y mecanismos físicos | 3 de 3 | 100% |
+| Presentan dificultades para identificar rápidamente personas autorizadas y no autorizadas | 3 de 3 | 100% |
+| Reportan problemas relacionados con falsas alarmas | 3 de 3 | 100% |
+| Presentan dificultades de comunicación durante la atención de incidentes | 3 de 3 | 100% |
+| La respuesta ante incidentes depende principalmente de la intervención física del personal | 3 de 3 | 100% |
+| La recopilación de evidencias y elaboración de reportes requiere procesos manuales o lentos | 3 de 3 | 100% |
+| Mostraron interés en automatizar la detección, trazabilidad y generación de alertas | 3 de 3 | 100% |
+| Mencionaron requisitos técnicos de confiabilidad, integración o adaptación al entorno existente | 3 de 3 | 100% |
+| Consideran necesario respetar las condiciones y normas de evacuación de las instalaciones | 3 de 3 | 100% |
+
+Uno de los hallazgos más relevantes es la dificultad para identificar personas dentro de zonas críticas. En los tres casos existen factores que complican el reconocimiento visual, como la presencia de contratistas, alta rotación de trabajadores, prendas similares o el uso de equipos de protección personal.
+
+También se identificó un problema generalizado relacionado con las **falsas alarmas**. Los tres participantes mencionaron este fenómeno, producido por factores ambientales, animales u otras condiciones del entorno. Estas alertas requieren verificación humana y consumen tiempo del personal, aumentando el riesgo de que una alerta real no reciba la prioridad necesaria.
+
+Asimismo, el **100% de los entrevistados depende de la intervención física del personal de vigilancia** para verificar o contener una situación. Esto demuestra que los sistemas actuales funcionan principalmente como herramientas de observación y no necesariamente como sistemas capaces de apoyar activamente la respuesta.
+
+Otro problema común es la generación de evidencia y reportes. Los entrevistados señalaron dificultades para consultar grabaciones, integrar registros y elaborar indicadores posteriormente. En algunos casos estas actividades requieren varias horas o incluso días de trabajo.
+
+En consecuencia, para este segmento SECURIOT debe priorizar:
+
+- Alertas automáticas oportunas y verificables.
+- Reducción de falsos positivos.
+- Identificación y validación de accesos.
+- Centralización de eventos y evidencias.
+- Generación de información histórica e indicadores.
+- Compatibilidad con infraestructura previamente instalada.
+- Operación adecuada en condiciones industriales adversas.
+- Cumplimiento de las normas de seguridad y evacuación.
+
+---
+
+#### Análisis del Segmento 2: Personal de Vigilancia In Situ
+
+El segmento de Personal de Vigilancia In Situ estuvo compuesto por participantes de **20, 40 y 41 años**, obteniéndose una edad promedio aproximada de **33.7 años**.
+
+Los tres participantes desarrollan actividades relacionadas con rondas, control de accesos, supervisión de instalaciones y respuesta directa ante posibles incidentes. Debido a la naturaleza de sus funciones, trabajan principalmente en movimiento y requieren recibir información mientras se desplazan dentro de las instalaciones.
+
+| Característica identificada | Entrevistados | Porcentaje |
+|---|---:|---:|
+| Realizan rondas, control de accesos o verificación directa de incidentes | 3 de 3 | 100% |
+| Utilizan celular y radio como herramientas de comunicación | 3 de 3 | 100% |
+| Presentan dificultades relacionadas con señal, batería o uso del dispositivo durante las rondas | 3 de 3 | 100% |
+| Consideran importante conocer la ubicación exacta de una alerta | 3 de 3 | 100% |
+| Consideran útil disponer de una imagen o información contextual antes de llegar al incidente | 3 de 3 | 100% |
+| Identifican las falsas alarmas como un problema que debe reducirse | 3 de 3 | 100% |
+| Prefieren alertas simples, rápidas y fáciles de interpretar | 3 de 3 | 100% |
+| Actualmente elaboran o utilizan registros manuales de incidencias | 2 de 3 | 66.7% |
+| Manifestaron recibir información insuficiente antes de acudir físicamente a una alerta | 2 de 3 | 66.7% |
+
+El hallazgo principal de este segmento es que el personal debe responder físicamente ante una alerta, pero no siempre dispone de suficiente información antes de desplazarse hacia el lugar.
+
+Julieta Cordero y Christopher Cabán señalaron explícitamente que pueden ser enviados a verificar una posible intrusión sin conocer previamente la cantidad de personas involucradas o las características de la situación. Esta condición incrementa la incertidumbre y el riesgo durante la respuesta.
+
+Los tres participantes coincidieron en que una alerta útil debería proporcionar información inmediata relacionada con:
+
+- Ubicación exacta.
+- Tipo de evento.
+- Imagen o referencia visual.
+- Información suficiente para determinar la prioridad de la situación.
+
+Otro patrón importante corresponde a las limitaciones tecnológicas del entorno de trabajo. El **100% utiliza celular y radio**, pero también se identificaron dificultades relacionadas con pérdida de señal, consumo de batería y dificultad para utilizar una pantalla mientras se realizan desplazamientos.
+
+Las falsas alarmas constituyen nuevamente un problema importante. Julieta y Christopher describieron múltiples falsas alarmas durante sus turnos, mientras que Samuel señaló que reducir este tipo de notificaciones es indispensable para evitar que el personal pierda confianza o atención frente a futuras alertas.
+
+En términos de experiencia de usuario, los tres entrevistados mostraron preferencia por una solución que requiera pocas interacciones y presente solamente la información necesaria durante una emergencia.
+
+Por lo tanto, para este segmento SECURIOT debe priorizar:
+
+- Aplicación móvil orientada a acciones rápidas.
+- Alertas con ubicación exacta.
+- Evidencia visual inmediata del evento.
+- Información clara sobre el tipo de incidente.
+- Interfaz sencilla y con pocos pasos.
+- Alertas perceptibles en ambientes industriales.
+- Bajo consumo de batería.
+- Funcionamiento adecuado ante conectividad limitada.
+- Reducción significativa de falsas alarmas.
+
+---
+
+#### Análisis del Segmento 3: Gerente o Dueño de Pyme Industrial
+
+El tercer segmento estuvo compuesto por tres participantes de **20, 21 y 21 años**, obteniéndose una edad promedio aproximada de **20.7 años**.
+
+Los tres entrevistados participan en actividades administrativas, de supervisión o de toma de decisiones dentro de pequeñas empresas y mostraron preocupación principalmente por la protección de activos y el ingreso de personas no autorizadas.
+
+| Característica identificada | Entrevistados | Porcentaje |
+|---|---:|---:|
+| Consideran el acceso no autorizado una preocupación de seguridad | 3 de 3 | 100% |
+| Utilizan actualmente cámaras, cerraduras o controles tradicionales de acceso | 3 de 3 | 100% |
+| Perciben valor en automatizar o centralizar información de seguridad | 3 de 3 | 100% |
+| Consideran valiosas las alertas automáticas ante posibles incidentes | 3 de 3 | 100% |
+| Valoran poder supervisar remotamente o centralizar información | 2 de 3 | 66.7% |
+| Consideran importante disponer de un historial automático de incidentes | 2 de 3 | 66.7% |
+| Manifestaron explícitamente preocupación por falsas alarmas | 1 de 3 | 33.3% |
+
+En los tres casos se identificó que las empresas todavía utilizan mecanismos tradicionales como cámaras, cerraduras y controles de ingreso. Si bien estas herramientas permiten cierto nivel de protección, los entrevistados identificaron limitaciones relacionadas con la necesidad de supervisión humana y la dispersión de información.
+
+Marco Salvador destacó la necesidad de poder conocer remotamente el estado de la empresa y recibir alertas en tiempo real. Aldair Salas hizo énfasis en centralizar herramientas que actualmente funcionan de manera separada y mantener un registro automático de los incidentes. Dania Cárdenas señaló que las cámaras permiten revisar lo ocurrido, pero siguen dependiendo de que una persona detecte previamente una situación.
+
+Por lo tanto, los tres entrevistados mostraron interés en pasar de un modelo principalmente reactivo a uno donde la tecnología participe activamente en la detección y comunicación del incidente.
+
+También se identificó interés en la generación de información histórica. Aldair y Dania destacaron el valor de conservar registros de incidentes que posteriormente permitan revisar qué ocurrió y evaluar el desempeño de las medidas de seguridad.
+
+Para este segmento SECURIOT debe priorizar:
+
+- Visibilidad general del estado de seguridad de la empresa.
+- Alertas automáticas ante situaciones relevantes.
+- Acceso remoto a información de seguridad.
+- Centralización de diferentes fuentes de información.
+- Historial de eventos e incidentes.
+- Información comprensible para usuarios no especializados en seguridad.
+- Evidencia que permita evaluar el funcionamiento y valor de la solución.
+
+---
+
+#### Análisis general de los tres segmentos
+
+Al comparar los nueve entrevistados se identifican necesidades diferentes de acuerdo con el rol que cada segmento desempeña dentro del proceso de seguridad.
+
+El **Administrador de Seguridad Patrimonial** necesita controlar el sistema, revisar evidencias, reducir falsas alarmas y contar con información que permita supervisar la operación.
+
+El **Personal de Vigilancia In Situ** necesita información inmediata que le permita responder físicamente ante una situación de riesgo con mayor rapidez y menor incertidumbre.
+
+El **Gerente o Dueño de Pyme Industrial** necesita una visión simplificada de la seguridad, acceso remoto a información y evidencia que permita determinar si la solución está generando valor para la organización.
+
+A pesar de estas diferencias, se identificaron patrones transversales.
+
+| Hallazgo transversal | Entrevistados | Porcentaje |
+|---|---:|---:|
+| Se identifica valor en contar con alertas más rápidas, automáticas o contextualizadas | 9 de 9 | 100% |
+| Las falsas alarmas aparecen explícitamente como una preocupación relevante | 7 de 9 | 77.8% |
+| Existen procesos fragmentados, manuales o dependientes de distintas herramientas | 7 de 9 | 77.8% |
+| Los factores técnicos del entorno, integración o conectividad condicionan el uso de la solución | 6 de 9 | 66.7% |
+
+El principal patrón transversal es la necesidad de **reducir el tiempo entre la detección de un evento y la respuesta del personal**. Los tres segmentos perciben valor en recibir información automáticamente en lugar de depender únicamente de observación humana, rondas o revisión posterior de cámaras.
+
+También se observa que SECURIOT no debería limitarse a generar una alarma. La información entregada debe tener suficiente contexto para permitir que el usuario comprenda rápidamente la situación. De acuerdo con las entrevistas, los datos más relevantes son la **ubicación, tipo de evento, evidencia visual, hora y estado de la alerta**.
+
+La reducción de falsas alarmas constituye otro aspecto crítico. El **77.8% de los participantes** manifestó explícitamente preocupación por este problema. Una cantidad elevada de falsas alertas puede incrementar la carga operativa y reducir progresivamente la confianza de los usuarios en la plataforma.
+
+Finalmente, los resultados muestran que SECURIOT debe ofrecer experiencias diferentes según el rol del usuario. El personal de vigilancia necesita una experiencia móvil sencilla y orientada a la respuesta inmediata; los administradores necesitan herramientas de monitoreo, configuración, trazabilidad y análisis; mientras que los gerentes requieren información consolidada que permita supervisar resultados y evaluar el valor de la solución.
+
+---
+
+#### Principales hallazgos para SECURIOT
+
+A partir del análisis de las nueve entrevistas se establecen los siguientes hallazgos principales:
+
+1. **La alerta debe proporcionar contexto y no únicamente advertir de un evento.**  
+   Debe permitir conocer rápidamente qué ocurrió, dónde ocurrió y, cuando sea posible, mostrar evidencia visual.
+
+2. **La reducción de falsas alarmas es fundamental para mantener la confianza en el sistema.**  
+   Una plataforma que genere demasiadas alertas incorrectas puede aumentar la carga del personal y provocar que alertas reales sean ignoradas.
+
+3. **El personal de vigilancia necesita una experiencia específicamente diseñada para movilidad.**  
+   La aplicación debe considerar condiciones reales como poca señal, consumo de batería, ruido, iluminación deficiente y necesidad de operar rápidamente.
+
+4. **Los administradores requieren trazabilidad y centralización.**  
+   SECURIOT debe facilitar la consulta de eventos, evidencias y datos históricos sin depender de diferentes grabadores, registros manuales o sistemas separados.
+
+5. **La solución debe complementar la infraestructura existente.**  
+   La compatibilidad con cámaras, dispositivos y mecanismos ya instalados puede ser determinante para facilitar su adopción y reducir costos de implementación.
+
+6. **La solución debe apoyar la toma de decisiones en distintos niveles.**  
+   Mientras el vigilante necesita información operacional inmediata, el administrador requiere control y análisis, y la gerencia necesita información resumida sobre resultados e incidentes.
+
+7. **La automatización debe mantener mecanismos de validación humana.**  
+   La tecnología debe ayudar a priorizar y detectar eventos, pero debe permitir que el personal confirme situaciones ambiguas antes de ejecutar acciones críticas.
+
+En conjunto, los hallazgos respaldan la propuesta de SECURIOT como una solución orientada a transformar un modelo de seguridad principalmente reactivo y fragmentado en uno **proactivo, centralizado y basado en alertas contextualizadas**, manteniendo al personal responsable dentro del proceso de validación y respuesta.
 
 ## 2.3. Needfinding
-
-_Pendiente de desarrollo._
 
 ### 2.3.1. User Personas
 
