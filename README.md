@@ -1125,11 +1125,51 @@ _Pendiente de desarrollo._
 
 ### 2.3.3. User Journey Mapping
 
-_Pendiente de desarrollo._
+Los siguientes User Journey Maps representan el recorrido actual de los dos arquetipos definidos en la sección 2.3.1. Ambos mapas describen el escenario previo a la implementación de SECURIOT, desde que aparece una posible anomalía hasta que el incidente queda registrado. Para su elaboración se tomaron como base los patrones comunes identificados en las entrevistas del apartado 2.2, especialmente los canales utilizados, los tiempos de respuesta, las limitaciones del entorno y los puntos de mayor tensión durante la atención.
+
+#### Administrador de Seguridad Patrimonial
+
+En el caso de Carlos Mendoza, el recorrido comienza con la supervisión de cámaras, controles de acceso y bitácoras que funcionan de manera separada. Cuando se presenta una anomalía, debe decidir si se trata de una amenaza real o de otra falsa alarma, coordinar con el personal de vigilancia y esperar la verificación física. El momento más crítico ocurre durante la validación y contención, porque la comunicación puede fallar y no existe un mecanismo centralizado que reúna el contexto del evento. Después de atenderlo, todavía debe consolidar grabaciones, registros y horarios para preparar la evidencia.
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/needfinding/user-journey-administrador.png" alt="User Journey Map As-Is de Carlos Mendoza, Administrador de Seguridad Patrimonial" width="1100"/>
+</p>
+
+Este recorrido muestra que el problema no se limita a detectar una intrusión. La mayor carga aparece al confirmar la alerta, coordinar una respuesta segura y reconstruir posteriormente lo sucedido. Por ello, una solución para este segmento debe reducir la fragmentación de la información sin quitar al administrador el control de la validación.
+
+#### Personal de Vigilancia In Situ
+
+Para Luis Ramírez, el recorrido parte de una ronda habitual y cambia cuando recibe un aviso por radio, llamada o WhatsApp. En ese momento suele conocer muy poco sobre la situación y necesita pedir datos adicionales antes de desplazarse. La experiencia alcanza su punto de mayor tensión mientras interpreta el aviso y llega al lugar, pues debe enfrentar zonas oscuras, obstáculos, interferencia y una posible amenaza sin suficiente contexto. Una vez verificado el incidente, el proceso termina con un registro manual que puede tomar entre 30 y 40 minutos.
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/needfinding/user-journey-vigilante.png" alt="User Journey Map As-Is de Luis Ramírez, Personal de Vigilancia In Situ" width="1100"/>
+</p>
+
+El mapa evidencia que la rapidez de una alerta no basta por sí sola. El vigilante necesita recibir ubicación, tipo de evento y una referencia visual antes de exponerse en campo. También requiere una interacción breve, perceptible en ambientes industriales y capaz de funcionar bajo restricciones de batería o conectividad.
 
 ### 2.3.4. Empathy Mapping
 
-_Pendiente de desarrollo._
+Los Empathy Maps reúnen lo que cada arquetipo expresa, piensa, hace y siente frente al proceso actual de seguridad patrimonial. Las frases incluidas son síntesis representativas de los hallazgos y no citas textuales de una sola entrevista. Esta distinción permite conservar los patrones compartidos por los participantes sin atribuir a una persona afirmaciones que corresponden al conjunto del segmento.
+
+#### Administrador de Seguridad Patrimonial
+
+Carlos busca mantener el control de la operación y responder con evidencia verificable. Aunque está dispuesto a incorporar automatización, su confianza depende de la precisión de las alertas, la compatibilidad con la infraestructura instalada y el respeto por las rutas de evacuación. Su frustración se concentra en los puntos ciegos, las falsas alarmas y el tiempo que emplea en reunir información dispersa para auditorías o reportes gerenciales.
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/needfinding/empathy-map-administrador.png" alt="Empathy Map de Carlos Mendoza, Administrador de Seguridad Patrimonial" width="1100"/>
+</p>
+
+El mapa permite observar que este usuario no necesita recibir más datos, sino información mejor organizada y confiable. SECURIOT debe ayudarlo a verificar eventos, coordinar al equipo y consultar evidencia desde un mismo entorno, manteniendo siempre la posibilidad de intervención humana.
+
+#### Personal de Vigilancia In Situ
+
+Luis desarrolla sus tareas bajo presión y en constante movimiento. Antes de intervenir necesita entender qué está ocurriendo, dónde se encuentra el evento y qué nivel de riesgo puede enfrentar. Las alertas poco claras, la pérdida de señal y las verificaciones manuales aumentan su incertidumbre; además, las falsas alarmas y el registro posterior elevan el cansancio durante turnos extensos.
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/needfinding/empathy-map-vigilante.png" alt="Empathy Map de Luis Ramírez, Personal de Vigilancia In Situ" width="1100"/>
+</p>
+
+Para este arquetipo, la experiencia debe priorizar información inmediata y acciones simples. Una alerta útil debe ser visible y sonora, mostrar ubicación e imagen, y permitir registrar el resultado con pocos pasos. Estas condiciones responden directamente a las restricciones de señal, batería, ruido e iluminación descritas por los entrevistados.
 
 ## 2.4. Big Picture EventStorming
 
