@@ -1101,7 +1101,7 @@ En conjunto, los hallazgos respaldan la propuesta de SECURIOT como una solución
 
 ### 2.3.1. User Personas
 
-Las siguientes User Personas sintetizan los patrones identificados en las entrevistas de los segmentos Administrador de Seguridad Patrimonial y Personal de Vigilancia In Situ. Cada ficha representa un arquetipo construido a partir de los objetivos, necesidades, frustraciones, comportamientos, herramientas y motivaciones documentados en el apartado 2.2.
+Las siguientes User Personas sintetizan los patrones identificados en las entrevistas de los segmentos Administrador de Seguridad Patrimonial, Personal de Vigilancia In Situ y Gerente o Dueño de Pyme Industrial. Cada ficha representa un arquetipo construido a partir de los objetivos, necesidades, frustraciones, comportamientos, herramientas y motivaciones documentados en el apartado 2.2.
 
 #### Administrador de Seguridad Patrimonial
 
@@ -1118,6 +1118,14 @@ Las siguientes User Personas sintetizan los patrones identificados en las entrev
 </p>
 
 **Interpretación analítica.** Este arquetipo opera bajo presión, en movimiento y con conectividad limitada. SECURIOT debe priorizar información inmediata y fácil de interpretar, reducir los pasos durante la atención y considerar las restricciones reales de batería, señal, ruido e iluminación del entorno industrial.
+
+#### Gerente o Dueño de Pyme Industrial
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/user-personas/user-persona-gerente-pyme.png" alt="User Persona del Gerente o Dueño de Pyme Industrial" width="1100"/>
+</p>
+
+**Interpretación analítica.** Este arquetipo necesita una visión clara y consolidada de la seguridad para supervisar el negocio incluso cuando no se encuentra en las instalaciones. Las alertas comprensibles, el acceso remoto y el historial de incidentes le permiten proteger los activos y evaluar el funcionamiento y el valor de las medidas de seguridad.
 
 ### 2.3.2. User Task Matrix
 
