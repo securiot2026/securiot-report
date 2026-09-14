@@ -1129,7 +1129,29 @@ Las siguientes User Personas sintetizan los patrones identificados en las entrev
 
 ### 2.3.2. User Task Matrix
 
-_Pendiente de desarrollo._
+La User Task Matrix compara las tareas actuales del Administrador de Seguridad Patrimonial, el Personal de Vigilancia In Situ y el Gerente o Dueño de Pyme Industrial. Cada actividad se valora cualitativamente por su frecuencia e importancia según las responsabilidades, rutinas y situaciones descritas en las entrevistas y sintetizadas en las User Personas. La frecuencia se considera alta cuando la tarea es continua o propia de cada turno, media cuando es periódica o depende de la ocurrencia de incidentes y baja cuando se realiza ocasionalmente; la importancia refleja su incidencia sobre la protección de personas, activos y operaciones.
+
+| Task | Administrador de Seguridad Patrimonial |  | Personal de Vigilancia In Situ |  | Gerente o Dueño de Pyme Industrial |  |
+|---|---:|---:|---:|---:|---:|---:|
+|  | Frecuencia | Importancia | Frecuencia | Importancia | Frecuencia | Importancia |
+| Supervisar instalaciones y zonas de seguridad | Alta | Alta | Alta | Alta | Media | Alta |
+| Controlar accesos peatonales y vehiculares | Alta | Alta | Alta | Alta | Baja | Alta |
+| Verificar identidades y autorizaciones | Media | Alta | Alta | Alta | No aplica | No aplica |
+| Realizar rondas de vigilancia | No aplica | No aplica | Alta | Alta | No aplica | No aplica |
+| Verificar alertas e incidentes | Alta | Alta | Alta | Alta | Baja | Alta |
+| Coordinar la respuesta ante incidentes | Media | Alta | Media | Alta | Baja | Alta |
+| Comunicar y escalar situaciones de riesgo | Media | Alta | Media | Alta | Baja | Alta |
+| Registrar ingresos, incidencias y novedades | Media | Alta | Alta | Alta | No aplica | No aplica |
+| Recopilar y revisar evidencia de incidentes | Media | Alta | Media | Media | Baja | Alta |
+| Elaborar reportes e indicadores de seguridad | Media | Alta | No aplica | No aplica | No aplica | No aplica |
+| Revisar resultados de las medidas de seguridad | Media | Alta | No aplica | No aplica | Media | Alta |
+| Decidir gastos y mejoras de seguridad | Baja | Media | No aplica | No aplica | Media | Alta |
+
+Las tareas de mayor frecuencia se concentran en la operación cotidiana. El Administrador de Seguridad Patrimonial supervisa continuamente instalaciones, zonas, accesos y alertas, mientras que el Personal de Vigilancia In Situ añade la ejecución de rondas, la verificación directa y el registro de novedades durante cada turno. En el caso del Gerente o Dueño de Pyme Industrial, la supervisión general y la revisión de resultados presentan una frecuencia media, pues corresponden a actividades periódicas de gestión y no a la vigilancia permanente.
+
+Las actividades de mayor importancia son la supervisión de las instalaciones, el control y la validación de accesos, la verificación de incidentes y la coordinación de la respuesta. Estas tareas inciden directamente en la protección de personas, productos, equipos y operaciones. La supervisión, la atención de incidentes, la comunicación de riesgos y la revisión de evidencias constituyen los principales puntos de coincidencia entre dos o más arquetipos, aunque cada uno participa con un alcance diferente.
+
+Las diferencias responden al nivel de responsabilidad. El Personal de Vigilancia In Situ concentra las tareas operativas y la intervención física; el Administrador de Seguridad Patrimonial coordina, supervisa, consolida evidencia y elabora reportes; y el Gerente o Dueño de Pyme Industrial revisa resultados y toma decisiones sobre gastos y mejoras. De esta manera, la matriz distingue la ejecución en campo, la supervisión de la operación de seguridad y la gestión estratégica del negocio sin asociar las tareas a una herramienta tecnológica específica.
 
 ### 2.3.3. User Journey Mapping
 
