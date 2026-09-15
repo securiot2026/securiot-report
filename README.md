@@ -424,15 +424,15 @@ El mercado de seguridad patrimonial en el Perú no es un espacio vacío. Convive
 
 ### 2.1.1. Análisis competitivo
 
-**Competidor 1: Prosegur Perú.** Empresa global de seguridad física con fuerte presencia en el país: vigilancia presencial, patrullaje móvil y un centro de operaciones remoto (iSOC) que suma cámaras y reconocimiento inteligente como capa adicional sobre el modelo de guardias (Prosegur, s.f.).
+**Prosegur Perú.** Empresa global de seguridad física con fuerte presencia en el país: vigilancia presencial, patrullaje móvil y un centro de operaciones remoto (iSOC) que suma cámaras y reconocimiento inteligente como capa adicional sobre el modelo de guardias (Prosegur, s.f.).
 
-**Competidor 2: Verisure Perú.** Empresa de alarmas monitoreadas del grupo Verisure/Securitas Direct, con más de 35 años en el país, instalación inalámbrica y una línea específica para negocios (Verisure, s.f.).
+**Verisure Perú.** Empresa de alarmas monitoreadas del grupo Verisure/Securitas Direct, con más de 35 años en el país, instalación inalámbrica y una línea específica para negocios (Verisure, s.f.).
 
-**Competidor 3: Verkada.** Plataforma estadounidense de seguridad física gestionada en la nube (cámaras, sensores, control de accesos con IA), en expansión agresiva en Latinoamérica: la propia empresa reportó un crecimiento de reservas de 300% interanual en la región y nombró en 2026 un nuevo líder comercial para Latinoamérica con sede en Ciudad de México (Infobae, 2026).
+**Verkada.** Plataforma estadounidense de seguridad física gestionada en la nube (cámaras, sensores, control de accesos con IA), en expansión agresiva en Latinoamérica: la propia empresa reportó un crecimiento de reservas de 300% interanual en la región y nombró en 2026 un nuevo líder comercial para Latinoamérica con sede en Ciudad de México (Infobae, 2026).
 
 #### Competitive Analysis Landscape
 
-| | SecurIoT (su startup) | Competidor 1: Prosegur Perú | Competidor 2: Verisure Perú | Competidor 3: Verkada |
+| | SecurIoT | Prosegur Perú | Verisure Perú | Verkada |
 |---|---|---|---|---|
 | **Overview** | Plataforma peruana de seguridad patrimonial para pymes industriales, logísticas y comerciales medianas, con dispositivos IoT en accesos y perímetros, procesamiento en el borde y gestión centralizada en la nube. | Seguridad física tradicional con capa tecnológica adicional (iSOC): vigilancia presencial, patrullaje móvil, CCTV y reconocimiento inteligente. | Alarmas monitoreadas para hogar y comercio pequeño, instalación inalámbrica, grabación continua y despacho ante emergencias. | Cámaras, sensores y control de accesos gestionados en la nube con IA embebida, para clientes enterprise. |
 | **Ventaja competitiva** | Detección y decisión ocurren en el dispositivo mismo, sin depender de un operador humano viendo cámaras ni de un kit aislado por local; un solo panel para varias sedes, a un costo pensado para pyme y no para gran corporación. | Décadas de trayectoria, cobertura física real (guardias, respuesta en sitio) y cartera ya establecida de clientes industriales y corporativos. | Marca reconocida en seguridad residencial/comercial, instalación rápida, despacho ante emergencias ya integrado al servicio. | Plataforma madura y probada en clientes enterprise, video + accesos + sensores en un solo producto, crecimiento regional fuerte. |
