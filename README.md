@@ -592,19 +592,7 @@ _Pendiente de desarrollo._
 
 ### 4.1.2. Context Mapping
 
-```mermaid
-flowchart LR
-  IAM["Identidad y Acceso\n(generico)"]
-  ZD["Gestion de Zonas\ny Dispositivos\n(soporte)"]
-  MA["Monitoreo y Alertas\n(core)"]
-  EDR["Deteccion y Relay\nde Borde\n(core)"]
-  DEV(["Dispositivo fisico\nESP32-CAM"])
-
-  IAM -- "Customer/Supplier: id de usuario como lenguaje publicado" --> ZD
-  ZD -- "Customer/Supplier: id de zona/dispositivo como referencia opaca" --> MA
-  EDR -- "Customer/Supplier + Anticorruption Layer: el relay traduce su modelo local al contrato POST /telemetry" --> MA
-  DEV -- "Conformist: implementa el contrato HTTP de Edge tal cual, sin traduccion propia" --> EDR
-```
+![Structurizr bounded-context map](docs/architecture/diagrams/context-map.png)
 
 Ningun contexto llama al de Identidad y Acceso en tiempo de ejecucion mas alla del login: el JWT es autocontenido y cada contexto lo valida por su cuenta contra el mismo secreto compartido, asi que la relacion con Identidad y Acceso es de tipo Published Language mas que de llamada activa. Monitoreo y Alertas y Gestion de Zonas y Dispositivos hoy comparten una unica base PostgreSQL, lo cual simplifica el MVP pero es una decision a revisar si el sistema crece a multiples clientes con aislamiento de datos mas estricto.
 
@@ -636,7 +624,7 @@ El diagrama de despliegue separa explicitamente el hardware ESP32, el Edge Host 
 
 ## 4.2. Tactical-Level Domain-Driven Design
 
-Esta sección detalla, para cada uno de los cuatro bounded contexts identificados en 4.1.1.1, sus capas de Domain, Interface, Application e Infrastructure, más los diagramas de componentes, clases y base de datos a nivel de código.
+Esta sección detalla, para cada uno de los cuatro bounded contexts identificados en 4.1.1.1, sus capas de Domain, Interface, Application e Infrastructure, más los diagramas de componentes, clases y base de datos a nivel de código. Todos los diagramas tácticos se definen en el mismo modelo [Structurizr DSL](docs/architecture/workspace.dsl), se renderizan con fondo blanco y mantienen sus etiquetas en inglés.
 
 ### 4.2.1. Bounded Context: Monitoreo y Alertas
 
@@ -673,143 +661,17 @@ Los cuerpos de request se validan con DTOs de `class-validator` (`CreateReadingD
 
 #### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
 
-```mermaid
-C4Component
-  title Componentes - Bounded Context Monitoreo y Alertas
-
-  Container_Boundary(cloudapi, "Cloud API") {
-    Component(telemetryCtrl, "TelemetryController", "NestJS Controller", "POST/GET /telemetry")
-    Component(alertsCtrl, "AlertsController", "NestJS Controller", "GET /alerts")
-    Component(deviceGuard, "DeviceApiKeyGuard", "NestJS Guard", "Valida X-Device-Key contra Device")
-    Component(jwtGuard, "JwtAuthGuard", "NestJS Guard", "Valida JWT emitido por Identidad y Acceso")
-    Component(telemetrySvc, "TelemetryService", "NestJS Service", "Ingesta idempotente y consulta de lecturas")
-    Component(alertsSvc, "AlertsService", "NestJS Service", "Evaluacion de reglas y consulta de alertas")
-    ComponentDb(readingRepo, "Reading Repository", "TypeORM Repository", "Persistencia de lecturas")
-    ComponentDb(alertRepo, "Alert Repository", "TypeORM Repository", "Persistencia de alertas")
-  }
-
-  ContainerDb(clouddb, "Cloud Database", "PostgreSQL")
-  Container_Ext(edgeapi, "Edge API", "Flask", "Reenvia lecturas via relay")
-  Container_Ext(webmobile, "Web App / Mobile App", "Angular / Flutter", "Consultan lecturas y alertas")
-
-  Rel(edgeapi, telemetryCtrl, "POST /telemetry", "HTTPS/JSON, X-Device-Key")
-  Rel(webmobile, telemetryCtrl, "GET /telemetry", "HTTPS/JSON, JWT")
-  Rel(webmobile, alertsCtrl, "GET /alerts", "HTTPS/JSON, JWT")
-
-  Rel(telemetryCtrl, deviceGuard, "Usa")
-  Rel(telemetryCtrl, jwtGuard, "Usa (en GET)")
-  Rel(alertsCtrl, jwtGuard, "Usa")
-
-  Rel(telemetryCtrl, telemetrySvc, "Delega")
-  Rel(alertsCtrl, alertsSvc, "Delega")
-  Rel(telemetrySvc, alertsSvc, "evaluateRule(reading)")
-  Rel(telemetrySvc, readingRepo, "Lee y escribe")
-  Rel(alertsSvc, alertRepo, "Lee y escribe")
-  Rel(readingRepo, clouddb, "SQL")
-  Rel(alertRepo, clouddb, "SQL")
-```
+![Structurizr Monitoring and Alerts component diagram](docs/architecture/diagrams/monitoring-components.png)
 
 #### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
 
 #### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
 
-```mermaid
-classDiagram
-  class Reading {
-    +string id
-    +string readingId
-    +string deviceId
-    +string zoneId
-    +string sensorType
-    +unknown value
-    +Date recordedAt
-    +Date createdAt
-  }
-
-  class Alert {
-    +string id
-    +string zoneId
-    +string deviceId
-    +string readingId
-    +string ruleType
-    +string severity
-    +string status
-    +string message
-    +Date createdAt
-  }
-
-  class Device {
-    <<external, contexto Zonas y Dispositivos>>
-    +string id
-  }
-
-  class Zone {
-    <<external, contexto Zonas y Dispositivos>>
-    +string id
-  }
-
-  Reading "1" --> "1" Device : deviceId
-  Reading "1" --> "1" Zone : zoneId
-  Alert "1" --> "1" Device : deviceId
-  Alert "1" --> "1" Zone : zoneId
-  Alert "0..1" --> "0..1" Reading : readingId (SET NULL al borrar)
-```
+![Structurizr Monitoring and Alerts class diagram](docs/architecture/diagrams/monitoring-classes.png)
 
 #### 4.2.1.6.2. Bounded Context Database Design Diagram
 
-```mermaid
-erDiagram
-  USERS ||--o{ ZONES : owns
-  ZONES ||--o{ DEVICES : contains
-  DEVICES ||--o{ READINGS : reports
-  ZONES ||--o{ READINGS : located_in
-  DEVICES ||--o{ ALERTS : triggers
-  ZONES ||--o{ ALERTS : located_in
-  READINGS |o--o| ALERTS : originates
-
-  USERS {
-    uuid id PK
-    string email UK
-    string passwordHash
-    timestamp createdAt
-  }
-  ZONES {
-    uuid id PK
-    string name
-    string location
-    uuid ownerId FK
-    timestamp createdAt
-    timestamp updatedAt
-  }
-  DEVICES {
-    uuid id PK
-    string name
-    string apiKey UK
-    uuid zoneId FK
-    timestamp createdAt
-  }
-  READINGS {
-    uuid id PK
-    string readingId UK
-    uuid deviceId FK
-    uuid zoneId FK
-    string sensorType
-    json value
-    timestamp recordedAt
-    timestamp createdAt
-  }
-  ALERTS {
-    uuid id PK
-    uuid zoneId FK
-    uuid deviceId FK
-    uuid readingId FK "UK, nullable"
-    string ruleType
-    string severity
-    string status
-    string message
-    timestamp createdAt
-  }
-```
+![Structurizr Monitoring and Alerts database diagram](docs/architecture/diagrams/monitoring-database.png)
 
 `USERS`, `ZONES` y `DEVICES` pertenecen a otros bounded contexts (Identidad y Acceso, y Gestion de Zonas y Dispositivos) y se muestran aqui solo como referencia, porque hoy las cinco tablas viven en la misma base PostgreSQL. `READINGS` y `ALERTS` son las tablas propias de este contexto.
 
@@ -845,94 +707,19 @@ El unico controller (`AuthController`) fuerza `200 OK` en la respuesta del login
 
 #### 4.2.2.5. Bounded Context Software Architecture Component Level Diagrams
 
-```mermaid
-C4Component
-  title Componentes - Bounded Context Identidad y Acceso
-
-  Container_Boundary(cloudapi, "Cloud API") {
-    Component(authCtrl, "AuthController", "NestJS Controller", "POST /v1/auth/login")
-    Component(authSvc, "AuthService", "NestJS Service", "Valida credenciales y emite JWT")
-    Component(usersSvc, "UsersService", "NestJS Service", "Busqueda y creacion de usuarios")
-    Component(jwtStrategy, "JwtStrategy", "Passport Strategy", "Extrae y valida Bearer token")
-    Component(jwtGuard, "JwtAuthGuard", "NestJS Guard", "Protege endpoints de otros bounded contexts")
-    ComponentDb(userRepo, "User Repository", "TypeORM Repository", "Persistencia de usuarios")
-  }
-
-  ContainerDb(clouddb, "Cloud Database", "PostgreSQL / SQLite (dev)")
-  Container_Ext(webmobile, "Web App / Mobile App", "Angular / Flutter", "Inician sesion")
-  Container_Ext(otroscontexts, "Otros Bounded Contexts", "Cloud API", "Controllers protegidos por JWT (ej. Monitoreo y Alertas)")
-
-  Rel(webmobile, authCtrl, "POST /auth/login", "HTTPS/JSON, email+password")
-
-  Rel(authCtrl, authSvc, "Delega")
-  Rel(authSvc, usersSvc, "findByEmail(email)")
-  Rel(authSvc, jwtStrategy, "jwtService.sign(payload)")
-  Rel(usersSvc, userRepo, "Lee y escribe")
-  Rel(userRepo, clouddb, "SQL")
-
-  Rel(otroscontexts, jwtGuard, "Usa para proteger rutas")
-  Rel(jwtGuard, jwtStrategy, "Delega validacion de Bearer token")
-```
+![Structurizr Identity and Access component diagram](docs/architecture/diagrams/identity-components.png)
 
 #### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams
 
 #### 4.2.2.6.1. Bounded Context Domain Layer Class Diagrams
 
-```mermaid
-classDiagram
-  class User {
-    +string id
-    +string email
-    +string passwordHash
-    +Date createdAt
-  }
+![Structurizr Identity and Access class diagram](docs/architecture/diagrams/identity-classes.png)
 
-  class LoginDto {
-    +string email
-    +string password
-  }
-
-  class AuthService {
-    +validateUser(email, password) User
-    +login(email, password) access_token
-  }
-
-  class UsersService {
-    +findByEmail(email) User
-    +create(email, passwordHash) User
-  }
-
-  class JwtPayload {
-    +string sub
-    +string email
-  }
-
-  AuthService --> UsersService : usa
-  AuthService --> User : valida y lee
-  AuthService --> JwtPayload : genera
-  UsersService --> User : persiste
-
-  class Device {
-    <<external, contexto Gestion de Zonas y Dispositivos>>
-  }
-  class Zone {
-    <<external, contexto Gestion de Zonas y Dispositivos>>
-  }
-```
-
-`User` no tiene relaciones de asociacion de TypeORM hacia `Device` o `Zone`; se incluyen como stubs externos solo porque comparten la misma base de datos, no porque exista una FK explicita en `User`.
+`User` no tiene relaciones de asociacion de TypeORM hacia `Device` o `Zone`; no se incluyen en el diagrama porque compartir la misma base de datos no crea una relacion de dominio ni una FK explicita en `User`.
 
 #### 4.2.2.6.2. Bounded Context Database Design Diagram
 
-```mermaid
-erDiagram
-  USERS {
-    uuid id PK
-    string email UK
-    string passwordHash
-    timestamp createdAt
-  }
-```
+![Structurizr Identity and Access database diagram](docs/architecture/diagrams/identity-database.png)
 
 Unica tabla del contexto: PK `id` (uuid), `email` con constraint unico, `passwordHash`, `createdAt`. Sin columnas adicionales ni foreign keys.
 
@@ -977,106 +764,17 @@ Todos protegidos por `JwtAuthGuard` (contexto Identidad y Acceso) y documentados
 
 #### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams
 
-```mermaid
-C4Component
-  title Componentes - Bounded Context Gestion de Zonas y Dispositivos
-
-  Container_Boundary(cloudapi, "Cloud API") {
-    Component(zonesCtrl, "ZonesController", "NestJS Controller", "POST/GET/PATCH/DELETE /zones")
-    Component(devicesCtrl, "DevicesController", "NestJS Controller", "POST/GET /devices")
-    Component(jwtGuard, "JwtAuthGuard", "NestJS Guard", "Valida JWT emitido por Identidad y Acceso")
-    Component(zonesSvc, "ZonesService", "NestJS Service", "CRUD de zonas con ownership check")
-    Component(devicesSvc, "DevicesService", "NestJS Service", "Registro de devices, generacion de apiKey, estado online/offline")
-    ComponentDb(zoneRepo, "Zone Repository", "TypeORM Repository", "Persistencia de zonas")
-    ComponentDb(deviceRepo, "Device Repository", "TypeORM Repository", "Persistencia de devices")
-  }
-
-  ContainerDb(clouddb, "Cloud Database", "PostgreSQL")
-  Container_Ext(webmobile, "Web App / Mobile App", "Angular / Flutter", "Gestionan zonas y devices")
-  Container_Ext(identidadAcceso, "Identidad y Acceso", "User Entity", "Emite JWT, es dueno de Zone via ownerId")
-  Container_Ext(monitoreoAlertas, "Monitoreo y Alertas", "Reading Entity", "Consultado para estado online/offline del device")
-
-  Rel(webmobile, zonesCtrl, "POST/GET/PATCH/DELETE /zones", "HTTPS/JSON, JWT")
-  Rel(webmobile, devicesCtrl, "POST/GET /devices", "HTTPS/JSON, JWT")
-
-  Rel(zonesCtrl, jwtGuard, "Usa")
-  Rel(devicesCtrl, jwtGuard, "Usa")
-
-  Rel(zonesCtrl, zonesSvc, "Delega")
-  Rel(devicesCtrl, devicesSvc, "Delega")
-
-  Rel(zonesSvc, zoneRepo, "Lee y escribe")
-  Rel(devicesSvc, deviceRepo, "Lee y escribe")
-  Rel(devicesSvc, zoneRepo, "Verifica ownership de zona")
-  Rel(devicesSvc, monitoreoAlertas, "readingRepository.findOne(deviceId) para ultima lectura")
-
-  Rel(zoneRepo, clouddb, "SQL")
-  Rel(deviceRepo, clouddb, "SQL")
-  Rel(zoneRepo, identidadAcceso, "ownerId FK -> User")
-```
+![Structurizr Zone and Device Management component diagram](docs/architecture/diagrams/zones-devices-components.png)
 
 #### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams
 
 #### 4.2.3.6.1. Bounded Context Domain Layer Class Diagrams
 
-```mermaid
-classDiagram
-  class Zone {
-    +string id
-    +string name
-    +string location
-    +string ownerId
-    +User owner
-    +Date createdAt
-    +Date updatedAt
-  }
-
-  class Device {
-    +string id
-    +string name
-    +string apiKey
-    +string zoneId
-    +Zone zone
-    +Date createdAt
-  }
-
-  class User {
-    <<external, contexto Identidad y Acceso>>
-    +string id
-  }
-
-  class Reading {
-    <<external, contexto Monitoreo y Alertas>>
-    +string deviceId
-    +Date recordedAt
-  }
-
-  Zone "1" --> "1" User : ownerId
-  Device "1" --> "1" Zone : zoneId
-  Reading "*" --> "1" Device : deviceId (referencia externa)
-```
+![Structurizr Zone and Device Management class diagram](docs/architecture/diagrams/zones-devices-classes.png)
 
 #### 4.2.3.6.2. Bounded Context Database Design Diagram
 
-```mermaid
-erDiagram
-  ZONES {
-    uuid id PK
-    string name
-    string location
-    uuid ownerId FK
-    timestamp createdAt
-    timestamp updatedAt
-  }
-  DEVICES {
-    uuid id PK
-    string name
-    string apiKey UK
-    uuid zoneId FK
-    timestamp createdAt
-  }
-  ZONES ||--o{ DEVICES : "zoneId"
-```
+![Structurizr Zone and Device Management database diagram](docs/architecture/diagrams/zones-devices-database.png)
 
 `location` es nullable en la entidad `Zone`; `apiKey` no lo es, siempre se genera al crear el dispositivo y nunca queda vacio.
 
@@ -1113,84 +811,17 @@ Flujo de `/frames`, de principio a fin: valida la clave del dispositivo, valida 
 
 #### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams
 
-```mermaid
-C4Component
-  title Componentes - Bounded Context Deteccion y Relay de Borde
-
-  Container_Boundary(edgeapi, "Edge API") {
-    Component(ingestBp, "IngestBlueprint", "Flask Blueprint", "POST /ingest")
-    Component(framesBp, "FramesBlueprint", "Flask Blueprint", "POST /frames")
-    Component(deviceKeyCheck, "X-Device-Key Check", "Guard inline", "Valida header contra DEVICE_SHARED_SECRET")
-    Component(detectorFactory, "get_detector", "Factory (detection.py)", "Instancia MockDetector o YoloDetector segun DETECTION_BACKEND")
-    Component(debounceTracker, "debounce.record", "Modulo (debounce.py)", "Streak en memoria por device_id, escalate al llegar a DETECTION_DEBOUNCE_COUNT")
-    Component(panTilt, "compute_pan_tilt", "Modulo (pan_tilt.py)", "Calcula pan_delta/tilt_delta normalizados desde bbox")
-    Component(readingBuffer, "buffer_reading", "Modulo (reading_buffer.py)", "Insert idempotente por reading_id (on_conflict_ignore)")
-    ComponentDb(readingModel, "Reading Model", "Peewee Model", "Buffer local de lecturas")
-    Component(relayCycle, "relay_cycle", "Modulo (relay.py)", "Reintenta envio con backoff exponencial")
-    Component(scheduler, "BackgroundScheduler", "APScheduler", "Dispara relay_cycle cada RELAY_INTERVAL_SECONDS")
-  }
-
-  ContainerDb(edgedb, "Edge Database", "SQLite")
-  Container_Ext(esp32cam, "ESP32-CAM Firmware", "Arduino/C++", "Captura y envia frames y lecturas de sensores")
-  Container_Ext(cloudtelemetry, "Cloud API - Monitoreo y Alertas", "NestJS", "Recibe telemetria reenviada")
-
-  Rel(esp32cam, ingestBp, "POST /ingest", "HTTPS/JSON, X-Device-Key")
-  Rel(esp32cam, framesBp, "POST /frames", "HTTPS/multipart, X-Device-Key")
-
-  Rel(ingestBp, deviceKeyCheck, "Usa")
-  Rel(framesBp, deviceKeyCheck, "Usa")
-
-  Rel(framesBp, detectorFactory, "Obtiene detector")
-  Rel(framesBp, debounceTracker, "record(device_id, qualifying)")
-  Rel(framesBp, panTilt, "compute_pan_tilt(bbox, w, h)")
-  Rel(framesBp, readingBuffer, "buffer_reading(...)")
-  Rel(ingestBp, readingBuffer, "buffer_reading(...)")
-
-  Rel(readingBuffer, readingModel, "insert on_conflict_ignore")
-  Rel(readingModel, edgedb, "SQL")
-
-  Rel(scheduler, relayCycle, "invoca cada RELAY_INTERVAL_SECONDS")
-  Rel(relayCycle, readingModel, "select pendientes, update synced/backoff")
-  Rel(relayCycle, cloudtelemetry, "POST /api/v1/telemetry", "HTTPS/JSON, X-Device-Key")
-```
+![Structurizr Edge Detection and Relay component diagram](docs/architecture/diagrams/edge-components.png)
 
 #### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams
 
 #### 4.2.4.6.1. Bounded Context Domain Layer Class Diagrams
 
-```mermaid
-classDiagram
-  class Reading {
-    +CharField reading_id (unique)
-    +CharField device_id
-    +CharField zone_id
-    +CharField sensor_type
-    +CharField value
-    +DateTimeField recorded_at
-    +BooleanField synced = False
-    +IntegerField sync_attempts = 0
-    +DateTimeField next_attempt_at
-    +DateTimeField created_at
-  }
-```
+![Structurizr Edge Detection and Relay class diagram](docs/architecture/diagrams/edge-classes.png)
 
 #### 4.2.4.6.2. Bounded Context Database Design Diagram
 
-```mermaid
-erDiagram
-  READING {
-    string reading_id UK
-    string device_id
-    string zone_id
-    string sensor_type
-    string value
-    datetime recorded_at
-    boolean synced
-    int sync_attempts
-    datetime next_attempt_at
-    datetime created_at
-  }
-```
+![Structurizr Edge Detection and Relay database diagram](docs/architecture/diagrams/edge-database.png)
 
 Esta tabla vive unicamente en el SQLite local del Edge API. Es distinta de `READINGS`, la tabla de Postgres del contexto Monitoreo y Alertas (seccion 4.2.1.6.2): la del Edge es un buffer temporal de transito, la de la nube es el registro persistente que consultan el Web App y el Mobile App.
 
