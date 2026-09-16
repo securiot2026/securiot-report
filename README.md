@@ -1345,7 +1345,7 @@ El mapa evidencia que la rapidez de una alerta no basta por sí sola. El vigilan
 Para Miguel Herrera, el recorrido no ocurre en el lugar del incidente sino a la distancia. Su día transcurre supervisando la operación del negocio y, cuando surge una posible anomalía, se entera a través de una llamada o un mensaje del personal en sitio. A partir de ese aviso queda a la espera de que alguien confirme lo que sucede, con poca visibilidad directa y sin una fuente única que reúna el estado real de la seguridad. El punto de mayor tensión aparece cuando debe tomar una decisión —autorizar una acción, avisar a un tercero o acudir personalmente— con información incompleta y fragmentada. Una vez resuelto el incidente, todavía necesita reconstruir lo ocurrido a partir de reportes y grabaciones dispersas para evaluar el desempeño de sus medidas de seguridad y justificar la inversión.
 
 <p align="center">
-  <img src="docs/assets/chapter2/IMGs/needfinding/user-journey-gerente.svg" alt="User Journey Map As-Is de Miguel Herrera, Gerente o Dueño de Pyme Industrial" width="1100"/>
+  <img src="docs/assets/chapter2/IMGs/needfinding/user-journey-gerente.png" alt="User Journey Map As-Is de Miguel Herrera, Gerente o Dueño de Pyme Industrial" width="1100"/>
 </p>
 
 Este recorrido evidencia que la carga del gerente no está en la operación diaria sino en la falta de visibilidad remota y de evidencia consolidada. Una solución para este segmento debe ofrecerle una vista clara del estado de seguridad desde cualquier lugar, alertas comprensibles y un historial confiable que respalde sus decisiones sin exigirle presencia física.
@@ -1379,7 +1379,7 @@ Para este arquetipo, la experiencia debe priorizar información inmediata y acci
 Miguel evalúa la seguridad desde una mirada de negocio: le preocupa proteger los activos y la continuidad de la operación más que la ejecución diaria del monitoreo. Está dispuesto a invertir, pero necesita comprobar que esa inversión rinde y confiar en el sistema aun cuando no está presente. Su frustración se concentra en las herramientas separadas y costosas, en la dependencia de la revisión humana y en la escasa visibilidad que tiene cuando se encuentra fuera de la instalación.
 
 <p align="center">
-  <img src="docs/assets/chapter2/IMGs/needfinding/empathy-map-gerente.svg" alt="Empathy Map de Miguel Herrera, Gerente o Dueño de Pyme Industrial" width="1100"/>
+  <img src="docs/assets/chapter2/IMGs/needfinding/empathy-map-gerente.png" alt="Empathy Map de Miguel Herrera, Gerente o Dueño de Pyme Industrial" width="1100"/>
 </p>
 
 El mapa muestra que este usuario valora la tranquilidad y la evidencia por encima del detalle operativo. SECURIOT debe brindarle una visión consolidada y remota del estado de seguridad, alertas claras que no exijan interpretación técnica y un historial de incidentes que le permita decidir y demostrar el valor de la solución.
