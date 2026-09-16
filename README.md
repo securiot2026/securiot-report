@@ -610,131 +610,29 @@ Ningun contexto llama al de Identidad y Acceso en tiempo de ejecucion mas alla d
 
 ### 4.1.3. Software Architecture
 
-SecurIoT es un sistema distribuido de cuatro capas: aplicaciones cliente (Web App en Angular y Mobile App en Flutter), un servicio de nube (Cloud API en NestJS con PostgreSQL), un servicio de borde por instalacion (Edge API en Flask con buffer local SQLite) y firmware embebido (ESP32-CAM). Los siguientes diagramas siguen el modelo C4 (Landscape, Context, Container, Deployment) y estan expresados en Mermaid.
+SecurIoT es un sistema distribuido de cuatro capas: aplicaciones cliente (Web App en Angular y Mobile App en Flutter), un backend hospedado (Cloud API en NestJS con PostgreSQL), un servicio de borde por instalacion (Edge API en Flask con buffer local SQLite y reconocimiento ArcFace) y firmware embebido (ESP32-S3 con deteccion corporal YOLO). Los siguientes diagramas siguen el modelo C4 y se generan exclusivamente desde el modelo [Structurizr DSL](docs/architecture/workspace.dsl). El ESP32 ejecuta la deteccion corporal antes de enviar frames candidatos al Edge; el Edge ejecuta ArcFace, conserva los embeddings biometricos localmente y solo inicia conexiones salientes hacia el backend hospedado.
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram
 
-```mermaid
-C4Context
-  title Diagrama de Panorama del Sistema (System Landscape) - SecurIoT
-
-  Person(operador, "Operador de Seguridad", "Monitorea zonas, dispositivos y alertas desde un puesto de control")
-  Person(guardia, "Guardia de Campo", "Recibe y atiende alertas en movimiento")
-  Person(visitante, "Visitante Web", "Conoce el producto SecurIoT")
-
-  Enterprise_Boundary(b0, "Centinela Labs") {
-    System(securiot, "SecurIoT Platform", "Monitoreo de accesos, zonas restringidas y activos mediante sensores IoT, edge computing y cloud computing")
-    System(landing, "SecurIoT Landing Page", "Sitio de marketing estatico, sin integracion con la plataforma")
-  }
-
-  System_Ext(dispositivo, "Dispositivo ESP32-CAM", "Sensor perimetral con camara, PIR, reed switch y ultrasonico, instalado en el sitio del cliente")
-
-  Rel(operador, securiot, "Monitorea y administra", "HTTPS")
-  Rel(guardia, securiot, "Consulta y reacciona a alertas", "HTTPS")
-  Rel(visitante, landing, "Visita", "HTTPS")
-  Rel(dispositivo, securiot, "Envia lecturas de sensores y frames de camara", "HTTP/JSON")
-```
+![C4 System Landscape diagram](docs/architecture/diagrams/system-landscape.png)
 
 La plataforma no depende de sistemas externos de terceros (sin pasarelas de pago, SMS o email en el alcance actual). La Landing Page es un sitio informativo aislado, sin llamadas a la API.
 
 #### 4.1.3.2. Software Architecture Context Level Diagrams
 
-```mermaid
-C4Context
-  title Diagrama de Contexto - SecurIoT Platform
-
-  Person(operador, "Operador de Seguridad", "Usa el Web App para dashboard, zonas, dispositivos y alertas")
-  Person(guardia, "Guardia de Campo", "Usa el Mobile App para alertas y estado de zonas/dispositivos en movimiento")
-
-  System_Boundary(sb, "SecurIoT Platform") {
-    System(platform, "SecurIoT Platform", "Ingesta de telemetria, deteccion de intrusos y generacion de alertas para zonas y activos")
-  }
-
-  System_Ext(esp32, "Dispositivo ESP32-CAM", "Firmware embebido con sensores PIR, reed switch, ultrasonico y camara")
-
-  Rel(operador, platform, "Autentica, consulta y administra", "HTTPS/JSON, JWT")
-  Rel(guardia, platform, "Autentica y consulta", "HTTPS/JSON, JWT")
-  Rel(esp32, platform, "Envia lecturas y frames; recibe comandos de pan/tilt, cerradura y alerta local", "HTTP/JSON multipart")
-```
+![C4 System Context diagram](docs/architecture/diagrams/system-context.png)
 
 #### 4.1.3.3. Software Architecture Container Level Diagrams
 
-```mermaid
-C4Container
-  title Diagrama de Contenedores - SecurIoT Platform
+![C4 Container diagram](docs/architecture/diagrams/container.png)
 
-  Person(operador, "Operador de Seguridad")
-  Person(guardia, "Guardia de Campo")
-  Person(visitante, "Visitante Web")
-
-  System_Boundary(sb, "SecurIoT Platform") {
-    Container(landing, "Landing Page", "HTML/CSS/JS estatico, Nginx", "Sitio de marketing publico del producto")
-    Container(webapp, "Web App", "Angular 22, Angular Material", "Dashboard de monitoreo: zonas, dispositivos, alertas, autenticacion")
-    Container(mobileapp, "Mobile App", "Flutter/Dart", "App movil para guardias: alertas, zonas y dispositivos, distribuida via Firebase App Distribution")
-    Container(cloudapi, "Cloud API", "NestJS + TypeORM", "API REST/OpenAPI: autenticacion JWT, usuarios, zonas, dispositivos, telemetria y alertas")
-    ContainerDb(clouddb, "Cloud Database", "PostgreSQL", "Persiste usuarios, zonas, dispositivos, lecturas y alertas")
-    Container(edgeapi, "Edge API", "Flask + Peewee", "Servicio de borde por instalacion: recibe lecturas y frames, ejecuta deteccion y reenvia a la nube")
-    ContainerDb(edgedb, "Edge Buffer DB", "SQLite", "Buffer local de lecturas no sincronizadas, tolerante a cortes de red")
-    Container(firmware, "Firmware ESP32-CAM", "C++/Arduino", "Captura frames y lecturas de sensores; actua pan/tilt, cerradura y alerta local")
-  }
-
-  Rel(operador, webapp, "Usa", "HTTPS")
-  Rel(guardia, mobileapp, "Usa", "HTTPS")
-  Rel(visitante, landing, "Visita", "HTTPS")
-
-  Rel(webapp, cloudapi, "Consume API REST", "JSON/HTTPS, JWT Bearer")
-  Rel(mobileapp, cloudapi, "Consume API REST", "JSON/HTTPS, JWT Bearer")
-  Rel(cloudapi, clouddb, "Lee y escribe", "TypeORM/SQL")
-
-  Rel(firmware, edgeapi, "POST /ingest, POST /frames", "HTTP/JSON multipart, X-Device-Key")
-  Rel(edgeapi, firmware, "Responde pan_delta, tilt_delta, door_action, alert", "HTTP/JSON")
-  Rel(edgeapi, edgedb, "Bufferea lecturas locales", "Peewee/SQL")
-  Rel(edgeapi, cloudapi, "Reenvia lecturas, relay con retry/backoff, idempotente por reading_id", "HTTPS/JSON, X-Device-Key")
-```
+El hardware ESP32 queda fuera del limite punteado de la plataforma. Dentro del dispositivo se ejecuta YOLO para detectar personas/cuerpos y reducir el volumen de frames enviados. Dentro del Edge se ejecuta ArcFace para producir y comparar embeddings; el buffer SQLite y el repositorio local de identidades permiten seguir operando sin conectividad.
 
 #### 4.1.3.4. Software Architecture Deployment Diagrams
 
-```mermaid
-C4Deployment
-  title Diagrama de Despliegue - SecurIoT Platform
+![C4 Deployment diagram](docs/architecture/diagrams/deployment.png)
 
-  Deployment_Node(cliente_pc, "PC/Laptop del Operador", "Navegador"){
-    Container(webbrowser, "Web App (build estatico)", "Angular, servido via Nginx", "SPA de monitoreo")
-  }
-
-  Deployment_Node(cliente_movil, "Smartphone del Guardia", "Android/iOS"){
-    Container(mobileappd, "Mobile App", "Flutter", "APK/IPA instalado via Firebase App Distribution")
-  }
-
-  Deployment_Node(cloud, "Cloud Hosting", "Docker / VPS o PaaS"){
-    Deployment_Node(cloudapicontainer, "Contenedor Cloud API", "Docker, Node.js 20"){
-      Container(cloudapid, "Cloud API", "NestJS", "API REST/OpenAPI")
-    }
-    Deployment_Node(pgcontainer, "Contenedor PostgreSQL", "Docker, Postgres 16"){
-      ContainerDb(pgd, "Cloud Database", "PostgreSQL", "Datos persistentes")
-    }
-    Deployment_Node(landingcontainer, "Contenedor Landing", "Docker, Nginx"){
-      Container(landingd, "Landing Page", "HTML/CSS/JS estatico", "Sitio de marketing")
-    }
-  }
-
-  Deployment_Node(sitio, "Instalacion del Cliente (on-site)", "Edge host, Docker"){
-    Deployment_Node(edgecontainer, "Contenedor Edge API", "Docker, Python 3.12"){
-      Container(edgeapid, "Edge API", "Flask + Peewee", "Ingesta, deteccion y relay local")
-      ContainerDb(edgedbd, "Edge Buffer DB", "SQLite", "Archivo local")
-    }
-    Deployment_Node(dispositivofisico, "Dispositivo ESP32-CAM", "AI-Thinker, WiFi"){
-      Container(firmwared, "Firmware", "C++/Arduino-ESP32", "Sensores, camara, servos, buzzer/LED")
-    }
-  }
-
-  Rel(webbrowser, cloudapid, "HTTPS/JSON")
-  Rel(mobileappd, cloudapid, "HTTPS/JSON")
-  Rel(cloudapid, pgd, "TypeORM/SQL")
-  Rel(firmwared, edgeapid, "HTTP/JSON multipart, WiFi LAN")
-  Rel(edgeapid, edgedbd, "SQL local")
-  Rel(edgeapid, cloudapid, "HTTPS/JSON, Internet")
-```
+El diagrama de despliegue separa explicitamente el hardware ESP32, el Edge Host de la instalacion y la infraestructura hospedada. El backend no abre conexiones hacia la red local: el Edge inicia el envio de resultados y telemetria por HTTPS con retry/backoff.
 
 ## 4.2. Tactical-Level Domain-Driven Design
 
