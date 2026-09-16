@@ -440,7 +440,7 @@ workspace "SecurIoT Architecture" "C4 model for the target SecurIoT edge and clo
             include monitoringDevicesTable
             include monitoringReadingsTable
             include monitoringAlertsTable
-            autoLayout lr
+            autoLayout tb
         }
 
         component platform.cloudApi "IdentityComponents" "Identity and Access bounded-context components." {
@@ -468,7 +468,7 @@ workspace "SecurIoT Architecture" "C4 model for the target SecurIoT edge and clo
 
         custom "IdentityDatabase" "Identity and Access relational data model." {
             include identityUsersTable
-            autoLayout lr
+            autoLayout tb
         }
 
         component platform.cloudApi "ZonesDevicesComponents" "Zone and Device Management bounded-context components." {
@@ -498,7 +498,7 @@ workspace "SecurIoT Architecture" "C4 model for the target SecurIoT edge and clo
         custom "ZonesDevicesDatabase" "Zone and Device Management relational data model." {
             include zonesZonesTable
             include zonesDevicesTable
-            autoLayout lr
+            autoLayout tb
         }
 
         component platform.edgeApi "EdgeComponents" "Edge Detection and Relay bounded-context components." {
@@ -525,7 +525,7 @@ workspace "SecurIoT Architecture" "C4 model for the target SecurIoT edge and clo
 
         custom "EdgeDatabase" "Edge Detection and Relay local data model." {
             include edgeReadingTable
-            autoLayout lr
+            autoLayout tb
         }
 
         styles {
@@ -602,15 +602,21 @@ workspace "SecurIoT Architecture" "C4 model for the target SecurIoT edge and clo
                 border dashed
             }
             element "Table" {
-                shape cylinder
+                shape box
                 background #fef3c7
                 color #111827
+                width 650
+                height 400
+                metadata false
             }
             element "External Table" {
-                shape cylinder
+                shape box
                 background #f3f4f6
                 color #111827
                 border dashed
+                width 650
+                height 400
+                metadata false
             }
             element "Cloud" {
                 background #1d4ed8
