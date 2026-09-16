@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="600" viewBox="0 0 1180 600" font-family="Segoe UI, Arial, sans-serif">
+  <rect width="1180" height="600" fill="#ffffff"/>
+  <text x="20" y="30" font-size="19" font-weight="700" fill="#1f2937">User Journey Map (As-Is) — Miguel Herrera</text>
+  <text x="20" y="50" font-size="13" fill="#6b7280">Gerente o Dueño de Pyme Industrial · supervisión remota de la seguridad</text>
+
+  <!-- row labels -->
+  <g font-size="12.5" font-weight="700" fill="#334155">
+    <text x="16" y="150">Fase</text>
+    <text x="16" y="238">Acciones</text>
+    <text x="16" y="366">Pensamientos / Pains</text>
+    <text x="16" y="486">Emoción</text>
+  </g>
+
+  <!-- phase header band -->
+  <g>
+    <rect x="150" y="70" width="200" height="52" rx="8" fill="#1f3a5f"/>
+    <rect x="356" y="70" width="200" height="52" rx="8" fill="#1f3a5f"/>
+    <rect x="562" y="70" width="200" height="52" rx="8" fill="#1f3a5f"/>
+    <rect x="768" y="70" width="200" height="52" rx="8" fill="#1f3a5f"/>
+    <rect x="974" y="70" width="200" height="52" rx="8" fill="#1f3a5f"/>
+    <g font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">
+      <text x="250" y="93">1. Supervisión</text><text x="250" y="110">remota</text>
+      <text x="456" y="93">2. Aviso de</text><text x="456" y="110">incidente</text>
+      <text x="662" y="93">3. Espera de</text><text x="662" y="110">verificación</text>
+      <text x="868" y="93">4. Decisión y</text><text x="868" y="110">coordinación</text>
+      <text x="1074" y="93">5. Revisión</text><text x="1074" y="110">posterior</text>
+    </g>
+  </g>
+
+  <!-- actions band -->
+  <g font-size="11.5" fill="#274b46">
+    <rect x="150" y="150" width="200" height="120" rx="8" fill="#e8f4f2" stroke="#2a9d8f"/>
+    <text x="162" y="176">Revisa reportes y</text><text x="162" y="192">cámaras a distancia.</text><text x="162" y="216">Confía en el personal</text><text x="162" y="232">en sitio.</text>
+
+    <rect x="356" y="150" width="200" height="120" rx="8" fill="#e8f4f2" stroke="#2a9d8f"/>
+    <text x="368" y="176">Recibe llamada o</text><text x="368" y="192">mensaje del personal.</text><text x="368" y="216">Pide más datos del</text><text x="368" y="232">evento.</text>
+
+    <rect x="562" y="150" width="200" height="120" rx="8" fill="#e8f4f2" stroke="#2a9d8f"/>
+    <text x="574" y="176">Espera confirmación</text><text x="574" y="192">del sitio.</text><text x="574" y="216">Sigue el caso por</text><text x="574" y="232">teléfono.</text>
+
+    <rect x="768" y="150" width="200" height="120" rx="8" fill="#e8f4f2" stroke="#2a9d8f"/>
+    <text x="780" y="176">Decide con la info</text><text x="780" y="192">disponible.</text><text x="780" y="216">Coordina respuesta</text><text x="780" y="232">o acude en persona.</text>
+
+    <rect x="974" y="150" width="200" height="120" rx="8" fill="#e8f4f2" stroke="#2a9d8f"/>
+    <text x="986" y="176">Reúne reportes y</text><text x="986" y="192">grabaciones.</text><text x="986" y="216">Evalúa medidas e</text><text x="986" y="232">inversión.</text>
+  </g>
+
+  <!-- pains band -->
+  <g font-size="11.5" fill="#6e2320">
+    <rect x="150" y="286" width="200" height="120" rx="8" fill="#fdecec" stroke="#c9433f"/>
+    <text x="162" y="312">No hay una vista</text><text x="162" y="328">única del estado</text><text x="162" y="344">de seguridad.</text>
+
+    <rect x="356" y="286" width="200" height="120" rx="8" fill="#fdecec" stroke="#c9433f"/>
+    <text x="368" y="312">Información escasa</text><text x="368" y="328">e informal.</text><text x="368" y="352">Poco contexto.</text>
+
+    <rect x="562" y="286" width="200" height="120" rx="8" fill="#fdecec" stroke="#c9433f"/>
+    <text x="574" y="312">Poca visibilidad</text><text x="574" y="328">directa.</text><text x="574" y="352">Depende de terceros.</text>
+
+    <rect x="768" y="286" width="200" height="120" rx="8" fill="#fdecec" stroke="#c9433f"/>
+    <text x="780" y="312">Riesgo de decidir</text><text x="780" y="328">mal.</text><text x="780" y="352">Sin contexto</text><text x="780" y="368">consolidado.</text>
+
+    <rect x="974" y="286" width="200" height="120" rx="8" fill="#fdecec" stroke="#c9433f"/>
+    <text x="986" y="312">Evidencia dispersa.</text><text x="986" y="336">Difícil justificar</text><text x="986" y="352">la inversión.</text>
+  </g>
+
+  <!-- emotion band -->
+  <rect x="150" y="422" width="1024" height="150" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+  <g stroke="#94a3b8" stroke-dasharray="4 4"><line x1="150" y1="470" x2="1174" y2="470"/></g>
+  <polyline points="250,462 456,500 662,540 868,528 1074,486" fill="none" stroke="#e09f3e" stroke-width="3"/>
+  <g fill="#e09f3e">
+    <circle cx="250" cy="462" r="6"/><circle cx="456" cy="500" r="6"/><circle cx="662" cy="540" r="6"/><circle cx="868" cy="528" r="6"/><circle cx="1074" cy="486" r="6"/>
+  </g>
+  <g font-size="11" fill="#64748b" text-anchor="middle">
+    <text x="250" y="446">Atento</text>
+    <text x="456" y="490">Inquieto</text>
+    <text x="662" y="560">Ansioso (crítico)</text>
+    <text x="868" y="520">Presionado</text>
+    <text x="1074" y="476">Aliviado parcial</text>
+  </g>
+</svg>
