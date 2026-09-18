@@ -17,9 +17,12 @@
 
 
 
-### Team Members:
+### Team Members
 
-Hurtado Balcazar Rommel Daniel     u202517474
+| Apellidos y Nombres | Código |
+|---|---|
+| Hurtado Balcazar Rommel Daniel | U202517474 |
+| Nikaido Vargas Javier Masaru | U20221G099 |
 
 
 <strong> 19 de Septiembre de 2026</strong><br>
@@ -86,7 +89,7 @@ _Pendiente de desarrollo._
       - [4.1.3.3. Software Architecture Container Level Diagrams](#4133-software-architecture-container-level-diagrams)
       - [4.1.3.4. Software Architecture Deployment Diagrams](#4134-software-architecture-deployment-diagrams)
   - [4.2. Tactical-Level Domain-Driven Design](#42-tactical-level-domain-driven-design)
-    - [4.2.1. Bounded Context: <Nombre del Bounded Context>](#421-bounded-context-nombre-del-bounded-context)
+    - [4.2.1. Bounded Context: Monitoreo y Alertas](#421-bounded-context-monitoreo-y-alertas)
       - [4.2.1.1. Domain Layer](#4211-domain-layer)
       - [4.2.1.2. Interface Layer](#4212-interface-layer)
       - [4.2.1.3. Application Layer](#4213-application-layer)
@@ -95,6 +98,33 @@ _Pendiente de desarrollo._
       - [4.2.1.6. Bounded Context Software Architecture Code Level Diagrams](#4216-bounded-context-software-architecture-code-level-diagrams)
       - [4.2.1.6.1. Bounded Context Domain Layer Class Diagrams](#42161-bounded-context-domain-layer-class-diagrams)
       - [4.2.1.6.2. Bounded Context Database Design Diagram](#42162-bounded-context-database-design-diagram)
+    - [4.2.2. Bounded Context: Identidad y Acceso](#422-bounded-context-identidad-y-acceso)
+      - [4.2.2.1. Domain Layer](#4221-domain-layer)
+      - [4.2.2.2. Interface Layer](#4222-interface-layer)
+      - [4.2.2.3. Application Layer](#4223-application-layer)
+      - [4.2.2.4. Infrastructure Layer](#4224-infrastructure-layer)
+      - [4.2.2.5. Bounded Context Software Architecture Component Level Diagrams](#4225-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.2.6. Bounded Context Software Architecture Code Level Diagrams](#4226-bounded-context-software-architecture-code-level-diagrams)
+      - [4.2.2.6.1. Bounded Context Domain Layer Class Diagrams](#42261-bounded-context-domain-layer-class-diagrams)
+      - [4.2.2.6.2. Bounded Context Database Design Diagram](#42262-bounded-context-database-design-diagram)
+    - [4.2.3. Bounded Context: Gestion de Zonas y Dispositivos](#423-bounded-context-gestion-de-zonas-y-dispositivos)
+      - [4.2.3.1. Domain Layer](#4231-domain-layer)
+      - [4.2.3.2. Interface Layer](#4232-interface-layer)
+      - [4.2.3.3. Application Layer](#4233-application-layer)
+      - [4.2.3.4. Infrastructure Layer](#4234-infrastructure-layer)
+      - [4.2.3.5. Bounded Context Software Architecture Component Level Diagrams](#4235-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.3.6. Bounded Context Software Architecture Code Level Diagrams](#4236-bounded-context-software-architecture-code-level-diagrams)
+      - [4.2.3.6.1. Bounded Context Domain Layer Class Diagrams](#42361-bounded-context-domain-layer-class-diagrams)
+      - [4.2.3.6.2. Bounded Context Database Design Diagram](#42362-bounded-context-database-design-diagram)
+    - [4.2.4. Bounded Context: Deteccion y Relay de Borde](#424-bounded-context-deteccion-y-relay-de-borde)
+      - [4.2.4.1. Domain Layer](#4241-domain-layer)
+      - [4.2.4.2. Interface Layer](#4242-interface-layer)
+      - [4.2.4.3. Application Layer](#4243-application-layer)
+      - [4.2.4.4. Infrastructure Layer](#4244-infrastructure-layer)
+      - [4.2.4.5. Bounded Context Software Architecture Component Level Diagrams](#4245-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.4.6. Bounded Context Software Architecture Code Level Diagrams](#4246-bounded-context-software-architecture-code-level-diagrams)
+      - [4.2.4.6.1. Bounded Context Domain Layer Class Diagrams](#42461-bounded-context-domain-layer-class-diagrams)
+      - [4.2.4.6.2. Bounded Context Database Design Diagram](#42462-bounded-context-database-design-diagram)
 - [Capítulo V: Solution UI/UX Design](#capítulo-v-solution-uiux-design)
   - [5.1. Style Guidelines](#51-style-guidelines)
     - [5.1.1. General Style Guidelines](#511-general-style-guidelines)
@@ -1259,8 +1289,6 @@ En conjunto, los hallazgos respaldan la propuesta de SECURIOT como una solución
 
 ## 2.3. Needfinding
 
-_Pendiente de desarrollo._
-
 ### 2.3.1. User Personas
 
 Las siguientes User Personas sintetizan los patrones identificados en las entrevistas de los segmentos Administrador de Seguridad Patrimonial, Personal de Vigilancia In Situ y Gerente o Dueño de Pyme Industrial. Cada ficha representa un arquetipo construido a partir de los objetivos, necesidades, frustraciones, comportamientos, herramientas y motivaciones documentados en el apartado 2.2.
@@ -1317,11 +1345,71 @@ Las diferencias responden al nivel de responsabilidad. El Personal de Vigilancia
 
 ### 2.3.3. User Journey Mapping
 
-_Pendiente de desarrollo._
+Los siguientes User Journey Maps representan el recorrido actual de los tres arquetipos definidos en la sección 2.3.1. Cada mapa describe el escenario previo a la implementación de SECURIOT, desde que aparece una posible anomalía hasta que el incidente queda registrado. Para su elaboración se tomaron como base los patrones comunes identificados en las entrevistas del apartado 2.2, especialmente los canales utilizados, los tiempos de respuesta, las limitaciones del entorno y los puntos de mayor tensión durante la atención.
+
+#### Administrador de Seguridad Patrimonial
+
+En el caso de Carlos Mendoza, el recorrido comienza con la supervisión de cámaras, controles de acceso y bitácoras que funcionan de manera separada. Cuando se presenta una anomalía, debe decidir si se trata de una amenaza real o de otra falsa alarma, coordinar con el personal de vigilancia y esperar la verificación física. El momento más crítico ocurre durante la validación y contención, porque la comunicación puede fallar y no existe un mecanismo centralizado que reúna el contexto del evento. Después de atenderlo, todavía debe consolidar grabaciones, registros y horarios para preparar la evidencia.
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/needfinding/user-journey-administrador.png" alt="User Journey Map As-Is de Carlos Mendoza, Administrador de Seguridad Patrimonial" width="1100"/>
+</p>
+
+Este recorrido muestra que el problema no se limita a detectar una intrusión. La mayor carga aparece al confirmar la alerta, coordinar una respuesta segura y reconstruir posteriormente lo sucedido. Por ello, una solución para este segmento debe reducir la fragmentación de la información sin quitar al administrador el control de la validación.
+
+#### Personal de Vigilancia In Situ
+
+Para Luis Ramírez, el recorrido parte de una ronda habitual y cambia cuando recibe un aviso por radio, llamada o WhatsApp. En ese momento suele conocer muy poco sobre la situación y necesita pedir datos adicionales antes de desplazarse. La experiencia alcanza su punto de mayor tensión mientras interpreta el aviso y llega al lugar, pues debe enfrentar zonas oscuras, obstáculos, interferencia y una posible amenaza sin suficiente contexto. Una vez verificado el incidente, el proceso termina con un registro manual que puede tomar entre 30 y 40 minutos.
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/needfinding/user-journey-vigilante.png" alt="User Journey Map As-Is de Luis Ramírez, Personal de Vigilancia In Situ" width="1100"/>
+</p>
+
+El mapa evidencia que la rapidez de una alerta no basta por sí sola. El vigilante necesita recibir ubicación, tipo de evento y una referencia visual antes de exponerse en campo. También requiere una interacción breve, perceptible en ambientes industriales y capaz de funcionar bajo restricciones de batería o conectividad.
+
+#### Gerente o Dueño de Pyme Industrial
+
+Para Miguel Herrera, el recorrido no ocurre en el lugar del incidente sino a la distancia. Su día transcurre supervisando la operación del negocio y, cuando surge una posible anomalía, se entera a través de una llamada o un mensaje del personal en sitio. A partir de ese aviso queda a la espera de que alguien confirme lo que sucede, con poca visibilidad directa y sin una fuente única que reúna el estado real de la seguridad. El punto de mayor tensión aparece cuando debe tomar una decisión —autorizar una acción, avisar a un tercero o acudir personalmente— con información incompleta y fragmentada. Una vez resuelto el incidente, todavía necesita reconstruir lo ocurrido a partir de reportes y grabaciones dispersas para evaluar el desempeño de sus medidas de seguridad y justificar la inversión.
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/needfinding/user-journey-gerente.png" alt="User Journey Map As-Is de Miguel Herrera, Gerente o Dueño de Pyme Industrial" width="1100"/>
+</p>
+
+Este recorrido evidencia que la carga del gerente no está en la operación diaria sino en la falta de visibilidad remota y de evidencia consolidada. Una solución para este segmento debe ofrecerle una vista clara del estado de seguridad desde cualquier lugar, alertas comprensibles y un historial confiable que respalde sus decisiones sin exigirle presencia física.
 
 ### 2.3.4. Empathy Mapping
 
-_Pendiente de desarrollo._
+Los Empathy Maps reúnen lo que cada arquetipo expresa, piensa, hace y siente frente al proceso actual de seguridad patrimonial. Las frases incluidas son síntesis representativas de los hallazgos y no citas textuales de una sola entrevista. Esta distinción permite conservar los patrones compartidos por los participantes sin atribuir a una persona afirmaciones que corresponden al conjunto del segmento.
+
+#### Administrador de Seguridad Patrimonial
+
+Carlos busca mantener el control de la operación y responder con evidencia verificable. Aunque está dispuesto a incorporar automatización, su confianza depende de la precisión de las alertas, la compatibilidad con la infraestructura instalada y el respeto por las rutas de evacuación. Su frustración se concentra en los puntos ciegos, las falsas alarmas y el tiempo que emplea en reunir información dispersa para auditorías o reportes gerenciales.
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/needfinding/empathy-map-administrador.png" alt="Empathy Map de Carlos Mendoza, Administrador de Seguridad Patrimonial" width="1100"/>
+</p>
+
+El mapa permite observar que este usuario no necesita recibir más datos, sino información mejor organizada y confiable. SECURIOT debe ayudarlo a verificar eventos, coordinar al equipo y consultar evidencia desde un mismo entorno, manteniendo siempre la posibilidad de intervención humana.
+
+#### Personal de Vigilancia In Situ
+
+Luis desarrolla sus tareas bajo presión y en constante movimiento. Antes de intervenir necesita entender qué está ocurriendo, dónde se encuentra el evento y qué nivel de riesgo puede enfrentar. Las alertas poco claras, la pérdida de señal y las verificaciones manuales aumentan su incertidumbre; además, las falsas alarmas y el registro posterior elevan el cansancio durante turnos extensos.
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/needfinding/empathy-map-vigilante.png" alt="Empathy Map de Luis Ramírez, Personal de Vigilancia In Situ" width="1100"/>
+</p>
+
+Para este arquetipo, la experiencia debe priorizar información inmediata y acciones simples. Una alerta útil debe ser visible y sonora, mostrar ubicación e imagen, y permitir registrar el resultado con pocos pasos. Estas condiciones responden directamente a las restricciones de señal, batería, ruido e iluminación descritas por los entrevistados.
+
+#### Gerente o Dueño de Pyme Industrial
+
+Miguel evalúa la seguridad desde una mirada de negocio: le preocupa proteger los activos y la continuidad de la operación más que la ejecución diaria del monitoreo. Está dispuesto a invertir, pero necesita comprobar que esa inversión rinde y confiar en el sistema aun cuando no está presente. Su frustración se concentra en las herramientas separadas y costosas, en la dependencia de la revisión humana y en la escasa visibilidad que tiene cuando se encuentra fuera de la instalación.
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/needfinding/empathy-map-gerente.png" alt="Empathy Map de Miguel Herrera, Gerente o Dueño de Pyme Industrial" width="1100"/>
+</p>
+
+El mapa muestra que este usuario valora la tranquilidad y la evidencia por encima del detalle operativo. SECURIOT debe brindarle una visión consolidada y remota del estado de seguridad, alertas claras que no exijan interpretación técnica y un historial de incidentes que le permita decidir y demostrar el valor de la solución.
 
 ## 2.4. Big Picture EventStorming
 
@@ -1374,19 +1462,338 @@ El Ubiquitous Language de SECURIOT unifica los términos utilizados por el equip
 
 # Capítulo III: Requirements Specification
 
-_Pendiente de desarrollo._
+La especificación de requisitos de SECURIOT traduce los segmentos objetivo, las Feature Assumptions y las Hypothesis Statements del Capítulo I en artefactos accionables para el desarrollo: User Stories con criterios de aceptación en formato Gherkin, un Impact Mapping que conecta el objetivo de negocio con las funcionalidades, y un Product Backlog priorizado y estimado con Story Points. Los actores considerados corresponden a los tres segmentos objetivo (ver sección 1.3): **Administrador de Seguridad Patrimonial** (usuario principal), **Personal de Vigilancia in situ** (usuario operativo) y **Gerente/Dueño de la pyme industrial** (usuario secundario), además del **Visitante** de la Landing Page y de las Technical Stories que sostienen la plataforma.
 
 ## 3.1. User Stories
 
-_Pendiente de desarrollo._
+Las User Stories se agrupan en ocho épicas alineadas con las seis Feature Assumptions del Lean UX Canvas (sección 1.2.2.2), más una épica de Landing Page y una de Technical Stories. Cada historia se redacta en español y sus criterios de aceptación se expresan como escenarios Gherkin en inglés (`Given / When / Then`).
+
+### Épica EP-01: Monitoreo de estado de zonas y dispositivos (HS-01)
+
+**US-01 — Registro de dispositivo IoT en una zona**
+**Como** administrador de seguridad patrimonial **quiero** registrar un dispositivo IoT y asociarlo a una zona restringida **para** monitorear ese punto de acceso desde la plataforma.
+
+```gherkin
+Scenario: Successful device registration in a zone
+  Given the administrator is authenticated on the web dashboard
+  And is on the "Devices" section of a selected site
+  When they register a new device with a valid identifier and assign it to a restricted zone
+  Then the device appears in the zone's device list with status "online"
+  And the device starts reporting telemetry to the Cloud API
+```
+
+**US-02 — Monitoreo en tiempo real del estado de zonas y dispositivos**
+**Como** administrador de seguridad **quiero** ver en tiempo real el estado de las zonas y dispositivos de una sede **para** identificar de un vistazo qué punto de acceso está comprometido.
+
+```gherkin
+Scenario: Real-time status is displayed
+  Given the administrator is viewing the monitoring panel of a site
+  When a device changes its status from "online" to "alarm"
+  Then the panel updates that device within 5 seconds without a manual refresh
+  And the affected zone is highlighted as compromised
+```
+
+**US-03 — Detalle de un dispositivo**
+**Como** administrador de seguridad **quiero** abrir el detalle de un dispositivo **para** revisar sus últimas lecturas y su configuración.
+
+```gherkin
+Scenario: View device detail
+  Given the administrator selects a device from the list
+  When the device detail view opens
+  Then it shows the device identifier, zone, current status and the last telemetry readings
+```
+
+### Épica EP-02: Registro y validación de zonas y accesos restringidos (HS-02)
+
+**US-04 — Registro de zona restringida**
+**Como** administrador de seguridad **quiero** registrar una zona restringida **para** definir dónde se controlarán los accesos.
+
+```gherkin
+Scenario: Register a restricted zone
+  Given the administrator is on the "Zones" section of a site
+  When they create a zone with a name, location and access level
+  Then the zone is saved and becomes available to associate devices and authorized people
+```
+
+**US-05 — Validación automática de acceso a zona restringida**
+**Como** personal de vigilancia **quiero** que el sistema valide automáticamente si una persona detectada está autorizada **para** no depender solo de la inspección manual.
+
+```gherkin
+Scenario: Access granted for an authorized person
+  Given a device detects a person entering a restricted zone
+  When the person matches the zone's authorized list
+  Then the event is logged as "authorized access"
+  And no intrusion alert is raised
+
+Scenario: Access denied for an unidentified person
+  Given a device detects a person entering a restricted zone
+  When the person does not match the zone's authorized list
+  Then an intrusion alert is raised for that zone
+```
+
+**US-06 — Gestión de personas autorizadas**
+**Como** administrador de seguridad **quiero** administrar la lista de personas autorizadas por zona **para** mantener actualizado quién puede ingresar.
+
+```gherkin
+Scenario: Add an authorized person to a zone
+  Given the administrator is managing a restricted zone
+  When they add a person with valid identification data
+  Then that person is included in the zone's authorized list for future validations
+```
+
+### Épica EP-03: Motor de alertas basado en reglas (HS-03)
+
+**US-07 — Configuración de reglas de alerta**
+**Como** administrador de seguridad **quiero** configurar reglas de alerta sobre las lecturas de los sensores **para** que la notificación se dispare apenas se detecte una intrusión.
+
+```gherkin
+Scenario: Create an alert rule
+  Given the administrator is on the "Alert rules" section
+  When they define a rule with a condition, a target zone and a severity level
+  Then the rule is activated and evaluated against incoming telemetry
+```
+
+**US-08 — Notificación inmediata de intrusión**
+**Como** personal de vigilancia **quiero** recibir una notificación inmediata ante una intrusión detectada **para** trasladarme al punto de acceso comprometido sin esperar una ronda.
+
+```gherkin
+Scenario: Guard receives an intrusion notification
+  Given an active alert rule for a restricted zone
+  When an intrusion event matches that rule
+  Then the on-site guard receives a push notification within 10 seconds
+  And the notification includes the zone, device and timestamp
+```
+
+**US-09 — Atención y cierre de una alerta**
+**Como** personal de vigilancia **quiero** actualizar el estado de una alerta que atendí **para** dejar registro de la respuesta ejecutada.
+
+```gherkin
+Scenario: Update alert status after response
+  Given the guard opens an active alert
+  When they mark it as "attended" and add a response note
+  Then the alert changes to "attended" with the guard, note and timestamp recorded
+```
+
+### Épica EP-04: Registro histórico y trazabilidad (HS-04)
+
+**US-10 — Consulta del historial de eventos**
+**Como** administrador de seguridad **quiero** consultar el historial de eventos filtrado por sede, zona y fecha **para** auditar lo ocurrido.
+
+```gherkin
+Scenario: Filter the event history
+  Given the administrator is on the "Event history" section
+  When they filter by site, zone and a date range
+  Then the list shows only the events matching the filters, ordered by most recent
+```
+
+**US-11 — Exportación de reporte de incidente**
+**Como** gerente de la pyme **quiero** exportar un reporte trazable de un incidente **para** presentarlo a la aseguradora o a las autoridades.
+
+```gherkin
+Scenario: Export an incident report
+  Given a logged security incident with its associated events and telemetry
+  When the manager exports the incident report
+  Then a document is generated with the timeline, involved devices and evidence references
+```
+
+**US-12 — Telemetría histórica por dispositivo**
+**Como** administrador de seguridad **quiero** ver la telemetría histórica de un dispositivo **para** analizar su comportamiento en el tiempo.
+
+```gherkin
+Scenario: View historical telemetry
+  Given the administrator opens a device detail
+  When they select a past date range
+  Then the historical readings for that device are displayed for the selected period
+```
+
+### Épica EP-05: Dashboard Web y aplicación Mobile (HS-05)
+
+**US-13 — Dashboard de indicadores**
+**Como** gerente de la pyme **quiero** un dashboard con indicadores agregados **para** evaluar si el servicio justifica su costo.
+
+```gherkin
+Scenario: View aggregated indicators
+  Given the manager is authenticated
+  When they open the dashboard
+  Then it shows the number of active alerts, incidents by zone and response times for their sites
+```
+
+**US-14 — Aplicación móvil para el personal de vigilancia**
+**Como** personal de vigilancia **quiero** usar la app móvil durante mis rondas **para** recibir alertas y atenderlas desde el celular.
+
+```gherkin
+Scenario: Attend an alert from the mobile app
+  Given the guard is logged into the mobile app
+  When an intrusion alert arrives
+  Then the app shows the alert detail and lets the guard mark it as attended in the field
+```
+
+**US-15 — Autenticación de usuarios**
+**Como** usuario de la plataforma **quiero** autenticarme de forma segura **para** acceder solo a la información de mi empresa.
+
+```gherkin
+Scenario: Successful authentication
+  Given a registered user with valid credentials
+  When they log in
+  Then they access only the sites and data belonging to their organization
+```
+
+### Épica EP-06: Gestión remota multi-sede (HS-06)
+
+**US-16 — Administración de múltiples sedes**
+**Como** administrador de seguridad **quiero** gestionar varias sedes desde una sola cuenta **para** supervisar más de una planta o almacén sin cambiar de herramienta.
+
+```gherkin
+Scenario: Manage multiple sites from one account
+  Given an administrator responsible for more than one site
+  When they access their account
+  Then they can list and manage all sites assigned to their organization
+```
+
+**US-17 — Cambio de sede activa en el panel**
+**Como** administrador de seguridad **quiero** cambiar la sede activa en el panel **para** enfocar el monitoreo en una instalación específica.
+
+```gherkin
+Scenario: Switch active site
+  Given the administrator manages several sites
+  When they select a different site in the panel
+  Then the zones, devices and alerts shown correspond to the selected site
+```
+
+### Épica EP-07: Landing Page (captación y comunicación de valor)
+
+**US-18 — Comprensión de la propuesta de valor**
+**Como** visitante de la Landing Page **quiero** entender qué resuelve SECURIOT **para** decidir si es relevante para mi empresa.
+
+```gherkin
+Scenario: Value proposition is clear
+  Given a visitor opens the landing page
+  When the page loads
+  Then it presents the problem, the SECURIOT solution and its main benefits for industrial SMEs
+```
+
+**US-19 — Solicitud de demostración / contacto**
+**Como** visitante interesado **quiero** solicitar una demo o dejar mis datos de contacto **para** que el equipo comercial se comunique conmigo.
+
+```gherkin
+Scenario: Submit a demo request
+  Given a visitor is on the landing page
+  When they submit the contact form with valid data
+  Then the request is registered and a confirmation message is shown
+```
+
+**US-20 — Landing accesible y multilenguaje**
+**Como** visitante **quiero** que la Landing Page sea accesible y esté disponible en español e inglés **para** consultarla sin barreras de idioma ni de accesibilidad.
+
+```gherkin
+Scenario: Language and accessibility support
+  Given a visitor opens the landing page
+  When they switch the language selector
+  Then the content is shown in the chosen language (Spanish/English)
+  And the page meets basic accessibility criteria (labels, contrast and keyboard navigation)
+```
+
+### Épica EP-08: Technical Stories (plataforma y cumplimiento)
+
+**US-21 — Procesamiento en el borde tolerante a desconexión**
+**Como** integrante técnico del equipo **quiero** que la Edge API procese y reencole la telemetría cuando se pierde conexión con la nube **para** no perder eventos de seguridad ante fallas de red.
+
+```gherkin
+Scenario: Edge buffers telemetry while offline
+  Given the Edge API loses connection with the Cloud API
+  When devices keep reporting telemetry
+  Then the Edge API stores the readings locally
+  And forwards them to the Cloud API once the connection is restored
+```
+
+**US-22 — Despliegue con contenedores y CI/CD**
+**Como** integrante técnico del equipo **quiero** empaquetar los servicios con Docker y automatizar el despliegue **para** garantizar entornos reproducibles siguiendo GitFlow.
+
+```gherkin
+Scenario: Containerized build and deploy
+  Given the source code of a service on the develop branch
+  When the pipeline builds the Docker image
+  Then the image is produced and the service can be deployed in a reproducible environment
+```
+
+**US-23 — Cumplimiento de protección de datos personales**
+**Como** integrante técnico del equipo **quiero** tratar las imágenes y datos de personas conforme a la Ley N° 29733 y privacidad por diseño **para** cumplir la normativa peruana de protección de datos.
+
+```gherkin
+Scenario: Personal data is handled under compliance rules
+  Given the platform processes images and identification data of people
+  When these data are stored or transmitted
+  Then access is restricted, the data are protected, and their treatment complies with Law N° 29733
+```
 
 ## 3.2. Impact Mapping
 
-_Pendiente de desarrollo._
+El Impact Mapping (técnica de Gojko Adzic) conecta el objetivo de negocio de SECURIOT con las funcionalidades a construir, respondiendo cuatro preguntas encadenadas: **Why** (Goal) → **Who** (Actors) → **How** (Impacts, cambios de comportamiento) → **What** (Deliverables, features/User Stories). El objetivo se deriva de los *Business Outcomes* del Lean UX Canvas (sección 1.2.2.4).
+
+> **Goal (Why):** Aumentar en un **20% las suscripciones activas** de pymes industriales y logísticas y alcanzar una **tasa de renovación del 80%** al cierre del primer periodo contratado, durante los primeros 12 meses de operación en Lima Metropolitana.
+
+<div align="center">
+  <img alt="Impact Mapping de SECURIOT" src="docs/assets/securiot-impact-map.png" width="900"/>
+</div>
+
+**Tablero (Miro):** https://miro.com/app/board/uXjVHpKEo50=/
+
+El Impact Mapping se detalla en la siguiente tabla:
+
+| Goal (Why) | Actor (Who) | Impact (How) | Deliverable (What) |
+|---|---|---|---|
+| **+20% suscripciones y 80% renovación en 12 meses** | Administrador de Seguridad | Deja de revisar grabaciones por rutina | EP-01 Monitoreo tiempo real · EP-03 Motor de alertas |
+| | Administrador de Seguridad | Confía en alertas automáticas sin verificación previa | EP-03 Motor de alertas · EP-04 Registro trazable |
+| | Administrador de Seguridad | Supervisa varias sedes desde un solo panel | EP-06 Gestión multi-sede · EP-05 Dashboard |
+| | Personal de Vigilancia | Responde más rápido a una intrusión real | EP-03 Notificación inmediata · US-14 App móvil |
+| | Personal de Vigilancia | Ejecuta el protocolo desde el celular en ronda | US-14 App móvil · US-09 Cierre de alerta |
+| | Gerente / Dueño | Percibe el servicio como accesible y renueva | EP-05 Dashboard de indicadores |
+| | Gerente / Dueño | Usa evidencia trazable con aseguradoras y autoridades | EP-04 Registro histórico · US-11 Exportación de incidente |
 
 ## 3.3. Product Backlog
 
-_Pendiente de desarrollo._
+El Product Backlog consolida las User Stories de la sección 3.1 priorizadas y estimadas con **Story Points** (escala de Fibonacci: 1, 2, 3, 5, 8). La prioridad usa la escala del cronograma del equipo (**P0** crítico → **P3** deseable) y se ordena de mayor a menor prioridad. El *Sprint sugerido* propone una distribución inicial para el Sprint Planning.
+
+**Tablero del Product Backlog (Trello):** https://trello.com/b/EzAo1DBl/securiot-product-backlog
+
+<div align="center">
+  <img alt="Product Backlog de SECURIOT" src="docs/assets/securiot-product-backlog.svg" width="960"/>
+</div>
+
+| # | Épica | ID | User Story | Prioridad | Story Points | Sprint sugerido |
+|---|---|---|---|---|---|---|
+| 1 | EP-01 | US-01 | Registro de dispositivo IoT en una zona | P0 | 5 | Sprint 1 |
+| 2 | EP-01 | US-02 | Monitoreo en tiempo real de zonas y dispositivos | P0 | 5 | Sprint 1 |
+| 3 | EP-02 | US-04 | Registro de zona restringida | P0 | 3 | Sprint 1 |
+| 4 | EP-02 | US-05 | Validación automática de acceso a zona restringida | P0 | 8 | Sprint 1 |
+| 5 | EP-03 | US-08 | Notificación inmediata de intrusión | P0 | 5 | Sprint 1 |
+| 6 | EP-05 | US-15 | Autenticación de usuarios | P0 | 3 | Sprint 1 |
+| 7 | EP-08 | US-23 | Cumplimiento de protección de datos (Ley N° 29733) | P0 | 5 | Sprint 1 |
+| 8 | EP-03 | US-07 | Configuración de reglas de alerta | P1 | 8 | Sprint 2 |
+| 9 | EP-03 | US-09 | Atención y cierre de una alerta | P1 | 3 | Sprint 2 |
+| 10 | EP-01 | US-03 | Detalle de un dispositivo | P1 | 3 | Sprint 2 |
+| 11 | EP-02 | US-06 | Gestión de personas autorizadas | P1 | 5 | Sprint 2 |
+| 12 | EP-04 | US-10 | Consulta del historial de eventos | P1 | 5 | Sprint 2 |
+| 13 | EP-05 | US-13 | Dashboard de indicadores | P1 | 5 | Sprint 2 |
+| 14 | EP-05 | US-14 | Aplicación móvil para vigilancia | P1 | 8 | Sprint 2 |
+| 15 | EP-07 | US-18 | Comprensión de la propuesta de valor (Landing) | P1 | 3 | Sprint 2 |
+| 16 | EP-08 | US-21 | Procesamiento en el borde tolerante a desconexión | P1 | 8 | Sprint 2 |
+| 17 | EP-08 | US-22 | Despliegue con contenedores y CI/CD | P1 | 5 | Sprint 2 |
+| 18 | EP-04 | US-11 | Exportación de reporte de incidente | P2 | 5 | Sprint 3 |
+| 19 | EP-04 | US-12 | Telemetría histórica por dispositivo | P2 | 3 | Sprint 3 |
+| 20 | EP-06 | US-16 | Administración de múltiples sedes | P2 | 8 | Sprint 3 |
+| 21 | EP-06 | US-17 | Cambio de sede activa en el panel | P2 | 3 | Sprint 3 |
+| 22 | EP-07 | US-19 | Solicitud de demostración / contacto (Landing) | P2 | 3 | Sprint 3 |
+| 23 | EP-07 | US-20 | Landing accesible y multilenguaje | P2 | 5 | Sprint 3 |
+
+**Resumen de estimación**
+
+| Prioridad | N° de historias | Story Points |
+|---|---|---|
+| P0 | 7 | 34 |
+| P1 | 10 | 53 |
+| P2 | 6 | 27 |
+| **Total** | **23** | **114** |
 
 # Capítulo IV: Solution Software Design
 
@@ -1402,7 +1809,14 @@ _Pendiente de desarrollo._
 
 #### 4.1.1.1. Candidate Context Discovery
 
-_Pendiente de desarrollo._
+Agrupamos los eventos y comandos del dominio segun quien es dueno de la decision de negocio, no segun el repositorio de codigo donde vive hoy. De ese analisis salen cuatro contextos delimitados:
+
+1. **Identidad y Acceso**: quien puede entrar al sistema y con que credenciales.
+2. **Gestion de Zonas y Dispositivos**: que zonas existen, que dispositivos estan asignados a cada una y quien es su propietario.
+3. **Monitoreo y Alertas**: que paso en una zona (lecturas de sensores) y si eso amerita una alerta.
+4. **Deteccion y Relay de Borde**: que ve la camara en el sitio, si eso es una persona u objeto no permitido, y como reaccionar en el momento (pan/tilt, cerradura, buzzer) sin depender de la nube.
+
+Monitoreo y Alertas y Deteccion y Relay de Borde son los subdominios core: ahi vive la logica que distingue a SecurIoT de un CRUD generico de sensores. Identidad y Acceso es un subdominio generico (JWT estandar, sin reglas propias del negocio). Gestion de Zonas y Dispositivos es subdominio de soporte: necesario para que los otros dos tengan sentido, pero no es, por si solo, la ventaja del producto.
 
 #### 4.1.1.2. Domain Message Flows Modeling
 
@@ -1410,71 +1824,284 @@ _Pendiente de desarrollo._
 
 #### 4.1.1.3. Bounded Context Canvases
 
-_Pendiente de desarrollo._
+**Identidad y Acceso**
+
+| Campo | Detalle |
+|---|---|
+| Proposito | Autenticar usuarios y emitir el token que el resto de la plataforma confia sin volver a consultar este contexto |
+| Clasificacion estrategica | Generico |
+| Lenguaje ubicuo | Usuario, credenciales, token de acceso |
+| Entidad raiz | `User` (email, passwordHash) |
+| Contrato publicado | `POST /auth/login` devuelve un `access_token` JWT firmado; los demas contextos lo validan localmente contra `JWT_SECRET`, sin llamada de vuelta |
+| Implementado en | `securiot-cloud-api/src/auth`, `src/users` |
+
+**Gestion de Zonas y Dispositivos**
+
+| Campo | Detalle |
+|---|---|
+| Proposito | Mantener el catalogo de zonas del cliente y los dispositivos IoT asignados a cada una, incluyendo la emision del `apiKey` de dispositivo |
+| Clasificacion estrategica | Soporte |
+| Lenguaje ubicuo | Zona, Dispositivo, Propietario, apiKey |
+| Entidades raiz | `Zone`, `Device` |
+| Reglas de negocio | Un dispositivo pertenece a una unica zona; una zona pertenece a un unico usuario propietario; el `apiKey` se muestra completo una sola vez, al crear el dispositivo |
+| Implementado en | `securiot-cloud-api/src/zones`, `src/devices` |
+
+**Monitoreo y Alertas** (core)
+
+| Campo | Detalle |
+|---|---|
+| Proposito | Ingerir lecturas de sensores de forma idempotente y evaluar reglas de negocio que conviertan una lectura riesgosa en una alerta accionable |
+| Clasificacion estrategica | Core |
+| Lenguaje ubicuo | Lectura (Reading), Alerta (Alert), Regla de alerta, Severidad, Estado |
+| Entidades raiz | `Reading`, `Alert` |
+| Reglas de negocio | Ingestion idempotente por `reading_id` (constraint unica); cada lectura dispara `evaluateRule`, que hoy cubre `door_contact_open` y esta pensada para crecer a mas reglas por tipo de sensor; una alerta es unica por lectura |
+| Implementado en | `securiot-cloud-api/src/telemetry`, `src/alerts` |
+
+**Deteccion y Relay de Borde** (core)
+
+| Campo | Detalle |
+|---|---|
+| Proposito | Recibir lecturas y frames de camara del dispositivo fisico, correr deteccion local con debounce, decidir la accion inmediata (pan/tilt, cerradura, alerta local) y reenviar las lecturas a la nube tolerando cortes de red |
+| Clasificacion estrategica | Core |
+| Lenguaje ubicuo | Frame, Deteccion, Debounce, Buffer, Relay, Cooldown |
+| Entidades raiz (locales, SQLite) | Lectura bufferizada, Evento de deteccion |
+| Reglas de negocio | Buffer local con reintento y backoff cuando la nube no responde; relay idempotente por `reading_id`; cooldown entre acciones de cerradura para el mismo dispositivo |
+| Implementado en | `securiot-edge-api/app` (`ingest.py`, `detection.py`, `debounce.py`, `relay.py`, `frames.py`, `pan_tilt.py`) |
 
 ### 4.1.2. Context Mapping
 
-_Pendiente de desarrollo._
+![Structurizr bounded-context map](docs/architecture/diagrams/context-map.png)
+
+Ningun contexto llama al de Identidad y Acceso en tiempo de ejecucion mas alla del login: el JWT es autocontenido y cada contexto lo valida por su cuenta contra el mismo secreto compartido, asi que la relacion con Identidad y Acceso es de tipo Published Language mas que de llamada activa. Monitoreo y Alertas y Gestion de Zonas y Dispositivos hoy comparten una unica base PostgreSQL, lo cual simplifica el MVP pero es una decision a revisar si el sistema crece a multiples clientes con aislamiento de datos mas estricto.
 
 ### 4.1.3. Software Architecture
 
-_Pendiente de desarrollo._
+SecurIoT es un sistema distribuido de cuatro capas: aplicaciones cliente (Web App en Angular y Mobile App en Flutter), un backend hospedado (Cloud API en NestJS con PostgreSQL), un servicio de borde por instalacion (Edge API en Flask con buffer local SQLite y reconocimiento ArcFace) y firmware embebido (ESP32-S3 con deteccion corporal YOLO). Los siguientes diagramas siguen el modelo C4 y se generan exclusivamente desde el modelo [Structurizr DSL](docs/architecture/workspace.dsl). El ESP32 ejecuta la deteccion corporal antes de enviar frames candidatos al Edge; el Edge ejecuta ArcFace, conserva los embeddings biometricos localmente y solo inicia conexiones salientes hacia el backend hospedado.
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram
 
-_Pendiente de desarrollo._
+![C4 System Landscape diagram](docs/architecture/diagrams/system-landscape.png)
+
+La plataforma no depende de sistemas externos de terceros (sin pasarelas de pago, SMS o email en el alcance actual). La Landing Page es un sitio informativo aislado, sin llamadas a la API.
 
 #### 4.1.3.2. Software Architecture Context Level Diagrams
 
-_Pendiente de desarrollo._
+![C4 System Context diagram](docs/architecture/diagrams/system-context.png)
 
 #### 4.1.3.3. Software Architecture Container Level Diagrams
 
-_Pendiente de desarrollo._
+![C4 Container diagram](docs/architecture/diagrams/container.png)
+
+El hardware ESP32 queda fuera del limite punteado de la plataforma. Dentro del dispositivo se ejecuta YOLO para detectar personas/cuerpos y reducir el volumen de frames enviados. Dentro del Edge se ejecuta ArcFace para producir y comparar embeddings; el buffer SQLite y el repositorio local de identidades permiten seguir operando sin conectividad.
 
 #### 4.1.3.4. Software Architecture Deployment Diagrams
 
-_Pendiente de desarrollo._
+![C4 Deployment diagram](docs/architecture/diagrams/deployment.png)
+
+El diagrama de despliegue separa explicitamente el hardware ESP32, el Edge Host de la instalacion y la infraestructura hospedada. El backend no abre conexiones hacia la red local: el Edge inicia el envio de resultados y telemetria por HTTPS con retry/backoff.
 
 ## 4.2. Tactical-Level Domain-Driven Design
 
-_Pendiente de desarrollo._
+Esta sección detalla, para cada uno de los cuatro bounded contexts identificados en 4.1.1.1, sus capas de Domain, Interface, Application e Infrastructure, más los diagramas de componentes, clases y base de datos a nivel de código. Todos los diagramas tácticos se definen en el mismo modelo [Structurizr DSL](docs/architecture/workspace.dsl), se renderizan con fondo blanco y mantienen sus etiquetas en inglés.
 
-### 4.2.1. Bounded Context: <Nombre del Bounded Context>
+### 4.2.1. Bounded Context: Monitoreo y Alertas
 
-_Pendiente de desarrollo._
+Elegimos este contexto para el detalle tactico porque es el subdominio core de la Cloud API: convierte lecturas crudas de sensores en alertas que el operador realmente usa. Vive en `securiot-cloud-api/src/telemetry` y `src/alerts`.
 
 #### 4.2.1.1. Domain Layer
 
-_Pendiente de desarrollo._
+- `Reading` (raiz de agregado): `readingId` (unico), `deviceId`, `zoneId`, `sensorType`, `value`, `recordedAt`. La unicidad de `readingId` es el invariante central: garantiza que reenviar la misma lectura, algo que pasa seguido por el retry del relay de borde, nunca la duplica.
+- `Alert` (raiz de agregado): referencia a `zone`, `device` y, opcionalmente, a la `reading` que la origino; ademas `ruleType`, `severity`, `status` y `message`. Tambien tiene `readingId` unico, asi que una lectura genera como maximo una alerta.
+- Regla de dominio `evaluateRule`: hoy implementa una unica regla, `door_contact_open` (sensor `door_contact` con valor `open` genera una alerta de severidad `medium`). El metodo esta separado de la insercion de la lectura justamente para poder agregar mas reglas sin tocar el flujo de ingestion.
 
 #### 4.2.1.2. Interface Layer
 
-_Pendiente de desarrollo._
+| Endpoint | Guard | Descripcion |
+|---|---|---|
+| `POST /api/v1/telemetry` | `DeviceApiKeyGuard` (header `X-Device-Key`) | Ingesta una lectura, idempotente por `reading_id` |
+| `GET /api/v1/telemetry` | `JwtAuthGuard` | Lista lecturas filtrables por `device_id`, `zone_id` y rango de fechas |
+| `GET /api/v1/alerts` | `JwtAuthGuard` | Lista alertas de las zonas del usuario autenticado, filtrables por zona, dispositivo y estado |
+
+Los cuerpos de request se validan con DTOs de `class-validator` (`CreateReadingDto`, `QueryReadingsDto`, `QueryAlertsDto`) y cada endpoint esta documentado con decoradores de `@nestjs/swagger`.
 
 #### 4.2.1.3. Application Layer
 
-_Pendiente de desarrollo._
+- `TelemetryService.ingest(dto, device)`: inserta la lectura con `INSERT ... ON CONFLICT DO NOTHING` (`orIgnore`) y delega la evaluacion de reglas a `AlertsService.evaluateRule`. Ambos pasos ocurren en la misma llamada, para que el operador vea la alerta apenas el dispositivo reporta.
+- `TelemetryService.findAll(query)`: consulta de lecturas con filtros opcionales.
+- `AlertsService.evaluateRule(reading)`: aplica la regla de dominio y persiste la alerta si corresponde, tambien con `orIgnore` para respetar la unicidad por `readingId`.
+- `AlertsService.findAllForOwner(ownerId, query)`: hace join contra `Zone` para devolver solo alertas de zonas del usuario autenticado, sin exponer datos de otros clientes.
 
 #### 4.2.1.4. Infrastructure Layer
 
-_Pendiente de desarrollo._
+- `Repository<Reading>` y `Repository<Alert>` de TypeORM, sobre PostgreSQL en produccion (SQLite como fallback de desarrollo local, ver `src/config/typeorm.config.ts`).
+- `DeviceApiKeyGuard`: valida el header `X-Device-Key` contra la tabla `devices`, cruzando hacia el contexto de Gestion de Zonas y Dispositivos.
+- `JwtAuthGuard` + `JwtStrategy`: validan el JWT emitido por Identidad y Acceso sin llamarlo en tiempo de ejecucion.
 
 #### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
 
-_Pendiente de desarrollo._
+![Structurizr Monitoring and Alerts component diagram](docs/architecture/diagrams/monitoring-components.png)
 
 #### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
 
-_Pendiente de desarrollo._
-
 #### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
 
-_Pendiente de desarrollo._
+![Structurizr Monitoring and Alerts class diagram](docs/architecture/diagrams/monitoring-classes.png)
 
 #### 4.2.1.6.2. Bounded Context Database Design Diagram
 
-_Pendiente de desarrollo._
+![Structurizr Monitoring and Alerts database diagram](docs/architecture/diagrams/monitoring-database.png)
+
+`USERS`, `ZONES` y `DEVICES` pertenecen a otros bounded contexts (Identidad y Acceso, y Gestion de Zonas y Dispositivos) y se muestran aqui solo como referencia, porque hoy las cinco tablas viven en la misma base PostgreSQL. `READINGS` y `ALERTS` son las tablas propias de este contexto.
+
+### 4.2.2. Bounded Context: Identidad y Acceso
+
+Este contexto es el subdominio generico de la Cloud API: no tiene reglas de negocio propias del dominio de seguridad patrimonial, solo autentica y emite el token que el resto de la plataforma confia sin volver a consultarlo. Se incluye en el detalle tactico porque cada uno de los otros tres contextos depende de el para proteger sus propios endpoints. Vive en `securiot-cloud-api/src/auth` y `src/users`.
+
+#### 4.2.2.1. Domain Layer
+
+- `User` (raiz de agregado): `id` (uuid), `email`, `passwordHash`, `createdAt`. Constraint de unicidad sobre `email` a nivel de entidad (`@Unique(['email'])`), sin otros campos, no hay roles ni soft-delete.
+- Invariante de dominio: la contrasena nunca se compara ni se guarda en texto plano. `AuthService.validateUser` usa `bcrypt.compare` contra `passwordHash`; el hashing en si ocurre antes de llegar a `UsersService.create`, no dentro del servicio.
+- No existe endpoint de registro publico: `UsersService.create` existe a nivel de servicio pero ningun controller lo expone, lo que sugiere un flujo de alta de usuarios administrado fuera de la API publica (seed o proceso interno).
+
+#### 4.2.2.2. Interface Layer
+
+| Endpoint | Guard | DTO | Descripcion |
+|---|---|---|---|
+| `POST /api/v1/auth/login` | Ninguno (publico) | `LoginDto` (`email`, `password`) | Autentica con email y password, retorna `{ access_token }` |
+
+El unico controller (`AuthController`) fuerza `200 OK` en la respuesta del login en vez del `201` por defecto de un POST, y documenta con `@nestjs/swagger` las respuestas 200, 400 y 401. `JwtAuthGuard` se define y exporta desde este contexto, pero no protege ningun endpoint propio: su rol es proteger endpoints de los otros tres bounded contexts (tal como se ve en `jwtGuard` dentro de Monitoreo y Alertas, seccion 4.2.1.5).
+
+#### 4.2.2.3. Application Layer
+
+- `AuthService.validateUser(email, password)`: busca el usuario por email vía `UsersService.findByEmail`; si no existe o falla la comparacion `bcrypt`, lanza `UnauthorizedException`; si es valido, retorna el `User` completo.
+- `AuthService.login(email, password)`: llama a `validateUser`, arma el payload `{ sub: user.id, email: user.email }` y lo firma con `jwtService.sign`. Efecto secundario unico: la emision del JWT, sin registro de sesion ni persistencia adicional.
+- `UsersService.findByEmail` / `UsersService.create`: metodos casi passthrough sobre el repositorio, sin logica de negocio propia mas alla de asumir que `passwordHash` ya llega hasheado.
+
+#### 4.2.2.4. Infrastructure Layer
+
+- Repositorio TypeORM estandar (`Repository<User>`) sobre la misma base de datos que el resto de contextos (Postgres en produccion, SQLite via `better-sqlite3` como fallback local, `synchronize: true`, confirmado en `src/config/typeorm.config.ts`).
+- `JwtStrategy` extrae el token del header `Authorization: Bearer`, valida su expiracion (`ignoreExpiration: false`) y su firma contra `JWT_SECRET` (con un valor de respaldo hardcodeado si la variable de entorno no esta configurada, algo a corregir antes de un despliegue real). `JwtModule` firma con `JWT_EXPIRES_IN` (por defecto una hora).
+- `JwtAuthGuard` es una clase minima que delega toda la validacion en la estrategia passport-jwt registrada, sin logica propia.
+
+#### 4.2.2.5. Bounded Context Software Architecture Component Level Diagrams
+
+![Structurizr Identity and Access component diagram](docs/architecture/diagrams/identity-components.png)
+
+#### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams
+
+#### 4.2.2.6.1. Bounded Context Domain Layer Class Diagrams
+
+![Structurizr Identity and Access class diagram](docs/architecture/diagrams/identity-classes.png)
+
+`User` no tiene relaciones de asociacion de TypeORM hacia `Device` o `Zone`; no se incluyen en el diagrama porque compartir la misma base de datos no crea una relacion de dominio ni una FK explicita en `User`.
+
+#### 4.2.2.6.2. Bounded Context Database Design Diagram
+
+![Structurizr Identity and Access database diagram](docs/architecture/diagrams/identity-database.png)
+
+Unica tabla del contexto: PK `id` (uuid), `email` con constraint unico, `passwordHash`, `createdAt`. Sin columnas adicionales ni foreign keys.
+
+### 4.2.3. Bounded Context: Gestion de Zonas y Dispositivos
+
+Este es el subdominio de soporte: mantiene el catalogo de zonas de cada cliente y los dispositivos IoT asignados a cada una, incluyendo la emision del `apiKey` que un dispositivo fisico usa para autenticarse ante el resto de la plataforma. Es necesario para que Monitoreo y Alertas y Deteccion y Relay de Borde tengan sentido, pero no es, por si solo, la ventaja diferencial del producto. Vive en `securiot-cloud-api/src/zones` y `src/devices`.
+
+#### 4.2.3.1. Domain Layer
+
+- `Zone` (raiz de agregado): `id`, `name`, `location` (opcional), `ownerId`, relacion `ManyToOne` a `User` con `onDelete: 'CASCADE'`, `createdAt`, `updatedAt`.
+- `Device` (raiz de agregado): `id`, `name`, `apiKey` (unico, `@Unique(['apiKey'])`), relacion `ManyToOne` a `Zone` con `onDelete: 'CASCADE'`, `zoneId`, `createdAt`.
+- Invariantes verificados en codigo: un dispositivo pertenece a exactamente una zona; una zona pertenece a exactamente un usuario dueno; el `apiKey` se genera con `crypto.randomBytes(24).toString('hex')` al crear el dispositivo y se persiste en texto plano.
+- El `apiKey` se muestra completo solo una vez: `DeviceResponseDto` (usado en las listas y el detalle) no incluye `apiKey`; solo `DeviceCreatedResponseDto`, que extiende al anterior y es el tipo de retorno exclusivo de `POST /devices`, lo incluye. El propio codigo lo documenta en un comentario: "The response apiKey is shown in full only here. It is never returned again by any other endpoint."
+
+#### 4.2.3.2. Interface Layer
+
+| Endpoint | Guard | DTO / Query | Descripcion |
+|---|---|---|---|
+| `POST /api/v1/zones` | `JwtAuthGuard` | `CreateZoneDto` | Crea una zona para el usuario autenticado |
+| `GET /api/v1/zones` | `JwtAuthGuard` | — | Lista zonas del usuario autenticado |
+| `GET /api/v1/zones/:id` | `JwtAuthGuard` | — | Obtiene una zona por id, solo si pertenece al usuario |
+| `PATCH /api/v1/zones/:id` | `JwtAuthGuard` | `UpdateZoneDto` | Actualiza una zona propia |
+| `DELETE /api/v1/zones/:id` | `JwtAuthGuard` | — | Elimina una zona propia |
+| `POST /api/v1/devices` | `JwtAuthGuard` | `CreateDeviceDto` | Registra un dispositivo bajo una zona propia; retorna el apiKey por unica vez |
+| `GET /api/v1/devices` | `JwtAuthGuard` | query opcional `zone_id` | Lista dispositivos del usuario, sin apiKey |
+| `GET /api/v1/devices/:id` | `JwtAuthGuard` | — | Detalle de un dispositivo con estado online/offline y ultima lectura |
+
+Todos protegidos por `JwtAuthGuard` (contexto Identidad y Acceso) y documentados con `@ApiBearerAuth()`.
+
+#### 4.2.3.3. Application Layer
+
+- `ZonesService.create/findAllForOwner/findOneForOwner/update/remove`: el ownership se resuelve filtrando siempre por `ownerId` en la consulta (`findOne({ where: { id, ownerId } })`), de forma que una zona ajena nunca se distingue de una zona inexistente (ambas devuelven `NotFoundException`).
+- `DevicesService.create(dto, ownerId)`: primero busca la zona con `{ id: dto.zoneId, ownerId }` para verificar que existe y pertenece al usuario; si pasa, genera el `apiKey` y crea el dispositivo; retorna la respuesta que incluye el apiKey una unica vez.
+- `DevicesService.findAllForOwner`: usa `createQueryBuilder` con `leftJoin` a `Zone` y filtra por `zone.ownerId`, es decir el ownership de un dispositivo se resuelve siempre a traves de su zona, nunca con una columna de dueno directa en `Device`.
+- `DevicesService.getStatus(device)`: busca la ultima `Reading` del dispositivo por `deviceId` y calcula `isOnline` comparando su antigüedad contra `DEVICE_ONLINE_WINDOW_SECONDS` (variable de entorno, 300 segundos por defecto). Este es el unico punto donde el contexto consulta directamente una entidad de Monitoreo y Alertas.
+
+#### 4.2.3.4. Infrastructure Layer
+
+- Repositorios TypeORM estandar para `Zone` y `Device`. `DevicesModule` registra ademas la entidad `Reading` (de `src/telemetry`) para poder resolver `getStatus`, un acoplamiento directo y explicito entre este contexto y Monitoreo y Alertas.
+- Relacion con Identidad y Acceso: `Zone.ownerId` es FK a `User`, con `onDelete: 'CASCADE'` (si se elimina el usuario dueno, se eliminan sus zonas y, en cascada, sus dispositivos).
+- Relacion con Monitoreo y Alertas: `Reading`/`Alert` referencian `zoneId`/`deviceId` como FK hacia este contexto; el limite se cruza en la direccion opuesta solo para el calculo de estado online/offline.
+
+#### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams
+
+![Structurizr Zone and Device Management component diagram](docs/architecture/diagrams/zones-devices-components.png)
+
+#### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams
+
+#### 4.2.3.6.1. Bounded Context Domain Layer Class Diagrams
+
+![Structurizr Zone and Device Management class diagram](docs/architecture/diagrams/zones-devices-classes.png)
+
+#### 4.2.3.6.2. Bounded Context Database Design Diagram
+
+![Structurizr Zone and Device Management database diagram](docs/architecture/diagrams/zones-devices-database.png)
+
+`location` es nullable en la entidad `Zone`; `apiKey` no lo es, siempre se genera al crear el dispositivo y nunca queda vacio.
+
+### 4.2.4. Bounded Context: Deteccion y Relay de Borde
+
+Junto con Monitoreo y Alertas, este es el otro subdominio core del producto: decide en el sitio, sin depender de la nube, si lo que ve la camara amerita una reaccion inmediata, y despues reenvia esa informacion a la nube tolerando cortes de red. Vive en `securiot-edge-api/app` (Flask + Peewee, buffer local en SQLite).
+
+#### 4.2.4.1. Domain Layer
+
+- Unico modelo Peewee, `Reading`: `reading_id` (unico), `device_id`, `zone_id`, `sensor_type`, `value`, `recorded_at`, `synced` (booleano, `False` por defecto), `sync_attempts` (entero, `0` por defecto), `next_attempt_at`, `created_at`. No existe una tabla separada de "evento de deteccion": una deteccion de camara se guarda como un `Reading` mas, con `sensor_type="camera_detection"`.
+- Relay idempotente por `reading_id`: `reading_buffer.buffer_reading()` inserta con `on_conflict_ignore()`, apoyado en el constraint `unique=True` de `reading_id`, de forma que reenviar la misma lectura (algo frecuente por el reintento del propio relay) nunca la duplica.
+- Backoff exponencial: `_backoff_seconds(sync_attempts) = min(2 ** sync_attempts, 300)`, techo de 300 segundos. El ciclo de relay solo selecciona lecturas no sincronizadas cuyo `next_attempt_at` ya vencio (o es nulo).
+- Debounce de detecciones: `debounce.record(device_id, qualifying)` lleva un contador en memoria por dispositivo (umbral por defecto de 2, configurable via `DETECTION_DEBOUNCE_COUNT`) y devuelve `escalate=True` una sola vez, exactamente en el frame donde el contador alcanza el umbral, no en los siguientes.
+- Cooldown del actuador de puerta: un dispositivo no vuelve a disparar `door_action` para el mismo device hasta que pasan `DOOR_ACTION_COOLDOWN_SECONDS` (30 segundos por defecto) desde el ultimo disparo, aunque el tracking de camara (pan/tilt) sigue activo durante todo el episodio.
+
+#### 4.2.4.2. Interface Layer
+
+| Endpoint | Auth | Acepta | Retorna | Descripcion |
+|---|---|---|---|---|
+| `POST /ingest` | Header `X-Device-Key` contra un secreto compartido | JSON: `reading_id, device_id, zone_id, sensor_type, value, recorded_at` | `201 {"status":"buffered"}` | Ingesta generica de lecturas de sensores (PIR, reed switch, ultrasonico) |
+| `POST /frames` | Header `X-Device-Key` | `multipart/form-data`: `device_id`, `zone_id`, `frame` (imagen), opcional ancho/alto | `200 {"pan_delta","tilt_delta","door_action","alert"}` | Recibe un frame de la camara, corre deteccion y debounce, decide la reaccion inmediata |
+
+`/frames` valida que la imagen sea decodificable antes de invocar el detector, como mitigacion explicita frente a un ataque de denegacion de servicio con archivos malformados.
+
+#### 4.2.4.3. Application Layer
+
+Flujo de `/frames`, de principio a fin: valida la clave del dispositivo, valida y guarda la imagen recibida, obtiene un detector (mock o YOLO segun configuracion), filtra las detecciones a las clases que importan (persona, o un objeto permitido configurable), pasa el resultado por `debounce.record` para decidir si escala, y si el episodio esta activo calcula el desplazamiento de pan/tilt hacia la persona detectada. En paralelo, siempre bufferiza una lectura `camera_detection`, y si el cooldown de puerta ya vencio, bufferiza tambien una lectura `door_contact` y devuelve la orden de bloqueo. El relay hacia la nube no ocurre dentro de esta peticion: un `BackgroundScheduler` (APScheduler) dispara `relay_cycle()` cada `RELAY_INTERVAL_SECONDS` (10 segundos por defecto), que selecciona las lecturas pendientes de sincronizar y las envia una por una.
+
+#### 4.2.4.4. Infrastructure Layer
+
+- Persistencia local: SQLite (Peewee), unica tabla `Reading`, que actua como buffer de tolerancia a desconexion. Todo lo que entra por `/ingest` o `/frames` se guarda localmente antes de intentar llegar a la nube, lo que permite operar sin conexion y reintentar despues.
+- Cliente de relay: `POST {CLOUD_API_URL}/api/v1/telemetry` con header `X-Device-Key: CLOUD_DEVICE_API_KEY`, hacia el endpoint de ingesta de Monitoreo y Alertas en la Cloud API. Un 2xx marca la lectura como sincronizada; cualquier otro resultado incrementa `sync_attempts` y aplica el backoff descrito en la capa de dominio.
+- Configuracion relevante via variables de entorno: `DEVICE_SHARED_SECRET`, `CLOUD_API_URL`, `CLOUD_DEVICE_API_KEY`, `RELAY_INTERVAL_SECONDS`, `DETECTION_BACKEND` (mock o yolo), `DETECTION_DEBOUNCE_COUNT`, `DOOR_ACTION_COOLDOWN_SECONDS`, `MAX_CONTENT_LENGTH` (2 MB por defecto, otro limite anti-DoS).
+
+#### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams
+
+![Structurizr Edge Detection and Relay component diagram](docs/architecture/diagrams/edge-components.png)
+
+#### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams
+
+#### 4.2.4.6.1. Bounded Context Domain Layer Class Diagrams
+
+![Structurizr Edge Detection and Relay class diagram](docs/architecture/diagrams/edge-classes.png)
+
+#### 4.2.4.6.2. Bounded Context Database Design Diagram
+
+![Structurizr Edge Detection and Relay database diagram](docs/architecture/diagrams/edge-database.png)
+
+Esta tabla vive unicamente en el SQLite local del Edge API. Es distinta de `READINGS`, la tabla de Postgres del contexto Monitoreo y Alertas (seccion 4.2.1.6.2): la del Edge es un buffer temporal de transito, la de la nube es el registro persistente que consultan el Web App y el Mobile App.
 
 # Capítulo V: Solution UI/UX Design
 
