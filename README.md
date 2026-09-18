@@ -25,6 +25,7 @@
 | Nikaido Vargas Javier Masaru | U20221G099 |
 | Osores Marchese Pietro | U202310971 |
 | Salcedo Champi Matias Rodolfo | U202319698 |
+| Aquino Solorzano Daniel Jonatan | U202217678 |
 
 
 <strong> 19 de Septiembre de 2026</strong><br>
