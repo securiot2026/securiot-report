@@ -1798,8 +1798,6 @@ El Product Backlog consolida las User Stories de la sección 3.1 priorizadas y e
 
 # Capítulo IV: Solution Software Design
 
-_Pendiente de desarrollo._
-
 ## 4.1. Strategic-Level Domain-Driven Design
 
 El diseño estratégico de SecurIoT divide el dominio según la responsabilidad de negocio y el lenguaje que necesita cada parte del sistema, no según la tecnología, el repositorio o el proceso donde se ejecuta. Esta separación permite que la detección local, la gestión de dispositivos, la autenticación y el monitoreo evolucionen sin mezclar reglas que responden a objetivos distintos.
