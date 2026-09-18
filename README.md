@@ -1826,7 +1826,10 @@ Las siguientes subsecciones muestran cómo se descubrieron estos límites, cómo
 
 ### 4.1.1. Design-Level EventStorming
 
-_Pendiente de desarrollo._
+<img width="2260" height="1482" alt="Pasted Graphic" src="https://github.com/user-attachments/assets/becf02f7-74d7-429c-b036-e739c72798b0" />
+<img width="1311" height="677" alt="Screenshot 2026-09-18 at 2 44 48 PM" src="https://github.com/user-attachments/assets/264703fb-aca0-459b-926f-6e069a2c8f04" />
+
+El Design-Level EventStorming de SecurIoT organiza los comandos, reglas de negocio, agregados y eventos que soportan sus procesos de seguridad. El modelado establece las responsabilidades y los límites de consistencia de Identidad y Acceso, Gestión de Zonas y Dispositivos, Detección y Relay de Borde y Monitoreo y Alertas, mostrando cómo colaboran desde el registro de un dispositivo y la detección local de una amenaza hasta la sincronización de lecturas y la generación de alertas.
 
 #### 4.1.1.1. Candidate Context Discovery
 
