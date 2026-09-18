@@ -17,9 +17,12 @@
 
 
 
-### Team Members:
+### Team Members
 
-Hurtado Balcazar Rommel Daniel     u202517474
+| Apellidos y Nombres | Código |
+|---|---|
+| Hurtado Balcazar Rommel Daniel | U202517474 |
+| Nikaido Vargas Javier Masaru | U20221G099 |
 
 
 <strong> 19 de Septiembre de 2026</strong><br>
@@ -86,7 +89,7 @@ _Pendiente de desarrollo._
       - [4.1.3.3. Software Architecture Container Level Diagrams](#4133-software-architecture-container-level-diagrams)
       - [4.1.3.4. Software Architecture Deployment Diagrams](#4134-software-architecture-deployment-diagrams)
   - [4.2. Tactical-Level Domain-Driven Design](#42-tactical-level-domain-driven-design)
-    - [4.2.1. Bounded Context: <Nombre del Bounded Context>](#421-bounded-context-nombre-del-bounded-context)
+    - [4.2.1. Bounded Context: Monitoreo y Alertas](#421-bounded-context-monitoreo-y-alertas)
       - [4.2.1.1. Domain Layer](#4211-domain-layer)
       - [4.2.1.2. Interface Layer](#4212-interface-layer)
       - [4.2.1.3. Application Layer](#4213-application-layer)
@@ -95,6 +98,33 @@ _Pendiente de desarrollo._
       - [4.2.1.6. Bounded Context Software Architecture Code Level Diagrams](#4216-bounded-context-software-architecture-code-level-diagrams)
       - [4.2.1.6.1. Bounded Context Domain Layer Class Diagrams](#42161-bounded-context-domain-layer-class-diagrams)
       - [4.2.1.6.2. Bounded Context Database Design Diagram](#42162-bounded-context-database-design-diagram)
+    - [4.2.2. Bounded Context: Identidad y Acceso](#422-bounded-context-identidad-y-acceso)
+      - [4.2.2.1. Domain Layer](#4221-domain-layer)
+      - [4.2.2.2. Interface Layer](#4222-interface-layer)
+      - [4.2.2.3. Application Layer](#4223-application-layer)
+      - [4.2.2.4. Infrastructure Layer](#4224-infrastructure-layer)
+      - [4.2.2.5. Bounded Context Software Architecture Component Level Diagrams](#4225-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.2.6. Bounded Context Software Architecture Code Level Diagrams](#4226-bounded-context-software-architecture-code-level-diagrams)
+      - [4.2.2.6.1. Bounded Context Domain Layer Class Diagrams](#42261-bounded-context-domain-layer-class-diagrams)
+      - [4.2.2.6.2. Bounded Context Database Design Diagram](#42262-bounded-context-database-design-diagram)
+    - [4.2.3. Bounded Context: Gestion de Zonas y Dispositivos](#423-bounded-context-gestion-de-zonas-y-dispositivos)
+      - [4.2.3.1. Domain Layer](#4231-domain-layer)
+      - [4.2.3.2. Interface Layer](#4232-interface-layer)
+      - [4.2.3.3. Application Layer](#4233-application-layer)
+      - [4.2.3.4. Infrastructure Layer](#4234-infrastructure-layer)
+      - [4.2.3.5. Bounded Context Software Architecture Component Level Diagrams](#4235-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.3.6. Bounded Context Software Architecture Code Level Diagrams](#4236-bounded-context-software-architecture-code-level-diagrams)
+      - [4.2.3.6.1. Bounded Context Domain Layer Class Diagrams](#42361-bounded-context-domain-layer-class-diagrams)
+      - [4.2.3.6.2. Bounded Context Database Design Diagram](#42362-bounded-context-database-design-diagram)
+    - [4.2.4. Bounded Context: Deteccion y Relay de Borde](#424-bounded-context-deteccion-y-relay-de-borde)
+      - [4.2.4.1. Domain Layer](#4241-domain-layer)
+      - [4.2.4.2. Interface Layer](#4242-interface-layer)
+      - [4.2.4.3. Application Layer](#4243-application-layer)
+      - [4.2.4.4. Infrastructure Layer](#4244-infrastructure-layer)
+      - [4.2.4.5. Bounded Context Software Architecture Component Level Diagrams](#4245-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.4.6. Bounded Context Software Architecture Code Level Diagrams](#4246-bounded-context-software-architecture-code-level-diagrams)
+      - [4.2.4.6.1. Bounded Context Domain Layer Class Diagrams](#42461-bounded-context-domain-layer-class-diagrams)
+      - [4.2.4.6.2. Bounded Context Database Design Diagram](#42462-bounded-context-database-design-diagram)
 - [Capítulo V: Solution UI/UX Design](#capítulo-v-solution-uiux-design)
   - [5.1. Style Guidelines](#51-style-guidelines)
     - [5.1.1. General Style Guidelines](#511-general-style-guidelines)
@@ -186,7 +216,7 @@ Como startup, Centinela Labs opera bajo un modelo de negocio escalable basado en
 | Miembro | Descripción|
 |---|---|
 | <img src="docs/assets/chaper1/IMGs/members/Rommel.jpeg" width="200"/> |**Hurtado Balcazar Rommel Daniel - U202517474** <br><br> Soy Rommel Hurtado Balcázar, tengo 23 años y estudio Ingeniería de Software en el 7to ciclo. Me considero un líder técnico orientado a la resolución de problemas, con capacidad para tomar decisiones y guiar al equipo hacia los objetivos del proyecto.<br><br>Cuento con experiencia en desarrollo fullstack, manejando tanto frontend como backend. En el lado del servidor trabajo principalmente con Java, y en el frontend utilizo React. Además, tengo conocimientos en bases de datos relacionales con SQL y no relacionales con MongoDB, así como experiencia con Node.js, Python y HTML/CSS.<br><br>He desarrollado proyectos propios fuera del ámbito universitario, lo que me ha dado una visión completa del ciclo de desarrollo de software. También me desenvuelvo en inglés a nivel intermedio-avanzado, lo que me permite acceder a documentación técnica y comunicarme en entornos internacionales. |
-| member 2| -Descripcion- |
+| <img src="docs/assets/chaper1/IMGs/members/Daniel.jpeg" width="200"/>| **Aquino Solorzano Daniel Jonatan -U202217678** <br><br> Tengo 22 años y estoy en la carrera de Ingeniería de Software cursando el 7mo ciclo. Considero que mis fuertes son la responsabilidad y puntualidad con la entrega de trabajos. <br><br> Tengo experiencia en el desarrollo Fullstack de aplicaciones Web con DDD y uso de diferentes Frameworks de desarrollo como Spring Boot o Angular. Así como tambien experiencia con diferentes lenguajes de programación como TypeScript, Java, Python, Dart, etc. También poseo experiencia en el desarrollo de aplicaciones móviles en Android o IOS, aunque me centro más en el desarrollo de Plataformas Backend. Poseo además experiencia en Bases de Datos Relaciones y No Relacionales como MySQL o MongoDB respectivamente. He llegado a utilizar plataformas de despliegue como Azure y Render; además de tecnologías que ayudan en la contenerización como Docker. Como punto adicional tengo un nivel intermedio-avanzado en inglés, lo que me ayuda a ampliar mis capacidades en diferentes ámbitos. |
 | member 3| -Descripcion-|
 | member 4| -Descripcion-|
 | member 5| -Descripcion-|
@@ -420,131 +450,966 @@ _Pendiente de desarrollo._
 
 ## 2.1. Competidores
 
-_Pendiente de desarrollo._
+El mercado de seguridad patrimonial en el Perú no es un espacio vacío. Conviven empresas de vigilancia física con décadas de trayectoria, servicios de alarma inteligente orientados al hogar y al comercio pequeño, y plataformas globales de cámaras con inteligencia artificial que recién empiezan a mirar la región. Se seleccionaron tres competidores que representan estos tres frentes, uno directo (comparte el enfoque de detección tecnológica sobre vigilancia pasiva) y dos indirectos (resuelven una parte del problema, pero desde un modelo de negocio distinto al de SecurIoT).
 
 ### 2.1.1. Análisis competitivo
 
-_Pendiente de desarrollo._
+**Prosegur Perú.** Empresa global de seguridad física con fuerte presencia en el país: vigilancia presencial, patrullaje móvil y un centro de operaciones remoto (iSOC) que suma cámaras y reconocimiento inteligente como capa adicional sobre el modelo de guardias (Prosegur, s.f.).
+
+**Verisure Perú.** Empresa de alarmas monitoreadas del grupo Verisure/Securitas Direct, con más de 35 años en el país, instalación inalámbrica y una línea específica para negocios (Verisure, s.f.).
+
+**Verkada.** Plataforma estadounidense de seguridad física gestionada en la nube (cámaras, sensores, control de accesos con IA), en expansión agresiva en Latinoamérica: la propia empresa reportó un crecimiento de reservas de 300% interanual en la región y nombró en 2026 un nuevo líder comercial para Latinoamérica con sede en Ciudad de México (Infobae, 2026).
+
+#### Competitive Analysis Landscape
+
+| | SecurIoT | Prosegur Perú | Verisure Perú | Verkada |
+|---|---|---|---|---|
+| **Overview** | Plataforma peruana de seguridad patrimonial para pymes industriales, logísticas y comerciales medianas, con dispositivos IoT en accesos y perímetros, procesamiento en el borde y gestión centralizada en la nube. | Seguridad física tradicional con capa tecnológica adicional (iSOC): vigilancia presencial, patrullaje móvil, CCTV y reconocimiento inteligente. | Alarmas monitoreadas para hogar y comercio pequeño, instalación inalámbrica, grabación continua y despacho ante emergencias. | Cámaras, sensores y control de accesos gestionados en la nube con IA embebida, para clientes enterprise. |
+| **Ventaja competitiva** | Detección y decisión ocurren en el dispositivo mismo, sin depender de un operador humano viendo cámaras ni de un kit aislado por local; un solo panel para varias sedes, a un costo pensado para pyme y no para gran corporación. | Décadas de trayectoria, cobertura física real (guardias, respuesta en sitio) y cartera ya establecida de clientes industriales y corporativos. | Marca reconocida en seguridad residencial/comercial, instalación rápida, despacho ante emergencias ya integrado al servicio. | Plataforma madura y probada en clientes enterprise, video + accesos + sensores en un solo producto, crecimiento regional fuerte. |
+| **Mercado objetivo** | Empresas industriales, logísticas y comerciales medianas de Lima Metropolitana, con instalaciones que tienen zonas de acceso restringido. | Desde pymes hasta grandes corporaciones, en sectores industrial, financiero y retail. | Principalmente hogares, con una línea "negocio" para locales comerciales u oficinas individuales. | Grandes empresas y campus corporativos; clientes de la región reportados en México (C5, Softek, Finsa, American School Foundation). |
+| **Estrategias de marketing** | Validación directa con administradores de seguridad de pymes industriales, landing propia, venta consultiva antes que masiva. | Venta consultiva por cotización, presencia institucional de décadas, casos de sectores publicados en su propio sitio. | Marketing directo al consumidor, descuentos de entrada (hasta 50% en el primer periodo), venta por estudio personalizado del local. | Venta enterprise B2B, liderazgo regional dedicado desde 2026, casos de éxito de cuentas grandes. |
+| **Productos & Servicios** | Dispositivo IoT (ESP32-CAM + sensores PIR, reed switch y ultrasónico), Edge API local, Cloud API multi-sede, Web App para administradores, Mobile App para guardias de campo. | Vigilancia presencial, patrullaje móvil, iSOC (CCTV + monitoreo remoto + reconocimiento inteligente), transporte de valores. | Kit de alarma inalámbrica, grabación continua, verificación y despacho ante alerta, app de monitoreo. | Cámaras con IA, sensores ambientales, control de accesos, plataforma unificada de gestión en la nube. |
+| **Precios & Costos** | Suscripción por sede o perímetro monitoreado más venta del dispositivo IoT; precio aún no público al estar en etapa de validación. | No publicados. Una nota de El Comercio de 2013 ubicaba un guardia no armado 24h en cerca de S/6,500 mensuales, cifra desactualizada pero indicativa de que el costo escala con cada turno adicional (El Comercio, 2013). | Desde S/189 mensuales en promoción vigente; otra fuente ubica el costo real cerca de S/170 mensuales bajo contrato de 3 años (Verisure, s.f.). | Cámaras entre US$500 y US$3,000+ por unidad; sensores entre US$200 y US$500 más licencia anual de US$50-150; controladores de puerta entre US$400 y US$800 más licencia anual de US$100-300 por puerta (Spot AI, 2026). |
+| **Canales de distribución** | Web (landing y panel), Mobile (guardias de campo), venta directa/consultiva a pymes industriales. | Web institucional con formulario de cotización, fuerza de ventas directa, sin autoservicio en línea. | Web con cotizador en línea, venta telefónica, instalación a domicilio. | Venta directa enterprise, sin autoservicio ni distribuidor confirmado en Perú. |
+| **Fortalezas** | Edge computing propio, arquitectura multi-sede desde el diseño, foco vertical industrial/perimetral, presencia y soporte local. | Marca establecida, cobertura física real, cartera de clientes industriales existente. | Precio de entrada bajo, marca reconocida, instalación rápida. | Plataforma tecnológica madura, capital y respaldo para expansión regional, marca reconocida en seguridad corporativa. |
+| **Debilidades** | Startup sin trayectoria ni clientes de referencia todavía, sin cobertura física propia (guardias, enlace a Serenazgo o PNP), escala de soporte de hardware aún no probada. | Costo atado a mano de obra, la alerta depende de un operador humano viendo cámaras en iSOC, sin producto de autoservicio para pyme. | Diseño de un kit por local, sin panel que centralice varias sedes, contrato de permanencia de 3 años, sin enfoque industrial o perimetral. | Costo por dispositivo fuera del alcance de una pyme, sin presencia local confirmada en Perú, producto genérico no ajustado al riesgo industrial/perimetral. |
+| **Oportunidades** | Vacío real entre la vigilancia humana cara y las plataformas de IA fuera del alcance de una pyme; ningún competidor cubre bien a la pyme industrial multi-sede. | Puede sumar IA y edge computing sobre su base de clientes existente más rápido que un jugador nuevo, si decide invertir en ello. | Podría extender su línea "negocio" hacia pymes con más de un local, si decide invertir en un panel multi-sede. | El momentum regional en Latinoamérica podría traducirse en entrada directa al Perú con recursos que un jugador local no tiene. |
+| **Amenazas** | Entrada directa de un jugador global como Verkada al Perú; que un incumbente como Prosegur sume su propia capa de IA sobre su cartera existente; percepción de marca nueva en un rubro donde la confianza pesa en la decisión de compra. | Jugadores con costo de operación más bajo (como SecurIoT) le quitan el segmento pyme, que hoy atiende con la misma estructura cara que usa para grandes corporaciones. | Un competidor con panel multi-sede nativo le quita el segmento de pyme con más de una sede, que hoy tendría que atender vendiendo un kit por cada local. | Un competidor local con precio y soporte pensado para pyme le cierra el paso a un segmento que todavía no atiende mientras decide si entra al Perú. |
+
+Todas las cifras de precio de la competencia provienen de fuentes públicas (sitios oficiales, prensa) y deben leerse como señales de precio, no como listas de precio auditadas; donde la fuente lo permite se indica la fecha o el contexto de la cifra.
 
 ### 2.1.2. Estrategias y tácticas frente a competidores
 
-_Pendiente de desarrollo._
+Frente a **Prosegur**, la fortaleza a enfrentar es su cobertura física real y su cartera de clientes ya establecida; la debilidad a aprovechar es que su modelo de alerta sigue dependiendo de un operador humano mirando cámaras y que su costo crece con cada guardia y turno adicional. SecurIoT no compite por reemplazar al guardia, compite por reducir el tiempo entre que algo pasa y que alguien se entera, con detección que corre en el dispositivo y no en un centro de monitoreo. El mensaje más útil aquí es de complemento, no de sustitución: SecurIoT puede integrarse con la central de alarmas o el enlace a serenazgo que el cliente ya tenga, en vez de pedirle que abandone a su proveedor actual.
+
+Frente a **Verisure**, la fortaleza a enfrentar es su marca reconocida y su instalación rápida; la debilidad a aprovechar es que vende un kit aislado por local, sin ningún concepto de gestión centralizada ni de zona restringida, y que ata al cliente a un contrato de tres años. Un administrador que supervisa una planta, un almacén y una oficina necesita un solo panel para las tres, no kits sueltos sin relación entre sí. SecurIoT también puede jugar la carta de flexibilidad contractual frente al candado de permanencia que exige Verisure, algo que pesa para una pyme que recién está probando si el gasto en seguridad tecnológica le conviene.
+
+Frente a **Verkada**, la fortaleza a enfrentar es su plataforma madura y su respaldo de capital para expandirse en la región; la debilidad a aprovechar es que su estructura de costo por dispositivo es imposible de pagar para una pyme peruana y que, a la fecha de esta investigación, no se encontró oficina ni distribuidor propio en el país. La táctica es ofrecer el mismo tipo de propuesta (cámaras con IA, decisión en el borde, panel centralizado) a un precio pensado desde el inicio para el presupuesto de una pyme, con soporte en español y en el mismo huso horario. Esa ventana no es eterna: si Verkada entra directamente al Perú con el mismo impulso que ya muestra en el resto de la región, la brecha se cierra rápido, lo que hace que el momento de consolidar clientes en el segmento pyme sea ahora.
 
 ## 2.2. Entrevistas
 
-El presente capítulo expone el proceso de investigación cualitativa llevado a cabo con los tres segmentos objetivo del proyecto, con el propósito de comprender a profundidad sus necesidades, comportamientos, puntos de dolor y expectativas frente al problema planteado. Para garantizar la validez metodológica y la utilidad de los hallazgos en las etapas posteriores del proyecto, el contenido se estructura en tres secciones fundamentales:
+El presente apartado expone el proceso de investigación cualitativa dirigido a los tres segmentos objetivo de SECURIOT, con el propósito de comprender sus necesidades, comportamientos, objetivos, frustraciones y experiencias relacionadas con la seguridad patrimonial.
 
--   **Diseño de entrevistas:** Detalla la formulación de las preguntas para cada segmento, asegurando que las preguntas respondan a necesidades, experiencias y opiniones que tengan los entrevistados en relación a nuestra solución y a la problemática que resuelve.
-    
--   **Registro de entrevistas:** Presenta la evidencia documental realizada a partir del trabajo de campo, incluyendo datos generales de los entrevistados, capturas de las sesiones y resúmenes clave de las conversaciones.
-    
--   **Análisis de entrevistas:** Sistematiza los datos cualitativos recopilados mediante la identificación de patrones de comportamiento y oportunidades directas para la definición de los artefactos de diseño y la solución tecnológica que se va a  implementar.    
+La investigación mediante entrevistas permitirá obtener información directamente de representantes de cada segmento, evitando basar las decisiones del proyecto únicamente en los supuestos iniciales del equipo. Los resultados obtenidos servirán posteriormente como base para la elaboración de los User Persona, User Task Matrix, User Journey Maps, Empathy Maps y demás artefactos del proceso de Needfinding.
 
-A través de esta aproximación estructurada, se busca transformar los testimonios individuales de cada segmento en fundamentos concretos y accionables para la toma de decisiones de diseño y desarrollo.
+El proceso de entrevistas se organiza en tres etapas:
+
+- **Diseño de entrevistas:** definición de las preguntas principales y complementarias dirigidas a cada segmento objetivo.
+- **Registro de entrevistas:** documentación de las entrevistas realizadas, incluyendo información del participante, evidencia audiovisual y resumen descriptivo de sus respuestas.
+- **Análisis de entrevistas:** identificación de patrones y características comunes dentro de cada segmento a partir de los datos reales obtenidos durante las entrevistas.
 
 ### 2.2.1. Diseño de entrevistas
 
-### Segmento 1: Administrador de Seguridad Patrimonial (Segmento Principal)
+Con el propósito de comprender las necesidades, comportamientos, objetivos y puntos de dolor de los segmentos objetivo de SECURIOT, se diseñaron entrevistas semiestructuradas dirigidas a representantes de los siguientes segmentos:
 
-_Objetivo: Validar la complejidad de la gestión multi-zona, fallos en la detección actual, tiempos de reacción y la necesidad de trazabilidad para auditorías/denuncias._
+- Administrador de Seguridad Patrimonial.
+- Personal de Vigilancia In Situ.
+- Gerente o Dueño de Pyme Industrial.
 
-1.  ¿Cómo está estructurado actualmente el sistema de monitoreo y control de accesos en las distintas sedes o áreas críticas (almacenes, producción, carga)?
-    
-2.  En el día a día, ¿Cuáles son los puntos ciegos o las mayores dificultades que tienen para identificar si una persona que circula por una zona restringida está realmente autorizada?
-    
-3.  ¿Qué tan frecuentes son las falsas alarmas con su equipamiento actual y cuánto tiempo/recursos les toma verificar cada evento?
-    
-4.  Cuénteme sobre la última vez que detectaron una presencia no autorizada o sospechosa dentro de la planta: ¿Cuánto tardaron en enterarse y cuál fue el protocolo inmediato?
-    
-5.  ¿Tienen forma de restringir o bloquear accesos de forma remota/inmediata cuando se confirma una intrusión, o depende 100% de la intervención física del guardia?
-    
-6.   Al momento de investigar un robo ¿Qué tan difícil es recopilar grabaciones, registros de horas y evidencia concluyente?
-    
-7.   ¿Qué tan flexible o complejo resulta hoy dar de alta o baja permisos de acceso para personal temporal, contratistas o cambios de turno rotativo?
-    
-8.  ¿Por qué medios coordinan las emergencias con los agentes de campo y qué fallas de comunicación suelen presentarse en situaciones críticas?
-    
-9.  ¿Qué indicadores clave (KPIs) le exige la gerencia respecto a la seguridad patrimonial y qué tan fácil le resulta elaborarlos hoy en día?
-    
-10.  Si implementaran una solución con IA y visión computarizada para automatizar alertas y trazabilidad, ¿Cuál sería su principal inquietud o requisito técnico indispensable?
-    
+Las entrevistas están conformadas por preguntas principales, que serán formuladas a todos los participantes pertenecientes a un mismo segmento, y preguntas complementarias, que permitirán profundizar en determinadas respuestas cuando sea necesario.
 
-### Segmento 2: Personal de Vigilancia In Situ (Segmento Operativo)
+La entrevista se orientará inicialmente a comprender la situación actual del participante, sus actividades, herramientas, problemas y experiencias. La propuesta de SECURIOT será presentada únicamente después de explorar el contexto actual del entrevistado, con la finalidad de evitar condicionar sus respuestas.
 
-_Objetivo: Validar la usabilidad móvil en campo, tiempos de traslado, claridad de las notificaciones de alerta y protocolos de seguridad física del guardia._
+Asimismo, se recopilará información objetiva y subjetiva que permita posteriormente construir los arquetipos correspondientes a cada segmento.
 
-1.  ¿Cómo realiza sus recorridos habituales y cómo registra actualmente que pasó por cada punto de control o zona restringida?
-    
-2.  Cuando ocurre una anomalía o alguien entra donde no debe, ¿Cómo le avisan a usted mientras está en ronda (radio, llamada, sirena)?
-    
-3.  Al recibir un aviso de posible intruso, ¿Qué información recibe antes de llegar al punto? (¿Sabe con anticipación cuántas personas son, cómo van vestidas o en qué punto exacto están?)
-    
-4.  Desde que se dispara una alerta hasta que usted llega físicamente al lugar comprometido, ¿Cuánto tiempo suele pasar y qué obstáculos encuentra en el camino?
-    
-5.  Al intervenir a alguien sospechoso en una zona sensible (ej. almacén de noche), ¿Cómo comprueba en ese instante si es un trabajador con permiso o un intruso?
-    
-6.  Durante su servicio, ¿Utiliza un teléfono móvil corporativo o personal para tareas de trabajo? ¿Qué limitaciones técnicas enfrenta (batería, señal, dificultad para usarlo en movimiento)?
-    
-7.  Si confirma que hay una intrusión en curso, ¿Cuál es el paso a paso exacto que tiene ordenado seguir y a quién debe reportar primero?
-    
-8.  ¿Con qué frecuencia tiene que desplazarse a un punto por una alarma que resultó ser un animal, un error de sensor o un empleado fuera de hora?
-    
-9. Al finalizar su turno o tras atender un evento, ¿Cómo redacta el informe de novedades? ¿Cuánto tiempo le toma llenar ese reporte?
-    
-10.  Si tuviera una app en el celular que le enviara la foto de la persona detectada y la zona exacta de la intrusión en tiempo real, ¿Qué características debería tener para que le sea verdaderamente útil y no un estorbo durante la guardia?
-    
+#### Información general del entrevistado
 
-### Segmento 3: Gerente o Dueño de Pyme Industrial  (Segmento Secundario)
+Antes de iniciar las preguntas específicas de cada segmento, se recopilarán los siguientes datos:
 
-_Objetivo: Validar la justificación económica (ROI), mitigación del riesgo patrimonial, valor de los reportes ejecutivos y disposición a un modelo de suscripción SaaS._
+- Nombres y apellidos.
+- Edad.
+- Género.
+- Distrito de residencia.
+- Estado civil y composición familiar, de manera opcional.
+- Ocupación.
+- Cargo actual.
+- Sector de la empresa en la que trabaja.
+- Años de experiencia en su actividad.
+- Breve descripción de su trayectoria profesional.
+- Dispositivos que utiliza con mayor frecuencia.
+- Aplicaciones, plataformas y canales digitales utilizados habitualmente.
+- Herramientas o marcas tecnológicas que utiliza o reconoce dentro de su actividad laboral.
 
-1.  En el último año, ¿Cuáles han sido las mayores preocupaciones o pérdidas económicas vinculadas a robos e intrusiones en sus instalaciones?
-    
-2.  ¿Cómo compone actualmente su inversión en seguridad (empresas de guardianía, cámaras pasivas, mantenimiento) y siente que ese gasto realmente previene pérdidas o solo reacciona cuando ya ocurrieron?
-    
-3.  Como director general, ¿con qué frecuencia revisa el estado de la seguridad de sus plantas/almacenes y qué tipo de información ejecutiva le llega a su escritorio?
-    
-4.  ¿Su empresa cuenta actualmente con póliza de seguro patrimonial contra robo? En caso afirmativo o negativo, ¿Qué dificultades o costos elevados ha encontrado al respecto?
-    
-5.  ¿Qué impacto económico o de paralización de planta le generaría un incidente de intrusión en zonas críticas (ej. cuarto de tableros, líneas de producción o almacén de producto terminado)?
-    
-6.  Cuando está de viaje o fuera de la oficina, ¿Cómo se asegura de que los protocolos de seguridad y las rondas se están cumpliendo de forma efectiva?
-    
-7.  ¿Cómo evaluaría una solución tecnológica que reduzca la dependencia del factor humano o complemente la vigilancia con IA para evitar pérdidas patrimoniales?
-    
-8. Para justificar la contratación de un software por suscripción mensual en seguridad patrimonial, ¿Qué métricas o resultados concretos necesitaría ver reflejados?
-    
-9.  Al evaluar proveedores de tecnología o seguridad, ¿Cuáles son sus mayores temores (costos ocultos, fallas de soporte, complejidad de instalación en la infraestructura existente)?
-    
-10.  ¿Qué datos estratégicos le gustaría ver en un tablero de control mensual para sentirse seguro de renovar el servicio (ej. reducción de incidentes, tiempos de respuesta, accesos fuera de horario)?
+Durante la entrevista también se buscará identificar características relacionadas con sus habilidades, comportamiento frente a la tecnología, objetivos, frustraciones y forma de tomar decisiones.
+
+#### Segmento 1: Administrador de Seguridad Patrimonial
+
+**Objetivo de la entrevista:** Comprender cómo se gestiona actualmente la seguridad de las instalaciones, cuáles son las principales dificultades relacionadas con el monitoreo, control de accesos y respuesta ante incidentes, y qué información requiere el administrador para supervisar y tomar decisiones.
+
+**Preguntas principales y complementarias**
+
+1. **¿Podría contarnos cuál es su cargo y qué responsabilidades tiene relacionadas con la seguridad de la organización?**
+   - ¿Cuántas instalaciones o áreas se encuentran bajo su responsabilidad?
+   - ¿Participa directamente en la elección o evaluación de sistemas de seguridad?
+   - ¿Con cuánto personal de seguridad suele coordinar?
+
+2. **¿Cómo está organizado actualmente el sistema de seguridad y control de accesos de la empresa?**
+   - ¿Utilizan vigilancia humana?
+   - ¿Utilizan cámaras de seguridad?
+   - ¿Cuentan con alarmas?
+   - ¿Utilizan controles biométricos o tarjetas?
+   - ¿Utilizan algún software de monitoreo?
+
+3. **¿Cómo controlan actualmente quién puede ingresar a zonas restringidas como almacenes, áreas de producción o zonas de carga?**
+   - ¿Existen diferentes niveles de autorización?
+   - ¿Cómo manejan trabajadores temporales, contratistas o visitantes?
+   - ¿Cómo se actualizan o eliminan los permisos?
+
+4. **¿Cuáles son las principales dificultades que tienen para determinar si una persona que se encuentra en una zona restringida está realmente autorizada?**
+   - ¿Existen puntos ciegos?
+   - ¿Depende de que una persona reconozca al trabajador?
+   - ¿Han ocurrido errores de identificación?
+
+5. **Cuénteme sobre alguna situación reciente en la que hayan detectado un acceso no autorizado o una actividad sospechosa. ¿Cómo se enteraron y qué ocurrió después?**
+   - ¿Cuánto tiempo tardaron en detectarlo?
+   - ¿Quién recibió la primera alerta?
+   - ¿Cómo se comunicó al personal de seguridad?
+   - ¿Qué procedimiento siguieron?
+
+6. **¿Con qué frecuencia reciben falsas alarmas o alertas que finalmente no representan una amenaza?**
+   - ¿Qué suele provocarlas?
+   - ¿Cuánto tiempo toma verificar cada una?
+   - ¿Considera que afectan la atención que se presta a futuras alertas?
+
+7. **Cuando ocurre un incidente, ¿cómo recopilan posteriormente la evidencia necesaria para investigarlo?**
+   - ¿Revisan grabaciones?
+   - ¿Revisan registros de acceso?
+   - ¿Utilizan reportes elaborados por el personal?
+   - ¿Cuánto tiempo suele tomar encontrar toda la información?
+
+8. **¿Cómo coordinan actualmente una emergencia con el personal de vigilancia?**
+   - ¿Utilizan radio?
+   - ¿Teléfono?
+   - ¿WhatsApp?
+   - ¿Alguna aplicación?
+   - ¿Qué problemas de comunicación suelen aparecer?
+
+9. **¿Qué información o indicadores utiliza para evaluar el nivel de seguridad de una sede?**
+   - Número de incidentes.
+   - Tiempo de respuesta.
+   - Accesos fuera de horario.
+   - Zonas con mayor cantidad de eventos.
+
+10. **Si administra más de una sede, ¿cómo realiza actualmente la supervisión de todas ellas?**
+    - ¿Debe ingresar a diferentes sistemas?
+    - ¿Puede revisar información remotamente?
+    - ¿Qué dificultades presenta supervisar varias instalaciones?
+
+11. **¿Qué dispositivos y herramientas digitales utiliza con mayor frecuencia para realizar su trabajo?**
+    - ¿Computadora?
+    - ¿Smartphone?
+    - ¿Tablet?
+    - ¿Qué navegador utiliza habitualmente?
+    - ¿Qué medio prefiere para recibir información urgente?
+
+12. **¿Qué parte del proceso actual de seguridad le gustaría mejorar primero y por qué?**
+
+**Exploración de la propuesta**
+
+13. **¿Qué opinión tendría sobre una solución capaz de detectar posibles accesos no autorizados y notificar automáticamente al personal responsable?**
+    - ¿En qué situaciones le resultaría útil?
+    - ¿En qué situaciones no confiaría en ella?
+    - ¿Qué tipo de verificación consideraría necesaria?
+
+14. **¿Cuál sería su principal preocupación al implementar una solución basada en sensores, cámaras o inteligencia artificial?**
+    - Confiabilidad.
+    - Privacidad.
+    - Falsas alarmas.
+    - Costos.
+    - Integración con sistemas existentes.
+
+15. **¿Qué tendría que ofrecer una solución como esta para que usted realmente considerara utilizarla dentro de su organización?**
+
+---
+
+#### Segmento 2: Personal de Vigilancia In Situ
+
+**Objetivo de la entrevista:** Comprender cómo se realizan las tareas de vigilancia y control de accesos durante una jornada de trabajo, cuáles son las principales dificultades para identificar incidentes y qué información permitiría responder con mayor rapidez y seguridad.
+
+**Preguntas principales y complementarias**
+
+1. **¿Podría contarnos cómo es normalmente una jornada de trabajo para usted?**
+   - ¿Qué zonas supervisa?
+   - ¿Realiza rondas?
+   - ¿Supervisa cámaras?
+   - ¿Controla ingresos?
+
+2. **¿Cómo realiza sus recorridos habituales y cómo registra que pasó por los diferentes puntos de control?**
+   - ¿Utiliza registros manuales?
+   - ¿Utiliza algún dispositivo?
+   - ¿Utiliza alguna aplicación?
+
+3. **Cuando ocurre una anomalía o alguien ingresa donde no debería, ¿cómo recibe actualmente el aviso?**
+   - Radio.
+   - Llamada.
+   - Sirena.
+   - Mensaje.
+   - Comunicación presencial.
+
+4. **Cuando recibe una alerta, ¿qué información conoce antes de llegar al lugar?**
+   - ¿Ubicación exacta?
+   - ¿Cantidad de personas?
+   - ¿Imagen de la persona?
+   - ¿Tipo de evento?
+
+5. **Desde que recibe el aviso hasta que llega al lugar del incidente, ¿cuánto tiempo suele pasar?**
+   - ¿Qué factores pueden retrasarlo?
+   - ¿La distancia?
+   - ¿Problemas de comunicación?
+   - ¿Falta de información?
+   - ¿Dificultades para acceder a determinadas zonas?
+
+6. **Cuando encuentra a una persona en una zona restringida, ¿cómo determina si realmente tiene autorización para estar allí?**
+   - ¿Debe consultar a un supervisor?
+   - ¿Revisa algún registro?
+   - ¿Solicita identificación?
+   - ¿Existen situaciones donde resulte difícil verificarlo?
+
+7. **Si confirma una posible intrusión, ¿qué procedimiento debe seguir?**
+   - ¿A quién informa primero?
+   - ¿Debe esperar alguna autorización?
+   - ¿Qué acciones puede realizar directamente?
+
+8. **¿Con qué frecuencia atiende alertas que finalmente resultan no ser una amenaza real?**
+   - ¿Qué suele provocarlas?
+   - ¿Animales?
+   - ¿Errores de sensores?
+   - ¿Personal fuera de horario?
+   - ¿Cómo afecta esto su trabajo?
+
+9. **¿Qué dificultades encuentra cuando debe supervisar varias zonas, accesos o cámaras al mismo tiempo?**
+
+10. **Después de atender un incidente, ¿cómo registra lo sucedido?**
+    - ¿Redacta un informe?
+    - ¿El registro es manual o digital?
+    - ¿Cuánto tiempo le toma?
+    - ¿Debe adjuntar alguna evidencia?
+
+11. **¿Utiliza un teléfono móvil durante sus actividades de trabajo?**
+    - ¿Es personal o corporativo?
+    - ¿Tiene problemas de batería?
+    - ¿Presenta problemas de señal?
+    - ¿El tamaño de pantalla representa alguna dificultad?
+    - ¿Es difícil utilizarlo durante una ronda?
+
+12. **¿Qué aplicaciones o medios digitales utiliza habitualmente para comunicarse durante su turno?**
+
+13. **¿Cómo se siente al utilizar una herramienta tecnológica nueva dentro del trabajo?**
+    - ¿Suele adaptarse rápidamente?
+    - ¿Qué hace que una aplicación sea fácil o difícil de utilizar?
+    - ¿Prefiere instrucciones visuales, texto, sonidos u otro tipo de interacción?
+
+14. **Si pudiera mejorar una sola parte de su trabajo diario relacionada con la seguridad, ¿cuál sería?**
+
+**Exploración de la propuesta**
+
+15. **¿Qué opinión tendría sobre una aplicación que le avisara inmediatamente cuando se detecta un posible acceso no autorizado y le indicara dónde está ocurriendo?**
+    - ¿Qué información debería mostrar?
+    - ¿Necesitaría una fotografía?
+    - ¿Nivel de riesgo?
+    - ¿Hora?
+    - ¿Zona exacta?
+
+16. **¿Qué tendría que tener una alerta para que realmente le resulte útil y no termine siendo una distracción durante su trabajo?**
+
+17. **¿Qué situaciones cree que un sistema automático podría interpretar incorrectamente y deberían ser revisadas por una persona?**
+
+---
+
+#### Segmento 3: Gerente o Dueño de Pyme Industrial
+
+**Objetivo de la entrevista:** Comprender cómo la gerencia evalúa económicamente la seguridad patrimonial, qué impacto tienen los incidentes sobre el negocio y qué factores influyen en la decisión de contratar y mantener una solución tecnológica mediante un modelo de suscripción.
+
+**Preguntas principales y complementarias**
+
+1. **¿Podría contarnos brevemente sobre la empresa que dirige y su responsabilidad dentro de ella?**
+   - ¿A qué sector pertenece?
+   - ¿Cuántas sedes tiene?
+   - ¿Cuántos trabajadores aproximadamente?
+   - ¿Cuenta con almacenes, plantas o instalaciones con zonas restringidas?
+
+2. **Actualmente, ¿cuáles son sus principales preocupaciones respecto a la seguridad de las instalaciones y activos de la empresa?**
+
+3. **¿Qué medidas de seguridad utiliza actualmente la organización?**
+   - Vigilancia.
+   - Cámaras.
+   - Alarmas.
+   - Seguros.
+   - Controles de acceso.
+
+4. **¿Cómo evalúa actualmente si la inversión que realiza en seguridad está dando buenos resultados?**
+   - ¿Utiliza indicadores?
+   - ¿Se revisan incidentes?
+   - ¿Se compara el gasto con las pérdidas evitadas?
+
+5. **¿Algún incidente de seguridad podría afectar significativamente las operaciones de la empresa? ¿De qué manera?**
+   - Pérdidas de inventario.
+   - Daño de maquinaria.
+   - Paralización de operaciones.
+   - Problemas legales.
+   - Afectación a clientes.
+
+6. **¿Qué información relacionada con seguridad recibe actualmente de los responsables de las instalaciones?**
+   - ¿Con qué frecuencia?
+   - ¿Recibe reportes?
+   - ¿Recibe indicadores?
+   - ¿Solo se le informa cuando ocurre un incidente?
+
+7. **Cuando se encuentra fuera de la empresa, ¿cómo supervisa que los protocolos de seguridad se estén cumpliendo?**
+
+8. **¿La empresa cuenta actualmente con algún tipo de seguro patrimonial?**
+
+   En caso afirmativo:
+   - ¿Qué factores influyeron en la decisión de contratarlo?
+   - ¿Qué dificultades encontró?
+
+   En caso negativo:
+   - ¿Qué factores han influido para no contratarlo?
+
+9. **¿Qué factores considera más importantes cuando evalúa contratar un nuevo proveedor de seguridad o tecnología?**
+   - Costo.
+   - Confiabilidad.
+   - Soporte.
+   - Facilidad de implementación.
+   - Integración.
+   - Privacidad.
+
+10. **¿Qué tendría que demostrar una solución tecnológica para justificar un pago mensual por suscripción?**
+
+11. **¿Qué información le gustaría recibir periódicamente para evaluar si una solución de seguridad está generando valor?**
+    - Incidentes detectados.
+    - Tiempo de respuesta.
+    - Accesos fuera de horario.
+    - Comparaciones entre sedes.
+    - Tendencias mensuales.
+
+12. **Cuando toma decisiones sobre tecnología para la empresa, ¿qué dispositivos, plataformas o fuentes de información utiliza habitualmente?**
+
+13. **¿Qué suele generar mayor desconfianza cuando evalúa contratar una nueva solución tecnológica para la empresa?**
+
+14. **Si pudiera mejorar un único aspecto de la seguridad patrimonial de su empresa, ¿qué elegiría y por qué?**
+
+**Exploración de la propuesta**
+
+15. **¿Qué opinión tendría sobre complementar la vigilancia existente con un sistema que detecte automáticamente posibles accesos no autorizados y registre los incidentes?**
+
+16. **¿Qué resultados tendría que observar después de utilizar una solución como esta para considerar que vale la pena mantenerla?**
+
+17. **Si una solución permitiera supervisar varias instalaciones desde un único sistema, ¿qué información necesitaría visualizar para confiar en ella?**
+
+---
+
+#### Preguntas de cierre
+
+Al finalizar cada entrevista se realizarán las siguientes preguntas abiertas:
+
+1. **¿Existe algún problema relacionado con la seguridad de su organización o trabajo que considere importante y que no hayamos mencionado?**
+
+2. **¿Hay alguna experiencia, necesidad o recomendación adicional que considere importante para nuestra investigación?**
+
+Estas preguntas permitirán identificar aspectos que no hayan sido contemplados inicialmente por el equipo y reducir el riesgo de limitar los hallazgos únicamente a los supuestos establecidos previamente.
+
+#### Criterios para la ejecución de las entrevistas
+
+Durante las entrevistas se considerarán las siguientes buenas prácticas:
+
+- Priorizar preguntas abiertas.
+- Evitar sugerir respuestas al participante.
+- Solicitar ejemplos o experiencias reales cuando sea posible.
+- No presentar detalladamente SECURIOT antes de explorar la problemática actual.
+- Utilizar las preguntas complementarias cuando sea necesario profundizar en una respuesta.
+- No asumir que todos los participantes experimentan los mismos problemas.
+- Permitir que el participante amplíe aspectos que considere relevantes.
+- Solicitar autorización antes de registrar la entrevista en video.
+
+La entrevista seguirá el siguiente orden:
+
+**Caracterización → Contexto actual → Tareas → Problemas → Experiencias reales → Objetivos y necesidades → Tecnología y canales → Exploración de la propuesta → Cierre.**
 
 ### 2.2.2. Registro de entrevistas
 
-_Pendiente de desarrollo._
+En esta sección se presenta el registro de las entrevistas realizadas a representantes de los tres segmentos objetivo de SECURIOT. Para cada participante se incluyen sus datos generales, la evidencia visual de la sesión, el enlace correspondiente a la grabación y un resumen descriptivo de los principales hallazgos obtenidos.
+
+Todas las entrevistas fueron realizadas de manera virtual mediante **Google Meet**. Las grabaciones correspondientes se almacenan en **Google Drive**.
+
+#### Segmento 1: Administrador de Seguridad Patrimonial
+
+##### Entrevista 1: Bianca Beltrán
+
+| Dato | Información |
+|---|---|
+| **Nombres y apellidos** | Bianca Beltrán |
+| **Edad** | 42 años |
+| **Distrito de residencia** | Ate |
+| **Segmento** | Administrador de Seguridad Patrimonial |
+| **Medio de entrevista** | Google Meet |
+| **Inicio** | 00:00 |
+| **Duración** | 4:23 |
+| **Video de la entrevista** | [Ver entrevista en Google Drive](https://drive.google.com/drive/folders/1jC7MRUZ4k6w8-7biKTMAuQqbS1o10VYm?usp=sharing) |
+
+**Evidencia de entrevista**
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/interviews/seg1/interview1.png" alt="Entrevista a Bianca Beltrán" width="700"/>
+</p>
+
+**Resumen de la entrevista**
+
+A partir de la entrevista realizada a Bianca Beltrán, de 42 años y residente de Ate, se identificó que la entrevistada se desempeña como Jefe de Seguridad Patrimonial en una planta industrial de manufactura y producción ubicada en su mismo distrito. Describe que supervisa múltiples sedes bajo un esquema mixto y fragmentado, contando con un centro de control con 40 cámaras análogas e IP y molinetes biométricos para el personal fijo, pero señala que los ingresos vehiculares y áreas de carga se gestionan mediante cuadernos físicos y grabadores locales independientes con enlaces VPN inestables.
+
+Manifiesta frustración por los puntos ciegos provocados por el alto flujo de terceros (contratistas, choferes y estibadores), quienes usan chalecos reflectivos idénticos y se confunden fácilmente entre las áreas de almacén y despacho sin que el operador de cámaras lo note en tiempo real. Relata como antecedente crítico el ingreso no detectado de un exempleado de un contratista que permaneció 40 minutos en el almacén de repuestos mecánicos antes de ser descubierto de forma fortuita. Asimismo, reporta que los sensores perimetrales generan entre 4 y 8 falsas alarmas nocturnas por factores ambientales, demandando hasta 15 minutos de descarte por evento y saturando al personal. Expone que la contención recae por completo en la respuesta física de los guardias al carecer de bloqueos remotos, que las fallas de comunicación por zonas muertas de radio y retrasos en WhatsApp entorpecen la coordinación, y que la consolidación de evidencias ante hurtos y la elaboración de KPIs para gerencia le demandan hasta 3 días hábiles debido a interfaces lentas de NVR y datos basados en bitácoras manuales.
+
+Finaliza expresando interés en incorporar una solución con visión computarizada e IA para automatizar la trazabilidad y las alertas, indicando como inquietud clave que el software sea compatible con sus cámaras actuales vía protocolos estándar para evitar reemplazos costosos, además de exigir una baja tasa de falsos positivos y el cumplimiento irrestricto de las normas de evacuación de INDECI en los mecanismos de bloqueo.
+
+---
+
+##### Entrevista 2: Nadia Cardenas
+
+| Dato | Información |
+|---|---|
+| **Nombres y apellidos** | Nadia Cardenas |
+| **Edad** | 52 años |
+| **Distrito de residencia** | Lurin |
+| **Segmento** | Administrador de Seguridad Patrimonial |
+| **Medio de entrevista** | Google Meet |
+| **Inicio** | 00:00 |
+| **Duración** | 4:20 |
+| **Video de la entrevista** | [Ver entrevista en Google Drive](https://drive.google.com/drive/folders/1jC7MRUZ4k6w8-7biKTMAuQqbS1o10VYm?usp=sharing) |
+
+**Evidencia de entrevista**
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/interviews/seg1/interview2.png" alt="Entrevista a Nadia Cardenas" width="700"/>
+</p>
+
+**Resumen de la entrevista**
+
+A partir de la entrevista realizada a Nadia Cárdenas, de 52 años y residente de Lurín, se identificó que la entrevistada se desempeña como Jefa de Seguridad Patrimonial en un centro de distribución logístico y almacén de frío en su mismo distrito. Describe que su operación diaria abarca la supervisión de un predio de 12,000 m² mediante un sistema mixto de 64 cámaras IP y dos NVRs en un cuarto de monitoreo, pero señala que el control en las áreas más sensibles (cámaras de frío, almacén de valor y 18 bahías de carga) depende principalmente de candados mecánicos, supervisión visual y registros manuales en papel.
+
+Manifiesta una constante preocupación y frustración por los puntos ciegos derivados de la alta rotación de personal externo (entre 30 y 50 estibadores nuevos por semana), quienes además visten indumentaria térmica pesada que dificulta su reconocimiento visual e impide validar con rapidez si cuentan con autorización para transitar por zonas críticas. Relata como experiencia crítica la reciente intrusión de un transportista en áreas restringidas que pasó inadvertida durante 25 minutos. A esto se suma el desgaste operativo provocado por entre 5 y 6 falsas alarmas nocturnas por causas ambientales que obligan a realizar descartes visuales manuales de hasta 12 minutos por evento, así como las fallas de comunicación en sus radios Motorola por la interferencia estructural de las naves. Expone que ante una alerta no posee mecanismos de contención remota y depende 100% de la intervención física de los guardias, mientras que la recopilación de evidencia ante hurtos le toma jornadas enteras debido al desfasaje horario entre grabadores. Asimismo, debe invertir cerca de 20 horas al mes consolidando datos dispersos para reportar a gerencia y cumplir con las auditorías de certificación BASC.
+
+Finaliza mostrando una postura favorable hacia una solución automatizada con visión computarizada e IA que optimice las alertas tempranas y la trazabilidad, enfatizando que esta debe operar con baja latencia sin saturar el ancho de banda local y estar estrictamente alineada a las normas de evacuación de INDECI para no bloquear salidas de emergencia ante incidentes de riesgo.
+
+---
+
+##### Entrevista 3: Dante Zavala
+
+| Dato | Información |
+|---|---|
+| **Nombres y apellidos** | Dante Zavala |
+| **Edad** | 53 años |
+| **Distrito de residencia** | El Callao |
+| **Segmento** | Administrador de Seguridad Patrimonial |
+| **Medio de entrevista** | Google Meet |
+| **Inicio** | 00:00 |
+| **Duración** | 4:19 |
+| **Video de la entrevista** | [Ver entrevista en Google Drive](https://drive.google.com/drive/folders/1jC7MRUZ4k6w8-7biKTMAuQqbS1o10VYm?usp=sharing) |
+
+**Evidencia de entrevista**
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/interviews/seg1/interview3.png" alt="Entrevista a Dante Zavala" width="700"/>
+</p>
+
+**Resumen de la entrevista**
+
+A partir de la entrevista realizada a Dante Zavala, de 53 años y residente de El Callao, se identificó que el entrevistado se desempeña como Coordinador de Seguridad Integral en un complejo metalmecánico y patio de fundición en su mismo distrito. Describe que su rutina laboral implica custodiar un predio de casi 15,000 m² con insumos de alto valor (como cobre y bronce) mediante una caseta de monitoreo con 32 cámaras mayoritariamente análogas, pero señala que el resguardo de las zonas críticas depende de candados y llaves físicas, torniquetes peatonales para personal fijo y revisiones manuales con cuadernos en los accesos de carga.
+
+Manifiesta una constante frustración ante la incapacidad de distinguir intrusos de trabajadores autorizados en las cámaras debido al uso obligatorio de EPP pesado (overoles oscuros, cascos y respiradores), lo que facilita el robo interno de metales en zonas como el almacén de lingotes. Relata que las condiciones ambientales extremas (polvo metálico, calor y vibraciones de hornos) y la fauna costera provocan de 4 a 7 falsas alarmas nocturnas en sensores infrarrojos, perdiendo hasta 15 minutos en cada inspección manual. Expone que las brechas de detección son graves, recordando un evento donde dos sujetos vulneraron el perímetro y pasaron inadvertidos durante casi una hora hasta ser descubiertos por casualidad. Añade que la contención recae 100% en el cierre manual de portones con cadenas por falta de controles automáticos, que el ruido industrial de más de 85 dB anula la efectividad de sus radios analógicas, y que auditar incidentes o armar reportes para gerencia le toma días enteros debido a videos borrosos por suciedad en lentes, interfaces lentas de DVR y bitácoras en papel con horas imprecisas.
+
+Finaliza expresando interés en una plataforma con visión computarizada e IA para automatizar la trazabilidad y las alertas tempranas, remarcando que su principal inquietud técnica es la precisión del reconocimiento bajo condiciones de polvo, luz adversa y prendas de seguridad industrial, y estableciendo como requisito indispensable que el sistema se desenergice automáticamente ante siniestros para respetar las normativas de evacuación de INDECI.
+
+---
+
+#### Segmento 2: Personal de Vigilancia In Situ
+
+##### Entrevista 1: Julieta Cordero
+
+| Dato | Información |
+|---|---|
+| **Nombres y apellidos** | Julieta Cordero |
+| **Edad** | 40 años |
+| **Distrito de residencia** | Villa El Salvador |
+| **Segmento** | Personal de Vigilancia In Situ |
+| **Medio de entrevista** | Google Meet |
+| **Inicio** | 00:00 |
+| **Duración** | 3:29 |
+| **Video de la entrevista** | [Ver entrevista en Google Drive](https://drive.google.com/drive/folders/1jC7MRUZ4k6w8-7biKTMAuQqbS1o10VYm?usp=sharing) |
+
+**Evidencia de entrevista**
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/interviews/seg2/interview1.png" alt="Entrevista a Julieta Cordero" width="700"/>
+</p>
+
+**Resumen de la entrevista**
+
+A partir de la entrevista realizada a Julieta Cordero, de 40 años y residente de Villa El Salvador, se identificó que la entrevistada labora como agente de seguridad en un centro logístico ubicado en su mismo distrito, cumpliendo turnos nocturnos rotativos de 12 horas a cargo del patrullaje perimetral y la atención primaria de alertas. Describe que realiza rondas a pie cada 45 minutos marcando puntos de control con un bastón electrónico, cuyo reporte se descarga de forma manual en garita al finalizar la jornada.
+
+Manifiesta una constante sensación de inseguridad e incertidumbre operativa al ser despachada a verificar posibles intrusiones mediante avisos por radio o llamadas telefónicas sin información previa sobre la cantidad de personas, su indumentaria o su nivel de amenaza, llegando a los puntos prácticamente a ciegas. Señala que el traslado físico le toma entre 3 y 6 minutos, viéndose retrasada por la falta de iluminación en el patio de maniobras, obstáculos en pasillos y la apertura manual de portones con candados pesados. Asimismo, expresa frustración por el desgaste físico y mental que causan entre 3 y 5 falsas alarmas por noche generadas por animales, viento o choferes fuera de hora. Explica que la validación de personas en campo depende de solicitar documentos y dictarlos por radio a garita, que utiliza su propio celular de gama media enfrentando problemas de descarga de batería y pérdida de señal bajo techos metálicos, y que la redacción de partes le toma hasta media hora a mano en cuadernos de papel.
+
+Finaliza mostrando una actitud receptiva hacia la implementación de una aplicación móvil que le brinde alertas en tiempo real, precisando que esta debe ser intuitiva, con botones grandes, emitir una señal sonora potente y mostrar de inmediato la fotografía del sujeto junto a su ubicación exacta sin menús complejos, consumiendo el mínimo de batería durante su turno.
+
+---
+
+##### Entrevista 2: Christopher Cabán
+
+| Dato | Información |
+|---|---|
+| **Nombres y apellidos** | Christopher Cabán |
+| **Edad** | 41 años |
+| **Distrito de residencia** | Los Olivos |
+| **Segmento** | Personal de Vigilancia In Situ |
+| **Medio de entrevista** | Google Meet |
+| **Inicio** | 00:00 |
+| **Duración** | 4:11 |
+| **Video de la entrevista** | [Ver entrevista en Google Drive](https://drive.google.com/drive/folders/1jC7MRUZ4k6w8-7biKTMAuQqbS1o10VYm?usp=sharing) |
+
+**Evidencia de entrevista**
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/interviews/seg2/interview2.png" alt="Entrevista a Christopher Cabán" width="700"/>
+</p>
+
+**Resumen de la entrevista**
+
+A partir de la entrevista realizada a Christopher Cabán, de 41 años y residente de Los Olivos, se identificó que el entrevistado se desempeña como vigilante de seguridad privada en una planta metalmecánica y almacén de insumos en su mismo distrito, cubriendo turnos rotativos tanto diurnos como nocturnos. Describe que su labor involucra el control de accesos peatonales y vehiculares, así como la respuesta a incidencias en talleres y patios mediante rondas horarias registradas con un llavero RFID en tres puntos fijos, recurriendo a anotaciones manuales en una libreta de campo cuando la congestión de camiones retrasa su recorrido.  Manifiesta una constante incertidumbre y sensación de riesgo al atender alertas de posibles intrusos, ya que la caseta le avisa por radio o WhatsApp sin brindarle detalles previos sobre la cantidad de sujetos o su perfil, obligándolo a acudir a oscuras únicamente con su linterna. Señala que llegar al punto comprometido le toma entre 2 y 5 minutos, enfrentando obstáculos como materiales dispersos en el suelo, zonas poco iluminadas y rejas con cadenas o candados desgastados que se atascan. Asimismo, expone frustración por el desgaste operativo que conllevan entre 4 y 5 falsas alarmas por noche generadas por aves, roedores u operarios no avisados. Explica que validar la identidad del personal en planta es difícil debido al uso de overoles, cascos y mascarillas, dependiendo de dictar los datos por radio a garita. En cuanto al aspecto técnico, utiliza su propio celular Android enfrentando problemas de consumo rápido de batería y pérdida total de señal bajo las planchas de fierro de los galpones, mientras que el cierre de informes le toma hasta 40 minutos a mano en el cuaderno de novedades tras un siniestro.  Finaliza manifestando una recepción muy favorable hacia una solución móvil que notifique intrusiones en tiempo real, precisando que la aplicación debe ser de respuesta rápida, evitar solicitudes reiteradas de credenciales, emitir una alarma con volumen muy alto incluso en modo silencio, y proyectar la fotografía del intruso junto a su ubicación exacta mediante un solo toque en pantalla.
+
+---
+
+##### Entrevista 3: Samuel Alzamora
+
+| Dato | Información |
+|---|---|
+| **Nombres y apellidos** | Samuel Alzamora |
+| **Edad** | 20 años |
+| **Distrito de residencia** | San Isidro |
+| **Segmento** | Personal de Vigilancia In Situ |
+| **Medio de entrevista** | Google Meet |
+| **Inicio** | 00:00 |
+| **Duración** | 4:46 |
+| **Video de la entrevista** | [Ver entrevista en Google Drive](https://drive.google.com/drive/folders/1jC7MRUZ4k6w8-7biKTMAuQqbS1o10VYm?usp=sharing) |
+
+**Evidencia de entrevista**
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/interviews/seg2/samuel-alzamora.png" alt="Entrevista a Samuel Alzamora" width="700"/>
+</p>
+
+**Resumen de la entrevista**
+
+A partir de la entrevista realizada a Samuel Alzamora, de 20 años y residente de San Isidro, se identificó que el entrevistado pertenece al segmento de Personal de Vigilancia In Situ y desarrolla actividades relacionadas con la supervisión de accesos, verificación del ingreso de personas y realización de rondas dentro de las instalaciones.
+
+Durante una jornada habitual utiliza diferentes herramientas para realizar sus funciones, principalmente cámaras de seguridad, radio y teléfono celular. También se emplean registros para documentar ingresos y novedades ocurridas durante el turno. Respecto al control de accesos, indicó que cuando una persona intenta ingresar a una zona restringida es necesario verificar su identificación y, en situaciones donde existe alguna duda, consultar con un supervisor o responsable del área, proceso que puede generar demoras cuando la información necesaria no se encuentra disponible inmediatamente.
+
+Ante una situación sospechosa, el personal puede enterarse mediante observación directa durante las rondas, a través de las cámaras de seguridad o mediante comunicación por radio. Después de identificar el evento, debe verificarse lo ocurrido y comunicarlo al supervisor correspondiente para continuar con el protocolo establecido. Una de las principales dificultades identificadas es la imposibilidad de supervisar simultáneamente todas las zonas y cámaras, ya que mientras realiza una ronda física resulta complicado mantener vigilancia constante sobre los demás puntos de la instalación.
+
+Samuel considera que, frente a una posible intrusión, la información más importante es conocer la ubicación exacta del evento, el tipo de alerta y, cuando sea posible, disponer de una imagen de la persona detectada. En cuanto al uso de tecnología, utiliza principalmente celular y radio, aunque señala posibles limitaciones relacionadas con la cobertura de señal y con la dificultad de revisar una pantalla mientras realiza rondas o desplazamientos.
+
+Respecto a SECURIOT, considera que las alertas deben ser rápidas, claras y contener únicamente información relevante. Asimismo, destacó la importancia de reducir las falsas alarmas, debido a que un exceso de notificaciones incorrectas podría disminuir la atención prestada a futuros eventos. Finalmente, señaló que una solución de seguridad debería ser sencilla de utilizar, especialmente durante situaciones de emergencia, donde el personal necesita conocer rápidamente qué ocurrió, dónde ocurrió y qué acción debe realizar.
+
+---
+
+#### Segmento 3: Gerente o Dueño de Pyme Industrial
+
+##### Entrevista 1: Marco Salvador
+
+| Dato | Información |
+|---|---|
+| **Nombres y apellidos** | Marco Salvador |
+| **Edad** | 20 años |
+| **Distrito de residencia** | Villa María del Triunfo |
+| **Segmento** | Gerente o Dueño de Pyme Industrial |
+| **Medio de entrevista** | Google Meet |
+| **Inicio** | 00:00 |
+| **Duración** | 13:09 |
+| **Video de la entrevista** | [Ver entrevista en Google Drive](https://drive.google.com/drive/folders/1jC7MRUZ4k6w8-7biKTMAuQqbS1o10VYm?usp=sharing) |
+
+**Evidencia de entrevista**
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/interviews/seg3/marco-salvador.png" alt="Entrevista a Marco Salvador" width="700"/>
+</p>
+
+**Resumen de la entrevista**
+
+A partir de la entrevista realizada a Marco Salvador, de 20 años y residente de Villa María del Triunfo, se identificó que participa en la administración de una pequeña empresa familiar del sector comercial, apoyando principalmente en actividades administrativas, supervisión de operaciones y toma de decisiones relacionadas con gastos y mejoras del negocio. Durante sus actividades utiliza principalmente un teléfono celular y una computadora, mientras que WhatsApp y el correo electrónico se encuentran entre sus principales medios de comunicación.
+
+Respecto a la seguridad patrimonial, señaló que una de sus principales preocupaciones es el ingreso de personas no autorizadas y la posibilidad de pérdida de productos o equipos. La empresa utiliza cámaras de seguridad, cerraduras y mecanismos de control de ingreso. Asimismo, indicó que cuando se encuentra fuera de las instalaciones depende principalmente de llamadas, mensajes o de la revisión de cámaras para conocer el estado de la empresa, por lo que considera útil disponer de una herramienta que centralice la información y permita consultar remotamente el estado de la seguridad.
+
+Al evaluar nuevas tecnologías, considera importantes factores como la confiabilidad, el costo, la facilidad de instalación y el soporte. En relación con SECURIOT, destacó principalmente la utilidad de recibir alertas en tiempo real indicando qué ocurrió y en qué zona se produjo el evento. También manifestó preocupación respecto a las falsas alarmas, debido a que una cantidad excesiva de notificaciones incorrectas podría provocar que los usuarios dejen de prestar atención a las alertas.
+
+---
+
+##### Entrevista 2: Aldair Salas
+
+| Dato | Información |
+|---|---|
+| **Nombres y apellidos** | Aldair Salas |
+| **Edad** | 21 años |
+| **Distrito de residencia** | San Borja |
+| **Segmento** | Gerente o Dueño de Pyme Industrial |
+| **Medio de entrevista** | Google Meet |
+| **Inicio** | 00:00 |
+| **Duración** | 14:42 |
+| **Video de la entrevista** | [Ver entrevista en Google Drive](https://drive.google.com/drive/folders/1jC7MRUZ4k6w8-7biKTMAuQqbS1o10VYm?usp=sharing) |
+
+**Evidencia de entrevista**
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/interviews/seg3/aldair-salas.png" alt="Entrevista a Aldair Salas" width="700"/>
+</p>
+
+**Resumen de la entrevista**
+
+A partir de la entrevista realizada a Aldair Salas, de 21 años y residente de San Borja, se identificó que participa en la administración de un negocio familiar dedicado a la distribución y comercialización de productos. Sus actividades se encuentran relacionadas principalmente con la organización de operaciones, compras, control de gastos y coordinación con el personal.
+
+Su principal preocupación en materia de seguridad se relaciona con la protección de las zonas donde se almacena mercadería y con evitar que personas ingresen a espacios para los que no poseen autorización. Actualmente se utilizan diferentes mecanismos de seguridad, como cámaras, cerraduras, iluminación y control humano de accesos. Uno de los problemas identificados es que las herramientas utilizadas se encuentran separadas entre sí, obligando a consultar distintas fuentes de información.
+
+Aldair considera beneficioso disponer de una plataforma que permita visualizar remotamente y desde un único lugar el estado de las diferentes instalaciones. En relación con SECURIOT, valoró especialmente la posibilidad de centralizar las alertas y mantener un registro automático de los incidentes. También considera importante que la plataforma sea sencilla de utilizar y que los usuarios reciban una adecuada capacitación para aprovechar sus funcionalidades.
+
+---
+
+##### Entrevista 3: Dania Cárdenas
+
+| Dato | Información |
+|---|---|
+| **Nombres y apellidos** | Dania Cárdenas |
+| **Edad** | 21 años |
+| **Distrito de residencia** | Miraflores |
+| **Segmento** | Gerente o Dueño de Pyme Industrial |
+| **Medio de entrevista** | Google Meet |
+| **Inicio** | 00:00 |
+| **Duración** | 4:57 |
+| **Video de la entrevista** | [Ver entrevista en Google Drive](https://drive.google.com/drive/folders/1jC7MRUZ4k6w8-7biKTMAuQqbS1o10VYm?usp=sharing) |
+
+**Evidencia de entrevista**
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/interviews/seg3/dania-cardenas.png" alt="Entrevista a Dania Cárdenas" width="700"/>
+</p>
+
+**Resumen de la entrevista**
+
+A partir de la entrevista realizada a Dania Cárdenas, de 21 años y residente de Miraflores, se identificó que participa en la administración de una pequeña empresa familiar, apoyando principalmente en la coordinación de actividades, supervisión general de las operaciones y control de determinados gastos.
+
+Entre sus principales preocupaciones se encuentra el ingreso de personas no autorizadas a determinadas áreas y la protección de productos y equipos que permanecen dentro de las instalaciones. La empresa utiliza cámaras de seguridad, cerraduras y controles manuales de ingreso. Para comunicar situaciones fuera de lo habitual se utilizan principalmente llamadas telefónicas y aplicaciones de mensajería.
+
+Dania considera que uno de los principales problemas de los mecanismos tradicionales es que las cámaras permiten observar o revisar lo sucedido, pero siguen dependiendo de que una persona detecte que algo está ocurriendo. Respecto a SECURIOT, identificó las alertas inmediatas en dispositivos móviles como una de las funcionalidades de mayor valor. Considera que deberían comunicar de manera clara qué ocurrió y dónde ocurrió. Asimismo, considera importante disponer de un historial de incidentes que permita evaluar con el tiempo la efectividad de las medidas de seguridad.
+
+---
 
 ### 2.2.3. Análisis de entrevistas
 
-_Pendiente de desarrollo._
+El análisis de las entrevistas se realizó de manera independiente para cada uno de los tres segmentos objetivo de SECURIOT. En total se consideraron **9 entrevistas**, distribuidas equitativamente en **3 participantes por segmento**.
+
+Debido al tamaño de la muestra, los porcentajes presentados tienen un propósito descriptivo y representan únicamente los patrones encontrados entre los participantes entrevistados. Para cada segmento, una coincidencia entre los tres entrevistados representa el **100%**, entre dos representa el **66.7%** y en un entrevistado representa el **33.3%**.
+
+---
+
+#### Análisis del Segmento 1: Administrador de Seguridad Patrimonial
+
+El segmento de Administradores de Seguridad Patrimonial estuvo compuesto por tres participantes con edades de **42, 52 y 53 años**, obteniéndose una edad promedio de aproximadamente **49 años**. Los entrevistados desarrollan actividades de supervisión de seguridad dentro de instalaciones industriales, logísticas o productivas y poseen responsabilidad sobre sistemas de vigilancia, accesos y respuesta ante incidentes.
+
+A partir de las entrevistas se identificó una fuerte dependencia de infraestructuras de seguridad compuestas por múltiples herramientas que no necesariamente se encuentran integradas. Los tres entrevistados mencionaron el uso combinado de cámaras, controles físicos, registros manuales y personal de vigilancia.
+
+| Característica identificada | Entrevistados | Porcentaje |
+|---|---:|---:|
+| Utilizan sistemas de seguridad compuestos por diferentes herramientas y mecanismos físicos | 3 de 3 | 100% |
+| Presentan dificultades para identificar rápidamente personas autorizadas y no autorizadas | 3 de 3 | 100% |
+| Reportan problemas relacionados con falsas alarmas | 3 de 3 | 100% |
+| Presentan dificultades de comunicación durante la atención de incidentes | 3 de 3 | 100% |
+| La respuesta ante incidentes depende principalmente de la intervención física del personal | 3 de 3 | 100% |
+| La recopilación de evidencias y elaboración de reportes requiere procesos manuales o lentos | 3 de 3 | 100% |
+| Mostraron interés en automatizar la detección, trazabilidad y generación de alertas | 3 de 3 | 100% |
+| Mencionaron requisitos técnicos de confiabilidad, integración o adaptación al entorno existente | 3 de 3 | 100% |
+| Consideran necesario respetar las condiciones y normas de evacuación de las instalaciones | 3 de 3 | 100% |
+
+Uno de los hallazgos más relevantes es la dificultad para identificar personas dentro de zonas críticas. En los tres casos existen factores que complican el reconocimiento visual, como la presencia de contratistas, alta rotación de trabajadores, prendas similares o el uso de equipos de protección personal.
+
+También se identificó un problema generalizado relacionado con las **falsas alarmas**. Los tres participantes mencionaron este fenómeno, producido por factores ambientales, animales u otras condiciones del entorno. Estas alertas requieren verificación humana y consumen tiempo del personal, aumentando el riesgo de que una alerta real no reciba la prioridad necesaria.
+
+Asimismo, el **100% de los entrevistados depende de la intervención física del personal de vigilancia** para verificar o contener una situación. Esto demuestra que los sistemas actuales funcionan principalmente como herramientas de observación y no necesariamente como sistemas capaces de apoyar activamente la respuesta.
+
+Otro problema común es la generación de evidencia y reportes. Los entrevistados señalaron dificultades para consultar grabaciones, integrar registros y elaborar indicadores posteriormente. En algunos casos estas actividades requieren varias horas o incluso días de trabajo.
+
+En consecuencia, para este segmento SECURIOT debe priorizar:
+
+- Alertas automáticas oportunas y verificables.
+- Reducción de falsos positivos.
+- Identificación y validación de accesos.
+- Centralización de eventos y evidencias.
+- Generación de información histórica e indicadores.
+- Compatibilidad con infraestructura previamente instalada.
+- Operación adecuada en condiciones industriales adversas.
+- Cumplimiento de las normas de seguridad y evacuación.
+
+---
+
+#### Análisis del Segmento 2: Personal de Vigilancia In Situ
+
+El segmento de Personal de Vigilancia In Situ estuvo compuesto por participantes de **20, 40 y 41 años**, obteniéndose una edad promedio aproximada de **33.7 años**.
+
+Los tres participantes desarrollan actividades relacionadas con rondas, control de accesos, supervisión de instalaciones y respuesta directa ante posibles incidentes. Debido a la naturaleza de sus funciones, trabajan principalmente en movimiento y requieren recibir información mientras se desplazan dentro de las instalaciones.
+
+| Característica identificada | Entrevistados | Porcentaje |
+|---|---:|---:|
+| Realizan rondas, control de accesos o verificación directa de incidentes | 3 de 3 | 100% |
+| Utilizan celular y radio como herramientas de comunicación | 3 de 3 | 100% |
+| Presentan dificultades relacionadas con señal, batería o uso del dispositivo durante las rondas | 3 de 3 | 100% |
+| Consideran importante conocer la ubicación exacta de una alerta | 3 de 3 | 100% |
+| Consideran útil disponer de una imagen o información contextual antes de llegar al incidente | 3 de 3 | 100% |
+| Identifican las falsas alarmas como un problema que debe reducirse | 3 de 3 | 100% |
+| Prefieren alertas simples, rápidas y fáciles de interpretar | 3 de 3 | 100% |
+| Actualmente elaboran o utilizan registros manuales de incidencias | 2 de 3 | 66.7% |
+| Manifestaron recibir información insuficiente antes de acudir físicamente a una alerta | 2 de 3 | 66.7% |
+
+El hallazgo principal de este segmento es que el personal debe responder físicamente ante una alerta, pero no siempre dispone de suficiente información antes de desplazarse hacia el lugar.
+
+Julieta Cordero y Christopher Cabán señalaron explícitamente que pueden ser enviados a verificar una posible intrusión sin conocer previamente la cantidad de personas involucradas o las características de la situación. Esta condición incrementa la incertidumbre y el riesgo durante la respuesta.
+
+Los tres participantes coincidieron en que una alerta útil debería proporcionar información inmediata relacionada con:
+
+- Ubicación exacta.
+- Tipo de evento.
+- Imagen o referencia visual.
+- Información suficiente para determinar la prioridad de la situación.
+
+Otro patrón importante corresponde a las limitaciones tecnológicas del entorno de trabajo. El **100% utiliza celular y radio**, pero también se identificaron dificultades relacionadas con pérdida de señal, consumo de batería y dificultad para utilizar una pantalla mientras se realizan desplazamientos.
+
+Las falsas alarmas constituyen nuevamente un problema importante. Julieta y Christopher describieron múltiples falsas alarmas durante sus turnos, mientras que Samuel señaló que reducir este tipo de notificaciones es indispensable para evitar que el personal pierda confianza o atención frente a futuras alertas.
+
+En términos de experiencia de usuario, los tres entrevistados mostraron preferencia por una solución que requiera pocas interacciones y presente solamente la información necesaria durante una emergencia.
+
+Por lo tanto, para este segmento SECURIOT debe priorizar:
+
+- Aplicación móvil orientada a acciones rápidas.
+- Alertas con ubicación exacta.
+- Evidencia visual inmediata del evento.
+- Información clara sobre el tipo de incidente.
+- Interfaz sencilla y con pocos pasos.
+- Alertas perceptibles en ambientes industriales.
+- Bajo consumo de batería.
+- Funcionamiento adecuado ante conectividad limitada.
+- Reducción significativa de falsas alarmas.
+
+---
+
+#### Análisis del Segmento 3: Gerente o Dueño de Pyme Industrial
+
+El tercer segmento estuvo compuesto por tres participantes de **20, 21 y 21 años**, obteniéndose una edad promedio aproximada de **20.7 años**.
+
+Los tres entrevistados participan en actividades administrativas, de supervisión o de toma de decisiones dentro de pequeñas empresas y mostraron preocupación principalmente por la protección de activos y el ingreso de personas no autorizadas.
+
+| Característica identificada | Entrevistados | Porcentaje |
+|---|---:|---:|
+| Consideran el acceso no autorizado una preocupación de seguridad | 3 de 3 | 100% |
+| Utilizan actualmente cámaras, cerraduras o controles tradicionales de acceso | 3 de 3 | 100% |
+| Perciben valor en automatizar o centralizar información de seguridad | 3 de 3 | 100% |
+| Consideran valiosas las alertas automáticas ante posibles incidentes | 3 de 3 | 100% |
+| Valoran poder supervisar remotamente o centralizar información | 2 de 3 | 66.7% |
+| Consideran importante disponer de un historial automático de incidentes | 2 de 3 | 66.7% |
+| Manifestaron explícitamente preocupación por falsas alarmas | 1 de 3 | 33.3% |
+
+En los tres casos se identificó que las empresas todavía utilizan mecanismos tradicionales como cámaras, cerraduras y controles de ingreso. Si bien estas herramientas permiten cierto nivel de protección, los entrevistados identificaron limitaciones relacionadas con la necesidad de supervisión humana y la dispersión de información.
+
+Marco Salvador destacó la necesidad de poder conocer remotamente el estado de la empresa y recibir alertas en tiempo real. Aldair Salas hizo énfasis en centralizar herramientas que actualmente funcionan de manera separada y mantener un registro automático de los incidentes. Dania Cárdenas señaló que las cámaras permiten revisar lo ocurrido, pero siguen dependiendo de que una persona detecte previamente una situación.
+
+Por lo tanto, los tres entrevistados mostraron interés en pasar de un modelo principalmente reactivo a uno donde la tecnología participe activamente en la detección y comunicación del incidente.
+
+También se identificó interés en la generación de información histórica. Aldair y Dania destacaron el valor de conservar registros de incidentes que posteriormente permitan revisar qué ocurrió y evaluar el desempeño de las medidas de seguridad.
+
+Para este segmento SECURIOT debe priorizar:
+
+- Visibilidad general del estado de seguridad de la empresa.
+- Alertas automáticas ante situaciones relevantes.
+- Acceso remoto a información de seguridad.
+- Centralización de diferentes fuentes de información.
+- Historial de eventos e incidentes.
+- Información comprensible para usuarios no especializados en seguridad.
+- Evidencia que permita evaluar el funcionamiento y valor de la solución.
+
+---
+
+#### Análisis general de los tres segmentos
+
+Al comparar los nueve entrevistados se identifican necesidades diferentes de acuerdo con el rol que cada segmento desempeña dentro del proceso de seguridad.
+
+El **Administrador de Seguridad Patrimonial** necesita controlar el sistema, revisar evidencias, reducir falsas alarmas y contar con información que permita supervisar la operación.
+
+El **Personal de Vigilancia In Situ** necesita información inmediata que le permita responder físicamente ante una situación de riesgo con mayor rapidez y menor incertidumbre.
+
+El **Gerente o Dueño de Pyme Industrial** necesita una visión simplificada de la seguridad, acceso remoto a información y evidencia que permita determinar si la solución está generando valor para la organización.
+
+A pesar de estas diferencias, se identificaron patrones transversales.
+
+| Hallazgo transversal | Entrevistados | Porcentaje |
+|---|---:|---:|
+| Se identifica valor en contar con alertas más rápidas, automáticas o contextualizadas | 9 de 9 | 100% |
+| Las falsas alarmas aparecen explícitamente como una preocupación relevante | 7 de 9 | 77.8% |
+| Existen procesos fragmentados, manuales o dependientes de distintas herramientas | 7 de 9 | 77.8% |
+| Los factores técnicos del entorno, integración o conectividad condicionan el uso de la solución | 6 de 9 | 66.7% |
+
+El principal patrón transversal es la necesidad de **reducir el tiempo entre la detección de un evento y la respuesta del personal**. Los tres segmentos perciben valor en recibir información automáticamente en lugar de depender únicamente de observación humana, rondas o revisión posterior de cámaras.
+
+También se observa que SECURIOT no debería limitarse a generar una alarma. La información entregada debe tener suficiente contexto para permitir que el usuario comprenda rápidamente la situación. De acuerdo con las entrevistas, los datos más relevantes son la **ubicación, tipo de evento, evidencia visual, hora y estado de la alerta**.
+
+La reducción de falsas alarmas constituye otro aspecto crítico. El **77.8% de los participantes** manifestó explícitamente preocupación por este problema. Una cantidad elevada de falsas alertas puede incrementar la carga operativa y reducir progresivamente la confianza de los usuarios en la plataforma.
+
+Finalmente, los resultados muestran que SECURIOT debe ofrecer experiencias diferentes según el rol del usuario. El personal de vigilancia necesita una experiencia móvil sencilla y orientada a la respuesta inmediata; los administradores necesitan herramientas de monitoreo, configuración, trazabilidad y análisis; mientras que los gerentes requieren información consolidada que permita supervisar resultados y evaluar el valor de la solución.
+
+---
+
+#### Principales hallazgos para SECURIOT
+
+A partir del análisis de las nueve entrevistas se establecen los siguientes hallazgos principales:
+
+1. **La alerta debe proporcionar contexto y no únicamente advertir de un evento.**  
+   Debe permitir conocer rápidamente qué ocurrió, dónde ocurrió y, cuando sea posible, mostrar evidencia visual.
+
+2. **La reducción de falsas alarmas es fundamental para mantener la confianza en el sistema.**  
+   Una plataforma que genere demasiadas alertas incorrectas puede aumentar la carga del personal y provocar que alertas reales sean ignoradas.
+
+3. **El personal de vigilancia necesita una experiencia específicamente diseñada para movilidad.**  
+   La aplicación debe considerar condiciones reales como poca señal, consumo de batería, ruido, iluminación deficiente y necesidad de operar rápidamente.
+
+4. **Los administradores requieren trazabilidad y centralización.**  
+   SECURIOT debe facilitar la consulta de eventos, evidencias y datos históricos sin depender de diferentes grabadores, registros manuales o sistemas separados.
+
+5. **La solución debe complementar la infraestructura existente.**  
+   La compatibilidad con cámaras, dispositivos y mecanismos ya instalados puede ser determinante para facilitar su adopción y reducir costos de implementación.
+
+6. **La solución debe apoyar la toma de decisiones en distintos niveles.**  
+   Mientras el vigilante necesita información operacional inmediata, el administrador requiere control y análisis, y la gerencia necesita información resumida sobre resultados e incidentes.
+
+7. **La automatización debe mantener mecanismos de validación humana.**  
+   La tecnología debe ayudar a priorizar y detectar eventos, pero debe permitir que el personal confirme situaciones ambiguas antes de ejecutar acciones críticas.
+
+En conjunto, los hallazgos respaldan la propuesta de SECURIOT como una solución orientada a transformar un modelo de seguridad principalmente reactivo y fragmentado en uno **proactivo, centralizado y basado en alertas contextualizadas**, manteniendo al personal responsable dentro del proceso de validación y respuesta.
 
 ## 2.3. Needfinding
 
-_Pendiente de desarrollo._
-
 ### 2.3.1. User Personas
 
-_Pendiente de desarrollo._
+Las siguientes User Personas sintetizan los patrones identificados en las entrevistas de los segmentos Administrador de Seguridad Patrimonial, Personal de Vigilancia In Situ y Gerente o Dueño de Pyme Industrial. Cada ficha representa un arquetipo construido a partir de los objetivos, necesidades, frustraciones, comportamientos, herramientas y motivaciones documentados en el apartado 2.2.
+
+#### Administrador de Seguridad Patrimonial
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/user-personas/user-persona-administrador-seguridad.png" alt="User Persona del Administrador de Seguridad Patrimonial" width="1100"/>
+</p>
+
+**Interpretación analítica.** Este arquetipo necesita confianza operativa antes que mayor cantidad de información: las alertas deben ser oportunas, precisas y verificables. La compatibilidad con la infraestructura existente, la reducción de falsos positivos, la trazabilidad y el cumplimiento de las normas de evacuación condicionan la aceptación de SECURIOT.
+
+#### Personal de Vigilancia In Situ
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/user-personas/user-persona-vigilante.png" alt="User Persona del Personal de Vigilancia In Situ" width="1100"/>
+</p>
+
+**Interpretación analítica.** Este arquetipo opera bajo presión, en movimiento y con conectividad limitada. SECURIOT debe priorizar información inmediata y fácil de interpretar, reducir los pasos durante la atención y considerar las restricciones reales de batería, señal, ruido e iluminación del entorno industrial.
+
+#### Gerente o Dueño de Pyme Industrial
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/user-personas/user-persona-gerente-pyme.png" alt="User Persona del Gerente o Dueño de Pyme Industrial" width="1100"/>
+</p>
+
+**Interpretación analítica.** Este arquetipo necesita una visión clara y consolidada de la seguridad para supervisar el negocio incluso cuando no se encuentra en las instalaciones. Las alertas comprensibles, el acceso remoto y el historial de incidentes le permiten proteger los activos y evaluar el funcionamiento y el valor de las medidas de seguridad.
 
 ### 2.3.2. User Task Matrix
 
-_Pendiente de desarrollo._
+La User Task Matrix compara las tareas actuales del Administrador de Seguridad Patrimonial, el Personal de Vigilancia In Situ y el Gerente o Dueño de Pyme Industrial. Cada actividad se valora cualitativamente por su frecuencia e importancia según las responsabilidades, rutinas y situaciones descritas en las entrevistas y sintetizadas en las User Personas. La frecuencia se considera alta cuando la tarea es continua o propia de cada turno, media cuando es periódica o depende de la ocurrencia de incidentes y baja cuando se realiza ocasionalmente; la importancia refleja su incidencia sobre la protección de personas, activos y operaciones.
+
+| Task | Administrador de Seguridad Patrimonial |  | Personal de Vigilancia In Situ |  | Gerente o Dueño de Pyme Industrial |  |
+|---|---:|---:|---:|---:|---:|---:|
+|  | Frecuencia | Importancia | Frecuencia | Importancia | Frecuencia | Importancia |
+| Supervisar instalaciones y zonas de seguridad | Alta | Alta | Alta | Alta | Media | Alta |
+| Controlar accesos peatonales y vehiculares | Alta | Alta | Alta | Alta | Baja | Alta |
+| Verificar identidades y autorizaciones | Media | Alta | Alta | Alta | No aplica | No aplica |
+| Realizar rondas de vigilancia | No aplica | No aplica | Alta | Alta | No aplica | No aplica |
+| Verificar alertas e incidentes | Alta | Alta | Alta | Alta | Baja | Alta |
+| Coordinar la respuesta ante incidentes | Media | Alta | Media | Alta | Baja | Alta |
+| Comunicar y escalar situaciones de riesgo | Media | Alta | Media | Alta | Baja | Alta |
+| Registrar ingresos, incidencias y novedades | Media | Alta | Alta | Alta | No aplica | No aplica |
+| Recopilar y revisar evidencia de incidentes | Media | Alta | Media | Media | Baja | Alta |
+| Elaborar reportes e indicadores de seguridad | Media | Alta | No aplica | No aplica | No aplica | No aplica |
+| Revisar resultados de las medidas de seguridad | Media | Alta | No aplica | No aplica | Media | Alta |
+| Decidir gastos y mejoras de seguridad | Baja | Media | No aplica | No aplica | Media | Alta |
+
+Las tareas de mayor frecuencia se concentran en la operación cotidiana. El Administrador de Seguridad Patrimonial supervisa continuamente instalaciones, zonas, accesos y alertas, mientras que el Personal de Vigilancia In Situ añade la ejecución de rondas, la verificación directa y el registro de novedades durante cada turno. En el caso del Gerente o Dueño de Pyme Industrial, la supervisión general y la revisión de resultados presentan una frecuencia media, pues corresponden a actividades periódicas de gestión y no a la vigilancia permanente.
+
+Las actividades de mayor importancia son la supervisión de las instalaciones, el control y la validación de accesos, la verificación de incidentes y la coordinación de la respuesta. Estas tareas inciden directamente en la protección de personas, productos, equipos y operaciones. La supervisión, la atención de incidentes, la comunicación de riesgos y la revisión de evidencias constituyen los principales puntos de coincidencia entre dos o más arquetipos, aunque cada uno participa con un alcance diferente.
+
+Las diferencias responden al nivel de responsabilidad. El Personal de Vigilancia In Situ concentra las tareas operativas y la intervención física; el Administrador de Seguridad Patrimonial coordina, supervisa, consolida evidencia y elabora reportes; y el Gerente o Dueño de Pyme Industrial revisa resultados y toma decisiones sobre gastos y mejoras. De esta manera, la matriz distingue la ejecución en campo, la supervisión de la operación de seguridad y la gestión estratégica del negocio sin asociar las tareas a una herramienta tecnológica específica.
 
 ### 2.3.3. User Journey Mapping
 
-_Pendiente de desarrollo._
+Los siguientes User Journey Maps representan el recorrido actual de los tres arquetipos definidos en la sección 2.3.1. Cada mapa describe el escenario previo a la implementación de SECURIOT, desde que aparece una posible anomalía hasta que el incidente queda registrado. Para su elaboración se tomaron como base los patrones comunes identificados en las entrevistas del apartado 2.2, especialmente los canales utilizados, los tiempos de respuesta, las limitaciones del entorno y los puntos de mayor tensión durante la atención.
+
+#### Administrador de Seguridad Patrimonial
+
+En el caso de Carlos Mendoza, el recorrido comienza con la supervisión de cámaras, controles de acceso y bitácoras que funcionan de manera separada. Cuando se presenta una anomalía, debe decidir si se trata de una amenaza real o de otra falsa alarma, coordinar con el personal de vigilancia y esperar la verificación física. El momento más crítico ocurre durante la validación y contención, porque la comunicación puede fallar y no existe un mecanismo centralizado que reúna el contexto del evento. Después de atenderlo, todavía debe consolidar grabaciones, registros y horarios para preparar la evidencia.
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/needfinding/user-journey-administrador.png" alt="User Journey Map As-Is de Carlos Mendoza, Administrador de Seguridad Patrimonial" width="1100"/>
+</p>
+
+Este recorrido muestra que el problema no se limita a detectar una intrusión. La mayor carga aparece al confirmar la alerta, coordinar una respuesta segura y reconstruir posteriormente lo sucedido. Por ello, una solución para este segmento debe reducir la fragmentación de la información sin quitar al administrador el control de la validación.
+
+#### Personal de Vigilancia In Situ
+
+Para Luis Ramírez, el recorrido parte de una ronda habitual y cambia cuando recibe un aviso por radio, llamada o WhatsApp. En ese momento suele conocer muy poco sobre la situación y necesita pedir datos adicionales antes de desplazarse. La experiencia alcanza su punto de mayor tensión mientras interpreta el aviso y llega al lugar, pues debe enfrentar zonas oscuras, obstáculos, interferencia y una posible amenaza sin suficiente contexto. Una vez verificado el incidente, el proceso termina con un registro manual que puede tomar entre 30 y 40 minutos.
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/needfinding/user-journey-vigilante.png" alt="User Journey Map As-Is de Luis Ramírez, Personal de Vigilancia In Situ" width="1100"/>
+</p>
+
+El mapa evidencia que la rapidez de una alerta no basta por sí sola. El vigilante necesita recibir ubicación, tipo de evento y una referencia visual antes de exponerse en campo. También requiere una interacción breve, perceptible en ambientes industriales y capaz de funcionar bajo restricciones de batería o conectividad.
+
+#### Gerente o Dueño de Pyme Industrial
+
+Para Miguel Herrera, el recorrido no ocurre en el lugar del incidente sino a la distancia. Su día transcurre supervisando la operación del negocio y, cuando surge una posible anomalía, se entera a través de una llamada o un mensaje del personal en sitio. A partir de ese aviso queda a la espera de que alguien confirme lo que sucede, con poca visibilidad directa y sin una fuente única que reúna el estado real de la seguridad. El punto de mayor tensión aparece cuando debe tomar una decisión —autorizar una acción, avisar a un tercero o acudir personalmente— con información incompleta y fragmentada. Una vez resuelto el incidente, todavía necesita reconstruir lo ocurrido a partir de reportes y grabaciones dispersas para evaluar el desempeño de sus medidas de seguridad y justificar la inversión.
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/needfinding/user-journey-gerente.png" alt="User Journey Map As-Is de Miguel Herrera, Gerente o Dueño de Pyme Industrial" width="1100"/>
+</p>
+
+Este recorrido evidencia que la carga del gerente no está en la operación diaria sino en la falta de visibilidad remota y de evidencia consolidada. Una solución para este segmento debe ofrecerle una vista clara del estado de seguridad desde cualquier lugar, alertas comprensibles y un historial confiable que respalde sus decisiones sin exigirle presencia física.
 
 ### 2.3.4. Empathy Mapping
 
-_Pendiente de desarrollo._
+Los Empathy Maps reúnen lo que cada arquetipo expresa, piensa, hace y siente frente al proceso actual de seguridad patrimonial. Las frases incluidas son síntesis representativas de los hallazgos y no citas textuales de una sola entrevista. Esta distinción permite conservar los patrones compartidos por los participantes sin atribuir a una persona afirmaciones que corresponden al conjunto del segmento.
+
+#### Administrador de Seguridad Patrimonial
+
+Carlos busca mantener el control de la operación y responder con evidencia verificable. Aunque está dispuesto a incorporar automatización, su confianza depende de la precisión de las alertas, la compatibilidad con la infraestructura instalada y el respeto por las rutas de evacuación. Su frustración se concentra en los puntos ciegos, las falsas alarmas y el tiempo que emplea en reunir información dispersa para auditorías o reportes gerenciales.
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/needfinding/empathy-map-administrador.png" alt="Empathy Map de Carlos Mendoza, Administrador de Seguridad Patrimonial" width="1100"/>
+</p>
+
+El mapa permite observar que este usuario no necesita recibir más datos, sino información mejor organizada y confiable. SECURIOT debe ayudarlo a verificar eventos, coordinar al equipo y consultar evidencia desde un mismo entorno, manteniendo siempre la posibilidad de intervención humana.
+
+#### Personal de Vigilancia In Situ
+
+Luis desarrolla sus tareas bajo presión y en constante movimiento. Antes de intervenir necesita entender qué está ocurriendo, dónde se encuentra el evento y qué nivel de riesgo puede enfrentar. Las alertas poco claras, la pérdida de señal y las verificaciones manuales aumentan su incertidumbre; además, las falsas alarmas y el registro posterior elevan el cansancio durante turnos extensos.
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/needfinding/empathy-map-vigilante.png" alt="Empathy Map de Luis Ramírez, Personal de Vigilancia In Situ" width="1100"/>
+</p>
+
+Para este arquetipo, la experiencia debe priorizar información inmediata y acciones simples. Una alerta útil debe ser visible y sonora, mostrar ubicación e imagen, y permitir registrar el resultado con pocos pasos. Estas condiciones responden directamente a las restricciones de señal, batería, ruido e iluminación descritas por los entrevistados.
+
+#### Gerente o Dueño de Pyme Industrial
+
+Miguel evalúa la seguridad desde una mirada de negocio: le preocupa proteger los activos y la continuidad de la operación más que la ejecución diaria del monitoreo. Está dispuesto a invertir, pero necesita comprobar que esa inversión rinde y confiar en el sistema aun cuando no está presente. Su frustración se concentra en las herramientas separadas y costosas, en la dependencia de la revisión humana y en la escasa visibilidad que tiene cuando se encuentra fuera de la instalación.
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/needfinding/empathy-map-gerente.png" alt="Empathy Map de Miguel Herrera, Gerente o Dueño de Pyme Industrial" width="1100"/>
+</p>
+
+El mapa muestra que este usuario valora la tranquilidad y la evidencia por encima del detalle operativo. SECURIOT debe brindarle una visión consolidada y remota del estado de seguridad, alertas claras que no exijan interpretación técnica y un historial de incidentes que le permita decidir y demostrar el valor de la solución.
 
 ## 2.4. Big Picture EventStorming
 
@@ -552,7 +1417,48 @@ _Pendiente de desarrollo._
 
 ## 2.5. Ubiquitous Language
 
-_Pendiente de desarrollo._
+El Ubiquitous Language de SECURIOT unifica los términos utilizados por el equipo y los stakeholders dentro del dominio de seguridad física, control de accesos y monitoreo de instalaciones. Este glosario establece un significado común para cada concepto y evita interpretaciones diferentes durante el análisis, diseño y validación de la solución.
+
+| Term | Spanish Equivalent | Definition |
+|---|---|---|
+| Access Authorization | Autorización de acceso | Permiso vigente asignado a una persona para ingresar a una sede, zona de seguridad o área restringida bajo las condiciones establecidas por la organización. |
+| Access Control | Control de accesos | Conjunto de verificaciones y medidas empleadas para regular la entrada y salida de personas o vehículos en una sede o zona. |
+| Access Point | Punto de acceso | Lugar físico por el que una persona o vehículo entra o sale de una sede o zona, como una puerta, portón, torniquete o bahía de carga. |
+| Access Validation | Validación de acceso | Comprobación realizada ante un intento de ingreso para determinar si la persona posee una autorización de acceso válida. |
+| Alert | Alerta | Notificación que requiere evaluación o acción del personal de seguridad porque una detección o lectura cumple una regla de alerta. |
+| Alert Rule | Regla de alerta | Condición del negocio que determina cuándo una detección o lectura debe generar una alerta y con qué severidad. |
+| Alert Severity | Severidad de alerta | Clasificación del nivel de urgencia o riesgo asociado a una alerta, utilizada para priorizar la respuesta. |
+| Alert Status | Estado de alerta | Situación de una alerta dentro de su atención operativa, que permite conocer si continúa activa o ya fue atendida. |
+| Alarm | Alarma | Señal audible o visual activada localmente en una instalación para advertir sobre una situación que requiere atención. |
+| Authorized Person | Persona autorizada | Persona cuya identidad ha sido validada y que posee permiso vigente para ingresar a una sede o área determinada. |
+| Camera | Cámara | Equipo que captura imágenes o video de una zona para apoyar la identificación de personas y la verificación de eventos. |
+| Contractor | Contratista | Persona externa que realiza labores temporales dentro de una instalación y cuyo acceso debe autorizarse según la zona y actividad asignadas. |
+| Detection | Detección | Identificación de la presencia de una persona, objeto o condición relevante dentro de una zona supervisada. Una detección no constituye por sí sola una intrusión. |
+| Device | Dispositivo | Unidad física instalada en un punto de acceso, perímetro o zona para observar condiciones del entorno y apoyar acciones de seguridad. |
+| Event Traceability | Trazabilidad de eventos | Capacidad de reconstruir qué ocurrió, dónde, cuándo y qué acciones se realizaron durante un evento de seguridad. |
+| Evidence | Evidencia | Conjunto de imágenes, videos, registros y datos horarios conservados para investigar y sustentar un incidente de seguridad. |
+| False Alarm | Falsa alarma | Alerta o alarma que, luego de ser verificada, no corresponde a una intrusión ni a una amenaza real. |
+| Incident Report | Reporte de incidente | Documento que reúne la secuencia de hechos, las zonas y personas involucradas, las acciones ejecutadas y la evidencia disponible de un incidente. |
+| Intrusion | Intrusión | Presencia o ingreso no autorizado de una persona dentro del perímetro de una sede o en un área restringida. |
+| Monitoring Center | Centro de monitoreo | Espacio desde el cual el personal de seguridad supervisa cámaras, zonas, alertas y comunicaciones de una o más instalaciones. |
+| Multi-Site Monitoring | Monitoreo multisede | Supervisión centralizada de la seguridad de varias sedes pertenecientes a una misma organización. |
+| On-Site Security Guard | Personal de vigilancia in situ | Usuario operativo que realiza rondas, verifica alertas en campo, controla accesos y ejecuta el protocolo de respuesta dentro de la instalación. |
+| Perimeter | Perímetro | Límite físico exterior de una sede cuya vulneración puede representar un ingreso no autorizado. |
+| Protected Asset | Activo protegido | Bien de valor que debe resguardarse frente a robos, daños o accesos indebidos, como inventario, maquinaria, insumos o equipos. |
+| Response Protocol | Protocolo de respuesta | Secuencia de acciones que el personal responsable debe ejecutar después de detectar o confirmar una amenaza o intrusión. |
+| Restricted Area | Área restringida | Zona de seguridad cuyo ingreso exige una autorización específica debido al valor de sus activos, la sensibilidad de sus operaciones o el riesgo asociado. |
+| Security Administrator | Administrador de seguridad patrimonial | Responsable de supervisar la seguridad de una o más sedes, gestionar zonas y accesos, revisar alertas y consolidar evidencia e indicadores. |
+| Security Event | Evento de seguridad | Hecho registrado dentro de una sede relacionado con un acceso, una detección o una condición observada por un dispositivo. |
+| Security Incident | Incidente de seguridad | Evento de seguridad confirmado que compromete o pone en riesgo personas, activos u operaciones y requiere respuesta o investigación. |
+| Security Patrol | Ronda de vigilancia | Recorrido periódico realizado por el personal de vigilancia para comprobar el estado de puntos de control y zonas de una instalación. |
+| Security Zone | Zona de seguridad | Área física delimitada dentro de una sede que se administra y supervisa como una unidad de seguridad; puede contener uno o más dispositivos y no necesariamente es de acceso restringido. |
+| Sensor | Sensor | Componente de un dispositivo que observa una condición física, como movimiento, apertura o distancia, y produce una lectura. |
+| Sensor Reading | Lectura de sensor | Observación producida por un sensor en un momento determinado y asociada al dispositivo y la zona donde se originó. |
+| Site | Sede | Instalación física administrada como una ubicación independiente, como una planta, fábrica, almacén, centro de distribución u oficina corporativa. |
+| Threat | Amenaza | Persona, presencia o situación que puede comprometer la seguridad de los activos, las personas o la continuidad de las operaciones. |
+| Unauthorized Access | Acceso no autorizado | Intento o ingreso realizado por una persona que no posee autorización válida para la sede o zona correspondiente. |
+| Unidentified Person | Persona no identificada | Persona detectada cuya identidad no puede determinarse con la información disponible y que debe ser validada antes de autorizar su acceso. |
+| Visitor | Visitante | Persona externa que ingresa temporalmente a una instalación y requiere autorización para acceder a las zonas permitidas. |
 
 # Capítulo III: Requirements Specification
 
@@ -903,7 +1809,14 @@ _Pendiente de desarrollo._
 
 #### 4.1.1.1. Candidate Context Discovery
 
-_Pendiente de desarrollo._
+Agrupamos los eventos y comandos del dominio segun quien es dueno de la decision de negocio, no segun el repositorio de codigo donde vive hoy. De ese analisis salen cuatro contextos delimitados:
+
+1. **Identidad y Acceso**: quien puede entrar al sistema y con que credenciales.
+2. **Gestion de Zonas y Dispositivos**: que zonas existen, que dispositivos estan asignados a cada una y quien es su propietario.
+3. **Monitoreo y Alertas**: que paso en una zona (lecturas de sensores) y si eso amerita una alerta.
+4. **Deteccion y Relay de Borde**: que ve la camara en el sitio, si eso es una persona u objeto no permitido, y como reaccionar en el momento (pan/tilt, cerradura, buzzer) sin depender de la nube.
+
+Monitoreo y Alertas y Deteccion y Relay de Borde son los subdominios core: ahi vive la logica que distingue a SecurIoT de un CRUD generico de sensores. Identidad y Acceso es un subdominio generico (JWT estandar, sin reglas propias del negocio). Gestion de Zonas y Dispositivos es subdominio de soporte: necesario para que los otros dos tengan sentido, pero no es, por si solo, la ventaja del producto.
 
 #### 4.1.1.2. Domain Message Flows Modeling
 
@@ -911,71 +1824,284 @@ _Pendiente de desarrollo._
 
 #### 4.1.1.3. Bounded Context Canvases
 
-_Pendiente de desarrollo._
+**Identidad y Acceso**
+
+| Campo | Detalle |
+|---|---|
+| Proposito | Autenticar usuarios y emitir el token que el resto de la plataforma confia sin volver a consultar este contexto |
+| Clasificacion estrategica | Generico |
+| Lenguaje ubicuo | Usuario, credenciales, token de acceso |
+| Entidad raiz | `User` (email, passwordHash) |
+| Contrato publicado | `POST /auth/login` devuelve un `access_token` JWT firmado; los demas contextos lo validan localmente contra `JWT_SECRET`, sin llamada de vuelta |
+| Implementado en | `securiot-cloud-api/src/auth`, `src/users` |
+
+**Gestion de Zonas y Dispositivos**
+
+| Campo | Detalle |
+|---|---|
+| Proposito | Mantener el catalogo de zonas del cliente y los dispositivos IoT asignados a cada una, incluyendo la emision del `apiKey` de dispositivo |
+| Clasificacion estrategica | Soporte |
+| Lenguaje ubicuo | Zona, Dispositivo, Propietario, apiKey |
+| Entidades raiz | `Zone`, `Device` |
+| Reglas de negocio | Un dispositivo pertenece a una unica zona; una zona pertenece a un unico usuario propietario; el `apiKey` se muestra completo una sola vez, al crear el dispositivo |
+| Implementado en | `securiot-cloud-api/src/zones`, `src/devices` |
+
+**Monitoreo y Alertas** (core)
+
+| Campo | Detalle |
+|---|---|
+| Proposito | Ingerir lecturas de sensores de forma idempotente y evaluar reglas de negocio que conviertan una lectura riesgosa en una alerta accionable |
+| Clasificacion estrategica | Core |
+| Lenguaje ubicuo | Lectura (Reading), Alerta (Alert), Regla de alerta, Severidad, Estado |
+| Entidades raiz | `Reading`, `Alert` |
+| Reglas de negocio | Ingestion idempotente por `reading_id` (constraint unica); cada lectura dispara `evaluateRule`, que hoy cubre `door_contact_open` y esta pensada para crecer a mas reglas por tipo de sensor; una alerta es unica por lectura |
+| Implementado en | `securiot-cloud-api/src/telemetry`, `src/alerts` |
+
+**Deteccion y Relay de Borde** (core)
+
+| Campo | Detalle |
+|---|---|
+| Proposito | Recibir lecturas y frames de camara del dispositivo fisico, correr deteccion local con debounce, decidir la accion inmediata (pan/tilt, cerradura, alerta local) y reenviar las lecturas a la nube tolerando cortes de red |
+| Clasificacion estrategica | Core |
+| Lenguaje ubicuo | Frame, Deteccion, Debounce, Buffer, Relay, Cooldown |
+| Entidades raiz (locales, SQLite) | Lectura bufferizada, Evento de deteccion |
+| Reglas de negocio | Buffer local con reintento y backoff cuando la nube no responde; relay idempotente por `reading_id`; cooldown entre acciones de cerradura para el mismo dispositivo |
+| Implementado en | `securiot-edge-api/app` (`ingest.py`, `detection.py`, `debounce.py`, `relay.py`, `frames.py`, `pan_tilt.py`) |
 
 ### 4.1.2. Context Mapping
 
-_Pendiente de desarrollo._
+![Structurizr bounded-context map](docs/architecture/diagrams/context-map.png)
+
+Ningun contexto llama al de Identidad y Acceso en tiempo de ejecucion mas alla del login: el JWT es autocontenido y cada contexto lo valida por su cuenta contra el mismo secreto compartido, asi que la relacion con Identidad y Acceso es de tipo Published Language mas que de llamada activa. Monitoreo y Alertas y Gestion de Zonas y Dispositivos hoy comparten una unica base PostgreSQL, lo cual simplifica el MVP pero es una decision a revisar si el sistema crece a multiples clientes con aislamiento de datos mas estricto.
 
 ### 4.1.3. Software Architecture
 
-_Pendiente de desarrollo._
+SecurIoT es un sistema distribuido de cuatro capas: aplicaciones cliente (Web App en Angular y Mobile App en Flutter), un backend hospedado (Cloud API en NestJS con PostgreSQL), un servicio de borde por instalacion (Edge API en Flask con buffer local SQLite y reconocimiento ArcFace) y firmware embebido (ESP32-S3 con deteccion corporal YOLO). Los siguientes diagramas siguen el modelo C4 y se generan exclusivamente desde el modelo [Structurizr DSL](docs/architecture/workspace.dsl). El ESP32 ejecuta la deteccion corporal antes de enviar frames candidatos al Edge; el Edge ejecuta ArcFace, conserva los embeddings biometricos localmente y solo inicia conexiones salientes hacia el backend hospedado.
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram
 
-_Pendiente de desarrollo._
+![C4 System Landscape diagram](docs/architecture/diagrams/system-landscape.png)
+
+La plataforma no depende de sistemas externos de terceros (sin pasarelas de pago, SMS o email en el alcance actual). La Landing Page es un sitio informativo aislado, sin llamadas a la API.
 
 #### 4.1.3.2. Software Architecture Context Level Diagrams
 
-_Pendiente de desarrollo._
+![C4 System Context diagram](docs/architecture/diagrams/system-context.png)
 
 #### 4.1.3.3. Software Architecture Container Level Diagrams
 
-_Pendiente de desarrollo._
+![C4 Container diagram](docs/architecture/diagrams/container.png)
+
+El hardware ESP32 queda fuera del limite punteado de la plataforma. Dentro del dispositivo se ejecuta YOLO para detectar personas/cuerpos y reducir el volumen de frames enviados. Dentro del Edge se ejecuta ArcFace para producir y comparar embeddings; el buffer SQLite y el repositorio local de identidades permiten seguir operando sin conectividad.
 
 #### 4.1.3.4. Software Architecture Deployment Diagrams
 
-_Pendiente de desarrollo._
+![C4 Deployment diagram](docs/architecture/diagrams/deployment.png)
+
+El diagrama de despliegue separa explicitamente el hardware ESP32, el Edge Host de la instalacion y la infraestructura hospedada. El backend no abre conexiones hacia la red local: el Edge inicia el envio de resultados y telemetria por HTTPS con retry/backoff.
 
 ## 4.2. Tactical-Level Domain-Driven Design
 
-_Pendiente de desarrollo._
+Esta sección detalla, para cada uno de los cuatro bounded contexts identificados en 4.1.1.1, sus capas de Domain, Interface, Application e Infrastructure, más los diagramas de componentes, clases y base de datos a nivel de código. Todos los diagramas tácticos se definen en el mismo modelo [Structurizr DSL](docs/architecture/workspace.dsl), se renderizan con fondo blanco y mantienen sus etiquetas en inglés.
 
-### 4.2.1. Bounded Context: <Nombre del Bounded Context>
+### 4.2.1. Bounded Context: Monitoreo y Alertas
 
-_Pendiente de desarrollo._
+Elegimos este contexto para el detalle tactico porque es el subdominio core de la Cloud API: convierte lecturas crudas de sensores en alertas que el operador realmente usa. Vive en `securiot-cloud-api/src/telemetry` y `src/alerts`.
 
 #### 4.2.1.1. Domain Layer
 
-_Pendiente de desarrollo._
+- `Reading` (raiz de agregado): `readingId` (unico), `deviceId`, `zoneId`, `sensorType`, `value`, `recordedAt`. La unicidad de `readingId` es el invariante central: garantiza que reenviar la misma lectura, algo que pasa seguido por el retry del relay de borde, nunca la duplica.
+- `Alert` (raiz de agregado): referencia a `zone`, `device` y, opcionalmente, a la `reading` que la origino; ademas `ruleType`, `severity`, `status` y `message`. Tambien tiene `readingId` unico, asi que una lectura genera como maximo una alerta.
+- Regla de dominio `evaluateRule`: hoy implementa una unica regla, `door_contact_open` (sensor `door_contact` con valor `open` genera una alerta de severidad `medium`). El metodo esta separado de la insercion de la lectura justamente para poder agregar mas reglas sin tocar el flujo de ingestion.
 
 #### 4.2.1.2. Interface Layer
 
-_Pendiente de desarrollo._
+| Endpoint | Guard | Descripcion |
+|---|---|---|
+| `POST /api/v1/telemetry` | `DeviceApiKeyGuard` (header `X-Device-Key`) | Ingesta una lectura, idempotente por `reading_id` |
+| `GET /api/v1/telemetry` | `JwtAuthGuard` | Lista lecturas filtrables por `device_id`, `zone_id` y rango de fechas |
+| `GET /api/v1/alerts` | `JwtAuthGuard` | Lista alertas de las zonas del usuario autenticado, filtrables por zona, dispositivo y estado |
+
+Los cuerpos de request se validan con DTOs de `class-validator` (`CreateReadingDto`, `QueryReadingsDto`, `QueryAlertsDto`) y cada endpoint esta documentado con decoradores de `@nestjs/swagger`.
 
 #### 4.2.1.3. Application Layer
 
-_Pendiente de desarrollo._
+- `TelemetryService.ingest(dto, device)`: inserta la lectura con `INSERT ... ON CONFLICT DO NOTHING` (`orIgnore`) y delega la evaluacion de reglas a `AlertsService.evaluateRule`. Ambos pasos ocurren en la misma llamada, para que el operador vea la alerta apenas el dispositivo reporta.
+- `TelemetryService.findAll(query)`: consulta de lecturas con filtros opcionales.
+- `AlertsService.evaluateRule(reading)`: aplica la regla de dominio y persiste la alerta si corresponde, tambien con `orIgnore` para respetar la unicidad por `readingId`.
+- `AlertsService.findAllForOwner(ownerId, query)`: hace join contra `Zone` para devolver solo alertas de zonas del usuario autenticado, sin exponer datos de otros clientes.
 
 #### 4.2.1.4. Infrastructure Layer
 
-_Pendiente de desarrollo._
+- `Repository<Reading>` y `Repository<Alert>` de TypeORM, sobre PostgreSQL en produccion (SQLite como fallback de desarrollo local, ver `src/config/typeorm.config.ts`).
+- `DeviceApiKeyGuard`: valida el header `X-Device-Key` contra la tabla `devices`, cruzando hacia el contexto de Gestion de Zonas y Dispositivos.
+- `JwtAuthGuard` + `JwtStrategy`: validan el JWT emitido por Identidad y Acceso sin llamarlo en tiempo de ejecucion.
 
 #### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
 
-_Pendiente de desarrollo._
+![Structurizr Monitoring and Alerts component diagram](docs/architecture/diagrams/monitoring-components.png)
 
 #### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
 
-_Pendiente de desarrollo._
-
 #### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
 
-_Pendiente de desarrollo._
+![Structurizr Monitoring and Alerts class diagram](docs/architecture/diagrams/monitoring-classes.png)
 
 #### 4.2.1.6.2. Bounded Context Database Design Diagram
 
-_Pendiente de desarrollo._
+![Structurizr Monitoring and Alerts database diagram](docs/architecture/diagrams/monitoring-database.png)
+
+`USERS`, `ZONES` y `DEVICES` pertenecen a otros bounded contexts (Identidad y Acceso, y Gestion de Zonas y Dispositivos) y se muestran aqui solo como referencia, porque hoy las cinco tablas viven en la misma base PostgreSQL. `READINGS` y `ALERTS` son las tablas propias de este contexto.
+
+### 4.2.2. Bounded Context: Identidad y Acceso
+
+Este contexto es el subdominio generico de la Cloud API: no tiene reglas de negocio propias del dominio de seguridad patrimonial, solo autentica y emite el token que el resto de la plataforma confia sin volver a consultarlo. Se incluye en el detalle tactico porque cada uno de los otros tres contextos depende de el para proteger sus propios endpoints. Vive en `securiot-cloud-api/src/auth` y `src/users`.
+
+#### 4.2.2.1. Domain Layer
+
+- `User` (raiz de agregado): `id` (uuid), `email`, `passwordHash`, `createdAt`. Constraint de unicidad sobre `email` a nivel de entidad (`@Unique(['email'])`), sin otros campos, no hay roles ni soft-delete.
+- Invariante de dominio: la contrasena nunca se compara ni se guarda en texto plano. `AuthService.validateUser` usa `bcrypt.compare` contra `passwordHash`; el hashing en si ocurre antes de llegar a `UsersService.create`, no dentro del servicio.
+- No existe endpoint de registro publico: `UsersService.create` existe a nivel de servicio pero ningun controller lo expone, lo que sugiere un flujo de alta de usuarios administrado fuera de la API publica (seed o proceso interno).
+
+#### 4.2.2.2. Interface Layer
+
+| Endpoint | Guard | DTO | Descripcion |
+|---|---|---|---|
+| `POST /api/v1/auth/login` | Ninguno (publico) | `LoginDto` (`email`, `password`) | Autentica con email y password, retorna `{ access_token }` |
+
+El unico controller (`AuthController`) fuerza `200 OK` en la respuesta del login en vez del `201` por defecto de un POST, y documenta con `@nestjs/swagger` las respuestas 200, 400 y 401. `JwtAuthGuard` se define y exporta desde este contexto, pero no protege ningun endpoint propio: su rol es proteger endpoints de los otros tres bounded contexts (tal como se ve en `jwtGuard` dentro de Monitoreo y Alertas, seccion 4.2.1.5).
+
+#### 4.2.2.3. Application Layer
+
+- `AuthService.validateUser(email, password)`: busca el usuario por email vía `UsersService.findByEmail`; si no existe o falla la comparacion `bcrypt`, lanza `UnauthorizedException`; si es valido, retorna el `User` completo.
+- `AuthService.login(email, password)`: llama a `validateUser`, arma el payload `{ sub: user.id, email: user.email }` y lo firma con `jwtService.sign`. Efecto secundario unico: la emision del JWT, sin registro de sesion ni persistencia adicional.
+- `UsersService.findByEmail` / `UsersService.create`: metodos casi passthrough sobre el repositorio, sin logica de negocio propia mas alla de asumir que `passwordHash` ya llega hasheado.
+
+#### 4.2.2.4. Infrastructure Layer
+
+- Repositorio TypeORM estandar (`Repository<User>`) sobre la misma base de datos que el resto de contextos (Postgres en produccion, SQLite via `better-sqlite3` como fallback local, `synchronize: true`, confirmado en `src/config/typeorm.config.ts`).
+- `JwtStrategy` extrae el token del header `Authorization: Bearer`, valida su expiracion (`ignoreExpiration: false`) y su firma contra `JWT_SECRET` (con un valor de respaldo hardcodeado si la variable de entorno no esta configurada, algo a corregir antes de un despliegue real). `JwtModule` firma con `JWT_EXPIRES_IN` (por defecto una hora).
+- `JwtAuthGuard` es una clase minima que delega toda la validacion en la estrategia passport-jwt registrada, sin logica propia.
+
+#### 4.2.2.5. Bounded Context Software Architecture Component Level Diagrams
+
+![Structurizr Identity and Access component diagram](docs/architecture/diagrams/identity-components.png)
+
+#### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams
+
+#### 4.2.2.6.1. Bounded Context Domain Layer Class Diagrams
+
+![Structurizr Identity and Access class diagram](docs/architecture/diagrams/identity-classes.png)
+
+`User` no tiene relaciones de asociacion de TypeORM hacia `Device` o `Zone`; no se incluyen en el diagrama porque compartir la misma base de datos no crea una relacion de dominio ni una FK explicita en `User`.
+
+#### 4.2.2.6.2. Bounded Context Database Design Diagram
+
+![Structurizr Identity and Access database diagram](docs/architecture/diagrams/identity-database.png)
+
+Unica tabla del contexto: PK `id` (uuid), `email` con constraint unico, `passwordHash`, `createdAt`. Sin columnas adicionales ni foreign keys.
+
+### 4.2.3. Bounded Context: Gestion de Zonas y Dispositivos
+
+Este es el subdominio de soporte: mantiene el catalogo de zonas de cada cliente y los dispositivos IoT asignados a cada una, incluyendo la emision del `apiKey` que un dispositivo fisico usa para autenticarse ante el resto de la plataforma. Es necesario para que Monitoreo y Alertas y Deteccion y Relay de Borde tengan sentido, pero no es, por si solo, la ventaja diferencial del producto. Vive en `securiot-cloud-api/src/zones` y `src/devices`.
+
+#### 4.2.3.1. Domain Layer
+
+- `Zone` (raiz de agregado): `id`, `name`, `location` (opcional), `ownerId`, relacion `ManyToOne` a `User` con `onDelete: 'CASCADE'`, `createdAt`, `updatedAt`.
+- `Device` (raiz de agregado): `id`, `name`, `apiKey` (unico, `@Unique(['apiKey'])`), relacion `ManyToOne` a `Zone` con `onDelete: 'CASCADE'`, `zoneId`, `createdAt`.
+- Invariantes verificados en codigo: un dispositivo pertenece a exactamente una zona; una zona pertenece a exactamente un usuario dueno; el `apiKey` se genera con `crypto.randomBytes(24).toString('hex')` al crear el dispositivo y se persiste en texto plano.
+- El `apiKey` se muestra completo solo una vez: `DeviceResponseDto` (usado en las listas y el detalle) no incluye `apiKey`; solo `DeviceCreatedResponseDto`, que extiende al anterior y es el tipo de retorno exclusivo de `POST /devices`, lo incluye. El propio codigo lo documenta en un comentario: "The response apiKey is shown in full only here. It is never returned again by any other endpoint."
+
+#### 4.2.3.2. Interface Layer
+
+| Endpoint | Guard | DTO / Query | Descripcion |
+|---|---|---|---|
+| `POST /api/v1/zones` | `JwtAuthGuard` | `CreateZoneDto` | Crea una zona para el usuario autenticado |
+| `GET /api/v1/zones` | `JwtAuthGuard` | — | Lista zonas del usuario autenticado |
+| `GET /api/v1/zones/:id` | `JwtAuthGuard` | — | Obtiene una zona por id, solo si pertenece al usuario |
+| `PATCH /api/v1/zones/:id` | `JwtAuthGuard` | `UpdateZoneDto` | Actualiza una zona propia |
+| `DELETE /api/v1/zones/:id` | `JwtAuthGuard` | — | Elimina una zona propia |
+| `POST /api/v1/devices` | `JwtAuthGuard` | `CreateDeviceDto` | Registra un dispositivo bajo una zona propia; retorna el apiKey por unica vez |
+| `GET /api/v1/devices` | `JwtAuthGuard` | query opcional `zone_id` | Lista dispositivos del usuario, sin apiKey |
+| `GET /api/v1/devices/:id` | `JwtAuthGuard` | — | Detalle de un dispositivo con estado online/offline y ultima lectura |
+
+Todos protegidos por `JwtAuthGuard` (contexto Identidad y Acceso) y documentados con `@ApiBearerAuth()`.
+
+#### 4.2.3.3. Application Layer
+
+- `ZonesService.create/findAllForOwner/findOneForOwner/update/remove`: el ownership se resuelve filtrando siempre por `ownerId` en la consulta (`findOne({ where: { id, ownerId } })`), de forma que una zona ajena nunca se distingue de una zona inexistente (ambas devuelven `NotFoundException`).
+- `DevicesService.create(dto, ownerId)`: primero busca la zona con `{ id: dto.zoneId, ownerId }` para verificar que existe y pertenece al usuario; si pasa, genera el `apiKey` y crea el dispositivo; retorna la respuesta que incluye el apiKey una unica vez.
+- `DevicesService.findAllForOwner`: usa `createQueryBuilder` con `leftJoin` a `Zone` y filtra por `zone.ownerId`, es decir el ownership de un dispositivo se resuelve siempre a traves de su zona, nunca con una columna de dueno directa en `Device`.
+- `DevicesService.getStatus(device)`: busca la ultima `Reading` del dispositivo por `deviceId` y calcula `isOnline` comparando su antigüedad contra `DEVICE_ONLINE_WINDOW_SECONDS` (variable de entorno, 300 segundos por defecto). Este es el unico punto donde el contexto consulta directamente una entidad de Monitoreo y Alertas.
+
+#### 4.2.3.4. Infrastructure Layer
+
+- Repositorios TypeORM estandar para `Zone` y `Device`. `DevicesModule` registra ademas la entidad `Reading` (de `src/telemetry`) para poder resolver `getStatus`, un acoplamiento directo y explicito entre este contexto y Monitoreo y Alertas.
+- Relacion con Identidad y Acceso: `Zone.ownerId` es FK a `User`, con `onDelete: 'CASCADE'` (si se elimina el usuario dueno, se eliminan sus zonas y, en cascada, sus dispositivos).
+- Relacion con Monitoreo y Alertas: `Reading`/`Alert` referencian `zoneId`/`deviceId` como FK hacia este contexto; el limite se cruza en la direccion opuesta solo para el calculo de estado online/offline.
+
+#### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams
+
+![Structurizr Zone and Device Management component diagram](docs/architecture/diagrams/zones-devices-components.png)
+
+#### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams
+
+#### 4.2.3.6.1. Bounded Context Domain Layer Class Diagrams
+
+![Structurizr Zone and Device Management class diagram](docs/architecture/diagrams/zones-devices-classes.png)
+
+#### 4.2.3.6.2. Bounded Context Database Design Diagram
+
+![Structurizr Zone and Device Management database diagram](docs/architecture/diagrams/zones-devices-database.png)
+
+`location` es nullable en la entidad `Zone`; `apiKey` no lo es, siempre se genera al crear el dispositivo y nunca queda vacio.
+
+### 4.2.4. Bounded Context: Deteccion y Relay de Borde
+
+Junto con Monitoreo y Alertas, este es el otro subdominio core del producto: decide en el sitio, sin depender de la nube, si lo que ve la camara amerita una reaccion inmediata, y despues reenvia esa informacion a la nube tolerando cortes de red. Vive en `securiot-edge-api/app` (Flask + Peewee, buffer local en SQLite).
+
+#### 4.2.4.1. Domain Layer
+
+- Unico modelo Peewee, `Reading`: `reading_id` (unico), `device_id`, `zone_id`, `sensor_type`, `value`, `recorded_at`, `synced` (booleano, `False` por defecto), `sync_attempts` (entero, `0` por defecto), `next_attempt_at`, `created_at`. No existe una tabla separada de "evento de deteccion": una deteccion de camara se guarda como un `Reading` mas, con `sensor_type="camera_detection"`.
+- Relay idempotente por `reading_id`: `reading_buffer.buffer_reading()` inserta con `on_conflict_ignore()`, apoyado en el constraint `unique=True` de `reading_id`, de forma que reenviar la misma lectura (algo frecuente por el reintento del propio relay) nunca la duplica.
+- Backoff exponencial: `_backoff_seconds(sync_attempts) = min(2 ** sync_attempts, 300)`, techo de 300 segundos. El ciclo de relay solo selecciona lecturas no sincronizadas cuyo `next_attempt_at` ya vencio (o es nulo).
+- Debounce de detecciones: `debounce.record(device_id, qualifying)` lleva un contador en memoria por dispositivo (umbral por defecto de 2, configurable via `DETECTION_DEBOUNCE_COUNT`) y devuelve `escalate=True` una sola vez, exactamente en el frame donde el contador alcanza el umbral, no en los siguientes.
+- Cooldown del actuador de puerta: un dispositivo no vuelve a disparar `door_action` para el mismo device hasta que pasan `DOOR_ACTION_COOLDOWN_SECONDS` (30 segundos por defecto) desde el ultimo disparo, aunque el tracking de camara (pan/tilt) sigue activo durante todo el episodio.
+
+#### 4.2.4.2. Interface Layer
+
+| Endpoint | Auth | Acepta | Retorna | Descripcion |
+|---|---|---|---|---|
+| `POST /ingest` | Header `X-Device-Key` contra un secreto compartido | JSON: `reading_id, device_id, zone_id, sensor_type, value, recorded_at` | `201 {"status":"buffered"}` | Ingesta generica de lecturas de sensores (PIR, reed switch, ultrasonico) |
+| `POST /frames` | Header `X-Device-Key` | `multipart/form-data`: `device_id`, `zone_id`, `frame` (imagen), opcional ancho/alto | `200 {"pan_delta","tilt_delta","door_action","alert"}` | Recibe un frame de la camara, corre deteccion y debounce, decide la reaccion inmediata |
+
+`/frames` valida que la imagen sea decodificable antes de invocar el detector, como mitigacion explicita frente a un ataque de denegacion de servicio con archivos malformados.
+
+#### 4.2.4.3. Application Layer
+
+Flujo de `/frames`, de principio a fin: valida la clave del dispositivo, valida y guarda la imagen recibida, obtiene un detector (mock o YOLO segun configuracion), filtra las detecciones a las clases que importan (persona, o un objeto permitido configurable), pasa el resultado por `debounce.record` para decidir si escala, y si el episodio esta activo calcula el desplazamiento de pan/tilt hacia la persona detectada. En paralelo, siempre bufferiza una lectura `camera_detection`, y si el cooldown de puerta ya vencio, bufferiza tambien una lectura `door_contact` y devuelve la orden de bloqueo. El relay hacia la nube no ocurre dentro de esta peticion: un `BackgroundScheduler` (APScheduler) dispara `relay_cycle()` cada `RELAY_INTERVAL_SECONDS` (10 segundos por defecto), que selecciona las lecturas pendientes de sincronizar y las envia una por una.
+
+#### 4.2.4.4. Infrastructure Layer
+
+- Persistencia local: SQLite (Peewee), unica tabla `Reading`, que actua como buffer de tolerancia a desconexion. Todo lo que entra por `/ingest` o `/frames` se guarda localmente antes de intentar llegar a la nube, lo que permite operar sin conexion y reintentar despues.
+- Cliente de relay: `POST {CLOUD_API_URL}/api/v1/telemetry` con header `X-Device-Key: CLOUD_DEVICE_API_KEY`, hacia el endpoint de ingesta de Monitoreo y Alertas en la Cloud API. Un 2xx marca la lectura como sincronizada; cualquier otro resultado incrementa `sync_attempts` y aplica el backoff descrito en la capa de dominio.
+- Configuracion relevante via variables de entorno: `DEVICE_SHARED_SECRET`, `CLOUD_API_URL`, `CLOUD_DEVICE_API_KEY`, `RELAY_INTERVAL_SECONDS`, `DETECTION_BACKEND` (mock o yolo), `DETECTION_DEBOUNCE_COUNT`, `DOOR_ACTION_COOLDOWN_SECONDS`, `MAX_CONTENT_LENGTH` (2 MB por defecto, otro limite anti-DoS).
+
+#### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams
+
+![Structurizr Edge Detection and Relay component diagram](docs/architecture/diagrams/edge-components.png)
+
+#### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams
+
+#### 4.2.4.6.1. Bounded Context Domain Layer Class Diagrams
+
+![Structurizr Edge Detection and Relay class diagram](docs/architecture/diagrams/edge-classes.png)
+
+#### 4.2.4.6.2. Bounded Context Database Design Diagram
+
+![Structurizr Edge Detection and Relay database diagram](docs/architecture/diagrams/edge-database.png)
+
+Esta tabla vive unicamente en el SQLite local del Edge API. Es distinta de `READINGS`, la tabla de Postgres del contexto Monitoreo y Alertas (seccion 4.2.1.6.2): la del Edge es un buffer temporal de transito, la de la nube es el registro persistente que consultan el Web App y el Mobile App.
 
 # Capítulo V: Solution UI/UX Design
 
