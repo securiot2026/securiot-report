@@ -1802,7 +1802,27 @@ _Pendiente de desarrollo._
 
 ## 4.1. Strategic-Level Domain-Driven Design
 
-_Pendiente de desarrollo._
+El diseño estratégico de SecurIoT divide el dominio según la responsabilidad de negocio y el lenguaje que necesita cada parte del sistema, no según la tecnología, el repositorio o el proceso donde se ejecuta. Esta separación permite que la detección local, la gestión de dispositivos, la autenticación y el monitoreo evolucionen sin mezclar reglas que responden a objetivos distintos.
+
+El análisis parte de los eventos, comandos, actores y políticas identificados en el EventStorming. A partir de ellos se reconocieron cuatro bounded contexts y se clasificaron según su aporte al producto:
+
+| Bounded Context | Responsabilidad estratégica | Clasificación | Fuente de verdad |
+|---|---|---|---|
+| **Identidad y Acceso** | Autenticar usuarios y emitir credenciales confiables para el resto de la plataforma | Genérico | Usuarios y credenciales |
+| **Gestión de Zonas y Dispositivos** | Administrar zonas, dispositivos, propietarios y claves de dispositivo | Soporte | Zonas, dispositivos y `apiKey` |
+| **Monitoreo y Alertas** | Convertir lecturas de sensores en información consultable y alertas accionables | Core | Lecturas y alertas persistidas en la nube |
+| **Detección y Relay de Borde** | Evaluar detecciones, ejecutar respuestas locales y asegurar la entrega posterior de telemetría | Core | Buffer local, estado de sincronización y decisiones inmediatas de borde |
+
+Los dos contextos core concentran la ventaja diferencial de SecurIoT: responder con baja latencia aun cuando la conexión con la nube no está disponible y transformar las observaciones del entorno en alertas trazables. Los contextos genérico y de soporte aportan las capacidades necesarias para proteger, identificar y organizar esas operaciones, pero no contienen por sí mismos la lógica que diferencia al producto.
+
+La integración entre contextos sigue cuatro principios:
+
+1. **Propiedad explícita de la información.** Cada concepto tiene un único contexto responsable. Otros contextos consumen identificadores o contratos publicados, pero no redefinen sus reglas.
+2. **Contratos pequeños y estables.** Identidad y Acceso publica un JWT; Gestión de Zonas y Dispositivos publica identificadores y claves; Detección y Relay de Borde publica lecturas compatibles con el contrato de telemetría.
+3. **Consistencia acorde al riesgo.** El Edge toma decisiones inmediatas de seguridad y conserva un buffer local, mientras la nube consolida el registro histórico mediante operaciones idempotentes.
+4. **Independencia lógica sobre la infraestructura actual.** Aunque varios contextos de la Cloud API comparten PostgreSQL durante el MVP, sus modelos, reglas y responsabilidades permanecen separados. Compartir una base de datos no convierte esos contextos en un único dominio.
+
+Las siguientes subsecciones muestran cómo se descubrieron estos límites, cómo circulan los mensajes entre ellos, cuáles son sus contratos y cómo se materializan en la arquitectura de software.
 
 ### 4.1.1. Design-Level EventStorming
 
@@ -1821,7 +1841,132 @@ Monitoreo y Alertas y Deteccion y Relay de Borde son los subdominios core: ahi v
 
 #### 4.1.1.2. Domain Message Flows Modeling
 
-_Pendiente de desarrollo._
+El modelado de mensajes conecta los resultados del EventStorming con los límites definidos para cada bounded context. Un **comando** expresa la intención de realizar una acción; un **evento de dominio** registra un hecho que ya ocurrió; y una **política** decide qué comando debe ejecutarse después de observar un evento o una condición. Los mensajes se nombran con el lenguaje ubicuo del contexto que los produce.
+
+| Elemento | Representación | Ejemplo |
+|---|---|---|
+| Actor o sistema externo | Verde | Administrador de seguridad, ESP32 |
+| Comando | Azul | Registrar dispositivo |
+| Evento de dominio | Naranja | Dispositivo registrado |
+| Política o decisión | Morado | Evaluar regla de alerta |
+
+**Flujo 1: autenticación y aprovisionamiento de una zona**
+
+El administrador primero obtiene una identidad autenticada. Esa identidad, publicada dentro del JWT, habilita la creación de una zona propia y el registro de un dispositivo. Gestión de Zonas y Dispositivos conserva el ownership y emite la clave que luego identifica al dispositivo físico.
+
+```mermaid
+flowchart LR
+    A1[Administrador de seguridad]
+
+    subgraph IAM[Identidad y Acceso]
+        C1[Autenticar usuario]
+        E1[Usuario autenticado]
+    end
+
+    subgraph ZDM[Gestión de Zonas y Dispositivos]
+        P1{Autorizar identidad y ownership}
+        C2[Crear zona]
+        E2[Zona creada]
+        C3[Registrar dispositivo]
+        E3[Dispositivo registrado]
+        E4[Clave de dispositivo emitida]
+    end
+
+    A1 --> C1 --> E1 --> P1 --> C2 --> E2 --> C3 --> E3 --> E4
+
+    classDef actor fill:#0f766e,color:#ffffff,stroke:#115e59;
+    classDef command fill:#2563eb,color:#ffffff,stroke:#1d4ed8;
+    classDef event fill:#f59e0b,color:#111827,stroke:#d97706;
+    classDef policy fill:#7c3aed,color:#ffffff,stroke:#6d28d9;
+    class A1 actor;
+    class C1,C2,C3 command;
+    class E1,E2,E3,E4 event;
+    class P1 policy;
+```
+
+**Flujo 2: detección y respuesta inmediata en el borde**
+
+El ESP32 envía una lectura o un frame candidato, pero no decide si existe una intrusión. Detección y Relay de Borde procesa la observación, aplica el debounce y calcula la respuesta local. Toda observación se bufferiza como una lectura; las acciones de puerta solo se solicitan cuando la detección alcanza el umbral configurado y el cooldown del dispositivo lo permite.
+
+```mermaid
+flowchart LR
+    A2[ESP32 Vision Node]
+
+    subgraph EDGE[Detección y Relay de Borde]
+        C4[Procesar lectura o frame]
+        E5[Observación procesada]
+        P2{¿Detección confirmada por debounce?}
+        C5[Calcular seguimiento pan/tilt]
+        E6[Movimiento de cámara calculado]
+        P3{¿Cooldown de puerta vencido?}
+        C6[Solicitar bloqueo de puerta]
+        E7[Acción de puerta solicitada]
+        C7[Bufferizar lectura]
+        E8[Lectura bufferizada]
+    end
+
+    A2 --> C4 --> E5
+    E5 --> C7 --> E8
+    E5 --> P2
+    P2 -->|Sí| C5 --> E6
+    P2 -->|Sí| P3
+    P3 -->|Sí| C6 --> E7 --> C7
+
+    classDef actor fill:#0f766e,color:#ffffff,stroke:#115e59;
+    classDef command fill:#2563eb,color:#ffffff,stroke:#1d4ed8;
+    classDef event fill:#f59e0b,color:#111827,stroke:#d97706;
+    classDef policy fill:#7c3aed,color:#ffffff,stroke:#6d28d9;
+    class A2 actor;
+    class C4,C5,C6,C7 command;
+    class E5,E6,E7,E8 event;
+    class P2,P3 policy;
+```
+
+**Flujo 3: relay confiable y generación de alertas**
+
+El scheduler del Edge intenta entregar cada lectura pendiente usando el contrato de telemetría de la nube y la `apiKey` emitida por Gestión de Zonas y Dispositivos. Si la entrega falla, la lectura permanece en SQLite y una política de backoff programa el siguiente intento. Cuando la Cloud API la acepta, Monitoreo y Alertas la registra de forma idempotente y evalúa sus reglas. Una lectura riesgosa genera como máximo una alerta gracias a la unicidad de `reading_id`.
+
+```mermaid
+flowchart LR
+    A3[Scheduler del Edge]
+
+    subgraph EDGE2[Detección y Relay de Borde]
+        P4{Seleccionar lectura pendiente}
+        C8[Reenviar lectura]
+        E9[Entrega fallida]
+        P5{Aplicar retry y backoff}
+        E10[Lectura sincronizada]
+    end
+
+    subgraph ZDM2[Gestión de Zonas y Dispositivos]
+        P6{Validar apiKey del dispositivo}
+    end
+
+    subgraph MON[Monitoreo y Alertas]
+        C9[Ingerir lectura]
+        E11[Lectura registrada de forma idempotente]
+        P7{Evaluar regla de alerta}
+        C10[Crear alerta]
+        E12[Alerta creada]
+    end
+
+    A3 --> P4 --> C8 --> P6
+    P6 -->|Válida| C9 --> E11 --> E10
+    E11 --> P7
+    P7 -->|Existe riesgo| C10 --> E12
+    C8 -->|Sin conexión o error| E9 --> P5 --> P4
+
+    classDef actor fill:#0f766e,color:#ffffff,stroke:#115e59;
+    classDef command fill:#2563eb,color:#ffffff,stroke:#1d4ed8;
+    classDef event fill:#f59e0b,color:#111827,stroke:#d97706;
+    classDef policy fill:#7c3aed,color:#ffffff,stroke:#6d28d9;
+    class A3 actor;
+    class C8,C9,C10 command;
+    class E9,E10,E11,E12 event;
+    class P4,P5,P6,P7 policy;
+```
+
+Los flujos establecen dos dependencias principales. Detección y Relay de Borde actúa como upstream de Monitoreo y Alertas y adapta sus lecturas locales al contrato de telemetría mediante una Anticorruption Layer. Gestión de Zonas y Dispositivos también es upstream de Monitoreo y Alertas porque publica los identificadores y las credenciales de dispositivo que permiten aceptar una lectura. Identidad y Acceso no participa en la ingesta desde el hardware: su JWT protege las operaciones ejecutadas por usuarios en las aplicaciones Web y Mobile.
 
 #### 4.1.1.3. Bounded Context Canvases
 
