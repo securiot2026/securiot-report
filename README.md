@@ -89,7 +89,7 @@ _Pendiente de desarrollo._
       - [4.1.3.3. Software Architecture Container Level Diagrams](#4133-software-architecture-container-level-diagrams)
       - [4.1.3.4. Software Architecture Deployment Diagrams](#4134-software-architecture-deployment-diagrams)
   - [4.2. Tactical-Level Domain-Driven Design](#42-tactical-level-domain-driven-design)
-    - [4.2.1. Bounded Context: <Nombre del Bounded Context>](#421-bounded-context-nombre-del-bounded-context)
+    - [4.2.1. Bounded Context: Monitoreo y Alertas](#421-bounded-context-monitoreo-y-alertas)
       - [4.2.1.1. Domain Layer](#4211-domain-layer)
       - [4.2.1.2. Interface Layer](#4212-interface-layer)
       - [4.2.1.3. Application Layer](#4213-application-layer)
@@ -98,6 +98,33 @@ _Pendiente de desarrollo._
       - [4.2.1.6. Bounded Context Software Architecture Code Level Diagrams](#4216-bounded-context-software-architecture-code-level-diagrams)
       - [4.2.1.6.1. Bounded Context Domain Layer Class Diagrams](#42161-bounded-context-domain-layer-class-diagrams)
       - [4.2.1.6.2. Bounded Context Database Design Diagram](#42162-bounded-context-database-design-diagram)
+    - [4.2.2. Bounded Context: Identidad y Acceso](#422-bounded-context-identidad-y-acceso)
+      - [4.2.2.1. Domain Layer](#4221-domain-layer)
+      - [4.2.2.2. Interface Layer](#4222-interface-layer)
+      - [4.2.2.3. Application Layer](#4223-application-layer)
+      - [4.2.2.4. Infrastructure Layer](#4224-infrastructure-layer)
+      - [4.2.2.5. Bounded Context Software Architecture Component Level Diagrams](#4225-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.2.6. Bounded Context Software Architecture Code Level Diagrams](#4226-bounded-context-software-architecture-code-level-diagrams)
+      - [4.2.2.6.1. Bounded Context Domain Layer Class Diagrams](#42261-bounded-context-domain-layer-class-diagrams)
+      - [4.2.2.6.2. Bounded Context Database Design Diagram](#42262-bounded-context-database-design-diagram)
+    - [4.2.3. Bounded Context: Gestion de Zonas y Dispositivos](#423-bounded-context-gestion-de-zonas-y-dispositivos)
+      - [4.2.3.1. Domain Layer](#4231-domain-layer)
+      - [4.2.3.2. Interface Layer](#4232-interface-layer)
+      - [4.2.3.3. Application Layer](#4233-application-layer)
+      - [4.2.3.4. Infrastructure Layer](#4234-infrastructure-layer)
+      - [4.2.3.5. Bounded Context Software Architecture Component Level Diagrams](#4235-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.3.6. Bounded Context Software Architecture Code Level Diagrams](#4236-bounded-context-software-architecture-code-level-diagrams)
+      - [4.2.3.6.1. Bounded Context Domain Layer Class Diagrams](#42361-bounded-context-domain-layer-class-diagrams)
+      - [4.2.3.6.2. Bounded Context Database Design Diagram](#42362-bounded-context-database-design-diagram)
+    - [4.2.4. Bounded Context: Deteccion y Relay de Borde](#424-bounded-context-deteccion-y-relay-de-borde)
+      - [4.2.4.1. Domain Layer](#4241-domain-layer)
+      - [4.2.4.2. Interface Layer](#4242-interface-layer)
+      - [4.2.4.3. Application Layer](#4243-application-layer)
+      - [4.2.4.4. Infrastructure Layer](#4244-infrastructure-layer)
+      - [4.2.4.5. Bounded Context Software Architecture Component Level Diagrams](#4245-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.4.6. Bounded Context Software Architecture Code Level Diagrams](#4246-bounded-context-software-architecture-code-level-diagrams)
+      - [4.2.4.6.1. Bounded Context Domain Layer Class Diagrams](#42461-bounded-context-domain-layer-class-diagrams)
+      - [4.2.4.6.2. Bounded Context Database Design Diagram](#42462-bounded-context-database-design-diagram)
 - [Capítulo V: Solution UI/UX Design](#capítulo-v-solution-uiux-design)
   - [5.1. Style Guidelines](#51-style-guidelines)
     - [5.1.1. General Style Guidelines](#511-general-style-guidelines)
@@ -1463,7 +1490,14 @@ _Pendiente de desarrollo._
 
 #### 4.1.1.1. Candidate Context Discovery
 
-_Pendiente de desarrollo._
+Agrupamos los eventos y comandos del dominio segun quien es dueno de la decision de negocio, no segun el repositorio de codigo donde vive hoy. De ese analisis salen cuatro contextos delimitados:
+
+1. **Identidad y Acceso**: quien puede entrar al sistema y con que credenciales.
+2. **Gestion de Zonas y Dispositivos**: que zonas existen, que dispositivos estan asignados a cada una y quien es su propietario.
+3. **Monitoreo y Alertas**: que paso en una zona (lecturas de sensores) y si eso amerita una alerta.
+4. **Deteccion y Relay de Borde**: que ve la camara en el sitio, si eso es una persona u objeto no permitido, y como reaccionar en el momento (pan/tilt, cerradura, buzzer) sin depender de la nube.
+
+Monitoreo y Alertas y Deteccion y Relay de Borde son los subdominios core: ahi vive la logica que distingue a SecurIoT de un CRUD generico de sensores. Identidad y Acceso es un subdominio generico (JWT estandar, sin reglas propias del negocio). Gestion de Zonas y Dispositivos es subdominio de soporte: necesario para que los otros dos tengan sentido, pero no es, por si solo, la ventaja del producto.
 
 #### 4.1.1.2. Domain Message Flows Modeling
 
@@ -1471,71 +1505,284 @@ _Pendiente de desarrollo._
 
 #### 4.1.1.3. Bounded Context Canvases
 
-_Pendiente de desarrollo._
+**Identidad y Acceso**
+
+| Campo | Detalle |
+|---|---|
+| Proposito | Autenticar usuarios y emitir el token que el resto de la plataforma confia sin volver a consultar este contexto |
+| Clasificacion estrategica | Generico |
+| Lenguaje ubicuo | Usuario, credenciales, token de acceso |
+| Entidad raiz | `User` (email, passwordHash) |
+| Contrato publicado | `POST /auth/login` devuelve un `access_token` JWT firmado; los demas contextos lo validan localmente contra `JWT_SECRET`, sin llamada de vuelta |
+| Implementado en | `securiot-cloud-api/src/auth`, `src/users` |
+
+**Gestion de Zonas y Dispositivos**
+
+| Campo | Detalle |
+|---|---|
+| Proposito | Mantener el catalogo de zonas del cliente y los dispositivos IoT asignados a cada una, incluyendo la emision del `apiKey` de dispositivo |
+| Clasificacion estrategica | Soporte |
+| Lenguaje ubicuo | Zona, Dispositivo, Propietario, apiKey |
+| Entidades raiz | `Zone`, `Device` |
+| Reglas de negocio | Un dispositivo pertenece a una unica zona; una zona pertenece a un unico usuario propietario; el `apiKey` se muestra completo una sola vez, al crear el dispositivo |
+| Implementado en | `securiot-cloud-api/src/zones`, `src/devices` |
+
+**Monitoreo y Alertas** (core)
+
+| Campo | Detalle |
+|---|---|
+| Proposito | Ingerir lecturas de sensores de forma idempotente y evaluar reglas de negocio que conviertan una lectura riesgosa en una alerta accionable |
+| Clasificacion estrategica | Core |
+| Lenguaje ubicuo | Lectura (Reading), Alerta (Alert), Regla de alerta, Severidad, Estado |
+| Entidades raiz | `Reading`, `Alert` |
+| Reglas de negocio | Ingestion idempotente por `reading_id` (constraint unica); cada lectura dispara `evaluateRule`, que hoy cubre `door_contact_open` y esta pensada para crecer a mas reglas por tipo de sensor; una alerta es unica por lectura |
+| Implementado en | `securiot-cloud-api/src/telemetry`, `src/alerts` |
+
+**Deteccion y Relay de Borde** (core)
+
+| Campo | Detalle |
+|---|---|
+| Proposito | Recibir lecturas y frames de camara del dispositivo fisico, correr deteccion local con debounce, decidir la accion inmediata (pan/tilt, cerradura, alerta local) y reenviar las lecturas a la nube tolerando cortes de red |
+| Clasificacion estrategica | Core |
+| Lenguaje ubicuo | Frame, Deteccion, Debounce, Buffer, Relay, Cooldown |
+| Entidades raiz (locales, SQLite) | Lectura bufferizada, Evento de deteccion |
+| Reglas de negocio | Buffer local con reintento y backoff cuando la nube no responde; relay idempotente por `reading_id`; cooldown entre acciones de cerradura para el mismo dispositivo |
+| Implementado en | `securiot-edge-api/app` (`ingest.py`, `detection.py`, `debounce.py`, `relay.py`, `frames.py`, `pan_tilt.py`) |
 
 ### 4.1.2. Context Mapping
 
-_Pendiente de desarrollo._
+![Structurizr bounded-context map](docs/architecture/diagrams/context-map.png)
+
+Ningun contexto llama al de Identidad y Acceso en tiempo de ejecucion mas alla del login: el JWT es autocontenido y cada contexto lo valida por su cuenta contra el mismo secreto compartido, asi que la relacion con Identidad y Acceso es de tipo Published Language mas que de llamada activa. Monitoreo y Alertas y Gestion de Zonas y Dispositivos hoy comparten una unica base PostgreSQL, lo cual simplifica el MVP pero es una decision a revisar si el sistema crece a multiples clientes con aislamiento de datos mas estricto.
 
 ### 4.1.3. Software Architecture
 
-_Pendiente de desarrollo._
+SecurIoT es un sistema distribuido de cuatro capas: aplicaciones cliente (Web App en Angular y Mobile App en Flutter), un backend hospedado (Cloud API en NestJS con PostgreSQL), un servicio de borde por instalacion (Edge API en Flask con buffer local SQLite y reconocimiento ArcFace) y firmware embebido (ESP32-S3 con deteccion corporal YOLO). Los siguientes diagramas siguen el modelo C4 y se generan exclusivamente desde el modelo [Structurizr DSL](docs/architecture/workspace.dsl). El ESP32 ejecuta la deteccion corporal antes de enviar frames candidatos al Edge; el Edge ejecuta ArcFace, conserva los embeddings biometricos localmente y solo inicia conexiones salientes hacia el backend hospedado.
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram
 
-_Pendiente de desarrollo._
+![C4 System Landscape diagram](docs/architecture/diagrams/system-landscape.png)
+
+La plataforma no depende de sistemas externos de terceros (sin pasarelas de pago, SMS o email en el alcance actual). La Landing Page es un sitio informativo aislado, sin llamadas a la API.
 
 #### 4.1.3.2. Software Architecture Context Level Diagrams
 
-_Pendiente de desarrollo._
+![C4 System Context diagram](docs/architecture/diagrams/system-context.png)
 
 #### 4.1.3.3. Software Architecture Container Level Diagrams
 
-_Pendiente de desarrollo._
+![C4 Container diagram](docs/architecture/diagrams/container.png)
+
+El hardware ESP32 queda fuera del limite punteado de la plataforma. Dentro del dispositivo se ejecuta YOLO para detectar personas/cuerpos y reducir el volumen de frames enviados. Dentro del Edge se ejecuta ArcFace para producir y comparar embeddings; el buffer SQLite y el repositorio local de identidades permiten seguir operando sin conectividad.
 
 #### 4.1.3.4. Software Architecture Deployment Diagrams
 
-_Pendiente de desarrollo._
+![C4 Deployment diagram](docs/architecture/diagrams/deployment.png)
+
+El diagrama de despliegue separa explicitamente el hardware ESP32, el Edge Host de la instalacion y la infraestructura hospedada. El backend no abre conexiones hacia la red local: el Edge inicia el envio de resultados y telemetria por HTTPS con retry/backoff.
 
 ## 4.2. Tactical-Level Domain-Driven Design
 
-_Pendiente de desarrollo._
+Esta sección detalla, para cada uno de los cuatro bounded contexts identificados en 4.1.1.1, sus capas de Domain, Interface, Application e Infrastructure, más los diagramas de componentes, clases y base de datos a nivel de código. Todos los diagramas tácticos se definen en el mismo modelo [Structurizr DSL](docs/architecture/workspace.dsl), se renderizan con fondo blanco y mantienen sus etiquetas en inglés.
 
-### 4.2.1. Bounded Context: <Nombre del Bounded Context>
+### 4.2.1. Bounded Context: Monitoreo y Alertas
 
-_Pendiente de desarrollo._
+Elegimos este contexto para el detalle tactico porque es el subdominio core de la Cloud API: convierte lecturas crudas de sensores en alertas que el operador realmente usa. Vive en `securiot-cloud-api/src/telemetry` y `src/alerts`.
 
 #### 4.2.1.1. Domain Layer
 
-_Pendiente de desarrollo._
+- `Reading` (raiz de agregado): `readingId` (unico), `deviceId`, `zoneId`, `sensorType`, `value`, `recordedAt`. La unicidad de `readingId` es el invariante central: garantiza que reenviar la misma lectura, algo que pasa seguido por el retry del relay de borde, nunca la duplica.
+- `Alert` (raiz de agregado): referencia a `zone`, `device` y, opcionalmente, a la `reading` que la origino; ademas `ruleType`, `severity`, `status` y `message`. Tambien tiene `readingId` unico, asi que una lectura genera como maximo una alerta.
+- Regla de dominio `evaluateRule`: hoy implementa una unica regla, `door_contact_open` (sensor `door_contact` con valor `open` genera una alerta de severidad `medium`). El metodo esta separado de la insercion de la lectura justamente para poder agregar mas reglas sin tocar el flujo de ingestion.
 
 #### 4.2.1.2. Interface Layer
 
-_Pendiente de desarrollo._
+| Endpoint | Guard | Descripcion |
+|---|---|---|
+| `POST /api/v1/telemetry` | `DeviceApiKeyGuard` (header `X-Device-Key`) | Ingesta una lectura, idempotente por `reading_id` |
+| `GET /api/v1/telemetry` | `JwtAuthGuard` | Lista lecturas filtrables por `device_id`, `zone_id` y rango de fechas |
+| `GET /api/v1/alerts` | `JwtAuthGuard` | Lista alertas de las zonas del usuario autenticado, filtrables por zona, dispositivo y estado |
+
+Los cuerpos de request se validan con DTOs de `class-validator` (`CreateReadingDto`, `QueryReadingsDto`, `QueryAlertsDto`) y cada endpoint esta documentado con decoradores de `@nestjs/swagger`.
 
 #### 4.2.1.3. Application Layer
 
-_Pendiente de desarrollo._
+- `TelemetryService.ingest(dto, device)`: inserta la lectura con `INSERT ... ON CONFLICT DO NOTHING` (`orIgnore`) y delega la evaluacion de reglas a `AlertsService.evaluateRule`. Ambos pasos ocurren en la misma llamada, para que el operador vea la alerta apenas el dispositivo reporta.
+- `TelemetryService.findAll(query)`: consulta de lecturas con filtros opcionales.
+- `AlertsService.evaluateRule(reading)`: aplica la regla de dominio y persiste la alerta si corresponde, tambien con `orIgnore` para respetar la unicidad por `readingId`.
+- `AlertsService.findAllForOwner(ownerId, query)`: hace join contra `Zone` para devolver solo alertas de zonas del usuario autenticado, sin exponer datos de otros clientes.
 
 #### 4.2.1.4. Infrastructure Layer
 
-_Pendiente de desarrollo._
+- `Repository<Reading>` y `Repository<Alert>` de TypeORM, sobre PostgreSQL en produccion (SQLite como fallback de desarrollo local, ver `src/config/typeorm.config.ts`).
+- `DeviceApiKeyGuard`: valida el header `X-Device-Key` contra la tabla `devices`, cruzando hacia el contexto de Gestion de Zonas y Dispositivos.
+- `JwtAuthGuard` + `JwtStrategy`: validan el JWT emitido por Identidad y Acceso sin llamarlo en tiempo de ejecucion.
 
 #### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
 
-_Pendiente de desarrollo._
+![Structurizr Monitoring and Alerts component diagram](docs/architecture/diagrams/monitoring-components.png)
 
 #### 4.2.1.6. Bounded Context Software Architecture Code Level Diagrams
 
-_Pendiente de desarrollo._
-
 #### 4.2.1.6.1. Bounded Context Domain Layer Class Diagrams
 
-_Pendiente de desarrollo._
+![Structurizr Monitoring and Alerts class diagram](docs/architecture/diagrams/monitoring-classes.png)
 
 #### 4.2.1.6.2. Bounded Context Database Design Diagram
 
-_Pendiente de desarrollo._
+![Structurizr Monitoring and Alerts database diagram](docs/architecture/diagrams/monitoring-database.png)
+
+`USERS`, `ZONES` y `DEVICES` pertenecen a otros bounded contexts (Identidad y Acceso, y Gestion de Zonas y Dispositivos) y se muestran aqui solo como referencia, porque hoy las cinco tablas viven en la misma base PostgreSQL. `READINGS` y `ALERTS` son las tablas propias de este contexto.
+
+### 4.2.2. Bounded Context: Identidad y Acceso
+
+Este contexto es el subdominio generico de la Cloud API: no tiene reglas de negocio propias del dominio de seguridad patrimonial, solo autentica y emite el token que el resto de la plataforma confia sin volver a consultarlo. Se incluye en el detalle tactico porque cada uno de los otros tres contextos depende de el para proteger sus propios endpoints. Vive en `securiot-cloud-api/src/auth` y `src/users`.
+
+#### 4.2.2.1. Domain Layer
+
+- `User` (raiz de agregado): `id` (uuid), `email`, `passwordHash`, `createdAt`. Constraint de unicidad sobre `email` a nivel de entidad (`@Unique(['email'])`), sin otros campos, no hay roles ni soft-delete.
+- Invariante de dominio: la contrasena nunca se compara ni se guarda en texto plano. `AuthService.validateUser` usa `bcrypt.compare` contra `passwordHash`; el hashing en si ocurre antes de llegar a `UsersService.create`, no dentro del servicio.
+- No existe endpoint de registro publico: `UsersService.create` existe a nivel de servicio pero ningun controller lo expone, lo que sugiere un flujo de alta de usuarios administrado fuera de la API publica (seed o proceso interno).
+
+#### 4.2.2.2. Interface Layer
+
+| Endpoint | Guard | DTO | Descripcion |
+|---|---|---|---|
+| `POST /api/v1/auth/login` | Ninguno (publico) | `LoginDto` (`email`, `password`) | Autentica con email y password, retorna `{ access_token }` |
+
+El unico controller (`AuthController`) fuerza `200 OK` en la respuesta del login en vez del `201` por defecto de un POST, y documenta con `@nestjs/swagger` las respuestas 200, 400 y 401. `JwtAuthGuard` se define y exporta desde este contexto, pero no protege ningun endpoint propio: su rol es proteger endpoints de los otros tres bounded contexts (tal como se ve en `jwtGuard` dentro de Monitoreo y Alertas, seccion 4.2.1.5).
+
+#### 4.2.2.3. Application Layer
+
+- `AuthService.validateUser(email, password)`: busca el usuario por email vía `UsersService.findByEmail`; si no existe o falla la comparacion `bcrypt`, lanza `UnauthorizedException`; si es valido, retorna el `User` completo.
+- `AuthService.login(email, password)`: llama a `validateUser`, arma el payload `{ sub: user.id, email: user.email }` y lo firma con `jwtService.sign`. Efecto secundario unico: la emision del JWT, sin registro de sesion ni persistencia adicional.
+- `UsersService.findByEmail` / `UsersService.create`: metodos casi passthrough sobre el repositorio, sin logica de negocio propia mas alla de asumir que `passwordHash` ya llega hasheado.
+
+#### 4.2.2.4. Infrastructure Layer
+
+- Repositorio TypeORM estandar (`Repository<User>`) sobre la misma base de datos que el resto de contextos (Postgres en produccion, SQLite via `better-sqlite3` como fallback local, `synchronize: true`, confirmado en `src/config/typeorm.config.ts`).
+- `JwtStrategy` extrae el token del header `Authorization: Bearer`, valida su expiracion (`ignoreExpiration: false`) y su firma contra `JWT_SECRET` (con un valor de respaldo hardcodeado si la variable de entorno no esta configurada, algo a corregir antes de un despliegue real). `JwtModule` firma con `JWT_EXPIRES_IN` (por defecto una hora).
+- `JwtAuthGuard` es una clase minima que delega toda la validacion en la estrategia passport-jwt registrada, sin logica propia.
+
+#### 4.2.2.5. Bounded Context Software Architecture Component Level Diagrams
+
+![Structurizr Identity and Access component diagram](docs/architecture/diagrams/identity-components.png)
+
+#### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams
+
+#### 4.2.2.6.1. Bounded Context Domain Layer Class Diagrams
+
+![Structurizr Identity and Access class diagram](docs/architecture/diagrams/identity-classes.png)
+
+`User` no tiene relaciones de asociacion de TypeORM hacia `Device` o `Zone`; no se incluyen en el diagrama porque compartir la misma base de datos no crea una relacion de dominio ni una FK explicita en `User`.
+
+#### 4.2.2.6.2. Bounded Context Database Design Diagram
+
+![Structurizr Identity and Access database diagram](docs/architecture/diagrams/identity-database.png)
+
+Unica tabla del contexto: PK `id` (uuid), `email` con constraint unico, `passwordHash`, `createdAt`. Sin columnas adicionales ni foreign keys.
+
+### 4.2.3. Bounded Context: Gestion de Zonas y Dispositivos
+
+Este es el subdominio de soporte: mantiene el catalogo de zonas de cada cliente y los dispositivos IoT asignados a cada una, incluyendo la emision del `apiKey` que un dispositivo fisico usa para autenticarse ante el resto de la plataforma. Es necesario para que Monitoreo y Alertas y Deteccion y Relay de Borde tengan sentido, pero no es, por si solo, la ventaja diferencial del producto. Vive en `securiot-cloud-api/src/zones` y `src/devices`.
+
+#### 4.2.3.1. Domain Layer
+
+- `Zone` (raiz de agregado): `id`, `name`, `location` (opcional), `ownerId`, relacion `ManyToOne` a `User` con `onDelete: 'CASCADE'`, `createdAt`, `updatedAt`.
+- `Device` (raiz de agregado): `id`, `name`, `apiKey` (unico, `@Unique(['apiKey'])`), relacion `ManyToOne` a `Zone` con `onDelete: 'CASCADE'`, `zoneId`, `createdAt`.
+- Invariantes verificados en codigo: un dispositivo pertenece a exactamente una zona; una zona pertenece a exactamente un usuario dueno; el `apiKey` se genera con `crypto.randomBytes(24).toString('hex')` al crear el dispositivo y se persiste en texto plano.
+- El `apiKey` se muestra completo solo una vez: `DeviceResponseDto` (usado en las listas y el detalle) no incluye `apiKey`; solo `DeviceCreatedResponseDto`, que extiende al anterior y es el tipo de retorno exclusivo de `POST /devices`, lo incluye. El propio codigo lo documenta en un comentario: "The response apiKey is shown in full only here. It is never returned again by any other endpoint."
+
+#### 4.2.3.2. Interface Layer
+
+| Endpoint | Guard | DTO / Query | Descripcion |
+|---|---|---|---|
+| `POST /api/v1/zones` | `JwtAuthGuard` | `CreateZoneDto` | Crea una zona para el usuario autenticado |
+| `GET /api/v1/zones` | `JwtAuthGuard` | — | Lista zonas del usuario autenticado |
+| `GET /api/v1/zones/:id` | `JwtAuthGuard` | — | Obtiene una zona por id, solo si pertenece al usuario |
+| `PATCH /api/v1/zones/:id` | `JwtAuthGuard` | `UpdateZoneDto` | Actualiza una zona propia |
+| `DELETE /api/v1/zones/:id` | `JwtAuthGuard` | — | Elimina una zona propia |
+| `POST /api/v1/devices` | `JwtAuthGuard` | `CreateDeviceDto` | Registra un dispositivo bajo una zona propia; retorna el apiKey por unica vez |
+| `GET /api/v1/devices` | `JwtAuthGuard` | query opcional `zone_id` | Lista dispositivos del usuario, sin apiKey |
+| `GET /api/v1/devices/:id` | `JwtAuthGuard` | — | Detalle de un dispositivo con estado online/offline y ultima lectura |
+
+Todos protegidos por `JwtAuthGuard` (contexto Identidad y Acceso) y documentados con `@ApiBearerAuth()`.
+
+#### 4.2.3.3. Application Layer
+
+- `ZonesService.create/findAllForOwner/findOneForOwner/update/remove`: el ownership se resuelve filtrando siempre por `ownerId` en la consulta (`findOne({ where: { id, ownerId } })`), de forma que una zona ajena nunca se distingue de una zona inexistente (ambas devuelven `NotFoundException`).
+- `DevicesService.create(dto, ownerId)`: primero busca la zona con `{ id: dto.zoneId, ownerId }` para verificar que existe y pertenece al usuario; si pasa, genera el `apiKey` y crea el dispositivo; retorna la respuesta que incluye el apiKey una unica vez.
+- `DevicesService.findAllForOwner`: usa `createQueryBuilder` con `leftJoin` a `Zone` y filtra por `zone.ownerId`, es decir el ownership de un dispositivo se resuelve siempre a traves de su zona, nunca con una columna de dueno directa en `Device`.
+- `DevicesService.getStatus(device)`: busca la ultima `Reading` del dispositivo por `deviceId` y calcula `isOnline` comparando su antigüedad contra `DEVICE_ONLINE_WINDOW_SECONDS` (variable de entorno, 300 segundos por defecto). Este es el unico punto donde el contexto consulta directamente una entidad de Monitoreo y Alertas.
+
+#### 4.2.3.4. Infrastructure Layer
+
+- Repositorios TypeORM estandar para `Zone` y `Device`. `DevicesModule` registra ademas la entidad `Reading` (de `src/telemetry`) para poder resolver `getStatus`, un acoplamiento directo y explicito entre este contexto y Monitoreo y Alertas.
+- Relacion con Identidad y Acceso: `Zone.ownerId` es FK a `User`, con `onDelete: 'CASCADE'` (si se elimina el usuario dueno, se eliminan sus zonas y, en cascada, sus dispositivos).
+- Relacion con Monitoreo y Alertas: `Reading`/`Alert` referencian `zoneId`/`deviceId` como FK hacia este contexto; el limite se cruza en la direccion opuesta solo para el calculo de estado online/offline.
+
+#### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams
+
+![Structurizr Zone and Device Management component diagram](docs/architecture/diagrams/zones-devices-components.png)
+
+#### 4.2.3.6. Bounded Context Software Architecture Code Level Diagrams
+
+#### 4.2.3.6.1. Bounded Context Domain Layer Class Diagrams
+
+![Structurizr Zone and Device Management class diagram](docs/architecture/diagrams/zones-devices-classes.png)
+
+#### 4.2.3.6.2. Bounded Context Database Design Diagram
+
+![Structurizr Zone and Device Management database diagram](docs/architecture/diagrams/zones-devices-database.png)
+
+`location` es nullable en la entidad `Zone`; `apiKey` no lo es, siempre se genera al crear el dispositivo y nunca queda vacio.
+
+### 4.2.4. Bounded Context: Deteccion y Relay de Borde
+
+Junto con Monitoreo y Alertas, este es el otro subdominio core del producto: decide en el sitio, sin depender de la nube, si lo que ve la camara amerita una reaccion inmediata, y despues reenvia esa informacion a la nube tolerando cortes de red. Vive en `securiot-edge-api/app` (Flask + Peewee, buffer local en SQLite).
+
+#### 4.2.4.1. Domain Layer
+
+- Unico modelo Peewee, `Reading`: `reading_id` (unico), `device_id`, `zone_id`, `sensor_type`, `value`, `recorded_at`, `synced` (booleano, `False` por defecto), `sync_attempts` (entero, `0` por defecto), `next_attempt_at`, `created_at`. No existe una tabla separada de "evento de deteccion": una deteccion de camara se guarda como un `Reading` mas, con `sensor_type="camera_detection"`.
+- Relay idempotente por `reading_id`: `reading_buffer.buffer_reading()` inserta con `on_conflict_ignore()`, apoyado en el constraint `unique=True` de `reading_id`, de forma que reenviar la misma lectura (algo frecuente por el reintento del propio relay) nunca la duplica.
+- Backoff exponencial: `_backoff_seconds(sync_attempts) = min(2 ** sync_attempts, 300)`, techo de 300 segundos. El ciclo de relay solo selecciona lecturas no sincronizadas cuyo `next_attempt_at` ya vencio (o es nulo).
+- Debounce de detecciones: `debounce.record(device_id, qualifying)` lleva un contador en memoria por dispositivo (umbral por defecto de 2, configurable via `DETECTION_DEBOUNCE_COUNT`) y devuelve `escalate=True` una sola vez, exactamente en el frame donde el contador alcanza el umbral, no en los siguientes.
+- Cooldown del actuador de puerta: un dispositivo no vuelve a disparar `door_action` para el mismo device hasta que pasan `DOOR_ACTION_COOLDOWN_SECONDS` (30 segundos por defecto) desde el ultimo disparo, aunque el tracking de camara (pan/tilt) sigue activo durante todo el episodio.
+
+#### 4.2.4.2. Interface Layer
+
+| Endpoint | Auth | Acepta | Retorna | Descripcion |
+|---|---|---|---|---|
+| `POST /ingest` | Header `X-Device-Key` contra un secreto compartido | JSON: `reading_id, device_id, zone_id, sensor_type, value, recorded_at` | `201 {"status":"buffered"}` | Ingesta generica de lecturas de sensores (PIR, reed switch, ultrasonico) |
+| `POST /frames` | Header `X-Device-Key` | `multipart/form-data`: `device_id`, `zone_id`, `frame` (imagen), opcional ancho/alto | `200 {"pan_delta","tilt_delta","door_action","alert"}` | Recibe un frame de la camara, corre deteccion y debounce, decide la reaccion inmediata |
+
+`/frames` valida que la imagen sea decodificable antes de invocar el detector, como mitigacion explicita frente a un ataque de denegacion de servicio con archivos malformados.
+
+#### 4.2.4.3. Application Layer
+
+Flujo de `/frames`, de principio a fin: valida la clave del dispositivo, valida y guarda la imagen recibida, obtiene un detector (mock o YOLO segun configuracion), filtra las detecciones a las clases que importan (persona, o un objeto permitido configurable), pasa el resultado por `debounce.record` para decidir si escala, y si el episodio esta activo calcula el desplazamiento de pan/tilt hacia la persona detectada. En paralelo, siempre bufferiza una lectura `camera_detection`, y si el cooldown de puerta ya vencio, bufferiza tambien una lectura `door_contact` y devuelve la orden de bloqueo. El relay hacia la nube no ocurre dentro de esta peticion: un `BackgroundScheduler` (APScheduler) dispara `relay_cycle()` cada `RELAY_INTERVAL_SECONDS` (10 segundos por defecto), que selecciona las lecturas pendientes de sincronizar y las envia una por una.
+
+#### 4.2.4.4. Infrastructure Layer
+
+- Persistencia local: SQLite (Peewee), unica tabla `Reading`, que actua como buffer de tolerancia a desconexion. Todo lo que entra por `/ingest` o `/frames` se guarda localmente antes de intentar llegar a la nube, lo que permite operar sin conexion y reintentar despues.
+- Cliente de relay: `POST {CLOUD_API_URL}/api/v1/telemetry` con header `X-Device-Key: CLOUD_DEVICE_API_KEY`, hacia el endpoint de ingesta de Monitoreo y Alertas en la Cloud API. Un 2xx marca la lectura como sincronizada; cualquier otro resultado incrementa `sync_attempts` y aplica el backoff descrito en la capa de dominio.
+- Configuracion relevante via variables de entorno: `DEVICE_SHARED_SECRET`, `CLOUD_API_URL`, `CLOUD_DEVICE_API_KEY`, `RELAY_INTERVAL_SECONDS`, `DETECTION_BACKEND` (mock o yolo), `DETECTION_DEBOUNCE_COUNT`, `DOOR_ACTION_COOLDOWN_SECONDS`, `MAX_CONTENT_LENGTH` (2 MB por defecto, otro limite anti-DoS).
+
+#### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams
+
+![Structurizr Edge Detection and Relay component diagram](docs/architecture/diagrams/edge-components.png)
+
+#### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams
+
+#### 4.2.4.6.1. Bounded Context Domain Layer Class Diagrams
+
+![Structurizr Edge Detection and Relay class diagram](docs/architecture/diagrams/edge-classes.png)
+
+#### 4.2.4.6.2. Bounded Context Database Design Diagram
+
+![Structurizr Edge Detection and Relay database diagram](docs/architecture/diagrams/edge-database.png)
+
+Esta tabla vive unicamente en el SQLite local del Edge API. Es distinta de `READINGS`, la tabla de Postgres del contexto Monitoreo y Alertas (seccion 4.2.1.6.2): la del Edge es un buffer temporal de transito, la de la nube es el registro persistente que consultan el Web App y el Mobile App.
 
 # Capítulo V: Solution UI/UX Design
 
