@@ -2525,11 +2525,23 @@ _Pendiente de desarrollo._
 
 # Conclusiones
 
-_Pendiente de desarrollo._
-
 ## Conclusiones y recomendaciones
 
-_Pendiente de desarrollo._
+### Conclusiones
+
+1. El Problem Statement sostiene que las pymes industriales, logísticas y comerciales del Perú protegen sus instalaciones con vigilancia humana y CCTV pasivo, revisando grabaciones cuando el incidente ya ocurrió. Las nueve entrevistas respaldan este diagnóstico.
+
+2. El 100% de los administradores de seguridad depende de la intervención física del personal, reporta falsas alarmas y elabora evidencia y reportes de forma manual o lenta. En el conjunto de los tres segmentos, el 100% percibe valor en alertas más rápidas, automáticas o contextualizadas, y el 77.8% describe procesos fragmentados o manuales.
+
+3. 
+
+### Recomendaciones
+
+1. Se recomienda que, para la siguiente entrega (TB1), el equipo ejecute las Validation Interviews con el Landing Page y los prototipos navegables, entre 3 y 5 por segmento, y que incorpore al menos a gerentes o administradores de pymes industriales reales de Lima Metropolitana (por ejemplo, Ate, Villa El Salvador, Lurín, Callao y Santa Anita), incluyendo a quienes operan más de una sede.
+
+2. Es conveniente fijar desde ahora metas cuantificables, como el tiempo de notificación menor a 10 segundos ya definido en US-08 y una tasa objetivo de falsas alarmas por zona, para poder contrastarlas con los resultados de las pruebas.
+
+3. El análisis competitivo confirma la oportunidad: Prosegur mantiene la alerta atada a un operador humano y a costos que crecen por turno, Verisure vende un kit aislado por local con contrato de permanencia y Verkada tiene un costo por dispositivo fuera del alcance de una pyme peruana. Ninguno cubre bien a la pyme industrial multi-sede.
 
 ## Video About-the-Team
 
@@ -2537,8 +2549,60 @@ _Pendiente de desarrollo._
 
 # Bibliografía
 
-_Pendiente de desarrollo._
+Brown, S. (s.f.). The C4 model for visualising software architecture. https://c4model.com/
+
+Congreso de la República del Perú. (2011). Ley N.° 29733, Ley de Protección de Datos Personales. Diario Oficial El Peruano.
+
+Conventional Commits. (s.f.). Conventional Commits 1.0.0. https://www.conventionalcommits.org/
+
+Evans, E. (2003). Domain-driven design: Tackling complexity in the heart of software. Addison-Wesley.
+
 
 # Anexos
 
-_Pendiente de desarrollo._
+## Anexo A. Síntesis estadística de las entrevistas de Needfinding**
+
+Fuente: sección 2.2.3. Se entrevistaron 9 personas (3 por segmento). Los porcentajes son descriptivos: 3 de 3 equivale a 100%, 2 de 3 a 66.7% y 1 de 3 a 33.3%.
+
+
+| Segmento | Hallazgo | Entrevistados | Porcentaje |
+|---|---|---:|---:|
+| Administrador de seguridad | Reportan falsas alarmas | 3 de 3 | 100% |
+| Administrador de seguridad | Dificultad para identificar personas autorizadas y no autorizadas | 3 de 3 | 100% |
+| Administrador de seguridad | Evidencia y reportes con procesos manuales o lentos | 3 de 3 | 100% |
+| Administrador de seguridad | Exigen respetar las normas de evacuación | 3 de 3 | 100% |
+| Personal de vigilancia | Necesitan ubicación exacta de la alerta | 3 de 3 | 100% |
+| Personal de vigilancia | Consideran útil una imagen o contexto previo | 3 de 3 | 100% |
+| Personal de vigilancia | Reciben información insuficiente antes de acudir a una alerta | 2 de 3 | 66.7% |
+| Gerente o dueño de pyme | Valoran las alertas automáticas | 3 de 3 | 100% |
+| Gerente o dueño de pyme | Valoran supervisión remota y centralizada | 2 de 3 | 66.7% |
+| Gerente o dueño de pyme | Valoran un historial automático de incidentes | 2 de 3 | 66.7% |
+| Transversal (9 de 9) | Valor en alertas más rápidas, automáticas o contextualizadas | 9 de 9 | 100% |
+| Transversal (9 de 9) | Falsas alarmas como preocupación explícita | 7 de 9 | 77.8% |
+| Transversal (9 de 9) | Procesos fragmentados, manuales o dependientes de varias herramientas | 7 de 9 | 77.8% |
+| Transversal (9 de 9) | Factores técnicos (entorno, integración, conectividad) condicionan el uso | 6 de 9 | 66.7% |
+
+## Anexo B. Matriz de trazabilidad: hipótesis, hallazgos y requisitos
+
+La numeración de épicas sigue el patrón del Product Backlog (EP-0n corresponde a HS-0n). Verificar EP-01 y EP-02 contra la sección 3.1 antes de exportar.
+ 
+| Hipótesis | Épica | Evidencia de las entrevistas | Nivel de respaldo actual |
+|---|---|---|---|
+| HS-01. Monitoreo de accesos y dispositivos | EP-01 | 100% de los administradores exige confiabilidad e integración; 77.8% describe procesos fragmentados | Indirecto: falta probar el módulo |
+| HS-02. Validación de zonas y dispositivos | EP-02 | 100% de los administradores tiene dificultad para distinguir personas autorizadas de no autorizadas | Indirecto: problema confirmado, solución sin probar |
+| HS-03. Alertas basadas en reglas | EP-03 | 9 de 9 valoran la alerta automática; 100% del personal de vigilancia pide ubicación, imagen y simplicidad | Alto |
+| HS-04. Registro histórico y trazable | EP-04 | 100% de los administradores reporta evidencia manual; 66.7% de los gerentes valora el historial | Alto |
+| HS-05. Dashboard de monitoreo (Web y Mobile) | EP-05 | Experiencias diferenciadas por rol; 66.7% de los gerentes valora la supervisión remota | Medio-alto |
+| HS-06. Gestión remota multi-sede | EP-06 | Centralizar herramientas separadas (Aldair Salas); competidores sin panel multi-sede nativo | Medio: validar con gerentes de más de una sede |
+
+## Anexo C. Riesgos y supuestos pendientes de validación
+
+| Riesgo o supuesto | Origen | Mitigación propuesta | Cuándo validar |
+|---|---|---|---|
+| Exceso de falsas alarmas reduce la confianza en la plataforma | 77.8% de los entrevistados | Reglas de confirmación, umbrales configurables y verificación humana | Sprint 1 y Validation Interviews |
+| Poca señal, batería limitada y ruido afectan la app móvil del vigilante | 100% del personal de vigilancia | Interfaz de pocos pasos, alertas perceptibles y funcionamiento con conectividad limitada | Prototipos y pruebas en campo |
+| Un protocolo automático compromete la evacuación | 100% de los administradores | Verificación humana previa y respeto a las rutas de evacuación | Diseño del protocolo de respuesta |
+| Tratamiento de imágenes y datos biométricos sin cumplir la normativa | Restricciones del proyecto (Ley N.° 29733) | Privacidad por diseño, términos y condiciones, política de privacidad | Antes del primer despliegue |
+| Muestra reducida y poco representativa del segmento gerencial | Análisis de entrevistas (3 por segmento) | Ampliar a 3 a 5 entrevistas con gerentes de pymes industriales reales | TB1 |
+| Entrada de un competidor global o una capa de IA de un incumbente | Análisis competitivo | Consolidar clientes pyme, precio accesible y soporte local | Roadmap posterior a TB2 |
+| Disposición a pagar la suscripción sin comprobar | Pregunta 7 del Lean UX Canvas | Preguntas de precio en las Validation Interviews | TB1 |
