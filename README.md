@@ -199,7 +199,16 @@ _Pendiente de desarrollo._
 
 # Student Outcome
 
-_Pendiente de desarrollo._
+El curso contribuye al cumplimiento del siguiente Student Outcome de ABET:
+
+**ABET – EAC - Student Outcome 5**
+
+**Criterio:** La capacidad de funcionar efectivamente en un equipo cuyos miembros juntos proporcionan liderazgo, crean un entorno de colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen objetivos.
+
+| Criterio específico | Acciones realizadas | Conclusiones |
+|---|---|---|
+| Trabaja en equipo para proporcionar liderazgo en forma conjunta | **Angulo Juan Carlos**<br>**AV1**<br>Pendiente de completar en AV1<br><br>**Aquino Solorzano Daniel Jonatan**<br>**AV1**<br>Pendiente de completar en AV1<br><br>**Hurtado Balcazar Rommel Daniel**<br>**AV1**<br>Pendiente de completar en AV1<br><br>**Nikaido Vargas Javier Masaru**<br>**AV1**<br>Pendiente de completar en AV1<br><br>**Osores Marchese Pietro**<br>**AV1**<br>Pendiente de completar en AV1<br><br>**Salcedo Champi Matias Rodolfo**<br>**AV1**<br>Pendiente de completar en AV1<br><br>**Santillan Alvarado Melina Liz**<br>**AV1**<br>- Propuso sustentar las tres User Personas exclusivamente con las entrevistas y sus análisis.<br>- Revisó la correspondencia entre los hallazgos de las entrevistas y los atributos incluidos en cada arquetipo.<br>- Validó que la User Task Matrix contuviera tareas del dominio independientes de las funcionalidades de SECURIOT.<br>- Definió el alcance del Ubiquitous Language limitado a términos del negocio y sin conceptos técnicos de ingeniería de software. | Pendiente de completar en AV1 |
+| Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos | **Angulo Juan Carlos**<br>**AV1**<br>Pendiente de completar en AV1<br><br>**Aquino Solorzano Daniel Jonatan**<br>**AV1**<br>Pendiente de completar en AV1<br><br>**Hurtado Balcazar Rommel Daniel**<br>**AV1**<br>Pendiente de completar en AV1<br><br>**Nikaido Vargas Javier Masaru**<br>**AV1**<br>Pendiente de completar en AV1<br><br>**Osores Marchese Pietro**<br>**AV1**<br>Pendiente de completar en AV1<br><br>**Salcedo Champi Matias Rodolfo**<br>**AV1**<br>Pendiente de completar en AV1<br><br>**Santillan Alvarado Melina Liz**<br>**AV1**<br>- Integró los hallazgos de las entrevistas aportadas por el equipo en las User Personas y la User Task Matrix.<br>- Organizó las tareas de los tres arquetipos por frecuencia e importancia para completar la sección 2.3.2.<br>- Consolidó en la sección 2.5 los términos del dominio identificados en entrevistas, reglas de negocio y bounded contexts. | Pendiente de completar en AV1 |
 
 # Capítulo I: Introducción
 
