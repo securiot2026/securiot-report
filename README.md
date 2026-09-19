@@ -47,12 +47,59 @@
 | v1.6 | 16/09/2026 | Pietro Osores | Reconstrucción de los diagramas C4 con Structurizr y diagramas de base de datos relacional. |
 | v1.7 | 18/09/2026 | Rommel Hurtado, Daniel Aquino, Pietro Osores, Melina Santillan | User Journey y Empathy Mapping, Product Backlog/requisitos, perfiles de equipo y Strategic DDD (message flows) completo. |
 | v1.8 | 19/09/2026 | Melina Santillan, Daniel Aquino | Student Outcome (ABET SO5) y actualización del Ubiquitous Language previo a la entrega AV1. |
-
+| v1.9 | 19/09/2026 | Matias Salcedo Champi | Registro de aportes de AV1 en User Stories, Product Backlog, Impact Mapping, User Journey Maps, Empathy Maps y Student Outcome 5. |
+| v1.10 | 19/09/2026 | Javier Masaru Nikaido Vargas | Realización y documentación de entrevistas para la investigación de usuarios de SECURIOT, incluyendo el diseño de preguntas, registro de entrevistas y análisis de hallazgos de los segmentos objetivo. |
 # Project Report Collaboration Insights
 
-URL del repositorio: _Pendiente de agregar_
+URL del repositorio: https://github.com/securiot2026/securiot-report
 
-_Pendiente de desarrollo._
+## AV1 – Sprint Review (Semana 4)
+
+### Repositorio y flujo de trabajo
+
+El Project Report se redacta en Markdown, con `README.md` como archivo principal, dentro de un repositorio de GitHub. Los aportes de cada integrante quedan registrados mediante commits. El equipo trabaja con GitFlow: la rama `develop` concentra la integración del informe, y cada integrante avanza sus secciones en ramas propias que se integran mediante pull requests. Los mensajes de commit siguen la convención Conventional Commits. El PDF de cada entrega se genera a partir de este repositorio.
+
+### Cómo se desarrolló el informe
+
+El equipo, de siete integrantes, dividió la elaboración del informe por artefactos y capítulos, con un responsable principal por cada uno y revisión cruzada entre compañeros. La coordinación se apoyó en un cronograma de tareas con propietario, prioridad, estado y fechas para el periodo del 5 al 19 de septiembre de 2026. El trabajo avanzó en cuatro etapas, coherentes con el Registro de Versiones del Informe.
+
+1. **Inicio y contexto del problema (5 a 8 de septiembre, v1.0 a v1.3).** Rommel Hurtado creó el repositorio e inicializó el informe, y redactó la carátula, el índice, el Startup Profile y los antecedentes y la problemática. Juan Angulo y Rommel Hurtado completaron el Lean UX Process (problem statement, assumptions, hypothesis statements y canvas) y los segmentos objetivo. Juan Angulo y Daniel Aquino elaboraron los primeros diagramas C4 y bounded contexts, y diseñaron las entrevistas.
+2. **Investigación con usuarios (9 a 15 de septiembre, v1.4 y v1.5).** Daniel Aquino registró las entrevistas de los segmentos 1 y 2 (transcripciones, fotos y capturas de las sesiones), y el equipo consolidó las nueve entrevistas y su análisis estadístico. Juan Angulo y Rommel Hurtado desarrollaron el Tactical DDD de los bounded contexts restantes, el Capítulo II y el análisis competitivo.
+3. **Diseño de la solución y requisitos (16 a 18 de septiembre, v1.6 y v1.7).** Pietro Osores reconstruyó los diagramas C4 con Structurizr y elaboró los diagramas de base de datos relacional. Rommel Hurtado, Daniel Aquino, Pietro Osores y Melina Santillan completaron los User Journey Maps, los Empathy Maps, el Product Backlog y los requisitos, los perfiles del equipo y el Strategic DDD con los message flows.
+4. **Cierre e integración (19 de septiembre, v1.8 y v1.9).** Melina Santillan y Daniel Aquino redactaron la sección Student Outcome (ABET SO5) y actualizaron el Ubiquitous Language. Matias Salcedo registró los aportes de AV1 en User Stories, Product Backlog, Impact Mapping, User Journey Maps y Empathy Maps. Juan Angulo, como Team Leader, ensambló la revisión final del informe y elaboró el Participant Performance Report.
+
+### Aportes por integrante
+
+| Integrante | Versiones del informe | Aportes principales en AV1 |
+|---|---|---|
+| Angulo Abud, Juan Carlos (Team Leader) | v1.2, v1.3, v1.5 | Lean UX Process completo, Competitive Analysis Landscape, análisis SWOT y estrategias frente a competidores, diagramas C4 y bounded contexts, Tactical DDD, Capítulo II, ensamblaje y revisión final del informe, Participant Performance Report. |
+| Hurtado Balcazar, Rommel Daniel | v1.0, v1.1, v1.2, v1.5, v1.7 | Creación del repositorio, carátula, índice, Startup Profile, antecedentes y problemática (5W + 2H), segmentos objetivo, Lean UX, Tactical DDD, User Journey y Empathy Mapping, keynote. |
+| Aquino Solorzano, Daniel Jonatan | v1.3, v1.4, v1.7, v1.8 | Diseño de entrevistas, coordinación y grabación de entrevistas de los segmentos 1 y 2, registro de entrevistas, diagramas C4, Product Backlog y requisitos, Student Outcome y Ubiquitous Language. |
+| Osores Marchese, Pietro | v1.6, v1.7 | Design-Level EventStorming, Bounded Context Canvases, Domain Message Flows, diagramas C4 con Structurizr, diagramas de base de datos relacional, edición del video de exposición. |
+| Santillan Alvarado, Melina Liz | v1.7, v1.8 | User Personas en UXPressia, User Task Matrix, Context Mapping, perfiles del equipo, Ubiquitous Language, Student Outcome. |
+| Salcedo Champi, Matias Rodolfo | v1.9 | User Stories con criterios de aceptación en Gherkin, Product Backlog con Story Points, User Journey Maps As-Is, Empathy Maps, Impact Mapping, registro de aportes de AV1. |
+| Nikaido Vargas, Javier Masaru | v1.10 | Diseño de entrevistas, Registro de entrevistas y Análisis de entrevistas; realización de entrevistas, organización de evidencias y análisis de los hallazgos obtenidos de los segmentos objetivo de SECURIOT. |
+### Evidencias de colaboración en GitHub
+
+**Figura 1.** Contribuciones por integrante (Insights → Contributors).
+
+![Contribuciones por integrante en el repositorio del informe-1](docs/collaborationInsights/AV1/contributors1.png)
+
+![Contribuciones por integrante en el repositorio del informe-2](docs/collaborationInsights/AV1/contributors2.png)
+
+**Figura 2.** Historial de commits por integrante durante AV1.
+
+![Historial de commits del repositorio del informe](docs/collaborationInsights/AV1/av1-commits.png)
+
+**Figura 3.** Actividad de ramas y pull requests (Insights → Network o Pull requests).
+
+![Ramas y pull requests del repositorio del informe](docs/collaborationInsights/AV1/av1-network.png)
+
+### Interpretación de los analíticos
+
+Los analíticos muestran que las seis secciones principales del informe (Capítulos I a IV, más Conclusiones, Bibliografía y Anexos) se distribuyeron entre los integrantes, con un responsable claro por artefacto. La participación de cada integrante se refleja en el historial de commits y en el Registro de Versiones
+
+También se identifica una oportunidad de mejora. Tres de las nueve versiones del informe (v1.7, v1.8 y v1.9) se registraron el 18 y el 19 de septiembre, es decir, en los dos últimos días antes de la entrega. Para TB1, el equipo se compromete a integrar los avances con mayor frecuencia, a repartir de forma más pareja los commits entre todos los integrantes y a revisar los pull requests antes del cierre de cada sprint.
 
 # Contenido
 
@@ -217,8 +264,8 @@ El curso contribuye al cumplimiento del siguiente Student Outcome de ABET:
 
 | Criterio específico | Acciones realizadas | Conclusiones |
 |---|---|---|
-| Trabaja en equipo para proporcionar liderazgo en forma conjunta | **Angulo Juan Carlos**<br>**AV1**<br>Pendiente de completar en AV1<br><br>**Aquino Solorzano Daniel Jonatan**<br>**AV1**<br>Asumí un rol de coliderazgo en la fase de investigación de usuarios al estructurar la estrategia de empatización para tres segmentos objetivo del proyecto, coordinando activamente con el equipo la formulación y validación de las guías de entrevista para asegurar un enfoque coherente. Asimismo, lideré operativamente la recolección de hallazgos al gestionar y ejecutar directamente las sesiones sincrónicas por Google Meet con los dos primeros segmentos (completando tres entrevistas del primero y dos del segundo), compartiendo periódicamente los avances y facilitando la toma de decisiones compartida dentro del equipo para ajustar el rumbo del análisis según los datos obtenidos.<br><br>**Hurtado Balcazar Rommel Daniel**<br>**AV1**<br>Pendiente de completar en AV1<br><br>**Nikaido Vargas Javier Masaru**<br>**AV1**<br>Pendiente de completar en AV1<br><br>**Osores Marchese Pietro**<br>**AV1**<br>Pendiente de completar en AV1<br><br>**Salcedo Champi Matias Rodolfo**<br>**AV1**<br>Pendiente de completar en AV1<br><br>**Santillan Alvarado Melina Liz**<br>**AV1**<br>- Propuso sustentar las tres User Personas exclusivamente con las entrevistas y sus análisis.<br>- Revisó la correspondencia entre los hallazgos de las entrevistas y los atributos incluidos en cada arquetipo.<br>- Validó que la User Task Matrix contuviera tareas del dominio independientes de las funcionalidades de SECURIOT.<br>- Definió el alcance del Ubiquitous Language limitado a términos del negocio y sin conceptos técnicos de ingeniería de software. | Pendiente de completar en AV1 |
-| Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos | **Angulo Juan Carlos**<br>**AV1**<br>Pendiente de completar en AV1<br><br>**Aquino Solorzano Daniel Jonatan**<br>**AV1**<br>Fomenté un espacio de trabajo integrador y abierto a la retroalimentación al definir, junto a mis compañeros, el cronograma y las metas para el levantamiento de información cualitativa de tres segmentos objetivo. Organicé las tareas correspondientes mediante una planificación clara de los tiempos de contacto, la logística de las sesiones remotas por Google Meet y el registro detallado de las respuestas, cumpliendo puntualmente con el objetivo trazado al ejecutar con éxito las cinco entrevistas asignadas (tres del segmento inicial y dos del segundo) y entregando al equipo un repositorio estructurado de evidencias clave para el diseño de la solución.<br><br>**Hurtado Balcazar Rommel Daniel**<br>**AV1**<br>Pendiente de completar en AV1<br><br>**Nikaido Vargas Javier Masaru**<br>**AV1**<br>Pendiente de completar en AV1<br><br>**Osores Marchese Pietro**<br>**AV1**<br>Pendiente de completar en AV1<br><br>**Salcedo Champi Matias Rodolfo**<br>**AV1**<br>Pendiente de completar en AV1<br><br>**Santillan Alvarado Melina Liz**<br>**AV1**<br>- Integró los hallazgos de las entrevistas aportadas por el equipo en las User Personas y la User Task Matrix.<br>- Organizó las tareas de los tres arquetipos por frecuencia e importancia para completar la sección 2.3.2.<br>- Consolidó en la sección 2.5 los términos del dominio identificados en entrevistas, reglas de negocio y bounded contexts. | Pendiente de completar en AV1 |
+| Trabaja en equipo para proporcionar liderazgo en forma conjunta | **Angulo Juan Carlos**<br>**AV1**<br>Lideré el diseño de la arquitectura de software del proyecto en el Capítulo IV, construyendo el Strategic-Level DDD desde el Event Storming de diseño hasta el descubrimiento de los bounded contexts candidatos y su mapeo, y extendiendo después ese trabajo al Tactical DDD de los bounded contexts restantes del sistema. También impulsé el arranque del proyecto al completar el Lean UX Process del Capítulo I (problem statements, assumptions, hypothesis statements y canvas), coordinando con mis compañeros para que esas decisiones de producto quedaran alineadas con la definición del segmento objetivo que el equipo cerró después.<br><br>**Aquino Solorzano Daniel Jonatan**<br>**AV1**<br>Asumí un rol de coliderazgo en la fase de investigación de usuarios al estructurar la estrategia de empatización para tres segmentos objetivo del proyecto, coordinando activamente con el equipo la formulación y validación de las guías de entrevista para asegurar un enfoque coherente. Asimismo, lideré operativamente la recolección de hallazgos al gestionar y ejecutar directamente las sesiones sincrónicas por Google Meet con los dos primeros segmentos (completando tres entrevistas del primero y dos del segundo), compartiendo periódicamente los avances y facilitando la toma de decisiones compartida dentro del equipo para ajustar el rumbo del análisis según los datos obtenidos.<br><br>**Hurtado Balcazar Rommel Daniel**<br>**AV1**<br>Fomenté el trabajo colaborativo y en la organización de la delegación de tareas para el AV1.Desarrolle la idea de la StartUp, planteando su definición, así como el analisís de los antecedentes y la problemática, por ultimo gracias a la recopilación de información de LeanUX pude determinar el segmento objetivo en el cual se enfocara este servicio.<br><br>**Nikaido Vargas Javier Masaru**<br>**AV1**<br>Pendiente de completar en AV1<br><br>**Osores Marchese Pietro**<br>**AV1**<br>Pendiente de completar en AV1<br><br>**Salcedo Champi Matias Rodolfo**<br>**AV1**<br>Participé en la definición de requisitos iniciales del producto a partir de los hallazgos del proceso de needfinding. Elaboré y organicé User Stories con criterios de aceptación en formato Gherkin, incluyendo historias asociadas a la Landing Page y Technical Stories necesarias para sostener la solución. También trabajé el Impact Mapping para relacionar el objetivo de negocio con actores, impactos esperados y funcionalidades, evitando que el backlog quedara como una lista aislada de tareas sin conexión con el valor del producto.<br><br>**Santillan Alvarado Melina Liz**<br>**AV1**<br>- Propuso sustentar las tres User Personas exclusivamente con las entrevistas y sus análisis.<br>- Revisó la correspondencia entre los hallazgos de las entrevistas y los atributos incluidos en cada arquetipo.<br>- Validó que la User Task Matrix contuviera tareas del dominio independientes de las funcionalidades de SECURIOT.<br>- Definió el alcance del Ubiquitous Language limitado a términos del negocio y sin conceptos técnicos de ingeniería de software. | Durante AV1, el equipo logró convertir información inicial del problema en artefactos accionables para el proyecto. La participación de cada integrante permitió sostener una visión compartida del producto y tomar decisiones con mayor criterio al momento de priorizar requisitos, organizar evidencias y conectar cada entrega con los objetivos de SECURIOT. |
+| Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos | **Angulo Juan Carlos**<br>**AV1**<br>Planifiqué el Capítulo IV en dos entregas dentro del sprint, primero el diseño estratégico y después el táctico, para poder avanzar en paralelo sin bloquear las secciones de requerimientos y UX que dependían de decisiones de arquitectura ya cerradas. Mantuve cada bounded context documentado y versionado en el repositorio a medida que quedaba definido, y prioricé cerrar primero el Lean UX Process para destrabar la definición del segmento objetivo del equipo, cumpliendo con los plazos que nos fijamos para el AV1.<br><br>**Aquino Solorzano Daniel Jonatan**<br>**AV1**<br>Fomenté un espacio de trabajo integrador y abierto a la retroalimentación al definir, junto a mis compañeros, el cronograma y las metas para el levantamiento de información cualitativa de tres segmentos objetivo. Organicé las tareas correspondientes mediante una planificación clara de los tiempos de contacto, la logística de las sesiones remotas por Google Meet y el registro detallado de las respuestas, cumpliendo puntualmente con el objetivo trazado al ejecutar con éxito las cinco entrevistas asignadas (tres del segmento inicial y dos del segundo) y entregando al equipo un repositorio estructurado de evidencias clave para el diseño de la solución.<br><br>**Hurtado Balcazar Rommel Daniel**<br>**AV1**<br>Ordene la asignación de de tareas para un correcto desarrollo del primer avance del trabajo final, desarrollando asi un trabajo ordenado y en plazo, cumpliendo los requisitos solicitados. Así mismo, integre los hallazgos del equipo encargos de LeanUX para determinar el segmento objetivo. <br><br>**Nikaido Vargas Javier Masaru**<br>**AV1**<br>Pendiente de completar en AV1<br><br>**Osores Marchese Pietro**<br>**AV1**<br>Pendiente de completar en AV1<br><br>**Salcedo Champi Matias Rodolfo**<br>**AV1**<br>Ordené el Product Backlog con estimación por Story Points y priorización por nivel de importancia, considerando épicas de monitoreo, zonas y accesos, alertas, trazabilidad, experiencia web/mobile, gestión multi-sede, Landing Page y Technical Stories. Además, desarrollé los User Journey Maps As-Is y Empathy Maps para representar la experiencia actual de los arquetipos definidos, tomando como base las entrevistas y los patrones detectados en los segmentos objetivo. Estas actividades ayudaron a que el equipo tuviera una referencia común para planificar la entrega y sustentar las decisiones de producto.<br><br>**Santillan Alvarado Melina Liz**<br>**AV1**<br>- Integró los hallazgos de las entrevistas aportadas por el equipo en las User Personas y la User Task Matrix.<br>- Organizó las tareas de los tres arquetipos por frecuencia e importancia para completar la sección 2.3.2.<br>- Consolidó en la sección 2.5 los términos del dominio identificados en entrevistas, reglas de negocio y bounded contexts. | La planificación de tareas y la construcción de artefactos compartidos favorecieron una coordinación más clara durante AV1. Al trabajar con historias, backlog, mapas de experiencia y lenguaje común, el equipo redujo ambigüedades sobre las necesidades reales de los usuarios y avanzó con responsabilidades más visibles. |
 
 # Capítulo I: Introducción
 
@@ -2524,11 +2571,23 @@ _Pendiente de desarrollo._
 
 # Conclusiones
 
-_Pendiente de desarrollo._
-
 ## Conclusiones y recomendaciones
 
-_Pendiente de desarrollo._
+### Conclusiones
+
+1. El Problem Statement sostiene que las pymes industriales, logísticas y comerciales del Perú protegen sus instalaciones con vigilancia humana y CCTV pasivo, revisando grabaciones cuando el incidente ya ocurrió. Las nueve entrevistas respaldan este diagnóstico.
+
+2. El 100% de los administradores de seguridad depende de la intervención física del personal, reporta falsas alarmas y elabora evidencia y reportes de forma manual o lenta. En el conjunto de los tres segmentos, el 100% percibe valor en alertas más rápidas, automáticas o contextualizadas, y el 77.8% describe procesos fragmentados o manuales.
+
+3. 
+
+### Recomendaciones
+
+1. Se recomienda que, para la siguiente entrega (TB1), el equipo ejecute las Validation Interviews con el Landing Page y los prototipos navegables, entre 3 y 5 por segmento, y que incorpore al menos a gerentes o administradores de pymes industriales reales de Lima Metropolitana (por ejemplo, Ate, Villa El Salvador, Lurín, Callao y Santa Anita), incluyendo a quienes operan más de una sede.
+
+2. Es conveniente fijar desde ahora metas cuantificables, como el tiempo de notificación menor a 10 segundos ya definido en US-08 y una tasa objetivo de falsas alarmas por zona, para poder contrastarlas con los resultados de las pruebas.
+
+3. El análisis competitivo confirma la oportunidad: Prosegur mantiene la alerta atada a un operador humano y a costos que crecen por turno, Verisure vende un kit aislado por local con contrato de permanencia y Verkada tiene un costo por dispositivo fuera del alcance de una pyme peruana. Ninguno cubre bien a la pyme industrial multi-sede.
 
 ## Video About-the-Team
 
@@ -2536,8 +2595,60 @@ _Pendiente de desarrollo._
 
 # Bibliografía
 
-_Pendiente de desarrollo._
+Brown, S. (s.f.). The C4 model for visualising software architecture. https://c4model.com/
+
+Congreso de la República del Perú. (2011). Ley N.° 29733, Ley de Protección de Datos Personales. Diario Oficial El Peruano.
+
+Conventional Commits. (s.f.). Conventional Commits 1.0.0. https://www.conventionalcommits.org/
+
+Evans, E. (2003). Domain-driven design: Tackling complexity in the heart of software. Addison-Wesley.
+
 
 # Anexos
 
-_Pendiente de desarrollo._
+## Anexo A. Síntesis estadística de las entrevistas de Needfinding**
+
+Fuente: sección 2.2.3. Se entrevistaron 9 personas (3 por segmento). Los porcentajes son descriptivos: 3 de 3 equivale a 100%, 2 de 3 a 66.7% y 1 de 3 a 33.3%.
+
+
+| Segmento | Hallazgo | Entrevistados | Porcentaje |
+|---|---|---:|---:|
+| Administrador de seguridad | Reportan falsas alarmas | 3 de 3 | 100% |
+| Administrador de seguridad | Dificultad para identificar personas autorizadas y no autorizadas | 3 de 3 | 100% |
+| Administrador de seguridad | Evidencia y reportes con procesos manuales o lentos | 3 de 3 | 100% |
+| Administrador de seguridad | Exigen respetar las normas de evacuación | 3 de 3 | 100% |
+| Personal de vigilancia | Necesitan ubicación exacta de la alerta | 3 de 3 | 100% |
+| Personal de vigilancia | Consideran útil una imagen o contexto previo | 3 de 3 | 100% |
+| Personal de vigilancia | Reciben información insuficiente antes de acudir a una alerta | 2 de 3 | 66.7% |
+| Gerente o dueño de pyme | Valoran las alertas automáticas | 3 de 3 | 100% |
+| Gerente o dueño de pyme | Valoran supervisión remota y centralizada | 2 de 3 | 66.7% |
+| Gerente o dueño de pyme | Valoran un historial automático de incidentes | 2 de 3 | 66.7% |
+| Transversal (9 de 9) | Valor en alertas más rápidas, automáticas o contextualizadas | 9 de 9 | 100% |
+| Transversal (9 de 9) | Falsas alarmas como preocupación explícita | 7 de 9 | 77.8% |
+| Transversal (9 de 9) | Procesos fragmentados, manuales o dependientes de varias herramientas | 7 de 9 | 77.8% |
+| Transversal (9 de 9) | Factores técnicos (entorno, integración, conectividad) condicionan el uso | 6 de 9 | 66.7% |
+
+## Anexo B. Matriz de trazabilidad: hipótesis, hallazgos y requisitos
+
+La numeración de épicas sigue el patrón del Product Backlog (EP-0n corresponde a HS-0n). Verificar EP-01 y EP-02 contra la sección 3.1 antes de exportar.
+ 
+| Hipótesis | Épica | Evidencia de las entrevistas | Nivel de respaldo actual |
+|---|---|---|---|
+| HS-01. Monitoreo de accesos y dispositivos | EP-01 | 100% de los administradores exige confiabilidad e integración; 77.8% describe procesos fragmentados | Indirecto: falta probar el módulo |
+| HS-02. Validación de zonas y dispositivos | EP-02 | 100% de los administradores tiene dificultad para distinguir personas autorizadas de no autorizadas | Indirecto: problema confirmado, solución sin probar |
+| HS-03. Alertas basadas en reglas | EP-03 | 9 de 9 valoran la alerta automática; 100% del personal de vigilancia pide ubicación, imagen y simplicidad | Alto |
+| HS-04. Registro histórico y trazable | EP-04 | 100% de los administradores reporta evidencia manual; 66.7% de los gerentes valora el historial | Alto |
+| HS-05. Dashboard de monitoreo (Web y Mobile) | EP-05 | Experiencias diferenciadas por rol; 66.7% de los gerentes valora la supervisión remota | Medio-alto |
+| HS-06. Gestión remota multi-sede | EP-06 | Centralizar herramientas separadas (Aldair Salas); competidores sin panel multi-sede nativo | Medio: validar con gerentes de más de una sede |
+
+## Anexo C. Riesgos y supuestos pendientes de validación
+
+| Riesgo o supuesto | Origen | Mitigación propuesta | Cuándo validar |
+|---|---|---|---|
+| Exceso de falsas alarmas reduce la confianza en la plataforma | 77.8% de los entrevistados | Reglas de confirmación, umbrales configurables y verificación humana | Sprint 1 y Validation Interviews |
+| Poca señal, batería limitada y ruido afectan la app móvil del vigilante | 100% del personal de vigilancia | Interfaz de pocos pasos, alertas perceptibles y funcionamiento con conectividad limitada | Prototipos y pruebas en campo |
+| Un protocolo automático compromete la evacuación | 100% de los administradores | Verificación humana previa y respeto a las rutas de evacuación | Diseño del protocolo de respuesta |
+| Tratamiento de imágenes y datos biométricos sin cumplir la normativa | Restricciones del proyecto (Ley N.° 29733) | Privacidad por diseño, términos y condiciones, política de privacidad | Antes del primer despliegue |
+| Muestra reducida y poco representativa del segmento gerencial | Análisis de entrevistas (3 por segmento) | Ampliar a 3 a 5 entrevistas con gerentes de pymes industriales reales | TB1 |
+| Entrada de un competidor global o una capa de IA de un incumbente | Análisis competitivo | Consolidar clientes pyme, precio accesible y soporte local | Roadmap posterior a TB2 |
+| Disposición a pagar la suscripción sin comprobar | Pregunta 7 del Lean UX Canvas | Preguntas de precio en las Validation Interviews | TB1 |
