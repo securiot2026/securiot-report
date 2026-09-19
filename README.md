@@ -51,9 +51,56 @@
 
 # Project Report Collaboration Insights
 
-URL del repositorio: _Pendiente de agregar_
+URL del repositorio: https://github.com/securiot2026/securiot-report
 
-_Pendiente de desarrollo._
+## AV1 – Sprint Review (Semana 4)
+
+### Repositorio y flujo de trabajo
+
+El Project Report se redacta en Markdown, con `README.md` como archivo principal, dentro de un repositorio de GitHub. Los aportes de cada integrante quedan registrados mediante commits. El equipo trabaja con GitFlow: la rama `develop` concentra la integración del informe, y cada integrante avanza sus secciones en ramas propias que se integran mediante pull requests. Los mensajes de commit siguen la convención Conventional Commits. El PDF de cada entrega se genera a partir de este repositorio.
+
+### Cómo se desarrolló el informe
+
+El equipo, de siete integrantes, dividió la elaboración del informe por artefactos y capítulos, con un responsable principal por cada uno y revisión cruzada entre compañeros. La coordinación se apoyó en un cronograma de tareas con propietario, prioridad, estado y fechas para el periodo del 5 al 19 de septiembre de 2026. El trabajo avanzó en cuatro etapas, coherentes con el Registro de Versiones del Informe.
+
+1. **Inicio y contexto del problema (5 a 8 de septiembre, v1.0 a v1.3).** Rommel Hurtado creó el repositorio e inicializó el informe, y redactó la carátula, el índice, el Startup Profile y los antecedentes y la problemática. Juan Angulo y Rommel Hurtado completaron el Lean UX Process (problem statement, assumptions, hypothesis statements y canvas) y los segmentos objetivo. Juan Angulo y Daniel Aquino elaboraron los primeros diagramas C4 y bounded contexts, y diseñaron las entrevistas.
+2. **Investigación con usuarios (9 a 15 de septiembre, v1.4 y v1.5).** Daniel Aquino registró las entrevistas de los segmentos 1 y 2 (transcripciones, fotos y capturas de las sesiones), y el equipo consolidó las nueve entrevistas y su análisis estadístico. Juan Angulo y Rommel Hurtado desarrollaron el Tactical DDD de los bounded contexts restantes, el Capítulo II y el análisis competitivo.
+3. **Diseño de la solución y requisitos (16 a 18 de septiembre, v1.6 y v1.7).** Pietro Osores reconstruyó los diagramas C4 con Structurizr y elaboró los diagramas de base de datos relacional. Rommel Hurtado, Daniel Aquino, Pietro Osores y Melina Santillan completaron los User Journey Maps, los Empathy Maps, el Product Backlog y los requisitos, los perfiles del equipo y el Strategic DDD con los message flows.
+4. **Cierre e integración (19 de septiembre, v1.8 y v1.9).** Melina Santillan y Daniel Aquino redactaron la sección Student Outcome (ABET SO5) y actualizaron el Ubiquitous Language. Matias Salcedo registró los aportes de AV1 en User Stories, Product Backlog, Impact Mapping, User Journey Maps y Empathy Maps. Juan Angulo, como Team Leader, ensambló la revisión final del informe y elaboró el Participant Performance Report.
+
+### Aportes por integrante
+
+| Integrante | Versiones del informe | Aportes principales en AV1 |
+|---|---|---|
+| Angulo Abud, Juan Carlos (Team Leader) | v1.2, v1.3, v1.5 | Lean UX Process completo, Competitive Analysis Landscape, análisis SWOT y estrategias frente a competidores, diagramas C4 y bounded contexts, Tactical DDD, Capítulo II, ensamblaje y revisión final del informe, Participant Performance Report. |
+| Hurtado Balcazar, Rommel Daniel | v1.0, v1.1, v1.2, v1.5, v1.7 | Creación del repositorio, carátula, índice, Startup Profile, antecedentes y problemática (5W + 2H), segmentos objetivo, Lean UX, Tactical DDD, User Journey y Empathy Mapping, keynote. |
+| Aquino Solorzano, Daniel Jonatan | v1.3, v1.4, v1.7, v1.8 | Diseño de entrevistas, coordinación y grabación de entrevistas de los segmentos 1 y 2, registro de entrevistas, diagramas C4, Product Backlog y requisitos, Student Outcome y Ubiquitous Language. |
+| Osores Marchese, Pietro | v1.6, v1.7 | Design-Level EventStorming, Bounded Context Canvases, Domain Message Flows, diagramas C4 con Structurizr, diagramas de base de datos relacional, edición del video de exposición. |
+| Santillan Alvarado, Melina Liz | v1.7, v1.8 | User Personas en UXPressia, User Task Matrix, Context Mapping, perfiles del equipo, Ubiquitous Language, Student Outcome. |
+| Salcedo Champi, Matias Rodolfo | v1.9 | User Stories con criterios de aceptación en Gherkin, Product Backlog con Story Points, User Journey Maps As-Is, Empathy Maps, Impact Mapping, registro de aportes de AV1. |
+| Nikaido Vargas, Javier Masaru | [Completar] | [Completar: entrevistas del segmento 3, Tactical DDD de un bounded context u otro aporte con commits] |
+
+### Evidencias de colaboración en GitHub
+
+**Figura 1.** Contribuciones por integrante (Insights → Contributors).
+
+![Contribuciones por integrante en el repositorio del informe-1](docs/collaborationInsights/AV1/contributors1.png)
+
+![Contribuciones por integrante en el repositorio del informe-2](docs/collaborationInsights/AV1/contributors2.png)
+
+**Figura 2.** Historial de commits por integrante durante AV1.
+
+![Historial de commits del repositorio del informe](docs/collaborationInsights/AV1/av1-commits.png)
+
+**Figura 3.** Actividad de ramas y pull requests (Insights → Network o Pull requests).
+
+![Ramas y pull requests del repositorio del informe](docs/collaborationInsights/AV1/av1-network.png)
+
+### Interpretación de los analíticos
+
+Los analíticos muestran que las seis secciones principales del informe (Capítulos I a IV, más Conclusiones, Bibliografía y Anexos) se distribuyeron entre los integrantes, con un responsable claro por artefacto. La participación de cada integrante se refleja en el historial de commits y en el Registro de Versiones
+
+También se identifica una oportunidad de mejora. Tres de las nueve versiones del informe (v1.7, v1.8 y v1.9) se registraron el 18 y el 19 de septiembre, es decir, en los dos últimos días antes de la entrega. Para TB1, el equipo se compromete a integrar los avances con mayor frecuencia, a repartir de forma más pareja los commits entre todos los integrantes y a revisar los pull requests antes del cierre de cada sprint.
 
 # Contenido
 
