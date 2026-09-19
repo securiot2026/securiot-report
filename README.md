@@ -1480,7 +1480,13 @@ El mapa muestra que este usuario valora la tranquilidad y la evidencia por encim
 
 ## 2.4. Big Picture EventStorming
 
-_Pendiente de desarrollo._
+[Link del miro](https://miro.com/welcomeonboard/UHRZV2VKTkJUVFhwUkJMY1hPL2VZanRpMERNUllTeFNaQm9CdStzQ2ZrMTY2UVdUOHNrR1FqVUhFOC9aMDV0K3VBZjFvVEF4dHJZdmQwYW9jbVc4c1gzYzJ0Unp6akpBMjUwTVd6SFR5dG9TL1hWQ3kyQ0RjanVzWXBNWVZMNythWWluRVAxeXRuUUgwWDl3Mk1qRGVRPT0hdjE=?share_link_id=87640639227)
+
+![](docs/assets/chapter2/IMGs/bp-event-storming/1.png)
+
+![](docs/assets/chapter2/IMGs/bp-event-storming/2.png)
+
+![](docs/assets/chapter2/IMGs/bp-event-storming/3.png)
 
 ## 2.5. Ubiquitous Language
 
