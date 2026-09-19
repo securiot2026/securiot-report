@@ -27,6 +27,7 @@
 | Salcedo Champi Matias Rodolfo | U202319698 |
 | Aquino Solorzano Daniel Jonatan | U202217678 |
 | Santillan Alvarado Melina Liz | U202216058 |
+| Angulo Abud Juan Carlos | U202317692 |
 
 
 <strong> 19 de Septiembre de 2026</strong><br>
@@ -37,6 +38,15 @@
 
 | Versión | Fecha | Autor | Descripción de modificación |
 |---|---|---|---|
+| v1.0 | 05/09/2026 | Rommel Hurtado | Creación del repositorio e inicialización del informe. |
+| v1.1 | 06/09/2026 | Rommel Hurtado | Portada, índice, Startup Profile, descripción de integrantes del equipo, antecedentes y problemática. |
+| v1.2 | 07/09/2026 | Juan Angulo, Rommel Hurtado | Lean UX Process completo (problem statements, assumptions, hypothesis, canvas) y segmento objetivo. |
+| v1.3 | 08/09/2026 | Juan Angulo, Daniel Aquino | Diagramas C4 y bounded contexts de la arquitectura de software; diseño e introducción de entrevistas. |
+| v1.4 | 09/09/2026 – 11/09/2026 | Daniel Aquino | Registro de entrevistas de los segmentos 1 y 2 (transcripciones, fotos y capturas de las sesiones). |
+| v1.5 | 15/09/2026 | Juan Angulo, Rommel Hurtado | Tactical DDD de los bounded contexts restantes, Capítulo 2 y análisis competitivo. |
+| v1.6 | 16/09/2026 | Pietro Osores | Reconstrucción de los diagramas C4 con Structurizr y diagramas de base de datos relacional. |
+| v1.7 | 18/09/2026 | Rommel Hurtado, Daniel Aquino, Pietro Osores, Melina Santillan | User Journey y Empathy Mapping, Product Backlog/requisitos, perfiles de equipo y Strategic DDD (message flows) completo. |
+| v1.8 | 19/09/2026 | Melina Santillan, Daniel Aquino | Student Outcome (ABET SO5) y actualización del Ubiquitous Language previo a la entrega AV1. |
 
 # Project Report Collaboration Insights
 
