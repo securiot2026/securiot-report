@@ -1,37 +1,48 @@
 <div align="center">
 
-<h3>Universidad Peruana de Ciencias Aplicadas</h3>
+<img src="https://raw.githubusercontent.com/rommelDN/KAMPO_MARKDOWN/refs/heads/develop/docs/assets/img/Capítulo1/UPC-logo.png" alt="Logo UPC" width="70"/>
 
-<img alt="upc-logo" src="https://raw.githubusercontent.com/rommelDN/KAMPO_MARKDOWN/refs/heads/develop/docs/assets/img/Capítulo1/UPC-logo.png" width="100"/><br>
+#### **Universidad Peruana de Ciencias Aplicadas**
 
-<strong>Ingeniería de Software - 2026-02</strong><br>
-<strong>1ASI0572 - Desarrollo de Soluciones IOT</strong><br>
-<strong>NRC: 8729</strong><br>
-<strong>Profesor: Marco Antonio Leon Baca</strong><br>
+#### **Carrera de Ingeniería de Software**
 
-<br><strong>Informe del Trabajo Final</strong><br><br>
+#### **1ASI0572**  
+#### **Desarrollo de Soluciones IoT** 
 
-<strong>Startup: Centinela Labs </strong><br>
-<strong>Producto: SECURIOT </strong><br>
+ **NRC**  
+ **8729**
 
+## **Informe del Trabajo Final**
 
+**Docente**  
+**León Baca, Marco Antonio**
 
+**Equipo**  
+**Centinela Labs**
 
-### Team Members
+**Proyecto**  
+**SECURIOT**
 
-| Apellidos y Nombres | Código |
-|---|---|
-| Hurtado Balcazar Rommel Daniel | U202517474 |
-| Nikaido Vargas Javier Masaru | U20221G099 |
-| Osores Marchese Pietro | U202310971 |
-| Salcedo Champi Matias Rodolfo | U202319698 |
-| Aquino Solorzano Daniel Jonatan | U202217678 |
-| Santillan Alvarado Melina Liz | U202216058 |
-| Angulo Abud Juan Carlos | U202317692 |
+<br>
 
+**Integrantes**
 
-<strong> 19 de Septiembre de 2026</strong><br>
+| Código | Apellidos y Nombres |
+| :---: | :--- |
+| u202517474 | Hurtado Balcazar, Rommel Daniel |
+| u20221G099| Nikaido Vargas Javier Masaru|
+| u202310971|Osores Marchese Pietro |
+| u202319698| Salcedo Champi Matias Rodolfo|
+| u202217678|Aquino Solorzano Daniel Jonatan |
+| u202216058|Santillan Alvarado Melina Liz |
+| u202317692|Angulo Abud Juan Carlos |
+
+<br>
+
+ **Período 202620**
+
 </div>
+
 <div style="page-break-after: always;"></div>
 
 # Registro de Versiones del Informe
