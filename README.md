@@ -1,45 +1,42 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/rommelDN/KAMPO_MARKDOWN/refs/heads/develop/docs/assets/img/Capítulo1/UPC-logo.png" alt="Logo UPC" width="70"/>
+<img src="https://raw.githubusercontent.com/rommelDN/KAMPO_MARKDOWN/refs/heads/develop/docs/assets/img/Capítulo1/UPC-logo.png" alt="Logo de la Universidad Peruana de Ciencias Aplicadas" width="150"/>
 
-#### **Universidad Peruana de Ciencias Aplicadas**
+### **Universidad Peruana de Ciencias Aplicadas**
 
-#### **Carrera de Ingeniería de Software**
+### **Carrera de Ingeniería de Software**
 
-#### **1ASI0572**  
-#### **Desarrollo de Soluciones IoT** 
+**Ciclo académico: 2026-20**
 
- **NRC**  
- **8729**
+**Código y nombre del curso:** 1ASI0572 - Desarrollo de Soluciones IoT
 
-## **Informe del Trabajo Final**
+**NRC: 8729**
 
-**Docente**  
-**León Baca, Marco Antonio**
+# **Informe de Trabajo Final**
 
-**Equipo**  
-**Centinela Labs**
+**Docente:** León Baca, Marco Antonio
 
-**Proyecto**  
-**SECURIOT**
+**Startup:** Centinela Labs
+
+**Producto:** SECURIOT
 
 <br>
 
-**Integrantes**
+### **Integrantes**
 
 | Código | Apellidos y Nombres |
 | :---: | :--- |
-| u202517474 | Hurtado Balcazar, Rommel Daniel |
-| u20221G099| Nikaido Vargas Javier Masaru|
-| u202310971|Osores Marchese Pietro |
-| u202319698| Salcedo Champi Matias Rodolfo|
-| u202217678|Aquino Solorzano Daniel Jonatan |
-| u202216058|Santillan Alvarado Melina Liz |
-| u202317692|Angulo Abud Juan Carlos |
+| U202317692 | Angulo Abud, Juan Carlos |
+| U202217678 | Aquino Solorzano, Daniel Jonatan |
+| U202517474 | Hurtado Balcazar, Rommel Daniel |
+| U20221G099 | Nikaido Vargas, Javier Masaru |
+| U202310971 | Osores Marchese, Pietro |
+| U202319698 | Salcedo Champi, Matias Rodolfo |
+| U202216058 | Santillan Alvarado, Melina Liz |
 
 <br>
 
- **Período 202620**
+**Septiembre de 2026**
 
 </div>
 
@@ -51,15 +48,25 @@
 |---|---|---|---|
 | v1.0 | 05/09/2026 | Rommel Hurtado | Creación del repositorio e inicialización del informe. |
 | v1.1 | 06/09/2026 | Rommel Hurtado | Portada, índice, Startup Profile, descripción de integrantes del equipo, antecedentes y problemática. |
-| v1.2 | 07/09/2026 | Juan Angulo, Rommel Hurtado | Lean UX Process completo (problem statements, assumptions, hypothesis, canvas) y segmento objetivo. |
-| v1.3 | 08/09/2026 | Juan Angulo, Daniel Aquino | Diagramas C4 y bounded contexts de la arquitectura de software; diseño e introducción de entrevistas. |
-| v1.4 | 09/09/2026 – 11/09/2026 | Daniel Aquino | Registro de entrevistas de los segmentos 1 y 2 (transcripciones, fotos y capturas de las sesiones). |
-| v1.5 | 15/09/2026 | Juan Angulo, Rommel Hurtado | Tactical DDD de los bounded contexts restantes, Capítulo 2 y análisis competitivo. |
-| v1.6 | 16/09/2026 | Pietro Osores | Reconstrucción de los diagramas C4 con Structurizr y diagramas de base de datos relacional. |
-| v1.7 | 18/09/2026 | Rommel Hurtado, Daniel Aquino, Pietro Osores, Melina Santillan | User Journey y Empathy Mapping, Product Backlog/requisitos, perfiles de equipo y Strategic DDD (message flows) completo. |
-| v1.8 | 19/09/2026 | Melina Santillan, Daniel Aquino | Student Outcome (ABET SO5) y actualización del Ubiquitous Language previo a la entrega AV1. |
-| v1.9 | 19/09/2026 | Matias Salcedo Champi | Registro de aportes de AV1 en User Stories, Product Backlog, Impact Mapping, User Journey Maps, Empathy Maps y Student Outcome 5. |
-| v1.10 | 19/09/2026 | Javier Masaru Nikaido Vargas | Realización y documentación de entrevistas para la investigación de usuarios de SECURIOT, incluyendo el diseño de preguntas, registro de entrevistas y análisis de hallazgos de los segmentos objetivo. |
+| v1.2 | 07/09/2026 | Juan Angulo | Desarrollo de los problem statements, assumptions, hypothesis statements y Lean UX Canvas. |
+| v1.3 | 07/09/2026 | Rommel Hurtado | Definición del segmento objetivo y revisión de la coherencia del Lean UX Process. |
+| v1.4 | 08/09/2026 | Juan Angulo | Elaboración de los diagramas C4 y definición inicial de los bounded contexts. |
+| v1.5 | 08/09/2026 | Daniel Aquino | Diseño de las entrevistas e introducción de la sección de investigación de usuarios. |
+| v1.6 | Del 09/09/2026 al 11/09/2026 | Daniel Aquino | Registro de entrevistas de los segmentos 1 y 2 (transcripciones, fotos y capturas de las sesiones). |
+| v1.7 | 15/09/2026 | Juan Angulo | Desarrollo del Tactical DDD de los bounded contexts restantes y del análisis competitivo. |
+| v1.8 | 15/09/2026 | Rommel Hurtado | Desarrollo y revisión de los contenidos del Capítulo II relacionados con la investigación y el dominio. |
+| v1.9 | 16/09/2026 | Pietro Osores | Reconstrucción de los diagramas C4 con Structurizr y diagramas de base de datos relacional. |
+| v1.10 | 18/09/2026 | Rommel Hurtado | Elaboración de los User Journey Maps y Empathy Maps. |
+| v1.11 | 18/09/2026 | Daniel Aquino | Desarrollo del Product Backlog y de la especificación inicial de requisitos. |
+| v1.12 | 18/09/2026 | Pietro Osores | Desarrollo del Strategic DDD y de los Domain Message Flows. |
+| v1.13 | 18/09/2026 | Melina Santillan | Elaboración de perfiles de equipo y consolidación del Ubiquitous Language. |
+| v1.14 | 18/09/2026 | Melina Santillan | Elaboración de los User Personas a partir de los hallazgos de las entrevistas. |
+| v1.15 | 19/09/2026 | Daniel Aquino | Revisión del Student Outcome y actualización del Ubiquitous Language antes de la entrega AV1. |
+| v1.16 | 19/09/2026 | Matias Salcedo Champi | Registro de aportes de AV1 en User Stories, Product Backlog, Impact Mapping, User Journey Maps, Empathy Maps y Student Outcome 5. |
+| v1.17 | 19/09/2026 | Javier Masaru Nikaido Vargas | Realización y documentación de entrevistas para la investigación de usuarios de SECURIOT, incluyendo el diseño de preguntas, registro de entrevistas y análisis de hallazgos de los segmentos objetivo. |
+
+<div style="page-break-after: always;"></div>
+
 # Project Report Collaboration Insights
 
 URL del repositorio: https://github.com/securiot2026/securiot-report
@@ -68,28 +75,28 @@ URL del repositorio: https://github.com/securiot2026/securiot-report
 
 ### Repositorio y flujo de trabajo
 
-El Project Report se redacta en Markdown, con `README.md` como archivo principal, dentro de un repositorio de GitHub. Los aportes de cada integrante quedan registrados mediante commits. El equipo trabaja con GitFlow: la rama `develop` concentra la integración del informe, y cada integrante avanza sus secciones en ramas propias que se integran mediante pull requests. Los mensajes de commit siguen la convención Conventional Commits. El PDF de cada entrega se genera a partir de este repositorio.
+El Project Report se redacta en Markdown, con `README.md` como archivo principal, dentro de un repositorio de GitHub. Los aportes de cada integrante quedan registrados mediante commits. El equipo trabaja con GitFlow: la rama `develop` concentra la integración del informe, y cada integrante avanza sus secciones en ramas propias que se integran mediante pull requests. Los mensajes de commit siguen la convención Conventional Commits (Conventional Commits, s. f.). El PDF de cada entrega se genera a partir de este repositorio.
 
 ### Cómo se desarrolló el informe
 
 El equipo, de siete integrantes, dividió la elaboración del informe por artefactos y capítulos, con un responsable principal por cada uno y revisión cruzada entre compañeros. La coordinación se apoyó en un cronograma de tareas con propietario, prioridad, estado y fechas para el periodo del 5 al 19 de septiembre de 2026. El trabajo avanzó en cuatro etapas, coherentes con el Registro de Versiones del Informe.
 
-1. **Inicio y contexto del problema (5 a 8 de septiembre, v1.0 a v1.3).** Rommel Hurtado creó el repositorio e inicializó el informe, y redactó la carátula, el índice, el Startup Profile y los antecedentes y la problemática. Juan Angulo y Rommel Hurtado completaron el Lean UX Process (problem statement, assumptions, hypothesis statements y canvas) y los segmentos objetivo. Juan Angulo y Daniel Aquino elaboraron los primeros diagramas C4 y bounded contexts, y diseñaron las entrevistas.
-2. **Investigación con usuarios (9 a 15 de septiembre, v1.4 y v1.5).** Daniel Aquino registró las entrevistas de los segmentos 1 y 2 (transcripciones, fotos y capturas de las sesiones), y el equipo consolidó las nueve entrevistas y su análisis estadístico. Juan Angulo y Rommel Hurtado desarrollaron el Tactical DDD de los bounded contexts restantes, el Capítulo II y el análisis competitivo.
-3. **Diseño de la solución y requisitos (16 a 18 de septiembre, v1.6 y v1.7).** Pietro Osores reconstruyó los diagramas C4 con Structurizr y elaboró los diagramas de base de datos relacional. Rommel Hurtado, Daniel Aquino, Pietro Osores y Melina Santillan completaron los User Journey Maps, los Empathy Maps, el Product Backlog y los requisitos, los perfiles del equipo y el Strategic DDD con los message flows.
-4. **Cierre e integración (19 de septiembre, v1.8 y v1.9).** Melina Santillan y Daniel Aquino redactaron la sección Student Outcome (ABET SO5) y actualizaron el Ubiquitous Language. Matias Salcedo registró los aportes de AV1 en User Stories, Product Backlog, Impact Mapping, User Journey Maps y Empathy Maps. Juan Angulo, como Team Leader, ensambló la revisión final del informe y elaboró el Participant Performance Report.
+1. **Inicio y contexto del problema (5 a 8 de septiembre, v1.0 a v1.5).** Rommel Hurtado creó el repositorio e inicializó el informe, y redactó la carátula, el índice, el Startup Profile y los antecedentes y la problemática. Juan Angulo y Rommel Hurtado completaron el Lean UX Process (problem statement, assumptions, hypothesis statements y canvas) y los segmentos objetivo. Juan Angulo y Daniel Aquino elaboraron los primeros diagramas C4 y bounded contexts, y diseñaron las entrevistas.
+2. **Investigación con usuarios (9 a 15 de septiembre, v1.6 a v1.8).** Daniel Aquino registró las entrevistas de los segmentos 1 y 2 (transcripciones, fotos y capturas de las sesiones), y el equipo consolidó las nueve entrevistas y su análisis estadístico. Juan Angulo y Rommel Hurtado desarrollaron el Tactical DDD de los bounded contexts restantes, el Capítulo II y el análisis competitivo.
+3. **Diseño de la solución y requisitos (16 a 18 de septiembre, v1.9 a v1.13).** Pietro Osores reconstruyó los diagramas C4 con Structurizr y elaboró los diagramas de base de datos relacional. Rommel Hurtado, Daniel Aquino, Pietro Osores y Melina Santillan completaron los User Journey Maps, los Empathy Maps, el Product Backlog y los requisitos, los perfiles del equipo y el Strategic DDD con los message flows.
+4. **Cierre e integración (18 y 19 de septiembre, v1.14 a v1.17).** Melina Santillan consolidó los User Personas a partir de los hallazgos de las entrevistas. Daniel Aquino revisó el Student Outcome (ABET SO5) y actualizó el Ubiquitous Language. Matias Salcedo registró los aportes de AV1 en User Stories, Product Backlog, Impact Mapping, User Journey Maps y Empathy Maps. Javier Nikaido completó el registro y análisis de entrevistas. Juan Angulo, como Team Leader, ensambló la revisión final del informe y elaboró el Participant Performance Report.
 
 ### Aportes por integrante
 
 | Integrante | Versiones del informe | Aportes principales en AV1 |
 |---|---|---|
-| Angulo Abud, Juan Carlos (Team Leader) | v1.2, v1.3, v1.5 | Lean UX Process completo, Competitive Analysis Landscape, análisis SWOT y estrategias frente a competidores, diagramas C4 y bounded contexts, Tactical DDD, Capítulo II, ensamblaje y revisión final del informe, Participant Performance Report. |
-| Hurtado Balcazar, Rommel Daniel | v1.0, v1.1, v1.2, v1.5, v1.7 | Creación del repositorio, carátula, índice, Startup Profile, antecedentes y problemática (5W + 2H), segmentos objetivo, Lean UX, Tactical DDD, User Journey y Empathy Mapping, keynote. |
-| Aquino Solorzano, Daniel Jonatan | v1.3, v1.4, v1.7, v1.8 | Diseño de entrevistas, coordinación y grabación de entrevistas de los segmentos 1 y 2, registro de entrevistas, diagramas C4, Product Backlog y requisitos, Student Outcome y Ubiquitous Language. |
-| Osores Marchese, Pietro | v1.6, v1.7 | Design-Level EventStorming, Bounded Context Canvases, Domain Message Flows, diagramas C4 con Structurizr, diagramas de base de datos relacional, edición del video de exposición. |
-| Santillan Alvarado, Melina Liz | v1.7, v1.8 | User Personas en UXPressia, User Task Matrix, Context Mapping, perfiles del equipo, Ubiquitous Language, Student Outcome. |
-| Salcedo Champi, Matias Rodolfo | v1.9 | User Stories con criterios de aceptación en Gherkin, Product Backlog con Story Points, User Journey Maps As-Is, Empathy Maps, Impact Mapping, registro de aportes de AV1. |
-| Nikaido Vargas, Javier Masaru | v1.10 | Diseño de entrevistas, Registro de entrevistas y Análisis de entrevistas; realización de entrevistas, organización de evidencias y análisis de los hallazgos obtenidos de los segmentos objetivo de SECURIOT. |
+| Angulo Abud, Juan Carlos (Team Leader) | v1.2, v1.4, v1.7 | Lean UX Process completo, Competitive Analysis Landscape, análisis SWOT y estrategias frente a competidores, diagramas C4 y bounded contexts, Tactical DDD, Capítulo II, ensamblaje y revisión final del informe, Participant Performance Report. |
+| Hurtado Balcazar, Rommel Daniel | v1.0, v1.1, v1.3, v1.8, v1.10 | Creación del repositorio, carátula, índice, Startup Profile, antecedentes y problemática (5W + 2H), segmentos objetivo, Lean UX, Tactical DDD, User Journey y Empathy Mapping, keynote. |
+| Aquino Solorzano, Daniel Jonatan | v1.5, v1.6, v1.11, v1.15 | Diseño de entrevistas, coordinación y grabación de entrevistas de los segmentos 1 y 2, registro de entrevistas, diagramas C4, Product Backlog y requisitos, Student Outcome y Ubiquitous Language. |
+| Osores Marchese, Pietro | v1.9, v1.12 | Design-Level EventStorming, Bounded Context Canvases, Domain Message Flows, diagramas C4 con Structurizr, diagramas de base de datos relacional, edición del video de exposición. |
+| Santillan Alvarado, Melina Liz | v1.13, v1.14 | User Personas en UXPressia, User Task Matrix, Context Mapping, perfiles del equipo y Ubiquitous Language. |
+| Salcedo Champi, Matias Rodolfo | v1.16 | User Stories con criterios de aceptación en Gherkin, Product Backlog con Story Points, User Journey Maps As-Is, Empathy Maps, Impact Mapping, registro de aportes de AV1. |
+| Nikaido Vargas, Javier Masaru | v1.17 | Diseño de entrevistas, Registro de entrevistas y Análisis de entrevistas; realización de entrevistas, organización de evidencias y análisis de los hallazgos obtenidos de los segmentos objetivo de SECURIOT. |
 ### Evidencias de colaboración en GitHub
 
 **Figura 1.** Contribuciones por integrante (Insights → Contributors).
@@ -108,9 +115,11 @@ El equipo, de siete integrantes, dividió la elaboración del informe por artefa
 
 ### Interpretación de los analíticos
 
-Los analíticos muestran que las seis secciones principales del informe (Capítulos I a IV, más Conclusiones, Bibliografía y Anexos) se distribuyeron entre los integrantes, con un responsable claro por artefacto. La participación de cada integrante se refleja en el historial de commits y en el Registro de Versiones
+Los analíticos muestran que las siete secciones principales del informe (Capítulos I a IV, más Conclusiones, Bibliografía y Anexos) se distribuyeron entre los integrantes, con un responsable claro por artefacto. La participación de cada integrante se refleja en el historial de commits y en el Registro de Versiones.
 
-También se identifica una oportunidad de mejora. Tres de las nueve versiones del informe (v1.7, v1.8 y v1.9) se registraron el 18 y el 19 de septiembre, es decir, en los dos últimos días antes de la entrega. Para TB1, el equipo se compromete a integrar los avances con mayor frecuencia, a repartir de forma más pareja los commits entre todos los integrantes y a revisar los pull requests antes del cierre de cada sprint.
+También se identifica una oportunidad de mejora. Las versiones v1.10 a v1.17 se registraron el 18 y el 19 de septiembre, es decir, en los dos últimos días antes de la entrega. Para TB1, el equipo se compromete a integrar los avances con mayor frecuencia, a repartir de forma más pareja los commits entre todos los integrantes y a revisar los pull requests antes del cierre de cada sprint.
+
+<div style="page-break-after: always;"></div>
 
 # Contenido
 
@@ -188,7 +197,7 @@ También se identifica una oportunidad de mejora. Tres de las nueve versiones de
       - [4.2.3.6. Bounded Context Software Architecture Code Level Diagrams](#4236-bounded-context-software-architecture-code-level-diagrams)
       - [4.2.3.6.1. Bounded Context Domain Layer Class Diagrams](#42361-bounded-context-domain-layer-class-diagrams)
       - [4.2.3.6.2. Bounded Context Database Design Diagram](#42362-bounded-context-database-design-diagram)
-    - [4.2.4. Bounded Context: Deteccion y Relay de Borde](#424-bounded-context-deteccion-y-relay-de-borde)
+    - [4.2.4. Bounded Context: Detección y Relay de Borde](#424-bounded-context-detección-y-relay-de-borde)
       - [4.2.4.1. Domain Layer](#4241-domain-layer)
       - [4.2.4.2. Interface Layer](#4242-interface-layer)
       - [4.2.4.3. Application Layer](#4243-application-layer)
@@ -265,6 +274,8 @@ También se identifica una oportunidad de mejora. Tres de las nueve versiones de
 - [Bibliografía](#bibliografía)
 - [Anexos](#anexos)
 
+<div style="page-break-after: always;"></div>
+
 # Student Outcome
 
 El curso contribuye al cumplimiento del siguiente Student Outcome de ABET:
@@ -272,10 +283,15 @@ El curso contribuye al cumplimiento del siguiente Student Outcome de ABET:
 **ABET – EAC - Student Outcome 5**
 
 **Criterio:** La capacidad de funcionar efectivamente en un equipo cuyos miembros juntos proporcionan liderazgo, crean un entorno de colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen objetivos.
+
+En el siguiente cuadro se describe las acciones realizadas y enunciados de conclusiones por parte del grupo, que permiten sustentar el haber alcanzado el logro del ABET – EAC - Student Outcome 5.
+
 | Criterio específico | Acciones realizadas | Conclusiones |
 |---|---|---|
-| Trabaja en equipo para proporcionar liderazgo en forma conjunta | **Angulo Juan Carlos**<br>**AV1**<br>Lideré el diseño de la arquitectura de software del proyecto en el Capítulo IV, construyendo el Strategic-Level DDD desde el Event Storming de diseño hasta el descubrimiento de los bounded contexts candidatos y su mapeo, y extendiendo después ese trabajo al Tactical DDD de los bounded contexts restantes del sistema. También impulsé el arranque del proyecto al completar el Lean UX Process del Capítulo I (problem statements, assumptions, hypothesis statements y canvas), coordinando con mis compañeros para que esas decisiones de producto quedaran alineadas con la definición del segmento objetivo que el equipo cerró después.<br><br>**Aquino Solorzano Daniel Jonatan**<br>**AV1**<br>Asumí un rol de coliderazgo en la fase de investigación de usuarios al estructurar la estrategia de empatización para tres segmentos objetivo del proyecto, coordinando activamente con el equipo la formulación y validación de las guías de entrevista para asegurar un enfoque coherente. Asimismo, lideré operativamente la recolección de hallazgos al gestionar y ejecutar directamente las sesiones sincrónicas por Google Meet con los dos primeros segmentos (completando tres entrevistas del primero y dos del segundo), compartiendo periódicamente los avances y facilitando la toma de decisiones compartida dentro del equipo para ajustar el rumbo del análisis según los datos obtenidos.<br><br>**Hurtado Balcazar Rommel Daniel**<br>**AV1**<br>Fomenté el trabajo colaborativo y en la organización de la delegación de tareas para el AV1.Desarrolle la idea de la StartUp, planteando su definición, así como el analisís de los antecedentes y la problemática, por ultimo gracias a la recopilación de información de LeanUX pude determinar el segmento objetivo en el cual se enfocara este servicio.<br><br>**Nikaido Vargas Javier Masaru**<br>**AV1**<br>Participé activamente en la fase de investigación de usuarios mediante el diseño, realización y documentación de entrevistas para SECURIOT. Contribuí en la preparación de las preguntas, la ejecución de las entrevistas, la organización de las evidencias y el análisis de los resultados obtenidos. A partir de esta información identifiqué patrones, necesidades y problemas relevantes, compartiendo los hallazgos con el equipo para apoyar la elaboración de los artefactos de Needfinding y la definición de requisitos del producto.<br><br>**Osores Marchese Pietro**<br>**AV1**<br>Participé activamente en la definición y representación de la arquitectura de SECURIOT, encargándome de la elaboración de los diagramas C4 necesarios para comunicar la estructura de la solución en sus distintos niveles. Asimismo, desarrollé los EventStorming y los diagramas de flujo de mensajes del dominio, representando la interacción entre actores, comandos, eventos, políticas y bounded contexts. Estos artefactos permitieron que el equipo tuviera una visión compartida de la arquitectura y de las responsabilidades de cada componente, facilitando la coordinación entre los integrantes y sirviendo como referencia para el desarrollo de las demás secciones del proyecto. También contribuí a la preparación de la presentación del AV1, organizando visualmente los principales resultados alcanzados por el equipo.<br><br>**Salcedo Champi Matias Rodolfo**<br>**AV1**<br>Participé en la definición de requisitos iniciales del producto a partir de los hallazgos del proceso de needfinding. Elaboré y organicé User Stories con criterios de aceptación en formato Gherkin, incluyendo historias asociadas a la Landing Page y Technical Stories necesarias para sostener la solución. También trabajé el Impact Mapping para relacionar el objetivo de negocio con actores, impactos esperados y funcionalidades, evitando que el backlog quedara como una lista aislada de tareas sin conexión con el valor del producto.<br><br>**Santillan Alvarado Melina Liz**<br>**AV1**<br>- Propuso sustentar las tres User Personas exclusivamente con las entrevistas y sus análisis.<br>- Revisó la correspondencia entre los hallazgos de las entrevistas y los atributos incluidos en cada arquetipo.<br>- Validó que la User Task Matrix contuviera tareas del dominio independientes de las funcionalidades de SECURIOT.<br>- Definió el alcance del Ubiquitous Language limitado a términos del negocio y sin conceptos técnicos de ingeniería de software. | Durante AV1, el equipo logró convertir información inicial del problema en artefactos accionables para el proyecto. La participación de cada integrante permitió sostener una visión compartida del producto y tomar decisiones con mayor criterio al momento de priorizar requisitos, organizar evidencias y conectar cada entrega con los objetivos de SECURIOT.<br><br>Angulo Abud Juan Carlos, AV1: liderar el Capítulo IV en paralelo con el Lean UX Process me permitió entregarle al equipo decisiones de arquitectura ya validadas sin frenar el avance de los demás capítulos, reforzando un liderazgo compartido apoyado en dependencias claras entre entregables. |
-| Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos | **Angulo Juan Carlos**<br>**AV1**<br>Planifiqué el Capítulo IV en dos entregas dentro del sprint, primero el diseño estratégico y después el táctico, para poder avanzar en paralelo sin bloquear las secciones de requerimientos y UX que dependían de decisiones de arquitectura ya cerradas. Mantuve cada bounded context documentado y versionado en el repositorio a medida que quedaba definido, y prioricé cerrar primero el Lean UX Process para destrabar la definición del segmento objetivo del equipo, cumpliendo con los plazos que nos fijamos para el AV1.<br><br>**Aquino Solorzano Daniel Jonatan**<br>**AV1**<br>Fomenté un espacio de trabajo integrador y abierto a la retroalimentación al definir, junto a mis compañeros, el cronograma y las metas para el levantamiento de información cualitativa de tres segmentos objetivo. Organicé las tareas correspondientes mediante una planificación clara de los tiempos de contacto, la logística de las sesiones remotas por Google Meet y el registro detallado de las respuestas, cumpliendo puntualmente con el objetivo trazado al ejecutar con éxito las cinco entrevistas asignadas (tres del segmento inicial y dos del segundo) y entregando al equipo un repositorio estructurado de evidencias clave para el diseño de la solución.<br><br>**Hurtado Balcazar Rommel Daniel**<br>**AV1**<br>Ordene la asignación de de tareas para un correcto desarrollo del primer avance del trabajo final, desarrollando asi un trabajo ordenado y en plazo, cumpliendo los requisitos solicitados. Así mismo, integre los hallazgos del equipo encargos de LeanUX para determinar el segmento objetivo. <br><br>**Nikaido Vargas Javier Masaru**<br>**AV1**<br>Organicé mis actividades de investigación siguiendo las etapas definidas para el proceso de entrevistas: diseño, ejecución, registro y análisis. Coordiné la recopilación y organización de la información y de las evidencias de las entrevistas, manteniendo los resultados estructurados para facilitar su integración con el trabajo de los demás integrantes. Asimismo, consolidé los hallazgos obtenidos para que pudieran ser utilizados en User Personas, User Task Matrix, User Journey Maps y Empathy Maps, cumpliendo con las tareas asignadas dentro del AV1 y contribuyendo a mantener la coherencia entre la investigación de usuarios y los entregables del equipo.<br><br>**Osores Marchese Pietro**<br>**AV1**<br>Organicé el desarrollo de los artefactos de arquitectura asignados, elaborando de manera progresiva los diagramas C4, los EventStorming y los Domain Message Flows necesarios para documentar la solución. Coordiné estos elementos con las decisiones de dominio y los bounded contexts definidos por el equipo, procurando que los diagramas mantuvieran consistencia entre sí y pudieran ser utilizados por los demás integrantes como base para sus entregables. Además, participé en la elaboración del PPT de la presentación del AV1, integrando los avances del proyecto de manera ordenada y comprensible. De esta forma, cumplí con las tareas asignadas y contribuí a que el equipo contara con documentación arquitectónica y material de presentación coherentes para la entrega.<br><br>**Salcedo Champi Matias Rodolfo**<br>**AV1**<br>Ordené el Product Backlog con estimación por Story Points y priorización por nivel de importancia, considerando épicas de monitoreo, zonas y accesos, alertas, trazabilidad, experiencia web/mobile, gestión multi-sede, Landing Page y Technical Stories. Además, desarrollé los User Journey Maps As-Is y Empathy Maps para representar la experiencia actual de los arquetipos definidos, tomando como base las entrevistas y los patrones detectados en los segmentos objetivo. Estas actividades ayudaron a que el equipo tuviera una referencia común para planificar la entrega y sustentar las decisiones de producto.<br><br>**Santillan Alvarado Melina Liz**<br>**AV1**<br>- Integró los hallazgos de las entrevistas aportadas por el equipo en las User Personas y la User Task Matrix.<br>- Organizó las tareas de los tres arquetipos por frecuencia e importancia para completar la sección 2.3.2.<br>- Consolidó en la sección 2.5 los términos del dominio identificados en entrevistas, reglas de negocio y bounded contexts. | La planificación de tareas y la construcción de artefactos compartidos favorecieron una coordinación más clara durante AV1. Al trabajar con historias, backlog, mapas de experiencia y lenguaje común, el equipo redujo ambigüedades sobre las necesidades reales de los usuarios y avanzó con responsabilidades más visibles.<br><br>Angulo Abud Juan Carlos, AV1: secuenciar el diseño estratégico antes del táctico y priorizar el cierre del Lean UX Process me permitió cumplir los plazos del AV1 sin generar cuellos de botella para las secciones que dependían de esas definiciones. |
+| Trabaja en equipo para proporcionar liderazgo en forma conjunta | **Angulo Abud, Juan Carlos**<br>**AV1**<br>Lideré el diseño de la arquitectura de software del proyecto en el Capítulo IV, construyendo el Strategic-Level DDD desde el Event Storming de diseño hasta el descubrimiento de los bounded contexts candidatos y su mapeo, y extendiendo después ese trabajo al Tactical DDD de los bounded contexts restantes del sistema. También impulsé el arranque del proyecto al completar el Lean UX Process del Capítulo I (problem statements, assumptions, hypothesis statements y canvas), coordinando con mis compañeros para que esas decisiones de producto quedaran alineadas con la definición del segmento objetivo que el equipo cerró después.<br><br>**Aquino Solorzano, Daniel Jonatan**<br>**AV1**<br>Asumí un rol de coliderazgo en la fase de investigación de usuarios al estructurar la estrategia de empatización para tres segmentos objetivo del proyecto, coordinando activamente con el equipo la formulación y validación de las guías de entrevista para asegurar un enfoque coherente. Asimismo, lideré operativamente la recolección de hallazgos al gestionar y ejecutar directamente las sesiones sincrónicas por Google Meet con los dos primeros segmentos (completando tres entrevistas del primero y dos del segundo), compartiendo periódicamente los avances y facilitando la toma de decisiones compartida dentro del equipo para ajustar el rumbo del análisis según los datos obtenidos.<br><br>**Hurtado Balcazar, Rommel Daniel**<br>**AV1**<br>Fomenté el trabajo colaborativo y organicé la delegación de tareas para el AV1. Desarrollé la idea de la startup, planteando su definición, así como el análisis de los antecedentes y la problemática. Por último, gracias a la recopilación de información de Lean UX, pude determinar el segmento objetivo en el cual se enfocará este servicio.<br><br>**Nikaido Vargas, Javier Masaru**<br>**AV1**<br>Participé activamente en la fase de investigación de usuarios mediante el diseño, realización y documentación de entrevistas para SECURIOT. Contribuí en la preparación de las preguntas, la ejecución de las entrevistas, la organización de las evidencias y el análisis de los resultados obtenidos. A partir de esta información identifiqué patrones, necesidades y problemas relevantes, compartiendo los hallazgos con el equipo para apoyar la elaboración de los artefactos de Needfinding y la definición de requisitos del producto.<br><br>**Osores Marchese, Pietro**<br>**AV1**<br>Participé activamente en la definición y representación de la arquitectura de SECURIOT, encargándome de la elaboración de los diagramas C4 necesarios para comunicar la estructura de la solución en sus distintos niveles. Asimismo, desarrollé los EventStorming y los diagramas de flujo de mensajes del dominio, representando la interacción entre actores, comandos, eventos, políticas y bounded contexts. Estos artefactos permitieron que el equipo tuviera una visión compartida de la arquitectura y de las responsabilidades de cada componente, facilitando la coordinación entre los integrantes y sirviendo como referencia para el desarrollo de las demás secciones del proyecto. También contribuí a la preparación de la presentación del AV1, organizando visualmente los principales resultados alcanzados por el equipo.<br><br>**Salcedo Champi, Matias Rodolfo**<br>**AV1**<br>Participé en la definición de requisitos iniciales del producto a partir de los hallazgos del proceso de needfinding. Elaboré y organicé User Stories con criterios de aceptación en formato Gherkin, incluyendo historias asociadas a la Landing Page y Technical Stories necesarias para sostener la solución. También trabajé el Impact Mapping para relacionar el objetivo de negocio con actores, impactos esperados y funcionalidades, evitando que el backlog quedara como una lista aislada de tareas sin conexión con el valor del producto.<br><br>**Santillan Alvarado, Melina Liz**<br>**AV1**<br>- Propuso sustentar las tres User Personas exclusivamente con las entrevistas y sus análisis.<br>- Revisó la correspondencia entre los hallazgos de las entrevistas y los atributos incluidos en cada arquetipo.<br>- Validó que la User Task Matrix contuviera tareas del dominio independientes de las funcionalidades de SECURIOT.<br>- Definió el alcance del Ubiquitous Language limitado a términos del negocio y sin conceptos técnicos de ingeniería de software. | Durante AV1, el equipo logró convertir información inicial del problema en artefactos accionables para el proyecto. La participación de cada integrante permitió sostener una visión compartida del producto y tomar decisiones con mayor criterio al momento de priorizar requisitos, organizar evidencias y conectar cada entrega con los objetivos de SECURIOT. |
+| Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos | **Angulo Abud, Juan Carlos**<br>**AV1**<br>Planifiqué el Capítulo IV en dos entregas dentro del sprint, primero el diseño estratégico y después el táctico, para poder avanzar en paralelo sin bloquear las secciones de requerimientos y UX que dependían de decisiones de arquitectura ya cerradas. Mantuve cada bounded context documentado y versionado en el repositorio a medida que quedaba definido, y prioricé cerrar primero el Lean UX Process para destrabar la definición del segmento objetivo del equipo, cumpliendo con los plazos que nos fijamos para el AV1.<br><br>**Aquino Solorzano, Daniel Jonatan**<br>**AV1**<br>Fomenté un espacio de trabajo integrador y abierto a la retroalimentación al definir, junto a mis compañeros, el cronograma y las metas para el levantamiento de información cualitativa de tres segmentos objetivo. Organicé las tareas correspondientes mediante una planificación clara de los tiempos de contacto, la logística de las sesiones remotas por Google Meet y el registro detallado de las respuestas, cumpliendo puntualmente con el objetivo trazado al ejecutar con éxito las cinco entrevistas asignadas (tres del segmento inicial y dos del segundo) y entregando al equipo un repositorio estructurado de evidencias clave para el diseño de la solución.<br><br>**Hurtado Balcazar, Rommel Daniel**<br>**AV1**<br>Ordené la asignación de tareas para desarrollar correctamente el primer avance del trabajo final, logrando un trabajo organizado, dentro del plazo y acorde con los requisitos solicitados. Asimismo, integré los hallazgos recopilados por el equipo durante el proceso de Lean UX para determinar el segmento objetivo. <br><br>**Nikaido Vargas, Javier Masaru**<br>**AV1**<br>Organicé mis actividades de investigación siguiendo las etapas definidas para el proceso de entrevistas: diseño, ejecución, registro y análisis. Coordiné la recopilación y organización de la información y de las evidencias de las entrevistas, manteniendo los resultados estructurados para facilitar su integración con el trabajo de los demás integrantes. Asimismo, consolidé los hallazgos obtenidos para que pudieran ser utilizados en User Personas, User Task Matrix, User Journey Maps y Empathy Maps, cumpliendo con las tareas asignadas dentro del AV1 y contribuyendo a mantener la coherencia entre la investigación de usuarios y los entregables del equipo.<br><br>**Osores Marchese, Pietro**<br>**AV1**<br>Organicé el desarrollo de los artefactos de arquitectura asignados, elaborando de manera progresiva los diagramas C4, los EventStorming y los Domain Message Flows necesarios para documentar la solución. Coordiné estos elementos con las decisiones de dominio y los bounded contexts definidos por el equipo, procurando que los diagramas mantuvieran consistencia entre sí y pudieran ser utilizados por los demás integrantes como base para sus entregables. Además, participé en la elaboración del PPT de la presentación del AV1, integrando los avances del proyecto de manera ordenada y comprensible. De esta forma, cumplí con las tareas asignadas y contribuí a que el equipo contara con documentación arquitectónica y material de presentación coherentes para la entrega.<br><br>**Salcedo Champi, Matias Rodolfo**<br>**AV1**<br>Ordené el Product Backlog con estimación por Story Points y priorización por nivel de importancia, considerando épicas de monitoreo, zonas y accesos, alertas, trazabilidad, experiencia web/mobile, gestión multi-sede, Landing Page y Technical Stories. Además, desarrollé los User Journey Maps As-Is y Empathy Maps para representar la experiencia actual de los arquetipos definidos, tomando como base las entrevistas y los patrones detectados en los segmentos objetivo. Estas actividades ayudaron a que el equipo tuviera una referencia común para planificar la entrega y sustentar las decisiones de producto.<br><br>**Santillan Alvarado, Melina Liz**<br>**AV1**<br>- Integró los hallazgos de las entrevistas aportadas por el equipo en las User Personas y la User Task Matrix.<br>- Organizó las tareas de los tres arquetipos por frecuencia e importancia para completar la sección 2.3.2.<br>- Consolidó en la sección 2.5 los términos del dominio identificados en entrevistas, reglas de negocio y bounded contexts. | La planificación de tareas y la construcción de artefactos compartidos favorecieron una coordinación más clara durante AV1. Al trabajar con historias, backlog, mapas de experiencia y lenguaje común, el equipo redujo ambigüedades sobre las necesidades reales de los usuarios y avanzó con responsabilidades más visibles. |
+
+<div style="page-break-after: always;"></div>
 
 # Capítulo I: Introducción
 
@@ -299,7 +315,7 @@ Como startup, Centinela Labs opera bajo un modelo de negocio escalable basado en
 | <img src="docs/assets/chaper1/IMGs/members/Javier.jpeg" width="200"/> | **Nikaido Vargas Javier Masaru - U20221G099** <br><br> Soy Javier Masaru Nikaido Vargas, estudiante de Ingeniería de Software del 8to ciclo de la Universidad Peruana de Ciencias Aplicadas. Me caracterizo por trabajar de manera organizada y planificada, procurando realizar mis actividades con anticipación y mantener un ritmo de trabajo constante y ordenado.<br><br>Prefiero desarrollar mis responsabilidades con tranquilidad, distribuyendo adecuadamente el tiempo disponible para evitar retrasos y cumplir con los objetivos establecidos. Considero que la organización, la responsabilidad y el cumplimiento oportuno de las tareas son aspectos importantes para contribuir de manera efectiva al trabajo en equipo. |
 | <img src="docs/assets/chaper1/IMGs/members/pietro.png" width="200"/> | **Osores Marchese Pietro - U202310971** <br><br> Soy Pietro Osores Marchese, estudiante de Ingeniería de Software con interés en el desarrollo de software y la innovación tecnológica. Mi perfil combina habilidades en programación frontend, diseño de interfaces y gestión de proyectos ágiles, con un enfoque en la creación de soluciones digitales funcionales y escalables.<br><br>Me caracterizo por el trabajo en equipo, la adaptabilidad y la búsqueda constante de nuevas herramientas para optimizar procesos y experiencias de usuario. |
 | <img src="docs/assets/chaper1/IMGs/members/matias.jpg" width="200"/> | **Salcedo Champi Matias Rodolfo - U202319698** <br><br> Soy Matias Salcedo Champi, tengo 21 años y estudio Ingeniería de Software en el 7mo ciclo. Soy un estudiante con experiencia en el desarrollo de aplicaciones móviles y web, y me gusta involucrarme en todas las etapas del ciclo de desarrollo, desde el levantamiento de requisitos hasta la implementación.<br><br>En el desarrollo móvil trabajo con Flutter y Dart, y en el backend utilizo Node.js y Express.js. Manejo bases de datos tanto relacionales, con PostgreSQL, como no relacionales, con MongoDB. Además, uso Git y GitHub para el control de versiones y el trabajo colaborativo en equipo, siguiendo el flujo GitFlow del proyecto.<br><br>He participado en proyectos de investigación y desarrollo, lo que me ha permitido fortalecer mi capacidad de análisis y mi visión integral del proceso de construcción de software. Aporto al equipo en la especificación de requisitos y en la definición del producto, contribuyendo a que la solución responda a las necesidades reales de los usuarios. |
-| <img src="docs/assets/chaper1/IMGs/members/Daniel.jpeg" width="200"/>| **Aquino Solorzano Daniel Jonatan -U202217678** <br><br> Tengo 22 años y estoy en la carrera de Ingeniería de Software cursando el 7mo ciclo. Considero que mis fuertes son la responsabilidad y puntualidad con la entrega de trabajos. <br><br> Tengo experiencia en el desarrollo Fullstack de aplicaciones Web con DDD y uso de diferentes Frameworks de desarrollo como Spring Boot o Angular. Así como tambien experiencia con diferentes lenguajes de programación como TypeScript, Java, Python, Dart, etc. También poseo experiencia en el desarrollo de aplicaciones móviles en Android o IOS, aunque me centro más en el desarrollo de Plataformas Backend. Poseo además experiencia en Bases de Datos Relaciones y No Relacionales como MySQL o MongoDB respectivamente. He llegado a utilizar plataformas de despliegue como Azure y Render; además de tecnologías que ayudan en la contenerización como Docker. Como punto adicional tengo un nivel intermedio-avanzado en inglés, lo que me ayuda a ampliar mis capacidades en diferentes ámbitos. |
+| <img src="docs/assets/chaper1/IMGs/members/Daniel.jpeg" width="200"/>| **Aquino Solorzano, Daniel Jonatan - U202217678** <br><br> Tengo 22 años y estoy en la carrera de Ingeniería de Software cursando el 7mo ciclo. Considero que mis fuertes son la responsabilidad y puntualidad con la entrega de trabajos. <br><br> Tengo experiencia en el desarrollo Fullstack de aplicaciones Web con DDD y uso de diferentes Frameworks de desarrollo como Spring Boot o Angular. Asimismo, tengo experiencia con diferentes lenguajes de programación como TypeScript, Java, Python, Dart, etc. También poseo experiencia en el desarrollo de aplicaciones móviles en Android o iOS, aunque me centro más en el desarrollo de Plataformas Backend. Poseo además experiencia en bases de datos relacionales y no relacionales como MySQL o MongoDB respectivamente. He llegado a utilizar plataformas de despliegue como Azure y Render; además de tecnologías que ayudan en la contenerización como Docker. Como punto adicional tengo un nivel intermedio-avanzado en inglés, lo que me ayuda a ampliar mis capacidades en diferentes ámbitos. |
 | <img src="docs/assets/chaper1/IMGs/members/juan%20headshot.jpg" width="200"/> |**Angulo Juan Carlos - U202317692** <br><br> Tengo 24 años y curso Ingeniería de Software en el sétimo ciclo. Me considero una persona orientada a objetivos, me gusta tomar la iniciativa dentro del equipo y meterme de lleno a resolver el problema en vez de quedarme solo en la parte de planificación. <br><br> Soy desarrollador web con varios años de experiencia, y he trabajado con un buen número de clientes tanto nacionales como internacionales, desde proyectos pequeños hasta integraciones más complejas. Además del desarrollo, el posicionamiento web (SEO) es algo que me apasiona particularmente, y suelo combinar ambas disciplinas en los proyectos que tomo. Parte de mi trabajo se puede ver en mi portafolio personal, [juan-tech.com](https://juan-tech.com). |
 | <img src="docs/assets/chaper1/IMGs/members/melina.jpg" width="200"/> | **Santillan Alvarado Melina Liz - U202216058** <br><br> Soy Melina Liz Santillan Alvarado, tengo 22 años y soy estudiante de Ingeniería de Software. Me considero una persona responsable, organizada y atenta a los detalles, con capacidad de adaptación y disposición para el aprendizaje continuo. <br><br> En desarrollo web, tengo mayor experiencia en frontend y utilizo tecnologías como HTML, CSS, JavaScript, TypeScript, Vue.js y Angular. En desarrollo móvil, cuento con conocimientos en Kotlin y Flutter. También tengo conocimientos en desarrollo backend con .NET y Spring Boot, construcción de APIs REST, bases de datos relacionales y control de versiones con Git y GitHub. <br><br> Puedo aportar al equipo en el diseño e implementación de interfaces, el desarrollo frontend, la integración con servicios backend, la organización del trabajo y la aplicación de buenas prácticas de desarrollo. |
 
@@ -313,7 +329,7 @@ La seguridad patrimonial se ha convertido en una preocupación creciente para el
 
 A pesar de este panorama, la mayoría de empresas peruanas continúa desprotegida financieramente frente al riesgo: solo el 5% de las pymes en Perú cuenta con un seguro patrimonial que las proteja frente a incendios, terremotos y robos, lo que agrava el impacto económico de cualquier incidente de seguridad no prevenido. En respuesta a esta exposición, las fábricas y plantas industriales han incrementado su inversión en seguridad para proteger instalaciones y maquinaria, y dicha inversión ya no se limita a personal de vigilancia, sino que abarca también tecnología avanzada como sistemas de control de acceso y software de gestión. Sin embargo, este tipo de tecnología suele estar disponible principalmente para grandes corporaciones con presupuestos de seguridad elevados, dejando a las pequeñas y medianas empresas industriales dependiendo de medidas más básicas como cercos eléctricos, candados de alta seguridad o vigilancia humana tradicional.
 
-El resultado es una brecha entre la magnitud del riesgo patrimonial que enfrentan las empresas —especialmente las industriales, con instalaciones extensas, múltiples puntos de acceso y activos de alto valor como maquinaria e inventario— y la capacidad real de estas empresas, sobre todo las de menor tamaño, para acceder a sistemas de seguridad proactivos, escalables y económicamente viables.
+El resultado es una brecha entre la magnitud del riesgo patrimonial que enfrentan las empresas, especialmente las industriales, con instalaciones extensas, múltiples puntos de acceso y activos de alto valor como maquinaria e inventario, y la capacidad real de estas empresas, sobre todo las de menor tamaño, para acceder a sistemas de seguridad proactivos, escalables y económicamente viables.
 
 #### Aplicación de la técnica 5W + 2H
 
@@ -365,7 +381,7 @@ Las empresas industriales, logísticas y comerciales de mediana escala en el Per
 
 ### 1.2.2. Lean UX Process
 
-El Lean UX Process de Jeff Gothelf y Josh Seiden convierte la problemática de la sección anterior en creencias explícitas (assumptions) sobre el negocio y los usuarios, y esas creencias en hypothesis statements que se pueden verificar con experimentos concretos. El análisis cubre todo el dominio del problema (seguridad patrimonial industrial y logística) y no un segmento por separado, porque el curso pide la versión del template para una iniciativa nueva (brand new initiative), pensada justamente para esa mirada agregada.
+El Lean UX Process de Gothelf y Seiden (2021) convierte la problemática de la sección anterior en creencias explícitas (assumptions) sobre el negocio y los usuarios, y esas creencias en hypothesis statements que se pueden verificar con experimentos concretos. El análisis cubre todo el dominio del problema (seguridad patrimonial industrial y logística) y no un segmento por separado, porque el curso pide la versión del template para una iniciativa nueva (brand new initiative), pensada justamente para esa mirada agregada.
 
 #### 1.2.2.1. Lean UX Problem Statements
 
@@ -523,6 +539,8 @@ Los segmentos objetivo de SECURIOT se derivan directamente de los User Assumptio
 
 Estos tres segmentos son la base sobre la que se construirán, en el Capítulo II, los User Persona, el User Task Matrix, los User Journey Map y los Empathy Map correspondientes.
 
+
+<div style="page-break-after: always;"></div>
 
 # Capítulo II: Requirements Elicitation & Analysis
 
@@ -1447,7 +1465,7 @@ El mapa evidencia que la rapidez de una alerta no basta por sí sola. El vigilan
 
 #### Gerente o Dueño de Pyme Industrial
 
-Para Miguel Herrera, el recorrido no ocurre en el lugar del incidente sino a la distancia. Su día transcurre supervisando la operación del negocio y, cuando surge una posible anomalía, se entera a través de una llamada o un mensaje del personal en sitio. A partir de ese aviso queda a la espera de que alguien confirme lo que sucede, con poca visibilidad directa y sin una fuente única que reúna el estado real de la seguridad. El punto de mayor tensión aparece cuando debe tomar una decisión —autorizar una acción, avisar a un tercero o acudir personalmente— con información incompleta y fragmentada. Una vez resuelto el incidente, todavía necesita reconstruir lo ocurrido a partir de reportes y grabaciones dispersas para evaluar el desempeño de sus medidas de seguridad y justificar la inversión.
+Para Miguel Herrera, el recorrido no ocurre en el lugar del incidente sino a la distancia. Su día transcurre supervisando la operación del negocio y, cuando surge una posible anomalía, se entera a través de una llamada o un mensaje del personal en sitio. A partir de ese aviso queda a la espera de que alguien confirme lo que sucede, con poca visibilidad directa y sin una fuente única que reúna el estado real de la seguridad. El punto de mayor tensión aparece cuando debe tomar una decisión (autorizar una acción, avisar a un tercero o acudir personalmente) con información incompleta y fragmentada. Una vez resuelto el incidente, todavía necesita reconstruir lo ocurrido a partir de reportes y grabaciones dispersas para evaluar el desempeño de sus medidas de seguridad y justificar la inversión.
 
 <p align="center">
   <img src="docs/assets/chapter2/IMGs/needfinding/user-journey-gerente.png" alt="User Journey Map As-Is de Miguel Herrera, Gerente o Dueño de Pyme Industrial" width="1100"/>
@@ -1548,277 +1566,64 @@ El Ubiquitous Language de SECURIOT unifica los términos utilizados por el equip
 | Unidentified Person | Persona no identificada | Persona detectada cuya identidad no puede determinarse con la información disponible y que debe ser validada antes de autorizar su acceso. |
 | Visitor | Visitante | Persona externa que ingresa temporalmente a una instalación y requiere autorización para acceder a las zonas permitidas. |
 
+<div style="page-break-after: always;"></div>
+
 # Capítulo III: Requirements Specification
 
 La especificación de requisitos de SECURIOT traduce los segmentos objetivo, las Feature Assumptions y las Hypothesis Statements del Capítulo I en artefactos accionables para el desarrollo: User Stories con criterios de aceptación en formato Gherkin, un Impact Mapping que conecta el objetivo de negocio con las funcionalidades, y un Product Backlog priorizado y estimado con Story Points. Los actores considerados corresponden a los tres segmentos objetivo (ver sección 1.3): **Administrador de Seguridad Patrimonial** (usuario principal), **Personal de Vigilancia in situ** (usuario operativo) y **Gerente/Dueño de la pyme industrial** (usuario secundario), además del **Visitante** de la Landing Page y de las Technical Stories que sostienen la plataforma.
 
 ## 3.1. User Stories
 
-Las User Stories se agrupan en ocho épicas alineadas con las seis Feature Assumptions del Lean UX Canvas (sección 1.2.2.2), más una épica de Landing Page y una de Technical Stories. Cada historia se redacta en español y sus criterios de aceptación se expresan como escenarios Gherkin en inglés (`Given / When / Then`).
+Las User Stories se agrupan en ocho épicas alineadas con las seis Feature Assumptions del Lean UX Canvas (sección 1.2.2.2), una épica para la Landing Page y una épica para las capacidades técnicas transversales. Primero se presentan las épicas y sus resultados esperados. Luego se detallan las User Stories relacionadas. Cada historia incluye como mínimo un escenario ideal y un escenario alternativo o de error, redactados con la estructura Gherkin (`Given / When / Then`).
 
-### Épica EP-01: Monitoreo de estado de zonas y dispositivos (HS-01)
+### Épicas
 
-**US-01 — Registro de dispositivo IoT en una zona**
-**Como** administrador de seguridad patrimonial **quiero** registrar un dispositivo IoT y asociarlo a una zona restringida **para** monitorear ese punto de acceso desde la plataforma.
+| Epic ID | Título | Descripción | Criterios de finalización |
+|---|---|---|---|
+| EP-01 | Monitoreo de estado de zonas y dispositivos | Establece la capacidad de registrar los dispositivos IoT instalados en cada zona y consultar su estado y telemetría reciente; se alinea con HS-01. | La épica se considera completada cuando los dispositivos pueden registrarse con identificadores únicos, asociarse únicamente a zonas autorizadas y reportar un estado actualizado que permita diferenciar operación normal, alarma y desconexión. |
+| EP-02 | Registro y validación de zonas y accesos restringidos | Define las zonas protegidas, las autorizaciones de personas y la decisión de acceso producida ante cada detección; se alinea con HS-02. | La épica se considera completada cuando el administrador puede registrar zonas y autorizaciones vigentes, y cada persona detectada produce una decisión trazable de acceso autorizado o denegado sin crear registros inconsistentes. |
+| EP-03 | Motor de alertas basado en reglas | Convierte lecturas y decisiones de acceso en alertas accionables para el personal responsable; se alinea con HS-03. | La épica se considera completada cuando el administrador puede configurar reglas válidas, una intrusión genera una notificación con contexto dentro del tiempo objetivo y el personal de vigilancia puede registrar la atención y cierre sin transiciones inválidas. |
+| EP-04 | Registro histórico y trazabilidad | Conserva eventos, telemetría, acciones y evidencia para reconstruir y auditar incidentes; se alinea con HS-04. | La épica se considera completada cuando los usuarios autorizados pueden filtrar eventos y telemetría histórica y generar un reporte de incidente que preserve la secuencia temporal, los dispositivos involucrados y las referencias de evidencia. |
+| EP-05 | Dashboard Web y aplicación Mobile | Proporciona experiencias diferenciadas para que gerentes, administradores y personal de vigilancia consulten indicadores y atiendan alertas; se alinea con HS-05. | La épica se considera completada cuando la autenticación limita los datos a la organización correspondiente, el dashboard presenta indicadores verificables y la aplicación móvil permite consultar y atender alertas incluso ante una interrupción temporal de conectividad. |
+| EP-06 | Gestión remota multi-sede | Permite supervisar y administrar varias instalaciones de una misma organización desde una cuenta; se alinea con HS-06. | La épica se considera completada cuando el administrador puede listar sus sedes asignadas, cambiar el contexto activo y operar sobre sus zonas, dispositivos y alertas sin acceder a información de otras organizaciones. |
+| EP-07 | Landing Page | Comunica la propuesta de valor de SECURIOT, capta solicitudes de demostración y ofrece contenido accesible para los segmentos objetivo. | La épica se considera completada cuando la propuesta de valor y los llamados a la acción permanecen comprensibles, las solicitudes válidas se registran sin almacenar datos incompletos y el contenido está disponible en inglés y español latinoamericano con navegación accesible. |
+| EP-08 | Resiliencia operativa, despliegue y protección de datos | Asegura la continuidad técnica de SECURIOT mediante el almacenamiento local de telemetría durante interrupciones de red, la sincronización posterior sin duplicados, la construcción reproducible de sus servicios y la protección de imágenes y datos personales conforme a la Ley N.° 29733 (Congreso de la República del Perú, 2011). | La épica se considera completada cuando la Edge API conserva y sincroniza la telemetría sin duplicados después de una desconexión, la pipeline publica imágenes de contenedor solamente si supera las validaciones automatizadas y toda operación con datos personales aplica controles de acceso, protección, retención y auditoría. |
 
-```gherkin
-Scenario: Successful device registration in a zone
-  Given the administrator is authenticated on the web dashboard
-  And is on the "Devices" section of a selected site
-  When they register a new device with a valid identifier and assign it to a restricted zone
-  Then the device appears in the zone's device list with status "online"
-  And the device starts reporting telemetry to the Cloud API
-```
+### User Stories
 
-**US-02 — Monitoreo en tiempo real del estado de zonas y dispositivos**
-**Como** administrador de seguridad **quiero** ver en tiempo real el estado de las zonas y dispositivos de una sede **para** identificar de un vistazo qué punto de acceso está comprometido.
-
-```gherkin
-Scenario: Real-time status is displayed
-  Given the administrator is viewing the monitoring panel of a site
-  When a device changes its status from "online" to "alarm"
-  Then the panel updates that device within 5 seconds without a manual refresh
-  And the affected zone is highlighted as compromised
-```
-
-**US-03 — Detalle de un dispositivo**
-**Como** administrador de seguridad **quiero** abrir el detalle de un dispositivo **para** revisar sus últimas lecturas y su configuración.
-
-```gherkin
-Scenario: View device detail
-  Given the administrator selects a device from the list
-  When the device detail view opens
-  Then it shows the device identifier, zone, current status and the last telemetry readings
-```
-
-### Épica EP-02: Registro y validación de zonas y accesos restringidos (HS-02)
-
-**US-04 — Registro de zona restringida**
-**Como** administrador de seguridad **quiero** registrar una zona restringida **para** definir dónde se controlarán los accesos.
-
-```gherkin
-Scenario: Register a restricted zone
-  Given the administrator is on the "Zones" section of a site
-  When they create a zone with a name, location and access level
-  Then the zone is saved and becomes available to associate devices and authorized people
-```
-
-**US-05 — Validación automática de acceso a zona restringida**
-**Como** personal de vigilancia **quiero** que el sistema valide automáticamente si una persona detectada está autorizada **para** no depender solo de la inspección manual.
-
-```gherkin
-Scenario: Access granted for an authorized person
-  Given a device detects a person entering a restricted zone
-  When the person matches the zone's authorized list
-  Then the event is logged as "authorized access"
-  And no intrusion alert is raised
-
-Scenario: Access denied for an unidentified person
-  Given a device detects a person entering a restricted zone
-  When the person does not match the zone's authorized list
-  Then an intrusion alert is raised for that zone
-```
-
-**US-06 — Gestión de personas autorizadas**
-**Como** administrador de seguridad **quiero** administrar la lista de personas autorizadas por zona **para** mantener actualizado quién puede ingresar.
-
-```gherkin
-Scenario: Add an authorized person to a zone
-  Given the administrator is managing a restricted zone
-  When they add a person with valid identification data
-  Then that person is included in the zone's authorized list for future validations
-```
-
-### Épica EP-03: Motor de alertas basado en reglas (HS-03)
-
-**US-07 — Configuración de reglas de alerta**
-**Como** administrador de seguridad **quiero** configurar reglas de alerta sobre las lecturas de los sensores **para** que la notificación se dispare apenas se detecte una intrusión.
-
-```gherkin
-Scenario: Create an alert rule
-  Given the administrator is on the "Alert rules" section
-  When they define a rule with a condition, a target zone and a severity level
-  Then the rule is activated and evaluated against incoming telemetry
-```
-
-**US-08 — Notificación inmediata de intrusión**
-**Como** personal de vigilancia **quiero** recibir una notificación inmediata ante una intrusión detectada **para** trasladarme al punto de acceso comprometido sin esperar una ronda.
-
-```gherkin
-Scenario: Guard receives an intrusion notification
-  Given an active alert rule for a restricted zone
-  When an intrusion event matches that rule
-  Then the on-site guard receives a push notification within 10 seconds
-  And the notification includes the zone, device and timestamp
-```
-
-**US-09 — Atención y cierre de una alerta**
-**Como** personal de vigilancia **quiero** actualizar el estado de una alerta que atendí **para** dejar registro de la respuesta ejecutada.
-
-```gherkin
-Scenario: Update alert status after response
-  Given the guard opens an active alert
-  When they mark it as "attended" and add a response note
-  Then the alert changes to "attended" with the guard, note and timestamp recorded
-```
-
-### Épica EP-04: Registro histórico y trazabilidad (HS-04)
-
-**US-10 — Consulta del historial de eventos**
-**Como** administrador de seguridad **quiero** consultar el historial de eventos filtrado por sede, zona y fecha **para** auditar lo ocurrido.
-
-```gherkin
-Scenario: Filter the event history
-  Given the administrator is on the "Event history" section
-  When they filter by site, zone and a date range
-  Then the list shows only the events matching the filters, ordered by most recent
-```
-
-**US-11 — Exportación de reporte de incidente**
-**Como** gerente de la pyme **quiero** exportar un reporte trazable de un incidente **para** presentarlo a la aseguradora o a las autoridades.
-
-```gherkin
-Scenario: Export an incident report
-  Given a logged security incident with its associated events and telemetry
-  When the manager exports the incident report
-  Then a document is generated with the timeline, involved devices and evidence references
-```
-
-**US-12 — Telemetría histórica por dispositivo**
-**Como** administrador de seguridad **quiero** ver la telemetría histórica de un dispositivo **para** analizar su comportamiento en el tiempo.
-
-```gherkin
-Scenario: View historical telemetry
-  Given the administrator opens a device detail
-  When they select a past date range
-  Then the historical readings for that device are displayed for the selected period
-```
-
-### Épica EP-05: Dashboard Web y aplicación Mobile (HS-05)
-
-**US-13 — Dashboard de indicadores**
-**Como** gerente de la pyme **quiero** un dashboard con indicadores agregados **para** evaluar si el servicio justifica su costo.
-
-```gherkin
-Scenario: View aggregated indicators
-  Given the manager is authenticated
-  When they open the dashboard
-  Then it shows the number of active alerts, incidents by zone and response times for their sites
-```
-
-**US-14 — Aplicación móvil para el personal de vigilancia**
-**Como** personal de vigilancia **quiero** usar la app móvil durante mis rondas **para** recibir alertas y atenderlas desde el celular.
-
-```gherkin
-Scenario: Attend an alert from the mobile app
-  Given the guard is logged into the mobile app
-  When an intrusion alert arrives
-  Then the app shows the alert detail and lets the guard mark it as attended in the field
-```
-
-**US-15 — Autenticación de usuarios**
-**Como** usuario de la plataforma **quiero** autenticarme de forma segura **para** acceder solo a la información de mi empresa.
-
-```gherkin
-Scenario: Successful authentication
-  Given a registered user with valid credentials
-  When they log in
-  Then they access only the sites and data belonging to their organization
-```
-
-### Épica EP-06: Gestión remota multi-sede (HS-06)
-
-**US-16 — Administración de múltiples sedes**
-**Como** administrador de seguridad **quiero** gestionar varias sedes desde una sola cuenta **para** supervisar más de una planta o almacén sin cambiar de herramienta.
-
-```gherkin
-Scenario: Manage multiple sites from one account
-  Given an administrator responsible for more than one site
-  When they access their account
-  Then they can list and manage all sites assigned to their organization
-```
-
-**US-17 — Cambio de sede activa en el panel**
-**Como** administrador de seguridad **quiero** cambiar la sede activa en el panel **para** enfocar el monitoreo en una instalación específica.
-
-```gherkin
-Scenario: Switch active site
-  Given the administrator manages several sites
-  When they select a different site in the panel
-  Then the zones, devices and alerts shown correspond to the selected site
-```
-
-### Épica EP-07: Landing Page (captación y comunicación de valor)
-
-**US-18 — Comprensión de la propuesta de valor**
-**Como** visitante de la Landing Page **quiero** entender qué resuelve SECURIOT **para** decidir si es relevante para mi empresa.
-
-```gherkin
-Scenario: Value proposition is clear
-  Given a visitor opens the landing page
-  When the page loads
-  Then it presents the problem, the SECURIOT solution and its main benefits for industrial SMEs
-```
-
-**US-19 — Solicitud de demostración / contacto**
-**Como** visitante interesado **quiero** solicitar una demo o dejar mis datos de contacto **para** que el equipo comercial se comunique conmigo.
-
-```gherkin
-Scenario: Submit a demo request
-  Given a visitor is on the landing page
-  When they submit the contact form with valid data
-  Then the request is registered and a confirmation message is shown
-```
-
-**US-20 — Landing accesible y multilenguaje**
-**Como** visitante **quiero** que la Landing Page sea accesible y esté disponible en español e inglés **para** consultarla sin barreras de idioma ni de accesibilidad.
-
-```gherkin
-Scenario: Language and accessibility support
-  Given a visitor opens the landing page
-  When they switch the language selector
-  Then the content is shown in the chosen language (Spanish/English)
-  And the page meets basic accessibility criteria (labels, contrast and keyboard navigation)
-```
-
-### Épica EP-08: Technical Stories (plataforma y cumplimiento)
-
-**US-21 — Procesamiento en el borde tolerante a desconexión**
-**Como** integrante técnico del equipo **quiero** que la Edge API procese y reencole la telemetría cuando se pierde conexión con la nube **para** no perder eventos de seguridad ante fallas de red.
-
-```gherkin
-Scenario: Edge buffers telemetry while offline
-  Given the Edge API loses connection with the Cloud API
-  When devices keep reporting telemetry
-  Then the Edge API stores the readings locally
-  And forwards them to the Cloud API once the connection is restored
-```
-
-**US-22 — Despliegue con contenedores y CI/CD**
-**Como** integrante técnico del equipo **quiero** empaquetar los servicios con Docker y automatizar el despliegue **para** garantizar entornos reproducibles siguiendo GitFlow.
-
-```gherkin
-Scenario: Containerized build and deploy
-  Given the source code of a service on the develop branch
-  When the pipeline builds the Docker image
-  Then the image is produced and the service can be deployed in a reproducible environment
-```
-
-**US-23 — Cumplimiento de protección de datos personales**
-**Como** integrante técnico del equipo **quiero** tratar las imágenes y datos de personas conforme a la Ley N° 29733 y privacidad por diseño **para** cumplir la normativa peruana de protección de datos.
-
-```gherkin
-Scenario: Personal data is handled under compliance rules
-  Given the platform processes images and identification data of people
-  When these data are stored or transmitted
-  Then access is restricted, the data are protected, and their treatment complies with Law N° 29733
-```
+| Story ID | Título | Descripción | Criterios de aceptación | Relacionado con (Epic ID) |
+|---|---|---|---|---|
+| US-01 | Registro de dispositivo IoT en una zona | Como administrador de seguridad patrimonial, deseo registrar un dispositivo IoT y asociarlo a una zona restringida para monitorear ese punto de acceso desde la plataforma. | **Scenario: Successful device registration in a zone**<br>**Given** the administrator is authenticated and owns a restricted zone<br>**When** the administrator registers a device with a valid unique identifier and assigns it to that zone<br>**Then** the device is stored, appears in the zone and receives the credentials required to report telemetry<br><br>**Scenario: Device registration is rejected because the identifier already exists**<br>**Given** a device with the same identifier is already registered<br>**When** the administrator submits the registration<br>**Then** the system rejects the request, explains the conflict and does not create a duplicate device | EP-01 |
+| US-02 | Monitoreo en tiempo real del estado de zonas y dispositivos | Como administrador de seguridad patrimonial, deseo consultar el estado actualizado de las zonas y dispositivos de una sede para identificar oportunamente un punto comprometido. | **Scenario: Device status is updated from incoming telemetry**<br>**Given** a registered device is reporting telemetry for a monitored zone<br>**When** a reading changes the device status from online to alarm<br>**Then** the current status and the affected zone are updated within five seconds<br><br>**Scenario: Device becomes unavailable**<br>**Given** a registered device has not reported telemetry within the configured availability window<br>**When** the platform evaluates its last communication time<br>**Then** the device is marked as offline and the administrator can distinguish it from a device in alarm | EP-01 |
+| US-03 | Detalle de un dispositivo | Como administrador de seguridad patrimonial, deseo consultar el detalle de un dispositivo para revisar su configuración, estado y lecturas recientes. | **Scenario: Device detail is retrieved**<br>**Given** the administrator owns the site containing the device<br>**When** the administrator requests the device detail<br>**Then** the system returns its identifier, zone, current status, configuration and latest telemetry readings<br><br>**Scenario: Device detail is not available to an unauthorized user**<br>**Given** the requested device belongs to another organization or does not exist<br>**When** the administrator requests its detail<br>**Then** the system returns a not found response and exposes no device information | EP-01 |
+| US-04 | Registro de zona restringida | Como administrador de seguridad patrimonial, deseo registrar una zona restringida para definir dónde se controlarán los accesos. | **Scenario: Restricted zone is registered**<br>**Given** the administrator is authenticated for a site they manage<br>**When** the administrator submits a unique name, location and access level<br>**Then** the zone is stored and becomes available for device and authorization assignments<br><br>**Scenario: Restricted zone data is invalid**<br>**Given** the administrator submits a zone without a name or with a duplicated name in the same site<br>**When** the system validates the request<br>**Then** the request is rejected, validation errors are returned and no zone is created | EP-02 |
+| US-05 | Validación automática de acceso a zona restringida | Como personal de vigilancia, deseo que el sistema valide si una persona detectada está autorizada para reducir la dependencia de la inspección manual. | **Scenario: Access is granted to an authorized person**<br>**Given** a device detects a person entering a restricted zone<br>**When** the person matches an active authorization for that zone<br>**Then** the event is logged as authorized access and no intrusion alert is generated<br><br>**Scenario: Access is denied to an unidentified person**<br>**Given** a device detects a person entering a restricted zone<br>**When** the person does not match an active authorization<br>**Then** the event is logged as denied access and an intrusion alert is generated for the zone | EP-02 |
+| US-06 | Gestión de personas autorizadas | Como administrador de seguridad patrimonial, deseo administrar las personas autorizadas por zona para mantener vigente el control de acceso. | **Scenario: Person is authorized for a zone**<br>**Given** the administrator manages the restricted zone<br>**When** the administrator provides valid identification data and an authorization period<br>**Then** the person is added to the zone authorization list for the specified period<br><br>**Scenario: Authorization cannot be created**<br>**Given** the identification data is incomplete or the authorization period is invalid<br>**When** the administrator submits the authorization<br>**Then** the system rejects it, reports the validation errors and leaves the authorization list unchanged | EP-02 |
+| US-07 | Configuración de reglas de alerta | Como administrador de seguridad patrimonial, deseo configurar reglas sobre las lecturas de sensores para generar alertas de acuerdo con el riesgo detectado. | **Scenario: Alert rule is activated**<br>**Given** the administrator manages the target zone<br>**When** the administrator defines a supported condition and severity level<br>**Then** the rule is stored as active and is evaluated against subsequent telemetry<br><br>**Scenario: Alert rule contains an invalid condition**<br>**Given** the administrator provides an unsupported sensor type, operator or threshold<br>**When** the rule is submitted<br>**Then** the system rejects it, identifies the invalid fields and does not activate the rule | EP-03 |
+| US-08 | Notificación inmediata de intrusión | Como personal de vigilancia, deseo recibir una notificación inmediata ante una intrusión para responder sin esperar una ronda presencial. | **Scenario: Intrusion notification is delivered**<br>**Given** an active rule and a guard assigned to the affected site<br>**When** an intrusion event satisfies the rule<br>**Then** the guard receives a notification within ten seconds containing the zone, device, severity and event time<br><br>**Scenario: Primary notification delivery fails**<br>**Given** an intrusion alert has been generated and the primary notification channel is unavailable<br>**When** delivery fails<br>**Then** the failure is recorded and the platform retries or uses the configured fallback channel without discarding the alert | EP-03 |
+| US-09 | Atención y cierre de una alerta | Como personal de vigilancia, deseo actualizar una alerta atendida para registrar la respuesta ejecutada y su resultado. | **Scenario: Active alert is marked as attended**<br>**Given** the guard is assigned to an active alert<br>**When** the guard records a response note and marks the alert as attended<br>**Then** the status, responsible guard, note and timestamp are stored in the alert history<br><br>**Scenario: Closed alert cannot be attended again**<br>**Given** the alert is already closed<br>**When** a guard attempts to mark it as attended<br>**Then** the system rejects the transition and preserves the existing alert history | EP-03 |
+| US-10 | Consulta del historial de eventos | Como administrador de seguridad patrimonial, deseo consultar eventos por sede, zona y fecha para auditar lo ocurrido. | **Scenario: Event history is filtered**<br>**Given** the administrator has access to the selected site<br>**When** the administrator specifies a valid site, zone and date range<br>**Then** the system returns only matching events ordered from newest to oldest<br><br>**Scenario: Event history date range is invalid**<br>**Given** the start date is later than the end date<br>**When** the administrator requests the history<br>**Then** the system rejects the filter, explains the date error and returns no misleading results | EP-04 |
+| US-11 | Exportación de reporte de incidente | Como gerente de la pyme, deseo exportar un reporte trazable de un incidente para presentarlo a la aseguradora o a las autoridades. | **Scenario: Incident report is generated**<br>**Given** a recorded incident contains events, telemetry and evidence references<br>**When** the manager requests its export<br>**Then** the system generates a report with the timeline, involved devices, actions and evidence references<br><br>**Scenario: Incident has insufficient information for export**<br>**Given** the requested incident does not exist or has no accessible evidence<br>**When** the manager requests its export<br>**Then** the system does not generate an incomplete report and explains which information is unavailable | EP-04 |
+| US-12 | Telemetría histórica por dispositivo | Como administrador de seguridad patrimonial, deseo consultar la telemetría histórica de un dispositivo para analizar su comportamiento. | **Scenario: Historical telemetry is retrieved**<br>**Given** the administrator has access to the device<br>**When** the administrator specifies a valid past date range<br>**Then** the system returns the device readings within that period in chronological order<br><br>**Scenario: No telemetry exists for the selected period**<br>**Given** the device is valid but has no readings in the requested range<br>**When** the history is requested<br>**Then** the system returns an empty result and clearly indicates that no readings were recorded | EP-04 |
+| US-13 | Dashboard de indicadores | Como gerente de la pyme, deseo consultar indicadores agregados para evaluar el desempeño y valor del servicio. | **Scenario: Aggregated indicators are available**<br>**Given** the manager is authenticated and has incident data for their sites<br>**When** the manager requests the dashboard indicators<br>**Then** the system returns active alerts, incidents by zone and response time metrics for authorized sites<br><br>**Scenario: Indicator data is incomplete**<br>**Given** one or more data sources cannot provide current metrics<br>**When** the dashboard indicators are calculated<br>**Then** the system identifies unavailable indicators and does not present stale values as current | EP-05 |
+| US-14 | Aplicación móvil para el personal de vigilancia | Como personal de vigilancia, deseo atender alertas desde un dispositivo móvil para responder durante mis rondas. | **Scenario: Alert is attended from the mobile application**<br>**Given** the guard is authenticated and assigned to a site<br>**When** an intrusion alert is received<br>**Then** the guard can review its context and record the response from the mobile application<br><br>**Scenario: Mobile device temporarily loses connectivity**<br>**Given** the guard records a response while the network is unavailable<br>**When** the mobile application cannot reach the Cloud API<br>**Then** the response remains pending locally and is synchronized without duplication when connectivity returns | EP-05 |
+| US-15 | Autenticación de usuarios | Como usuario de la plataforma, deseo autenticarme de forma segura para acceder únicamente a la información autorizada de mi organización. | **Scenario: Authentication succeeds**<br>**Given** a registered active user provides valid credentials<br>**When** the user requests authentication<br>**Then** the system issues a valid session and limits access to the user's organization<br><br>**Scenario: Authentication fails**<br>**Given** the credentials are invalid or the account is inactive<br>**When** the user requests authentication<br>**Then** the system denies access, returns a generic error and does not reveal which credential was incorrect | EP-05 |
+| US-16 | Administración de múltiples sedes | Como administrador de seguridad patrimonial, deseo gestionar varias sedes desde una cuenta para supervisar más de una instalación sin cambiar de herramienta. | **Scenario: Assigned sites are managed from one account**<br>**Given** the administrator is assigned to multiple sites<br>**When** the administrator requests their site portfolio<br>**Then** the system returns every assigned site and permits authorized management actions<br><br>**Scenario: Unassigned site is requested**<br>**Given** a site belongs to another organization or is not assigned to the administrator<br>**When** the administrator attempts to manage it<br>**Then** the system denies the operation and exposes no information about that site | EP-06 |
+| US-17 | Cambio de sede activa | Como administrador de seguridad patrimonial, deseo cambiar la sede activa para enfocar el monitoreo en una instalación específica. | **Scenario: Active site is changed**<br>**Given** the administrator manages more than one site<br>**When** the administrator selects an assigned site<br>**Then** subsequent zones, devices, alerts and metrics correspond to that site<br><br>**Scenario: Selected site is no longer available**<br>**Given** the administrator's assignment to a site has been revoked<br>**When** the administrator attempts to select it<br>**Then** the system rejects the selection and keeps a valid site as the active context | EP-06 |
+| US-18 | Comprensión de la propuesta de valor | Como visitante de la Landing Page, deseo comprender qué resuelve SECURIOT para determinar si es relevante para mi empresa. | **Scenario: Value proposition content is available**<br>**Given** the Landing Page content has been published<br>**When** a visitor requests the page<br>**Then** the response presents the problem, proposed solution, benefits and calls to action for the target segments<br><br>**Scenario: Optional media cannot be loaded**<br>**Given** a promotional image or video is unavailable<br>**When** the visitor requests the page<br>**Then** the essential value proposition remains understandable through accessible text content | EP-07 |
+| US-19 | Solicitud de demostración o contacto | Como visitante interesado, deseo solicitar una demostración o registrar mis datos para que el equipo comercial se comunique conmigo. | **Scenario: Demo request is registered**<br>**Given** the visitor provides valid contact data and consent<br>**When** the request is submitted<br>**Then** the system stores the request and returns a confirmation<br><br>**Scenario: Demo request contains invalid data**<br>**Given** the visitor omits required data, provides an invalid email or does not grant required consent<br>**When** the request is submitted<br>**Then** the system rejects it, identifies the invalid fields and stores no incomplete request | EP-07 |
+| US-20 | Landing Page accesible y multilenguaje | Como visitante, deseo acceder al contenido en español o inglés y mediante tecnologías de asistencia para consultarlo sin barreras. | **Scenario: Visitor selects a supported language**<br>**Given** the Landing Page is available in English and Latin American Spanish<br>**When** the visitor selects a supported language<br>**Then** the content and accessibility labels are returned in that language while preserving keyboard navigation<br><br>**Scenario: Requested language is unsupported**<br>**Given** the visitor requests an unsupported or invalid locale<br>**When** the page resolves the language preference<br>**Then** the content falls back to English and remains fully accessible | EP-07 |
+| US-21 | Procesamiento en el borde tolerante a desconexión | Como Developer, deseo que la Edge API almacene y reenvíe telemetría durante una desconexión para evitar la pérdida de eventos de seguridad. | **Scenario: Buffered telemetry is synchronized after reconnection**<br>**Given** the Edge API has buffered readings while the Cloud API was unavailable<br>**When** connectivity is restored<br>**Then** every pending reading is forwarded once and marked as synchronized after confirmation<br><br>**Scenario: Synchronization attempt fails again**<br>**Given** buffered readings are pending and the Cloud API remains unavailable<br>**When** the relay attempts synchronization<br>**Then** the readings remain pending and the next attempt is scheduled with bounded exponential backoff | EP-08 |
+| US-22 | Despliegue con contenedores y CI/CD | Como Developer, deseo construir y validar contenedores mediante una pipeline para obtener despliegues reproducibles. | **Scenario: Container image is built successfully**<br>**Given** the service source and configuration pass the automated checks<br>**When** the pipeline builds the container image<br>**Then** a versioned image is produced and becomes eligible for deployment<br><br>**Scenario: Automated validation fails**<br>**Given** tests, security checks or the container build fail<br>**When** the pipeline evaluates the change<br>**Then** no deployable image is published and the pipeline reports the failed stage | EP-08 |
+| US-23 | Cumplimiento de protección de datos personales | Como Developer, deseo proteger las imágenes y datos personales conforme a la Ley N.° 29733 para asegurar un tratamiento responsable de la información. | **Scenario: Authorized processing protects personal data**<br>**Given** the platform has a valid purpose and authorization to process personal data<br>**When** images or identification data are stored or transmitted<br>**Then** access control, encryption, retention and audit rules are applied<br><br>**Scenario: Processing lacks authorization or required purpose**<br>**Given** the platform cannot verify authorization or a valid processing purpose<br>**When** an operation attempts to store or disclose personal data<br>**Then** the operation is rejected and the denial is recorded for audit | EP-08 |
 
 ## 3.2. Impact Mapping
 
-El Impact Mapping (técnica de Gojko Adzic) conecta el objetivo de negocio de SECURIOT con las funcionalidades a construir, respondiendo cuatro preguntas encadenadas: **Why** (Goal) → **Who** (Actors) → **How** (Impacts, cambios de comportamiento) → **What** (Deliverables, features/User Stories). El objetivo se deriva de los *Business Outcomes* del Lean UX Canvas (sección 1.2.2.4).
+El Impact Mapping, propuesto por Adzic (2012), conecta los objetivos de negocio de SECURIOT con las funcionalidades a construir, respondiendo cuatro preguntas encadenadas: **Why** (Goal) → **Who** (Actors) → **How** (Impacts, cambios de comportamiento) → **What** (Deliverables, features/User Stories). Los objetivos se derivan de los *Business Outcomes* del Lean UX Canvas (sección 1.2.2.4).
 
-> **Goal (Why):** Aumentar en un **20% las suscripciones activas** de pymes industriales y logísticas y alcanzar una **tasa de renovación del 80%** al cierre del primer periodo contratado, durante los primeros 12 meses de operación en Lima Metropolitana.
+> **Goal 1 (Why):** Aumentar en un **20% las suscripciones activas** de pymes industriales y logísticas durante los primeros 12 meses de operación comercial en Lima Metropolitana.
+>
+> **Goal 2 (Why):** Alcanzar una **tasa de renovación del 80%** entre los clientes que completen su primer periodo contratado durante los primeros 12 meses de operación comercial.
 
 <div align="center">
   <img alt="Impact Mapping de SECURIOT" src="docs/assets/securiot-impact-map.png" width="900"/>
@@ -1826,21 +1631,21 @@ El Impact Mapping (técnica de Gojko Adzic) conecta el objetivo de negocio de SE
 
 **Tablero (Miro):** https://miro.com/app/board/uXjVHpKEo50=/
 
-El Impact Mapping se detalla en la siguiente tabla:
+El Impact Mapping se detalla en la siguiente tabla. Los actores corresponden a los User Personas definidos en la sección 2.3.1 y cada deliverable se vincula con una User Story completa.
 
-| Goal (Why) | Actor (Who) | Impact (How) | Deliverable (What) |
-|---|---|---|---|
-| **+20% suscripciones y 80% renovación en 12 meses** | Administrador de Seguridad | Deja de revisar grabaciones por rutina | EP-01 Monitoreo tiempo real · EP-03 Motor de alertas |
-| | Administrador de Seguridad | Confía en alertas automáticas sin verificación previa | EP-03 Motor de alertas · EP-04 Registro trazable |
-| | Administrador de Seguridad | Supervisa varias sedes desde un solo panel | EP-06 Gestión multi-sede · EP-05 Dashboard |
-| | Personal de Vigilancia | Responde más rápido a una intrusión real | EP-03 Notificación inmediata · US-14 App móvil |
-| | Personal de Vigilancia | Ejecuta el protocolo desde el celular en ronda | US-14 App móvil · US-09 Cierre de alerta |
-| | Gerente / Dueño | Percibe el servicio como accesible y renueva | EP-05 Dashboard de indicadores |
-| | Gerente / Dueño | Usa evidencia trazable con aseguradoras y autoridades | EP-04 Registro histórico · US-11 Exportación de incidente |
+| Goal (Why) | Actor / User Persona (Who) | Impact (How) | Deliverable (What) | User Story relacionada |
+|---|---|---|---|---|
+| **Goal 1: +20% de suscripciones activas en 12 meses** | Carlos Mendoza, Administrador de Seguridad Patrimonial | Identifica oportunamente zonas y dispositivos comprometidos sin revisar todas las grabaciones. | EP-01 Monitoreo de estado de zonas y dispositivos | **US-02:** Como administrador de seguridad patrimonial, deseo consultar el estado actualizado de las zonas y dispositivos de una sede para identificar oportunamente un punto comprometido. |
+| **Goal 1: +20% de suscripciones activas en 12 meses** | Carlos Mendoza, Administrador de Seguridad Patrimonial | Supervisa varias sedes desde una sola cuenta y reduce la fragmentación de herramientas. | EP-06 Gestión remota multi-sede | **US-16:** Como administrador de seguridad patrimonial, deseo gestionar varias sedes desde una cuenta para supervisar más de una instalación sin cambiar de herramienta. |
+| **Goal 1: +20% de suscripciones activas en 12 meses** | Miguel Herrera, Gerente o Dueño de Pyme Industrial | Evalúa el desempeño del servicio mediante indicadores verificables. | EP-05 Dashboard Web y aplicación Mobile | **US-13:** Como gerente de la pyme, deseo consultar indicadores agregados para evaluar el desempeño y valor del servicio. |
+| **Goal 2: 80% de renovación del primer periodo** | Carlos Mendoza, Administrador de Seguridad Patrimonial | Configura reglas coherentes con el riesgo de cada zona y confía en la relevancia de las alertas. | EP-03 Motor de alertas basado en reglas | **US-07:** Como administrador de seguridad patrimonial, deseo configurar reglas sobre las lecturas de sensores para generar alertas de acuerdo con el riesgo detectado. |
+| **Goal 2: 80% de renovación del primer periodo** | Luis Ramírez, Personal de Vigilancia In Situ | Recibe el contexto de una intrusión y responde sin esperar una ronda presencial. | EP-03 Motor de alertas basado en reglas | **US-08:** Como personal de vigilancia, deseo recibir una notificación inmediata ante una intrusión para responder sin esperar una ronda presencial. |
+| **Goal 2: 80% de renovación del primer periodo** | Luis Ramírez, Personal de Vigilancia In Situ | Atiende alertas desde el dispositivo móvil mientras realiza sus rondas. | EP-05 Dashboard Web y aplicación Mobile | **US-14:** Como personal de vigilancia, deseo atender alertas desde un dispositivo móvil para responder durante mis rondas. |
+| **Goal 2: 80% de renovación del primer periodo** | Miguel Herrera, Gerente o Dueño de Pyme Industrial | Obtiene evidencia trazable para sustentar incidentes ante aseguradoras o autoridades. | EP-04 Registro histórico y trazabilidad | **US-11:** Como gerente de la pyme, deseo exportar un reporte trazable de un incidente para presentarlo a la aseguradora o a las autoridades. |
 
 ## 3.3. Product Backlog
 
-El Product Backlog consolida las User Stories de la sección 3.1 priorizadas y estimadas con **Story Points** (escala de Fibonacci: 1, 2, 3, 5, 8). La prioridad usa la escala del cronograma del equipo (**P0** crítico → **P3** deseable) y se ordena de mayor a menor prioridad. El *Sprint sugerido* propone una distribución inicial para el Sprint Planning.
+El Product Backlog consolida las User Stories de la sección 3.1 y las ordena por valor para los segmentos objetivo. Cada historia incluye su descripción completa, su estimación en **Story Points** (escala de Fibonacci: 1, 2, 3, 5, 8), la épica relacionada y el sprint sugerido. Las historias de autenticación y las Technical Stories se ubican después de las funcionalidades que representan valor directo para los usuarios, mientras que las historias de la Landing Page se mantienen dentro del Sprint 1.
 
 **Tablero del Product Backlog (Trello):** https://trello.com/b/EzAo1DBl/securiot-product-backlog
 
@@ -1848,46 +1653,41 @@ El Product Backlog consolida las User Stories de la sección 3.1 priorizadas y e
   <img alt="Product Backlog de SECURIOT" src="docs/assets/securiot-product-backlog.svg" width="960"/>
 </div>
 
-| # | Épica | ID | User Story | Prioridad | Story Points | Sprint sugerido |
-|---|---|---|---|---|---|---|
-| 1 | EP-01 | US-01 | Registro de dispositivo IoT en una zona | P0 | 5 | Sprint 1 |
-| 2 | EP-01 | US-02 | Monitoreo en tiempo real de zonas y dispositivos | P0 | 5 | Sprint 1 |
-| 3 | EP-02 | US-04 | Registro de zona restringida | P0 | 3 | Sprint 1 |
-| 4 | EP-02 | US-05 | Validación automática de acceso a zona restringida | P0 | 8 | Sprint 1 |
-| 5 | EP-03 | US-08 | Notificación inmediata de intrusión | P0 | 5 | Sprint 1 |
-| 6 | EP-05 | US-15 | Autenticación de usuarios | P0 | 3 | Sprint 1 |
-| 7 | EP-08 | US-23 | Cumplimiento de protección de datos (Ley N° 29733) | P0 | 5 | Sprint 1 |
-| 8 | EP-03 | US-07 | Configuración de reglas de alerta | P1 | 8 | Sprint 2 |
-| 9 | EP-03 | US-09 | Atención y cierre de una alerta | P1 | 3 | Sprint 2 |
-| 10 | EP-01 | US-03 | Detalle de un dispositivo | P1 | 3 | Sprint 2 |
-| 11 | EP-02 | US-06 | Gestión de personas autorizadas | P1 | 5 | Sprint 2 |
-| 12 | EP-04 | US-10 | Consulta del historial de eventos | P1 | 5 | Sprint 2 |
-| 13 | EP-05 | US-13 | Dashboard de indicadores | P1 | 5 | Sprint 2 |
-| 14 | EP-05 | US-14 | Aplicación móvil para vigilancia | P1 | 8 | Sprint 2 |
-| 15 | EP-07 | US-18 | Comprensión de la propuesta de valor (Landing) | P1 | 3 | Sprint 2 |
-| 16 | EP-08 | US-21 | Procesamiento en el borde tolerante a desconexión | P1 | 8 | Sprint 2 |
-| 17 | EP-08 | US-22 | Despliegue con contenedores y CI/CD | P1 | 5 | Sprint 2 |
-| 18 | EP-04 | US-11 | Exportación de reporte de incidente | P2 | 5 | Sprint 3 |
-| 19 | EP-04 | US-12 | Telemetría histórica por dispositivo | P2 | 3 | Sprint 3 |
-| 20 | EP-06 | US-16 | Administración de múltiples sedes | P2 | 8 | Sprint 3 |
-| 21 | EP-06 | US-17 | Cambio de sede activa en el panel | P2 | 3 | Sprint 3 |
-| 22 | EP-07 | US-19 | Solicitud de demostración / contacto (Landing) | P2 | 3 | Sprint 3 |
-| 23 | EP-07 | US-20 | Landing accesible y multilenguaje | P2 | 5 | Sprint 3 |
+| # Orden | User Story ID | Título | Descripción | Story Points | Épica | Sprint sugerido |
+|---:|---|---|---|---:|---|---|
+| 1 | US-02 | Monitoreo en tiempo real del estado de zonas y dispositivos | Como administrador de seguridad patrimonial, deseo consultar el estado actualizado de las zonas y dispositivos de una sede para identificar oportunamente un punto comprometido. | 5 | EP-01 | Sprint 1 |
+| 2 | US-05 | Validación automática de acceso a zona restringida | Como personal de vigilancia, deseo que el sistema valide si una persona detectada está autorizada para reducir la dependencia de la inspección manual. | 8 | EP-02 | Sprint 1 |
+| 3 | US-08 | Notificación inmediata de intrusión | Como personal de vigilancia, deseo recibir una notificación inmediata ante una intrusión para responder sin esperar una ronda presencial. | 5 | EP-03 | Sprint 1 |
+| 4 | US-01 | Registro de dispositivo IoT en una zona | Como administrador de seguridad patrimonial, deseo registrar un dispositivo IoT y asociarlo a una zona restringida para monitorear ese punto de acceso desde la plataforma. | 5 | EP-01 | Sprint 1 |
+| 5 | US-04 | Registro de zona restringida | Como administrador de seguridad patrimonial, deseo registrar una zona restringida para definir dónde se controlarán los accesos. | 3 | EP-02 | Sprint 1 |
+| 6 | US-07 | Configuración de reglas de alerta | Como administrador de seguridad patrimonial, deseo configurar reglas sobre las lecturas de sensores para generar alertas de acuerdo con el riesgo detectado. | 8 | EP-03 | Sprint 2 |
+| 7 | US-14 | Aplicación móvil para el personal de vigilancia | Como personal de vigilancia, deseo atender alertas desde un dispositivo móvil para responder durante mis rondas. | 8 | EP-05 | Sprint 2 |
+| 8 | US-09 | Atención y cierre de una alerta | Como personal de vigilancia, deseo actualizar una alerta atendida para registrar la respuesta ejecutada y su resultado. | 3 | EP-03 | Sprint 2 |
+| 9 | US-10 | Consulta del historial de eventos | Como administrador de seguridad patrimonial, deseo consultar eventos por sede, zona y fecha para auditar lo ocurrido. | 5 | EP-04 | Sprint 2 |
+| 10 | US-13 | Dashboard de indicadores | Como gerente de la pyme, deseo consultar indicadores agregados para evaluar el desempeño y valor del servicio. | 5 | EP-05 | Sprint 2 |
+| 11 | US-03 | Detalle de un dispositivo | Como administrador de seguridad patrimonial, deseo consultar el detalle de un dispositivo para revisar su configuración, estado y lecturas recientes. | 3 | EP-01 | Sprint 2 |
+| 12 | US-06 | Gestión de personas autorizadas | Como administrador de seguridad patrimonial, deseo administrar las personas autorizadas por zona para mantener vigente el control de acceso. | 5 | EP-02 | Sprint 2 |
+| 13 | US-16 | Administración de múltiples sedes | Como administrador de seguridad patrimonial, deseo gestionar varias sedes desde una cuenta para supervisar más de una instalación sin cambiar de herramienta. | 8 | EP-06 | Sprint 3 |
+| 14 | US-17 | Cambio de sede activa | Como administrador de seguridad patrimonial, deseo cambiar la sede activa para enfocar el monitoreo en una instalación específica. | 3 | EP-06 | Sprint 3 |
+| 15 | US-11 | Exportación de reporte de incidente | Como gerente de la pyme, deseo exportar un reporte trazable de un incidente para presentarlo a la aseguradora o a las autoridades. | 5 | EP-04 | Sprint 3 |
+| 16 | US-12 | Telemetría histórica por dispositivo | Como administrador de seguridad patrimonial, deseo consultar la telemetría histórica de un dispositivo para analizar su comportamiento. | 3 | EP-04 | Sprint 3 |
+| 17 | US-18 | Comprensión de la propuesta de valor | Como visitante de la Landing Page, deseo comprender qué resuelve SECURIOT para determinar si es relevante para mi empresa. | 3 | EP-07 | Sprint 1 |
+| 18 | US-19 | Solicitud de demostración o contacto | Como visitante interesado, deseo solicitar una demostración o registrar mis datos para que el equipo comercial se comunique conmigo. | 3 | EP-07 | Sprint 1 |
+| 19 | US-20 | Landing Page accesible y multilenguaje | Como visitante, deseo acceder al contenido en español o inglés y mediante tecnologías de asistencia para consultarlo sin barreras. | 5 | EP-07 | Sprint 1 |
+| 20 | US-15 | Autenticación de usuarios | Como usuario de la plataforma, deseo autenticarme de forma segura para acceder únicamente a la información autorizada de mi organización. | 3 | EP-05 | Sprint 1 |
+| 21 | US-21 | Procesamiento en el borde tolerante a desconexión | Como Developer, deseo que la Edge API almacene y reenvíe telemetría durante una desconexión para evitar la pérdida de eventos de seguridad. | 8 | EP-08 | Sprint 2 |
+| 22 | US-23 | Cumplimiento de protección de datos personales | Como Developer, deseo proteger las imágenes y datos personales conforme a la Ley N.° 29733 para asegurar un tratamiento responsable de la información. | 5 | EP-08 | Sprint 1 |
+| 23 | US-22 | Despliegue con contenedores y CI/CD | Como Developer, deseo construir y validar contenedores mediante una pipeline para obtener despliegues reproducibles. | 5 | EP-08 | Sprint 2 |
 
-**Resumen de estimación**
+**Estimación total:** 23 User Stories y 114 Story Points.
 
-| Prioridad | N° de historias | Story Points |
-|---|---|---|
-| P0 | 7 | 34 |
-| P1 | 10 | 53 |
-| P2 | 6 | 27 |
-| **Total** | **23** | **114** |
+<div style="page-break-after: always;"></div>
 
 # Capítulo IV: Solution Software Design
 
 ## 4.1. Strategic-Level Domain-Driven Design
 
-El diseño estratégico de SecurIoT divide el dominio según la responsabilidad de negocio y el lenguaje que necesita cada parte del sistema, no según la tecnología, el repositorio o el proceso donde se ejecuta. Esta separación permite que la detección local, la gestión de dispositivos, la autenticación y el monitoreo evolucionen sin mezclar reglas que responden a objetivos distintos.
+Siguiendo los principios de Domain-Driven Design (Evans, 2003), el diseño estratégico de SecurIoT divide el dominio según la responsabilidad de negocio y el lenguaje que necesita cada parte del sistema, no según la tecnología, el repositorio o el proceso donde se ejecuta. Esta separación permite que la detección local, la gestión de dispositivos, la autenticación y el monitoreo evolucionen sin mezclar reglas que responden a objetivos distintos.
 
 El análisis parte de los eventos, comandos, actores y políticas identificados en el EventStorming. A partir de ellos se reconocieron cuatro bounded contexts y se clasificaron según su aporte al producto:
 
@@ -1918,14 +1718,14 @@ El Design-Level EventStorming de SecurIoT organiza los comandos, reglas de negoc
 
 #### 4.1.1.1. Candidate Context Discovery
 
-Agrupamos los eventos y comandos del dominio segun quien es dueno de la decision de negocio, no segun el repositorio de codigo donde vive hoy. De ese analisis salen cuatro contextos delimitados:
+Agrupamos los eventos y comandos del dominio según quién es dueño de la decisión de negocio, no según el repositorio de código donde vive hoy. De ese análisis salen cuatro contextos delimitados:
 
-1. **Identidad y Acceso**: quien puede entrar al sistema y con que credenciales.
-2. **Gestion de Zonas y Dispositivos**: que zonas existen, que dispositivos estan asignados a cada una y quien es su propietario.
-3. **Monitoreo y Alertas**: que paso en una zona (lecturas de sensores) y si eso amerita una alerta.
-4. **Deteccion y Relay de Borde**: que ve la camara en el sitio, si eso es una persona u objeto no permitido, y como reaccionar en el momento (pan/tilt, cerradura, buzzer) sin depender de la nube.
+1. **Identidad y Acceso**: quién puede entrar al sistema y con qué credenciales.
+2. **Gestión de Zonas y Dispositivos**: qué zonas existen, qué dispositivos están asignados a cada una y quién es su propietario.
+3. **Monitoreo y Alertas**: qué pasó en una zona (lecturas de sensores) y si eso amerita una alerta.
+4. **Detección y Relay de Borde**: qué ve la cámara en el sitio, si eso es una persona u objeto no permitido, y cómo reaccionar en el momento (pan/tilt, cerradura, buzzer) sin depender de la nube.
 
-Monitoreo y Alertas y Deteccion y Relay de Borde son los subdominios core: ahi vive la logica que distingue a SecurIoT de un CRUD generico de sensores. Identidad y Acceso es un subdominio generico (JWT estandar, sin reglas propias del negocio). Gestion de Zonas y Dispositivos es subdominio de soporte: necesario para que los otros dos tengan sentido, pero no es, por si solo, la ventaja del producto.
+Monitoreo y Alertas y Detección y Relay de Borde son los subdominios core: ahí vive la lógica que distingue a SecurIoT de un CRUD genérico de sensores. Identidad y Acceso es un subdominio genérico (JWT estándar, sin reglas propias del negocio). Gestión de Zonas y Dispositivos es subdominio de soporte: necesario para que los otros dos tengan sentido, pero no es, por sí solo, la ventaja del producto.
 
 #### 4.1.1.2. Domain Message Flows Modeling
 
@@ -2062,43 +1862,43 @@ Los flujos establecen dos dependencias principales. Detección y Relay de Borde 
 
 | Campo | Detalle |
 |---|---|
-| Proposito | Autenticar usuarios y emitir el token que el resto de la plataforma confia sin volver a consultar este contexto |
-| Clasificacion estrategica | Generico |
+| Propósito | Autenticar usuarios y emitir el token que el resto de la plataforma confía sin volver a consultar este contexto |
+| Clasificación estratégica | Genérico |
 | Lenguaje ubicuo | Usuario, credenciales, token de acceso |
-| Entidad raiz | `User` (email, passwordHash) |
-| Contrato publicado | `POST /auth/login` devuelve un `access_token` JWT firmado; los demas contextos lo validan localmente contra `JWT_SECRET`, sin llamada de vuelta |
+| Entidad raíz | `User` (email, passwordHash) |
+| Contrato publicado | `POST /auth/login` devuelve un `access_token` JWT firmado; los demás contextos lo validan localmente contra `JWT_SECRET`, sin llamada de vuelta |
 | Implementado en | `securiot-cloud-api/src/auth`, `src/users` |
 
-**Gestion de Zonas y Dispositivos**
+**Gestión de Zonas y Dispositivos**
 
 | Campo | Detalle |
 |---|---|
-| Proposito | Mantener el catalogo de zonas del cliente y los dispositivos IoT asignados a cada una, incluyendo la emision del `apiKey` de dispositivo |
-| Clasificacion estrategica | Soporte |
+| Propósito | Mantener el catálogo de zonas del cliente y los dispositivos IoT asignados a cada una, incluyendo la emisión del `apiKey` de dispositivo |
+| Clasificación estratégica | Soporte |
 | Lenguaje ubicuo | Zona, Dispositivo, Propietario, apiKey |
-| Entidades raiz | `Zone`, `Device` |
-| Reglas de negocio | Un dispositivo pertenece a una unica zona; una zona pertenece a un unico usuario propietario; el `apiKey` se muestra completo una sola vez, al crear el dispositivo |
+| Entidades raíz | `Zone`, `Device` |
+| Reglas de negocio | Un dispositivo pertenece a una única zona; una zona pertenece a un único usuario propietario; el `apiKey` se muestra completo una sola vez, al crear el dispositivo |
 | Implementado en | `securiot-cloud-api/src/zones`, `src/devices` |
 
 **Monitoreo y Alertas** (core)
 
 | Campo | Detalle |
 |---|---|
-| Proposito | Ingerir lecturas de sensores de forma idempotente y evaluar reglas de negocio que conviertan una lectura riesgosa en una alerta accionable |
-| Clasificacion estrategica | Core |
+| Propósito | Ingerir lecturas de sensores de forma idempotente y evaluar reglas de negocio que conviertan una lectura riesgosa en una alerta accionable |
+| Clasificación estratégica | Core |
 | Lenguaje ubicuo | Lectura (Reading), Alerta (Alert), Regla de alerta, Severidad, Estado |
-| Entidades raiz | `Reading`, `Alert` |
-| Reglas de negocio | Ingestion idempotente por `reading_id` (constraint unica); cada lectura dispara `evaluateRule`, que hoy cubre `door_contact_open` y esta pensada para crecer a mas reglas por tipo de sensor; una alerta es unica por lectura |
+| Entidades raíz | `Reading`, `Alert` |
+| Reglas de negocio | Ingestión idempotente por `reading_id` (constraint única); cada lectura dispara `evaluateRule`, que hoy cubre `door_contact_open` y está pensada para crecer a más reglas por tipo de sensor; una alerta es única por lectura |
 | Implementado en | `securiot-cloud-api/src/telemetry`, `src/alerts` |
 
-**Deteccion y Relay de Borde** (core)
+**Detección y Relay de Borde** (core)
 
 | Campo | Detalle |
 |---|---|
-| Proposito | Recibir lecturas y frames de camara del dispositivo fisico, correr deteccion local con debounce, decidir la accion inmediata (pan/tilt, cerradura, alerta local) y reenviar las lecturas a la nube tolerando cortes de red |
-| Clasificacion estrategica | Core |
-| Lenguaje ubicuo | Frame, Deteccion, Debounce, Buffer, Relay, Cooldown |
-| Entidades raiz (locales, SQLite) | Lectura bufferizada, Evento de deteccion |
+| Propósito | Recibir lecturas y frames de cámara del dispositivo físico, correr detección local con debounce, decidir la acción inmediata (pan/tilt, cerradura, alerta local) y reenviar las lecturas a la nube tolerando cortes de red |
+| Clasificación estratégica | Core |
+| Lenguaje ubicuo | Frame, Detección, Debounce, Buffer, Relay, Cooldown |
+| Entidades raíz (locales, SQLite) | Lectura bufferizada, Evento de detección |
 | Reglas de negocio | Buffer local con reintento y backoff cuando la nube no responde; relay idempotente por `reading_id`; cooldown entre acciones de cerradura para el mismo dispositivo |
 | Implementado en | `securiot-edge-api/app` (`ingest.py`, `detection.py`, `debounce.py`, `relay.py`, `frames.py`, `pan_tilt.py`) |
 
@@ -2106,11 +1906,11 @@ Los flujos establecen dos dependencias principales. Detección y Relay de Borde 
 
 ![Structurizr bounded-context map](docs/architecture/diagrams/context-map.png)
 
-Ningun contexto llama al de Identidad y Acceso en tiempo de ejecucion mas alla del login: el JWT es autocontenido y cada contexto lo valida por su cuenta contra el mismo secreto compartido, asi que la relacion con Identidad y Acceso es de tipo Published Language mas que de llamada activa. Monitoreo y Alertas y Gestion de Zonas y Dispositivos hoy comparten una unica base PostgreSQL, lo cual simplifica el MVP pero es una decision a revisar si el sistema crece a multiples clientes con aislamiento de datos mas estricto.
+Ningún contexto llama al de Identidad y Acceso en tiempo de ejecución más allá del login: el JWT es autocontenido y cada contexto lo valida por su cuenta contra el mismo secreto compartido, así que la relación con Identidad y Acceso es de tipo Published Language más que de llamada activa. Monitoreo y Alertas y Gestión de Zonas y Dispositivos hoy comparten una única base PostgreSQL, lo cual simplifica el MVP pero es una decisión a revisar si el sistema crece a múltiples clientes con aislamiento de datos más estricto.
 
 ### 4.1.3. Software Architecture
 
-SecurIoT es un sistema distribuido de cuatro capas: aplicaciones cliente (Web App en Angular y Mobile App en Flutter), un backend hospedado (Cloud API en NestJS con PostgreSQL), un servicio de borde por instalacion (Edge API en Flask con buffer local SQLite y reconocimiento ArcFace) y firmware embebido (ESP32-S3 con deteccion corporal YOLO). Los siguientes diagramas siguen el modelo C4 y se generan exclusivamente desde el modelo [Structurizr DSL](docs/architecture/workspace.dsl). El ESP32 ejecuta la deteccion corporal antes de enviar frames candidatos al Edge; el Edge ejecuta ArcFace, conserva los embeddings biometricos localmente y solo inicia conexiones salientes hacia el backend hospedado.
+SecurIoT es un sistema distribuido de cuatro capas: aplicaciones cliente (Web App en Angular y Mobile App en Flutter), un backend hospedado (Cloud API en NestJS con PostgreSQL), un servicio de borde por instalación (Edge API en Flask con buffer local SQLite y reconocimiento ArcFace) y firmware embebido (ESP32-S3 con detección corporal YOLO). Los siguientes diagramas siguen el modelo C4 (Brown, s. f.) y se generan exclusivamente desde el modelo [Structurizr DSL](docs/architecture/workspace.dsl). El ESP32 ejecuta la detección corporal antes de enviar frames candidatos al Edge; el Edge ejecuta ArcFace, conserva los embeddings biométricos localmente y solo inicia conexiones salientes hacia el backend hospedado.
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram
 
@@ -2126,13 +1926,13 @@ La plataforma no depende de sistemas externos de terceros (sin pasarelas de pago
 
 ![C4 Container diagram](docs/architecture/diagrams/container.png)
 
-El hardware ESP32 queda fuera del limite punteado de la plataforma. Dentro del dispositivo se ejecuta YOLO para detectar personas/cuerpos y reducir el volumen de frames enviados. Dentro del Edge se ejecuta ArcFace para producir y comparar embeddings; el buffer SQLite y el repositorio local de identidades permiten seguir operando sin conectividad.
+El hardware ESP32 queda fuera del límite punteado de la plataforma. Dentro del dispositivo se ejecuta YOLO para detectar personas/cuerpos y reducir el volumen de frames enviados. Dentro del Edge se ejecuta ArcFace para producir y comparar embeddings; el buffer SQLite y el repositorio local de identidades permiten seguir operando sin conectividad.
 
 #### 4.1.3.4. Software Architecture Deployment Diagrams
 
 ![C4 Deployment diagram](docs/architecture/diagrams/deployment.png)
 
-El diagrama de despliegue separa explicitamente el hardware ESP32, el Edge Host de la instalacion y la infraestructura hospedada. El backend no abre conexiones hacia la red local: el Edge inicia el envio de resultados y telemetria por HTTPS con retry/backoff.
+El diagrama de despliegue separa explícitamente el hardware ESP32, el Edge Host de la instalación y la infraestructura hospedada. El backend no abre conexiones hacia la red local: el Edge inicia el envío de resultados y telemetría por HTTPS con retry/backoff.
 
 ## 4.2. Tactical-Level Domain-Driven Design
 
@@ -2140,13 +1940,13 @@ Esta sección detalla, para cada uno de los cuatro bounded contexts identificado
 
 ### 4.2.1. Bounded Context: Monitoreo y Alertas
 
-Elegimos este contexto para el detalle tactico porque es el subdominio core de la Cloud API: convierte lecturas crudas de sensores en alertas que el operador realmente usa. Vive en `securiot-cloud-api/src/telemetry` y `src/alerts`.
+Elegimos este contexto para el detalle táctico porque es el subdominio core de la Cloud API: convierte lecturas crudas de sensores en alertas que el operador realmente usa. Vive en `securiot-cloud-api/src/telemetry` y `src/alerts`.
 
 #### 4.2.1.1. Domain Layer
 
-- `Reading` (raiz de agregado): `readingId` (unico), `deviceId`, `zoneId`, `sensorType`, `value`, `recordedAt`. La unicidad de `readingId` es el invariante central: garantiza que reenviar la misma lectura, algo que pasa seguido por el retry del relay de borde, nunca la duplica.
-- `Alert` (raiz de agregado): referencia a `zone`, `device` y, opcionalmente, a la `reading` que la origino; ademas `ruleType`, `severity`, `status` y `message`. Tambien tiene `readingId` unico, asi que una lectura genera como maximo una alerta.
-- Regla de dominio `evaluateRule`: hoy implementa una unica regla, `door_contact_open` (sensor `door_contact` con valor `open` genera una alerta de severidad `medium`). El metodo esta separado de la insercion de la lectura justamente para poder agregar mas reglas sin tocar el flujo de ingestion.
+- `Reading` (raíz de agregado): `readingId` (único), `deviceId`, `zoneId`, `sensorType`, `value`, `recordedAt`. La unicidad de `readingId` es el invariante central: garantiza que reenviar la misma lectura, algo que pasa seguido por el retry del relay de borde, nunca la duplica.
+- `Alert` (raíz de agregado): referencia a `zone`, `device` y, opcionalmente, a la `reading` que la originó; además `ruleType`, `severity`, `status` y `message`. También tiene `readingId` único, así que una lectura genera como máximo una alerta.
+- Regla de dominio `evaluateRule`: hoy implementa una única regla, `door_contact_open` (sensor `door_contact` con valor `open` genera una alerta de severidad `medium`). El método está separado de la inserción de la lectura justamente para poder agregar más reglas sin tocar el flujo de ingestión.
 
 #### 4.2.1.2. Interface Layer
 
@@ -2156,20 +1956,20 @@ Elegimos este contexto para el detalle tactico porque es el subdominio core de l
 | `GET /api/v1/telemetry` | `JwtAuthGuard` | Lista lecturas filtrables por `device_id`, `zone_id` y rango de fechas |
 | `GET /api/v1/alerts` | `JwtAuthGuard` | Lista alertas de las zonas del usuario autenticado, filtrables por zona, dispositivo y estado |
 
-Los cuerpos de request se validan con DTOs de `class-validator` (`CreateReadingDto`, `QueryReadingsDto`, `QueryAlertsDto`) y cada endpoint esta documentado con decoradores de `@nestjs/swagger`.
+Los cuerpos de request se validan con DTOs de `class-validator` (`CreateReadingDto`, `QueryReadingsDto`, `QueryAlertsDto`) y cada endpoint está documentado con decoradores de `@nestjs/swagger`.
 
 #### 4.2.1.3. Application Layer
 
-- `TelemetryService.ingest(dto, device)`: inserta la lectura con `INSERT ... ON CONFLICT DO NOTHING` (`orIgnore`) y delega la evaluacion de reglas a `AlertsService.evaluateRule`. Ambos pasos ocurren en la misma llamada, para que el operador vea la alerta apenas el dispositivo reporta.
+- `TelemetryService.ingest(dto, device)`: inserta la lectura con `INSERT ... ON CONFLICT DO NOTHING` (`orIgnore`) y delega la evaluación de reglas a `AlertsService.evaluateRule`. Ambos pasos ocurren en la misma llamada, para que el operador vea la alerta apenas el dispositivo reporta.
 - `TelemetryService.findAll(query)`: consulta de lecturas con filtros opcionales.
-- `AlertsService.evaluateRule(reading)`: aplica la regla de dominio y persiste la alerta si corresponde, tambien con `orIgnore` para respetar la unicidad por `readingId`.
+- `AlertsService.evaluateRule(reading)`: aplica la regla de dominio y persiste la alerta si corresponde, también con `orIgnore` para respetar la unicidad por `readingId`.
 - `AlertsService.findAllForOwner(ownerId, query)`: hace join contra `Zone` para devolver solo alertas de zonas del usuario autenticado, sin exponer datos de otros clientes.
 
 #### 4.2.1.4. Infrastructure Layer
 
-- `Repository<Reading>` y `Repository<Alert>` de TypeORM, sobre PostgreSQL en produccion (SQLite como fallback de desarrollo local, ver `src/config/typeorm.config.ts`).
-- `DeviceApiKeyGuard`: valida el header `X-Device-Key` contra la tabla `devices`, cruzando hacia el contexto de Gestion de Zonas y Dispositivos.
-- `JwtAuthGuard` + `JwtStrategy`: validan el JWT emitido por Identidad y Acceso sin llamarlo en tiempo de ejecucion.
+- `Repository<Reading>` y `Repository<Alert>` de TypeORM, sobre PostgreSQL en producción (SQLite como fallback de desarrollo local, ver `src/config/typeorm.config.ts`).
+- `DeviceApiKeyGuard`: valida el header `X-Device-Key` contra la tabla `devices`, cruzando hacia el contexto de Gestión de Zonas y Dispositivos.
+- `JwtAuthGuard` + `JwtStrategy`: validan el JWT emitido por Identidad y Acceso sin llamarlo en tiempo de ejecución.
 
 #### 4.2.1.5. Bounded Context Software Architecture Component Level Diagrams
 
@@ -2185,17 +1985,17 @@ Los cuerpos de request se validan con DTOs de `class-validator` (`CreateReadingD
 
 ![Structurizr Monitoring and Alerts database diagram](docs/architecture/diagrams/monitoring-database.png)
 
-`USERS`, `ZONES` y `DEVICES` pertenecen a otros bounded contexts (Identidad y Acceso, y Gestion de Zonas y Dispositivos) y se muestran aqui solo como referencia, porque hoy las cinco tablas viven en la misma base PostgreSQL. `READINGS` y `ALERTS` son las tablas propias de este contexto.
+`USERS`, `ZONES` y `DEVICES` pertenecen a otros bounded contexts (Identidad y Acceso, y Gestión de Zonas y Dispositivos) y se muestran aquí solo como referencia, porque hoy las cinco tablas viven en la misma base PostgreSQL. `READINGS` y `ALERTS` son las tablas propias de este contexto.
 
 ### 4.2.2. Bounded Context: Identidad y Acceso
 
-Este contexto es el subdominio generico de la Cloud API: no tiene reglas de negocio propias del dominio de seguridad patrimonial, solo autentica y emite el token que el resto de la plataforma confia sin volver a consultarlo. Se incluye en el detalle tactico porque cada uno de los otros tres contextos depende de el para proteger sus propios endpoints. Vive en `securiot-cloud-api/src/auth` y `src/users`.
+Este contexto es el subdominio genérico de la Cloud API: no tiene reglas de negocio propias del dominio de seguridad patrimonial, solo autentica y emite el token que el resto de la plataforma confía sin volver a consultarlo. Se incluye en el detalle táctico porque cada uno de los otros tres contextos depende de él para proteger sus propios endpoints. Vive en `securiot-cloud-api/src/auth` y `src/users`.
 
 #### 4.2.2.1. Domain Layer
 
-- `User` (raiz de agregado): `id` (uuid), `email`, `passwordHash`, `createdAt`. Constraint de unicidad sobre `email` a nivel de entidad (`@Unique(['email'])`), sin otros campos, no hay roles ni soft-delete.
+- `User` (raíz de agregado): `id` (uuid), `email`, `passwordHash`, `createdAt`. Constraint de unicidad sobre `email` a nivel de entidad (`@Unique(['email'])`), sin otros campos, no hay roles ni soft-delete.
 - Invariante de dominio: la contrasena nunca se compara ni se guarda en texto plano. `AuthService.validateUser` usa `bcrypt.compare` contra `passwordHash`; el hashing en si ocurre antes de llegar a `UsersService.create`, no dentro del servicio.
-- No existe endpoint de registro publico: `UsersService.create` existe a nivel de servicio pero ningun controller lo expone, lo que sugiere un flujo de alta de usuarios administrado fuera de la API publica (seed o proceso interno).
+- No existe endpoint de registro público: `UsersService.create` existe a nivel de servicio pero ningún controller lo expone, lo que sugiere un flujo de alta de usuarios administrado fuera de la API pública (seed o proceso interno).
 
 #### 4.2.2.2. Interface Layer
 
@@ -2203,19 +2003,19 @@ Este contexto es el subdominio generico de la Cloud API: no tiene reglas de nego
 |---|---|---|---|
 | `POST /api/v1/auth/login` | Ninguno (publico) | `LoginDto` (`email`, `password`) | Autentica con email y password, retorna `{ access_token }` |
 
-El unico controller (`AuthController`) fuerza `200 OK` en la respuesta del login en vez del `201` por defecto de un POST, y documenta con `@nestjs/swagger` las respuestas 200, 400 y 401. `JwtAuthGuard` se define y exporta desde este contexto, pero no protege ningun endpoint propio: su rol es proteger endpoints de los otros tres bounded contexts (tal como se ve en `jwtGuard` dentro de Monitoreo y Alertas, seccion 4.2.1.5).
+El único controller (`AuthController`) fuerza `200 OK` en la respuesta del login en vez del `201` por defecto de un POST, y documenta con `@nestjs/swagger` las respuestas 200, 400 y 401. `JwtAuthGuard` se define y exporta desde este contexto, pero no protege ningún endpoint propio: su rol es proteger endpoints de los otros tres bounded contexts (tal como se ve en `jwtGuard` dentro de Monitoreo y Alertas, sección 4.2.1.5).
 
 #### 4.2.2.3. Application Layer
 
 - `AuthService.validateUser(email, password)`: busca el usuario por email vía `UsersService.findByEmail`; si no existe o falla la comparacion `bcrypt`, lanza `UnauthorizedException`; si es valido, retorna el `User` completo.
-- `AuthService.login(email, password)`: llama a `validateUser`, arma el payload `{ sub: user.id, email: user.email }` y lo firma con `jwtService.sign`. Efecto secundario unico: la emision del JWT, sin registro de sesion ni persistencia adicional.
-- `UsersService.findByEmail` / `UsersService.create`: metodos casi passthrough sobre el repositorio, sin logica de negocio propia mas alla de asumir que `passwordHash` ya llega hasheado.
+- `AuthService.login(email, password)`: llama a `validateUser`, arma el payload `{ sub: user.id, email: user.email }` y lo firma con `jwtService.sign`. Efecto secundario único: la emisión del JWT, sin registro de sesión ni persistencia adicional.
+- `UsersService.findByEmail` / `UsersService.create`: métodos casi passthrough sobre el repositorio, sin lógica de negocio propia más allá de asumir que `passwordHash` ya llega hasheado.
 
 #### 4.2.2.4. Infrastructure Layer
 
-- Repositorio TypeORM estandar (`Repository<User>`) sobre la misma base de datos que el resto de contextos (Postgres en produccion, SQLite via `better-sqlite3` como fallback local, `synchronize: true`, confirmado en `src/config/typeorm.config.ts`).
-- `JwtStrategy` extrae el token del header `Authorization: Bearer`, valida su expiracion (`ignoreExpiration: false`) y su firma contra `JWT_SECRET` (con un valor de respaldo hardcodeado si la variable de entorno no esta configurada, algo a corregir antes de un despliegue real). `JwtModule` firma con `JWT_EXPIRES_IN` (por defecto una hora).
-- `JwtAuthGuard` es una clase minima que delega toda la validacion en la estrategia passport-jwt registrada, sin logica propia.
+- Repositorio TypeORM estándar (`Repository<User>`) sobre la misma base de datos que el resto de contextos (Postgres en producción, SQLite vía `better-sqlite3` como fallback local, `synchronize: true`, confirmado en `src/config/typeorm.config.ts`).
+- `JwtStrategy` extrae el token del header `Authorization: Bearer`, valida su expiración (`ignoreExpiration: false`) y su firma contra `JWT_SECRET` (con un valor de respaldo hardcodeado si la variable de entorno no está configurada, algo a corregir antes de un despliegue real). `JwtModule` firma con `JWT_EXPIRES_IN` (por defecto una hora).
+- `JwtAuthGuard` es una clase mínima que delega toda la validación en la estrategia passport-jwt registrada, sin lógica propia.
 
 #### 4.2.2.5. Bounded Context Software Architecture Component Level Diagrams
 
@@ -2227,52 +2027,52 @@ El unico controller (`AuthController`) fuerza `200 OK` en la respuesta del login
 
 ![Structurizr Identity and Access class diagram](docs/architecture/diagrams/identity-classes.png)
 
-`User` no tiene relaciones de asociacion de TypeORM hacia `Device` o `Zone`; no se incluyen en el diagrama porque compartir la misma base de datos no crea una relacion de dominio ni una FK explicita en `User`.
+`User` no tiene relaciones de asociacion de TypeORM hacia `Device` o `Zone`; no se incluyen en el diagrama porque compartir la misma base de datos no crea una relación de dominio ni una FK explicita en `User`.
 
 #### 4.2.2.6.2. Bounded Context Database Design Diagram
 
 ![Structurizr Identity and Access database diagram](docs/architecture/diagrams/identity-database.png)
 
-Unica tabla del contexto: PK `id` (uuid), `email` con constraint unico, `passwordHash`, `createdAt`. Sin columnas adicionales ni foreign keys.
+Única tabla del contexto: PK `id` (uuid), `email` con constraint único, `passwordHash`, `createdAt`. Sin columnas adicionales ni foreign keys.
 
-### 4.2.3. Bounded Context: Gestion de Zonas y Dispositivos
+### 4.2.3. Bounded Context: Gestión de Zonas y Dispositivos
 
-Este es el subdominio de soporte: mantiene el catalogo de zonas de cada cliente y los dispositivos IoT asignados a cada una, incluyendo la emision del `apiKey` que un dispositivo fisico usa para autenticarse ante el resto de la plataforma. Es necesario para que Monitoreo y Alertas y Deteccion y Relay de Borde tengan sentido, pero no es, por si solo, la ventaja diferencial del producto. Vive en `securiot-cloud-api/src/zones` y `src/devices`.
+Este es el subdominio de soporte: mantiene el catálogo de zonas de cada cliente y los dispositivos IoT asignados a cada una, incluyendo la emisión del `apiKey` que un dispositivo físico usa para autenticarse ante el resto de la plataforma. Es necesario para que Monitoreo y Alertas y Detección y Relay de Borde tengan sentido, pero no es, por sí solo, la ventaja diferencial del producto. Vive en `securiot-cloud-api/src/zones` y `src/devices`.
 
 #### 4.2.3.1. Domain Layer
 
-- `Zone` (raiz de agregado): `id`, `name`, `location` (opcional), `ownerId`, relacion `ManyToOne` a `User` con `onDelete: 'CASCADE'`, `createdAt`, `updatedAt`.
-- `Device` (raiz de agregado): `id`, `name`, `apiKey` (unico, `@Unique(['apiKey'])`), relacion `ManyToOne` a `Zone` con `onDelete: 'CASCADE'`, `zoneId`, `createdAt`.
-- Invariantes verificados en codigo: un dispositivo pertenece a exactamente una zona; una zona pertenece a exactamente un usuario dueno; el `apiKey` se genera con `crypto.randomBytes(24).toString('hex')` al crear el dispositivo y se persiste en texto plano.
-- El `apiKey` se muestra completo solo una vez: `DeviceResponseDto` (usado en las listas y el detalle) no incluye `apiKey`; solo `DeviceCreatedResponseDto`, que extiende al anterior y es el tipo de retorno exclusivo de `POST /devices`, lo incluye. El propio codigo lo documenta en un comentario: "The response apiKey is shown in full only here. It is never returned again by any other endpoint."
+- `Zone` (raíz de agregado): `id`, `name`, `location` (opcional), `ownerId`, relación `ManyToOne` a `User` con `onDelete: 'CASCADE'`, `createdAt`, `updatedAt`.
+- `Device` (raíz de agregado): `id`, `name`, `apiKey` (único, `@Unique(['apiKey'])`), relación `ManyToOne` a `Zone` con `onDelete: 'CASCADE'`, `zoneId`, `createdAt`.
+- Invariantes verificados en código: un dispositivo pertenece a exactamente una zona; una zona pertenece a exactamente un usuario dueño; el `apiKey` se genera con `crypto.randomBytes(24).toString('hex')` al crear el dispositivo y se persiste en texto plano.
+- El `apiKey` se muestra completo solo una vez: `DeviceResponseDto` (usado en las listas y el detalle) no incluye `apiKey`; solo `DeviceCreatedResponseDto`, que extiende al anterior y es el tipo de retorno exclusivo de `POST /devices`, lo incluye. El propio código lo documenta en un comentario: "The response apiKey is shown in full only here. It is never returned again by any other endpoint."
 
 #### 4.2.3.2. Interface Layer
 
 | Endpoint | Guard | DTO / Query | Descripcion |
 |---|---|---|---|
 | `POST /api/v1/zones` | `JwtAuthGuard` | `CreateZoneDto` | Crea una zona para el usuario autenticado |
-| `GET /api/v1/zones` | `JwtAuthGuard` | — | Lista zonas del usuario autenticado |
-| `GET /api/v1/zones/:id` | `JwtAuthGuard` | — | Obtiene una zona por id, solo si pertenece al usuario |
+| `GET /api/v1/zones` | `JwtAuthGuard` | No aplica | Lista zonas del usuario autenticado |
+| `GET /api/v1/zones/:id` | `JwtAuthGuard` | No aplica | Obtiene una zona por id, solo si pertenece al usuario |
 | `PATCH /api/v1/zones/:id` | `JwtAuthGuard` | `UpdateZoneDto` | Actualiza una zona propia |
-| `DELETE /api/v1/zones/:id` | `JwtAuthGuard` | — | Elimina una zona propia |
-| `POST /api/v1/devices` | `JwtAuthGuard` | `CreateDeviceDto` | Registra un dispositivo bajo una zona propia; retorna el apiKey por unica vez |
+| `DELETE /api/v1/zones/:id` | `JwtAuthGuard` | No aplica | Elimina una zona propia |
+| `POST /api/v1/devices` | `JwtAuthGuard` | `CreateDeviceDto` | Registra un dispositivo bajo una zona propia; retorna el apiKey por única vez |
 | `GET /api/v1/devices` | `JwtAuthGuard` | query opcional `zone_id` | Lista dispositivos del usuario, sin apiKey |
-| `GET /api/v1/devices/:id` | `JwtAuthGuard` | — | Detalle de un dispositivo con estado online/offline y ultima lectura |
+| `GET /api/v1/devices/:id` | `JwtAuthGuard` | No aplica | Detalle de un dispositivo con estado online/offline y última lectura |
 
 Todos protegidos por `JwtAuthGuard` (contexto Identidad y Acceso) y documentados con `@ApiBearerAuth()`.
 
 #### 4.2.3.3. Application Layer
 
 - `ZonesService.create/findAllForOwner/findOneForOwner/update/remove`: el ownership se resuelve filtrando siempre por `ownerId` en la consulta (`findOne({ where: { id, ownerId } })`), de forma que una zona ajena nunca se distingue de una zona inexistente (ambas devuelven `NotFoundException`).
-- `DevicesService.create(dto, ownerId)`: primero busca la zona con `{ id: dto.zoneId, ownerId }` para verificar que existe y pertenece al usuario; si pasa, genera el `apiKey` y crea el dispositivo; retorna la respuesta que incluye el apiKey una unica vez.
-- `DevicesService.findAllForOwner`: usa `createQueryBuilder` con `leftJoin` a `Zone` y filtra por `zone.ownerId`, es decir el ownership de un dispositivo se resuelve siempre a traves de su zona, nunca con una columna de dueno directa en `Device`.
-- `DevicesService.getStatus(device)`: busca la ultima `Reading` del dispositivo por `deviceId` y calcula `isOnline` comparando su antigüedad contra `DEVICE_ONLINE_WINDOW_SECONDS` (variable de entorno, 300 segundos por defecto). Este es el unico punto donde el contexto consulta directamente una entidad de Monitoreo y Alertas.
+- `DevicesService.create(dto, ownerId)`: primero busca la zona con `{ id: dto.zoneId, ownerId }` para verificar que existe y pertenece al usuario; si pasa, genera el `apiKey` y crea el dispositivo; retorna la respuesta que incluye el apiKey una única vez.
+- `DevicesService.findAllForOwner`: usa `createQueryBuilder` con `leftJoin` a `Zone` y filtra por `zone.ownerId`, es decir el ownership de un dispositivo se resuelve siempre a traves de su zona, nunca con una columna de dueño directa en `Device`.
+- `DevicesService.getStatus(device)`: busca la última `Reading` del dispositivo por `deviceId` y calcula `isOnline` comparando su antigüedad contra `DEVICE_ONLINE_WINDOW_SECONDS` (variable de entorno, 300 segundos por defecto). Este es el único punto donde el contexto consulta directamente una entidad de Monitoreo y Alertas.
 
 #### 4.2.3.4. Infrastructure Layer
 
-- Repositorios TypeORM estandar para `Zone` y `Device`. `DevicesModule` registra ademas la entidad `Reading` (de `src/telemetry`) para poder resolver `getStatus`, un acoplamiento directo y explicito entre este contexto y Monitoreo y Alertas.
-- Relacion con Identidad y Acceso: `Zone.ownerId` es FK a `User`, con `onDelete: 'CASCADE'` (si se elimina el usuario dueno, se eliminan sus zonas y, en cascada, sus dispositivos).
-- Relacion con Monitoreo y Alertas: `Reading`/`Alert` referencian `zoneId`/`deviceId` como FK hacia este contexto; el limite se cruza en la direccion opuesta solo para el calculo de estado online/offline.
+- Repositorios TypeORM estándar para `Zone` y `Device`. `DevicesModule` registra además la entidad `Reading` (de `src/telemetry`) para poder resolver `getStatus`, un acoplamiento directo y explicito entre este contexto y Monitoreo y Alertas.
+- Relación con Identidad y Acceso: `Zone.ownerId` es FK a `User`, con `onDelete: 'CASCADE'` (si se elimina el usuario dueño, se eliminan sus zonas y, en cascada, sus dispositivos).
+- Relación con Monitoreo y Alertas: `Reading`/`Alert` referencian `zoneId`/`deviceId` como FK hacia este contexto; el límite se cruza en la dirección opuesta solo para el cálculo de estado online/offline.
 
 #### 4.2.3.5. Bounded Context Software Architecture Component Level Diagrams
 
@@ -2290,36 +2090,36 @@ Todos protegidos por `JwtAuthGuard` (contexto Identidad y Acceso) y documentados
 
 `location` es nullable en la entidad `Zone`; `apiKey` no lo es, siempre se genera al crear el dispositivo y nunca queda vacio.
 
-### 4.2.4. Bounded Context: Deteccion y Relay de Borde
+### 4.2.4. Bounded Context: Detección y Relay de Borde
 
-Junto con Monitoreo y Alertas, este es el otro subdominio core del producto: decide en el sitio, sin depender de la nube, si lo que ve la camara amerita una reaccion inmediata, y despues reenvia esa informacion a la nube tolerando cortes de red. Vive en `securiot-edge-api/app` (Flask + Peewee, buffer local en SQLite).
+Junto con Monitoreo y Alertas, este es el otro subdominio core del producto: decide en el sitio, sin depender de la nube, si lo que ve la cámara amerita una reacción inmediata, y después reenvía esa información a la nube tolerando cortes de red. Vive en `securiot-edge-api/app` (Flask + Peewee, buffer local en SQLite).
 
 #### 4.2.4.1. Domain Layer
 
-- Unico modelo Peewee, `Reading`: `reading_id` (unico), `device_id`, `zone_id`, `sensor_type`, `value`, `recorded_at`, `synced` (booleano, `False` por defecto), `sync_attempts` (entero, `0` por defecto), `next_attempt_at`, `created_at`. No existe una tabla separada de "evento de deteccion": una deteccion de camara se guarda como un `Reading` mas, con `sensor_type="camera_detection"`.
+- Único modelo Peewee, `Reading`: `reading_id` (único), `device_id`, `zone_id`, `sensor_type`, `value`, `recorded_at`, `synced` (booleano, `False` por defecto), `sync_attempts` (entero, `0` por defecto), `next_attempt_at`, `created_at`. No existe una tabla separada de "evento de detección": una detección de cámara se guarda como un `Reading` más, con `sensor_type="camera_detection"`.
 - Relay idempotente por `reading_id`: `reading_buffer.buffer_reading()` inserta con `on_conflict_ignore()`, apoyado en el constraint `unique=True` de `reading_id`, de forma que reenviar la misma lectura (algo frecuente por el reintento del propio relay) nunca la duplica.
-- Backoff exponencial: `_backoff_seconds(sync_attempts) = min(2 ** sync_attempts, 300)`, techo de 300 segundos. El ciclo de relay solo selecciona lecturas no sincronizadas cuyo `next_attempt_at` ya vencio (o es nulo).
-- Debounce de detecciones: `debounce.record(device_id, qualifying)` lleva un contador en memoria por dispositivo (umbral por defecto de 2, configurable via `DETECTION_DEBOUNCE_COUNT`) y devuelve `escalate=True` una sola vez, exactamente en el frame donde el contador alcanza el umbral, no en los siguientes.
-- Cooldown del actuador de puerta: un dispositivo no vuelve a disparar `door_action` para el mismo device hasta que pasan `DOOR_ACTION_COOLDOWN_SECONDS` (30 segundos por defecto) desde el ultimo disparo, aunque el tracking de camara (pan/tilt) sigue activo durante todo el episodio.
+- Backoff exponencial: `_backoff_seconds(sync_attempts) = min(2 ** sync_attempts, 300)`, techo de 300 segundos. El ciclo de relay solo selecciona lecturas no sincronizadas cuyo `next_attempt_at` ya venció (o es nulo).
+- Debounce de detecciones: `debounce.record(device_id, qualifying)` lleva un contador en memoria por dispositivo (umbral por defecto de 2, configurable vía `DETECTION_DEBOUNCE_COUNT`) y devuelve `escalate=True` una sola vez, exactamente en el frame donde el contador alcanza el umbral, no en los siguientes.
+- Cooldown del actuador de puerta: un dispositivo no vuelve a disparar `door_action` para el mismo device hasta que pasan `DOOR_ACTION_COOLDOWN_SECONDS` (30 segundos por defecto) desde el último disparo, aunque el tracking de cámara (pan/tilt) sigue activo durante todo el episodio.
 
 #### 4.2.4.2. Interface Layer
 
 | Endpoint | Auth | Acepta | Retorna | Descripcion |
 |---|---|---|---|---|
 | `POST /ingest` | Header `X-Device-Key` contra un secreto compartido | JSON: `reading_id, device_id, zone_id, sensor_type, value, recorded_at` | `201 {"status":"buffered"}` | Ingesta generica de lecturas de sensores (PIR, reed switch, ultrasonico) |
-| `POST /frames` | Header `X-Device-Key` | `multipart/form-data`: `device_id`, `zone_id`, `frame` (imagen), opcional ancho/alto | `200 {"pan_delta","tilt_delta","door_action","alert"}` | Recibe un frame de la camara, corre deteccion y debounce, decide la reaccion inmediata |
+| `POST /frames` | Header `X-Device-Key` | `multipart/form-data`: `device_id`, `zone_id`, `frame` (imagen), opcional ancho/alto | `200 {"pan_delta","tilt_delta","door_action","alert"}` | Recibe un frame de la cámara, corre detección y debounce, decide la reacción inmediata |
 
-`/frames` valida que la imagen sea decodificable antes de invocar el detector, como mitigacion explicita frente a un ataque de denegacion de servicio con archivos malformados.
+`/frames` valida que la imagen sea decodificable antes de invocar el detector, como mitigación explícita frente a un ataque de denegación de servicio con archivos malformados.
 
 #### 4.2.4.3. Application Layer
 
-Flujo de `/frames`, de principio a fin: valida la clave del dispositivo, valida y guarda la imagen recibida, obtiene un detector (mock o YOLO segun configuracion), filtra las detecciones a las clases que importan (persona, o un objeto permitido configurable), pasa el resultado por `debounce.record` para decidir si escala, y si el episodio esta activo calcula el desplazamiento de pan/tilt hacia la persona detectada. En paralelo, siempre bufferiza una lectura `camera_detection`, y si el cooldown de puerta ya vencio, bufferiza tambien una lectura `door_contact` y devuelve la orden de bloqueo. El relay hacia la nube no ocurre dentro de esta peticion: un `BackgroundScheduler` (APScheduler) dispara `relay_cycle()` cada `RELAY_INTERVAL_SECONDS` (10 segundos por defecto), que selecciona las lecturas pendientes de sincronizar y las envia una por una.
+Flujo de `/frames`, de principio a fin: valida la clave del dispositivo, valida y guarda la imagen recibida, obtiene un detector (mock o YOLO según configuración), filtra las detecciones a las clases que importan (persona, o un objeto permitido configurable), pasa el resultado por `debounce.record` para decidir si escala, y si el episodio está activo calcula el desplazamiento de pan/tilt hacia la persona detectada. En paralelo, siempre bufferiza una lectura `camera_detection`, y si el cooldown de puerta ya venció, bufferiza también una lectura `door_contact` y devuelve la orden de bloqueo. El relay hacia la nube no ocurre dentro de esta petición: un `BackgroundScheduler` (APScheduler) dispara `relay_cycle()` cada `RELAY_INTERVAL_SECONDS` (10 segundos por defecto), que selecciona las lecturas pendientes de sincronizar y las envía una por una.
 
 #### 4.2.4.4. Infrastructure Layer
 
-- Persistencia local: SQLite (Peewee), unica tabla `Reading`, que actua como buffer de tolerancia a desconexion. Todo lo que entra por `/ingest` o `/frames` se guarda localmente antes de intentar llegar a la nube, lo que permite operar sin conexion y reintentar despues.
+- Persistencia local: SQLite (Peewee), única tabla `Reading`, que actúa como buffer de tolerancia a desconexión. Todo lo que entra por `/ingest` o `/frames` se guarda localmente antes de intentar llegar a la nube, lo que permite operar sin conexión y reintentar después.
 - Cliente de relay: `POST {CLOUD_API_URL}/api/v1/telemetry` con header `X-Device-Key: CLOUD_DEVICE_API_KEY`, hacia el endpoint de ingesta de Monitoreo y Alertas en la Cloud API. Un 2xx marca la lectura como sincronizada; cualquier otro resultado incrementa `sync_attempts` y aplica el backoff descrito en la capa de dominio.
-- Configuracion relevante via variables de entorno: `DEVICE_SHARED_SECRET`, `CLOUD_API_URL`, `CLOUD_DEVICE_API_KEY`, `RELAY_INTERVAL_SECONDS`, `DETECTION_BACKEND` (mock o yolo), `DETECTION_DEBOUNCE_COUNT`, `DOOR_ACTION_COOLDOWN_SECONDS`, `MAX_CONTENT_LENGTH` (2 MB por defecto, otro limite anti-DoS).
+- Configuración relevante vía variables de entorno: `DEVICE_SHARED_SECRET`, `CLOUD_API_URL`, `CLOUD_DEVICE_API_KEY`, `RELAY_INTERVAL_SECONDS`, `DETECTION_BACKEND` (mock o yolo), `DETECTION_DEBOUNCE_COUNT`, `DOOR_ACTION_COOLDOWN_SECONDS`, `MAX_CONTENT_LENGTH` (2 MB por defecto, otro límite anti-DoS).
 
 #### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams
 
@@ -2335,7 +2135,9 @@ Flujo de `/frames`, de principio a fin: valida la clave del dispositivo, valida 
 
 ![Structurizr Edge Detection and Relay database diagram](docs/architecture/diagrams/edge-database.png)
 
-Esta tabla vive unicamente en el SQLite local del Edge API. Es distinta de `READINGS`, la tabla de Postgres del contexto Monitoreo y Alertas (seccion 4.2.1.6.2): la del Edge es un buffer temporal de transito, la de la nube es el registro persistente que consultan el Web App y el Mobile App.
+Esta tabla vive únicamente en el SQLite local del Edge API. Es distinta de `READINGS`, la tabla de Postgres del contexto Monitoreo y Alertas (sección 4.2.1.6.2): la del Edge es un buffer temporal de tránsito, la de la nube es el registro persistente que consultan el Web App y el Mobile App.
+
+<div style="page-break-after: always;"></div>
 
 # Capítulo V: Solution UI/UX Design
 
@@ -2416,6 +2218,8 @@ _Pendiente de desarrollo._
 ## 5.6. IoT Device Design
 
 _Pendiente de desarrollo._
+
+<div style="page-break-after: always;"></div>
 
 # Capítulo VI: Product Implementation, Validation & Deployment
 
@@ -2585,6 +2389,8 @@ _Pendiente de desarrollo._
 
 _Pendiente de desarrollo._
 
+<div style="page-break-after: always;"></div>
+
 # Conclusiones
 
 ## Conclusiones y recomendaciones
@@ -2595,7 +2401,7 @@ _Pendiente de desarrollo._
 
 2. El 100% de los administradores de seguridad depende de la intervención física del personal, reporta falsas alarmas y elabora evidencia y reportes de forma manual o lenta. En el conjunto de los tres segmentos, el 100% percibe valor en alertas más rápidas, automáticas o contextualizadas, y el 77.8% describe procesos fragmentados o manuales.
 
-3. 
+3. La especificación de requisitos y el diseño arquitectónico traducen los hallazgos de las entrevistas en una propuesta coherente para SECURIOT. Las ocho épicas y las 23 User Stories cubren el monitoreo, el control de accesos, las alertas, la trazabilidad, la gestión multi-sede y la continuidad operativa mediante procesamiento en el borde. Esta correspondencia permite avanzar hacia TB1 con un alcance verificable, aunque todavía se requiere validar la propuesta con prototipos y usuarios reales.
 
 ### Recomendaciones
 
@@ -2609,20 +2415,27 @@ _Pendiente de desarrollo._
 
 _Pendiente de desarrollo._
 
+<div style="page-break-after: always;"></div>
+
 # Bibliografía
 
-Brown, S. (s.f.). The C4 model for visualising software architecture. https://c4model.com/
+Adzic, G. (2012). *Impact mapping: Making a big impact with software products and projects*. Provoking Thoughts. https://www.impactmapping.org/book.html
 
-Congreso de la República del Perú. (2011). Ley N.° 29733, Ley de Protección de Datos Personales. Diario Oficial El Peruano.
+Brown, S. (s. f.). *The C4 model for visualising software architecture*. C4 model. https://c4model.com/
 
-Conventional Commits. (s.f.). Conventional Commits 1.0.0. https://www.conventionalcommits.org/
+Congreso de la República del Perú. (2011). *Ley N.° 29733, Ley de Protección de Datos Personales*. Diario Oficial El Peruano.
 
-Evans, E. (2003). Domain-driven design: Tackling complexity in the heart of software. Addison-Wesley.
+Conventional Commits. (s. f.). *Conventional Commits 1.0.0*. https://www.conventionalcommits.org/en/v1.0.0/
 
+Evans, E. (2003). *Domain-driven design: Tackling complexity in the heart of software*. Addison-Wesley.
+
+Gothelf, J., & Seiden, J. (2021). *Lean UX: Designing great products with agile teams* (3.ª ed.). O'Reilly Media. https://www.oreilly.com/library/view/lean-ux-3rd/9781098116293/
+
+<div style="page-break-after: always;"></div>
 
 # Anexos
 
-## Anexo A. Síntesis estadística de las entrevistas de Needfinding**
+## Anexo A. Síntesis estadística de las entrevistas de Needfinding
 
 Fuente: sección 2.2.3. Se entrevistaron 9 personas (3 por segmento). Los porcentajes son descriptivos: 3 de 3 equivale a 100%, 2 de 3 a 66.7% y 1 de 3 a 33.3%.
 
@@ -2644,6 +2457,8 @@ Fuente: sección 2.2.3. Se entrevistaron 9 personas (3 por segmento). Los porcen
 | Transversal (9 de 9) | Procesos fragmentados, manuales o dependientes de varias herramientas | 7 de 9 | 77.8% |
 | Transversal (9 de 9) | Factores técnicos (entorno, integración, conectividad) condicionan el uso | 6 de 9 | 66.7% |
 
+<div style="page-break-after: always;"></div>
+
 ## Anexo B. Matriz de trazabilidad: hipótesis, hallazgos y requisitos
 
 La numeración de épicas sigue el patrón del Product Backlog (EP-0n corresponde a HS-0n). Verificar EP-01 y EP-02 contra la sección 3.1 antes de exportar.
@@ -2656,6 +2471,8 @@ La numeración de épicas sigue el patrón del Product Backlog (EP-0n correspond
 | HS-04. Registro histórico y trazable | EP-04 | 100% de los administradores reporta evidencia manual; 66.7% de los gerentes valora el historial | Alto |
 | HS-05. Dashboard de monitoreo (Web y Mobile) | EP-05 | Experiencias diferenciadas por rol; 66.7% de los gerentes valora la supervisión remota | Medio-alto |
 | HS-06. Gestión remota multi-sede | EP-06 | Centralizar herramientas separadas (Aldair Salas); competidores sin panel multi-sede nativo | Medio: validar con gerentes de más de una sede |
+
+<div style="page-break-after: always;"></div>
 
 ## Anexo C. Riesgos y supuestos pendientes de validación
 
