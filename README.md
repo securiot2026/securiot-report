@@ -941,8 +941,7 @@ Todas las entrevistas fueron realizadas de manera virtual mediante **Google Meet
 | **Medio de entrevista** | Google Meet |
 | **Inicio** | 00:00 |
 | **Duración** | 4:23 |
-| **Video de la entrevista** | [Ver entrevista en Google Drive](https://drive.google.com/drive/folders/1jC7MRUZ4k6w8-7biKTMAuQqbS1o10VYm?usp=sharing) |
-
+| **Video de la entrevista** | [Ver entrevista en One Drive](https://upcedupe-my.sharepoint.com/:f:/g/personal/u20221g099_upc_edu_pe/IgBbxkOsndgNRaV7xCYUdO-0AbelM7Yy4CNRRWLcTLsXNRI?e=edMZ5F) https://upcedupe-my.sharepoint.com/:f:/g/personal/u20221g099_upc_edu_pe/IgBbxkOsndgNRaV7xCYUdO-0AbelM7Yy4CNRRWLcTLsXNRI?e=edMZ5F |
 **Evidencia de entrevista**
 
 <p align="center">
@@ -970,8 +969,7 @@ Finaliza expresando interés en incorporar una solución con visión computariza
 | **Medio de entrevista** | Google Meet |
 | **Inicio** | 00:00 |
 | **Duración** | 4:20 |
-| **Video de la entrevista** | [Ver entrevista en Google Drive](https://drive.google.com/drive/folders/1jC7MRUZ4k6w8-7biKTMAuQqbS1o10VYm?usp=sharing) |
-
+| **Video de la entrevista** | [Ver entrevista en One Drive](https://upcedupe-my.sharepoint.com/:f:/g/personal/u20221g099_upc_edu_pe/IgBbxkOsndgNRaV7xCYUdO-0AbelM7Yy4CNRRWLcTLsXNRI?e=edMZ5F) https://upcedupe-my.sharepoint.com/:f:/g/personal/u20221g099_upc_edu_pe/IgBbxkOsndgNRaV7xCYUdO-0AbelM7Yy4CNRRWLcTLsXNRI?e=edMZ5F |
 **Evidencia de entrevista**
 
 <p align="center">
@@ -999,8 +997,7 @@ Finaliza mostrando una postura favorable hacia una solución automatizada con vi
 | **Medio de entrevista** | Google Meet |
 | **Inicio** | 00:00 |
 | **Duración** | 4:19 |
-| **Video de la entrevista** | [Ver entrevista en Google Drive](https://drive.google.com/drive/folders/1jC7MRUZ4k6w8-7biKTMAuQqbS1o10VYm?usp=sharing) |
-
+| **Video de la entrevista** | [Ver entrevista en One Drive](https://upcedupe-my.sharepoint.com/:f:/g/personal/u20221g099_upc_edu_pe/IgBbxkOsndgNRaV7xCYUdO-0AbelM7Yy4CNRRWLcTLsXNRI?e=edMZ5F) https://upcedupe-my.sharepoint.com/:f:/g/personal/u20221g099_upc_edu_pe/IgBbxkOsndgNRaV7xCYUdO-0AbelM7Yy4CNRRWLcTLsXNRI?e=edMZ5F |
 **Evidencia de entrevista**
 
 <p align="center">
@@ -1030,8 +1027,7 @@ Finaliza expresando interés en una plataforma con visión computarizada e IA pa
 | **Medio de entrevista** | Google Meet |
 | **Inicio** | 00:00 |
 | **Duración** | 3:29 |
-| **Video de la entrevista** | [Ver entrevista en Google Drive](https://drive.google.com/drive/folders/1jC7MRUZ4k6w8-7biKTMAuQqbS1o10VYm?usp=sharing) |
-
+| **Video de la entrevista** | [Ver entrevista en One Drive](https://upcedupe-my.sharepoint.com/:f:/g/personal/u20221g099_upc_edu_pe/IgBbxkOsndgNRaV7xCYUdO-0AbelM7Yy4CNRRWLcTLsXNRI?e=edMZ5F) https://upcedupe-my.sharepoint.com/:f:/g/personal/u20221g099_upc_edu_pe/IgBbxkOsndgNRaV7xCYUdO-0AbelM7Yy4CNRRWLcTLsXNRI?e=edMZ5F |
 **Evidencia de entrevista**
 
 <p align="center">
@@ -1059,8 +1055,7 @@ Finaliza mostrando una actitud receptiva hacia la implementación de una aplicac
 | **Medio de entrevista** | Google Meet |
 | **Inicio** | 00:00 |
 | **Duración** | 4:11 |
-| **Video de la entrevista** | [Ver entrevista en Google Drive](https://drive.google.com/drive/folders/1jC7MRUZ4k6w8-7biKTMAuQqbS1o10VYm?usp=sharing) |
-
+| **Video de la entrevista** | [Ver entrevista en One Drive](https://upcedupe-my.sharepoint.com/:f:/g/personal/u20221g099_upc_edu_pe/IgBbxkOsndgNRaV7xCYUdO-0AbelM7Yy4CNRRWLcTLsXNRI?e=edMZ5F) https://upcedupe-my.sharepoint.com/:f:/g/personal/u20221g099_upc_edu_pe/IgBbxkOsndgNRaV7xCYUdO-0AbelM7Yy4CNRRWLcTLsXNRI?e=edMZ5F |
 **Evidencia de entrevista**
 
 <p align="center">
@@ -1084,8 +1079,7 @@ A partir de la entrevista realizada a Christopher Cabán, de 41 años y resident
 | **Medio de entrevista** | Google Meet |
 | **Inicio** | 00:00 |
 | **Duración** | 4:46 |
-| **Video de la entrevista** | [Ver entrevista en Google Drive](https://drive.google.com/drive/folders/1jC7MRUZ4k6w8-7biKTMAuQqbS1o10VYm?usp=sharing) |
-
+| **Video de la entrevista** | [Ver entrevista en One Drive](https://upcedupe-my.sharepoint.com/:f:/g/personal/u20221g099_upc_edu_pe/IgBbxkOsndgNRaV7xCYUdO-0AbelM7Yy4CNRRWLcTLsXNRI?e=edMZ5F) https://upcedupe-my.sharepoint.com/:f:/g/personal/u20221g099_upc_edu_pe/IgBbxkOsndgNRaV7xCYUdO-0AbelM7Yy4CNRRWLcTLsXNRI?e=edMZ5F |
 **Evidencia de entrevista**
 
 <p align="center">
@@ -1119,8 +1113,7 @@ Respecto a SECURIOT, considera que las alertas deben ser rápidas, claras y cont
 | **Medio de entrevista** | Google Meet |
 | **Inicio** | 00:00 |
 | **Duración** | 13:09 |
-| **Video de la entrevista** | [Ver entrevista en Google Drive](https://drive.google.com/drive/folders/1jC7MRUZ4k6w8-7biKTMAuQqbS1o10VYm?usp=sharing) |
-
+| **Video de la entrevista** | [Ver entrevista en One Drive](https://upcedupe-my.sharepoint.com/:f:/g/personal/u20221g099_upc_edu_pe/IgBbxkOsndgNRaV7xCYUdO-0AbelM7Yy4CNRRWLcTLsXNRI?e=edMZ5F) https://upcedupe-my.sharepoint.com/:f:/g/personal/u20221g099_upc_edu_pe/IgBbxkOsndgNRaV7xCYUdO-0AbelM7Yy4CNRRWLcTLsXNRI?e=edMZ5F |
 **Evidencia de entrevista**
 
 <p align="center">
@@ -1148,8 +1141,7 @@ Al evaluar nuevas tecnologías, considera importantes factores como la confiabil
 | **Medio de entrevista** | Google Meet |
 | **Inicio** | 00:00 |
 | **Duración** | 14:42 |
-| **Video de la entrevista** | [Ver entrevista en Google Drive](https://drive.google.com/drive/folders/1jC7MRUZ4k6w8-7biKTMAuQqbS1o10VYm?usp=sharing) |
-
+| **Video de la entrevista** | [Ver entrevista en One Drive](https://upcedupe-my.sharepoint.com/:f:/g/personal/u20221g099_upc_edu_pe/IgBbxkOsndgNRaV7xCYUdO-0AbelM7Yy4CNRRWLcTLsXNRI?e=edMZ5F) https://upcedupe-my.sharepoint.com/:f:/g/personal/u20221g099_upc_edu_pe/IgBbxkOsndgNRaV7xCYUdO-0AbelM7Yy4CNRRWLcTLsXNRI?e=edMZ5F |
 **Evidencia de entrevista**
 
 <p align="center">
@@ -1177,8 +1169,7 @@ Aldair considera beneficioso disponer de una plataforma que permita visualizar r
 | **Medio de entrevista** | Google Meet |
 | **Inicio** | 00:00 |
 | **Duración** | 4:57 |
-| **Video de la entrevista** | [Ver entrevista en Google Drive](https://drive.google.com/drive/folders/1jC7MRUZ4k6w8-7biKTMAuQqbS1o10VYm?usp=sharing) |
-
+| **Video de la entrevista** | [Ver entrevista en One Drive](https://upcedupe-my.sharepoint.com/:f:/g/personal/u20221g099_upc_edu_pe/IgBbxkOsndgNRaV7xCYUdO-0AbelM7Yy4CNRRWLcTLsXNRI?e=edMZ5F) https://upcedupe-my.sharepoint.com/:f:/g/personal/u20221g099_upc_edu_pe/IgBbxkOsndgNRaV7xCYUdO-0AbelM7Yy4CNRRWLcTLsXNRI?e=edMZ5F |
 **Evidencia de entrevista**
 
 <p align="center">
