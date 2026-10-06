@@ -226,6 +226,10 @@ También se identifica una oportunidad de mejora. Las versiones v1.10 a v1.17 se
     - [5.4.4. Applications User Flow Diagrams](#544-applications-user-flow-diagrams)
   - [5.5. Applications Prototyping](#55-applications-prototyping)
   - [5.6. IoT Device Design](#56-iot-device-design)
+    - [5.6.1. Componentes del prototipo](#561-Componentes-del-prototipo)
+    - [5.6.2. Diseño de circuito](#562-Diseño-de-circuito)
+    - [5.6.3. Diseño físico](#563-Diseño-físico)
+    - [5.6.4. Flujos de interacción del prototipo](#564-Flujos-de-interacción-del-prototipo)
 - [Capítulo VI: Product Implementation, Validation & Deployment](#capítulo-vi-product-implementation-validation--deployment)
   - [6.1. Software Configuration Management](#61-software-configuration-management)
     - [6.1.1. Software Development Environment Configuration](#611-software-development-environment-configuration)
@@ -2458,7 +2462,143 @@ _Pendiente de desarrollo._
 
 ## 5.6. IoT Device Design
 
-_Pendiente de desarrollo._
+El dispositivo IoT de SecurIoT, denominado **SecurIoT Vision Node**, es la unidad física que se instala en un punto de acceso, perímetro o zona restringida de la sede. Su función es observar el entorno, enviar observaciones al Edge API de la instalación y ejecutar en el lugar la respuesta que el Edge decide: seguir con la cámara a la persona detectada, bloquear la puerta y comunicar el estado mediante luz y sonido. El dispositivo no decide por sí mismo si existe una intrusión; esa decisión pertenece al bounded context **Detección y Relay de Borde** (sección 4.2.4), lo que mantiene el firmware simple y permite cambiar reglas sin reprogramar el hardware.
+
+Las decisiones de diseño se tomaron con cinco criterios:
+
+1. **Coherencia con la arquitectura.** El nodo solo conoce dos contratos HTTP del Edge API: `POST /ingest` para lecturas de sensores y `POST /frames` para frames de cámara. La respuesta de `/frames` (`pan_delta`, `tilt_delta`, `door_action`, `alert`) se traduce directamente en acciones físicas. El nodo nunca se comunica con la Cloud API.
+2. **Correspondencia con la guía de estilos IoT (sección 5.1.2).** Los cuatro estados digitales (Validando, Acceso autorizado, Intrusión y Sin conexión) tienen un equivalente físico que usa los mismos colores de la paleta y que se diferencia también por patrón de parpadeo y sonido, de modo que el color nunca es el único medio para comunicar el estado.
+3. **Hallazgos de las entrevistas (sección 2.2.3).** Los entrevistados reportaron entre 3 y 8 falsas alarmas por noche. Por eso la detección combina tres sensores de bajo costo como disparadores y deja la confirmación al Edge (YOLO, debounce de 2 frames y ArcFace). También pidieron alertas perceptibles en ambientes ruidosos (más de 85 dB), lo que justifica un buzzer de alto volumen y un indicador luminoso visible a distancia.
+4. **Seguridad de las personas y normativa de evacuación.** Los tres administradores entrevistados exigieron que el sistema respete las normas de evacuación de INDECI. La cerradura es de tipo **fail-safe**: queda bloqueada solo mientras recibe energía y se libera ante un corte eléctrico, e incluye un pulsador de salida mecánico del lado interno.
+5. **Bajo costo y componentes open-hardware.** Todos los componentes están disponibles en el mercado local y son compatibles con Arduino/ESP-IDF, en línea con el modelo de negocio dirigido a pymes.
+
+### 5.6.1. Componentes del prototipo
+
+| Componente | Modelo de referencia | Función en SecurIoT | Relación con el dominio |
+|---|---|---|---|
+| Microcontrolador con cámara | ESP32-S3 WROOM con cámara OV2640 y 8 MB de PSRAM | Captura frames, lee sensores, controla actuadores y se conecta por Wi-Fi al Edge API | Dispositivo (`Device`) registrado en una zona |
+| Sensor de movimiento | PIR HC-SR501 | Disparador de observación ante presencia en la zona | Lectura `motion` |
+| Contacto de puerta | Reed switch MC-38 | Detecta apertura de puerta o portón | Lectura `door_contact` (`open`/`closed`), regla `door_contact_open` |
+| Sensor de proximidad | Ultrasónico HC-SR04 | Detecta presencia a menos de 80 cm del punto de acceso | Lectura `proximity` |
+| Mecanismo pan/tilt | 2 servomotores SG90 con soporte | Reorienta la cámara hacia la persona detectada | Aplica `pan_delta` y `tilt_delta` |
+| Módulo de relé | Relé de 1 canal, 5 V, optoacoplado | Energiza la cerradura | Aplica `door_action = "lock"` |
+| Cerradura | Cerradura electromagnética de 12 V, fail-safe | Bloquea el punto de acceso sin impedir la evacuación | Respuesta local ante intrusión |
+| Indicador de estado | LED RGB direccionable WS2812 | Muestra el estado del nodo con colores de la paleta | Estados de la sección 5.1.2 |
+| Alarma sonora | Buzzer activo de 5 V con transistor 2N2222 | Señal sonora diferenciada por estado | Alarma (`Alarm`) local |
+| Pulsador de reconocimiento | Pulsador momentáneo (BOOT del módulo) | El vigilante silencia la alarma local al llegar al punto | Atención de alerta en campo |
+| Alimentación | Fuente de 12 V / 2 A con regulador step-down a 5 V | Energía para lógica, servos y cerradura | No aplica |
+| Gabinete | Caja plástica IP65 de 150 × 110 × 70 mm con ventana frontal | Protección contra polvo y humedad en planta industrial | No aplica |
+
+El ultrasónico trabaja a 5 V, por lo que su pin `ECHO` llega al ESP32-S3 a través de un divisor resistivo de 1 kΩ y 2 kΩ. Los servos se alimentan desde la línea de 5 V del regulador y no desde el pin del microcontrolador, compartiendo la tierra común.
+
+### 5.6.2. Diseño de circuito
+
+El circuito se elaboró en **Wokwi** con el ESP32-S3 DevKitC-1, que usa los mismos GPIO libres que el módulo ESP32-S3 con cámara. Los pines de la cámara (4 a 13 y 15 a 18) y los de la PSRAM octal (35 a 37) quedan reservados.
+
+| Señal | GPIO | Modo | Componente |
+|---|---:|---|---|
+| `PIR_OUT` | 14 | Entrada | PIR HC-SR501 |
+| `DOOR_CONTACT` | 21 | Entrada con pull-up | Reed switch MC-38 |
+| `ULTRA_TRIG` | 47 | Salida | HC-SR04 |
+| `ULTRA_ECHO` | 1 | Entrada (con divisor) | HC-SR04 |
+| `SERVO_PAN` | 41 | PWM 50 Hz | Servo SG90 horizontal |
+| `SERVO_TILT` | 42 | PWM 50 Hz | Servo SG90 vertical |
+| `LOCK_RELAY` | 2 | Salida | Relé de la cerradura |
+| `BUZZER` | 3 | Salida (tono) | Buzzer mediante 2N2222 |
+| `STATUS_LED` | 48 | Datos WS2812 | LED RGB de estado |
+| `ACK_BUTTON` | 0 | Entrada con pull-up | Pulsador de reconocimiento |
+
+**Figura 5.8.** Diagrama de circuito del SecurIoT Vision Node en Wokwi. Fuente: elaboración propia.
+
+<p align="center"><img src="docs/assets/chapter5/iot-device/wokwi-circuit.png" alt="Circuito del SecurIoT Vision Node en Wokwi con ESP32-S3, sensores PIR, reed switch y ultrasónico, servos pan/tilt, relé, buzzer y LED de estado" width="800"/></p>
+Proyecto en Wokwi: [SecurIoT Vision Node](URL_DEL_PROYECTO_WOKWI). Los archivos fuente de la simulación (`diagram.json`, `sketch.ino` y `libraries.txt`) se versionan en `docs/assets/chapter5/iot-device/wokwi/`.
+
+Wokwi no incluye un módulo de cámara ni puede llamar al Edge API de la instalación. Por eso la simulación agrega dos interruptores que reemplazan la respuesta del Edge: `SIM_AUTH` representa el resultado del reconocimiento (persona autorizada o no) y `SIM_LINK` representa la disponibilidad del Edge API en la LAN. El flujo cámara → Edge → respuesta se valida por separado con el arnés `scripts/run_test_folder.py` del repositorio `securiot-edge-api`, que reproduce frames de prueba contra `POST /frames`.
+
+El siguiente diagrama de bloques resume cómo se conectan los componentes con el resto de la solución:
+
+```mermaid
+flowchart LR
+    subgraph NODE[SecurIoT Vision Node - ESP32-S3]
+        CAM[Cámara OV2640]
+        PIR[PIR HC-SR501]
+        REED[Reed switch MC-38]
+        US[HC-SR04]
+        MCU((ESP32-S3))
+        SRV[Servos pan/tilt]
+        RLY[Relé + cerradura fail-safe]
+        LED[LED RGB de estado]
+        BZ[Buzzer]
+        BTN[Pulsador ACK]
+        CAM --> MCU
+        PIR --> MCU
+        REED --> MCU
+        US --> MCU
+        BTN --> MCU
+        MCU --> SRV
+        MCU --> RLY
+        MCU --> LED
+        MCU --> BZ
+    end
+    MCU -- "Wi-Fi LAN · mDNS edge-api.local<br/>POST /ingest · POST /frames<br/>X-Device-Key" --> EDGE[Edge API<br/>Flask + SQLite]
+    EDGE -- "pan_delta · tilt_delta<br/>door_action · alert" --> MCU
+    EDGE -- "HTTPS saliente con retry/backoff<br/>POST /api/v1/telemetry" --> CLOUD[Cloud API<br/>NestJS + PostgreSQL]
+```
+
+### 5.6.3. Diseño físico
+
+El nodo se monta en un gabinete IP65 fijado en la pared o en el marco del punto de acceso, a una altura de 2.2 a 2.5 m, para que la cámara cubra el ingreso y quede fuera del alcance de la mano. La distribución del gabinete responde a la guía de la sección 5.1.2:
+
+- **Cara frontal:** ventana de policarbonato para la cámara montada sobre el soporte pan/tilt, el PIR debajo de la cámara y el HC-SR04 orientado hacia el punto de paso.
+- **Indicador de estado:** LED RGB con difusor en la parte superior frontal, visible desde 10 m, junto al logotipo de SecurIoT en blanco.
+- **Lateral derecho:** pulsador de reconocimiento (ACK) con tapa, accesible para el vigilante sin herramientas.
+- **Parte inferior:** prensaestopas para la alimentación de 12 V y el cable del reed switch y la cerradura, con rejilla para el buzzer.
+- **Etiqueta interna:** identificador del dispositivo (por ejemplo `CAM-PN-02`) y zona asignada, iguales a los que muestra el panel web, según el Labeling System de la sección 5.2.2.
+
+### 5.6.4. Flujos de interacción del prototipo
+
+**Máquina de estados del nodo.**
+
+```mermaid
+stateDiagram-v2
+    [*] --> SinConexion: Encendido
+    SinConexion --> Operativo: Edge API disponible
+    Operativo --> SinConexion: Edge API no responde
+    Operativo --> Validando: PIR, reed switch o proximidad < 80 cm
+    Validando --> AccesoAutorizado: Edge reconoce persona autorizada
+    Validando --> Intrusion: Edge responde alert = true
+    AccesoAutorizado --> Operativo: 2.5 s
+    Intrusion --> Intrusion: pan/tilt sigue a la persona
+    Intrusion --> Operativo: ACK presionado y sin detecciones
+```
+
+**Flujo 1: detección de intrusión y respuesta local.** El PIR detecta movimiento en el almacén fuera de horario. El nodo pasa a Validando, captura un frame y lo envía a `POST /frames`. El Edge confirma la detección tras dos frames consecutivos (debounce), responde `alert = true` y `door_action = "lock"`, y bufferiza las lecturas `camera_detection` y `door_contact`. El nodo pasa a Intrusión, energiza la cerradura, activa la alarma y sigue a la persona con los servos usando `pan_delta` y `tilt_delta`. En paralelo, el relay del Edge envía las lecturas a la Cloud API, que genera la alerta que recibe el vigilante en la aplicación móvil.
+
+```mermaid
+sequenceDiagram
+    autonumber
+    participant S as Sensores (PIR / reed / HC-SR04)
+    participant N as Vision Node (ESP32-S3)
+    participant E as Edge API
+    participant C as Cloud API
+    participant G as Vigilante (App móvil)
+    S->>N: Movimiento detectado
+    N->>N: Estado Validando (LED Señal 4 Hz)
+    N->>E: POST /frames (frame JPEG, X-Device-Key)
+    E->>E: YOLO + debounce + ArcFace
+    E-->>N: {alert: true, door_action: "lock", pan_delta, tilt_delta}
+    N->>N: Estado Intrusión (LED Alerta 8 Hz, buzzer, cerradura)
+    E->>C: POST /api/v1/telemetry (relay con backoff)
+    C->>C: evaluateRule → Alert creada
+    G->>C: GET /api/v1/alerts
+    G->>N: Llega al punto y presiona ACK (silencia buzzer)
+```
+
+**Flujo 2: acceso autorizado.** Un operario autorizado abre la puerta del área de carga. El reed switch pasa a `open`, el nodo envía la lectura a `/ingest` y un frame a `/frames`. El Edge reconoce el rostro mediante ArcFace, por lo que no se ordena el bloqueo. El nodo muestra Acceso autorizado con un pitido corto y vuelve a Operativo.
+
+**Flujo 3: pérdida de conectividad.** Si el Edge API no responde, el nodo muestra Sin conexión con un patrón diferente al de intrusión, para que el vigilante no lo confunda con un evento de seguridad. Cuando el problema está entre el Edge y la nube, el nodo continúa operando con normalidad: el Edge conserva las lecturas en SQLite y las sincroniza sin duplicados al recuperar la conexión (US-21).
+ 
+---
 
 <div style="page-break-after: always;"></div>
 
