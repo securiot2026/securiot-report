@@ -2132,19 +2132,142 @@ Esta tabla vive únicamente en el SQLite local del Edge API. Es distinta de `REA
 
 # Capítulo V: Solution UI/UX Design
 
-_Pendiente de desarrollo._
+Este capítulo establece las decisiones de diseño que permiten presentar SecurIoT como una experiencia coherente en la Landing Page, el panel web, la aplicación móvil y las interfaces asociadas al dispositivo IoT. Las decisiones parten de la dirección visual de Centinela Labs y se adaptan al contexto de seguridad patrimonial, donde la información debe ser legible, inequívoca y oportuna.
 
 ## 5.1. Style Guidelines
 
-_Pendiente de desarrollo._
+La guía de estilos de SecurIoT articula la identidad de marca con el significado operativo de la interfaz. El sistema visual diferencia claramente el color destinado a comunicar la marca del color que representa estados reales de seguridad. Esta separación evita que una decisión decorativa pueda confundirse con una alerta, una autorización o un proceso de validación.
+
+La experiencia adopta cuatro principios:
+
+1. **Claridad operativa:** la zona, el dispositivo, el estado y la hora del evento deben reconocerse sin ambigüedad.
+2. **Jerarquía antes que decoración:** la composición prioriza la información que permite comprender y atender un incidente.
+3. **Consistencia entre productos:** los mismos términos, colores y estados se mantienen en web, móvil e IoT.
+4. **Respuesta visible:** toda acción del usuario debe producir confirmación, progreso o una explicación de error.
 
 ### 5.1.1. General Style Guidelines
 
-_Pendiente de desarrollo._
+**Identidad y concepto visual.** SecurIoT utiliza una estética tecnológica y sobria basada en fondos oscuros, tipografía de alto contraste y manchas radiales de color con grano. Estas manchas se reservan para superficies de marca, aperturas y pantallas inmersivas de estado. Los paneles que contienen datos operativos permanecen planos y sin grano para no reducir su precisión visual. El concepto se resume en el mensaje **“Detecta. Valida. Responde en el instante.”**, que conecta las capacidades de sensores, procesamiento en el Edge y respuesta frente a incidentes.
+
+**Marca.** El símbolo está construido a partir de anillos abiertos alrededor de un punto central. Puede interpretarse como señal, vigilancia, detección y alcance. Se contemplan tres composiciones: ícono independiente, lockup horizontal y lockup apilado.
+
+| Ícono | Lockup horizontal | Lockup apilado |
+|---|---|---|
+| <img src="docs/assets/chapter5/brand/securiot-icon-color.svg" alt="Ícono de SecurIoT en color Profundidad" width="130"/> | <img src="docs/assets/chapter5/brand/securiot-lockup-horizontal-color.svg" alt="Lockup horizontal de SecurIoT para fondo claro" width="300"/> | <img src="docs/assets/chapter5/brand/securiot-lockup-stacked-color.svg" alt="Lockup apilado de SecurIoT para fondo claro" width="190"/> |
+| Favicon, indicador físico o espacios reducidos. | Barras de navegación, encabezados y firmas. | Portadas, piezas verticales y presentaciones. |
+
+En fondos claros se emplea la versión a color, con “Secur” en negro e “IoT” en color Profundidad. En fondos oscuros o sobre manchas de marca se emplea la versión con texto blanco. No deben mezclarse ambas versiones en una misma pieza, deformarse las proporciones, rotarse el símbolo ni sustituirse los colores definidos. El ícono debe conservar espacio libre alrededor para que ninguna etiqueta, borde o imagen interfiera con su lectura.
+
+<p align="center"><img src="docs/assets/chapter5/style-guidelines/brand-variants.png" alt="Variantes del ícono y los lockups de SecurIoT para fondos claros y oscuros" width="620"/></p>
+
+**Figura 5.1.** Variantes de marca para fondos claros y oscuros. Fuente: elaboración propia.
+
+**Sistema de color.** La paleta contiene un color de marca, tres colores funcionales y tres neutros. El color Profundidad identifica la marca y las llamadas a la acción; no representa estados operativos. Señal, Verificado y Alerta comunican estados del sistema y no se utilizan como decoración.
+
+| Token | Valor | Uso principal | Restricción |
+|---|---|---|---|
+| Profundidad | `#1FD3C4` | Logo, CTA y mancha de fondo dominante. | No utilizar como estado de seguridad. |
+| Señal | `#6C7CE8` | Dispositivo o evento en validación. | Acompañar con texto o ícono. |
+| Verificado | `#22DD66` | Acceso autorizado o condición normal confirmada. | No utilizar como color decorativo. |
+| Alerta | `#FF5C6C` | Intrusión, evento crítico o acción fallida. | Reservar para información que requiere atención. |
+| Noche | `#0B0E14` | Fondo base del producto. | No reemplazar por negro puro dentro de la interfaz. |
+| Texto | `#EEF0F4` | Texto principal sobre fondo oscuro. | Mantener contraste suficiente con el fondo. |
+| Texto-mute | `#8B93A3` | Texto secundario, metadatos y ayudas. | No utilizar para información crítica. |
+
+Una pantalla puede contener una sola mancha dominante. Cuando el color representa un dato, se aplica de forma plana, sin grano ni difuminado. Los estados siempre se acompañan de una etiqueta, un ícono o una descripción; el color no constituye el único medio para comunicar información.
+
+<p align="center"><img src="docs/assets/chapter5/style-guidelines/color-system.png" alt="Muestras de los colores de marca, estados funcionales y neutros de SecurIoT" width="620"/></p>
+
+**Figura 5.2.** Sistema cromático de SecurIoT. Fuente: elaboración propia.
+
+**Tipografía.** El sistema combina tres familias con responsabilidades distintas:
+
+| Uso | Familia y peso | Tamaño de referencia | Aplicación |
+|---|---|---:|---|
+| H1 | Sora 700 | 40 a 52 px | Mensajes principales y aperturas. |
+| H2 | Sora 700 | 28 px | Títulos de secciones y módulos. |
+| Cuerpo | Schibsted Grotesk 400 | 16 px | Párrafos, instrucciones, botones y formularios. |
+| Datos | Martian Mono 400 | 15 px | Horas, identificadores, lecturas y valores técnicos. |
+
+La escala tipográfica debe adaptarse al ancho disponible sin alterar la jerarquía. Los textos se redactan en español claro y se evita escribir párrafos completos en mayúsculas. Martian Mono se limita a datos que necesitan alineación o reconocimiento rápido; no se utiliza para lectura prolongada.
+
+<p align="center"><img src="docs/assets/chapter5/style-guidelines/typography-system.png" alt="Muestras de Sora, Schibsted Grotesk y Martian Mono aplicadas a la jerarquía tipográfica" width="620"/></p>
+
+**Figura 5.3.** Jerarquía tipográfica y muestras de uso. Fuente: elaboración propia.
+
+**Espaciado, forma y composición.** Se adopta una retícula base de 8 px, con 4 px para ajustes internos pequeños. Los valores preferentes son 8, 16, 24, 32, 48 y 64 px. Las tarjetas usan radios de 12 a 16 px; controles y campos, radios de 8 a 12 px; y los badges pueden utilizar una forma de cápsula. El espacio debe separar grupos de información antes que recurrir a divisores excesivos. En paneles operativos se privilegia una jerarquía estable: título, estado, contenido principal, metadatos y acciones.
+
+<p align="center"><img src="docs/assets/chapter5/style-guidelines/spacing-scale.svg" alt="Escala visual de espaciado de 4 a 64 píxeles" width="700"/></p>
+
+**Figura 5.4.** Escala de espaciado adoptada para los productos digitales.
+
+**Tono de comunicación.** La personalidad verbal de SecurIoT es seria, profesional, respetuosa y serena. Durante la supervisión normal se utilizan mensajes breves y descriptivos. Ante una alerta, el lenguaje se vuelve directo y orientado a la acción, sin recurrir a expresiones alarmistas. Los mensajes de error indican qué ocurrió y qué puede hacer el usuario; se evitan códigos técnicos sin explicación.
+
+| Dimensión | Posición adoptada | Aplicación |
+|---|---|---|
+| Divertido / Serio | Serio | Comunica seguridad y control sin bromas que resten importancia a los incidentes. |
+| Casual / Formal | Formal y comprensible | Utiliza vocabulario profesional, frases breves y términos conocidos por el usuario. |
+| Irreverente / Respetuoso | Respetuoso | Evita culpabilizar al usuario y describe los problemas de manera objetiva. |
+| Entusiasta / Sereno | Sereno | Mantiene calma durante el monitoreo y utiliza urgencia controlada únicamente ante riesgos reales. |
+
+| Situación | Ejemplo recomendado | Evitar |
+|---|---|---|
+| Operación normal | “Todos los dispositivos están operativos.” | “¡Todo genial!” |
+| Validación | “Validando credencial de acceso.” | “Procesando...” sin contexto. |
+| Alerta | “Intrusión detectada en Perímetro Norte.” | “Error crítico” sin ubicación ni causa. |
+| Recuperación | “Conexión restablecida. Se sincronizaron 12 eventos.” | “OK”. |
+
+**Accesibilidad.** Las interfaces se diseñan tomando WCAG 2.2 como referencia. El texto normal debe alcanzar una relación de contraste mínima de 4.5:1, el texto grande 3:1 y los controles o indicadores gráficos esenciales 3:1. Los estados no se comunican exclusivamente mediante color, el foco de teclado permanece visible y el contenido puede ampliarse sin perder información ni funcionalidad (World Wide Web Consortium [W3C], 2023).
 
 ### 5.1.2. Web, Mobile and IoT Style Guidelines
 
-_Pendiente de desarrollo._
+Los productos de SecurIoT comparten identidad y vocabulario, pero ajustan la densidad, la navegación y la prioridad de la información al contexto de uso. La Landing Page explica la propuesta de valor; el panel web permite supervisar varias sedes y analizar eventos; la aplicación móvil facilita la respuesta del personal de vigilancia; y la interfaz física del dispositivo comunica condiciones básicas aun cuando la conectividad con la nube sea limitada.
+
+**Criterios por superficie.**
+
+| Superficie | Prioridad de diseño | Aplicación de la guía |
+|---|---|---|
+| Landing Page | Comunicar valor y conducir a contacto, demostración o inicio de sesión. | Hero con mancha radial y grano, titulares Sora, contenido breve, CTA en Profundidad y navegación simple. |
+| Panel web | Monitorear sedes, zonas, dispositivos, alertas e historial. | Mayor densidad de información, tarjetas planas, tablas legibles, filtros persistentes y estados visibles con etiqueta e ícono. |
+| Aplicación móvil | Recibir, ubicar y atender eventos durante el desplazamiento. | Una acción principal por vista, información crítica en la zona superior, controles cómodos y alertas con sede, zona, hora y evidencia. |
+| Interfaz IoT | Confirmar energía, conectividad, validación y alerta en el lugar. | Indicadores simples, correspondencia con los estados digitales y retroalimentación visual o sonora verificable. |
+
+<p align="center"><img src="docs/assets/chapter5/style-guidelines/web-visual-reference.png" alt="Aplicación de la dirección visual de SecurIoT en una interfaz web" width="620"/></p>
+
+**Figura 5.5.** Aplicación de la guía visual en web. Fuente: elaboración propia.
+
+<p align="center"><img src="docs/assets/chapter5/style-guidelines/mobile-visual-reference.png" alt="Aplicación de la dirección visual de SecurIoT en pantallas móviles" width="620"/></p>
+
+**Figura 5.6.** Aplicación de la guía visual en móvil. Fuente: elaboración propia.
+
+**Diseño responsive.** La composición se organiza con enfoque mobile-first y utiliza tres rangos de referencia:
+
+| Rango | Comportamiento esperado |
+|---|---|
+| Menos de 768 px | Navegación compacta, una columna y acciones principales al alcance inmediato. |
+| De 768 a 1023 px | Dos columnas cuando la comparación aporte valor y paneles secundarios contraíbles. |
+| Desde 1024 px | Navegación persistente, paneles múltiples y mayor densidad sin reducir la legibilidad. |
+
+Los componentes cambian de distribución, no de significado. Una alerta conserva el mismo nombre, color, ícono y prioridad en escritorio y móvil. Las tablas extensas pueden transformarse en tarjetas o permitir desplazamiento horizontal controlado, sin ocultar el identificador, el estado ni la acción principal.
+
+**Componentes e interacción.** Botones, enlaces, campos y controles contemplan estados normal, hover, focus, active, loading, disabled y error. El foco debe distinguirse mediante un contorno visible y no depender únicamente de un cambio de color. Las áreas táctiles mantienen un tamaño suficiente para evitar activaciones accidentales. Las acciones sensibles, como desbloquear un acceso o descartar una alerta, requieren confirmación y comunican el resultado.
+
+La animación se utiliza como retroalimentación y no como decoración. El único movimiento continuo previsto es el pulso de “en vivo”, porque confirma que existe una actualización activa. Las demás transiciones responden a acciones del usuario y deben respetar la preferencia de reducción de movimiento del dispositivo.
+
+**Estados operativos.** La equivalencia entre productos se mantiene de la siguiente manera:
+
+| Estado | Presentación digital | Presentación física propuesta |
+|---|---|---|
+| Validando | Señal `#6C7CE8`, texto “Validando” e indicador de progreso. | Indicador luminoso con patrón breve y diferenciable. |
+| Autorizado | Verificado `#22DD66`, texto “Acceso autorizado” e ícono de confirmación. | Confirmación luminosa y, cuando corresponda, señal sonora breve. |
+| Intrusión | Alerta `#FF5C6C`, ubicación, hora, evidencia y acción recomendada. | Indicador de alerta y señal sonora diferenciada según la configuración del sitio. |
+| Sin conexión | Neutro Texto-mute, texto “Sin conexión” y hora de la última comunicación. | Patrón de conectividad distinto de una intrusión. |
+
+Estas señales deben poder distinguirse por más de un atributo, como texto, ícono, duración o patrón. La definición final de componentes físicos, cantidades de indicadores y señales sonoras se documentará en la sección 5.6, manteniendo la correspondencia semántica establecida en esta guía.
+
+<p align="center"><img src="docs/assets/chapter5/style-guidelines/iot-physical-interface-guideline.svg" alt="Guía conceptual de los estados de una interfaz física IoT de SecurIoT" width="700"/></p>
+
+**Figura 5.7.** Correspondencia visual propuesta entre los estados digitales y la interfaz física IoT.
 
 ## 5.2. Information Architecture
 
@@ -2421,6 +2544,8 @@ Conventional Commits. (s. f.). *Conventional Commits 1.0.0*. https://www.convent
 Evans, E. (2003). *Domain-driven design: Tackling complexity in the heart of software*. Addison-Wesley.
 
 Gothelf, J., & Seiden, J. (2021). *Lean UX: Designing great products with agile teams* (3.ª ed.). O'Reilly Media. https://www.oreilly.com/library/view/lean-ux-3rd/9781098116293/
+
+World Wide Web Consortium. (2023, 5 de octubre). *Web Content Accessibility Guidelines (WCAG) 2.2*. https://www.w3.org/TR/2023/REC-WCAG22-20231005/
 
 <div style="page-break-after: always;"></div>
 
