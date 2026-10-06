@@ -2271,27 +2271,154 @@ Estas señales deben poder distinguirse por más de un atributo, como texto, íc
 
 ## 5.2. Information Architecture
 
-_Pendiente de desarrollo._
+La arquitectura de información de SecurIoT organiza el contenido según la intención de cada experiencia. La Landing Page ayuda al visitante a comprender el problema, la propuesta de valor y el siguiente paso comercial; el panel web permite supervisar y administrar la seguridad de una o varias sedes; y la aplicación móvil prioriza la recepción y atención de alertas durante el desplazamiento del personal de vigilancia.
+
+Las decisiones se apoyan en cuatro criterios:
+
+1. **Encontrabilidad:** las funciones se agrupan con términos del dominio que los usuarios reconocen, como sedes, zonas, dispositivos, alertas e historial.
+2. **Contexto visible:** toda información operativa indica la sede y la zona a las que pertenece, además de su estado y momento de actualización.
+3. **Prioridad por tarea:** la estructura presenta primero aquello que permite detectar, comprender o atender una situación de seguridad.
+4. **Divulgación progresiva:** los resúmenes muestran lo esencial y permiten acceder al detalle sin sobrecargar la vista inicial.
+
+La información se mantiene consistente entre superficies. Una alerta conserva su identificador, sede, zona, estado, severidad, hora y evidencia tanto en el panel web como en la aplicación móvil. Las diferencias de estructura responden al contexto de uso y no modifican el significado de los datos.
 
 ### 5.2.1. Organization Systems
 
-_Pendiente de desarrollo._
+SecurIoT combina sistemas jerárquicos, secuenciales y matriciales según la naturaleza de la tarea. No se impone una sola estructura a todo el producto, pues un visitante que evalúa la solución, un administrador que configura una sede y un guardia que atiende una alerta tienen objetivos distintos.
+
+**Organización visual y funcional.**
+
+| Superficie o conjunto de información | Sistema de organización | Aplicación en SecurIoT | Sustento |
+|---|---|---|---|
+| Landing Page | Secuencial | Propuesta de valor, problema, funcionamiento, beneficios, segmentos atendidos, demostración y contacto. | Conduce al visitante desde la comprensión inicial hasta una acción comercial sin exigir conocimiento previo del producto. |
+| Portafolio de seguridad | Jerárquico | Organización > sede > zona > dispositivo o persona autorizada. | Conserva el contexto físico de cada recurso y evita confundir información de instalaciones diferentes. |
+| Dashboard web | Matricial | Indicadores, alertas activas, estado de zonas y dispositivos se combinan por sede, periodo y estado. | Permite comparar condiciones y detectar excepciones desde una sola vista. |
+| Configuración de sede, zona, dispositivo o regla | Secuencial | Datos básicos > asociación > parámetros > revisión > confirmación. | Reduce omisiones en tareas que requieren varios datos relacionados. |
+| Atención de alertas | Secuencial | Notificación > revisión del contexto > confirmación de atención > registro de la respuesta > cierre. | Mantiene trazabilidad y orienta al personal durante una situación de presión. |
+| Historial y reportes | Matricial | Tabla o tarjetas con filtros combinables y acceso al detalle. | Facilita auditar grandes volúmenes de eventos sin perder la relación entre tiempo, ubicación y estado. |
+
+**Esquemas de categorización.**
+
+| Esquema | Contenido al que se aplica | Criterio específico |
+|---|---|---|
+| Por tópicos | Navegación principal y módulos del producto. | Monitoreo, Alertas, Sedes, Zonas, Dispositivos, Personas autorizadas, Historial, Reportes y Configuración. |
+| Cronológico | Alertas, eventos, lecturas, acciones y auditoría. | Orden descendente por defecto, mostrando primero el evento más reciente; el usuario puede cambiar a orden ascendente. |
+| Alfabético | Personas autorizadas, sedes, zonas y dispositivos cuando se consultan como catálogo. | Orden por nombre visible, con el identificador técnico como dato secundario. |
+| Por audiencia | Contenido y acciones disponibles después de iniciar sesión. | El administrador configura y supervisa; el guardia recibe y atiende alertas; el gerente consulta indicadores e informes. |
+| Por estado | Alertas, dispositivos y zonas en vistas operativas. | Los elementos críticos o sin conexión se presentan antes que los estados normales, sin sustituir la etiqueta textual por color. |
+
+En el panel web, el selector de sede define el contexto activo. Al cambiarlo, se actualizan zonas, dispositivos, alertas e indicadores, y el encabezado mantiene visible la sede seleccionada. Las vistas que consolidan varias sedes lo declaran mediante la etiqueta **“Todas las sedes”** para evitar que un agregado se interprete como información de una sola instalación.
 
 ### 5.2.2. Labeling Systems
 
-_Pendiente de desarrollo._
+Las etiquetas emplean español directo, sustantivos conocidos por los usuarios y el menor número de palabras que permita anticipar correctamente el contenido. Se evita utilizar nombres de servicios internos, siglas técnicas o términos de implementación como `ingest`, `frames`, `edge relay` o `bounded context` en la interfaz de usuario.
+
+**Etiquetas de navegación y contenido.**
+
+| Etiqueta | Representa o conduce a | Asociación que debe generar |
+|---|---|---|
+| Inicio | Resumen de la Landing Page o vista inicial de la aplicación móvil. | Punto de entrada y retorno seguro. |
+| Cómo funciona | Explicación de detección, validación y respuesta. | Comprensión del proceso de SecurIoT. |
+| Beneficios | Resultados esperados para la empresa. | Valor de centralización, rapidez y trazabilidad. |
+| Solicitar demo | Formulario de contacto comercial. | Inicio de una demostración guiada, sin implicar una compra inmediata. |
+| Iniciar sesión | Acceso autenticado al panel web. | Entrada para clientes y usuarios registrados. |
+| Dashboard | Indicadores y resumen operativo. | Visión general de la sede o del conjunto autorizado de sedes. |
+| Monitoreo | Estado actual de zonas y dispositivos. | Supervisión en tiempo real. |
+| Alertas | Eventos que requieren revisión o respuesta. | Bandeja operativa priorizada. |
+| Sedes | Instalaciones administradas por la organización. | Nivel superior de la estructura física. |
+| Zonas | Áreas monitoreadas dentro de una sede. | Ubicación donde se controla el acceso o perímetro. |
+| Dispositivos | Equipos IoT asociados a una zona. | Estado, configuración y telemetría del hardware. |
+| Personas autorizadas | Personas o credenciales habilitadas para una zona. | Gestión de permisos de acceso. |
+| Historial | Eventos y acciones registradas. | Consulta cronológica y auditoría. |
+| Reportes | Informes e indicadores exportables. | Evidencia para gestión, aseguradoras o autoridades. |
+| Reglas de alerta | Condiciones que generan una alerta. | Configuración del comportamiento de detección. |
+| Configuración | Preferencias, usuarios y parámetros permitidos. | Administración no operativa. |
+
+**Etiquetas de estado y acción.** Los estados se redactan como condiciones: **Validando**, **Acceso autorizado**, **Intrusión**, **Sin conexión**, **Pendiente**, **En atención**, **Atendida** y **Cerrada**. Las acciones utilizan verbo más objeto y expresan el resultado esperado: **Registrar sede**, **Agregar zona**, **Vincular dispositivo**, **Autorizar persona**, **Atender alerta**, **Cerrar alerta**, **Exportar reporte**, **Aplicar filtros** y **Limpiar filtros**. Una acción irreversible o sensible no se presenta con una etiqueta ambigua como “Aceptar”; la confirmación repite la acción concreta y sus consecuencias.
+
+Los identificadores técnicos se muestran como información secundaria. Por ejemplo, la interfaz presenta **“Cámara Perímetro Norte”** como nombre principal y `CAM-PN-02` como identificador. Las fechas se expresan con día, mes, año, hora y zona horaria cuando sean necesarias para auditoría; las cantidades siempre incluyen unidad o contexto, como **“12 alertas”** o **“Última conexión: hace 3 min”**.
 
 ### 5.2.3. SEO Tags and Meta Tags
 
-_Pendiente de desarrollo._
+La Landing Page es indexable y utiliza metadatos orientados a búsquedas relacionadas con seguridad patrimonial, monitoreo IoT y protección de instalaciones empresariales. El panel web autenticado no se indexa porque contiene información privada y específica de cada organización. Cada página conserva un título y una descripción propios para que el navegador, el historial y las tecnologías de asistencia comuniquen el contexto actual.
+
+**Landing Page.**
+
+| Página | `title` | `description` | `keywords` | `author` |
+|---|---|---|---|---|
+| Inicio | SecurIoT \| Seguridad patrimonial inteligente con IoT | Detecta accesos no autorizados e intrusiones en tiempo real con sensores IoT, procesamiento Edge y monitoreo centralizado. | seguridad IoT, seguridad patrimonial, detección de intrusiones, monitoreo empresarial, Edge Computing | Centinela Labs |
+| Cómo funciona | Cómo funciona SecurIoT \| Detección, validación y respuesta | Conoce cómo SecurIoT integra sensores, cámaras y procesamiento Edge para validar eventos y responder ante intrusiones. | sensores IoT, cámaras de seguridad, validación de accesos, alertas en tiempo real | Centinela Labs |
+| Solución | Solución SecurIoT para empresas \| Monitoreo de sedes y zonas | Centraliza sedes, zonas, dispositivos, alertas e historial de incidentes en una plataforma de seguridad patrimonial. | monitoreo de sedes, control de zonas, seguridad para pymes, plataforma de seguridad | Centinela Labs |
+| Contacto | Solicita una demo de SecurIoT \| Contacta al equipo | Solicita una demostración de SecurIoT y evalúa una solución de seguridad IoT para las instalaciones de tu empresa. | demo SecurIoT, contacto seguridad IoT, seguridad empresarial Perú | Centinela Labs |
+
+En todas las páginas públicas se configura `charset=UTF-8`, `viewport=width=device-width, initial-scale=1`, URL canónica, `robots=index, follow` y metadatos Open Graph con título, descripción, URL e imagen de marca. Las versiones en español e inglés declaran `lang`, enlaces `hreflang="es-PE"`, `hreflang="en"` y `hreflang="x-default"`. Las imágenes informativas cuentan con texto alternativo; las decorativas utilizan texto alternativo vacío.
+
+**Web Application.**
+
+| Vista principal | `title` | `description` | `keywords` | `author` | Directiva `robots` |
+|---|---|---|---|---|---|
+| Inicio de sesión | Iniciar sesión \| SecurIoT | Acceso seguro al panel de monitoreo de SecurIoT. | acceso SecurIoT, inicio de sesión, panel de seguridad | Centinela Labs | `noindex, nofollow` |
+| Dashboard | Dashboard \| SecurIoT | Resumen de indicadores, alertas y estado operativo de las sedes autorizadas. | dashboard de seguridad, indicadores, sedes, alertas activas | Centinela Labs | `noindex, nofollow` |
+| Alertas | Alertas \| SecurIoT | Consulta y atención de alertas de seguridad de la sede activa. | alertas de intrusión, atención de alertas, seguridad IoT | Centinela Labs | `noindex, nofollow` |
+| Monitoreo | Monitoreo \| SecurIoT | Estado actualizado de zonas y dispositivos IoT. | monitoreo IoT, zonas, dispositivos, conectividad | Centinela Labs | `noindex, nofollow` |
+| Historial | Historial de eventos \| SecurIoT | Consulta de eventos, acciones y evidencia registrada. | historial de eventos, trazabilidad, incidentes de seguridad | Centinela Labs | `noindex, nofollow` |
+| Reportes | Reportes \| SecurIoT | Indicadores e informes exportables de seguridad patrimonial. | reportes de incidentes, indicadores, evidencia, auditoría | Centinela Labs | `noindex, nofollow` |
+
+Los `keywords` describen el contenido de cada vista para cumplir la especificación documental y mantener una clasificación semántica coherente, pero no se utilizan para posicionar información privada. Además de la directiva `robots`, la aplicación protege el contenido mediante autenticación y autorización; ocultarlo a los buscadores no reemplaza los controles de acceso.
+
+**ASO de la aplicación móvil.**
+
+| Elemento | Valor propuesto |
+|---|---|
+| App Title | SecurIoT |
+| App Subtitle | Alertas de seguridad IoT |
+| App Keywords | seguridad, alertas, IoT, intrusión, vigilancia, monitoreo, accesos, incidentes |
+| App Description | Recibe alertas de intrusión, identifica la sede y zona afectadas, revisa la evidencia disponible y registra la respuesta desde tu dispositivo móvil. SecurIoT mantiene la trazabilidad de cada atención y sincroniza las acciones pendientes cuando se restablece la conexión. |
+
+El título y la descripción de la tienda no prometen funciones que no pertenezcan al alcance definido. Las capturas futuras deberán mostrar el contexto de una alerta, su atención y la confirmación del resultado sin exponer nombres, rostros ni datos reales de clientes.
 
 ### 5.2.4. Searching Systems
 
-_Pendiente de desarrollo._
+La búsqueda se concentra en las aplicaciones, donde el volumen de alertas, eventos, dispositivos y personas puede dificultar la localización manual. La Landing Page no incorpora un buscador global porque su contenido es breve y secuencial; la navegación por secciones permite llegar directamente a la información pública.
+
+| Conjunto de datos | Consulta de texto | Filtros disponibles | Presentación de resultados |
+|---|---|---|---|
+| Alertas | Identificador, sede, zona o dispositivo. | Sede, zona, estado, severidad y rango de fechas. | Tarjetas en móvil y tabla en web, ordenadas desde la más reciente y priorizando las alertas activas. |
+| Historial de eventos | Identificador, zona, dispositivo o tipo de evento. | Sede, zona, tipo, estado, origen y rango de fechas. | Línea de tiempo o tabla con fecha, ubicación, evento, estado y acceso al detalle. |
+| Dispositivos | Nombre o identificador. | Sede, zona, tipo de sensor, estado y conectividad. | Lista con nombre, ubicación, estado, última comunicación y acceso al detalle. |
+| Personas autorizadas | Nombre, documento o código de credencial. | Sede, zona, estado de autorización y vigencia. | Lista alfabética con zonas autorizadas y periodo de vigencia. |
+| Reportes e incidentes | Identificador o palabra incluida en el registro. | Sede, zona, estado, responsable y rango de fechas. | Tabla con resumen, fecha, responsable y acción para consultar o exportar. |
+
+La búsqueda se ejecuta al enviar la consulta o aplicar filtros, evitando solicitudes por cada carácter en conexiones inestables. Los filtros activos permanecen visibles como chips y pueden retirarse individualmente o mediante **“Limpiar filtros”**. La interfaz muestra la cantidad de resultados, el criterio de ordenamiento y, cuando corresponda, paginación o carga progresiva.
+
+Si no existen coincidencias, se diferencia entre **“No se encontraron resultados con estos filtros”** y **“Aún no hay registros”**. El primer caso ofrece limpiar o modificar filtros; el segundo explica que todavía no se generaron datos. Si la consulta falla, se conserva el criterio ingresado y se ofrece **“Reintentar”**, sin presentar información anterior como si estuviera actualizada.
+
+La búsqueda respeta los permisos de la cuenta. Los resultados se limitan a la organización y sedes autorizadas antes de aplicar filtros o coincidencias de texto, de modo que una búsqueda no permita inferir la existencia de recursos ajenos.
 
 ### 5.2.5. Navigation Systems
 
-_Pendiente de desarrollo._
+La navegación utiliza una combinación de navegación global, local, contextual y suplementaria. Las opciones mantienen el mismo nombre en todas las superficies y el sistema siempre comunica la ubicación actual, el contexto activo y la forma de regresar.
+
+**Landing Page.** La navegación global se presenta en el encabezado con **Inicio**, **Cómo funciona**, **Solución**, **Beneficios** y **Contacto**. Las acciones **Iniciar sesión** y **Solicitar demo** se distinguen de los enlaces informativos. En móvil, estas opciones se agrupan en un menú accesible que puede abrirse y cerrarse mediante teclado, conserva el foco y comunica su estado. El logotipo dirige a Inicio y el pie repite los accesos esenciales, la información de contacto, la política de privacidad y el selector de idioma.
+
+El recorrido recomendado es Inicio > Cómo funciona > Beneficios > Solicitar demo. Sin embargo, las secciones admiten acceso directo mediante URL o ancla para que el visitante no tenga que completar el recorrido lineal. Después de enviar el formulario, la confirmación informa que la solicitud fue registrada y ofrece volver al inicio.
+
+**Panel web.** La navegación global utiliza un menú lateral persistente en escritorio y contraíble en anchos menores. Incluye **Dashboard**, **Monitoreo**, **Alertas**, **Sedes**, **Historial**, **Reportes** y **Configuración**. Las opciones locales dependen del módulo: dentro de una sede se accede a **Resumen**, **Zonas**, **Dispositivos**, **Personas autorizadas** y **Reglas de alerta**. El selector de sede se ubica en el encabezado y no se confunde con el menú de cuenta.
+
+Las rutas jerárquicas muestran breadcrumbs cuando existen tres o más niveles, por ejemplo: **Sedes > Planta Norte > Perímetro Norte > Cámara 02**. El breadcrumb sirve para regresar a un nivel conocido, mientras que el botón Atrás del navegador conserva el estado anterior, incluidos filtros y página de resultados. Los enlaces contextuales conectan una alerta con su zona, dispositivo, evidencia e historial sin duplicar esos contenidos.
+
+**Aplicación móvil.** La navegación principal inferior contiene **Inicio**, **Alertas**, **Historial** y **Perfil**. Inicio resume el estado de la sede asignada y las alertas activas; Alertas abre la bandeja operativa; Historial permite consultar atenciones anteriores; y Perfil contiene la sesión, preferencias y estado de sincronización. La selección de sede aparece únicamente para usuarios autorizados a más de una instalación.
+
+La atención de una alerta utiliza navegación apilada: **Alertas > Detalle de alerta > Registrar respuesta > Confirmación**. El usuario puede regresar sin perder la información ya consultada; si intenta abandonar una respuesta no guardada, la aplicación solicita confirmación. Cuando no hay conexión, el encabezado muestra el estado y las acciones guardadas localmente se identifican como **Pendientes de sincronización**.
+
+**Reglas transversales.**
+
+- La opción activa se diferencia mediante texto, forma e indicador visual, no solo mediante color.
+- Cada vista tiene un único encabezado principal y una acción primaria claramente identificable.
+- Las notificaciones enlazan al detalle exacto de la alerta, siempre que el usuario conserve autorización.
+- Los errores de autorización conducen a una vista segura y no revelan información del recurso solicitado.
+- Después de crear, editar, atender o cerrar un elemento, la interfaz confirma el resultado y ofrece un camino explícito al detalle o a la lista de origen.
+- Los enlaces externos se identifican como tales y no sustituyen inesperadamente una tarea operativa en curso.
 
 ## 5.3. Landing Page UI Design
 
