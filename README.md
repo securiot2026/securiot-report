@@ -2604,27 +2604,225 @@ sequenceDiagram
 
 # Capítulo VI: Product Implementation, Validation & Deployment
 
-_Pendiente de desarrollo._
-
 ## 6.1. Software Configuration Management
 
-_Pendiente de desarrollo._
+Esta sección define las herramientas, la organización del control de versiones, las convenciones de código y la configuración de despliegue que el equipo adopta durante todo el ciclo de vida del producto. Su objetivo es que cualquier integrante pueda clonar un repositorio, ejecutarlo localmente, contribuir siguiendo las mismas reglas y desplegarlo de forma reproducible.
 
 ### 6.1.1. Software Development Environment Configuration
 
-_Pendiente de desarrollo._
+Las herramientas se seleccionaron respetando las restricciones tecnológicas del curso. Para cada una se indica su propósito y la ruta de referencia (SaaS) o de descarga (software local).
+
+**Project Management y Requirements Management**
+
+| Producto | Propósito en el proyecto | Ruta |
+|---|---|---|
+| Trello | Product Backlog, Sprint Backlogs y seguimiento de tareas por estado | https://trello.com/b/EzAo1DBl/securiot-product-backlog |
+| GitHub (organización `securiot2026`) | Repositorios, pull requests, revisión de código e Insights de colaboración | https://github.com/securiot2026 |
+| Google Sheets | Cronograma de tareas por entrega con responsable, prioridad y estado | https://docs.google.com/spreadsheets |
+| Google Meet | Sprint Planning, Daily, Sprint Review, Retrospective y entrevistas | https://meet.google.com |
+| Microsoft Clipchamp / Stream | Edición y publicación de videos de entrevistas, exposición y producto | https://clipchamp.com |
+
+**Product UX/UI Design**
+
+| Producto | Propósito en el proyecto | Ruta |
+|---|---|---|
+| UXPressia | User Personas, Empathy Maps, User Journey Maps e Impact Map | https://uxpressia.com |
+| Figma | Wireframes, Mock-ups y prototipos de Landing Page, Web App y Mobile App | https://www.figma.com |
+| FigJam | Wireflows y User Flows | https://www.figma.com/figjam |
+| Miro | Big Picture y Design-Level EventStorming | https://miro.com |
+| Structurizr (DSL) | Diagramas C4 generados desde `docs/architecture/workspace.dsl` | https://structurizr.com |
+| Mermaid | Domain Message Flows, máquina de estados y diagramas de secuencia en Markdown | https://mermaid.js.org |
+| Wokwi | Diseño y simulación del circuito del Vision Node | https://wokwi.com |
+
+**Software Development**
+
+| Producto | Propósito en el proyecto | Ruta |
+|---|---|---|
+| Git | Control de versiones local | https://git-scm.com/downloads |
+| Visual Studio Code | Editor principal para Landing Page, Edge API, firmware y Markdown | https://code.visualstudio.com/download |
+| WebStorm / IntelliJ IDEA (licencia educativa) | IDE alternativo para Angular y NestJS | https://www.jetbrains.com/webstorm/download |
+| Node.js 22 LTS y npm | Runtime y gestor de paquetes de Cloud API y Web App | https://nodejs.org/en/download |
+| NestJS CLI 11 | Generación y ejecución de la Cloud API (TypeScript, TypeORM) | https://docs.nestjs.com/cli/overview |
+| Angular CLI 18 + Angular Material | Desarrollo de la Web App | https://angular.dev/tools/cli |
+| Python 3.12 | Runtime del Edge API (Flask, Peewee, APScheduler, Ultralytics) | https://www.python.org/downloads |
+| Flutter SDK y Dart | Desarrollo de la Mobile App multiplataforma | https://docs.flutter.dev/get-started/install |
+| Android Studio | Emulador Android y SDK para la Mobile App | https://developer.android.com/studio |
+| PlatformIO (extensión de VS Code) / Arduino IDE 2 | Compilación y carga del firmware C++ del ESP32-S3 | https://platformio.org/install/ide?install=vscode |
+| PostgreSQL 16 | Base de datos de la Cloud API (SQLite como alternativa local) | https://www.postgresql.org/download |
+| DB Browser for SQLite | Inspección del buffer local `edge.db` del Edge API | https://sqlitebrowser.org/dl |
+| Docker Desktop | Construcción y ejecución de imágenes de todos los servicios | https://www.docker.com/products/docker-desktop |
+
+**Software Testing**
+
+| Producto | Propósito en el proyecto | Ruta |
+|---|---|---|
+| Jest + Supertest | Pruebas unitarias y de integración (e2e) de la Cloud API | https://jestjs.io |
+| Cucumber.js | Pruebas de aceptación BDD con archivos `.feature` en Gherkin para la Cloud API | https://github.com/cucumber/cucumber-js |
+| Jasmine + Karma | Pruebas unitarias de la Web App | https://angular.dev/guide/testing |
+| pytest | Pruebas de relay, debounce, detección y `/frames` del Edge API | https://docs.pytest.org |
+| flutter_test | Pruebas unitarias y de widgets de la Mobile App | https://docs.flutter.dev/testing |
+| Postman | Pruebas manuales de endpoints | https://www.postman.com/downloads |
+| Swagger UI | Prueba interactiva de la documentación OpenAPI | `/api/docs` en la Cloud API |
+
+**Software Deployment**
+
+| Producto | Propósito en el proyecto | Ruta |
+|---|---|---|
+| Docker y Docker Compose | Imágenes reproducibles de Landing Page, Web App, Cloud API y Edge API | https://docs.docker.com |
+| VPS Linux con Nginx como reverse proxy | Hosting de Cloud API, Web App y Landing Page con HTTPS | Proveedor del VPS |
+| Let's Encrypt (Certbot) | Certificados TLS para los dominios públicos | https://certbot.eff.org |
+| GitHub Actions | Pipeline de build, pruebas y publicación de imágenes (US-22) | https://github.com/features/actions |
+| Firebase App Distribution | Distribución de la Mobile App a dispositivos de prueba | https://firebase.google.com/docs/app-distribution |
+
+**Software Documentation**
+
+| Producto | Propósito en el proyecto | Ruta |
+|---|---|---|
+| Markdown en GitHub (`README.md`) | Project Report y README de cada repositorio | https://www.markdownguide.org |
+| OpenAPI 3 con `@nestjs/swagger` | Documentación de los endpoints de la Cloud API | https://swagger.io/specification |
+| Markdown PDF / Pandoc | Exportación del informe a PDF en cada entrega | https://pandoc.org/installing.html |
 
 ### 6.1.2. Source Code Management
 
-_Pendiente de desarrollo._
+El equipo usa **GitHub** como plataforma y **Git** como sistema de control de versiones, dentro de la organización pública [securiot2026](https://github.com/securiot2026). Cada producto desplegable tiene su propio repositorio, en coherencia con el diagrama de contenedores de la sección 4.1.3.3.
+
+| Producto | Repositorio | Contenido |
+|---|---|---|
+| Project Report | https://github.com/securiot2026/securiot-report | Informe en Markdown, diagramas Structurizr DSL y assets |
+| Landing Page | https://github.com/securiot2026/securiot-landing | HTML5, CSS3 y JavaScript con i18n y a11y; Dockerfile con Nginx |
+| Web Services (Cloud API) | https://github.com/securiot2026/securiot-cloud-api | NestJS + TypeORM, pruebas unitarias en `src/**/*.spec.ts`, pruebas e2e en `test/*.e2e-spec.ts`; las pruebas BDD (`test/features/*.feature`) se incorporan en el Sprint 2 |
+| Frontend Web Application | https://github.com/securiot2026/securiot-web-app | Angular 18 + Angular Material, ngx-translate (en-US, es-419) |
+| Edge API | https://github.com/securiot2026/securiot-edge-api | Flask + Peewee + SQLite, YOLO y ArcFace, simulador de dispositivo y pruebas pytest |
+| Mobile Application | https://github.com/securiot2026/securiot-mobile-app | Flutter + Dart (repositorio a crear en Sprint 2) |
+| Embedded Application | https://github.com/securiot2026/securiot-embedded | Firmware C++ del ESP32-S3 con PlatformIO (repositorio a crear en Sprint 2) |
+
+**Workflow GitFlow.** Se aplica el modelo de Driessen (2010). Cada repositorio mantiene dos ramas permanentes y tres tipos de ramas temporales:
+
+| Rama | Origen | Se integra en | Propósito | Convención de nombre |
+|---|---|---|---|---|
+| `main` | No aplica | No aplica | Código en producción; cada commit en `main` corresponde a una versión etiquetada | `main` |
+| `develop` | `main` | `release/*` | Integración del trabajo del sprint | `develop` |
+| Feature | `develop` | `develop` | Una funcionalidad, User Story o sección del informe | `feature/<descripcion-en-kebab-case>` |
+| Release | `develop` | `main` y `develop` | Estabilización previa a una entrega (TB1, AV2, TB2) | `release/v<MAJOR>.<MINOR>.<PATCH>` |
+| Hotfix | `main` | `main` y `develop` | Corrección urgente de producción | `hotfix/v<MAJOR>.<MINOR>.<PATCH>` |
+
+Reglas acordadas:
+
+- Las feature branches se nombran en inglés, en minúsculas y con guiones, describiendo la funcionalidad. Ejemplos reales: `feature/auth-telemetry-spine`, `feature/zones-devices-alerting`, `feature/telemetry-relay`, `feature/dashboard-auth-i18n-a11y`. En el repositorio del informe se usa el prefijo `docs/` para secciones (`docs/chapter-4-strategic-ddd`) o `feature/` para entregables grandes (`feature/cap2-seg1-interviews`).
+- Toda integración a `develop` y a `main` se realiza mediante **pull request** revisado por al menos otro integrante. Las ramas temporales se eliminan después del merge.
+- `main` y `develop` se protegen en GitHub para impedir pushes directos.
+  **Semantic Versioning.** Las versiones siguen SemVer 2.0.0 (Preston-Werner, s. f.) con el formato `vMAJOR.MINOR.PATCH`: `MAJOR` cambia ante cambios incompatibles del contrato de la API o del dispositivo, `MINOR` ante funcionalidades compatibles y `PATCH` ante correcciones. Cada release fusionado en `main` se etiqueta con un tag anotado. Los repositorios de Landing Page, Web App, Cloud API y Edge API ya cuentan con la etiqueta `v1.0.0`, correspondiente a la primera versión desplegada.
+
+**Conventional Commits.** Los mensajes de commit siguen la especificación Conventional Commits 1.0.0 (Conventional Commits, s. f.):
+
+```
+<type>(<scope opcional>): <descripción en imperativo, en inglés y en minúsculas>
+ 
+<cuerpo opcional: qué cambia y por qué>
+ 
+<footer opcional: BREAKING CHANGE, referencias a US-XX>
+```
+
+| Tipo | Uso | Ejemplo real del proyecto |
+|---|---|---|
+| `feat` | Nueva funcionalidad | `feat(alerts): add GET /api/v1/alerts endpoint filterable by zone/device/status` |
+| `fix` | Corrección de un error | `fix: enable CORS, missing entirely on both local and the live VPS` |
+| `test` | Pruebas nuevas o modificadas | `test(devices): add failing e2e tests for detail with online status` |
+| `docs` | Documentación e informe | `docs(chapter5): add SecurIoT information architecture` |
+| `style` | Formato sin cambio de lógica | `style: align color, spacing, type and copy with the shared UI-SPEC` |
+| `refactor` | Reestructuración sin cambio funcional | `refactor(landing): align shared copy and language-selector pattern with UI-SPEC.md` |
+| `chore` | Configuración, dependencias o despliegue | `chore(deploy): add production Dockerfile` |
+| `ci` / `build` / `perf` | Pipeline, build y rendimiento | `ci: add docker image build workflow` |
 
 ### 6.1.3. Source Code Style Guide & Conventions
 
-_Pendiente de desarrollo._
+Todo el código usa **nomenclatura en inglés** para identificadores, archivos, rutas, mensajes de commit, nombres de tablas y mensajes de error de la API. El español se reserva para el informe y para los textos traducidos de la interfaz (catálogos `es-419`). Cada repositorio incluye un `.editorconfig` (UTF-8, indentación de 2 espacios en TypeScript, HTML y CSS, salto de línea final) y el formateador correspondiente.
+
+| Lenguaje / tecnología | Guía de referencia adoptada | Convenciones principales en SecurIoT |
+|---|---|---|
+| HTML5 | W3Schools HTML Style Guide; Google HTML/CSS Style Guide | Elementos y atributos en minúsculas, atributos entre comillas dobles, HTML semántico (`header`, `nav`, `main`, `section`, `footer`), `alt` en toda imagen, atributos ARIA y `lang` por idioma, `data-i18n` para textos traducibles |
+| CSS3 | Google HTML/CSS Style Guide | Metodología BEM (`site-header__inner`, `brand__mark`, `btn--primary`), tokens de color y espaciado como custom properties en `:root`, unidades relativas y media queries mobile-first |
+| JavaScript (Landing Page) | Google JavaScript Style Guide | `const`/`let`, `camelCase` para variables y funciones, módulos por responsabilidad (`i18n.js`, `main.js`), sin estilos en línea |
+| TypeScript (Angular) | Angular Style Guide; Google TypeScript Style Guide | Un componente por archivo, archivos en `kebab-case` con sufijo de tipo (`alerts.service.ts`, `login.component.ts`), clases en `PascalCase`, comillas simples, organización `core/`, `features/` y `shared/`, servicios `providedIn: 'root'` |
+| TypeScript (NestJS) | Google TypeScript Style Guide; NestJS documentation | Un módulo por bounded context (`auth`, `zones`, `devices`, `telemetry`, `alerts`), DTOs validados con `class-validator`, sufijos `.controller.ts`, `.service.ts`, `.entity.ts`, `.dto.ts`, rutas REST en plural y `kebab-case` bajo `/api/v1` |
+| Python (Edge API) | PEP 8 (Python Style Guide) | `snake_case` para funciones, variables y módulos, `PascalCase` para clases, `UPPER_SNAKE_CASE` para constantes y variables de entorno, docstrings en módulos con lógica de dominio |
+| C++ (firmware ESP32-S3) | C++ Core Guidelines; Google C++ Style Guide | Constantes `kPascalCase` (`kPirPin`), tipos y `enum class` en `PascalCase`, funciones `camelCase`, sin números mágicos, secretos en `secrets.h` excluido de Git |
+| Dart (Flutter) | Effective Dart | `UpperCamelCase` para clases, `lowerCamelCase` para miembros, archivos en `snake_case`, análisis estático con `flutter_lints` |
+| Gherkin (`.feature`) | Gherkin Conventions for Readable Specifications | Archivos en inglés, un `Feature` por User Story con su identificador (`US-08`), escenarios en tercera persona y tiempo presente, `Given/When/Then` sin detalles de interfaz, `Scenario Outline` con `Examples` para variantes |
+| SQL / TypeORM | Convención del proyecto | Tablas en plural (`zones`, `devices`, `readings`, `alerts`), columnas en `camelCase` generadas por TypeORM, claves primarias `uuid` |
+| Markdown (informe) | The Markdown Guide | Un `#` por capítulo, numeración jerárquica en encabezados, tablas para artefactos de texto, imágenes con `alt` descriptivo |
+
+**Ejemplo de convención Gherkin aplicada a una Technical Story:**
+
+```gherkin
+Feature: US-08 Immediate intrusion notification
+  As an on-site security guard
+  I want to receive an immediate notification of an intrusion
+  So that I can respond without waiting for a patrol
+ 
+  Scenario: An open door contact reading creates an alert
+    Given a device is registered in a zone owned by the administrator
+    When the edge relay posts a "door_contact" reading with value "open"
+    Then the API responds with status 201
+    And one alert with severity "medium" exists for that reading
+```
 
 ### 6.1.4. Software Deployment Configuration
 
-_Pendiente de desarrollo._
+El despliegue sigue la topología definida en el diagrama de despliegue C4 (sección 4.1.3.4): los productos públicos se alojan en infraestructura hospedada, el Edge API se ejecuta en la red local de cada sede y el Vision Node se conecta solo al Edge. Todos los servicios se empaquetan con Docker para que el despliegue sea reproducible desde cualquier repositorio.
+
+<p align="center"><img src="docs/architecture/diagrams/deployment.png" alt="Diagrama de despliegue C4 de SecurIoT" width="900"/></p>
+**Figura 6.1.** Software Architecture Deployment Diagram de SecurIoT. Fuente: elaboración propia con Structurizr.
+
+| Producto | Destino | Imagen / artefacto | URL pública |
+|---|---|---|---|
+| Landing Page | VPS con Nginx (contenedor `nginx:1.27-alpine`) | Imagen Docker con los archivos estáticos | URL de la Landing Page |
+| Web Application | VPS con Nginx | Build de Angular servido por `nginx:1.27-alpine` | https://securiot.juan-tech.com |
+| Cloud API | VPS con Docker y PostgreSQL 16 | Imagen multi-stage `node:22-slim` | https://securiot-api.juan-tech.com/api/v1 (documentación en `/api/docs`) |
+| Mobile Application | Firebase App Distribution | APK firmado de Flutter | Invitación por correo a testers |
+| Edge API | Mini-PC o laptop en la LAN de la sede | Imagen `python:3.12-slim` con Gunicorn | Solo LAN, `http://edge-api.local:5000` |
+| Embedded Application | ESP32-S3 del Vision Node | Firmware compilado con PlatformIO | No aplica |
+
+**Landing Page**
+
+1. Integrar el release en `main` y crear el tag `vX.Y.Z`.
+2. En el VPS, clonar o actualizar el repositorio: `git clone https://github.com/securiot2026/securiot-landing.git && cd securiot-landing && git checkout vX.Y.Z`.
+3. Construir y ejecutar: `docker build -t securiot-landing:vX.Y.Z .` y `docker run -d --name securiot-landing -p 8080:80 --restart unless-stopped securiot-landing:vX.Y.Z`.
+4. Configurar el server block de Nginx del host como reverse proxy hacia el puerto 8080 y emitir el certificado con `certbot --nginx -d <dominio-landing>`.
+5. Verificar que los call-to-action apunten a la Web App de producción y que los enlaces de descarga de la Mobile App estén activos.
+   
+**Cloud API (Web Services)**
+
+1. Crear en el VPS la base de datos PostgreSQL 16 y el archivo `.env` (nunca versionado) a partir de `.env.example`, con `DB_DRIVER=postgres`, credenciales de base de datos, un `JWT_SECRET` aleatorio, `JWT_EXPIRES_IN=1h`, `CORS_ORIGIN` con los dominios de la Web App y la Landing Page, y `DEVICE_ONLINE_WINDOW_SECONDS=300`.
+2. Construir y ejecutar la imagen: `docker build -t securiot-cloud-api:vX.Y.Z .` y `docker run -d --name securiot-cloud-api --env-file .env -p 3000:3000 --restart unless-stopped securiot-cloud-api:vX.Y.Z`.
+3. Ejecutar una vez el seed (`npm run seed`) para crear el usuario de prueba, la zona y el dispositivo inicial, y guardar el `apiKey` que se imprime.
+4. Publicar la API con Nginx y HTTPS en `securiot-api.juan-tech.com` y comprobar Swagger UI en `/api/docs`.
+   
+**Web Application**
+
+1. Confirmar que `src/environments/environment.prod.ts` apunta a `https://securiot-api.juan-tech.com/api/v1`.
+2. Construir y ejecutar: `docker build -t securiot-web-app:vX.Y.Z .` (el Dockerfile ejecuta `npm run build` y copia `dist/securiot-web-app/browser` a Nginx) y `docker run -d --name securiot-web-app -p 8081:80 --restart unless-stopped securiot-web-app:vX.Y.Z`.
+3. Publicar `securiot.juan-tech.com` con Nginx y HTTPS. El `nginx.conf` del contenedor redirige las rutas de Angular a `index.html`.
+   
+**Mobile Application**
+
+1. Configurar la URL de la Cloud API en el archivo de entorno de Flutter.
+2. Generar el APK de release: `flutter build apk --release`.
+3. Subir el APK a Firebase App Distribution (`firebase appdistribution:distribute build/app/outputs/flutter-apk/app-release.apk --app <APP_ID> --groups "testers"`) e invitar a los integrantes y participantes de las entrevistas de validación.
+   
+**Edge API**
+
+1. En el equipo local de la sede, configurar el hostname `edge-api` y el anuncio mDNS (Bonjour en macOS, Avahi en Linux) para que el Vision Node lo encuentre como `edge-api.local`.
+2. Crear el `.env` con `DEVICE_SHARED_SECRET`, `CLOUD_API_URL=https://securiot-api.juan-tech.com`, `CLOUD_DEVICE_API_KEY` (el `apiKey` emitido por la Cloud API al registrar el dispositivo), `RELAY_INTERVAL_SECONDS=10` y `DETECTION_BACKEND=yolo`.
+3. Construir y ejecutar con un volumen persistente para el buffer: `docker build -t securiot-edge-api:vX.Y.Z .` y `docker run -d --name securiot-edge-api --env-file .env -p 5000:5000 -v edge-data:/data --restart unless-stopped securiot-edge-api:vX.Y.Z`.
+4. Verificar la tolerancia a desconexión: con la Cloud API detenida, enviar lecturas a `/ingest`, confirmar `synced=0` en `edge.db` y comprobar que se sincronizan sin duplicados al restablecer la conexión.
+   
+**Embedded Application**
+
+1. Crear `src/secrets.h` a partir de `secrets.example.h` con el SSID y la contraseña de la red Wi-Fi de la sede, `EDGE_API_MDNS_HOST="edge-api"` (o `EDGE_API_URL` con la IP de la LAN si mDNS no está disponible), `DEVICE_SHARED_SECRET`, `DEVICE_ID` y `ZONE_ID`.
+2. Compilar y cargar el firmware al ESP32-S3 por USB con `pio run -t upload` y revisar el monitor serial con `pio device monitor`.
+3. Verificar en sitio la secuencia de estados del LED (Sin conexión → Operativo) y ejecutar una prueba de intrusión para confirmar la alerta en la Web App y en la Mobile App.
+   **Automatización (US-22).** Durante el Sprint 2 se incorpora en cada repositorio de servicio un workflow de GitHub Actions que, ante un pull request a `develop` o `main`, instala dependencias, ejecuta las pruebas (`npm run test:e2e`, `ng test --watch=false --browsers=ChromeHeadless` o `pytest`) y construye la imagen Docker. Solo cuando todas las etapas pasan, el tag `vX.Y.Z` en `main` publica la imagen versionada que se despliega con los pasos anteriores.
 
 ## 6.2. Landing Page, Services & Applications Implementation
 
