@@ -2522,8 +2522,8 @@ Wokwi no incluye un módulo de cámara, un reed switch ni acceso a la red de la 
 El siguiente diagrama de bloques resume cómo se conectan los componentes con el resto de la solución:
 
 ```mermaid
-flowchart 
-LR    subgraph NODE[SecurIoT Vision Node - ESP32-S3]
+flowchart LR
+    subgraph NODE[SecurIoT Vision Node - ESP32-S3]
         CAM[Cámara OV2640]
         PIR[PIR HC-SR501]
         REED[Reed switch MC-38]
