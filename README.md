@@ -2462,16 +2462,17 @@ _Pendiente de desarrollo._
 
 ## 5.6. IoT Device Design
 
-El dispositivo IoT de SecurIoT, denominado **SecurIoT Vision Node**, es la unidad física que se instala en un punto de acceso, perímetro o zona restringida de la sede. Su función es observar el entorno, enviar observaciones al Edge API de la instalación y ejecutar en el lugar la respuesta que el Edge decide: seguir con la cámara a la persona detectada, bloquear la puerta y comunicar el estado mediante luz y sonido. El dispositivo no decide por sí mismo si existe una intrusión; esa decisión pertenece al bounded context **Detección y Relay de Borde** (sección 4.2.4), lo que mantiene el firmware simple y permite cambiar reglas sin reprogramar el hardware.
+El dispositivo IoT de SecurIoT, denominado **SecurIoT Vision Node**, es la unidad física que se instala en un punto de acceso, perímetro o zona restringida de la sede. Está construido sobre un módulo ESP32-S3 con cámara (los repositorios de código lo llaman genéricamente "ESP32-CAM"). Su función es observar el entorno, enviar observaciones al Edge API de la instalación y ejecutar en el lugar la respuesta que el Edge decide: seguir con la cámara a la persona detectada, bloquear la puerta y comunicar el estado mediante luz y sonido. El nodo no decide por sí mismo si existe una intrusión; esa decisión pertenece al bounded context **Detección y Relay de Borde** (sección 4.2.4), lo que mantiene el firmware simple y permite ajustar reglas sin reprogramar el hardware. 
 
-Las decisiones de diseño se tomaron con cinco criterios:
+Las decisiones de diseño se tomaron con seis criterios: 
 
-1. **Coherencia con la arquitectura.** El nodo solo conoce dos contratos HTTP del Edge API: `POST /ingest` para lecturas de sensores y `POST /frames` para frames de cámara. La respuesta de `/frames` (`pan_delta`, `tilt_delta`, `door_action`, `alert`) se traduce directamente en acciones físicas. El nodo nunca se comunica con la Cloud API.
-2. **Correspondencia con la guía de estilos IoT (sección 5.1.2).** Los cuatro estados digitales (Validando, Acceso autorizado, Intrusión y Sin conexión) tienen un equivalente físico que usa los mismos colores de la paleta y que se diferencia también por patrón de parpadeo y sonido, de modo que el color nunca es el único medio para comunicar el estado.
-3. **Hallazgos de las entrevistas (sección 2.2.3).** Los entrevistados reportaron entre 3 y 8 falsas alarmas por noche. Por eso la detección combina tres sensores de bajo costo como disparadores y deja la confirmación al Edge (YOLO, debounce de 2 frames y ArcFace). También pidieron alertas perceptibles en ambientes ruidosos (más de 85 dB), lo que justifica un buzzer de alto volumen y un indicador luminoso visible a distancia.
-4. **Seguridad de las personas y normativa de evacuación.** Los tres administradores entrevistados exigieron que el sistema respete las normas de evacuación de INDECI. La cerradura es de tipo **fail-safe**: queda bloqueada solo mientras recibe energía y se libera ante un corte eléctrico, e incluye un pulsador de salida mecánico del lado interno.
-5. **Bajo costo y componentes open-hardware.** Todos los componentes están disponibles en el mercado local y son compatibles con Arduino/ESP-IDF, en línea con el modelo de negocio dirigido a pymes.
-
+1. **Coherencia con la arquitectura y con el contrato implementado.** El nodo solo conoce dos contratos HTTP del Edge API: `POST /ingest` para lecturas de sensores y `POST /frames` para frames de cámara, ambos autenticados con el header `X-Device-Key`. La respuesta de `/frames` (`pan_delta`, `tilt_delta`, `door_action`, `alert` y, cuando el reconocimiento facial está activo, `faces`) se traduce directamente en acciones físicas, y las respuestas de error `401`, `400` y `413` tienen un comportamiento definido en el nodo (sección 5.6.5). El nodo nunca se comunica con la Cloud API. Este contrato se verificó contra la rama `develop` de `securiot-edge-api` (`app/frames.py`), cuya suite de 27 pruebas pytest se ejecuta sin fallas.
+2. **Correspondencia con la guía de estilos IoT (sección 5.1.2) y con la Web App.** El LED de estado usa los mismos tokens de color que el panel web. Profundidad (`#1FD3C4`) nunca representa un estado. El estado Sin conexión se muestra en neutro (Texto-mute), igual que el chip "offline" de la Web App, porque la ausencia de señal no es un evento de seguridad. Cada estado se distingue además por patrón de parpadeo y sonido, de modo que el color nunca es el único medio para comunicarlo (sección 5.6.4).
+3. **Hallazgos de las entrevistas (sección 2.2.3).** Los entrevistados reportaron entre 3 y 8 falsas alarmas por noche, causadas por animales, viento o personal fuera de horario. Por eso los tres sensores de bajo costo actúan solo como disparadores, y la confirmación ocurre en el Edge: YOLOv8n filtra las detecciones a la clase `person` (o a la clase de objeto configurada), un debounce exige 2 frames consecutivos y un cooldown de 30 segundos evita bloqueos repetidos. Los entrevistados también pidieron alertas perceptibles en ambientes de más de 85 dB, lo que justifica un buzzer de alto volumen y un indicador luminoso visible a 10 m.
+4. **Seguridad de las personas y normativa de evacuación.** Los tres administradores entrevistados exigieron que el sistema respete las normas de evacuación de INDECI. La cerradura es de tipo **fail-safe**: queda bloqueada solo mientras recibe energía y se libera ante un corte eléctrico. Incluye un pulsador de salida mecánico del lado interno y no se instala en puertas que formen parte de una ruta de evacuación señalizada.
+5. **Privacidad por diseño (Ley N.° 29733, US-23).** El nodo no almacena imágenes. El Edge guarda cada frame en un archivo temporal que elimina apenas termina la inferencia, y los embeddings faciales de ArcFace se conservan como centroides en el disco local del Edge. Hacia la nube solo viaja el resultado de la detección (clase y confianza), nunca el frame ni el embedding.
+6. **Bajo costo y componentes open-hardware.** Todos los componentes están disponibles en el mercado local y son compatibles con Arduino/ESP-IDF, en línea con el modelo de negocio dirigido a pymes.
+   
 ### 5.6.1. Componentes del prototipo
 
 | Componente | Modelo de referencia | Función en SecurIoT | Relación con el dominio |
@@ -2490,10 +2491,10 @@ Las decisiones de diseño se tomaron con cinco criterios:
 | Gabinete | Caja plástica IP65 de 150 × 110 × 70 mm con ventana frontal | Protección contra polvo y humedad en planta industrial | No aplica |
 
 El ultrasónico trabaja a 5 V, por lo que su pin `ECHO` llega al ESP32-S3 a través de un divisor resistivo de 1 kΩ y 2 kΩ. Los servos se alimentan desde la línea de 5 V del regulador y no desde el pin del microcontrolador, compartiendo la tierra común.
-
+**
 ### 5.6.2. Diseño de circuito
 
-El circuito se elaboró en **Wokwi** con el ESP32-S3 DevKitC-1, que usa los mismos GPIO libres que el módulo ESP32-S3 con cámara. Los pines de la cámara (4 a 13 y 15 a 18) y los de la PSRAM octal (35 a 37) quedan reservados.
+El circuito se elaboró en **Wokwi** con el ESP32-S3 DevKitC-1, que expone los mismos GPIO libres que el módulo ESP32-S3 con cámara. Los pines de la cámara (4 a 13 y 15 a 18) y los de la PSRAM octal (35 a 37) quedan reservados. Respecto de la versión anterior de este diseño, el buzzer se movió del GPIO 3 al GPIO 40, porque el GPIO 3 es un pin de strapping del ESP32-S3 y conviene no conectarle cargas. 
 
 | Señal | GPIO | Modo | Componente |
 |---|---:|---|---|
@@ -2504,22 +2505,25 @@ El circuito se elaboró en **Wokwi** con el ESP32-S3 DevKitC-1, que usa los mism
 | `SERVO_PAN` | 41 | PWM 50 Hz | Servo SG90 horizontal |
 | `SERVO_TILT` | 42 | PWM 50 Hz | Servo SG90 vertical |
 | `LOCK_RELAY` | 2 | Salida | Relé de la cerradura |
-| `BUZZER` | 3 | Salida (tono) | Buzzer mediante 2N2222 |
+| `BUZZER` | 40 | Salida (tono) | Buzzer mediante 2N2222 |
 | `STATUS_LED` | 48 | Datos WS2812 | LED RGB de estado |
 | `ACK_BUTTON` | 0 | Entrada con pull-up | Pulsador de reconocimiento |
+| `SIM_LINK` | 38 | Entrada con pull-up | Solo simulación: disponibilidad del Edge API |
+| `SIM_ALERT` | 39 | Entrada con pull-up | Solo simulación: persona confirmada por el Edge |
 
-**Figura 5.8.** Diagrama de circuito del SecurIoT Vision Node en Wokwi. Fuente: elaboración propia.
+<p align="center"><img src="docs/assets/chapter5/iot-device/vision-node-wiring.png" alt="Diagrama de conexiones del SecurIoT Vision Node: ESP32-S3 con entradas PIR, reed switch, HC-SR04 y pulsador ACK, y salidas servos pan/tilt, relé con cerradura fail-safe, buzzer y LED WS2812, alimentado por 12 V con regulador a 5 V y conectado por Wi-Fi al Edge API" width="800"/></p>
 
-<p align="center"><img src="docs/assets/chapter5/iot-device/wokwi-circuit.png" alt="Circuito del SecurIoT Vision Node en Wokwi con ESP32-S3, sensores PIR, reed switch y ultrasónico, servos pan/tilt, relé, buzzer y LED de estado" width="800"/></p>
-Proyecto en Wokwi: [SecurIoT Vision Node](URL_DEL_PROYECTO_WOKWI). Los archivos fuente de la simulación (`diagram.json`, `sketch.ino` y `libraries.txt`) se versionan en `docs/assets/chapter5/iot-device/wokwi/`.
+**Figura 5.8.** Diagrama de conexiones del SecurIoT Vision Node. Fuente: elaboración propia.
 
-Wokwi no incluye un módulo de cámara ni puede llamar al Edge API de la instalación. Por eso la simulación agrega dos interruptores que reemplazan la respuesta del Edge: `SIM_AUTH` representa el resultado del reconocimiento (persona autorizada o no) y `SIM_LINK` representa la disponibilidad del Edge API en la LAN. El flujo cámara → Edge → respuesta se valida por separado con el arnés `scripts/run_test_folder.py` del repositorio `securiot-edge-api`, que reproduce frames de prueba contra `POST /frames`.
+Los archivos fuente de la simulación se versionan en [`docs/assets/chapter5/iot-device/wokwi/`](docs/assets/chapter5/iot-device/wokwi/): `diagram.json` (componentes y cableado), `sketch.ino` (máquina de estados y patrones de luz y sonido) y `libraries.txt` (Adafruit NeoPixel y ESP32Servo). La simulación se reproduce creando un proyecto ESP32-S3 en Wokwi y reemplazando esos tres archivos. El sketch imprime en el monitor serial cada petición simulada con los mismos campos del contrato real, por ejemplo `[POST /frames] 200 {"pan_delta":0.312,"tilt_delta":0.180,"door_action":"lock","alert":true}`, por lo que el registro también sirve como evidencia de ejecución. 
+
+Wokwi no incluye un módulo de cámara, un reed switch ni acceso a la red de la sede. Por eso la simulación hace tres sustituciones: un interruptor deslizante representa el reed switch, `SIM_ALERT` representa que el Edge confirmó una persona en el frame (`alert = true`, `door_action = "lock"`) y `SIM_LINK` representa la disponibilidad del Edge API en la LAN. La cerradura se representa con un LED rojo conectado al contacto NO del relé. El flujo real cámara → Edge → respuesta se valida por separado con el arnés `scripts/run_test_folder.py` del repositorio `securiot-edge-api`, que reproduce frames de prueba contra `POST /frames`.
 
 El siguiente diagrama de bloques resume cómo se conectan los componentes con el resto de la solución:
 
 ```mermaid
-flowchart LR
-    subgraph NODE[SecurIoT Vision Node - ESP32-S3]
+flowchart 
+LR    subgraph NODE[SecurIoT Vision Node - ESP32-S3]
         CAM[Cámara OV2640]
         PIR[PIR HC-SR501]
         REED[Reed switch MC-38]
@@ -2540,20 +2544,23 @@ flowchart LR
         MCU --> LED
         MCU --> BZ
     end
-    MCU -- "Wi-Fi LAN · mDNS edge-api.local<br/>POST /ingest · POST /frames<br/>X-Device-Key" --> EDGE[Edge API<br/>Flask + SQLite]
-    EDGE -- "pan_delta · tilt_delta<br/>door_action · alert" --> MCU
+    MCU -- "Wi-Fi LAN · mDNS edge-api.local<br/>POST /ingest al cambiar un sensor<br/>POST /frames cada ~2 s · X-Device-Key" --> EDGE[Edge API<br/>Flask + SQLite<br/>YOLOv8n + ArcFace]
+    EDGE -- "pan_delta · tilt_delta<br/>door_action · alert · faces" --> MCU
     EDGE -- "HTTPS saliente con retry/backoff<br/>POST /api/v1/telemetry" --> CLOUD[Cloud API<br/>NestJS + PostgreSQL]
 ```
 
 ### 5.6.3. Diseño físico
 
-El nodo se monta en un gabinete IP65 fijado en la pared o en el marco del punto de acceso, a una altura de 2.2 a 2.5 m, para que la cámara cubra el ingreso y quede fuera del alcance de la mano. La distribución del gabinete responde a la guía de la sección 5.1.2:
-
+El nodo se monta en un gabinete IP65 fijado en la pared o en el marco del punto de acceso, a una altura de 2.2 a 2.5 m, para que la cámara cubra el ingreso y quede fuera del alcance de la mano. El grado IP65 responde al polvo metálico, la humedad y las vibraciones descritos en las entrevistas de plantas metalmecánicas y almacenes de frío. La distribución del gabinete responde a la guía de la sección 5.1.2:
 - **Cara frontal:** ventana de policarbonato para la cámara montada sobre el soporte pan/tilt, el PIR debajo de la cámara y el HC-SR04 orientado hacia el punto de paso.
 - **Indicador de estado:** LED RGB con difusor en la parte superior frontal, visible desde 10 m, junto al logotipo de SecurIoT en blanco.
-- **Lateral derecho:** pulsador de reconocimiento (ACK) con tapa, accesible para el vigilante sin herramientas.
-- **Parte inferior:** prensaestopas para la alimentación de 12 V y el cable del reed switch y la cerradura, con rejilla para el buzzer.
-- **Etiqueta interna:** identificador del dispositivo (por ejemplo `CAM-PN-02`) y zona asignada, iguales a los que muestra el panel web, según el Labeling System de la sección 5.2.2.
+- **Lateral derecho:** pulsador de reconocimiento (ACK) con tapa, accesible para el vigilante sin herramientas, en color neutro para no confundirse con un estado.
+- **Parte inferior:** prensaestopas para la alimentación de 12 V, el cable del reed switch y el de la cerradura, con rejilla para el buzzer.
+- **Etiqueta:** identificador del dispositivo (por ejemplo `CAM-PN-02`) y zona asignada, iguales a los que muestra el panel web, según el Labeling System de la sección 5.2.2.
+
+<p align="center"><img src="docs/assets/chapter5/iot-device/vision-node-enclosure.png" alt="Propuesta de diseño físico del Vision Node: vista frontal con LED de estado, cámara en soporte pan/tilt, PIR y ultrasónico, y vista lateral con etiqueta del dispositivo, pulsador ACK, rejilla del buzzer y prensaestopas" width="800"/></p> 
+
+**Figura 5.9.** Propuesta de diseño físico del SecurIoT Vision Node. Fuente: elaboración propia.
 
 ### 5.6.4. Flujos de interacción del prototipo
 
@@ -2562,17 +2569,20 @@ El nodo se monta en un gabinete IP65 fijado en la pared o en el marco del punto 
 ```mermaid
 stateDiagram-v2
     [*] --> SinConexion: Encendido
-    SinConexion --> Operativo: Edge API disponible
-    Operativo --> SinConexion: Edge API no responde
-    Operativo --> Validando: PIR, reed switch o proximidad < 80 cm
-    Validando --> AccesoAutorizado: Edge reconoce persona autorizada
-    Validando --> Intrusion: Edge responde alert = true
+    SinConexion --> Operativo: Edge API responde
+    Operativo --> SinConexion: 3 peticiones sin respuesta
+    Operativo --> Validando: PIR, reed switch o proximidad menor a 80 cm
+    Operativo --> Intrusion: Frame periódico con alert = true
+    Validando --> Operativo: 2 frames sin detección confirmada
+    Validando --> Intrusion: alert = true
+    Validando --> AccesoAutorizado: access = authorized (contrato v1.1)
     AccesoAutorizado --> Operativo: 2.5 s
     Intrusion --> Intrusion: pan/tilt sigue a la persona
-    Intrusion --> Operativo: ACK presionado y sin detecciones
+    Intrusion --> Operativo: ACK y 10 s sin detección
 ```
+El nodo envía un frame aproximadamente cada 2 segundos, aunque no se active ningún sensor. Un disparo de sensor adelanta el siguiente frame y muestra el estado Validando. Si dos frames seguidos no confirman una persona (por ejemplo, un ave o una puerta que se cerró con el viento), el nodo vuelve a Operativo sin generar alerta. Esto atiende directamente el problema de falsas alarmas reportado en las entrevistas. 
 
-**Flujo 1: detección de intrusión y respuesta local.** El PIR detecta movimiento en el almacén fuera de horario. El nodo pasa a Validando, captura un frame y lo envía a `POST /frames`. El Edge confirma la detección tras dos frames consecutivos (debounce), responde `alert = true` y `door_action = "lock"`, y bufferiza las lecturas `camera_detection` y `door_contact`. El nodo pasa a Intrusión, energiza la cerradura, activa la alarma y sigue a la persona con los servos usando `pan_delta` y `tilt_delta`. En paralelo, el relay del Edge envía las lecturas a la Cloud API, que genera la alerta que recibe el vigilante en la aplicación móvil.
+**Flujo 1: detección de intrusión y respuesta local (US-02, US-08).** El PIR detecta movimiento en el almacén fuera de horario. El nodo pasa a Validando y envía un frame a `POST /frames`. En el primer frame con una persona, el debounce del Edge cuenta 1 y responde `alert = false`. En el segundo frame consecutivo la detección se confirma: el Edge responde `alert = true`, `door_action = "lock"` y los desplazamientos de pan/tilt, y bufferiza dos lecturas, `camera_detection` (clase y confianza) y `door_contact` con valor `open`. El nodo pasa a Intrusión, energiza la cerradura, activa la sirena y sigue a la persona con los servos. Mientras la persona siga en el encuadre, cada frame actualiza el seguimiento, pero la cerradura no se vuelve a ordenar hasta que vence el cooldown de 30 segundos. En paralelo, el relay del Edge envía las lecturas a la Cloud API, donde la regla `door_contact_open` crea la alerta que consultan la Web App y la aplicación móvil.
 
 ```mermaid
 sequenceDiagram
@@ -2584,19 +2594,30 @@ sequenceDiagram
     participant G as Vigilante (App móvil)
     S->>N: Movimiento detectado
     N->>N: Estado Validando (LED Señal 4 Hz)
-    N->>E: POST /frames (frame JPEG, X-Device-Key)
-    E->>E: YOLO + debounce + ArcFace
+    N->>E: POST /frames (frame 1, X-Device-Key)
+    E->>E: YOLOv8n detecta person, debounce 1 de 2
+    E-->>N: {alert: false, door_action: null}
+    N->>E: POST /frames (frame 2)
+    E->>E: Debounce 2 de 2, buffer camera_detection + door_contact
     E-->>N: {alert: true, door_action: "lock", pan_delta, tilt_delta}
-    N->>N: Estado Intrusión (LED Alerta 8 Hz, buzzer, cerradura)
+    N->>N: Estado Intrusión (LED Alerta 8 Hz, sirena, cerradura)
     E->>C: POST /api/v1/telemetry (relay con backoff)
-    C->>C: evaluateRule → Alert creada
+    C->>C: evaluateRule door_contact_open, Alert creada
     G->>C: GET /api/v1/alerts
-    G->>N: Llega al punto y presiona ACK (silencia buzzer)
-```
+    G->>N: Llega al punto y presiona ACK (silencia la sirena)
+``` 
 
-**Flujo 2: acceso autorizado.** Un operario autorizado abre la puerta del área de carga. El reed switch pasa a `open`, el nodo envía la lectura a `/ingest` y un frame a `/frames`. El Edge reconoce el rostro mediante ArcFace, por lo que no se ordena el bloqueo. El nodo muestra Acceso autorizado con un pitido corto y vuelve a Operativo.
+**Flujo 2: identificación de la persona y acceso autorizado (US-05, US-23).** Cuando el Edge se ejecuta con `FACE_RECOGNITION_ENABLED=true`, cada respuesta de `/frames` incluye el arreglo `faces` con la identidad reconocida por ArcFace (`identity`, `similarity` y `known`) o `unknown`. En la versión actual del contrato (v1.0), esa información **solo enriquece la respuesta**: no cambia `alert` ni `door_action`, por lo que toda persona confirmada en una zona restringida se trata como intrusión. Es el comportamiento adecuado para el escenario validado en el MVP (zonas restringidas fuera de horario), pero todavía no cumple el escenario "Access is granted to an authorized person" de US-05.
 
-**Flujo 3: pérdida de conectividad.** Si el Edge API no responde, el nodo muestra Sin conexión con un patrón diferente al de intrusión, para que el vigilante no lo confunda con un evento de seguridad. Cuando el problema está entre el Edge y la nube, el nodo continúa operando con normalidad: el Edge conserva las lecturas en SQLite y las sincroniza sin duplicados al recuperar la conexión (US-21).
+**Flujo 3: pérdida de conectividad y respuestas de error (US-21).** El nodo distingue entre fallas propias y fallas aguas arriba:
+
+| Situación | Respuesta del Edge | Comportamiento del nodo |
+|---|---|---|
+| El Edge no responde (Wi-Fi caído o servicio detenido) | Timeout o conexión rechazada | Tras 3 intentos muestra Sin conexión. No ordena bloqueos sin confirmación. Conserva en PSRAM hasta 100 lecturas de sensores con su `reading_id` original y las reenvía a `/ingest` al reconectarse; el Edge las descarta si ya existen. |
+| Clave de dispositivo incorrecta | `401` | Muestra Configuración inválida y reintenta cada 60 s, sin saturar la red. |
+| Imagen dañada | `400` | Descarta el frame y continúa con el siguiente ciclo. |
+| Frame demasiado grande | `413` | Reduce la calidad JPEG del siguiente frame. |
+| El Edge funciona, pero la nube no | Respuestas normales | El nodo opera con normalidad. El Edge conserva las lecturas en SQLite y las sincroniza sin duplicados al recuperar la conexión. |
  
 ---
 
