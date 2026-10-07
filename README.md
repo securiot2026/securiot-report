@@ -2541,8 +2541,24 @@ A continuación se presentan las principales vistas implementadas.
 
 *Figura. Pantalla de login de la Web App desplegada en `https://securiot.juan-tech.com`.*
 
-> Capturas adicionales a incluir: dashboard de zonas, listado de dispositivos con
-> status chips y listado de alertas (`docs/assets/chapter6/sprint1-exec-*.png`).
+Las siguientes capturas corresponden a una ejecución local de la Web App en
+`http://localhost:4200` (configuración `local-prod`) y de la Cloud API en
+`http://localhost:3000`, con SQLite y el usuario, la zona y el dispositivo de prueba
+creados por el seed. Para comprobar el estado del dispositivo y la generación de
+alertas, se envió una lectura de prueba `door_contact` con `state: open` al endpoint
+local `/api/v1/telemetry`.
+
+![Web App — Zonas (ejecución local)](docs/assets/chapter6/sprint1-exec-zones.png)
+
+*Figura. Listado de zonas con la zona de prueba Front Entrance.*
+
+![Web App — Dispositivos (ejecución local)](docs/assets/chapter6/sprint1-exec-devices.png)
+
+*Figura. Dispositivo Front Door Sensor con estado En línea y su última lectura.*
+
+![Web App — Alertas (ejecución local)](docs/assets/chapter6/sprint1-exec-alerts.png)
+
+*Figura. Alerta activa de severidad media generada por la lectura de prueba.*
 
 **Video de demostración (navegación del Sprint 1):** [ENLACE_VIDEO]
 
