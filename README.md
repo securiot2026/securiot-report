@@ -3161,7 +3161,7 @@ realiza en Trello.
 | US-15 | | T-15.2 | Pantalla de login accesible con selector de idioma en la Web App | 4 | Santillán (`melinaasantillan`) | Done |
 | US-23 | Cumplimiento de protección de datos (Ley N° 29733) | T-23.1 | Control de acceso por owner (scoping de zonas/dispositivos) y allowlist CORS | 5 | Angulo (`Sve-nnN`) | Done |
 | US-23 | | T-23.2 | Validación de imágenes y mitigación de DoS (tamaño/formato) en la Edge API | 4 | Nikaido (`MassiFlip`) / Osores (`Maximoff19`) | Done |
-| — | Task técnica (constraint general) | T-DEP.1 | Dockerfiles de producción + nginx y despliegue en VPS | 6 | Huamán Baca (`rommelDN`) | Done |
+| — | Task técnica (constraint general) | T-DEP.1 | Dockerfiles de producción + nginx y despliegue en VPS | 6 | Hurtado Balcazar (`rommelDN`) | Done |
 | — | Task técnica (constraint general) | T-LND.1 | Landing Page bilingüe (es-419/en-US) con baseline de accesibilidad AA | 6 | Salcedo (`matiAAsc`) | Done |
 
 #### 6.2.1.4. Development Evidence for Sprint Review
