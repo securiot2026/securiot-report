@@ -1,0 +1,5 @@
+digraph G { graph [rankdir=LR,bgcolor="white",pad="0.25",nodesep="0.45",ranksep="0.7"]; node [fontname="Arial",fontsize=13,style="rounded,filled",fillcolor="#eafafa",color="#16bcbc",fontcolor="#172333",margin="0.18,0.12"]; edge [fontname="Arial",color="#177d88",fontsize=11,arrowsize=0.8];   Inicio [label="Acceder a la aplicación",shape=box];
+  Alertas [label="Abrir listado de alertas",shape=box];
+  Seleccion [label="Seleccionar una alerta",shape=box];
+  Detalle [label="Consultar detalle y estado",shape=box];
+  Regreso [label="Regresar al listado",shape=box]; Inicio -> Alertas -> Seleccion -> Detalle -> Regreso; }

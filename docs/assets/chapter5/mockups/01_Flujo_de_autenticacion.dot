@@ -1,0 +1,5 @@
+digraph G { graph [rankdir=LR,bgcolor="white",pad="0.25",nodesep="0.45",ranksep="0.7"]; node [fontname="Arial",fontsize=13,style="rounded,filled",fillcolor="#eafafa",color="#16bcbc",fontcolor="#172333",margin="0.18,0.12"]; edge [fontname="Arial",color="#177d88",fontsize=11,arrowsize=0.8];   Inicio [label="Abrir aplicación",shape=box];
+  Credenciales [label="Ingresar correo y contraseña",shape=box];
+  Validar [label="¿Credenciales válidas?",shape=diamond];
+  Panel [label="Acceder a la aplicación",shape=box];
+  Error [label="Mostrar error de acceso",shape=box]; Inicio -> Credenciales -> Validar; Validar -> Panel [label="Sí"]; Validar -> Error [label="No"]; Error -> Credenciales; }
