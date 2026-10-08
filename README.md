@@ -67,7 +67,7 @@
 | v1.18 | 08/10/2026 | Matias Salcedo Champi | Registro de aportes de TB1 en Student Outcome 5 e incorporación del video de navegación del Sprint 1 con enlace y captura. |
 | v1.19 | 08/10/2026 | Matias Salcedo Champi | Incorporación de capturas de Contributors de Landing Page, Web App, Cloud API y Edge API, con el alcance de las estadísticas de GitHub. |
 | v1.20 | 08/10/2026 | Matias Salcedo Champi | Evidencias de ejecución de Landing y Flutter, consulta de Swagger con datos de prueba, configuración de despliegue y estadísticas de contribución de Mobile. |
-
+| v1.21 | 08/10/2026 | Javier Masaru Nikaido Vargas | Diseño de mockups de alta fidelidad, elaboración de User Flow Diagrams, diseño de interfaces web y móviles, desarrollo visual de la Landing Page y documentación de los flujos de navegación de SecurIoT. |
 <div style="page-break-after: always;"></div>
 
 # Project Report Collaboration Insights
@@ -99,7 +99,7 @@ El equipo, de siete integrantes, dividió la elaboración del informe por artefa
 | Osores Marchese, Pietro | v1.9, v1.12 | Design-Level EventStorming, Bounded Context Canvases, Domain Message Flows, diagramas C4 con Structurizr, diagramas de base de datos relacional, edición del video de exposición. |
 | Santillan Alvarado, Melina Liz | v1.13, v1.14 | User Personas en UXPressia, User Task Matrix, Context Mapping, perfiles del equipo y Ubiquitous Language. |
 | Salcedo Champi, Matias Rodolfo | v1.16 | User Stories con criterios de aceptación en Gherkin, Product Backlog con Story Points, User Journey Maps As-Is, Empathy Maps, Impact Mapping, registro de aportes de AV1. |
-| Nikaido Vargas, Javier Masaru | v1.17 | Diseño de entrevistas, Registro de entrevistas y Análisis de entrevistas; realización de entrevistas, organización de evidencias y análisis de los hallazgos obtenidos de los segmentos objetivo de SECURIOT. |
+| Nikaido Vargas, Javier Masaru | v1.17, v1.20 | Diseño de entrevistas, registro y análisis de entrevistas, realización de entrevistas a los segmentos objetivo de SecurIoT, organización de evidencias, diseño de mockups de alta fidelidad, elaboración de Applications User Flow Diagrams, diseño de interfaces web y móviles, diseño de la Landing Page y documentación de los flujos de navegación. |
 ### Evidencias de colaboración en GitHub
 
 **Figura 1.** Contribuciones por integrante (Insights → Contributors).
