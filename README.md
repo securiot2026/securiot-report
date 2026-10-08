@@ -65,6 +65,7 @@
 | v1.16 | 19/09/2026 | Matias Salcedo Champi | Registro de aportes de AV1 en User Stories, Product Backlog, Impact Mapping, User Journey Maps, Empathy Maps y Student Outcome 5. |
 | v1.17 | 19/09/2026 | Javier Masaru Nikaido Vargas | Realización y documentación de entrevistas para la investigación de usuarios de SECURIOT, incluyendo el diseño de preguntas, registro de entrevistas y análisis de hallazgos de los segmentos objetivo. |
 | v1.18 | 08/10/2026 | Matias Salcedo Champi | Registro de aportes de TB1 en Student Outcome 5 e incorporación del video de navegación del Sprint 1 con enlace y captura. |
+| v1.19 | 08/10/2026 | Matias Salcedo Champi | Incorporación de capturas de Contributors de Landing Page, Web App, Cloud API y Edge API, con el alcance de las estadísticas de GitHub. |
 
 <div style="page-break-after: always;"></div>
 
@@ -3304,8 +3305,39 @@ muestra la distribución de commits por integrante en el repositorio del informe
 
 ![GitHub — Contributors](docs/assets/chapter6/sprint1-github-contributors.png)
 
-> Capturas a incluir también: analíticas de *Contributors/Insights* de cada repositorio
-> de código (`securiot-cloud-api`, `securiot-web-app`, `securiot-edge-api`, etc.).
+Las siguientes capturas corresponden a **Insights > Contributors** de los
+repositorios públicos de código, con **Period: All** y **Contributions: Commits**.
+GitHub indica que estos gráficos contabilizan contribuciones a la rama `main` y
+excluyen commits de merge. Por ello, no representan todos los cambios que todavía
+permanecen en `develop` o en ramas de trabajo.
+
+| Repositorio | Contribuidor visible | Commits mostrados | Analítica |
+| --- | --- | --- | --- |
+| Landing Page | `Sve-nnN` | 6 | [Contributors](https://github.com/securiot2026/securiot-landing/graphs/contributors) |
+| Web App | `Sve-nnN` | 11 | [Contributors](https://github.com/securiot2026/securiot-web-app/graphs/contributors) |
+| Cloud API | `Sve-nnN` | 19 | [Contributors](https://github.com/securiot2026/securiot-cloud-api/graphs/contributors) |
+| Edge API | `Sve-nnN` | 18 | [Contributors](https://github.com/securiot2026/securiot-edge-api/graphs/contributors) |
+
+![GitHub — Contributors de Landing Page](docs/assets/chapter6/sprint1-contributors-landing.png)
+
+*Figura. Contribuciones a la rama main de securiot-landing, con el periodo completo seleccionado.*
+
+![GitHub — Contributors de Web App](docs/assets/chapter6/sprint1-contributors-web-app.png)
+
+*Figura. Contribuciones a la rama main de securiot-web-app.*
+
+![GitHub — Contributors de Cloud API](docs/assets/chapter6/sprint1-contributors-cloud-api.png)
+
+*Figura. Contribuciones a la rama main de securiot-cloud-api.*
+
+![GitHub — Contributors de Edge API](docs/assets/chapter6/sprint1-contributors-edge-api.png)
+
+*Figura. Contribuciones a la rama main de securiot-edge-api.*
+
+Las capturas de [Mobile App](https://github.com/securiot2026/securiot-mobile-app/graphs/contributors)
+y [Embedded](https://github.com/securiot2026/securiot-embedded/graphs/contributors)
+quedan pendientes de acceso mediante una sesión de GitHub autorizada, ya que ambos
+repositorios son privados.
 
 **Interpretación:** la implementación de código se concentró principalmente en Juan
 Angulo (`Sve-nnN`), con contribución de Pietro Osores (`Maximoff19`) en la Edge API
