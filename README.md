@@ -225,6 +225,8 @@ También se identifica una oportunidad de mejora. Las versiones v1.10 a v1.17 se
     - [5.4.3. Applications Mock-ups](#543-applications-mock-ups)
     - [5.4.4. Applications User Flow Diagrams](#544-applications-user-flow-diagrams)
   - [5.5. Applications Prototyping](#55-applications-prototyping)
+    - [5.5.1. Web Application Prototype](#551-web-application-prototype)
+    - [5.5.2. Mobile Application Prototype](#552-mobile-application-prototype)
   - [5.6. IoT Device Design](#56-iot-device-design)
     - [5.6.1. Componentes del prototipo](#561-Componentes-del-prototipo)
     - [5.6.2. Diseño de circuito](#562-Diseño-de-circuito)
@@ -2426,11 +2428,62 @@ La atención de una alerta utiliza navegación apilada: **Alertas > Detalle de a
 
 ## 5.3. Landing Page UI Design
 
-_Pendiente de desarrollo._
+La Landing Page presenta la propuesta de valor de SecurIoT a empresas industriales y logísticas que necesitan proteger sus instalaciones. Su recorrido conduce al visitante desde la identificación del problema de la vigilancia reactiva hasta la comprensión de la respuesta propuesta, los perfiles a los que se dirige y el siguiente paso para conocer el producto. La estructura prioriza mensajes breves, navegación directa y llamados a la acción, de acuerdo con la arquitectura de información definida en la sección 5.2.
+
+Los siguientes wireframes muestran, en cuatro capturas consecutivas, la organización de las secciones de la página. Se trata de una representación estructural del contenido y la navegación, no de una interfaz visual final ni de evidencia de una implementación funcional.
 
 ### 5.3.1. Landing Page Wireframe
 
-_Pendiente de desarrollo._
+La primera captura presenta el encabezado y la sección principal de la Landing Page. El encabezado reúne la marca, los enlaces de navegación, el selector de idioma y el acceso al panel. En el área principal, el titular “Vigila el perímetro. Responde antes que el intruso.” resume la promesa de SecurIoT; el texto complementario explica la detección, validación y respuesta inmediata. Los botones “Empezar ahora” y “Ver cómo funciona” ofrecen una acción directa y otra de exploración. Al pie se incluye una vista ilustrativa del estado de distintas zonas para anticipar el tipo de información que centraliza la plataforma.
+
+**Figura 5.10.** Wireframe del encabezado y la propuesta de valor principal de la Landing Page.
+
+![Wireframe de la sección principal de SecurIoT, con navegación, selector de idioma, titular, descripción y llamados a la acción](docs/assets/chapter5/wireframes/landing-page/web/1.png)
+
+La segunda captura contrapone la situación actual con la propuesta de SecurIoT. La columna “Hoy” resume las limitaciones de la vigilancia y las cámaras revisadas después de un incidente; la columna “Con SecurIoT” explica la detección y respuesta en el momento. Debajo, un flujo de cuatro pasos —detectar, validar, responder y registrar— muestra cómo se conectan las capacidades del sistema y ayuda a explicar su funcionamiento sin entrar en detalles técnicos.
+
+**Figura 5.11.** Wireframe de la comparación entre el enfoque actual y la respuesta de SecurIoT, seguido del flujo de atención.
+
+![Wireframe que compara la vigilancia actual con SecurIoT y presenta las etapas detectar, validar, responder y registrar](docs/assets/chapter5/wireframes/landing-page/web/2.png)
+
+La tercera captura identifica a los públicos de la solución y comunica su alcance multisede. Primero distingue las necesidades del administrador de seguridad y del gerente o dueño de una pyme industrial. Luego presenta una vista conceptual de un panel único que reúne varias sedes y sus estados, aclarando que es ilustrativa y no corresponde a una captura del producto final. La sección “Sobre el proyecto” aporta el contexto académico y empresarial de SecurIoT.
+
+**Figura 5.12.** Wireframe de los públicos objetivo, la supervisión multisede y la presentación del proyecto.
+
+![Wireframe de los perfiles de administrador y gerente, una vista conceptual de monitoreo multisede y la sección sobre el proyecto](docs/assets/chapter5/wireframes/landing-page/web/3.png)
+
+La cuarta captura cierra el recorrido con un llamado a la acción centrado en el beneficio principal: dejar de depender de la revisión posterior de grabaciones y responder con mayor rapidez. El botón “Empezar ahora” ofrece el siguiente paso para el visitante. El pie de página identifica a SecurIoT y Centinela Labs, e incluye una referencia al tratamiento de datos personales y al contexto académico del proyecto.
+
+**Figura 5.13.** Wireframe del llamado a la acción final y el pie de página.
+
+![Wireframe del cierre de la Landing Page, con llamado a la acción y pie de página con información del proyecto y privacidad](docs/assets/chapter5/wireframes/landing-page/web/4.png)
+
+**Wireframes para dispositivos móviles.** Las siguientes capturas muestran la adaptación del mismo recorrido a una pantalla estrecha. La navegación y el contenido se disponen verticalmente, las acciones principales ocupan el ancho disponible y las secciones conservan el orden de la versión web para facilitar la lectura y el desplazamiento.
+
+La primera captura reúne la navegación móvil y el inicio de la página. La marca, el selector de idioma y el acceso al panel aparecen en el encabezado; debajo, el titular y la descripción de SecurIoT se organizan en una columna. Los botones “Empezar ahora” y “Ver cómo funciona” se muestran apilados y ocupan el ancho disponible. Al final comienza la sección que explica las limitaciones de la vigilancia actual.
+
+**Figura 5.14.** Wireframe móvil del encabezado, la propuesta de valor y el inicio de la sección sobre el problema actual.
+
+![Wireframe móvil de SecurIoT con encabezado, selector de idioma, propuesta principal, botones apilados y comienzo de la sección sobre la vigilancia actual](docs/assets/chapter5/wireframes/landing-page/mobile/1.png)
+
+La segunda captura continúa con la explicación de la solución y el proceso de atención. Primero presenta las capacidades de SecurIoT en una lista breve y, a continuación, desarrolla las etapas detectar, validar, responder y registrar en una secuencia vertical. Esta disposición facilita seguir el proceso en el móvil sin depender de columnas paralelas.
+
+**Figura 5.15.** Wireframe móvil de la propuesta de solución y del flujo de atención en cuatro pasos.
+
+![Wireframe móvil con beneficios de SecurIoT y el proceso vertical de detectar, validar, responder y registrar](docs/assets/chapter5/wireframes/landing-page/mobile/2.png)
+
+La tercera captura presenta los dos perfiles que toman decisiones y sus necesidades: el administrador de seguridad y el gerente o dueño de la pyme. Luego muestra el alcance multisede mediante una vista conceptual del panel con el estado de tres instalaciones, y cierra con una breve descripción del proyecto. Los bloques aparecen uno debajo del otro para mantener el contexto de cada sección en una pantalla pequeña.
+
+**Figura 5.16.** Wireframe móvil de los perfiles objetivo, el monitoreo multisede y la presentación del proyecto.
+
+![Wireframe móvil con perfiles de administrador y gerente, panel conceptual de varias sedes y descripción del proyecto SecurIoT](docs/assets/chapter5/wireframes/landing-page/mobile/3.png)
+
+La cuarta captura funciona como cierre de la página. Presenta un mensaje final que resume el beneficio de responder en el instante y un botón “Empezar ahora” como acción principal. El pie de página identifica a SecurIoT y Centinela Labs e incluye información sobre privacidad y el contexto académico del proyecto.
+
+**Figura 5.17.** Wireframe móvil del llamado a la acción final y el pie de página.
+
+![Wireframe móvil del cierre de SecurIoT, con llamado a la acción e información de marca, privacidad y contexto académico](docs/assets/chapter5/wireframes/landing-page/mobile/4.png)
+
 
 ### 5.3.2. Landing Page Mock-up
 
@@ -2438,15 +2491,106 @@ _Pendiente de desarrollo._
 
 ## 5.4. Applications UX/UI Design
 
-_Pendiente de desarrollo._
+El diseño UX/UI de las aplicaciones de SecurIoT traduce las necesidades de sus usuarios en vistas para administrar zonas, supervisar dispositivos y consultar alertas. La aplicación web prioriza la lectura comparativa de datos en tablas y filtros; la aplicación móvil reorganiza la misma información en tarjetas y una navegación compacta para facilitar su consulta desde las instalaciones. En ambas superficies se mantienen los mismos nombres, estados y datos principales.
+
+Los wireframes siguientes representan la estructura y jerarquía de las vistas con contenido de ejemplo. No constituyen mock-ups visuales finales ni demuestran que las interacciones estén implementadas.
 
 ### 5.4.1. Applications Wireframes
 
-_Pendiente de desarrollo._
+**Aplicación web**
+
+La primera captura muestra el inicio de sesión. El formulario solicita correo electrónico y contraseña, incorpora un control para mostrar u ocultar la contraseña y ofrece un selector de idioma. La composición centra el acceso y explica brevemente el propósito del panel.
+
+**Figura 5.18.** Wireframe web de inicio de sesión.
+
+![Wireframe web de inicio de sesión en SecurIoT con campos de correo y contraseña, control para mostrar la contraseña y selector de idioma](docs/assets/chapter5/wireframes/web/1.png)
+
+La segunda captura presenta el módulo de zonas. El menú lateral permite acceder a Zonas, Dispositivos y Alertas; la tabla central organiza las zonas por nombre, ubicación y fecha de registro, con un acceso a los dispositivos asociados a cada una. El selector de idioma y el cierre de sesión permanecen en el encabezado.
+
+**Figura 5.19.** Wireframe web del listado de zonas y acceso a sus dispositivos.
+
+![Wireframe web del módulo Zonas con navegación lateral, tabla de ubicaciones y fechas, y acceso a los dispositivos de cada zona](docs/assets/chapter5/wireframes/web/2.png)
+
+La tercera captura corresponde al módulo de dispositivos. La tabla reúne nombre, zona asociada, estado de conexión y última lectura; un filtro permite limitar los resultados por zona. Las etiquetas diferencian dispositivos en línea, sin conexión y en alerta, de modo que el estado se pueda comparar rápidamente.
+
+**Figura 5.20.** Wireframe web del monitoreo de dispositivos por zona y estado.
+
+![Wireframe web del módulo Dispositivos con filtro por zona y tabla de equipos, estado de conexión y última lectura](docs/assets/chapter5/wireframes/web/3.png)
+
+La cuarta captura muestra la vista de alertas con filtros por zona, dispositivo y estado, además de la acción para limpiar los filtros. El wireframe presenta el estado vacío con el mensaje “No hay alertas para mostrar”, que explica dónde aparecerán las alertas cuando existan registros.
+
+**Figura 5.21.** Wireframe web de alertas con filtros y estado vacío.
+
+![Wireframe web del módulo Alertas con filtros por zona, dispositivo y estado, botón para limpiar filtros y mensaje de lista vacía](docs/assets/chapter5/wireframes/web/4.png)
+
+**Aplicación móvil**
+
+La primera captura adapta el inicio de sesión a una pantalla móvil. El formulario conserva los campos y el control de contraseña de la versión web, pero ocupa una columna y presenta el botón principal a todo lo ancho para facilitar la interacción táctil.
+
+**Figura 5.22.** Wireframe móvil de inicio de sesión.
+
+![Wireframe móvil de inicio de sesión con selector de idioma, campos de correo y contraseña y botón de acceso de ancho completo](docs/assets/chapter5/wireframes/mobile/1.png)
+
+La segunda captura muestra el listado de zonas en formato de tarjetas. Cada tarjeta presenta el nombre de la zona, su ubicación y fecha de registro, junto con un botón para consultar sus dispositivos. La navegación principal pasa a una barra inferior con accesos a Zonas, Dispositivos y Alertas.
+
+**Figura 5.23.** Wireframe móvil del listado de zonas y sus accesos a dispositivos.
+
+![Wireframe móvil de Zonas en tarjetas con ubicación, fecha de registro, botón Dispositivos y navegación inferior](docs/assets/chapter5/wireframes/mobile/2.png)
+
+La tercera captura reorganiza el listado de dispositivos como tarjetas verticales. El filtro por zona se mantiene visible y cada tarjeta agrupa el nombre del equipo, la zona, su estado y la última lectura. Esta presentación permite revisar los datos esenciales sin requerir el desplazamiento horizontal de una tabla.
+
+**Figura 5.24.** Wireframe móvil de dispositivos con filtro y datos de estado.
+
+![Wireframe móvil de Dispositivos con filtro por zona y tarjetas que muestran nombre, zona, estado y última lectura](docs/assets/chapter5/wireframes/mobile/3.png)
+
+La cuarta captura presenta las alertas en móvil. Los filtros se apilan en una columna para facilitar su selección y el botón “Limpiar filtros” ocupa el ancho disponible. Debajo se conserva el mensaje de estado vacío, que informa que todavía no hay alertas y anticipa dónde se mostrarán.
+
+**Figura 5.25.** Wireframe móvil de alertas con filtros apilados y estado vacío.
+
+![Wireframe móvil de Alertas con filtros apilados por zona, dispositivo y estado, botón para limpiarlos y mensaje de lista vacía](docs/assets/chapter5/wireframes/mobile/4.png)
+
 
 ### 5.4.2. Applications Wireflow Diagrams
 
-_Pendiente de desarrollo._
+Se presenta un caso representativo por User Persona. Cada recorrido utiliza únicamente pantallas ya documentadas en la sección 5.4.1.
+#### WF-01. Supervisar zonas y dispositivos
+
+**Aplicación y User Persona:** Web, Carlos Mendoza, Administrador de Seguridad Patrimonial.
+
+**User goal:** “Quiero supervisar las zonas y detectar oportunamente los dispositivos que requieren atención”.
+
+**Flujo:** Inicio de sesión → listado de zonas → listado de dispositivos → revisión del estado y la última lectura. Carlos usa la vista de zonas para ubicar una instalación y consulta los dispositivos para identificar equipos en línea, sin conexión o en alerta.
+
+**Wireframes del recorrido:** Web 1 (inicio de sesión), Web 2 (zonas) y Web 3 (dispositivos).
+
+![wireflow1](docs/assets/chapter5/wireflows/wf1.png)
+
+
+
+#### WF-02. Consultar si hay alertas pendientes
+
+**Aplicación y User Persona:** Web, Miguel Herrera, Gerente o Dueño de Pyme Industrial.
+
+**User goal:** “Quiero consultar si hay alertas registradas que requieran atención cuando estoy fuera de la instalación”.
+
+**Flujo:** Inicio de sesión → módulo **Alertas** → revisión de los filtros disponibles y del resultado. Este caso representa la consulta sin alertas pendientes: Miguel encuentra el estado vacío y confirma que no hay alertas para mostrar.
+
+**Wireframes del recorrido:** Web 1 (inicio de sesión) y Web 4 (alertas con filtros y estado vacío). No se incluyen resultados de alertas ni detalle de incidente.
+
+![](docs/assets/chapter5/wireflows/wf2.png)
+
+
+#### WF-03. Consultar zonas y dispositivos durante una ronda
+
+**Aplicación y User Persona:** Mobile, Luis Ramírez, Personal de Vigilancia In Situ.
+
+**User goal:** “Quiero consultar las zonas y el estado de sus dispositivos mientras realizo mis rondas”.
+
+**Flujo:** Inicio de sesión → listado móvil de zonas → consulta de dispositivos → revisión del estado y la última lectura. Luis utiliza la información disponible para orientar su verificación y vuelve al listado de zonas para continuar la ronda.
+
+**Wireframes del recorrido:** Mobile 1 (inicio de sesión), Mobile 2 (zonas) y Mobile 3 (dispositivos). El diagrama por insertar debe limitarse a estos tres estados.
+
+![](docs/assets/chapter5/wireflows/wf3.png)
 
 ### 5.4.3. Applications Mock-ups
 
@@ -2458,7 +2602,27 @@ _Pendiente de desarrollo._
 
 ## 5.5. Applications Prototyping
 
-_Pendiente de desarrollo._
+Los prototipos de SecurIoT presentan dos experiencias complementarias: la aplicación web prioriza la configuración de sensores y reglas de alerta, mientras que la aplicación móvil se orienta a la vigilancia y al control de cámaras y actuadores durante la operación. Los siguientes videos muestran los recorridos de ambas interfaces con datos simulados; permiten revisar la propuesta de interacción, pero no acreditan una integración con equipos físicos ni una validación con usuarios reales.
+
+### 5.5.1. Web Application Prototype
+
+<p align="center"><img src="docs/assets/chapter5/prototyping/web-prototype-thumbnail.png" alt="Miniatura del video del prototipo web de SecurIoT: configuración de dispositivos y sensores" width="688"/></p>
+
+**Enlace completo y directo al video del prototipo web:**
+
+<https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310971_upc_edu_pe/IQAADPSpV9fbQK8bOgKavfHxATbTtINoSt15vo2tCRHCCgI?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=OOHerz>
+
+**Descripción y sustentación.** El prototipo web está orientado al administrador que configura los sensores, organiza los dispositivos por zona y define las condiciones que generan alertas. La vista de dispositivos permite reconocer el tipo de sensor, su ubicación y su estado antes de acceder a la configuración. Se prioriza esta experiencia en escritorio porque la revisión de parámetros y reglas requiere comparar información y trabajar con mayor precisión. Así, la web concentra la configuración del sistema y complementa la supervisión operativa desde el móvil.
+
+### 5.5.2. Mobile Application Prototype
+
+<p align="center"><img src="docs/assets/chapter5/prototyping/mobile-prototype-thumbnail.png" alt="Miniatura del video del prototipo móvil de SecurIoT: cámaras, posiciones pan/tilt y activación de actuadores" width="320"/></p>
+
+**Enlace completo y directo al video del prototipo móvil:**
+
+<https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310971_upc_edu_pe/IQBUQ0dW1Mz7Q6AO-jFfEy4EAf-hoPcGu4dNiqG270LrDA0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=sEwaE2>
+
+**Descripción y sustentación.** El prototipo móvil funciona principalmente como una herramienta de vigilancia y control para el personal que se desplaza por las instalaciones. La interfaz presenta las cámaras por ubicación, su conectividad y su posición pan/tilt, junto con accesos al control de servos y a la activación de actuadores. Este enfoque permite priorizar la consulta del entorno y las acciones operativas sin trasladar al teléfono toda la complejidad de la configuración de sensores y alertas. Los controles mostrados simulan la respuesta del sistema y no envían órdenes a equipos reales.
 
 ## 5.6. IoT Device Design
 
