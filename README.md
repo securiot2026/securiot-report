@@ -3033,7 +3033,7 @@ El despliegue sigue la topología definida en el diagrama de despliegue C4 (secc
 
 | Producto | Destino | Imagen / artefacto | URL pública |
 |---|---|---|---|
-| Landing Page | VPS con Nginx (contenedor `nginx:1.27-alpine`) | Imagen Docker con los archivos estáticos | URL de la Landing Page |
+| Landing Page | VPS con Nginx (contenedor `nginx:1.27-alpine`) | Imagen Docker con los archivos estáticos | https://securiot-landing.juan-tech.com |
 | Web Application | VPS con Nginx | Build de Angular servido por `nginx:1.27-alpine` | https://securiot.juan-tech.com |
 | Cloud API | VPS con Docker y PostgreSQL 16 | Imagen multi-stage `node:22-slim` | https://securiot-api.juan-tech.com/api/v1 (documentación en `/api/docs`) |
 | Mobile Application | Firebase App Distribution | APK firmado de Flutter | Invitación por correo a testers |
@@ -3045,7 +3045,7 @@ El despliegue sigue la topología definida en el diagrama de despliegue C4 (secc
 1. Integrar el release en `main` y crear el tag `vX.Y.Z`.
 2. En el VPS, clonar o actualizar el repositorio: `git clone https://github.com/securiot2026/securiot-landing.git && cd securiot-landing && git checkout vX.Y.Z`.
 3. Construir y ejecutar: `docker build -t securiot-landing:vX.Y.Z .` y `docker run -d --name securiot-landing -p 8080:80 --restart unless-stopped securiot-landing:vX.Y.Z`.
-4. Configurar el server block de Nginx del host como reverse proxy hacia el puerto 8080 y emitir el certificado con `certbot --nginx -d <dominio-landing>`.
+4. Configurar el server block de Nginx del host como reverse proxy hacia el puerto 8080 y emitir el certificado con `certbot --nginx -d securiot-landing.juan-tech.com`.
 5. Verificar que los call-to-action apunten a la Web App de producción y que los enlaces de descarga de la Mobile App estén activos.
 
 **Cloud API (Web Services)**
@@ -3241,9 +3241,11 @@ y dispositivos, y visualiza su estado en tiempo real; la Edge API detecta acceso
 Cloud API genera las alertas de intrusión consultables desde la Web App y la App Móvil.
 A continuación se presentan las principales vistas implementadas.
 
-La Landing Page se ejecutó localmente en `http://localhost:8080` a partir de la rama
-`develop` de `securiot-landing`. Las capturas muestran la portada en español para
-escritorio y la adaptación responsive en inglés con un ancho de 390 píxeles.
+La Landing Page está desplegada públicamente en
+https://securiot-landing.juan-tech.com. Para obtener las capturas de esta sección
+también se ejecutó localmente en `http://localhost:8080` a partir de la rama `develop`
+de `securiot-landing`. Las imágenes muestran la portada en español para escritorio y
+la adaptación responsive en inglés con un ancho de 390 píxeles.
 
 ![Landing Page — Ejecución en escritorio](docs/assets/chapter6/sprint1-exec-landing-desktop.png)
 
@@ -3368,7 +3370,7 @@ GitFlow, con entornos reproducibles.
 | --- | --- | --- |
 | Web App | https://securiot.juan-tech.com | Docker + nginx (VPS) |
 | Cloud API | https://securiot-api.juan-tech.com/api/v1 (docs en `/api/docs`) | Docker (VPS), PostgreSQL |
-| Landing Page | Docker + nginx (imagen de producción) | Contenedor nginx |
+| Landing Page | https://securiot-landing.juan-tech.com | Docker + nginx (VPS) |
 | App Móvil | Firebase App Distribution (proyecto `securiot-centinela-labs`) | Android (APK) |
 
 **Actividades de despliegue realizadas en el Sprint:**
