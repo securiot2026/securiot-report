@@ -3466,16 +3466,14 @@ El segundo Sprint se enfocó en que el sistema deje de reaccionar de una sola ma
 
 El Sprint 2 parte de los resultados del Sprint 1 y del Product Backlog priorizado de la sección 3.3. El siguiente cuadro resume la planificación. La reunión se realizó por Discord.
 
-<!-- CONFIRMAR con el equipo: fecha, hora, lugar y asistentes reales de la reunión de planning del Sprint 2. -->
-
 | Sprint # | **Sprint 2** |
 | --- | --- |
 | **Sprint Planning Background** | |
-| Date | Por confirmar |
-| Time | Por confirmar |
+| Date | 2026-09-25 |
+| Time | 04:00 PM |
 | Location | Reunión virtual (Discord) |
-| Prepared By | Por confirmar |
-| Attendees | Por confirmar |
+| Prepared By | Angulo Ramírez, Juan |
+| Attendees | Huamán Baca, Rommel Daniel / Angulo Ramírez, Juan / Aquino Solórzano, Daniel / Salcedo Champi, Matías / Santillán, Melina / Osores, Pietro / Nikaido, Javier |
 | **Sprint 1 Review Summary** | El Sprint 1 cerró los siete User Stories P0 (34 Story Points): registro de zonas y dispositivos, monitoreo en tiempo real, validación de acceso con visión por computadora, alertas de intrusión y autenticación. La Cloud API y la Web App quedaron desplegadas en el VPS y la App Móvil se distribuyó por Firebase App Distribution. |
 | **Sprint 1 Retrospective Summary** | Dos aprendizajes guiaron este Sprint. La implementación de código se concentró en un solo integrante, por lo que el equipo acordó repartir mejor los repositorios. La cobertura de pruebas quedó limitada a los Web Services, y la Web App y la App Móvil solo tenían los specs generados por el framework. |
 | **Sprint Goal & User Stories** | |
@@ -3638,16 +3636,14 @@ El tercer Sprint se enfocó en llevar a las pantallas lo que el Sprint 2 dejó f
 
 El Sprint 3 toma como entrada los contratos REST que dejó el Sprint 2 y el Product Backlog de la sección 3.3. El siguiente cuadro resume la planificación. La reunión se realizó por Discord.
 
-<!-- CONFIRMAR con el equipo: fecha, hora, lugar y asistentes reales de la reunión de planning del Sprint 3. -->
-
 | Sprint # | **Sprint 3** |
 | --- | --- |
 | **Sprint Planning Background** | |
-| Date | Por confirmar |
-| Time | Por confirmar |
+| Date | 2026-09-25 |
+| Time | 04:00 PM |
 | Location | Reunión virtual (Discord) |
-| Prepared By | Por confirmar |
-| Attendees | Por confirmar |
+| Prepared By | Angulo Ramírez, Juan |
+| Attendees | Huamán Baca, Rommel Daniel / Angulo Ramírez, Juan / Aquino Solórzano, Daniel / Salcedo Champi, Matías / Santillán, Melina / Osores, Pietro / Nikaido, Javier |
 | **Sprint 2 Review Summary** | El Sprint 2 dejó en la Edge API el motor de reglas, la cola de comandos manuales y el registro de rostros, y en el firmware el portal de aprovisionamiento. La Web App ya permitía registrar la URL del Edge y los rostros autorizados. Faltaba una interfaz para administrar las reglas, ver la cámara y controlar el dispositivo desde el teléfono. |
 | **Sprint 2 Retrospective Summary** | La concentración de commits en un solo integrante se repitió, y ninguna de las funciones nuevas tenía verificación sobre el dispositivo físico. Por eso el Sprint 3 distingue de forma explícita lo que comprobaron las pruebas automáticas de lo que sigue pendiente de hardware. |
 | **Sprint Goal & User Stories** | |
