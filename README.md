@@ -3308,9 +3308,6 @@ GitFlow, con entornos reproducibles.
 | securiot2026/securiot-edge-api | develop | `66605dd` | chore(deploy): add production Dockerfile | 2026-09-08 |
 | securiot2026/securiot-mobile-app | develop | `a920d78` | chore(firebase): wire up FlutterFire config for App Distribution | 2026-09-08 |
 
-> Capturas a incluir: panel del VPS/contenedores y consola de Firebase App Distribution
-> (`docs/assets/chapter6/sprint1-deploy-*.png`).
-
 #### 6.2.1.9. Team Collaboration Insights during Sprint
 
 El equipo coordinó el trabajo mediante GitFlow (ramas `feature/*` hacia `develop`),
@@ -3347,11 +3344,6 @@ permanecen en `develop` o en ramas de trabajo.
 ![GitHub — Contributors de Edge API](docs/assets/chapter6/sprint1-contributors-edge-api.png)
 
 *Figura. Contribuciones a la rama main de securiot-edge-api.*
-
-Las capturas de [Mobile App](https://github.com/securiot2026/securiot-mobile-app/graphs/contributors)
-y [Embedded](https://github.com/securiot2026/securiot-embedded/graphs/contributors)
-quedan pendientes de acceso mediante una sesión de GitHub autorizada, ya que ambos
-repositorios son privados.
 
 **Interpretación:** la implementación de código se concentró principalmente en Juan
 Angulo (`Sve-nnN`), con contribución de Pietro Osores (`Maximoff19`) en la Edge API
