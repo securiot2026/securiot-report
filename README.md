@@ -3246,7 +3246,9 @@ El despliegue sigue la topología definida en el diagrama de despliegue C4 (secc
 
 ## 6.2. Landing Page, Services & Applications Implementation
 
-_Pendiente de desarrollo._
+Esta sección documenta la implementación progresiva de los productos que conforman SECURIOT: Landing Page, Web App, App Móvil, Cloud API, Edge API y Embedded Application. El trabajo se organiza por sprints para mantener la trazabilidad entre los objetivos de cada iteración, las User Stories seleccionadas, las tareas asignadas y los resultados obtenidos.
+
+Para cada sprint se presentan la planificación, la distribución de responsabilidades mediante la matriz de líderes y colaboradores, el Sprint Backlog y las evidencias de desarrollo, pruebas, ejecución, documentación de servicios, despliegue y colaboración. Esta estructura permite diferenciar las funcionalidades implementadas y verificadas de aquellas que permanecen planificadas o requieren validación adicional en condiciones reales.
 
 ### 6.2.1. Sprint 1
 
