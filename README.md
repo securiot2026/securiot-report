@@ -3043,43 +3043,266 @@ _Pendiente de desarrollo._
 
 ### 6.2.1. Sprint 1
 
-_Pendiente de desarrollo._
+El primer Sprint se enfocó en construir el núcleo funcional de SECURIOT: el circuito
+de seguridad patrimonial de extremo a extremo (registro de dispositivos y zonas,
+monitoreo en tiempo real, validación de accesos, notificación de intrusiones y
+autenticación segura), sobre los siete User Stories P0 priorizados en el Product
+Backlog (sección 3.3). El alcance abarcó la Landing Page, la Web App, la Cloud API,
+la Edge API y la App Móvil. A continuación se documenta la planificación, el reparto
+de responsabilidades, el backlog del Sprint y las evidencias de desarrollo, testing,
+ejecución, documentación de servicios, despliegue y colaboración del equipo.
 
 #### 6.2.1.1. Sprint Planning 1
 
-_Pendiente de desarrollo._
+El Sprint Planning Meeting del Sprint 1 reunió a los siete integrantes del equipo para
+acordar el Sprint Goal, estimar la capacidad y seleccionar los User Stories de la
+iteración a partir del Product Backlog priorizado. El siguiente cuadro resume la
+reunión de planificación.
+
+| Sprint # | **Sprint 1** |
+| --- | --- |
+| **Sprint Planning Background** | |
+| Date | 2026-09-05 |
+| Time | 07:00 PM |
+| Location | Reunión virtual (Discord + Google Meet) |
+| Prepared By | Huamán Baca, Rommel Daniel (Scrum Master) |
+| Attendees | Huamán Baca, Rommel Daniel / Angulo Ramírez, Juan / Aquino Solórzano, Daniel / Salcedo Champi, Matías / Santillán, Melina / Osores, Pietro / Nikaido, Javier |
+| **Sprint 0 Review Summary** | No aplica. El Sprint 1 es la primera iteración de implementación; no existe un Sprint previo que revisar. Como entrada se tomaron los artefactos de requisitos y arquitectura de los Capítulos III y IV (User Stories, Product Backlog, DDD). |
+| **Sprint 0 Retrospective Summary** | No aplica (primera iteración). |
+| **Sprint Goal & User Stories** | |
+| Sprint 1 Goal | *Our focus is on delivering the core patrimonial security loop: letting security administrators register IoT devices and restricted zones, monitor them in real time, and receive immediate intrusion alerts through a secure, Law N° 29733-compliant platform. We believe it delivers confidence to industrial SME administrators and on-site guards that an unauthorized access is detected and notified without relying on manual rounds. This will be confirmed when an administrator can register a device in a zone, see its status change in real time, and a guard receives an intrusion notification for an unauthorized access, end to end across the Web App and Cloud API.* **Métrica de cumplimiento:** las 7 User Stories P0 superan sus criterios de aceptación y la demo end-to-end (registro → monitoreo → intrusión → notificación) se ejecuta correctamente. |
+| Sprint 1 Velocity | 34 Story Points |
+| Sum of Story Points | 34 SP (US-01: 5, US-02: 5, US-04: 3, US-05: 8, US-08: 5, US-15: 3, US-23: 5) |
 
 #### 6.2.1.2. Aspect Leaders and Collaborators
 
-_Pendiente de desarrollo._
+Para dar claridad a la comunicación interna, el equipo definió los **aspectos** del
+Sprint como los productos/componentes dentro del alcance funcional y técnico:
+**Landing Page**, **Web App**, **Cloud API**, **Edge/IoT**, **Mobile**, **Testing/QA**
+y **DevOps**. Por cada aspecto se designó un líder (**L**), responsable de la
+coordinación y las decisiones de ese componente, y a los demás integrantes como
+colaboradores (**C**) cuando participaron en él. La siguiente matriz LACX
+(Leadership-and-Collaboration Matrix) resume la organización.
+
+| Team Member | GitHub Username | Landing | Web App | Cloud API | Edge/IoT | Mobile | Testing/QA | DevOps |
+| --- | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| Salcedo Champi, Matías | `matiAAsc` | **L** | C | C | C | C | C | C |
+| Santillán, Melina | `melinaasantillan` | C | **L** | C | C | — | C | — |
+| Angulo Ramírez, Juan | `Sve-nnN` | C | C | **L** | C | C | C | C |
+| Osores, Pietro | `Maximoff19` | C | C | C | **L** | — | C | C |
+| Aquino Solórzano, Daniel | `DanielAquinoSolorzano` | C | C | C | — | **L** | C | — |
+| Nikaido, Javier | `MassiFlip` | C | C | C | C | C | **L** | C |
+| Huamán Baca, Rommel | `rommelDN` | C | C | C | C | C | C | **L** |
 
 #### 6.2.1.3. Sprint Backlog 1
 
-_Pendiente de desarrollo._
+El objetivo del Sprint Backlog es materializar el Sprint Goal descomponiendo los siete
+User Stories P0 en Work-items/Tasks asignables y rastreables. El control de estado se
+realiza en Trello.
+
+**Tablero del Sprint (Trello):** https://trello.com/b/EzAo1DBl/securiot-product-backlog
+
+![Tablero Trello — Sprint 1](docs/assets/chapter6/sprint1-trello-board.png)
+
+| Sprint # | **Sprint 1** | | | | | |
+| --- | --- | --- | --- | --- | --- | --- |
+| **Story Id** | **Story Title** | **Task Id** | **Task Title** | **Estimation (h)** | **Assigned To** | **Status** |
+| US-01 | Registro de dispositivo IoT en una zona | T-01.1 | Endpoint `POST /devices` con validación de pertenencia de la zona al owner y generación de `apiKey` | 8 | Angulo (`Sve-nnN`) | Done |
+| US-01 | | T-01.2 | Pantalla de dispositivos y formulario de registro en la Web App | 6 | Santillán (`melinaasantillan`) | Done |
+| US-02 | Monitoreo en tiempo real de zonas y dispositivos | T-02.1 | Estado online/offline y última lectura en el detalle de dispositivo (ventana configurable) | 6 | Angulo (`Sve-nnN`) | Done |
+| US-02 | | T-02.2 | Dashboard de zonas/dispositivos con status chips y actualización por lectura | 8 | Santillán (`melinaasantillan`) | Done |
+| US-04 | Registro de zona restringida | T-04.1 | Endpoints CRUD de zonas (`POST/GET/PATCH/DELETE /zones`) | 5 | Angulo (`Sve-nnN`) | Done |
+| US-04 | | T-04.2 | Pantalla de zonas en la Web App | 4 | Santillán (`melinaasantillan`) | Done |
+| US-05 | Validación automática de acceso a zona restringida | T-05.1 | Módulo de reconocimiento (YOLO + ArcFace) en la Edge API | 10 | Osores (`Maximoff19`) | Done |
+| US-05 | | T-05.2 | Endpoint `POST /frames`: detección → pipeline Reading/relay con debounce y cooldown | 8 | Osores (`Maximoff19`) / Angulo (`Sve-nnN`) | Done |
+| US-05 | | T-05.3 | Regla de alerta `door_contact/open` disparada desde la ingesta de telemetría | 6 | Angulo (`Sve-nnN`) | Done |
+| US-08 | Notificación inmediata de intrusión | T-08.1 | Endpoint `GET /alerts` filtrable por zona/dispositivo/estado | 4 | Angulo (`Sve-nnN`) | Done |
+| US-08 | | T-08.2 | Pantalla de alertas en la App Móvil + wiring de notificaciones (Firebase) | 8 | Aquino (`DanielAquinoSolorzano`) | Done |
+| US-15 | Autenticación de usuarios | T-15.1 | Autenticación JWT `POST /auth/login` + guard de rutas protegidas | 5 | Angulo (`Sve-nnN`) | Done |
+| US-15 | | T-15.2 | Pantalla de login accesible con selector de idioma en la Web App | 4 | Santillán (`melinaasantillan`) | Done |
+| US-23 | Cumplimiento de protección de datos (Ley N° 29733) | T-23.1 | Control de acceso por owner (scoping de zonas/dispositivos) y allowlist CORS | 5 | Angulo (`Sve-nnN`) | Done |
+| US-23 | | T-23.2 | Validación de imágenes y mitigación de DoS (tamaño/formato) en la Edge API | 4 | Nikaido (`MassiFlip`) / Osores (`Maximoff19`) | Done |
+| — | Task técnica (constraint general) | T-DEP.1 | Dockerfiles de producción + nginx y despliegue en VPS | 6 | Huamán Baca (`rommelDN`) | Done |
+| — | Task técnica (constraint general) | T-LND.1 | Landing Page bilingüe (es-419/en-US) con baseline de accesibilidad AA | 6 | Salcedo (`matiAAsc`) | Done |
 
 #### 6.2.1.4. Development Evidence for Sprint Review
 
-_Pendiente de desarrollo._
+Durante el Sprint 1 se implementó, en los repositorios de la organización
+`securiot2026`, la Landing Page estática bilingüe, la Web App (Angular) con login y
+dashboard de zonas/dispositivos/alertas, la Cloud API (NestJS) con autenticación JWT
+y módulos de zonas, dispositivos, telemetría y alertas, la Edge API (Python) con
+detección por visión e integración al pipeline de telemetría, y la App Móvil (Flutter).
+La siguiente tabla lista los commits representativos por repositorio, todos sobre la
+rama `develop` (flujo GitFlow).
+
+| Repository | Branch | Commit Id | Commit Message | Committed on |
+| --- | --- | --- | --- | --- |
+| securiot2026/securiot-landing | develop | `36a2ef2` | feat(landing): build SecurIoT persuade landing page with i18n and a11y | 2026-09-07 |
+| securiot2026/securiot-landing | develop | `6156070` | refactor(landing): align shared copy and language-selector pattern with UI-SPEC.md | 2026-09-07 |
+| securiot2026/securiot-landing | develop | `69570a9` | feat(design): retheme landing to SecurIoT brand identity | 2026-09-15 |
+| securiot2026/securiot-web-app | develop | `92cc2d0` | feat(auth): add accessible login screen with language switcher | 2026-09-07 |
+| securiot2026/securiot-web-app | develop | `9060ebd` | feat(dashboard): add zones, devices and alerts screens | 2026-09-07 |
+| securiot2026/securiot-web-app | develop | `c11c455` | fix(build): wire production environment file replacement, set production API URL | 2026-09-08 |
+| securiot2026/securiot-cloud-api | develop | `5532846` | feat(devices): register devices scoped to owner via zone ownership | 2026-09-07 |
+| securiot2026/securiot-cloud-api | develop | `2101372` | feat(devices): expose online/offline status and last reading on device detail | 2026-09-07 |
+| securiot2026/securiot-cloud-api | develop | `520e972` | feat(alerts): add GET /api/v1/alerts endpoint filterable by zone/device/status | 2026-09-07 |
+| securiot2026/securiot-cloud-api | develop | `c37de19` | feat(alerts): trigger door_contact/open alert rule from telemetry ingest | 2026-09-07 |
+| securiot2026/securiot-cloud-api | develop | `779fa22` | fix: enable CORS, missing entirely on both local and the live VPS | 2026-09-08 |
+| securiot2026/securiot-edge-api | develop | `b3574aa` | feat(04-02): add POST /frames endpoint wiring detection into the Reading/relay pipeline | 2026-09-07 |
+| securiot2026/securiot-edge-api | develop | `4e6a1c0` | feat(04-02): add door-lock cooldown and test-image-folder harness | 2026-09-07 |
+| securiot2026/securiot-edge-api | develop | `8ca5526` | feat(vision): add YOLO and ArcFace recognition module | 2026-09-11 |
+| securiot2026/securiot-edge-api | develop | `70acf77` | feat(frames): expose facial recognition results | 2026-09-11 |
+| securiot2026/securiot-mobile-app | develop | `a920d78` | chore(firebase): wire up FlutterFire config for App Distribution | 2026-09-08 |
+| securiot2026/securiot-mobile-app | develop | `1fa1dea` | fix(android): add missing INTERNET permission | 2026-09-08 |
+| securiot2026/securiot-mobile-app | develop | `cdb0ccf` | feat(design): retheme mobile app to SecurIoT dark brand identity | 2026-09-15 |
 
 #### 6.2.1.5. Testing Suite Evidence for Sprint Review
 
-_Pendiente de desarrollo._
+Las pruebas automatizadas del Sprint 1 se concentraron en los Web Services (Cloud API
+y Edge API), implementadas como **tests end-to-end / de integración** con Jest
+(NestJS) y Pytest (Flask), siguiendo un enfoque dirigido por los criterios de
+aceptación (Gherkin) definidos para cada User Story en el Capítulo III. Los tests se
+escribieron primero en estado *failing* y luego se implementó la funcionalidad hasta
+hacerlos pasar.
+
+**Relación de suites de prueba y User Stories cubiertos:**
+
+| Repository | Archivo de test | Tipo | User Story(s) | Comportamiento verificado |
+| --- | --- | --- | --- | --- |
+| securiot-cloud-api | `test/devices.e2e-spec.ts` | E2E / Integración | US-01, US-02 | Registro de dispositivo con scoping por owner; detalle con estado online/offline |
+| securiot-cloud-api | `test/zones.e2e-spec.ts` | E2E / Integración | US-04 | CRUD de zonas restringidas |
+| securiot-cloud-api | `test/alerts.e2e-spec.ts` | E2E / Integración | US-05, US-08 | Disparo y listado de alertas de intrusión (regla `door_contact/open`) |
+| securiot-cloud-api | `test/telemetry.e2e-spec.ts` | E2E / Integración | US-02 | Ingesta idempotente de lecturas y consulta de historial |
+| securiot-edge-api | `tests/` (POST `/frames`) | Integración | US-05 | Detección → generación de lecturas `camera_detection`/`door_contact` y sincronización por el relay |
+
+**Commits relacionados con testing:**
+
+| Repository | Branch | Commit Id | Commit Message | Committed on |
+| --- | --- | --- | --- | --- |
+| securiot2026/securiot-cloud-api | develop | `4c5a1d9` | test(alerts): add failing e2e tests for door_contact/open alert rule | 2026-09-07 |
+| securiot2026/securiot-cloud-api | develop | `53afd46` | test(devices): add failing e2e tests for detail with online status | 2026-09-07 |
+| securiot2026/securiot-edge-api | develop | `a77b8b4` | test(04-02): add failing tests for POST /frames endpoint | 2026-09-07 |
+
+> **Nota (deuda técnica):** la cobertura de la Web App y la App Móvil en este Sprint se
+> limita a los specs generados por el framework; ampliar las pruebas unitarias de
+> frontend y los `.feature` BDD explícitos queda planificado para el Sprint 2.
 
 #### 6.2.1.6. Execution Evidence for Sprint Review
 
-_Pendiente de desarrollo._
+Al cierre del Sprint 1 la solución ejecuta el circuito completo: el visitante accede a
+la Landing Page bilingüe, el administrador inicia sesión en la Web App, registra zonas
+y dispositivos, y visualiza su estado en tiempo real; la Edge API detecta accesos y la
+Cloud API genera las alertas de intrusión consultables desde la Web App y la App Móvil.
+A continuación se presentan las principales vistas implementadas.
+
+![Web App — Inicio de sesión (producción)](docs/assets/chapter6/sprint1-webapp-login.png)
+
+*Figura. Pantalla de login de la Web App desplegada en `https://securiot.juan-tech.com`.*
+
+Las siguientes capturas corresponden a una ejecución local de la Web App en
+`http://localhost:4200` (configuración `local-prod`) y de la Cloud API en
+`http://localhost:3000`, con SQLite y el usuario, la zona y el dispositivo de prueba
+creados por el seed. Para comprobar el estado del dispositivo y la generación de
+alertas, se envió una lectura de prueba `door_contact` con `state: open` al endpoint
+local `/api/v1/telemetry`.
+
+![Web App — Zonas (ejecución local)](docs/assets/chapter6/sprint1-exec-zones.png)
+
+*Figura. Listado de zonas con la zona de prueba Front Entrance.*
+
+![Web App — Dispositivos (ejecución local)](docs/assets/chapter6/sprint1-exec-devices.png)
+
+*Figura. Dispositivo Front Door Sensor con estado En línea y su última lectura.*
+
+![Web App — Alertas (ejecución local)](docs/assets/chapter6/sprint1-exec-alerts.png)
+
+*Figura. Alerta activa de severidad media generada por la lectura de prueba.*
+
+**Video de demostración (navegación del Sprint 1):** [ENLACE_VIDEO]
 
 #### 6.2.1.7. Services Documentation Evidence for Sprint Review
 
-_Pendiente de desarrollo._
+La Cloud API documenta sus endpoints con **OpenAPI 3.0 (Swagger)**, disponible en la
+ruta `/api/docs`. En el Sprint 1 se documentaron los endpoints de autenticación,
+zonas, dispositivos, telemetría y alertas, todos versionados bajo `/api/v1`.
+
+**Documentación desplegada (Swagger UI):** https://securiot-api.juan-tech.com/api/docs
+**Repositorio:** securiot2026/securiot-cloud-api (rama `develop`)
+
+![Swagger UI — SecurIoT Cloud API](docs/assets/chapter6/sprint1-swagger-cloud-api.png)
+
+| Endpoint | Acciones (verbo HTTP) | Autorización | Descripción / Response |
+| --- | --- | --- | --- |
+| `/api/v1/auth/login` | POST | Pública | Autentica con email/password; response `200` con `{ accessToken }` (JWT) |
+| `/api/v1/zones` | POST, GET | JWT | Crea y lista zonas restringidas del owner autenticado |
+| `/api/v1/zones/{id}` | GET, PATCH, DELETE | JWT | Detalle, actualización y baja de una zona |
+| `/api/v1/devices` | POST, GET | JWT | Registra (devuelve `apiKey` solo en la creación) y lista dispositivos |
+| `/api/v1/devices/{id}` | GET | JWT | Detalle con `isOnline` y última lectura; `404` si el dispositivo es de otro owner |
+| `/api/v1/telemetry` | POST, GET | POST: `X-Device-Key` · GET: JWT | Ingesta idempotente de lecturas (por `reading_id`) y consulta de historial filtrable |
+| `/api/v1/alerts` | GET | JWT | Lista alertas filtrables por zona, dispositivo y estado |
+
+**Commits relacionados con documentación de servicios:**
+
+| Repository | Branch | Commit Id | Commit Message | Committed on |
+| --- | --- | --- | --- | --- |
+| securiot2026/securiot-cloud-api | develop | `bdee94c` | docs: update endpoints, scope, and deployment topology | 2026-09-08 |
+| securiot2026/securiot-cloud-api | develop | `49a3efd` | docs(env): document DEVICE_ONLINE_WINDOW_SECONDS | 2026-09-07 |
 
 #### 6.2.1.8. Software Deployment Evidence for Sprint Review
 
-_Pendiente de desarrollo._
+Durante el Sprint 1 se habilitó el despliegue de los servicios en un **VPS** bajo el
+dominio `juan-tech.com`, además de la distribución de la App Móvil mediante **Firebase
+App Distribution**. El empaquetado se realizó con **Docker** y **nginx** siguiendo
+GitFlow, con entornos reproducibles.
+
+**Productos desplegados:**
+
+| Producto | URL / Destino | Infraestructura |
+| --- | --- | --- |
+| Web App | https://securiot.juan-tech.com | Docker + nginx (VPS) |
+| Cloud API | https://securiot-api.juan-tech.com/api/v1 (docs en `/api/docs`) | Docker (VPS), PostgreSQL |
+| Landing Page | Docker + nginx (imagen de producción) | Contenedor nginx |
+| App Móvil | Firebase App Distribution (proyecto `securiot-centinela-labs`) | Android (APK) |
+
+**Actividades de despliegue realizadas en el Sprint:**
+- Creación de Dockerfiles de producción y configuración `nginx.conf` para Landing y Web App.
+- Reemplazo de archivo de entorno de producción y fijación de `apiBaseUrl` hacia la Cloud API del VPS.
+- Habilitación de **CORS** con allowlist por variable de entorno (`CORS_ORIGIN`) en la Cloud API.
+- Configuración de **FlutterFire** y Firebase App Distribution para builds Android.
+- Documentación de la topología de despliegue (VPS vs. Edge API local, descubrimiento por mDNS `edge-api.local`).
+
+**Commits relacionados con despliegue:**
+
+| Repository | Branch | Commit Id | Commit Message | Committed on |
+| --- | --- | --- | --- | --- |
+| securiot2026/securiot-web-app | develop | `602e297` | chore(deploy): add production Dockerfile and nginx config | 2026-09-08 |
+| securiot2026/securiot-landing | develop | `e72562c` | chore(deploy): update CTA to production web app URL, add production Dockerfile | 2026-09-08 |
+| securiot2026/securiot-cloud-api | develop | `6b25cb8` | chore(deploy): add production Dockerfile | 2026-09-08 |
+| securiot2026/securiot-edge-api | develop | `66605dd` | chore(deploy): add production Dockerfile | 2026-09-08 |
+| securiot2026/securiot-mobile-app | develop | `a920d78` | chore(firebase): wire up FlutterFire config for App Distribution | 2026-09-08 |
+
+> Capturas a incluir: panel del VPS/contenedores y consola de Firebase App Distribution
+> (`docs/assets/chapter6/sprint1-deploy-*.png`).
 
 #### 6.2.1.9. Team Collaboration Insights during Sprint
 
-_Pendiente de desarrollo._
+El equipo coordinó el trabajo mediante GitFlow (ramas `feature/*` hacia `develop`),
+Pull Requests y el tablero Trello. La siguiente captura de las analíticas de GitHub
+muestra la distribución de commits por integrante en el repositorio del informe.
+
+![GitHub — Contributors](docs/assets/chapter6/sprint1-github-contributors.png)
+
+> Capturas a incluir también: analíticas de *Contributors/Insights* de cada repositorio
+> de código (`securiot-cloud-api`, `securiot-web-app`, `securiot-edge-api`, etc.).
+
+**Interpretación:** la implementación de código se concentró principalmente en Juan
+Angulo (`Sve-nnN`), con contribución de Pietro Osores (`Maximoff19`) en la Edge API
+(módulo de visión), mientras que la documentación del informe tuvo participación
+distribuida de todo el equipo. Esta concentración se reconoce como una oportunidad de
+mejora: para el Sprint 2 el equipo acuerda distribuir la implementación de cada
+producto (Landing Page, Web Services y Aplicaciones) entre más integrantes, de modo que
+todos los miembros registren contribución de código en los repositorios, conforme a la
+matriz LACX establecida en la sección 6.2.1.2.
 
 ### 6.2.2. Sprint 2
 
