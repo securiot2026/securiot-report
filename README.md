@@ -1506,13 +1506,30 @@ El mapa muestra que este usuario valora la tranquilidad y la evidencia por encim
 
 ## 2.4. Big Picture EventStorming
 
+El Big Picture EventStorming de SECURIOT representa el ciclo completo de seguridad patrimonial desde la incorporación de una empresa y sus dispositivos hasta la detección, respuesta y cierre de un incidente. Su propósito es comprender el negocio junto con los stakeholders antes de decidir servicios, bases de datos o límites técnicos. Los eventos se expresan como hechos ya ocurridos, por ejemplo, *Device activated*, *Person detected* o *Incident closed*; no son instrucciones para ejecutar una acción.
+
 [Link del miro](https://miro.com/welcomeonboard/UHRZV2VKTkJUVFhwUkJMY1hPL2VZanRpMERNUllTeFNaQm9CdStzQ2ZrMTY2UVdUOHNrR1FqVUhFOC9aMDV0K3VBZjFvVEF4dHJZdmQwYW9jbVc4c1gzYzJ0Unp6akpBMjUwTVd6SFR5dG9TL1hWQ3kyQ0RjanVzWXBNWVZMNythWWluRVAxeXRuUUgwWDl3Mk1qRGVRPT0hdjE=?share_link_id=87640639227)
 
-![](docs/assets/chapter2/IMGs/bp-event-storming/1.png)
+**Paso 1: descubrimiento de eventos.** Se reúne el vocabulario inicial del dominio sin imponer todavía un orden definitivo. El inventario incluye accesos concedidos o denegados, detecciones, activación de alarmas, notificación del personal, instalación de dispositivos y seguimiento de incidentes. Esta primera vista permite identificar tanto la operación diaria como situaciones excepcionales.
 
-![](docs/assets/chapter2/IMGs/bp-event-storming/2.png)
+![Big Picture EventStorming: inventario inicial de eventos del dominio](docs/assets/chapter2/IMGs/bp-event-storming/1.png)
 
-![](docs/assets/chapter2/IMGs/bp-event-storming/3.png)
+**Paso 2: organización de los recorridos del negocio.** Los eventos se agrupan en cuatro recorridos relacionados:
+
+| Recorrido | Secuencia y significado |
+|---|---|
+| Incorporación y configuración | La empresa y la sede se registran; el dispositivo se solicita, instala y activa; luego se incorporan empleados y credenciales. Prepara la instalación para operar. |
+| Monitoreo continuo y accesos | Se capturan imágenes, se detecta e identifica a una persona y se valida su solicitud de acceso. La decisión puede conceder o denegar el ingreso; una detección aislada no equivale automáticamente a una intrusión. |
+| Respuesta a incidentes | Una entrada no autorizada o vulneración del perímetro puede generar una alerta, acciones locales y notificaciones al personal responsable. El incidente se registra, investiga y cierra después de la intervención; la evacuación o notificación a autoridades depende del protocolo aplicable. |
+| Supervisión multisede y continuidad | Se actualizan estados e indicadores, se generan reportes y se revisa la salud de los dispositivos. Las desconexiones, el mantenimiento y las actualizaciones de firmware permiten discutir la continuidad del servicio. |
+
+![Big Picture EventStorming: eventos agrupados por recorrido del negocio](docs/assets/chapter2/IMGs/bp-event-storming/2.png)
+
+**Paso 3: refinamiento y discusión.** La tercera vista reorganiza los grupos e incorpora resultados como *Door unlocked*. Las notas de distintos colores permiten distinguir elementos durante la discusión, pero el tablero no presenta una leyenda que permita asignarles con certeza las categorías de comandos, políticas o agregados. Esa clasificación y los límites de consistencia se desarrollan en el Design-Level EventStorming de la sección 4.1.1.
+
+![Big Picture EventStorming: refinamiento de los recorridos y sus resultados](docs/assets/chapter2/IMGs/bp-event-storming/3.png)
+
+**Lectura y alcance.** El administrador configura zonas y dispositivos y supervisa resultados; el personal de vigilancia verifica alertas e interviene en campo; el gerente consulta el estado consolidado y los reportes. Los recorridos se conectan por decisiones del negocio, no por una única secuencia obligatoria: un acceso autorizado sigue un camino distinto de una amenaza confirmada. Esta visión alimenta los requisitos del Capítulo III y el descubrimiento de los cuatro bounded contexts del Capítulo IV: Identidad y Acceso, Gestión de Zonas y Dispositivos, Detección y Relay de Borde, y Monitoreo y Alertas. Las suscripciones, pagos, facturación y acciones de emergencia presentes en el tablero representan oportunidades o procesos del negocio, no funcionalidades ya implementadas ni integraciones incluidas automáticamente en el MVP.
 
 ## 2.5. Ubiquitous Language
 
@@ -1907,29 +1924,35 @@ Ningún contexto llama al de Identidad y Acceso en tiempo de ejecución más all
 
 ### 4.1.3. Software Architecture
 
-SecurIoT es un sistema distribuido de cuatro capas: aplicaciones cliente (Web App en Angular y Mobile App en Flutter), un backend hospedado (Cloud API en NestJS con PostgreSQL), un servicio de borde por instalación (Edge API en Flask con buffer local SQLite y reconocimiento ArcFace) y firmware embebido (ESP32-S3 con detección corporal YOLO). Los siguientes diagramas siguen el modelo C4 (Brown, s. f.) y se generan exclusivamente desde el modelo [Structurizr DSL](docs/architecture/workspace.dsl). El ESP32 ejecuta la detección corporal antes de enviar frames candidatos al Edge; el Edge ejecuta ArcFace, conserva los embeddings biométricos localmente y solo inicia conexiones salientes hacia el backend hospedado.
+SecurIoT separa el hardware físico del Vision Node, la **Embedded Application** que se ejecuta en el ESP32-S3, la **Edge API** por instalación y la **Cloud API** hospedada, consumida por las aplicaciones Web y Mobile. La cadena de observación es **Hardware → Embedded Application → Edge API → Cloud API**; la respuesta inmediata regresa de la Edge API al firmware, que acciona el hardware. El Edge tiene su propia **Edge Database (SQLite, `edge.db`)**, independiente de la **Cloud Database (PostgreSQL)**, además de un repositorio local de identidades para ArcFace.
+
+Los siguientes diagramas siguen el modelo C4 (Brown, s. f.) y se generan exclusivamente desde el modelo [Structurizr DSL](docs/architecture/workspace.dsl). Representan la arquitectura objetivo: el firmware filtra personas/cuerpos con YOLO antes de enviar frames candidatos y el Edge realiza el reconocimiento facial con ArcFace. En el MVP descrito en la sección 5.6, el firmware envía frames periódicos y YOLO se ejecuta en el Edge; esa diferencia de distribución del procesamiento no elimina el contenedor Embedded ni cambia la separación de las bases de datos. Los embeddings biométricos permanecen en la sede y el Edge solo inicia conexiones salientes hacia el backend hospedado.
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram
 
 ![C4 System Landscape diagram](docs/architecture/diagrams/system-landscape.png)
 
-La plataforma no depende de sistemas externos de terceros (sin pasarelas de pago, SMS o email en el alcance actual). La Landing Page es un sitio informativo aislado, sin llamadas a la API.
+La plataforma no depende de sistemas externos de terceros (sin pasarelas de pago, SMS o email en el alcance actual). El Vision Node aparece como hardware externo que intercambia señales con la plataforma a través de su firmware; las aplicaciones y los almacenes se detallan en el nivel de contenedores. La Landing Page es un sitio informativo aislado, sin llamadas a la API.
 
 #### 4.1.3.2. Software Architecture Context Level Diagrams
 
 ![C4 System Context diagram](docs/architecture/diagrams/system-context.png)
 
+Esta vista mantiene la plataforma como una única unidad de software e identifica a sus usuarios y al hardware con el que interactúa. Embedded, Edge y sus bases de datos no se muestran como sistemas externos: son partes internas que se descomponen en el siguiente nivel C4.
+
 #### 4.1.3.3. Software Architecture Container Level Diagrams
 
 ![C4 Container diagram](docs/architecture/diagrams/container.png)
 
-El hardware ESP32 queda fuera del límite punteado de la plataforma. Dentro del dispositivo se ejecuta YOLO para detectar personas/cuerpos y reducir el volumen de frames enviados. Dentro del Edge se ejecuta ArcFace para producir y comparar embeddings; el buffer SQLite y el repositorio local de identidades permiten seguir operando sin conectividad.
+El hardware del Vision Node queda fuera del límite del sistema de software. Dentro del límite, la **Embedded Application** es un contenedor separado: captura imágenes y señales del hardware, envía frames y lecturas a la Edge API por la LAN y traduce la respuesta HTTP en movimientos pan/tilt, acciones de puerta y alarmas. El hardware no invoca directamente la API y el firmware no se comunica directamente con la nube.
+
+La **Edge Database** conserva lecturas, su estado de sincronización y los datos de reintento, por lo que el Edge puede continuar operando cuando la Cloud API no está disponible. El relay entrega las lecturas pendientes mediante la API de telemetría y actualiza el estado local después de recibir confirmación; no existe acceso directo ni replicación de tablas entre SQLite y PostgreSQL. El **Local Identity Store** es un almacén de archivos NumPy para embeddings, no la base de datos de telemetría.
 
 #### 4.1.3.4. Software Architecture Deployment Diagrams
 
 ![C4 Deployment diagram](docs/architecture/diagrams/deployment.png)
 
-El diagrama de despliegue separa explícitamente el hardware ESP32, el Edge Host de la instalación y la infraestructura hospedada. El backend no abre conexiones hacia la red local: el Edge inicia el envío de resultados y telemetría por HTTPS con retry/backoff.
+El diagrama de despliegue ubica la **Embedded Application** dentro del nodo físico ESP32-S3. En otro equipo de la misma LAN, el **Edge Host** ejecuta la Edge API y mantiene su **Edge Database SQLite** y el repositorio local de identidades en almacenamiento persistente. La infraestructura hospedada ejecuta la Cloud API y su base PostgreSQL; ninguna de las bases se aloja en el microcontrolador. El backend no abre conexiones hacia la red local: el Edge inicia el envío de resultados y telemetría por HTTPS con retry/backoff.
 
 ## 4.2. Tactical-Level Domain-Driven Design
 
@@ -2121,6 +2144,8 @@ Flujo de `/frames`, de principio a fin: valida la clave del dispositivo, valida 
 #### 4.2.4.5. Bounded Context Software Architecture Component Level Diagrams
 
 ![Structurizr Edge Detection and Relay component diagram](docs/architecture/diagrams/edge-components.png)
+
+El cliente de los endpoints `/ingest` y `/frames` es la **Embedded Application**, no el hardware directamente. `Reading Model` persiste las lecturas y el estado de reintento en la **Edge Database SQLite**; `relay_cycle` consume ese estado para sincronizar con Monitoreo y Alertas. El repositorio local de identidades se mantiene separado para el reconocimiento ArcFace.
 
 #### 4.2.4.6. Bounded Context Software Architecture Code Level Diagrams
 
