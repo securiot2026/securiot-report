@@ -2657,13 +2657,117 @@ Se presenta un caso representativo por User Persona. Cada recorrido utiliza úni
 
 ![](docs/assets/chapter5/wireflows/wf3.png)
 
+
 ### 5.4.3. Applications Mock-ups
 
-_Pendiente de desarrollo._
+Los mockups de alta fidelidad de SecurIoT representan las principales interfaces de la aplicación web y móvil. El diseño utiliza una paleta de colores oscuros con detalles turquesa, manteniendo una identidad visual consistente. Las pantallas contemplan los procesos de autenticación, gestión de zonas, monitoreo de dispositivos, visualización de alertas y configuración del sistema.
+
+**Inicio de sesión**
+
+Permite al usuario ingresar sus credenciales para acceder a las funcionalidades de SecurIoT.
+
+![Inicio de sesión](docs/assets/chapter5/mockups/01_Iniciar_sesion.png)
+
+**Registro de cuenta**
+
+Presenta el formulario para registrar nuevos usuarios mediante sus datos personales y credenciales.
+
+![Registro de cuenta](docs/assets/chapter5/mockups/02_Crear_cuenta.png)
+
+**Verificación de correo electrónico**
+
+Permite validar la dirección de correo mediante un código de verificación.
+
+![Verificación de correo](docs/assets/chapter5/mockups/03_Verificar_correo.png)
+
+**Configuración de contraseña**
+
+Permite establecer una contraseña segura durante la configuración de la cuenta.
+
+![Configuración de contraseña](docs/assets/chapter5/mockups/04_Configurar_contrasena.png)
+
+**Recuperación de contraseña**
+
+Permite solicitar un enlace para recuperar el acceso a una cuenta.
+
+![Recuperación de contraseña](docs/assets/chapter5/mockups/05_Recuperar_contrasena.png)
+
+**Restablecimiento de contraseña**
+
+Permite establecer una nueva contraseña para recuperar el acceso al sistema.
+
+![Restablecimiento de contraseña](docs/assets/chapter5/mockups/06_Restablecer_contrasena.png)
+
+**Confirmación de cuenta verificada**
+
+Muestra la confirmación del proceso de verificación de la cuenta.
+
+![Cuenta verificada](docs/assets/chapter5/mockups/07_Cuenta_verificada.png)
+
+**Cierre de sesión**
+
+Confirma la finalización de la sesión y permite regresar al inicio de sesión.
+
+![Cierre de sesión](docs/assets/chapter5/mockups/08_Sesion_cerrada.png)
+
+**Panel principal**
+
+Presenta una vista general de la información de seguridad y las funcionalidades disponibles.
+
+![Panel principal](docs/assets/chapter5/mockups/09_Panel_principal.png)
+
+**Gestión de zonas**
+
+Permite consultar y administrar las zonas registradas dentro del sistema.
+
+![Gestión de zonas](docs/assets/chapter5/mockups/10_Gestion_de_zonas.png)
+
+**Monitoreo de dispositivos**
+
+Presenta información sobre los dispositivos asociados al sistema de seguridad.
+
+![Monitoreo de dispositivos](docs/assets/chapter5/mockups/11_Monitoreo_de_dispositivos.png)
+
+**Listado de alertas**
+
+Permite visualizar los eventos y alertas registrados por el sistema.
+
+![Listado de alertas](docs/assets/chapter5/mockups/12_Listado_de_alertas.png)
+
+**Detalle de alerta**
+
+Presenta información específica de una alerta para facilitar su consulta y seguimiento.
+
+![Detalle de alerta](docs/assets/chapter5/mockups/13_Detalle_de_alerta.png)
+
+**Configuración del sistema**
+
+Presenta un formulario para modificar parámetros relacionados con las funcionalidades del sistema.
+
+![Configuración del sistema](docs/assets/chapter5/mockups/14_Formulario_de_configuracion.png)
 
 ### 5.4.4. Applications User Flow Diagrams
 
-_Pendiente de desarrollo._
+Los diagramas de flujo de usuario representan las principales rutas de navegación dentro de SecurIoT, mostrando las interacciones entre el usuario y las interfaces de la aplicación. Se consideran los procesos de autenticación, monitoreo y consulta de alertas, con el propósito de visualizar la secuencia de acciones y decisiones durante el uso del sistema.
+
+**Flujo de autenticación**
+
+Representa el proceso de acceso al sistema, considerando el inicio de sesión, registro de cuenta, verificación de correo y recuperación de contraseña.
+
+![Flujo de autenticación](docs/assets/chapter5/mockups/01_Flujo_de_autenticacion.png)
+
+**Flujo de monitoreo**
+
+Representa la navegación desde el panel principal hacia la consulta de zonas y dispositivos, permitiendo acceder a la información de monitoreo disponible.
+
+![Flujo de monitoreo](docs/assets/chapter5/mockups/02_Flujo_de_monitoreo.png)
+
+**Flujo de gestión de alertas**
+
+Representa el recorrido del usuario para consultar las alertas registradas, acceder a sus detalles y realizar las acciones disponibles en el sistema.
+
+![Flujo de gestión de alertas](docs/assets/chapter5/mockups/03_Flujo_de_alertas.png)
+
 
 <div style="page-break-after: always;"></div>
 
