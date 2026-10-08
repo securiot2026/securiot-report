@@ -3683,19 +3683,29 @@ _Pendiente de desarrollo._
 
 ### Conclusiones
 
-1. El Problem Statement sostiene que las pymes industriales, logísticas y comerciales del Perú protegen sus instalaciones con vigilancia humana y CCTV pasivo, revisando grabaciones cuando el incidente ya ocurrió. Las nueve entrevistas respaldan este diagnóstico.
+1. El Problem Statement sostiene que las pymes industriales, logísticas y comerciales del Perú dependen principalmente de vigilancia humana y CCTV pasivo, por lo que suelen reaccionar cuando el incidente ya ocurrió. Las nueve entrevistas realizadas durante AV1 respaldaron este diagnóstico y permitieron orientar el diseño de SECURIOT hacia la detección oportuna, la supervisión remota y la trazabilidad de alertas.
 
-2. El 100% de los administradores de seguridad depende de la intervención física del personal, reporta falsas alarmas y elabora evidencia y reportes de forma manual o lenta. En el conjunto de los tres segmentos, el 100% percibe valor en alertas más rápidas, automáticas o contextualizadas, y el 77.8% describe procesos fragmentados o manuales.
+2. Durante TB1, las decisiones de arquitectura de información, estilo visual y experiencia de usuario se tradujeron en wireframes, mock-ups, flujos y prototipos para la Landing Page, la Web App, la App Móvil y la interfaz física del dispositivo IoT. La aplicación de una identidad y un vocabulario comunes permitió mantener coherencia entre los productos, aunque los User Flow Diagrams y algunos mock-ups todavía requieren mayor detalle para cubrir explícitamente rutas ideales y alternativas.
 
-3. La especificación de requisitos y el diseño arquitectónico traducen los hallazgos de las entrevistas en una propuesta coherente para SECURIOT. Las ocho épicas y las 23 User Stories cubren el monitoreo, el control de accesos, las alertas, la trazabilidad, la gestión multi-sede y la continuidad operativa mediante procesamiento en el borde. Esta correspondencia permite avanzar hacia TB1 con un alcance verificable, aunque todavía se requiere validar la propuesta con prototipos y usuarios reales.
+3. El Sprint 1 demostró la viabilidad técnica del circuito principal de SECURIOT. La solución permite autenticar al administrador, consultar zonas y dispositivos, recibir telemetría simulada y visualizar alertas generadas por eventos de apertura. Asimismo, la Landing Page, la Web App y la Cloud API cuentan con versiones públicas desplegadas, mientras que la App Móvil dispone de configuración para su distribución mediante Firebase App Distribution.
+
+4. La evidencia de ejecución y la documentación OpenAPI permiten comprobar la integración inicial entre las aplicaciones y los servicios. Sin embargo, la hipótesis de que SECURIOT reducirá el tiempo de respuesta y la carga operativa de los usuarios todavía no puede considerarse validada: las pruebas del Sprint 1 demuestran funcionamiento técnico, pero aún faltan entrevistas de validación con los segmentos objetivo y mediciones comparables en un entorno real.
+
+5. Las pruebas end-to-end y de integración de la Cloud API y la Edge API cubren comportamientos esenciales relacionados con dispositivos, zonas, telemetría y alertas. No obstante, la cobertura actual debe ampliarse con pruebas unitarias de frontend y pruebas de aceptación BDD para verificar de manera completa los criterios definidos en las User Stories.
+
+6. La matriz LACX, el Sprint Backlog, GitFlow y las evidencias de commits facilitaron la coordinación del Sprint 1 y la trazabilidad del trabajo. Aun así, los analíticos muestran que la implementación de código se concentró en pocos integrantes, por lo que el equipo debe equilibrar la participación técnica en las siguientes iteraciones.
 
 ### Recomendaciones
 
-1. Se recomienda que, para la siguiente entrega (TB1), el equipo ejecute las Validation Interviews con el Landing Page y los prototipos navegables, entre 3 y 5 por segmento, y que incorpore al menos a gerentes o administradores de pymes industriales reales de Lima Metropolitana (por ejemplo, Ate, Villa El Salvador, Lurín, Callao y Santa Anita), incluyendo a quienes operan más de una sede.
+1. Para AV2 se recomienda ejecutar las Validation Interviews con la Landing Page y los prototipos navegables, realizando entre tres y cinco entrevistas por segmento. Estas sesiones deben medir comprensión de la propuesta de valor, facilidad para completar los flujos principales, confianza en las alertas y percepción de utilidad en contextos multi-sede.
 
-2. Es conveniente fijar desde ahora metas cuantificables, como el tiempo de notificación menor a 10 segundos ya definido en US-08 y una tasa objetivo de falsas alarmas por zona, para poder contrastarlas con los resultados de las pruebas.
+2. Se recomienda completar las pruebas unitarias y de aceptación BDD, vinculándolas con los escenarios Gherkin de cada User Story. También se debe automatizar su ejecución dentro del flujo de integración continua para impedir que una versión con pruebas fallidas llegue a despliegue.
 
-3. El análisis competitivo confirma la oportunidad: Prosegur mantiene la alerta atada a un operador humano y a costos que crecen por turno, Verisure vende un kit aislado por local con contrato de permanencia y Verkada tiene un costo por dispositivo fuera del alcance de una pyme peruana. Ninguno cubre bien a la pyme industrial multi-sede.
+3. La siguiente iteración debe registrar métricas verificables, como tiempo de notificación, disponibilidad del servicio, sincronización después de una desconexión y tasa de falsas alarmas. Estos resultados permitirán contrastar los criterios de éxito de Lean UX con evidencia cuantitativa.
+
+4. Se recomienda completar la documentación detallada de los endpoints, fortalecer la evidencia del despliegue móvil y probar el dispositivo IoT con hardware físico en condiciones cercanas a una instalación industrial.
+
+5. El equipo debe distribuir con mayor equilibrio las tareas de implementación, testing y despliegue, conservando la trazabilidad mediante ramas, pull requests y commits asociados a cada integrante y producto.
 
 ## Video About-the-Team
 
