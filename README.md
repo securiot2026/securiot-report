@@ -124,6 +124,39 @@ Los analíticos muestran que las siete secciones principales del informe (Capít
 
 También se identifica una oportunidad de mejora. Las versiones v1.10 a v1.17 se registraron el 18 y el 19 de septiembre, es decir, en los dos últimos días antes de la entrega. Para TB1, el equipo se compromete a integrar los avances con mayor frecuencia, a repartir de forma más pareja los commits entre todos los integrantes y a revisar los pull requests antes del cierre de cada sprint.
 
+## TB1 - Stage Review (Semana 7)
+
+### Organización y flujo de trabajo
+
+Para TB1, el equipo mantuvo `README.md` como documento principal y continuó utilizando GitFlow para organizar los cambios. La rama `develop` concentró la integración del Capítulo V, el Capítulo VI y las correcciones provenientes de AV1. Las tareas se distribuyeron mediante la matriz LACX y el Sprint Backlog, relacionando cada responsabilidad con un producto o aspecto específico: Landing Page, Web App, Cloud API, Edge e IoT, Mobile, Testing y DevOps. Al cierre de la revisión, los avances aprobados se integraron en `main` como rama principal del proyecto.
+
+### Cómo se desarrolló el informe
+
+El trabajo de TB1 se organizó en cuatro etapas:
+
+1. **Definición de la experiencia y la interfaz.** Melina Santillan desarrolló las guías de estilo y la arquitectura de información. Daniel Aquino elaboró los wireframes y wireflows de las aplicaciones. Javier Nikaido incorporó los mock-ups de alta fidelidad y los User Flow Diagrams. Estas decisiones permitieron mantener una identidad y una navegación coherentes entre la Landing Page, la Web App y la App Móvil.
+2. **Diseño técnico y configuración del producto.** Rommel Hurtado documentó el dispositivo IoT y las decisiones de Software Configuration Management. Pietro Osores actualizó la representación arquitectónica de Embedded, Edge y Cloud, y relacionó los prototipos con el comportamiento esperado del sistema.
+3. **Implementación y evidencia del Sprint 1.** Juan Angulo lideró la integración técnica de la Cloud API, la Edge API, la Web App, la App Móvil y el firmware. Matias Salcedo consolidó la planificación, el backlog y las evidencias de desarrollo, ejecución, documentación de servicios y despliegue del Sprint 1.
+4. **Integración y cierre de la entrega.** El equipo revisó la coherencia entre requisitos, diseño, implementación y despliegue, actualizó el Student Outcome y redactó conclusiones que diferencian los resultados técnicos comprobados de las validaciones que todavía corresponden a entregas posteriores.
+
+### Aportes por integrante
+
+| Integrante | Aportes principales en TB1 |
+|---|---|
+| Angulo Abud, Juan Carlos (Team Leader) | Liderazgo técnico de la Cloud API e integración con Edge API, Web App, App Móvil y firmware; definición de contratos entre componentes y organización del trabajo técnico. |
+| Hurtado Balcazar, Rommel Daniel | Diseño del dispositivo IoT, circuito y comportamiento del SecurIoT Vision Node; desarrollo de Software Configuration Management. |
+| Aquino Solorzano, Daniel Jonatan | Elaboración y documentación de wireframes y wireflows para las aplicaciones web y móvil. |
+| Osores Marchese, Pietro | Actualización de arquitectura, separación de Embedded, Edge y Cloud, documentación de prototipos y preparación de material de presentación. |
+| Santillan Alvarado, Melina Liz | Desarrollo de las guías de estilo generales, web, mobile e IoT, y definición de la arquitectura de información de los productos. |
+| Salcedo Champi, Matias Rodolfo | Organización de la documentación del Sprint 1, ejecución con datos de prueba, documentación de servicios, despliegue y video de navegación. |
+| Nikaido Vargas, Javier Masaru | Desarrollo de mock-ups de alta fidelidad, User Flow Diagrams e interfaces para los principales recorridos web y móviles. |
+
+### Evaluación de la colaboración
+
+La división por aspectos permitió que cada integrante asumiera una responsabilidad identificable y que los capítulos de diseño e implementación evolucionaran en paralelo. La matriz LACX y el Sprint Backlog ayudaron a conectar las tareas individuales con los objetivos del Sprint 1, mientras que el flujo de ramas y revisiones mantuvo la trazabilidad de los cambios incorporados al informe.
+
+Como oportunidad de mejora, la implementación de código quedó concentrada principalmente en los responsables técnicos de los servicios. Para las siguientes iteraciones, el equipo debe distribuir con mayor equilibrio las tareas de programación, pruebas y despliegue, manteniendo responsables claros y revisiones cruzadas antes de integrar cada cambio.
+
 <div style="page-break-after: always;"></div>
 
 # Contenido
