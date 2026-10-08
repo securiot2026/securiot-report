@@ -225,6 +225,8 @@ También se identifica una oportunidad de mejora. Las versiones v1.10 a v1.17 se
     - [5.4.3. Applications Mock-ups](#543-applications-mock-ups)
     - [5.4.4. Applications User Flow Diagrams](#544-applications-user-flow-diagrams)
   - [5.5. Applications Prototyping](#55-applications-prototyping)
+    - [5.5.1. Web Application Prototype](#551-web-application-prototype)
+    - [5.5.2. Mobile Application Prototype](#552-mobile-application-prototype)
   - [5.6. IoT Device Design](#56-iot-device-design)
     - [5.6.1. Componentes del prototipo](#561-Componentes-del-prototipo)
     - [5.6.2. Diseño de circuito](#562-Diseño-de-circuito)
@@ -2458,7 +2460,27 @@ _Pendiente de desarrollo._
 
 ## 5.5. Applications Prototyping
 
-_Pendiente de desarrollo._
+Los prototipos de SecurIoT presentan dos experiencias complementarias: la aplicación web prioriza la configuración de sensores y reglas de alerta, mientras que la aplicación móvil se orienta a la vigilancia y al control de cámaras y actuadores durante la operación. Los siguientes videos muestran los recorridos de ambas interfaces con datos simulados; permiten revisar la propuesta de interacción, pero no acreditan una integración con equipos físicos ni una validación con usuarios reales.
+
+### 5.5.1. Web Application Prototype
+
+<p align="center"><img src="docs/assets/chapter5/prototyping/web-prototype-thumbnail.png" alt="Miniatura del video del prototipo web de SecurIoT: configuración de dispositivos y sensores" width="688"/></p>
+
+**Enlace completo y directo al video del prototipo web:**
+
+<https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310971_upc_edu_pe/IQAADPSpV9fbQK8bOgKavfHxATbTtINoSt15vo2tCRHCCgI?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=OOHerz>
+
+**Descripción y sustentación.** El prototipo web está orientado al administrador que configura los sensores, organiza los dispositivos por zona y define las condiciones que generan alertas. La vista de dispositivos permite reconocer el tipo de sensor, su ubicación y su estado antes de acceder a la configuración. Se prioriza esta experiencia en escritorio porque la revisión de parámetros y reglas requiere comparar información y trabajar con mayor precisión. Así, la web concentra la configuración del sistema y complementa la supervisión operativa desde el móvil.
+
+### 5.5.2. Mobile Application Prototype
+
+<p align="center"><img src="docs/assets/chapter5/prototyping/mobile-prototype-thumbnail.png" alt="Miniatura del video del prototipo móvil de SecurIoT: cámaras, posiciones pan/tilt y activación de actuadores" width="320"/></p>
+
+**Enlace completo y directo al video del prototipo móvil:**
+
+<https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310971_upc_edu_pe/IQBUQ0dW1Mz7Q6AO-jFfEy4EAf-hoPcGu4dNiqG270LrDA0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=sEwaE2>
+
+**Descripción y sustentación.** El prototipo móvil funciona principalmente como una herramienta de vigilancia y control para el personal que se desplaza por las instalaciones. La interfaz presenta las cámaras por ubicación, su conectividad y su posición pan/tilt, junto con accesos al control de servos y a la activación de actuadores. Este enfoque permite priorizar la consulta del entorno y las acciones operativas sin trasladar al teléfono toda la complejidad de la configuración de sensores y alertas. Los controles mostrados simulan la respuesta del sistema y no envían órdenes a equipos reales.
 
 ## 5.6. IoT Device Design
 
