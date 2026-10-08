@@ -3464,7 +3464,7 @@ El segundo Sprint se enfocó en que el sistema deje de reaccionar de una sola ma
 
 #### 6.2.2.1. Sprint Planning 2
 
-El Sprint 2 parte de los resultados del Sprint 1 y del Product Backlog priorizado de la sección 3.3. El siguiente cuadro resume la planificación. Los datos de la reunión (fecha, hora y asistentes) los confirma el equipo antes de la entrega.
+El Sprint 2 parte de los resultados del Sprint 1 y del Product Backlog priorizado de la sección 3.3. El siguiente cuadro resume la planificación. La reunión se realizó por Discord.
 
 <!-- CONFIRMAR con el equipo: fecha, hora, lugar y asistentes reales de la reunión de planning del Sprint 2. -->
 
@@ -3473,7 +3473,7 @@ El Sprint 2 parte de los resultados del Sprint 1 y del Product Backlog priorizad
 | **Sprint Planning Background** | |
 | Date | Por confirmar |
 | Time | Por confirmar |
-| Location | Por confirmar |
+| Location | Reunión virtual (Discord) |
 | Prepared By | Por confirmar |
 | Attendees | Por confirmar |
 | **Sprint 1 Review Summary** | El Sprint 1 cerró los siete User Stories P0 (34 Story Points): registro de zonas y dispositivos, monitoreo en tiempo real, validación de acceso con visión por computadora, alertas de intrusión y autenticación. La Cloud API y la Web App quedaron desplegadas en el VPS y la App Móvil se distribuyó por Firebase App Distribution. |
@@ -3602,7 +3602,7 @@ La Edge API publica los siguientes endpoints, que la Cloud API consume como prox
 
 La Cloud API, la Web App y la Edge API siguen desplegadas en el VPS bajo el dominio `juan-tech.com`, con Dokploy como orquestador y Docker Swarm de un solo nodo. Cada servicio es un clon de su repositorio que sigue la rama `develop`.
 
-<!-- CONFIRMAR: si el VPS ya redesplegó la rama develop con los cambios del Sprint 2 (reglas, comandos y rostros). -->
+Los cambios del Sprint 2 (reglas, comandos manuales y registro de rostros) ya están desplegados en el VPS.
 
 | Producto | URL / Destino | Infraestructura |
 | --- | --- | --- |
@@ -3636,7 +3636,7 @@ El tercer Sprint se enfocó en llevar a las pantallas lo que el Sprint 2 dejó f
 
 #### 6.2.3.1. Sprint Planning 3
 
-El Sprint 3 toma como entrada los contratos REST que dejó el Sprint 2 y el Product Backlog de la sección 3.3. El siguiente cuadro resume la planificación. Los datos de la reunión (fecha, hora y asistentes) los confirma el equipo antes de la entrega.
+El Sprint 3 toma como entrada los contratos REST que dejó el Sprint 2 y el Product Backlog de la sección 3.3. El siguiente cuadro resume la planificación. La reunión se realizó por Discord.
 
 <!-- CONFIRMAR con el equipo: fecha, hora, lugar y asistentes reales de la reunión de planning del Sprint 3. -->
 
@@ -3645,7 +3645,7 @@ El Sprint 3 toma como entrada los contratos REST que dejó el Sprint 2 y el Prod
 | **Sprint Planning Background** | |
 | Date | Por confirmar |
 | Time | Por confirmar |
-| Location | Por confirmar |
+| Location | Reunión virtual (Discord) |
 | Prepared By | Por confirmar |
 | Attendees | Por confirmar |
 | **Sprint 2 Review Summary** | El Sprint 2 dejó en la Edge API el motor de reglas, la cola de comandos manuales y el registro de rostros, y en el firmware el portal de aprovisionamiento. La Web App ya permitía registrar la URL del Edge y los rostros autorizados. Faltaba una interfaz para administrar las reglas, ver la cámara y controlar el dispositivo desde el teléfono. |
@@ -3768,7 +3768,7 @@ La Edge API responde el frame como JSON con la imagen en base64. Esa decisión p
 
 El Sprint 3 no cambió la topología de despliegue del Sprint 2. La Web App y la Cloud API siguen en el VPS bajo `juan-tech.com`, y la App Móvil se distribuye por Firebase App Distribution (proyecto `securiot-centinela-labs`).
 
-<!-- CONFIRMAR: si el VPS ya redesplegó la rama develop con los cambios del Sprint 3, y si se generó un nuevo APK en Firebase App Distribution. -->
+Los cambios del Sprint 3 ya están desplegados en el VPS, y la versión nueva de la App Móvil está disponible en Firebase App Distribution.
 
 | Producto | URL / Destino | Infraestructura |
 | --- | --- | --- |
