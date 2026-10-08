@@ -2521,8 +2521,37 @@ La cuarta captura funciona como cierre de la página. Presenta un mensaje final 
 
 ### 5.3.2. Landing Page Mock-up
 
-_Pendiente de desarrollo._
+Los mockups de alta fidelidad de SecurIoT representan la propuesta visual de la plataforma, manteniendo una identidad gráfica coherente en sus distintos flujos e interfaces. A partir de los diseños elaborados en Figma, se presentan cinco capturas que resumen los principales componentes visuales del sistema, tanto en entornos web como móviles.
 
+La primera captura presenta el flujo de autenticación de la plataforma. Incluye las pantallas de inicio de sesión, creación de cuenta, verificación de correo, configuración inicial, recuperación de contraseña y confirmación, mostrando la consistencia visual del acceso al sistema.
+
+**Figura 5.18.** Mockup del flujo de autenticación de SecurIoT.
+
+![Mockup del flujo de autenticación de SecurIoT](docs/assets/chapter5/mockups/1-authentication-flow-board.png)
+
+La segunda captura presenta un conjunto de pantallas principales del sistema web orientadas a la visualización general de información, paneles administrativos y monitoreo. En ella se observan tablas, formularios, dashboards y vistas de gestión, manteniendo la estética oscura con detalles en tonos turquesa.
+
+**Figura 5.19.** Mockup de pantallas principales del sistema web.
+
+![Mockup de pantallas principales del sistema web](docs/assets/chapter5/mockups/2-desktop-dashboard-gallery.png)
+
+La tercera captura reúne otras pantallas complementarias del sistema web, centradas en procesos administrativos y configuraciones internas. Estas vistas amplían la representación del funcionamiento del sistema y refuerzan la uniformidad de la interfaz.
+
+**Figura 5.20.** Mockup complementario de pantallas administrativas del sistema web.
+
+![Mockup complementario de pantallas administrativas del sistema web](docs/assets/chapter5/mockups/3-desktop-admin-flowboard.png)
+
+La cuarta captura presenta un conjunto de mockups móviles en inglés, incluyendo pantallas de inicio de sesión, navegación, listas, filtros, estados vacíos y estados de carga. Esta versión refleja la adaptación de la experiencia de usuario a dispositivos móviles.
+
+**Figura 5.21.** Mockup móvil en inglés de la aplicación SecurIoT.
+
+![Mockup móvil en inglés de la aplicación SecurIoT](docs/assets/chapter5/mockups/4-mobile-english-styleboard.png)
+
+La quinta captura presenta un conjunto de mockups móviles en español, en los que se incluyen pantallas de autenticación, alertas, listas de eventos, filtros, estados vacíos y detalles de incidencias. Esta versión demuestra la localización de la interfaz y la continuidad visual del sistema en dispositivos móviles.
+
+**Figura 5.22.** Mockup móvil en español de la aplicación SecurIoT.
+
+![Mockup móvil en español de la aplicación SecurIoT](docs/assets/chapter5/mockups/5-mobile-spanish-ui-atlas.png)
 <div style="page-break-after: always;"></div>
 
 ## 5.4. Applications UX/UI Design
