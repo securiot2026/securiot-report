@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">Escala de espaciado de SecurIoT</title>
+  <desc id="desc">Representación de la retícula base de ocho píxeles y sus incrementos principales.</desc>
+  <rect width="1200" height="420" rx="24" fill="#0B0E14"/>
+  <text x="64" y="72" fill="#EEF0F4" font-family="Sora, Arial, sans-serif" font-size="34" font-weight="700">Escala de espaciado</text>
+  <text x="64" y="110" fill="#8B93A3" font-family="Schibsted Grotesk, Arial, sans-serif" font-size="20">Retícula base de 8 px, con 4 px para ajustes internos pequeños</text>
+  <g transform="translate(64 170)" font-family="Martian Mono, Consolas, monospace" font-size="18">
+    <g transform="translate(0 0)"><rect width="4" height="110" rx="2" fill="#1FD3C4"/><text x="0" y="145" fill="#EEF0F4">4</text></g>
+    <g transform="translate(105 0)"><rect width="8" height="110" rx="3" fill="#1FD3C4"/><text x="0" y="145" fill="#EEF0F4">8</text></g>
+    <g transform="translate(210 0)"><rect width="16" height="110" rx="4" fill="#1FD3C4"/><text x="0" y="145" fill="#EEF0F4">16</text></g>
+    <g transform="translate(325 0)"><rect width="24" height="110" rx="5" fill="#1FD3C4"/><text x="0" y="145" fill="#EEF0F4">24</text></g>
+    <g transform="translate(450 0)"><rect width="32" height="110" rx="6" fill="#1FD3C4"/><text x="0" y="145" fill="#EEF0F4">32</text></g>
+    <g transform="translate(585 0)"><rect width="48" height="110" rx="7" fill="#1FD3C4"/><text x="0" y="145" fill="#EEF0F4">48</text></g>
+    <g transform="translate(740 0)"><rect width="64" height="110" rx="8" fill="#1FD3C4"/><text x="0" y="145" fill="#EEF0F4">64 px</text></g>
+  </g>
+  <line x1="64" y1="340" x2="1136" y2="340" stroke="#26303D"/>
+  <text x="64" y="380" fill="#8B93A3" font-family="Schibsted Grotesk, Arial, sans-serif" font-size="18">La escala organiza separaciones internas, grupos, tarjetas y secciones sin introducir valores arbitrarios.</text>
+</svg>

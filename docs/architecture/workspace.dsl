@@ -7,11 +7,14 @@ workspace "SecurIoT Architecture" "C4 model for the target SecurIoT edge and clo
         guard = person "Field Guard" "Receives and handles alerts while moving through the customer site."
         visitor = person "Website Visitor" "Learns about the SecurIoT product."
 
-        device = softwareSystem "ESP32 Vision Node" "Camera and sensor hardware running lightweight YOLO person/body detection before forwarding candidate frames." {
+        device = element "Vision Node Hardware" "Hardware System" "ESP32-S3, camera, sensors, Wi-Fi, and local actuators; controlled by the Embedded Application." {
             tags "Hardware"
         }
 
         platform = softwareSystem "SecurIoT Platform" "Distributed security platform with on-site facial recognition and a hosted management backend." {
+            embedded = container "Embedded Application" "Firmware that captures frames and readings, filters candidate frames with YOLO in the target design, and applies Edge response commands to actuators." "C++ and PlatformIO on ESP32-S3" {
+                tags "Embedded"
+            }
             landing = container "Landing Page" "Public product website." "Static HTML/CSS/JavaScript and Nginx" {
                 tags "Web"
             }
@@ -121,7 +124,7 @@ workspace "SecurIoT Architecture" "C4 model for the target SecurIoT edge and clo
                     tags "Scheduler"
                 }
             }
-            edgeBuffer = container "Offline Buffer" "Stores unsynchronized telemetry and recognition events during connectivity interruptions." "SQLite" {
+            edgeDb = container "Edge Database" "Independent on-site database storing readings, synchronization status, and retry state; supports operation when the cloud is unavailable." "SQLite (edge.db) and Peewee" {
                 tags "Database"
             }
             identityStore = container "Local Identity Store" "Stores normalized ArcFace identity embeddings on site; raw biometric templates are not uploaded to the cloud." "NumPy identity files" {
@@ -221,7 +224,7 @@ workspace "SecurIoT Architecture" "C4 model for the target SecurIoT edge and clo
         edgeReadingClass = element "Edge Reading" "Domain Class" "reading_id: CharField [unique]; device_id: CharField; zone_id: CharField; sensor_type: CharField; value: CharField; recorded_at: DateTimeField; synced: BooleanField=false; sync_attempts: IntegerField=0; next_attempt_at: DateTimeField?; created_at: DateTimeField" {
             tags "Class"
         }
-        edgeReadingTable = element "READING (Edge Buffer)" "Database Table" "reading_id: string UK; device_id: string; zone_id: string; sensor_type: string; value: string; recorded_at: datetime; synced: boolean; sync_attempts: int; next_attempt_at: datetime?; created_at: datetime" {
+        edgeReadingTable = element "READING (Edge Database)" "Database Table" "reading_id: string UK; device_id: string; zone_id: string; sensor_type: string; value: string; recorded_at: datetime; synced: boolean; sync_attempts: int; next_attempt_at: datetime?; created_at: datetime" {
             tags "Table"
         }
 
@@ -232,16 +235,18 @@ workspace "SecurIoT Architecture" "C4 model for the target SecurIoT edge and clo
         platform.mobile -> platform.cloudApi "Consumes the REST API" "HTTPS/JSON and JWT"
         platform.cloudApi -> platform.cloudDb "Reads from and writes to" "TypeORM/SQL"
 
-        device -> platform.edgeApi "Sends candidate frames, YOLO body boxes, and sensor readings" "Wi-Fi LAN, HTTP/JSON and multipart, X-Device-Key"
-        platform.edgeApi -> device "Returns pan/tilt, lock, and local-alert commands" "HTTP/JSON response"
+        device -> platform.embedded "Provides camera frames and sensor signals" "Camera interface and GPIO"
+        platform.embedded -> device "Applies pan/tilt, door, and alarm commands" "GPIO/PWM"
+        platform.embedded -> platform.edgeApi "Sends candidate frames and readings" "Wi-Fi LAN, HTTP/JSON and multipart, X-Device-Key"
+        platform.edgeApi -> platform.embedded "Returns pan/tilt, door, and local-alert commands" "HTTP/JSON response"
         platform.edgeApi -> platform.identityStore "Matches ArcFace embeddings against enrolled identities" "Local file access"
-        platform.edgeApi -> platform.edgeBuffer "Buffers recognition events and telemetry" "Peewee/SQL"
+        platform.edgeApi -> platform.edgeDb "Persists readings and synchronization state" "Peewee/SQL"
         platform.edgeApi -> platform.cloudApi "Pushes recognition outcomes and telemetry with retry/backoff; the hosted backend does not initiate connections to the edge" "Outbound HTTPS/JSON and X-Device-Key"
 
         identityContext -> zonesContext "Publishes user identity" "Customer/Supplier and Published Language"
         zonesContext -> monitoringContext "Publishes opaque zone and device identifiers" "Customer/Supplier"
         edgeContext -> monitoringContext "Translates local readings into the cloud telemetry contract" "Customer/Supplier and Anticorruption Layer"
-        device -> edgeContext "Implements the Edge HTTP contract without local translation" "Conformist"
+        device -> edgeContext "Uses the Embedded Application to follow the Edge HTTP contract" "Conformist"
 
         platform.edgeApi -> platform.cloudApi.telemetryController "POST /telemetry" "Outbound HTTPS/JSON and X-Device-Key"
         platform.web -> platform.cloudApi.telemetryController "GET /telemetry" "HTTPS/JSON and JWT"
@@ -285,17 +290,18 @@ workspace "SecurIoT Architecture" "C4 model for the target SecurIoT edge and clo
         platform.cloudApi.deviceRepository -> platform.cloudDb "SQL"
         platform.cloudApi.zoneRepository -> identityContext "References User through ownerId"
 
-        device -> platform.edgeApi.ingestBlueprint "POST /ingest" "Wi-Fi LAN, HTTP/JSON and X-Device-Key"
-        device -> platform.edgeApi.framesBlueprint "POST /frames" "Wi-Fi LAN, HTTP multipart and X-Device-Key"
+        platform.embedded -> platform.edgeApi.ingestBlueprint "POST /ingest" "Wi-Fi LAN, HTTP/JSON and X-Device-Key"
+        platform.embedded -> platform.edgeApi.framesBlueprint "POST /frames" "Wi-Fi LAN, HTTP multipart and X-Device-Key"
         platform.edgeApi.ingestBlueprint -> platform.edgeApi.deviceKeyCheck "Uses"
         platform.edgeApi.framesBlueprint -> platform.edgeApi.deviceKeyCheck "Uses"
         platform.edgeApi.framesBlueprint -> platform.edgeApi.detectorFactory "Gets the configured detector"
+        platform.edgeApi.detectorFactory -> platform.identityStore "Loads enrolled ArcFace identities" "Local file access"
         platform.edgeApi.framesBlueprint -> platform.edgeApi.debounceTracker "Records qualifying detections"
         platform.edgeApi.framesBlueprint -> platform.edgeApi.panTilt "Computes movement from the bounding box"
         platform.edgeApi.framesBlueprint -> platform.edgeApi.readingBuffer "Buffers camera detections"
         platform.edgeApi.ingestBlueprint -> platform.edgeApi.readingBuffer "Buffers sensor readings"
         platform.edgeApi.readingBuffer -> platform.edgeApi.readingModel "Inserts with on_conflict_ignore"
-        platform.edgeApi.readingModel -> platform.edgeBuffer "SQL"
+        platform.edgeApi.readingModel -> platform.edgeDb "Reads and writes readings and retry state" "Peewee/SQL"
         platform.edgeApi.scheduler -> platform.edgeApi.relayCycle "Invokes periodically"
         platform.edgeApi.relayCycle -> platform.edgeApi.readingModel "Selects pending readings and updates retry state"
         platform.edgeApi.relayCycle -> monitoringContext "POST /api/v1/telemetry" "Outbound HTTPS/JSON and X-Device-Key"
@@ -350,12 +356,12 @@ workspace "SecurIoT Architecture" "C4 model for the target SecurIoT edge and clo
             deploymentNode "Customer Site" "Private on-site network." "LAN" {
                 deploymentNode "Edge Host Hardware" "On-site mini-PC or laptop." "Docker and Python 3.12" {
                     containerInstance platform.edgeApi
-                    containerInstance platform.edgeBuffer
+                    containerInstance platform.edgeDb
                     containerInstance platform.identityStore
                 }
 
                 deploymentNode "ESP32 Vision Hardware" "Camera, sensors, PSRAM, Wi-Fi, and local actuators." "ESP32-S3" {
-                    softwareSystemInstance device
+                    containerInstance platform.embedded
                 }
             }
         }
@@ -371,7 +377,7 @@ workspace "SecurIoT Architecture" "C4 model for the target SecurIoT edge and clo
             autoLayout lr
         }
 
-        systemContext platform "SystemContext" "SecurIoT system context with the ESP32 hardware outside the platform boundary." {
+        systemContext platform "SystemContext" "SecurIoT system context; firmware mediates all interaction with external Vision Node hardware." {
             include operator
             include guard
             include visitor
@@ -380,23 +386,24 @@ workspace "SecurIoT Architecture" "C4 model for the target SecurIoT edge and clo
             autoLayout lr
         }
 
-        container platform "Container" "Cloud, edge, and client containers; ESP32 hardware remains outside the platform boundary." {
+        container platform "Container" "Hardware to Embedded Application to Edge API; independent edge and cloud databases." {
             include operator
             include guard
             include visitor
             include device
+            include platform.embedded
             include platform.landing
             include platform.web
             include platform.mobile
             include platform.cloudApi
             include platform.cloudDb
             include platform.edgeApi
-            include platform.edgeBuffer
+            include platform.edgeDb
             include platform.identityStore
             autoLayout lr
         }
 
-        deployment platform production "Deployment" "Production deployment across hosted infrastructure and customer-site hardware." {
+        deployment platform production "Deployment" "Embedded firmware on ESP32-S3; Edge API and its SQLite database on the local Edge host; hosted Cloud API and PostgreSQL." {
             include *
             autoLayout lr
         }
@@ -502,9 +509,10 @@ workspace "SecurIoT Architecture" "C4 model for the target SecurIoT edge and clo
         }
 
         component platform.edgeApi "EdgeComponents" "Edge Detection and Relay bounded-context components." {
-            include device
+            include platform.embedded
             include monitoringContext
-            include platform.edgeBuffer
+            include platform.edgeDb
+            include platform.identityStore
             include platform.edgeApi.ingestBlueprint
             include platform.edgeApi.framesBlueprint
             include platform.edgeApi.deviceKeyCheck
@@ -523,7 +531,7 @@ workspace "SecurIoT Architecture" "C4 model for the target SecurIoT edge and clo
             autoLayout lr
         }
 
-        custom "EdgeDatabase" "Edge Detection and Relay local data model." {
+        custom "EdgeDatabase" "Reading table in the independent Edge SQLite database (edge.db), not in cloud PostgreSQL." {
             include edgeReadingTable
             autoLayout tb
         }
@@ -624,6 +632,10 @@ workspace "SecurIoT Architecture" "C4 model for the target SecurIoT edge and clo
             }
             element "Edge" {
                 background #047857
+                color #ffffff
+            }
+            element "Embedded" {
+                background #b45309
                 color #ffffff
             }
             element "Hardware" {
