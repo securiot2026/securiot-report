@@ -68,6 +68,8 @@
 | v1.19 | 08/10/2026 | Matias Salcedo Champi | Incorporación de capturas de Contributors de Landing Page, Web App, Cloud API y Edge API, con el alcance de las estadísticas de GitHub. |
 | v1.20 | 08/10/2026 | Matias Salcedo Champi | Evidencias de ejecución de Landing y Flutter, consulta de Swagger con datos de prueba, configuración de despliegue y estadísticas de contribución de Mobile. |
 | v1.21 | 08/10/2026 | Javier Masaru Nikaido Vargas | Diseño de mockups de alta fidelidad, elaboración de User Flow Diagrams, diseño de interfaces web y móviles, desarrollo visual de la Landing Page y documentación de los flujos de navegación de SecurIoT. |
+| v1.22 | 08/10/2026 | Matias Salcedo Champi | Documentación de las 12 acciones de la Cloud API: sintaxis, parámetros, ejemplos de petición y respuesta, autorización y errores del Sprint 1. |
+
 <div style="page-break-after: always;"></div>
 
 # Project Report Collaboration Insights
@@ -3452,19 +3454,318 @@ ruta `/api/docs`. En el Sprint 1 se documentaron los endpoints de autenticación
 zonas, dispositivos, telemetría y alertas, todos versionados bajo `/api/v1`.
 
 **Documentación desplegada (Swagger UI):** https://securiot-api.juan-tech.com/api/docs
-**Repositorio:** securiot2026/securiot-cloud-api (rama `develop`)
+**Repositorio:** [securiot2026/securiot-cloud-api](https://github.com/securiot2026/securiot-cloud-api/tree/develop) (rama `develop`)
 
 ![Swagger UI — SecurIoT Cloud API](docs/assets/chapter6/sprint1-swagger-cloud-api.png)
 
-| Endpoint | Acciones (verbo HTTP) | Autorización | Descripción / Response |
-| --- | --- | --- | --- |
-| `/api/v1/auth/login` | POST | Pública | Autentica con email/password; response `200` con `{ access_token }` (JWT) |
-| `/api/v1/zones` | POST, GET | JWT | Crea y lista zonas restringidas del owner autenticado |
-| `/api/v1/zones/{id}` | GET, PATCH, DELETE | JWT | Detalle, actualización y baja de una zona |
-| `/api/v1/devices` | POST, GET | JWT | Registra (devuelve `apiKey` solo en la creación) y lista dispositivos |
-| `/api/v1/devices/{id}` | GET | JWT | Detalle con `isOnline` y última lectura; `404` si el dispositivo es de otro owner |
-| `/api/v1/telemetry` | POST, GET | POST: `X-Device-Key` · GET: JWT | Ingesta idempotente de lecturas (por `reading_id`) y consulta de historial filtrable |
-| `/api/v1/alerts` | GET | JWT | Lista alertas filtrables por zona, dispositivo y estado |
+**Convenciones de llamada.** La URL base desplegada es
+`https://securiot-api.juan-tech.com/api/v1`; para las pruebas locales se utiliza
+`http://localhost:3000/api/v1`. Las rutas de los ejemplos se agregan al host elegido.
+Los cuerpos son JSON y requieren `Content-Type: application/json`. Las acciones
+marcadas como JWT reciben el encabezado `Authorization: Bearer` seguido del
+`access_token` obtenido en el login. La ingesta de telemetría utiliza
+`X-Device-Key` con la clave del dispositivo en lugar del JWT.
+
+La tabla separa las **12 acciones implementadas** y enlaza cada operación en Swagger.
+Los parámetros de consulta son opcionales; los campos del cuerpo son obligatorios
+salvo que se indique lo contrario. Los identificadores y fechas de los ejemplos son
+ilustrativos y mantienen la estructura comprobada en la API local. Los valores
+de JWT y API key se omiten deliberadamente del informe.
+
+| Acción y sintaxis de llamada | Autorización | Parámetros / cuerpo | Respuesta y errores documentados | OpenAPI desplegado |
+| --- | --- | --- | --- | --- |
+| `POST /api/v1/auth/login` | Pública | JSON: `email` válido; `password` string de al menos 8 caracteres | `200`: objeto con `access_token`. `400`: validación; `401`: credenciales incorrectas | [Login](https://securiot-api.juan-tech.com/api/docs#/auth/AuthController_login_v1) |
+| `POST /api/v1/zones` | JWT | JSON: `name` string no vacío; `location` string opcional | `201`: zona creada. `400`: validación; `401`: JWT ausente o inválido | [Crear zona](https://securiot-api.juan-tech.com/api/docs#/zones/ZonesController_create_v1) |
+| `GET /api/v1/zones` | JWT | Sin cuerpo ni filtros | `200`: arreglo de zonas del usuario, o `[]`. `401`: JWT ausente o inválido | [Listar zonas](https://securiot-api.juan-tech.com/api/docs#/zones/ZonesController_findAll_v1) |
+| `GET /api/v1/zones/{id}` | JWT | Ruta: `id` de la zona | `200`: objeto de zona. `401`: JWT; `404`: zona inexistente o de otro usuario | [Consultar zona](https://securiot-api.juan-tech.com/api/docs#/zones/ZonesController_findOne_v1) |
+| `PATCH /api/v1/zones/{id}` | JWT | Ruta: `id`; JSON: `name` y/o `location`, ambos opcionales; `name`, si se envía, no puede estar vacío | `200`: zona actualizada. `400`: validación; `401`: JWT; `404`: zona inexistente o de otro usuario | [Actualizar zona](https://securiot-api.juan-tech.com/api/docs#/zones/ZonesController_update_v1) |
+| `DELETE /api/v1/zones/{id}` | JWT | Ruta: `id`; sin cuerpo | `204`: sin cuerpo. `401`: JWT; `404`: zona inexistente o de otro usuario | [Eliminar zona](https://securiot-api.juan-tech.com/api/docs#/zones/ZonesController_remove_v1) |
+| `POST /api/v1/devices` | JWT | JSON: `name` string no vacío; `zoneId` UUID de una zona propia | `201`: dispositivo y `apiKey`, mostrada solo al crearlo. `400`: validación; `401`: JWT; `404`: zona inexistente o de otro usuario | [Crear dispositivo](https://securiot-api.juan-tech.com/api/docs#/devices/DevicesController_create_v1) |
+| `GET /api/v1/devices` | JWT | Consulta: `zone_id` para filtrar por zona; sin cuerpo | `200`: arreglo de dispositivos propios, sin `apiKey` ni estado. `401`: JWT | [Listar dispositivos](https://securiot-api.juan-tech.com/api/docs#/devices/DevicesController_findAll_v1) |
+| `GET /api/v1/devices/{id}` | JWT | Ruta: `id` del dispositivo; sin cuerpo | `200`: dispositivo con `isOnline` y `lastReading`. `401`: JWT; `404`: dispositivo inexistente o de otro usuario | [Consultar dispositivo](https://securiot-api.juan-tech.com/api/docs#/devices/DevicesController_findOne_v1) |
+| `POST /api/v1/telemetry` | `X-Device-Key` | JSON: `reading_id` string no vacío; `sensor_type` string no vacío; `value` no vacío; `recorded_at` ISO 8601 | `201`: lectura persistida o existente para ese `reading_id`. `400`: validación; `401`: clave ausente o inválida | [Ingresar lectura](https://securiot-api.juan-tech.com/api/docs#/telemetry/TelemetryController_ingest_v1) |
+| `GET /api/v1/telemetry` | JWT | Consulta: `device_id`, `zone_id` (strings), `from`, `to` (ISO 8601); sin cuerpo | `200`: arreglo de lecturas, ordenado por `recordedAt` descendente. `400`: filtros inválidos; `401`: JWT | [Consultar lecturas](https://securiot-api.juan-tech.com/api/docs#/telemetry/TelemetryController_findAll_v1) |
+| `GET /api/v1/alerts` | JWT | Consulta: `zone_id`, `device_id` (UUID), `status` (`active` o `resolved`); sin cuerpo | `200`: arreglo de alertas propias, ordenado por `createdAt` descendente. `400`: filtros inválidos; `401`: JWT | [Consultar alertas](https://securiot-api.juan-tech.com/api/docs#/alerts/AlertsController_findAll_v1) |
+
+**Autenticación — petición y respuesta.**
+
+```http
+POST /api/v1/auth/login
+Content-Type: application/json
+
+{"email":"test@securiot.local","password":"ChangeMe123!"}
+```
+
+Respuesta `200 OK`:
+
+```json
+{"access_token":"JWT omitido del informe"}
+```
+
+`access_token` es el JWT de sesión. Las credenciales mostradas corresponden al
+usuario de prueba del seed local; el token real se introduce en **Authorize** de
+Swagger para ejecutar las operaciones protegidas.
+
+**Zonas — creación, consulta, actualización y eliminación.**
+
+Ejemplo de `POST /api/v1/zones`, con JWT y cuerpo:
+
+```json
+{"name":"Front Entrance","location":"Ground floor, main door"}
+```
+
+Respuesta `201 Created`:
+
+```json
+{
+  "id":"11111111-1111-4111-8111-111111111111",
+  "name":"Front Entrance",
+  "location":"Ground floor, main door",
+  "ownerId":"22222222-2222-4222-8222-222222222222",
+  "createdAt":"2026-10-08T10:00:00.000Z",
+  "updatedAt":"2026-10-08T10:00:00.000Z"
+}
+```
+
+`id` identifica la zona; `ownerId` se obtiene del JWT, no del cuerpo enviado.
+`location` es opcional y puede aparecer como `null` si no se especificó.
+`createdAt` y `updatedAt` registran las fechas de creación y última modificación.
+
+`GET /api/v1/zones` devuelve `200 OK` con el arreglo de zonas propias:
+
+```json
+[
+  {
+    "id":"11111111-1111-4111-8111-111111111111",
+    "name":"Front Entrance",
+    "location":"Ground floor, main door",
+    "ownerId":"22222222-2222-4222-8222-222222222222",
+    "createdAt":"2026-10-08T10:00:00.000Z",
+    "updatedAt":"2026-10-08T10:00:00.000Z"
+  }
+]
+```
+
+`GET /api/v1/zones/11111111-1111-4111-8111-111111111111` devuelve
+`200 OK` con el mismo objeto JSON individual mostrado en la creación de zona,
+sin el arreglo exterior. Si el identificador no existe o pertenece a otro usuario,
+devuelve `404 Not Found`.
+
+Para `PATCH /api/v1/zones/11111111-1111-4111-8111-111111111111`, el cuerpo
+puede enviar únicamente el campo que cambia:
+
+```json
+{"location":"Ground floor, reception"}
+```
+
+Respuesta `200 OK`:
+
+```json
+{
+  "id":"11111111-1111-4111-8111-111111111111",
+  "name":"Front Entrance",
+  "location":"Ground floor, reception",
+  "ownerId":"22222222-2222-4222-8222-222222222222",
+  "createdAt":"2026-10-08T10:00:00.000Z",
+  "updatedAt":"2026-10-08T10:01:00.000Z"
+}
+```
+
+La respuesta conserva los campos que no se modificaron y actualiza `updatedAt`.
+`DELETE /api/v1/zones/11111111-1111-4111-8111-111111111111`, con JWT y sin
+cuerpo de petición, devuelve `204 No Content` **sin cuerpo de respuesta**.
+
+**Dispositivos — registro, listado y detalle con estado.**
+
+Ejemplo de `POST /api/v1/devices`, con JWT y cuerpo:
+
+```json
+{"name":"Front Door Sensor","zoneId":"11111111-1111-4111-8111-111111111111"}
+```
+
+Respuesta `201 Created`:
+
+```json
+{
+  "id":"33333333-3333-4333-8333-333333333333",
+  "name":"Front Door Sensor",
+  "zoneId":"11111111-1111-4111-8111-111111111111",
+  "createdAt":"2026-10-08T10:02:00.000Z",
+  "apiKey":"Clave omitida del informe"
+}
+```
+
+`zoneId` relaciona el dispositivo con una zona del usuario. La clave real se
+genera como una cadena hexadecimal de 48 caracteres y se devuelve completa
+**solo en esta creación**; el dispositivo o relay la usa en `X-Device-Key`.
+
+`GET /api/v1/devices?zone_id=11111111-1111-4111-8111-111111111111`
+devuelve `200 OK`:
+
+```json
+[
+  {
+    "id":"33333333-3333-4333-8333-333333333333",
+    "name":"Front Door Sensor",
+    "zoneId":"11111111-1111-4111-8111-111111111111",
+    "createdAt":"2026-10-08T10:02:00.000Z"
+  }
+]
+```
+
+Sin `zone_id`, lista los dispositivos de todas las zonas propias. El listado no
+incluye `apiKey`, `isOnline` ni `lastReading`. Para obtener el estado se consulta
+`GET /api/v1/devices/33333333-3333-4333-8333-333333333333`.
+Ejemplo de respuesta `200 OK`, después de una lectura reciente:
+
+```json
+{
+  "id":"33333333-3333-4333-8333-333333333333",
+  "name":"Front Door Sensor",
+  "zoneId":"11111111-1111-4111-8111-111111111111",
+  "createdAt":"2026-10-08T10:02:00.000Z",
+  "isOnline":true,
+  "lastReading":{
+    "id":"44444444-4444-4444-8444-444444444444",
+    "readingId":"55555555-5555-4555-8555-555555555555",
+    "deviceId":"33333333-3333-4333-8333-333333333333",
+    "zoneId":"11111111-1111-4111-8111-111111111111",
+    "sensorType":"door_contact",
+    "value":{"state":"open"},
+    "recordedAt":"2026-10-08T10:03:00.000Z",
+    "createdAt":"2026-10-08T10:03:01.000Z"
+  }
+}
+```
+
+`isOnline` se calcula a partir de la última lectura y de
+`DEVICE_ONLINE_WINDOW_SECONDS` (300 segundos por defecto). Si no existen
+lecturas, devuelve `isOnline: false` y `lastReading: null`; si la última lectura
+supera esa ventana, conserva la lectura y devuelve `isOnline: false`.
+
+**Telemetría — ingesta e historial.**
+
+Ejemplo de `POST /api/v1/telemetry`, con el encabezado `X-Device-Key` del
+dispositivo y cuerpo:
+
+```json
+{
+  "reading_id":"55555555-5555-4555-8555-555555555555",
+  "sensor_type":"door_contact",
+  "value":{"state":"open"},
+  "recorded_at":"2026-10-08T10:03:00.000Z"
+}
+```
+
+Respuesta `201 Created`:
+
+```json
+{
+  "id":"44444444-4444-4444-8444-444444444444",
+  "readingId":"55555555-5555-4555-8555-555555555555",
+  "deviceId":"33333333-3333-4333-8333-333333333333",
+  "zoneId":"11111111-1111-4111-8111-111111111111",
+  "sensorType":"door_contact",
+  "value":{"state":"open"},
+  "recordedAt":"2026-10-08T10:03:00.000Z",
+  "createdAt":"2026-10-08T10:03:01.000Z"
+}
+```
+
+`id` es el identificador interno de la lectura; `readingId` conserva el
+`reading_id` enviado por el relay. La clave determina `deviceId` y `zoneId`, por
+lo que no se envían en el cuerpo. La petición usa nombres en snake_case y la
+respuesta usa camelCase. Repetir un `reading_id` existente devuelve la lectura
+persistida con `201`, sin crear una segunda fila. Aunque OpenAPI describe ese
+identificador como UUID del relay, la validación actual exige un string no vacío.
+
+Ejemplo de consulta con todos los filtros:
+
+```http
+GET /api/v1/telemetry?device_id=33333333-3333-4333-8333-333333333333&zone_id=11111111-1111-4111-8111-111111111111&from=2026-10-08T00:00:00Z&to=2026-10-08T23:59:59Z
+```
+
+Con JWT, devuelve `200 OK`:
+
+```json
+[
+  {
+    "id":"44444444-4444-4444-8444-444444444444",
+    "readingId":"55555555-5555-4555-8555-555555555555",
+    "deviceId":"33333333-3333-4333-8333-333333333333",
+    "zoneId":"11111111-1111-4111-8111-111111111111",
+    "sensorType":"door_contact",
+    "value":{"state":"open"},
+    "recordedAt":"2026-10-08T10:03:00.000Z",
+    "createdAt":"2026-10-08T10:03:01.000Z"
+  }
+]
+```
+
+Los filtros se combinan; el intervalo inclusivo de fechas se aplica **solo si
+`from` y `to` se envían juntos**. Las consultas de colecciones devuelven arreglos
+sin envoltorio de paginación y `[]` cuando no hay coincidencias.
+En la implementación del Sprint 1, esta consulta verifica el JWT, pero el servicio
+de telemetría aún no restringe las lecturas por el propietario autenticado;
+los filtros por zona o dispositivo no sustituyen ese control de acceso.
+
+**Alertas — consulta por zona, dispositivo y estado.**
+
+Ejemplo de llamada con JWT:
+
+```http
+GET /api/v1/alerts?zone_id=11111111-1111-4111-8111-111111111111&device_id=33333333-3333-4333-8333-333333333333&status=active
+```
+
+Respuesta `200 OK`:
+
+```json
+[
+  {
+    "id":"66666666-6666-4666-8666-666666666666",
+    "zoneId":"11111111-1111-4111-8111-111111111111",
+    "deviceId":"33333333-3333-4333-8333-333333333333",
+    "readingId":"44444444-4444-4444-8444-444444444444",
+    "ruleType":"door_contact_open",
+    "severity":"medium",
+    "status":"active",
+    "message":"Door contact sensor reported open",
+    "createdAt":"2026-10-08T10:03:01.000Z"
+  }
+]
+```
+
+`readingId` en la alerta referencia el **id interno** de la lectura, no el
+identificador del relay. `ruleType` identifica la regla aplicada; `severity` y
+`status` describen la prioridad y el estado. La regla implementada genera una
+alerta `door_contact_open`, de severidad `medium` y estado `active`, cuando una
+lectura `door_contact` reporta `open`. El filtro acepta `resolved`, pero este
+sprint no implementa una acción REST para resolver alertas. Sin filtros se
+devuelven las alertas de las zonas propias; los filtros presentes se combinan.
+
+**Ejemplos de errores.** Un JWT ausente o inválido devuelve `401`:
+
+```json
+{"message":"Unauthorized","statusCode":401}
+```
+
+Un `GET`, `PATCH` o `DELETE` de una zona inexistente o ajena devuelve `404`:
+
+```json
+{"message":"Zone not found","error":"Not Found","statusCode":404}
+```
+
+Un `GET /api/v1/alerts?status=invalid` devuelve `400` por validación:
+
+```json
+{"message":["status must be one of the following values: active, resolved"],"error":"Bad Request","statusCode":400}
+```
+
+La documentación se contrastó con los controladores, DTO y servicios de
+[Cloud API, revisión 779fa22](https://github.com/securiot2026/securiot-cloud-api/tree/779fa2277461381892aed7a32845f453ea4c24c1/src).
+En la ejecución local se verificaron las 12 acciones con el usuario del seed,
+una zona y un dispositivo de prueba, incluyendo ingesta, consulta de estado y
+generación de alerta. La zona creada para esta comprobación se eliminó al finalizar.
 
 **Interacción con datos de muestra:** en Swagger UI local se autorizó la sesión del
 usuario de prueba y se ejecutó `GET http://localhost:3000/api/v1/zones` mediante
