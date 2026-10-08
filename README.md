@@ -66,6 +66,7 @@
 | v1.17 | 19/09/2026 | Javier Masaru Nikaido Vargas | Realización y documentación de entrevistas para la investigación de usuarios de SECURIOT, incluyendo el diseño de preguntas, registro de entrevistas y análisis de hallazgos de los segmentos objetivo. |
 | v1.18 | 08/10/2026 | Matias Salcedo Champi | Registro de aportes de TB1 en Student Outcome 5 e incorporación del video de navegación del Sprint 1 con enlace y captura. |
 | v1.19 | 08/10/2026 | Matias Salcedo Champi | Incorporación de capturas de Contributors de Landing Page, Web App, Cloud API y Edge API, con el alcance de las estadísticas de GitHub. |
+| v1.20 | 08/10/2026 | Matias Salcedo Champi | Evidencias de ejecución de Landing y Flutter, consulta de Swagger con datos de prueba, configuración de despliegue y estadísticas de contribución de Mobile. |
 
 <div style="page-break-after: always;"></div>
 
@@ -3211,6 +3212,18 @@ y dispositivos, y visualiza su estado en tiempo real; la Edge API detecta acceso
 Cloud API genera las alertas de intrusión consultables desde la Web App y la App Móvil.
 A continuación se presentan las principales vistas implementadas.
 
+La Landing Page se ejecutó localmente en `http://localhost:8080` a partir de la rama
+`develop` de `securiot-landing`. Las capturas muestran la portada en español para
+escritorio y la adaptación responsive en inglés con un ancho de 390 píxeles.
+
+![Landing Page — Ejecución en escritorio](docs/assets/chapter6/sprint1-exec-landing-desktop.png)
+
+*Figura. Portada de la Landing Page en español, con los accesos a la Web App y a la explicación del producto.*
+
+![Landing Page — Ejecución responsive](docs/assets/chapter6/sprint1-exec-landing-mobile.png)
+
+*Figura. Landing Page en inglés, ejecutada en una vista de 390 × 844 píxeles.*
+
 ![Web App — Inicio de sesión (producción)](docs/assets/chapter6/sprint1-webapp-login.png)
 
 *Figura. Pantalla de login de la Web App desplegada en `https://securiot.juan-tech.com`.*
@@ -3233,6 +3246,34 @@ local `/api/v1/telemetry`.
 ![Web App — Alertas (ejecución local)](docs/assets/chapter6/sprint1-exec-alerts.png)
 
 *Figura. Alerta activa de severidad media generada por la lectura de prueba.*
+
+La App Móvil de Flutter se compiló para **Flutter Web** y se ejecutó localmente en
+`http://localhost:8081`, dentro de una vista de 390 × 844 píxeles. El cliente utiliza
+la misma Cloud API y los mismos datos de prueba mediante un proxy local. Se verificó
+el inicio de sesión, la consulta de zonas, la navegación a los dispositivos de una
+zona y el listado de alertas después de enviar una nueva lectura simulada de
+apertura de puerta.
+
+Para esta ejecución se utilizó Flutter 3.44.1 con Dart 3.12.1. La compilación se
+realizó en una copia temporal del código, ajustando únicamente la restricción del
+SDK de `^3.12.2` a `^3.12.1`; el repositorio móvil conserva su configuración original.
+Estas capturas corresponden a ejecución en navegador y no a una instalación Android.
+
+![App Flutter — Inicio de sesión](docs/assets/chapter6/sprint1-exec-mobile-login.png)
+
+*Figura. Pantalla de inicio de sesión de la App Flutter en español.*
+
+![App Flutter — Zonas](docs/assets/chapter6/sprint1-exec-mobile-zones.png)
+
+*Figura. Consulta de la zona Front Entrance con navegación inferior a dispositivos y alertas.*
+
+![App Flutter — Dispositivos de una zona](docs/assets/chapter6/sprint1-exec-mobile-devices.png)
+
+*Figura. Front Door Sensor en línea y última lectura door_contact con estado open.*
+
+![App Flutter — Alertas](docs/assets/chapter6/sprint1-exec-mobile-alerts.png)
+
+*Figura. Alertas activas de severidad media asociadas a la zona y al dispositivo de prueba.*
 
 **Video de demostración (navegación del Sprint 1):** [Ver video en Microsoft Stream](https://upcedupe-my.sharepoint.com/personal/u202319698_upc_edu_pe/_layouts/15/stream.aspx?id=%2Fpersonal%2Fu202319698%5Fupc%5Fedu%5Fpe%2FDocuments%2FNavegacionn%2Emp4&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0&ga=1&referrer=StreamWebApp%2EWeb&referrerScenario=AddressBarCopied%2Eview%2E329daffe%2Df48c%2D4f32%2D9c0a%2D36be55468514)
 
@@ -3260,13 +3301,23 @@ zonas, dispositivos, telemetría y alertas, todos versionados bajo `/api/v1`.
 
 | Endpoint | Acciones (verbo HTTP) | Autorización | Descripción / Response |
 | --- | --- | --- | --- |
-| `/api/v1/auth/login` | POST | Pública | Autentica con email/password; response `200` con `{ accessToken }` (JWT) |
+| `/api/v1/auth/login` | POST | Pública | Autentica con email/password; response `200` con `{ access_token }` (JWT) |
 | `/api/v1/zones` | POST, GET | JWT | Crea y lista zonas restringidas del owner autenticado |
 | `/api/v1/zones/{id}` | GET, PATCH, DELETE | JWT | Detalle, actualización y baja de una zona |
 | `/api/v1/devices` | POST, GET | JWT | Registra (devuelve `apiKey` solo en la creación) y lista dispositivos |
 | `/api/v1/devices/{id}` | GET | JWT | Detalle con `isOnline` y última lectura; `404` si el dispositivo es de otro owner |
 | `/api/v1/telemetry` | POST, GET | POST: `X-Device-Key` · GET: JWT | Ingesta idempotente de lecturas (por `reading_id`) y consulta de historial filtrable |
 | `/api/v1/alerts` | GET | JWT | Lista alertas filtrables por zona, dispositivo y estado |
+
+**Interacción con datos de muestra:** en Swagger UI local se autorizó la sesión del
+usuario de prueba y se ejecutó `GET http://localhost:3000/api/v1/zones` mediante
+**Try it out > Execute**. El servicio devolvió **HTTP 200** con la zona Front Entrance
+y sus campos `id`, `name`, `location`, `ownerId`, `createdAt` y `updatedAt`.
+La imagen presenta la URL solicitada y el cuerpo de la respuesta sin mostrar el JWT.
+
+![Swagger UI — Consulta de zonas con respuesta HTTP 200](docs/assets/chapter6/sprint1-swagger-zones-response.png)
+
+*Figura. Respuesta real de la Cloud API local al consultar las zonas del usuario de prueba.*
 
 **Commits relacionados con documentación de servicios:**
 
@@ -3308,6 +3359,24 @@ GitFlow, con entornos reproducibles.
 | securiot2026/securiot-edge-api | develop | `66605dd` | chore(deploy): add production Dockerfile | 2026-09-08 |
 | securiot2026/securiot-mobile-app | develop | `a920d78` | chore(firebase): wire up FlutterFire config for App Distribution | 2026-09-08 |
 
+**Evidencia visual de configuración del despliegue:** las siguientes capturas
+muestran los archivos versionados en la rama `develop` que preparan el empaquetado
+y la publicación de los productos. Documentan la configuración de Docker y nginx;
+las vistas de la Web App y Swagger desplegados se presentan en las secciones
+6.2.1.6 y 6.2.1.7.
+
+![Despliegue — Dockerfile de Landing Page](docs/assets/chapter6/sprint1-deploy-landing-dockerfile.png)
+
+*Figura. [Dockerfile de Landing Page](https://github.com/securiot2026/securiot-landing/blob/develop/Dockerfile): imagen nginx:1.27-alpine, copia de los archivos estáticos y de nginx.conf, y exposición del puerto 80.*
+
+![Despliegue — Dockerfile de Cloud API](docs/assets/chapter6/sprint1-deploy-cloud-dockerfile.png)
+
+*Figura. [Dockerfile de Cloud API](https://github.com/securiot2026/securiot-cloud-api/blob/develop/Dockerfile): compilación y ejecución en etapas separadas sobre Node 22, dependencias de producción y puerto 3000.*
+
+![Despliegue — Configuración nginx de Web App](docs/assets/chapter6/sprint1-deploy-web-nginx.png)
+
+*Figura. [Configuración nginx de Web App](https://github.com/securiot2026/securiot-web-app/blob/develop/nginx.conf): publicación de los archivos estáticos, fallback a index.html para las rutas de Angular y caché de recursos.*
+
 #### 6.2.1.9. Team Collaboration Insights during Sprint
 
 El equipo coordinó el trabajo mediante GitFlow (ramas `feature/*` hacia `develop`),
@@ -3344,6 +3413,19 @@ permanecen en `develop` o en ramas de trabajo.
 ![GitHub — Contributors de Edge API](docs/assets/chapter6/sprint1-contributors-edge-api.png)
 
 *Figura. Contribuciones a la rama main de securiot-edge-api.*
+
+Para Mobile App se consultó la **API de estadísticas de GitHub** con el acceso
+autorizado al repositorio privado. El endpoint
+`GET /repos/securiot2026/securiot-mobile-app/stats/contributors` devolvió **11 commits
+de Sve-nnN**. La siguiente gráfica se elaboró a partir de esa respuesta; representa
+la rama predeterminada `main` y excluye merges y commits vacíos, según la
+[documentación de GitHub](https://docs.github.com/en/rest/metrics/statistics#statistics-exclude-some-types-of-commits).
+Los [datos utilizados](docs/assets/chapter6/sprint1-contributors-mobile-api.json)
+se conservan junto a la imagen para permitir su revisión.
+
+![Mobile App — Analítica obtenida mediante la API de GitHub](docs/assets/chapter6/sprint1-contributors-mobile-api.png)
+
+*Figura. Gráfica elaborada con las estadísticas de GitHub de Mobile App, consultadas el 08/10/2026. La actividad se concentra en Sve-nnN, con 9 commits en la semana del 06/09 y 2 en la del 13/09.*
 
 **Interpretación:** la implementación de código se concentró principalmente en Juan
 Angulo (`Sve-nnN`), con contribución de Pietro Osores (`Maximoff19`) en la Edge API
