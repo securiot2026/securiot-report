@@ -3105,7 +3105,7 @@ reunión de planificación.
 | Time | 07:00 PM |
 | Location | Reunión virtual (Discord + Google Meet) |
 | Prepared By | Huamán Baca, Rommel Daniel (Scrum Master) |
-| Attendees | Huamán Baca, Rommel Daniel / Angulo Ramírez, Juan / Aquino Solórzano, Daniel / Salcedo Champi, Matías / Santillán, Melina / Osores, Pietro / Nikaido, Javier |
+| Attendees | Huamán Baca, Rommel Daniel / Angulo Abud, Juan Carlos / Aquino Solórzano, Daniel / Salcedo Champi, Matías / Santillán, Melina / Osores, Pietro / Nikaido, Javier |
 | **Sprint 0 Review Summary** | No aplica. El Sprint 1 es la primera iteración de implementación; no existe un Sprint previo que revisar. Como entrada se tomaron los artefactos de requisitos y arquitectura de los Capítulos III y IV (User Stories, Product Backlog, DDD). |
 | **Sprint 0 Retrospective Summary** | No aplica (primera iteración). |
 | **Sprint Goal & User Stories** | |
@@ -3127,7 +3127,7 @@ colaboradores (**C**) cuando participaron en él. La siguiente matriz LACX
 | --- | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | Salcedo Champi, Matías | `matiAAsc` | **L** | C | C | C | C | C | C |
 | Santillán, Melina | `melinaasantillan` | C | **L** | C | C | — | C | — |
-| Angulo Ramírez, Juan | `Sve-nnN` | C | C | **L** | C | C | C | C |
+| Angulo Abud, Juan Carlos | `Sve-nnN` | C | C | **L** | C | C | C | C |
 | Osores, Pietro | `Maximoff19` | C | C | C | **L** | — | C | C |
 | Aquino Solórzano, Daniel | `DanielAquinoSolorzano` | C | C | C | — | **L** | C | — |
 | Nikaido, Javier | `MassiFlip` | C | C | C | C | C | **L** | C |
@@ -3472,8 +3472,8 @@ El Sprint 2 parte de los resultados del Sprint 1 y del Product Backlog priorizad
 | Date | 2026-09-25 |
 | Time | 04:00 PM |
 | Location | Reunión virtual (Discord) |
-| Prepared By | Angulo Ramírez, Juan |
-| Attendees | Huamán Baca, Rommel Daniel / Angulo Ramírez, Juan / Aquino Solórzano, Daniel / Salcedo Champi, Matías / Santillán, Melina / Osores, Pietro / Nikaido, Javier |
+| Prepared By | Angulo Abud, Juan Carlos |
+| Attendees | Huamán Baca, Rommel Daniel / Angulo Abud, Juan Carlos / Aquino Solórzano, Daniel / Salcedo Champi, Matías / Santillán, Melina / Osores, Pietro / Nikaido, Javier |
 | **Sprint 1 Review Summary** | El Sprint 1 cerró los siete User Stories P0 (34 Story Points): registro de zonas y dispositivos, monitoreo en tiempo real, validación de acceso con visión por computadora, alertas de intrusión y autenticación. La Cloud API y la Web App quedaron desplegadas en el VPS y la App Móvil se distribuyó por Firebase App Distribution. |
 | **Sprint 1 Retrospective Summary** | Dos aprendizajes guiaron este Sprint. La implementación de código se concentró en un solo integrante, por lo que el equipo acordó repartir mejor los repositorios. La cobertura de pruebas quedó limitada a los Web Services, y la Web App y la App Móvil solo tenían los specs generados por el framework. |
 | **Sprint Goal & User Stories** | |
@@ -3642,8 +3642,8 @@ El Sprint 3 toma como entrada los contratos REST que dejó el Sprint 2 y el Prod
 | Date | 2026-09-25 |
 | Time | 04:00 PM |
 | Location | Reunión virtual (Discord) |
-| Prepared By | Angulo Ramírez, Juan |
-| Attendees | Huamán Baca, Rommel Daniel / Angulo Ramírez, Juan / Aquino Solórzano, Daniel / Salcedo Champi, Matías / Santillán, Melina / Osores, Pietro / Nikaido, Javier |
+| Prepared By | Angulo Abud, Juan Carlos |
+| Attendees | Huamán Baca, Rommel Daniel / Angulo Abud, Juan Carlos / Aquino Solórzano, Daniel / Salcedo Champi, Matías / Santillán, Melina / Osores, Pietro / Nikaido, Javier |
 | **Sprint 2 Review Summary** | El Sprint 2 dejó en la Edge API el motor de reglas, la cola de comandos manuales y el registro de rostros, y en el firmware el portal de aprovisionamiento. La Web App ya permitía registrar la URL del Edge y los rostros autorizados. Faltaba una interfaz para administrar las reglas, ver la cámara y controlar el dispositivo desde el teléfono. |
 | **Sprint 2 Retrospective Summary** | La concentración de commits en un solo integrante se repitió, y ninguna de las funciones nuevas tenía verificación sobre el dispositivo físico. Por eso el Sprint 3 distingue de forma explícita lo que comprobaron las pruebas automáticas de lo que sigue pendiente de hardware. |
 | **Sprint Goal & User Stories** | |
