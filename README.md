@@ -2165,6 +2165,8 @@ Esta tabla vive únicamente en el SQLite local del Edge API. Es distinta de `REA
 
 Este capítulo establece las decisiones de diseño que permiten presentar SecurIoT como una experiencia coherente en la Landing Page, el panel web, la aplicación móvil y las interfaces asociadas al dispositivo IoT. Las decisiones parten de la dirección visual de Centinela Labs y se adaptan al contexto de seguridad patrimonial, donde la información debe ser legible, inequívoca y oportuna.
 
+<div style="page-break-after: always;"></div>
+
 ## 5.1. Style Guidelines
 
 La guía de estilos de SecurIoT articula la identidad de marca con el significado operativo de la interfaz. El sistema visual diferencia claramente el color destinado a comunicar la marca del color que representa estados reales de seguridad. Esta separación evita que una decisión decorativa pueda confundirse con una alerta, una autorización o un proceso de validación.
@@ -2299,6 +2301,8 @@ Estas señales deben poder distinguirse por más de un atributo, como texto, íc
 <p align="center"><img src="docs/assets/chapter5/style-guidelines/iot-physical-interface-guideline.svg" alt="Guía conceptual de los estados de una interfaz física IoT de SecurIoT" width="700"/></p>
 
 **Figura 5.7.** Correspondencia visual propuesta entre los estados digitales y la interfaz física IoT.
+
+<div style="page-break-after: always;"></div>
 
 ## 5.2. Information Architecture
 
@@ -2451,6 +2455,8 @@ La atención de una alerta utiliza navegación apilada: **Alertas > Detalle de a
 - Después de crear, editar, atender o cerrar un elemento, la interfaz confirma el resultado y ofrece un camino explícito al detalle o a la lista de origen.
 - Los enlaces externos se identifican como tales y no sustituyen inesperadamente una tarea operativa en curso.
 
+<div style="page-break-after: always;"></div>
+
 ## 5.3. Landing Page UI Design
 
 La Landing Page presenta la propuesta de valor de SecurIoT a empresas industriales y logísticas que necesitan proteger sus instalaciones. Su recorrido conduce al visitante desde la identificación del problema de la vigilancia reactiva hasta la comprensión de la respuesta propuesta, los perfiles a los que se dirige y el siguiente paso para conocer el producto. La estructura prioriza mensajes breves, navegación directa y llamados a la acción, de acuerdo con la arquitectura de información definida en la sección 5.2.
@@ -2513,6 +2519,8 @@ La cuarta captura funciona como cierre de la página. Presenta un mensaje final 
 ### 5.3.2. Landing Page Mock-up
 
 _Pendiente de desarrollo._
+
+<div style="page-break-after: always;"></div>
 
 ## 5.4. Applications UX/UI Design
 
@@ -2625,6 +2633,8 @@ _Pendiente de desarrollo._
 
 _Pendiente de desarrollo._
 
+<div style="page-break-after: always;"></div>
+
 ## 5.5. Applications Prototyping
 
 Los prototipos de SecurIoT presentan dos experiencias complementarias: la aplicación web prioriza la configuración de sensores y reglas de alerta, mientras que la aplicación móvil se orienta a la vigilancia y al control de cámaras y actuadores durante la operación. Los siguientes videos muestran los recorridos de ambas interfaces con datos simulados; permiten revisar la propuesta de interacción, pero no acreditan una integración con equipos físicos ni una validación con usuarios reales.
@@ -2648,6 +2658,8 @@ Los prototipos de SecurIoT presentan dos experiencias complementarias: la aplica
 <https://upcedupe-my.sharepoint.com/:v:/g/personal/u202310971_upc_edu_pe/IQBUQ0dW1Mz7Q6AO-jFfEy4EAf-hoPcGu4dNiqG270LrDA0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=sEwaE2>
 
 **Descripción y sustentación.** El prototipo móvil funciona principalmente como una herramienta de vigilancia y control para el personal que se desplaza por las instalaciones. La interfaz presenta las cámaras por ubicación, su conectividad y su posición pan/tilt, junto con accesos al control de servos y a la activación de actuadores. Este enfoque permite priorizar la consulta del entorno y las acciones operativas sin trasladar al teléfono toda la complejidad de la configuración de sensores y alertas. Los controles mostrados simulan la respuesta del sistema y no envían órdenes a equipos reales.
+
+<div style="page-break-after: always;"></div>
 
 ## 5.6. IoT Device Design
 
@@ -3037,6 +3049,8 @@ El despliegue sigue la topología definida en el diagrama de despliegue C4 (secc
 3. Verificar en sitio la secuencia de estados del LED (Sin conexión → Operativo) y ejecutar una prueba de intrusión para confirmar la alerta en la Web App y en la Mobile App.
    **Automatización (US-22).** Durante el Sprint 2 se incorpora en cada repositorio de servicio un workflow de GitHub Actions que, ante un pull request a `develop` o `main`, instala dependencias, ejecuta las pruebas (`npm run test:e2e`, `ng test --watch=false --browsers=ChromeHeadless` o `pytest`) y construye la imagen Docker. Solo cuando todas las etapas pasan, el tag `vX.Y.Z` en `main` publica la imagen versionada que se despliega con los pasos anteriores.
 
+<div style="page-break-after: always;"></div>
+
 ## 6.2. Landing Page, Services & Applications Implementation
 
 _Pendiente de desarrollo._
@@ -3384,6 +3398,8 @@ _Pendiente de desarrollo._
 
 _Pendiente de desarrollo._
 
+<div style="page-break-after: always;"></div>
+
 ## 6.3. Validation Interviews
 
 _Pendiente de desarrollo._
@@ -3399,6 +3415,8 @@ _Pendiente de desarrollo._
 ### 6.3.3. Evaluaciones según heurísticas
 
 _Pendiente de desarrollo._
+
+<div style="page-break-after: always;"></div>
 
 ## 6.4. Video About-the-Product
 
