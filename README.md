@@ -3989,11 +3989,78 @@ _Pendiente de desarrollo._
 
 ## 6.3. Validation Interviews
 
-_Pendiente de desarrollo._
+En esta sección se documenta el proceso de validación cualitativa y experimental de Securiot con usuarios representativos de los segmentos objetivos definidos para la solución. A diferencia de la fase exploratoria de Needfinding desarrollada en el Capítulo II, este proceso somete las versiones implementadas y desplegadas del producto digital (Landing Page, Web Application y Mobile Application) a sesiones guiadas de interacción directa con usuarios finales.
+
+El objetivo central de estas entrevistas es comprobar en la práctica las hipótesis formuladas durante el Lean UX Process (Capítulo I) y verificar si los flujos operativos diseñados satisfacen oportunamente los requerimientos de monitoreo patrimonial, respuesta ante intrusiones y trazabilidad sin generar fricción cognitiva o sobrecarga operativa. Para ello, la sección se estructura en tres apartados fundamentales:
 
 ### 6.3.1. Diseño de Entrevistas
 
-_Pendiente de desarrollo._
+El diseño de las entrevistas de validación define el protocolo experimental y los instrumentos de evaluación aplicados durante las sesiones con los usuarios de Securiot. Para asegurar evaluaciones objetivas, las sesiones se estructuran bajo una dinámica de prueba de usabilidad guiada por tareas, donde los participantes interactúan directamente con los productos desplegados mientras mencionan sus percepciones, dudas y dificultades.
+
+El alcance de la validación abarca tanto el Landing Page como los productos principales (Web App y Mobile App), vinculando a cada segmento objetivo con los artefactos y flujos que corresponden a sus responsabilidades dentro del dominio:
+
+- **Segmento 1: Administrador de Seguridad Patrimonial.** Evalúa la claridad de la propuesta de valor en la Landing Page y la capacidad operativa del panel Web (Web App), validando los flujos de autenticación segura, administración del catálogo de zonas y dispositivos IoT, supervisión del estado de conexión (en línea/fuera de línea) y consulta analítica de la bandeja de alertas de intrusión generadas por la Cloud API.
+
+- **Segmento 2: Personal de Vigilancia In Situ.** Evalúa la aplicación móvil (Mobile App) ejecutada en dispositivos móviles, validando la recepción inmediata de notificaciones de intrusión, la interpretación rápida del contexto visual y geográfico de la alerta (zona, dispositivo y horario) y la agilidad de los controles para el registro de atención en campo.
+
+- **Segmento 3: Gerente o Dueño de Pyme Industrial.** Evalúa la Landing Page desde una perspectiva de decisión de negocio (comprensión del modelo de suscripción, valor agregado frente a la vigilancia pasiva y solicitud de demostración) y el dashboard de indicadores de la Web App para la consulta consolidada de eventos y trazabilidad patrimonial.
+
+A continuación, se detallan las tareas asignadas, las preguntas de validación post-interacción y la correspondencia directa con los *User Flow Diagrams* de cada producto digital.
+
+#### Relación de User Flows evaluados
+
+En la siguiente tabla se especifican los flujos de usuario sometidos a prueba, indicando su identificador, el producto evaluado, el User Persona objetivo y la User Story correspondiente:
+
+| Flow ID | Producto | User Persona | User Flow evaluado | User Story asociada |
+|:---:|:---:|:---|:---|:---:|
+| **UF-VAL-01** | Landing Page | Miguel Herrera (Gerente) / Carlos Mendoza (Admin) | Exploración de propuesta de valor, cambio de idioma (es/en) y envío de formulario de solicitud de demo | US-18, US-19, US-20 |
+| **UF-VAL-02** | Web App | Carlos Mendoza (Administrador de Seguridad) | Autenticación de usuario, navegación hacia el módulo Zonas y registro de una nueva zona restringida | US-04, US-15 |
+| **UF-VAL-03** | Web App | Carlos Mendoza (Administrador de Seguridad) | Registro de un dispositivo IoT en una zona, copia única de `apiKey` y validación de estado en línea/última lectura | US-01, US-02 |
+| **UF-VAL-04** | Web App / Mobile App | Carlos Mendoza (Admin) / Luis Ramírez (Vigilante) | Recepción de alerta de intrusión (`door_contact_open`), filtrado por severidad y consulta de detalle de evidencia | US-05, US-08 |
+| **UF-VAL-05** | Mobile App | Luis Ramírez (Personal de Vigilancia In Situ) | Consulta de alertas activas en dispositivo móvil, revisión de ubicación y confirmación de atención de alerta | US-08, US-09, US-14 |
+| **UF-VAL-06** | Web App | Miguel Herrera (Gerente o Dueño de Pyme) | Consulta del dashboard general de indicadores, historial de eventos y estado consolidado de la sede | US-10, US-13 |
+
+---
+
+#### Guía de tareas por segmento objetivo
+
+Para cada segmento se definieron escenarios contextuales y tareas específicas sin inducir la respuesta técnica del usuario.
+
+##### Segmento 1: Administrador de Seguridad Patrimonial (Carlos Mendoza)
+- **Escenario 1 (Landing Page):** *"Usted busca modernizar el sistema de seguridad de una planta industrial en Ate y desea evaluar una alternativa tecnológica que no dependa solo de monitoreo pasivo de cámaras."*
+  - **Tarea 1.1:** Navegar por la página de inicio, cambiar el idioma a inglés y regresar a español.
+  - **Tarea 1.2:** Ubicar los beneficios de la solución y acceder a la sección de contacto para solicitar una demostración guiada.
+- **Escenario 2 (Web App - Configuración y Monitoreo):** *"Se ha habilitado una nueva área crítica en la planta ('Almacén Central') y se requiere instalar un sensor IoT para vigilar el acceso principal."*
+  - **Tarea 2.1:** Iniciar sesión en la plataforma con las credenciales asignadas.
+  - **Tarea 2.2:** Ingresar al módulo 'Zonas' y registrar la zona 'Almacén Central'.
+  - **Tarea 2.3:** Registrar un nuevo dispositivo ('Sensor Puerta Almacén') vinculado a dicha zona y verificar la generación de su clave.
+  - **Tarea 2.4:** Dirigirse al listado de dispositivos y comprobar si el equipo figura en estado operativo y en línea.
+  - **Tarea 2.5:** Ir a la bandeja de alertas, aplicar un filtro por estado 'Activa' y revisar la información contextual del evento detectado.
+
+##### Segmento 2: Personal de Vigilancia In Situ (Luis Ramírez)
+- **Escenario (Mobile App - Operación en campo):** *"Durante su turno nocturno de ronda perimetral, el sistema registra una apertura imprevista en un punto restringido."*
+  - **Tarea 1.1:** Abrir la aplicación móvil e iniciar sesión.
+  - **Tarea 1.2:** Al recibir la señal de intrusión, identificar en la pantalla principal la zona comprometida, el dispositivo involucrado y la severidad del evento.
+  - **Tarea 1.3:** Abrir el detalle de la alerta para inspeccionar los datos del evento y confirmar la recepción de la misma.
+  - **Tarea 1.4:** Simular la atención de la incidencia ingresando una nota de verificación en campo.
+
+##### Segmento 3: Gerente o Dueño de Pyme Industrial (Miguel Herrera)
+- **Escenario (Landing Page & Dashboard Web):** *"Como gerente, desea revisar el desempeño de las medidas de seguridad del último periodo para justificar la continuidad del servicio frente a pérdidas patrimoniales."*
+  - **Tarea 1.1:** Examinar la Landing Page y verificar si el modelo de servicio propuesto responde al tamaño de su negocio.
+  - **Tarea 1.2:** Acceder al panel web y consultar el dashboard de indicadores para identificar la cantidad de alertas registradas en el mes.
+  - **Tarea 1.3:** Consultar el historial de eventos para comprobar la trazabilidad temporal de los incidentes ocurridos en las instalaciones.
+
+---
+
+#### Cuestionario cualitativo post-tarea
+
+Al culminar las actividades de interacción, se formulan las siguientes preguntas abiertas para recoger impresiones directas sobre la experiencia:
+
+1. **Facilidad de uso y navegación:** ¿Qué tan intuitivo le resultó completar las tareas asignadas? ¿Hubo algún paso en el que dudó sobre qué botón presionar o dónde encontrar la información?
+2. **Claridad del lenguaje y estados:** ¿Las etiquetas, nombres de zonas, estados (en línea, sin conexión, alerta activa) e indicadores resultaron claros o generaron confusión con su terminología habitual?
+3. **Relevancia del contexto en alertas:** Al generarse una intrusión, ¿la información mostrada (sede, zona, hora, tipo de sensor) fue suficiente para saber cómo actuar de inmediato?
+4. **Diseño inclusivo y contraste:** ¿Los tamaños de letra, contrastes de colores oscuros con detalles turquesa/rojos y elementos táctiles fueron cómodos de visualizar y pulsar?
+5. **Confianza operativa:** ¿Considera que el flujo de trabajo presentado le ahorraría tiempo respecto a los métodos que utiliza hoy en día (libretas manuales, radios, revisión de grabaciones pasadas)?
 
 ### 6.3.2. Registro de Entrevistas
 
