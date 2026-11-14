@@ -69,6 +69,7 @@
 | v1.20 | 08/10/2026 | Matias Salcedo Champi | Evidencias de ejecución de Landing y Flutter, consulta de Swagger con datos de prueba, configuración de despliegue y estadísticas de contribución de Mobile. |
 | v1.21 | 08/10/2026 | Javier Masaru Nikaido Vargas | Diseño de mockups de alta fidelidad, elaboración de User Flow Diagrams, diseño de interfaces web y móviles, desarrollo visual de la Landing Page y documentación de los flujos de navegación de SecurIoT. |
 | v1.22 | 08/10/2026 | Matias Salcedo Champi | Documentación de las 12 acciones de la Cloud API: sintaxis, parámetros, ejemplos de petición y respuesta, autorización y errores del Sprint 1. |
+| v1.23 | 13/11/2026 | Juan Angulo | Incorporación del bounded context Facturación y Suscripciones y de la pasarela de pago simulada en los diagramas C4 (landscape, contexto, contenedores, context map, componentes, clases y base de datos) y en las secciones 4.1 y 4.2. |
 
 <div style="page-break-after: always;"></div>
 
@@ -246,6 +247,15 @@ Como oportunidad de mejora, la implementación de código quedó concentrada pri
       - [4.2.4.6. Bounded Context Software Architecture Code Level Diagrams](#4246-bounded-context-software-architecture-code-level-diagrams)
       - [4.2.4.6.1. Bounded Context Domain Layer Class Diagrams](#42461-bounded-context-domain-layer-class-diagrams)
       - [4.2.4.6.2. Bounded Context Database Design Diagram](#42462-bounded-context-database-design-diagram)
+    - [4.2.5. Bounded Context: Facturación y Suscripciones](#425-bounded-context-facturación-y-suscripciones)
+      - [4.2.5.1. Domain Layer](#4251-domain-layer)
+      - [4.2.5.2. Interface Layer](#4252-interface-layer)
+      - [4.2.5.3. Application Layer](#4253-application-layer)
+      - [4.2.5.4. Infrastructure Layer](#4254-infrastructure-layer)
+      - [4.2.5.5. Bounded Context Software Architecture Component Level Diagrams](#4255-bounded-context-software-architecture-component-level-diagrams)
+      - [4.2.5.6. Bounded Context Software Architecture Code Level Diagrams](#4256-bounded-context-software-architecture-code-level-diagrams)
+      - [4.2.5.6.1. Bounded Context Domain Layer Class Diagrams](#42561-bounded-context-domain-layer-class-diagrams)
+      - [4.2.5.6.2. Bounded Context Database Design Diagram](#42562-bounded-context-database-design-diagram)
 - [Capítulo V: Solution UI/UX Design](#capítulo-v-solution-uiux-design)
   - [5.1. Style Guidelines](#51-style-guidelines)
     - [5.1.1. General Style Guidelines](#511-general-style-guidelines)
@@ -1761,7 +1771,7 @@ El Product Backlog consolida las User Stories de la sección 3.1 y las ordena po
 
 Siguiendo los principios de Domain-Driven Design (Evans, 2003), el diseño estratégico de SecurIoT divide el dominio según la responsabilidad de negocio y el lenguaje que necesita cada parte del sistema, no según la tecnología, el repositorio o el proceso donde se ejecuta. Esta separación permite que la detección local, la gestión de dispositivos, la autenticación y el monitoreo evolucionen sin mezclar reglas que responden a objetivos distintos.
 
-El análisis parte de los eventos, comandos, actores y políticas identificados en el EventStorming. A partir de ellos se reconocieron cuatro bounded contexts y se clasificaron según su aporte al producto:
+El análisis parte de los eventos, comandos, actores y políticas identificados en el EventStorming. A partir de ellos se reconocieron cinco bounded contexts y se clasificaron según su aporte al producto:
 
 | Bounded Context | Responsabilidad estratégica | Clasificación | Fuente de verdad |
 |---|---|---|---|
@@ -1769,6 +1779,7 @@ El análisis parte de los eventos, comandos, actores y políticas identificados 
 | **Gestión de Zonas y Dispositivos** | Administrar zonas, dispositivos, propietarios y claves de dispositivo | Soporte | Zonas, dispositivos y `apiKey` |
 | **Monitoreo y Alertas** | Convertir lecturas de sensores en información consultable y alertas accionables | Core | Lecturas y alertas persistidas en la nube |
 | **Detección y Relay de Borde** | Evaluar detecciones, ejecutar respuestas locales y asegurar la entrega posterior de telemetría | Core | Buffer local, estado de sincronización y decisiones inmediatas de borde |
+| **Facturación y Suscripciones** | Publicar planes, calcular el cobro, autorizar el pago con la pasarela simulada y registrar suscripciones y pagos | Soporte | Suscripciones y pagos en la nube |
 
 Los dos contextos core concentran la ventaja diferencial de SecurIoT: responder con baja latencia aun cuando la conexión con la nube no está disponible y transformar las observaciones del entorno en alertas trazables. Los contextos genérico y de soporte aportan las capacidades necesarias para proteger, identificar y organizar esas operaciones, pero no contienen por sí mismos la lógica que diferencia al producto.
 
@@ -1790,12 +1801,13 @@ El Design-Level EventStorming de SecurIoT organiza los comandos, reglas de negoc
 
 #### 4.1.1.1. Candidate Context Discovery
 
-Agrupamos los eventos y comandos del dominio según quién es dueño de la decisión de negocio, no según el repositorio de código donde vive hoy. De ese análisis salen cuatro contextos delimitados:
+Agrupamos los eventos y comandos del dominio según quién es dueño de la decisión de negocio, no según el repositorio de código donde vive hoy. De ese análisis salen cinco contextos delimitados:
 
 1. **Identidad y Acceso**: quién puede entrar al sistema y con qué credenciales.
 2. **Gestión de Zonas y Dispositivos**: qué zonas existen, qué dispositivos están asignados a cada una y quién es su propietario.
 3. **Monitoreo y Alertas**: qué pasó en una zona (lecturas de sensores) y si eso amerita una alerta.
 4. **Detección y Relay de Borde**: qué ve la cámara en el sitio, si eso es una persona u objeto no permitido, y cómo reaccionar en el momento (pan/tilt, cerradura, buzzer) sin depender de la nube.
+5. **Facturación y Suscripciones**: qué planes se ofrecen, cuánto paga cada cliente por su plan y sus cámaras, y si un cobro fue aprobado o rechazado.
 
 Monitoreo y Alertas y Detección y Relay de Borde son los subdominios core: ahí vive la lógica que distingue a SecurIoT de un CRUD genérico de sensores. Identidad y Acceso es un subdominio genérico (JWT estándar, sin reglas propias del negocio). Gestión de Zonas y Dispositivos es subdominio de soporte: necesario para que los otros dos tengan sentido, pero no es, por sí solo, la ventaja del producto.
 
@@ -1980,6 +1992,8 @@ Los flujos establecen dos dependencias principales. Detección y Relay de Borde 
 
 Ningún contexto llama al de Identidad y Acceso en tiempo de ejecución más allá del login: el JWT es autocontenido y cada contexto lo valida por su cuenta contra el mismo secreto compartido, así que la relación con Identidad y Acceso es de tipo Published Language más que de llamada activa. Monitoreo y Alertas y Gestión de Zonas y Dispositivos hoy comparten una única base PostgreSQL, lo cual simplifica el MVP pero es una decisión a revisar si el sistema crece a múltiples clientes con aislamiento de datos más estricto.
 
+El contexto de Facturación y Suscripciones recibe la identidad del usuario desde Identidad y Acceso (Customer/Supplier y Published Language), porque cada suscripción y cada pago pertenecen a un propietario. Frente a la **pasarela de pago simulada** aplica una capa anticorrupción: el resto del contexto solo conoce el resultado de la autorización (aprobado o rechazado, marca y últimos cuatro dígitos), de modo que reemplazar el simulador por una pasarela real, como Culqi, no cambia el dominio.
+
 ### 4.1.3. Software Architecture
 
 SecurIoT separa el hardware físico del Vision Node, la **Embedded Application** que se ejecuta en el ESP32-S3, la **Edge API** por instalación y la **Cloud API** hospedada, consumida por las aplicaciones Web y Mobile. La cadena de observación es **Hardware → Embedded Application → Edge API → Cloud API**; la respuesta inmediata regresa de la Edge API al firmware, que acciona el hardware. El Edge tiene su propia **Edge Database (SQLite, `edge.db`)**, independiente de la **Cloud Database (PostgreSQL)**, además de un repositorio local de identidades para ArcFace.
@@ -1990,7 +2004,7 @@ Los siguientes diagramas siguen el modelo C4 (Brown, s. f.) y se generan exclusi
 
 ![C4 System Landscape diagram](docs/architecture/diagrams/system-landscape.png)
 
-La plataforma no depende de sistemas externos de terceros (sin pasarelas de pago, SMS o email en el alcance actual). El Vision Node aparece como hardware externo que intercambia señales con la plataforma a través de su firmware; las aplicaciones y los almacenes se detallan en el nivel de contenedores. La Landing Page es un sitio informativo aislado, sin llamadas a la API.
+La plataforma incorpora un único sistema externo: la **pasarela de pago (simulada)**, que representa a un procesador de pagos real y que en el proyecto del curso se simula dentro de la Cloud API; no hay otros terceros (SMS o email) en el alcance actual. El Vision Node aparece como hardware externo que intercambia señales con la plataforma a través de su firmware; las aplicaciones y los almacenes se detallan en el nivel de contenedores. La Landing Page es un sitio informativo aislado, sin llamadas a la API.
 
 #### 4.1.3.2. Software Architecture Context Level Diagrams
 
@@ -2006,17 +2020,19 @@ El hardware del Vision Node queda fuera del límite del sistema de software. Den
 
 La **Edge Database** conserva lecturas, su estado de sincronización y los datos de reintento, por lo que el Edge puede continuar operando cuando la Cloud API no está disponible. El relay entrega las lecturas pendientes mediante la API de telemetría y actualiza el estado local después de recibir confirmación; no existe acceso directo ni replicación de tablas entre SQLite y PostgreSQL. El **Local Identity Store** es un almacén de archivos NumPy para embeddings, no la base de datos de telemetría.
 
+La **Web App** incorpora la página «Plan y facturación», desde la cual el operador consulta los planes y paga su suscripción mediante los endpoints `billing` de la Cloud API, y la **Landing Page** muestra la sección de precios al visitante. La Cloud API solicita la autorización de la tarjeta a la **pasarela de pago (simulada)**: en el MVP esa llamada ocurre dentro del mismo proceso y en producción se reemplazaría por una pasarela real, como Culqi. La Cloud Database guarda además las tablas `subscriptions` y `payments`.
+
 #### 4.1.3.4. Software Architecture Deployment Diagrams
 
 ![C4 Deployment diagram](docs/architecture/diagrams/deployment.png)
 
-El diagrama de despliegue ubica la **Embedded Application** dentro del nodo físico ESP32-S3. En otro equipo de la misma LAN, el **Edge Host** ejecuta la Edge API y mantiene su **Edge Database SQLite** y el repositorio local de identidades en almacenamiento persistente. La infraestructura hospedada ejecuta la Cloud API y su base PostgreSQL; ninguna de las bases se aloja en el microcontrolador. El backend no abre conexiones hacia la red local: el Edge inicia el envío de resultados y telemetría por HTTPS con retry/backoff.
+El diagrama de despliegue ubica la **Embedded Application** dentro del nodo físico ESP32-S3. En otro equipo de la misma LAN, el **Edge Host** ejecuta la Edge API y mantiene su **Edge Database SQLite** y el repositorio local de identidades en almacenamiento persistente. La infraestructura hospedada ejecuta la Cloud API y su base PostgreSQL; ninguna de las bases se aloja en el microcontrolador. El backend no abre conexiones hacia la red local: el Edge inicia el envío de resultados y telemetría por HTTPS con retry/backoff. El simulador de la pasarela de pago se ejecuta dentro del runtime de la Cloud API, por lo que no agrega ningún nodo de despliegue.
 
 <div style="page-break-after: always;"></div>
 
 ## 4.2. Tactical-Level Domain-Driven Design
 
-Esta sección detalla, para cada uno de los cuatro bounded contexts identificados en 4.1.1.1, sus capas de Domain, Interface, Application e Infrastructure, más los diagramas de componentes, clases y base de datos a nivel de código. Todos los diagramas tácticos se definen en el mismo modelo [Structurizr DSL](docs/architecture/workspace.dsl), se renderizan con fondo blanco y mantienen sus etiquetas en inglés.
+Esta sección detalla, para cada uno de los cinco bounded contexts identificados en 4.1.1.1, sus capas de Domain, Interface, Application e Infrastructure, más los diagramas de componentes, clases y base de datos a nivel de código. Todos los diagramas tácticos se definen en el mismo modelo [Structurizr DSL](docs/architecture/workspace.dsl), se renderizan con fondo blanco y mantienen sus etiquetas en inglés.
 
 ### 4.2.1. Bounded Context: Monitoreo y Alertas
 
@@ -2218,6 +2234,51 @@ El cliente de los endpoints `/ingest` y `/frames` es la **Embedded Application**
 ![Structurizr Edge Detection and Relay database diagram](docs/architecture/diagrams/edge-database.png)
 
 Esta tabla vive únicamente en el SQLite local del Edge API. Es distinta de `READINGS`, la tabla de Postgres del contexto Monitoreo y Alertas (sección 4.2.1.6.2): la del Edge es un buffer temporal de tránsito, la de la nube es el registro persistente que consultan el Web App y el Mobile App.
+
+### 4.2.5. Bounded Context: Facturación y Suscripciones
+
+Este contexto de soporte permite que el cliente consulte los planes, contrate una suscripción y pague con tarjeta sin salir de la Web App. Vive en `securiot-cloud-api/src/billing` y reutiliza la autenticación de Identidad y Acceso.
+
+#### 4.2.5.1. Domain Layer
+
+- `Subscription` (raíz de agregado): `ownerId`, `planId`, `cameras`, `status` (`active` o `canceled`), `monthlyPerCamera` y `currentPeriodEnd`.
+- `Payment` (raíz de agregado): intento de cobro con `status` (`approved` o `declined`), `reason`, `subtotal`, `igv`, `total`, `currency`, `cardBrand` y `last4`. Nunca se guarda el número de tarjeta ni el CVC, solo la marca y los últimos cuatro dígitos.
+- `Plan` y `Charge` (objetos de valor): los planes fijos básico (S/ 39) y estándar (S/ 49), más S/ 69 por cámara al mes, una instalación de S/ 350 por cámara y un IGV del 18 %. `computeCharge(plan, cameras)` calcula subtotal, IGV y total.
+
+#### 4.2.5.2. Interface Layer
+
+| Endpoint | Guard | Descripción |
+|---|---|---|
+| `GET /api/v1/billing/plans` | Público | Lista los planes y las tarifas vigentes |
+| `POST /api/v1/billing/checkout` | `JwtAuthGuard` | Calcula el cobro, solicita la autorización y registra el pago y la suscripción |
+| `GET /api/v1/billing/subscription` | `JwtAuthGuard` | Devuelve la suscripción del usuario autenticado y sus pagos |
+| `POST /api/v1/billing/subscription/cancel` | `JwtAuthGuard` | Cancela la suscripción activa del usuario |
+
+#### 4.2.5.3. Application Layer
+
+- `BillingService.checkout(dto, ownerId)`: obtiene el plan, calcula el cobro, pide la autorización al simulador y persiste el pago; si fue aprobado, crea o actualiza la suscripción.
+- `BillingService.getForOwner(ownerId)` y `BillingService.cancel(ownerId)`: consulta y cancelación limitadas al propietario autenticado.
+
+#### 4.2.5.4. Infrastructure Layer
+
+- `PaymentGatewaySimulator`: reemplazo en proceso de una pasarela real. Solo aprueba las tarjetas de prueba publicadas, rechaza el resto con un motivo y devuelve únicamente marca y últimos cuatro dígitos. En producción se sustituiría por un cliente de una pasarela real, como Culqi.
+- `Repository<Subscription>` y `Repository<Payment>` de TypeORM sobre la misma PostgreSQL de la nube, con `ownerId` como llave foránea hacia `users`.
+
+#### 4.2.5.5. Bounded Context Software Architecture Component Level Diagrams
+
+![Structurizr Billing and Subscriptions component diagram](docs/architecture/diagrams/billing-components.png)
+
+#### 4.2.5.6. Bounded Context Software Architecture Code Level Diagrams
+
+#### 4.2.5.6.1. Bounded Context Domain Layer Class Diagrams
+
+![Structurizr Billing and Subscriptions class diagram](docs/architecture/diagrams/billing-classes.png)
+
+#### 4.2.5.6.2. Bounded Context Database Design Diagram
+
+![Structurizr Billing and Subscriptions database diagram](docs/architecture/diagrams/billing-database.png)
+
+`USERS` pertenece a Identidad y Acceso y se muestra solo como referencia. `SUBSCRIPTIONS` y `PAYMENTS` son las tablas propias de este contexto; ambas apuntan al propietario mediante `ownerId`, y `PAYMENTS.subscriptionId` es una referencia lógica, no una llave foránea.
 
 <div style="page-break-after: always;"></div>
 
