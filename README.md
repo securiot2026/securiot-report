@@ -4857,7 +4857,7 @@ Todas las entrevistas fueron realizadas de manera virtual mediante **Google Meet
 | **Medio de entrevista** | Google Meet |
 | **Inicio** | 00:00 |
 | **Duración** | 1:58 |
-| **Video de la entrevista** | [Ver entrevista en One Drive](<link_entrevista>) <link_entrevista> |
+| **Video de la entrevista** | [Ver entrevista en One Drive](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g099_upc_edu_pe/IQCdn_eHAzp0T432Nlt3dXd5ARHuWI9ZaPJNtIBp06Hu3T8?e=YPc21r&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g099_upc_edu_pe/IQCdn_eHAzp0T432Nlt3dXd5ARHuWI9ZaPJNtIBp06Hu3T8?e=YPc21r&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D |
 **Evidencia de entrevista**
 
 <p align="center">
@@ -4882,12 +4882,12 @@ Frente al escenario simulado de apertura imprevista de puerta, la participante e
 | **Segmento** | Administrador de Seguridad Patrimonial |
 | **Medio de entrevista** | Google Meet |
 | **Inicio** | 00:00 |
-| **Duración** | 2:40 |
-| **Video de la entrevista** | [Ver entrevista en One Drive](<link_entrevista>) <link_entrevista> |
+| **Duración** | 4:04 |
+| **Video de la entrevista** | [Ver entrevista en One Drive](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g099_upc_edu_pe/IQDfA5YPkv0yS6KU5JmKJRaaAaBMWtzpAuZNEblXAh_5Jmo?e=lPzz5t&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g099_upc_edu_pe/IQDfA5YPkv0yS6KU5JmKJRaaAaBMWtzpAuZNEblXAh_5Jmo?e=lPzz5t&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D |
 **Evidencia de entrevista**
 
 <p align="center">
-  <img src="docs/assets/chapter2/IMGs/interviews/seg1/interview2.png" alt="Entrevista a Nadia Cardenas" width="700"/>
+  <img src="docs/assets/chapter6/valid-interviews/validation_nadia_cardenas.png" alt="Entrevista a Nadia Cardenas" width="700"/>
 </p>
 
 **Resumen de la entrevista**
@@ -4908,12 +4908,12 @@ Frente al flujo de detección y notificación de incidentes, la participante enf
 | **Segmento** | Administrador de Seguridad Patrimonial |
 | **Medio de entrevista** | Google Meet |
 | **Inicio** | 00:00 |
-| **Duración** | 3:00 |
-| **Video de la entrevista** | [Ver entrevista en One Drive](<link_entrevista>) <link_entrevista> |
+| **Duración** | 3:57 |
+| **Video de la entrevista** | [Ver entrevista en One Drive](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g099_upc_edu_pe/IQCRqNhpnRuXTZ6n0u4wVlGuAU8qies24YjyxxgRogGWkVA?e=lNm8cE&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g099_upc_edu_pe/IQCRqNhpnRuXTZ6n0u4wVlGuAU8qies24YjyxxgRogGWkVA?e=lNm8cE&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D |
 **Evidencia de entrevista**
 
 <p align="center">
-  <img src="docs/assets/chapter2/IMGs/interviews/seg1/interview3.png" alt="Entrevista a Dante Zavala" width="700"/>
+  <img src="docs/assets/chapter6/valid-interviews/validation_dante_zavala.png" alt="Entrevista a Dante Zavala" width="700"/>
 </p>
 
 **Resumen de la entrevista**
@@ -4937,7 +4937,7 @@ Frente al flujo de detección de intrusiones, el entrevistado resaltó que conta
 | **Medio de entrevista** | Google Meet |
 | **Inicio** | 00:00 |
 | **Duración** | 2:46 |
-| **Video de la entrevista** | [Ver entrevista en One Drive](<link_entrevista>) <link_entrevista> |
+| **Video de la entrevista** | [Ver entrevista en One Drive](https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g099_upc_edu_pe/IQD5GSdtyTOxQadCHSjN3Bt4AZw1RWgXO09ePTMQ6Nx6aYg?e=dwxa5l&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D) https://upcedupe-my.sharepoint.com/:v:/g/personal/u20221g099_upc_edu_pe/IQD5GSdtyTOxQadCHSjN3Bt4AZw1RWgXO09ePTMQ6Nx6aYg?e=dwxa5l&nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D |
 **Evidencia de entrevista**
 
 <p align="center">
