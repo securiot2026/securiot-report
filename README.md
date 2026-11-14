@@ -109,6 +109,7 @@
 | v1.40 | 14/11/2026 | Juan Angulo | Revisión de las conclusiones y recomendaciones del informe: resultados de las entrevistas de validación, evaluación heurística, colaboración en AV2, video del producto y conclusiones de AV2 en el Student Outcome 5. |
 | v1.41 | 13/11/2026 | Javier Nikaido | Elaboración preliminar de la matriz LACX del Sprint 2, estructuración de las evidencias y del análisis de colaboración en las secciones 6.2.2.2 y 6.2.2.9, y aportes individuales de AV2 en el Student Outcome 5. |
 | v1.42 | 14/11/2026 | Matias Salcedo Champi | Capturas de ejecución de la Landing Page (español, inglés y vista móvil) y de la Web App (dispositivos, reconocimiento facial y facturación) del Sprint 2, y capturas de GitHub Insights del informe. |
+| v1.43 | 14/11/2026 | Juan Angulo | Publicación del enlace del video About-the-Team. |
 
 <div style="page-break-after: always;"></div>
 
@@ -5370,7 +5371,7 @@ Esta sección contiene el video publicado, su guion y la lista de tomas.
 
 ## Video About-the-Team
 
-_Pendiente de desarrollo._
+**Video About-the-Team:** [Ver video en YouTube](https://youtu.be/5TD9vOI6m1M). El video presenta a los integrantes de Centinela Labs y el aporte de cada uno al proyecto SecurIoT.
 
 <div style="page-break-after: always;"></div>
 
