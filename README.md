@@ -1,62 +1,29 @@
-<div align="center">
+<div align="center" style="text-align:center;">
 
-<img src="https://raw.githubusercontent.com/rommelDN/KAMPO_MARKDOWN/refs/heads/develop/docs/assets/img/Capítulo1/UPC-logo.png" alt="Logo de la Universidad Peruana de Ciencias Aplicadas" width="80"/>
-
-# **Universidad Peruana de Ciencias Aplicadas**
-
-### **Carrera de Ingeniería de Software**
-
-<br>
-
-**1ASI0572**
-
-**Desarrollo de Soluciones IoT**
-
-<br>
-
-**NRC**
-
-**8729**
-
-<br>
-
-# **Informe del Trabajo Final**
-
-<br>
-
-**Docente**
-
-**León Baca, Marco Antonio**
-
-<br>
-
-**Equipo**
-
-**Centinela Labs**
-
-<br>
-
-**Proyecto**
-
-**SECURIOT**
-
-<br>
-
-### **Integrantes**
-
-| Código | Apellidos y Nombres |
-| :---: | :--- |
-| U202317692 | Angulo Abud, Juan Carlos |
-| U202217678 | Aquino Solorzano, Daniel Jonatan |
-| U202517474 | Hurtado Balcazar, Rommel Daniel |
-| U20221G099 | Nikaido Vargas, Javier Masaru |
-| U202310971 | Osores Marchese, Pietro |
-| U202319698 | Salcedo Champi, Matias Rodolfo |
-| U202216058 | Santillan Alvarado, Melina Liz |
-
-<br>
-
-**Período 202620**
+<p align="center" style="margin:0;"><img src="docs/assets/upc-logo.png" alt="Logo de la Universidad Peruana de Ciencias Aplicadas" width="84" height="84"/></p>
+<p align="center" style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:12pt;font-weight:400;line-height:1.5;margin:0;text-align:center;">Universidad Peruana de Ciencias Aplicadas</p>
+<p align="center" style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:12pt;font-weight:400;line-height:1.5;margin:0;text-align:center;">Carrera de Ingeniería de Software</p>
+<p align="center" style="line-height:1.5;margin:0;font-size:12pt;">&nbsp;</p>
+<p align="center" style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:14pt;font-weight:700;line-height:1.5;margin:0;text-align:center;">1ASI0572</p>
+<p align="center" style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:14pt;font-weight:700;line-height:1.5;margin:0;text-align:center;">Desarrollo de Soluciones IoT</p>
+<p align="center" style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:12pt;font-weight:400;line-height:1.5;margin:0;text-align:center;">NRC</p>
+<p align="center" style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:14pt;font-weight:700;line-height:1.5;margin:0;text-align:center;">8729</p>
+<p align="center" style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:16pt;font-weight:700;line-height:1.5;margin:0;text-align:center;">Informe del Trabajo Final</p>
+<p align="center" style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:12pt;font-weight:400;line-height:1.5;margin:0;text-align:center;">Docente</p>
+<p align="center" style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:14pt;font-weight:700;line-height:1.5;margin:0;text-align:center;">León Baca, Marco Antonio</p>
+<p align="center" style="line-height:1.5;margin:0;font-size:12pt;">&nbsp;</p>
+<p align="center" style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:12pt;font-weight:400;line-height:1.5;margin:0;text-align:center;">Equipo</p>
+<p align="center" style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:14pt;font-weight:700;line-height:1.5;margin:0;text-align:center;">Centinela Labs</p>
+<p align="center" style="line-height:1.5;margin:0;font-size:12pt;">&nbsp;</p>
+<p align="center" style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:12pt;font-weight:400;line-height:1.5;margin:0;text-align:center;">Proyecto</p>
+<p align="center" style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:14pt;font-weight:700;line-height:1.5;margin:0;text-align:center;">SECURIOT</p>
+<p align="center" style="line-height:1.5;margin:0;font-size:12pt;">&nbsp;</p>
+<p align="center" style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:12pt;font-weight:700;line-height:1.5;margin:0;text-align:center;">Integrantes</p>
+<table align="center" style="border:0;border-collapse:collapse;margin:0 auto;width:3.9in;"><thead><tr><th style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:12pt;font-weight:700;line-height:1.5;padding:0 14px 0 0;border:0;text-align:left;">Código</th><th style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:12pt;font-weight:700;line-height:1.5;padding:0 14px 0 0;border:0;text-align:left;">Apellidos y Nombres</th></tr></thead><tbody><tr><td style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:11pt;line-height:1.5;padding:0 14px 0 0;border:0;text-align:left;">U202317692</td><td style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:11pt;line-height:1.5;padding:0 14px 0 0;border:0;text-align:left;">Angulo Abud, Juan Carlos</td></tr><tr><td style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:11pt;line-height:1.5;padding:0 14px 0 0;border:0;text-align:left;">U202217678</td><td style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:11pt;line-height:1.5;padding:0 14px 0 0;border:0;text-align:left;">Aquino Solorzano, Daniel Jonatan</td></tr><tr><td style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:11pt;line-height:1.5;padding:0 14px 0 0;border:0;text-align:left;">U202517474</td><td style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:11pt;line-height:1.5;padding:0 14px 0 0;border:0;text-align:left;">Hurtado Balcazar, Rommel Daniel</td></tr><tr><td style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:11pt;line-height:1.5;padding:0 14px 0 0;border:0;text-align:left;">U20221G099</td><td style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:11pt;line-height:1.5;padding:0 14px 0 0;border:0;text-align:left;">Nikaido Vargas, Javier Masaru</td></tr><tr><td style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:11pt;line-height:1.5;padding:0 14px 0 0;border:0;text-align:left;">U202310971</td><td style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:11pt;line-height:1.5;padding:0 14px 0 0;border:0;text-align:left;">Osores Marchese, Pietro</td></tr><tr><td style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:11pt;line-height:1.5;padding:0 14px 0 0;border:0;text-align:left;">U202319698</td><td style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:11pt;line-height:1.5;padding:0 14px 0 0;border:0;text-align:left;">Salcedo Champi, Matias Rodolfo</td></tr><tr><td style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:11pt;line-height:1.5;padding:0 14px 0 0;border:0;text-align:left;">U202216058</td><td style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:11pt;line-height:1.5;padding:0 14px 0 0;border:0;text-align:left;">Santillan Alvarado, Melina Liz</td></tr></tbody></table>
+<p align="center" style="line-height:1.5;margin:0;font-size:12pt;">&nbsp;</p>
+<p align="center" style="line-height:1.5;margin:0;font-size:12pt;">&nbsp;</p>
+<p align="center" style="line-height:1.5;margin:0;font-size:12pt;">&nbsp;</p>
+<p align="center" style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:12pt;font-weight:700;line-height:1.5;margin:0;text-align:center;">Período 202620</p>
 
 </div>
 
