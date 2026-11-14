@@ -4580,7 +4580,143 @@ Al culminar las actividades de interacción, se formulan las siguientes pregunta
 
 ### 6.3.2. Registro de Entrevistas
 
-_Pendiente de desarrollo._
+En esta sección se presenta el registro de las entrevistas de validación realizadas a los 3 segmentos objetivos de la solución planteada. Para cada participante se incluyen sus datos generales, la evidencia visual de la sesión, el enlace correspondiente a la grabación y un resumen descriptivo de los principales hallazgos obtenidos.
+
+Todas las entrevistas fueron realizadas de manera virtual mediante **Google Meet**. Las grabaciones correspondientes se almacenan en **Google Drive**.
+
+#### Segmento 1: Administrador de Seguridad Patrimonial
+
+##### Entrevista 1: Bianca Beltrán
+
+| Dato | Información |
+|---|---|
+| **Nombres y apellidos** | Bianca Beltrán |
+| **Edad** | 42 años |
+| **Distrito de residencia** | Ate |
+| **Segmento** | Administrador de Seguridad Patrimonial |
+| **Medio de entrevista** | Google Meet |
+| **Inicio** | 00:00 |
+| **Duración** | 1:58 |
+| **Video de la entrevista** | [Ver entrevista en One Drive](<link_entrevista>) <link_entrevista> |
+**Evidencia de entrevista**
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/interviews/seg1/interview1.png" alt="Entrevista a Bianca Beltrán" width="700"/>
+</p>
+
+**Resumen de la entrevista**
+
+A partir de la sesión de validación realizada a Bianca Beltrán, de 42 años y Jefa de Seguridad Patrimonial en una planta industrial de manufactura en Ate, se comprobó una recepción sumamente favorable hacia el flujo operativo integral de SECURIOT. Durante su interacción inicial con la Landing Page, la entrevistada destacó la contundencia de la propuesta de valor orientada a la respuesta inmediata y proactiva frente a la intrusión, resaltando la agilidad del selector de idioma (español e inglés) sin pérdida de formato y la sobriedad del formulario de solicitud de demostración, el cual consideró directo y libre de fricciones. 
+Al evaluar la aplicación web, Bianca completó con total fluidez las tareas de autenticación, creación de la zona restringida 'Almacén Central' y registro del sensor IoT correspondiente. Calificó como un acierto técnico y de seguridad que la plataforma exponga la clave del dispositivo (apiKey) de manera íntegra y por única vez al momento de su aprovisionamiento. Asimismo, valoró de forma muy positiva la visualización del estado 'En línea' y el registro de la última lectura en la tabla de dispositivos, señalando que esta retroalimentación disipa la incertidumbre operativa sobre el funcionamiento de los equipos instalados en áreas críticas. 
+Frente al escenario simulado de apertura imprevista de puerta, la participante expresó una alta satisfacción al comprobar que la alerta se generó en tiempo real con severidad media y estado activo, proporcionando de inmediato el contexto exacto del evento (sede, zona afectada y sensor disparador). Concluyó manifestando plena confianza en el producto, destacando que el sistema resuelve las deficiencias de su gestión actual al erradicar las demoras en la consolidación manual de evidencias para auditorías, mitigar las falsas alarmas y ofrecer un entorno visual oscuro de alto contraste apto para jornadas prolongadas en salas de control.
+
+---
+
+##### Entrevista 2: Nadia Cardenas
+
+| Dato | Información |
+|---|---|
+| **Nombres y apellidos** | Nadia Cardenas |
+| **Edad** | 52 años |
+| **Distrito de residencia** | Lurín |
+| **Segmento** | Administrador de Seguridad Patrimonial |
+| **Medio de entrevista** | Google Meet |
+| **Inicio** | 00:00 |
+| **Duración** | 2:40 |
+| **Video de la entrevista** | [Ver entrevista en One Drive](<link_entrevista>) <link_entrevista> |
+**Evidencia de entrevista**
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/interviews/seg1/interview2.png" alt="Entrevista a Nadia Cardenas" width="700"/>
+</p>
+
+**Resumen de la entrevista**
+
+A partir de la sesión de validación realizada a Nadia Cárdenas, de 52 años y Jefa de Seguridad Patrimonial en un centro logístico y de almacenamiento en frío en Lurín, se obtuvo una retroalimentación altamente favorable respecto al desempeño y la usabilidad de SECURIOT. Durante la evaluación, la entrevistada destacó la fluidez y el orden de la navegación web entre los módulos de Zonas, Dispositivos y Alertas, señalando que la agilidad de respuesta del sistema contrasta positivamente con las interfaces complejas y lentas de los NVRs y grabadores locales que suele operar en un predio de más de 12,000 m². 
+En cuanto a la claridad conceptual y la presentación de la información, Nadia valoró de forma muy positiva la precisión de las etiquetas operativas y los indicadores de estado. En particular, remarcó que el chip verde «En línea» y la indicación explícita de alerta activa con su nivel de severidad permiten identificar la condición de los puntos críticos de forma inmediata, evitando malentendidos con el personal de vigilancia en campo. Asimismo, calificó el diseño visual oscuro con acentos turquesa y rojos como una solución cómoda y legible que no produce cansancio visual durante turnos extensos. 
+Frente al flujo de detección y notificación de incidentes, la participante enfatizó que la plataforma aporta el contexto necesario —sede, zona afectada, sensor disparador y marca de tiempo exacta— para gestionar respuestas rápidas y certeras en lugar de enviar a los guardias a inspecciones a ciegas. Concluyó afirmando que SECURIOT generaría un impacto operativo directo en su gestión al reducir significativamente las cerca de 20 horas mensuales que hoy dedica a compilar reportes manuales para auditorías de certificación BASC, mitigando al mismo tiempo el desgaste provocado por falsas alarmas nocturnas.
+
+---
+
+##### Entrevista 3: Dante Zavala
+
+| Dato | Información |
+|---|---|
+| **Nombres y apellidos** | Dante Zavala |
+| **Edad** | 53 años |
+| **Distrito de residencia** | El Callao |
+| **Segmento** | Administrador de Seguridad Patrimonial |
+| **Medio de entrevista** | Google Meet |
+| **Inicio** | 00:00 |
+| **Duración** | 3:00 |
+| **Video de la entrevista** | [Ver entrevista en One Drive](<link_entrevista>) <link_entrevista> |
+**Evidencia de entrevista**
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/interviews/seg1/interview3.png" alt="Entrevista a Dante Zavala" width="700"/>
+</p>
+
+**Resumen de la entrevista**
+
+A partir de la sesión de validación realizada a Dante Zavala, de 53 años y Coordinador de Seguridad Integral en un complejo metalmecánico y patio de fundición en El Callao, se evidenció una recepción sumamente positiva hacia la estructura y operación de SECURIOT. Durante la interacción con la aplicación web, el participante completó los flujos de configuración y consulta con notable facilidad, señalando que la navegación limpia y ordenada en el menú lateral representa una mejora sustancial frente a las interfaces lentas, complejas y obsoletas de los DVRs locales que actualmente opera en un predio de 15,000 m². 
+En relación con el diseño visual y la comprensión de la información, Dante valoró de forma sobresaliente la claridad de la terminología empleada y el contraste de la interfaz. Destacó que el fondo oscuro reduce considerablemente el agotamiento visual propio de las salas de monitoreo con poca iluminación, mientras que el uso de acentos turquesa para acciones de control y rojo brillante para las alertas activas permite distinguir eventos críticos a distancia y sin ambigüedades. Asimismo, consideró que las etiquetas de estado, como el indicador en línea y las severidades de alerta, son transparentes y se alinean con el vocabulario operativo de la seguridad patrimonial industrial. 
+Frente al flujo de detección de intrusiones, el entrevistado resaltó que contar con datos contextuales precisos —sede, zona comprometida, sensor activado y marca de tiempo exacta— resulta determinante para coordinar una respuesta inmediata y orientada en instalaciones con galpones extensos y almacenes de metales de alto valor. Concluyó manifestando total confianza operativa en la plataforma, destacando que la trazabilidad automática y la centralización de incidencias eliminarían los días que hoy pierde revisando grabaciones imprecisas y bitácoras manuales en papel tras cada incidente, permitiéndole entregar reportes confiables y auditables a la gerencia.
+
+---
+
+#### Segmento 2: Personal de Vigilancia In Situ
+
+##### Entrevista 1: Julieta Cordero
+
+| Dato | Información |
+|---|---|
+| **Nombres y apellidos** | Julieta Cordero |
+| **Edad** | 40 años |
+| **Distrito de residencia** | Villa El Salvador |
+| **Segmento** | Personal de Vigilancia In Situ |
+| **Medio de entrevista** | Google Meet |
+| **Inicio** | 00:00 |
+| **Duración** | 2:46 |
+| **Video de la entrevista** | [Ver entrevista en One Drive](<link_entrevista>) <link_entrevista> |
+**Evidencia de entrevista**
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/interviews/seg2/interview1.png" alt="Entrevista a Julieta Cordero" width="700"/>
+</p>
+
+**Resumen de la entrevista**
+
+A partir de la sesión de validación realizada a Julieta Cordero, de 40 años y agente de seguridad en un centro logístico en Villa El Salvador, se evidenció una recepción sumamente positiva hacia la aplicación móvil de SECURIOT. La participante completó con agilidad las tareas de recepción, consulta y registro de atención de alertas, señalando que la navegación compacta y la presencia de botones amplios resultan ideales para su labor operativa durante rondas continuas y turnos nocturnos de 12 horas. 
+En relación con el diseño visual y la presentación de datos, Julieta destacó la conveniencia de la interfaz con fondo oscuro, remarcando que evita el deslumbramiento visual al transitar por patios y pasillos con poca iluminación. Asimismo, valoró la claridad de las etiquetas y el contraste del indicador rojo para alertas activas, lo que le permitió identificar la severidad del evento de forma instantánea y sin recurrir a códigos o tecnicismos confusos. 
+Frente al escenario de intrusión simulado, la entrevistada manifestó que contar con información contextual previa —zona específica, dispositivo activado y marca horaria exacta— elimina la incertidumbre de acudir a ciegas ante un aviso de garita. Concluyó afirmando que la solución optimiza notablemente su jornada al mitigar las falsas alarmas que provocan traslados innecesarios y erradicar los casi 30 minutos que invierte redactando reportes manuales en cuadernos de novedades.
+
+---
+
+##### Entrevista 2: Christopher Cabán
+
+| Dato | Información |
+|---|---|
+| **Nombres y apellidos** | Christopher Cabán |
+| **Edad** | 41 años |
+| **Distrito de residencia** | Los Olivos |
+| **Segmento** | Personal de Vigilancia In Situ |
+| **Medio de entrevista** | Google Meet |
+| **Inicio** | 00:00 |
+| **Duración** | 3:14 |
+| **Video de la entrevista** | [Ver entrevista en One Drive](<link_entrevista>) <link_entrevista> |
+**Evidencia de entrevista**
+
+<p align="center">
+  <img src="docs/assets/chapter2/IMGs/interviews/seg2/interview2.png" alt="Entrevista a Christopher Cabán" width="700"/>
+</p>
+
+**Resumen de la entrevista**
+
+A partir de la sesión de validación realizada a Christopher Cabán, de 41 años y vigilante de seguridad privada en una planta metalmecánica y almacén de insumos en Los Olivos, se registró una evaluación sumamente favorable sobre la funcionalidad de la aplicación móvil de SECURIOT. El participante ejecutó con fluidez las acciones de inicio de sesión, revisión de zonas y atención de alertas de intrusión, resaltando que la sencillez de los menús y la amplitud de los controles táctiles resultan ideales para operar en un entorno industrial con alta congestión de camiones, talleres y áreas de maniobra. 
+En el aspecto visual y de interacción, Christopher valoró positivamente la paleta con fondo oscuro, señalando que evita el encandilamiento durante rondas nocturnas al transitar entre zonas con escasa iluminación. Asimismo, destacó la visibilidad del distintivo rojo para alertas activas y la ausencia de términos técnicos rebuscados, lo que le permitió identificar la ubicación y severidad del incidente sin riesgo de confusión. 
+En cuanto a la respuesta operativa ante siniestros, el entrevistado afirmó que recibir con antelación la zona comprometida, el sensor activado y la hora exacta reduce drásticamente la incertidumbre de acudir a ciegas únicamente con linterna y radio. Concluyó destacando que SECURIOT alivia el cansancio físico propio de turnos extensos al evitar desplazamientos innecesarios por falsas alarmas y eliminar los hasta 40 minutos que actualmente dedica a redactar incidencias de forma manual en libretas de campo.
+
+---
 
 ### 6.3.3. Evaluaciones según heurísticas
 
