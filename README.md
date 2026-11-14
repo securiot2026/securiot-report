@@ -70,6 +70,12 @@
 | v1.21 | 08/10/2026 | Javier Masaru Nikaido Vargas | Diseño de mockups de alta fidelidad, elaboración de User Flow Diagrams, diseño de interfaces web y móviles, desarrollo visual de la Landing Page y documentación de los flujos de navegación de SecurIoT. |
 | v1.22 | 08/10/2026 | Matias Salcedo Champi | Documentación de las 12 acciones de la Cloud API: sintaxis, parámetros, ejemplos de petición y respuesta, autorización y errores del Sprint 1. |
 | v1.23 | 13/11/2026 | Juan Angulo | Incorporación del bounded context Facturación y Suscripciones y de la pasarela de pago simulada en los diagramas C4 (landscape, contexto, contenedores, context map, componentes, clases y base de datos) y en las secciones 4.1 y 4.2. |
+| v1.24 | 14/11/2026 | Juan Angulo | Evidencias de servicios: tabla completa de los 33 endpoints de la Cloud API tomada del contrato vivo, endpoints de la Edge API, contrato de facturación con la pasarela simulada, tarjetas de prueba y capturas de Swagger UI (sección 6.2.2.7). |
+| v1.25 | 14/11/2026 | Juan Angulo | Actualización del despliegue y del CI/CD: tabla de despliegues, workflows por repositorio, protección de ramas y flujo de `develop` a `main` (secciones 6.2.2.8 y 6.2.3.8). |
+| v1.26 | 14/11/2026 | Juan Angulo | Actualización de commits y Pull Requests posteriores, conteo de pruebas con enlaces a las ejecuciones de CI, resultado en hardware físico y capturas de la Landing Page y de la Web App (secciones 6.2.2.2, 6.2.2.4 a 6.2.2.6 y 6.2.3.4 a 6.2.3.6). |
+| v1.27 | 14/11/2026 | Juan Angulo | Evaluación heurística de la Web App con las 10 heurísticas de Nielsen (sección 6.3.3). |
+| v1.28 | 14/11/2026 | Juan Angulo | Guion y lista de tomas del video About-the-Product (sección 6.4). |
+| v1.29 | 14/11/2026 | Juan Angulo | Recálculo de commits y Pull Requests con datos de GitHub (Collaboration Insights, 6.2.2.9, 6.2.3.9 y Student Outcome), conclusiones y recomendaciones actualizadas, e Individual Member Performance Report del Team Leader (Anexo D). |
 
 <div style="page-break-after: always;"></div>
 
@@ -159,6 +165,24 @@ El trabajo de TB1 se organizó en cuatro etapas:
 La división por aspectos permitió que cada integrante asumiera una responsabilidad identificable y que los capítulos de diseño e implementación evolucionaran en paralelo. La matriz LACX y el Sprint Backlog ayudaron a conectar las tareas individuales con los objetivos del Sprint 1, mientras que el flujo de ramas y revisiones mantuvo la trazabilidad de los cambios incorporados al informe.
 
 Como oportunidad de mejora, la implementación de código quedó concentrada principalmente en los responsables técnicos de los servicios. Para las siguientes iteraciones, el equipo debe distribuir con mayor equilibrio las tareas de programación, pruebas y despliegue, manteniendo responsables claros y revisiones cruzadas antes de integrar cada cambio.
+
+## Sprint 2 y Sprint 3 (datos de GitHub al 14/11/2026)
+
+Esta sección recalcula los aportes con datos de GitHub consultados el 14 de noviembre de 2026 (`gh api repos/securiot2026/<repo>/contributors` y `git log origin/develop --no-merges`). Las cifras de `contributors` cuentan la rama por defecto de cada repositorio. Las tablas de AV1 y TB1 se conservan sin cambios.
+
+| Repositorio | Contribuidores según GitHub (commits) | Pull Requests integrados | Pull Requests abiertos |
+| --- | --- | --- | --- |
+| securiot-cloud-api | `Sve-nnN` 53 | 8 | 0 |
+| securiot-web-app | `Sve-nnN` 58 | 14 | 0 |
+| securiot-edge-api | `Sve-nnN` 42, `Maximoff19` 7, `DanielAquinoSolorzano` 1 | 7 | 0 |
+| securiot-embedded | `Sve-nnN` 46, `rommelDN` 2, `Maximoff19` 1 | 9 | 0 |
+| securiot-mobile-app | `Sve-nnN` 37 | 7 | 2 |
+| securiot-landing | `Sve-nnN` 37 | 12 | 1 |
+| securiot-report | `DanielAquinoSolorzano` 35, `Sve-nnN` 34, `rommelDN` 31, `melinaasantillan` 23, `Maximoff19` 14, `MassiFlip` 11, `matiAAsc` 9 | 35 | 1 |
+
+`Sve-nnN` es la cuenta de Juan Angulo (perfil "Juan Angulo") y `Maximoff19` la de Pietro Osores. En los repositorios de código, todos los Pull Requests integrados tienen como autor a `Sve-nnN`. El informe sí tiene contribuciones de las siete cuentas, con una distribución más pareja (de 9 a 35 commits por cuenta).
+
+**Interpretación:** la implementación de código sigue concentrada en una sola cuenta, mientras que la redacción del informe está repartida. El compromiso de repartir la programación, la verificación y el despliegue entre más integrantes, asumido en AV1 y en TB1, no se cumplió en el código. La sección 6.2.2.9 detalla el recálculo para el rango del Sprint 2.
 
 <div style="page-break-after: always;"></div>
 
@@ -329,6 +353,7 @@ Como oportunidad de mejora, la implementación de código quedó concentrada pri
   - [Video About-the-Team](#video-about-the-team)
 - [Bibliografía](#bibliografía)
 - [Anexos](#anexos)
+  - [Anexo D. Individual Member Performance Report](#anexo-d-individual-member-performance-report)
 
 <div style="page-break-after: always;"></div>
 
@@ -346,6 +371,8 @@ En el siguiente cuadro se describe las acciones realizadas y enunciados de concl
 |---|---|---|
 | Trabaja en equipo para proporcionar liderazgo en forma conjunta | **Angulo Abud, Juan Carlos**<br>**AV1**<br>Lideré el diseño de la arquitectura de software del proyecto en el Capítulo IV, construyendo el Strategic-Level DDD desde el Event Storming de diseño hasta el descubrimiento de los bounded contexts candidatos y su mapeo, y extendiendo después ese trabajo al Tactical DDD de los bounded contexts restantes del sistema. También impulsé el arranque del proyecto al completar el Lean UX Process del Capítulo I (problem statements, assumptions, hypothesis statements y canvas), coordinando con mis compañeros para que esas decisiones de producto quedaran alineadas con la definición del segmento objetivo que el equipo cerró después.<br><br>**TB1**<br>En el Sprint 1 asumí el liderazgo de la Cloud API, según la matriz de la sección 6.2.1.2, y me encargué de las tareas del backend que sostienen el circuito principal: el registro de dispositivos asociado a una zona (T-01.1), el estado en línea y la última lectura de cada dispositivo (T-02.1), el CRUD de zonas restringidas (T-04.1), la regla de alerta de apertura de puerta desde la ingesta de telemetría (T-05.3), el listado de alertas filtrable (T-08.1), la autenticación con JWT (T-15.1) y el control de acceso por propietario (T-23.1). Colaboré con Pietro Osores en el endpoint `/frames` (T-05.2), donde conecté su módulo de visión con el flujo de lecturas y alertas. También contribuí al código de la Web App, la Landing Page y la App Móvil, y a la configuración de los Dockerfiles de producción de los servicios.<br><br>**Aquino Solorzano, Daniel Jonatan**<br>**AV1**<br>Asumí un rol de coliderazgo en la fase de investigación de usuarios al estructurar la estrategia de empatización para tres segmentos objetivo del proyecto, coordinando activamente con el equipo la formulación y validación de las guías de entrevista para asegurar un enfoque coherente. Asimismo, lideré operativamente la recolección de hallazgos al gestionar y ejecutar directamente las sesiones sincrónicas por Google Meet con los dos primeros segmentos (completando tres entrevistas del primero y dos del segundo), compartiendo periódicamente los avances y facilitando la toma de decisiones compartida dentro del equipo para ajustar el rumbo del análisis según los datos obtenidos.<br><br>**TB1**<br>Coordiné de forma colaborativa para poder hacer la repartición equitativa del diseño UI de nuestra solución. Tomando el liderazgo en el desarrollo y documentación de los wireframes y wireflows de la aplicación web y móvil.<br><br>**Hurtado Balcazar, Rommel Daniel**<br>**AV1**<br>Fomenté el trabajo colaborativo y organicé la delegación de tareas para el AV1. Desarrollé la idea de la startup, planteando su definición, así como el análisis de los antecedentes y la problemática. Por último, gracias a la recopilación de información de Lean UX, pude determinar el segmento objetivo en el cual se enfocará este servicio.<br><br>**TB1**<br>Lideré el diseño del dispositivo IoT en la sección 5.6. Definí el SecurIoT Vision Node a partir de seis criterios que reúnen decisiones de otros integrantes: el contrato /frames e /ingest del Edge API (sección 4.2.4); la guía de estilos IoT de la sección 5.1.2, para que el LED y el buzzer usen los mismos estados que la Web App; los hallazgos de las entrevistas sobre falsas alarmas, ruido industrial y normas de evacuación de INDECI. Documenté el circuito en Wokwi y la máquina de estados del nodo, junto con sus flujos de interacción. También me hice cargo de la sección 6.1 (Software Configuration Management).<br><br>**Nikaido Vargas, Javier Masaru**<br>**AV1**<br>Participé activamente en la fase de investigación de usuarios mediante el diseño, realización y documentación de entrevistas para SECURIOT. Contribuí en la preparación de las preguntas, la ejecución de las entrevistas, la organización de las evidencias y el análisis de los resultados obtenidos. A partir de esta información identifiqué patrones, necesidades y problemas relevantes, compartiendo los hallazgos con el equipo para apoyar la elaboración de los artefactos de Needfinding y la definición de requisitos del producto.<br><br>**TB1**<br>Contribuí al desarrollo y documentación de las interfaces de SecurIoT mediante la elaboración de mockups de alta fidelidad y Applications User Flow Diagrams para las aplicaciones web y móvil. Asimismo, participé en el diseño visual de la Landing Page, coordinando mis aportes con las propuestas del equipo para mantener una identidad visual consistente y representar los principales recorridos de los usuarios.<br><br>**Osores Marchese, Pietro**<br>**AV1**<br>Participé activamente en la definición y representación de la arquitectura de SECURIOT, encargándome de la elaboración de los diagramas C4 necesarios para comunicar la estructura de la solución en sus distintos niveles. Asimismo, desarrollé los EventStorming y los diagramas de flujo de mensajes del dominio, representando la interacción entre actores, comandos, eventos, políticas y bounded contexts. Estos artefactos permitieron que el equipo tuviera una visión compartida de la arquitectura y de las responsabilidades de cada componente, facilitando la coordinación entre los integrantes y sirviendo como referencia para el desarrollo de las demás secciones del proyecto. También contribuí a la preparación de la presentación del AV1, organizando visualmente los principales resultados alcanzados por el equipo.<br><br>**TB1**<br>Contribuí al liderazgo técnico de la entrega desde el aspecto Edge/IoT, actualizando los diagramas C4 para separar el hardware, la Embedded Application y la Edge API, y representar la base SQLite local del Edge de forma independiente de PostgreSQL en la nube. Complementé el Big Picture EventStorming con una explicación de sus etapas y recorridos, facilitando una interpretación compartida del dominio. También documenté los prototipos web y móvil con sus videos y preparé la presentación del producto, conectando el problema, la solución, la arquitectura, la implementación y el modelado del circuito. Estos materiales proporcionaron al equipo referencias comunes para comunicar y revisar los avances de SECURIOT.<br><br>**Salcedo Champi, Matias Rodolfo**<br>**AV1**<br>Participé en la definición de requisitos iniciales del producto a partir de los hallazgos del proceso de needfinding. Elaboré y organicé User Stories con criterios de aceptación en formato Gherkin, incluyendo historias asociadas a la Landing Page y Technical Stories necesarias para sostener la solución. También trabajé el Impact Mapping para relacionar el objetivo de negocio con actores, impactos esperados y funcionalidades, evitando que el backlog quedara como una lista aislada de tareas sin conexión con el valor del producto.<br><br>**TB1 – Sprint 1**<br>Asumí la responsabilidad del aspecto Landing Page dentro de la matriz de líderes y colaboradores del Sprint 1. Además, contribuí a consolidar la documentación del Capítulo VI, relacionando el objetivo del sprint, las historias seleccionadas y las tareas del backlog con las evidencias de implementación. Reuní capturas de Trello, Swagger, la Web App y las contribuciones del repositorio para que el equipo contara con referencias concretas al revisar los avances de la entrega.<br><br>**Santillan Alvarado, Melina Liz**<br>**AV1**<br>- Propuso sustentar las tres User Personas exclusivamente con las entrevistas y sus análisis.<br>- Revisó la correspondencia entre los hallazgos de las entrevistas y los atributos incluidos en cada arquetipo.<br>- Validó que la User Task Matrix contuviera tareas del dominio independientes de las funcionalidades de SECURIOT.<br>- Definió el alcance del Ubiquitous Language limitado a términos del negocio y sin conceptos técnicos de ingeniería de software.<br><br>**TB1**<br>Definí las guías de estilo generales y específicas para web, móvil e IoT de SecurIoT, manteniendo una correspondencia consistente entre la identidad visual y los estados operativos del producto. Asimismo, estructuré la arquitectura de información de la Landing Page, el panel web y la aplicación móvil, estableciendo criterios comunes de organización, etiquetado, búsqueda, navegación y metadatos para que las siguientes propuestas de interfaz partieran de una base compartida. | **AV1**<br>Durante AV1, el equipo logró convertir información inicial del problema en artefactos accionables para el proyecto. La participación de cada integrante permitió sostener una visión compartida del producto y tomar decisiones con mayor criterio al momento de priorizar requisitos, organizar evidencias y conectar cada entrega con los objetivos de SECURIOT.<br><br>**TB1**<br>Durante TB1, el equipo coordinó el diseño y la implementación inicial de SECURIOT distribuyendo responsabilidades entre UI/UX, arquitectura, IoT, desarrollo, pruebas, despliegue y documentación. El liderazgo compartido permitió integrar los aportes individuales en una primera versión funcional y desplegada de la Landing Page, la Web App y los servicios, manteniendo una visión común del producto y tomando decisiones técnicas de manera colaborativa. |
 | Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos | **Angulo Abud, Juan Carlos**<br>**AV1**<br>Planifiqué el Capítulo IV en dos entregas dentro del sprint, primero el diseño estratégico y después el táctico, para poder avanzar en paralelo sin bloquear las secciones de requerimientos y UX que dependían de decisiones de arquitectura ya cerradas. Mantuve cada bounded context documentado y versionado en el repositorio a medida que quedaba definido, y prioricé cerrar primero el Lean UX Process para destrabar la definición del segmento objetivo del equipo, cumpliendo con los plazos que nos fijamos para el AV1.<br><br>**TB1**<br>En el Sprint 1 planifiqué el backend de la Cloud API y la Edge API a partir de los criterios de aceptación de las User Stories P0. Para cada tarea escribí primero las pruebas e2e en estado fallido y luego implementé la funcionalidad hasta hacerlas pasar, de modo que cada criterio quedó respaldado por una prueba. Trabajé con GitFlow, con ramas `feature/*` hacia `develop` y commits convencionales, lo que permitió rastrear cada tarea del Sprint Backlog hasta su commit. Dejé documentadas en el README de cada repositorio las variables de entorno y la topología de despliegue (VPS para la Cloud API y la Web App, Edge API en una máquina local de la red de la cámara), para que el resto del equipo pudiera ejecutar el producto sin depender de mí.<br><br>**Aquino Solorzano, Daniel Jonatan**<br>**AV1**<br>Fomenté un espacio de trabajo integrador y abierto a la retroalimentación al definir, junto a mis compañeros, el cronograma y las metas para el levantamiento de información cualitativa de tres segmentos objetivo. Organicé las tareas correspondientes mediante una planificación clara de los tiempos de contacto, la logística de las sesiones remotas por Google Meet y el registro detallado de las respuestas, cumpliendo puntualmente con el objetivo trazado al ejecutar con éxito las cinco entrevistas asignadas (tres del segmento inicial y dos del segundo) y entregando al equipo un repositorio estructurado de evidencias clave para el diseño de la solución.<br><br>**TB1**<br>Implementación de los diagramas de wireflows para poder sustentar los flujos y userflows goals que se tienen previstos para cada user persona<br><br>**Hurtado Balcazar, Rommel Daniel**<br>**AV1**<br>Ordené la asignación de tareas para desarrollar correctamente el primer avance del trabajo final, logrando un trabajo organizado, dentro del plazo y acorde con los requisitos solicitados. Asimismo, integré los hallazgos recopilados por el equipo durante el proceso de Lean UX para determinar el segmento objetivo. <br><br>**TB1**<br>Para el 5.6 y el 6.1 me propuse dos metas, una por sección, y las desarrollé en ramas propias de GitFlow. Entregué cada sección en su propio pull request (#27 y #28) el 6 de octubre. Así mis compañeros podían revisarlas y usarlas mientras avanzaban en el Sprint 1. Antes de redactar, revisé lo que ya habían documentado otros integrantes: el bounded context de Detección y Relay de Borde; la guía de estilos IoT y la arquitectura de información; los hallazgos de las entrevistas; los repositorios y commits reales de cada producto. Con esa revisión, el dispositivo y las reglas de configuración respetaron decisiones ya tomadas por el equipo en lugar de reemplazarlas. Ajusté el contenido de ambas secciones y lo integré en develop sin sobrescribir los avances del Capítulo VI de mis compañeros.<br><br>**Nikaido Vargas, Javier Masaru**<br>**AV1**<br>Organicé mis actividades de investigación siguiendo las etapas definidas para el proceso de entrevistas: diseño, ejecución, registro y análisis. Coordiné la recopilación y organización de la información y de las evidencias de las entrevistas, manteniendo los resultados estructurados para facilitar su integración con el trabajo de los demás integrantes. Asimismo, consolidé los hallazgos obtenidos para que pudieran ser utilizados en User Personas, User Task Matrix, User Journey Maps y Empathy Maps, cumpliendo con las tareas asignadas dentro del AV1 y contribuyendo a mantener la coherencia entre la investigación de usuarios y los entregables del equipo.<br><br>**TB1**<br>Organicé mis entregables del TB1 en torno a las secciones 5.4.3 y 5.4.4, preparando los mockups, los diagramas de flujo de usuario y sus respectivas descripciones para el informe. También ordené las capturas y evidencias gráficas en el repositorio, procurando que los recursos visuales y su documentación fueran fáciles de consultar e integrar con el trabajo del equipo.<br><br>**Osores Marchese, Pietro**<br>**AV1**<br>Organicé el desarrollo de los artefactos de arquitectura asignados, elaborando de manera progresiva los diagramas C4, los EventStorming y los Domain Message Flows necesarios para documentar la solución. Coordiné estos elementos con las decisiones de dominio y los bounded contexts definidos por el equipo, procurando que los diagramas mantuvieran consistencia entre sí y pudieran ser utilizados por los demás integrantes como base para sus entregables. Además, participé en la elaboración del PPT de la presentación del AV1, integrando los avances del proyecto de manera ordenada y comprensible. De esta forma, cumplí con las tareas asignadas y contribuí a que el equipo contara con documentación arquitectónica y material de presentación coherentes para la entrega.<br><br>**TB1**<br>Organicé mis entregables de documentación y arquitectura en cambios verificables, manteniendo alineados los diagramas, la explicación del dominio y las evidencias de los prototipos. Integré en develop el aporte del Sprint 1 de mis compañeros sin sobrescribir las actualizaciones previas del informe, conservando la trazabilidad de las ramas y sus contribuciones. Revisé los enlaces, las imágenes y la coherencia entre Embedded, Edge y Cloud, y preparé una presentación breve con el logo y las imágenes originales del reporte. Diferencié las funcionalidades implementadas de los controles simulados y de la arquitectura objetivo, facilitando una revisión compartida de los avances y de los pendientes de la entrega.<br><br>**Salcedo Champi, Matias Rodolfo**<br>**AV1**<br>Ordené el Product Backlog con estimación por Story Points y priorización por nivel de importancia, considerando épicas de monitoreo, zonas y accesos, alertas, trazabilidad, experiencia web/mobile, gestión multi-sede, Landing Page y Technical Stories. Además, desarrollé los User Journey Maps As-Is y Empathy Maps para representar la experiencia actual de los arquetipos definidos, tomando como base las entrevistas y los patrones detectados en los segmentos objetivo. Estas actividades ayudaron a que el equipo tuviera una referencia común para planificar la entrega y sustentar las decisiones de producto.<br><br>**TB1 – Sprint 1**<br>Organicé las evidencias del Sprint 1 en el informe y preparé la ejecución local de la Web App y la Cloud API con datos de prueba. Comprobé la consulta de zonas, el estado de los dispositivos y la visualización de alertas a partir de telemetría simulada. Grabé y publiqué el video de navegación, incorporando su enlace y una captura al informe. Estas actividades dejaron una demostración reproducible y facilitaron la revisión de los flujos implementados por el equipo.<br><br>**Santillan Alvarado, Melina Liz**<br>**AV1**<br>- Integró los hallazgos de las entrevistas aportadas por el equipo en las User Personas y la User Task Matrix.<br>- Organizó las tareas de los tres arquetipos por frecuencia e importancia para completar la sección 2.3.2.<br>- Consolidó en la sección 2.5 los términos del dominio identificados en entrevistas, reglas de negocio y bounded contexts.<br><br>**TB1**<br>Planifiqué y completé las secciones 5.1 y 5.2 en entregas separadas y verificables. Organicé los recursos visuales del capítulo V, documenté las decisiones mediante tablas y ejemplos, contrasté el contenido con las instrucciones del proyecto y registré cada bloque en commits independientes, facilitando que el equipo pudiera utilizar estas definiciones en los wireframes, mock-ups, prototipos y demás componentes del TB1. | **AV1**<br>La planificación de tareas y la construcción de artefactos compartidos favorecieron una coordinación más clara durante AV1. Al trabajar con historias, backlog, mapas de experiencia y lenguaje común, el equipo redujo ambigüedades sobre las necesidades reales de los usuarios y avanzó con responsabilidades más visibles.<br><br>**TB1**<br>Durante TB1, el equipo estableció objetivos y responsables mediante la matriz LACX y el Sprint Backlog, organizó el trabajo con GitFlow, ramas y pull requests, y reunió evidencias verificables del avance del Sprint 1. Esta planificación permitió cumplir los principales objetivos de diseño, implementación y despliegue, aunque se identificó la necesidad de distribuir con mayor equilibrio las contribuciones de código en los siguientes sprints. |
+
+**Datos de GitHub para el Student Outcome 5 (consulta del 14/11/2026).** En los repositorios de código se integraron 57 Pull Requests, todos de la cuenta `Sve-nnN` (Juan Angulo). En el repositorio del informe se integraron 35 Pull Requests y siete cuentas tienen commits (de 9 a 35 cada una). Estas cifras describen participación en GitHub y no valoran la calidad de los aportes. Detalle en la sección "Project Report Collaboration Insights" y en el Anexo D.
 
 <div style="page-break-after: always;"></div>
 
@@ -4019,9 +4046,9 @@ Para el Sprint 2, el Product Backlog sugería US-03, US-06, US-07, US-09, US-10,
 
 El Sprint 2 conserva los aspectos definidos en el Sprint 1: **Landing Page**, **Web App**, **Cloud API**, **Edge/IoT**, **Mobile**, **Testing/QA** y **DevOps**. Para este Sprint, el trabajo se concentró en Cloud API, Edge/IoT y Web App.
 
-<!-- CONFIRMAR con el equipo: si la matriz LACX del Sprint 1 se mantiene o cambió para el Sprint 2. -->
+La matriz del Sprint 1 (sección 6.2.1.2) se usó como referencia de liderazgo por aspecto. El historial de los repositorios muestra que, en el rango del 8 al 24 de septiembre de 2026, 39 de los 43 commits sin merge de los repositorios de código los hizo la cuenta `Sve-nnN` (Juan Angulo) y 4 los hizo Pietro Osores en la Edge API (módulo de visión YOLO y ArcFace, 11 de septiembre). El equipo reconoce que el objetivo de repartir la implementación entre más integrantes sigue pendiente (sección 6.2.2.9).
 
-La matriz del Sprint 1 (sección 6.2.1.2) sigue vigente como referencia de liderazgo por aspecto. Los commits del Sprint 2 quedaron registrados bajo `Sve-nnN` en los repositorios de código (sección 6.2.2.9), y el equipo reconoce que el objetivo de repartir la implementación entre más integrantes sigue pendiente.
+Pendiente: confirmar con el equipo si la matriz LACX del Sprint 1 se mantuvo sin cambios o se ajustó para el Sprint 2. El repositorio no guarda esa decisión. Responsable: Juan Angulo, como Team Leader.
 
 #### 6.2.2.3. Sprint Backlog 2
 
@@ -4074,6 +4101,34 @@ Durante el Sprint 2 se implementaron el aprovisionamiento del firmware, el regis
 - **Comandos manuales con vencimiento.** Un comando se entrega en la siguiente consulta de `/frames` y caduca a los 8 segundos si el dispositivo no lo recoge. Un comando manual también suspende la acción automática sobre el mismo actuador durante el tiempo de enfriamiento.
 - **Aprovisionamiento en dos partes.** La librería MycilaESPConnect solo recoge los datos de WiFi, por lo que la URL de la Edge API y la clave del dispositivo se capturan en una ruta propia `/provision-extra`, servida por el mismo servidor web.
 
+**Commits y Pull Requests posteriores al cierre del Sprint 2 (verificados en `git log` de `develop`, consulta del 14/11/2026)**
+
+La tabla anterior se conserva. Las filas siguientes agregan trabajo integrado en `develop` entre el 13 y el 14 de noviembre de 2026, con el número de Pull Request que lo integró.
+
+| Repository | PR | Commit Id | Commit Message | Committed on |
+| --- | --- | --- | --- | --- |
+| securiot2026/securiot-cloud-api | #8 | `b6820c2` | feat(billing): add simulated payment gateway, plans, checkout and subscription | 2026-11-13 |
+| securiot2026/securiot-cloud-api | #7 | `d0c56ea` | docs: add operations runbook (GitFlow, CI/CD, deployment, troubleshooting) | 2026-11-13 |
+| securiot2026/securiot-web-app | #5 | `83d6e46` | feat(billing): add plans and checkout page with simulated payment gateway | 2026-11-13 |
+| securiot2026/securiot-web-app | #6 | `9726610` | feat(web): add SecurIoT favicon set, web manifest and meta tags | 2026-11-13 |
+| securiot2026/securiot-web-app | #7 | `19ff46c` | feat(web): collapsible side rail with grouped navigation and mobile drawer | 2026-11-14 |
+| securiot2026/securiot-web-app | #11 | `e241280` | fix(dashboard): scannable tables with card rows on small screens, merged filters, clearer billing and rules, localized dates | 2026-11-14 |
+| securiot2026/securiot-web-app | #12 | `aff38e4` | fix(web): quote the hashed bundle regex so nginx starts | 2026-11-14 |
+| securiot2026/securiot-web-app | #13 | `b24ed4e` | ci(web): run nginx -t on the shipped config | 2026-11-14 |
+| securiot2026/securiot-edge-api | #5 | `010d700` | ci: add Dokploy CD workflow for the edge API | 2026-11-14 |
+| securiot2026/securiot-embedded | #3 | `28b3142` | fix(firmware): move camera XCLK to LEDC timer 3 so servos stop killing the camera | 2026-11-13 |
+| securiot2026/securiot-embedded | #4 | `3098f35` | feat(firmware): capture every 100 ms with double-buffered latest-frame grab | 2026-11-13 |
+| securiot2026/securiot-embedded | #6 | `7877345` | ci: add tag-triggered firmware release workflow | 2026-11-14 |
+| securiot2026/securiot-embedded | #8 | `a336a74` | docs: add steps to bring up a new Edge machine and re-pair the board | 2026-11-14 |
+| securiot2026/securiot-mobile-app | #6 | `6877f83` | feat(brand): rename app to SecurIoT and set dark native splash | 2026-11-13 |
+| securiot2026/securiot-mobile-app | #7 | `dcfb783` | ci: add CI and Firebase App Distribution CD for the mobile app | 2026-11-14 |
+| securiot2026/securiot-landing | #4 | `1349cab` | feat(landing): add pricing section with three per-camera plans | 2026-11-13 |
+| securiot2026/securiot-landing | #7 | `f70f026` | feat(landing): redesign with new sections, micro animations and ES/EN copy | 2026-11-14 |
+| securiot2026/securiot-landing | #8 | `2025f80` | ci: add CI checks and Dokploy CD for the landing page | 2026-11-14 |
+| securiot2026/securiot-landing | #12 | `eb46f1a` | fix(landing): stop caching CSS and JS as immutable and version asset URLs | 2026-11-14 |
+
+Los commits `d3528af` (web-app, PR #4) y `5b32482` (edge-api, PR #4) agregan el mismo runbook de operaciones a sus repositorios. Los repositorios con protección de rama (Cloud API, Web App y Edge API) exigen Pull Request, y el resto del equipo de código también adoptó ese flujo. El detalle completo de cada PR está en la pestaña Pull requests de cada repositorio.
+
 #### 6.2.2.5. Testing Suite Evidence for Sprint Review
 
 El Sprint 2 mantuvo el enfoque del Sprint 1: pruebas de integración escritas a partir de los criterios de aceptación de cada requisito. Al cierre de la fase de comandos manuales, la Edge API pasaba 53 pruebas y la Cloud API 43. El firmware compila con `pio run`.
@@ -4092,7 +4147,20 @@ El Sprint 2 mantuvo el enfoque del Sprint 1: pruebas de integración escritas a 
 | securiot-cloud-api | `test/devices-commands.e2e-spec.ts` | E2E | CTRL-04 | Proxy de comandos manuales con autenticación JWT |
 | securiot-cloud-api | `test/alerts.e2e-spec.ts` | E2E | US-07, EXTR-01 | Alerta genérica `rule_alert` y alerta por dispositivo fuera de línea |
 
-> **Nota (deuda técnica):** la verificación en el dispositivo físico queda pendiente. El firmware solo tiene prueba de compilación, y el comportamiento del portal cautivo y de los actuadores se comprobará en la puesta en marcha con el ESP32-CAM real.
+> **Nota (deuda técnica al cierre del Sprint 2):** en ese momento el firmware solo tenía prueba de compilación y la verificación en el dispositivo físico estaba pendiente. El estado actual está en el texto siguiente y en la sección 6.2.2.6.
+
+**Estado de las pruebas al 14 de noviembre de 2026.** Las cifras de arriba corresponden al cierre de la fase de comandos manuales. Los conteos actuales salen de los registros de la última ejecución exitosa de CI en `develop` de cada repositorio (consulta con `gh run view --log`).
+
+| Repositorio | Pruebas que pasan | Herramienta | Ejecución de CI en `develop` |
+| --- | --- | --- | --- |
+| securiot-cloud-api | 54 unitarias y 127 e2e | Jest | https://github.com/securiot2026/securiot-cloud-api/actions/runs/43561007424 |
+| securiot-web-app | 90 | Karma con Chrome sin interfaz (`ng test`) | https://github.com/securiot2026/securiot-web-app/actions/runs/43566509326 |
+| securiot-edge-api | 165 | pytest | https://github.com/securiot2026/securiot-edge-api/actions/runs/43566518174 |
+| securiot-embedded | 206 | PlatformIO, `pio test -e native` | https://github.com/securiot2026/securiot-embedded/actions/runs/43566521972 |
+| securiot-mobile-app | 65 | `flutter test` | https://github.com/securiot2026/securiot-mobile-app/actions/runs/43566526654 |
+| securiot-landing | Sin pruebas. El CI construye la imagen Docker | Docker | https://github.com/securiot2026/securiot-landing/actions/runs/43566513316 |
+
+Las cinco ejecuciones de la tabla terminaron en verde. La Web App y la App Móvil ya no dependen solo de la compilación: tienen pruebas de interfaz que corren en cada Pull Request.
 
 #### 6.2.2.6. Execution Evidence for Sprint Review
 
@@ -4100,54 +4168,229 @@ Al cierre del Sprint 2, el administrador puede preparar un dispositivo nuevo sin
 
 Las reglas se ejecutan en la Edge API. Un administrador crea una regla con una condición, un umbral, una severidad y una acción (alerta, color de luz, buzzer o bloqueo de puerta), y la Edge la evalúa contra cada lectura. La regla fija de apertura de puerta del Sprint 1 ya no existe como código aparte: el arranque la migra a dos reglas equivalentes en la tabla `Rule`, que se pueden editar o desactivar.
 
-<!-- AGREGAR capturas: ejecución local de /rules (curl o Swagger), pantalla de registro de rostros de la Web App y monitor serial del portal cautivo. -->
+Las capturas siguientes se tomaron el 14 de noviembre de 2026 sobre los despliegues reales. Para la Cloud API se consultó Swagger UI (figuras de la sección 6.2.2.7). Para la Web App se muestra la pantalla pública de inicio de sesión, porque las pantallas autenticadas exigen credenciales y el equipo no las incluyó en esta captura.
 
-La verificación del comportamiento sobre hardware físico sigue pendiente. Por eso el equipo documenta la ejecución con base en las pruebas automáticas y en la compilación del firmware.
+**Figura 6.2.2.g.** Inicio de sesión de la Web App en español (https://securiot.juan-tech.com/login).
+
+![Inicio de sesión de la Web App](docs/assets/chapter6/sprint3-webapp-login.png)
+
+La App Móvil reutiliza las capturas reales de ejecución del Sprint 1 (`docs/assets/chapter6/sprint1-exec-mobile-login.png`, `sprint1-exec-mobile-zones.png`, `sprint1-exec-mobile-devices.png` y `sprint1-exec-mobile-alerts.png`), que ya aparecen en la sección 6.2.1.6.
+
+**Resultado en hardware físico.** El líder del equipo verificó sobre el ESP32-CAM físico lo siguiente: aprovisionamiento con el QR de configuración, actualización OTA, detección de personas con deltas de pan y tilt, detección de rostros, feed en vivo en la Web App y estado en línea del dispositivo. La captura del dispositivo cada 100 ms rinde cerca de 2,5 cuadros por segundo de extremo a extremo con YOLO y ArcFace corriendo en una computadora portátil. Un conflicto de temporizadores hacía que los servos apagaran la cámara, y el commit `28b3142` lo resolvió al mover el reloj de la cámara al temporizador LEDC 3.
+
+Pendiente: las capturas autenticadas de la Web App (registro de rostros, reglas, feed en vivo, página Plan y facturación, página del QR de configuración), una foto del montaje físico y el monitor serial del portal cautivo. No se simulan. Responsable: Juan Angulo, que tiene acceso a la cuenta y al dispositivo. Esta verificación en hardware no tiene registro versionado en los repositorios, por eso se declara como resultado reportado por el líder hasta que se adjunte la evidencia.
 
 #### 6.2.2.7. Services Documentation Evidence for Sprint Review
 
-La Cloud API sigue documentando sus endpoints con OpenAPI 3.0 en `/api/docs`. El Sprint 2 agregó los siguientes endpoints, todos bajo `/api/v1` y protegidos con JWT.
+La Cloud API documenta sus endpoints con OpenAPI 3.0 mediante `@nestjs/swagger`. La documentación está publicada y se consulta en línea. El 14 de noviembre de 2026 el equipo descargó el contrato vivo (`/api/docs-json`) y lo usó para armar las tablas siguientes: 33 operaciones bajo `/api/v1`, repartidas en seis grupos (auth 3, telemetry 2, alerts 1, zones 5, devices 18 y billing 4). Las secciones 6.2.1.7 y 6.2.3.7 describen con detalle los parámetros, las respuestas y los errores de los endpoints de cada Sprint. Esta sección reúne el inventario completo y vigente, porque el Sprint 2 original solo listaba cuatro endpoints nuevos y la API creció después.
 
-| Método | Ruta | Descripción |
+**Enlaces de la documentación desplegada**
+
+| Recurso | URL |
+| --- | --- |
+| Swagger UI | https://securiot-api.juan-tech.com/api/docs |
+| Contrato OpenAPI (JSON) | https://securiot-api.juan-tech.com/api/docs-json |
+| Planes de facturación (público) | https://securiot-api.juan-tech.com/api/v1/billing/plans |
+| Repositorio | https://github.com/securiot2026/securiot-cloud-api (rama `develop`) |
+
+**Endpoints de la Cloud API (contrato vivo al 14/11/2026)**
+
+La columna Autenticación indica si el endpoint exige el JWT que entrega `POST /auth/login` (`Authorization: Bearer`). Solo `login`, `forgot-password`, `reset-password`, la ingesta de telemetría (que usa la clave del dispositivo en el cuerpo) y la lista de planes son públicos.
+
+**Grupo `auth`**
+
+| Método | Ruta | Autenticación | Descripción |
+| --- | --- | --- | --- |
+| POST | `/api/v1/auth/login` | Pública | Autentica con correo y contraseña y devuelve un JWT |
+| POST | `/api/v1/auth/forgot-password` | Pública | Solicita un enlace de restablecimiento de contraseña |
+| POST | `/api/v1/auth/reset-password` | Pública | Define una contraseña nueva con el token de restablecimiento |
+
+**Grupo `telemetry`**
+
+| Método | Ruta | Autenticación | Descripción |
+| --- | --- | --- | --- |
+| POST | `/api/v1/telemetry` | Pública | Ingesta una lectura de telemetría (idempotente por `reading_id`). El tipo `heartbeat` solo actualiza la última conexión del dispositivo y no se guarda como lectura |
+| GET | `/api/v1/telemetry` | JWT | Lista lecturas, con filtros opcionales por dispositivo, zona y rango de fechas |
+
+**Grupo `alerts`**
+
+| Método | Ruta | Autenticación | Descripción |
+| --- | --- | --- | --- |
+| GET | `/api/v1/alerts` | JWT | Lista las alertas de las zonas y dispositivos del usuario autenticado |
+
+**Grupo `zones`**
+
+| Método | Ruta | Autenticación | Descripción |
+| --- | --- | --- | --- |
+| POST | `/api/v1/zones` | JWT | Crea una zona del usuario autenticado |
+| GET | `/api/v1/zones` | JWT | Lista las zonas del usuario autenticado |
+| GET | `/api/v1/zones/{id}` | JWT | Consulta una zona del usuario |
+| PATCH | `/api/v1/zones/{id}` | JWT | Actualiza una zona del usuario |
+| DELETE | `/api/v1/zones/{id}` | JWT | Elimina una zona del usuario |
+
+**Grupo `devices`**
+
+| Método | Ruta | Autenticación | Descripción |
+| --- | --- | --- | --- |
+| POST | `/api/v1/devices` | JWT | Registra un dispositivo en una zona del usuario |
+| GET | `/api/v1/devices` | JWT | Lista los dispositivos del usuario (por propiedad de la zona), sin incluir la `apiKey` |
+| GET | `/api/v1/devices/{id}` | JWT | Detalle del dispositivo con estado en línea o fuera de línea y última lectura |
+| PATCH | `/api/v1/devices/{id}` | JWT | Actualiza la configuración del dispositivo (hoy, la URL de su Edge API) |
+| POST | `/api/v1/devices/{id}/rotate-key` | JWT | Reemplaza la clave del dispositivo por una aleatoria nueva |
+| GET | `/api/v1/devices/{id}/setup-payload` | JWT | Entrega los valores que necesita el portal cautivo para generar el QR de configuración de un solo uso |
+| POST | `/api/v1/devices/{id}/faces` | JWT | Registra una identidad facial en el dispositivo, con proxy a su Edge API |
+| GET | `/api/v1/devices/{id}/face-recognition` | JWT | Consulta si el reconocimiento facial está activo, con proxy a la Edge API |
+| PATCH | `/api/v1/devices/{id}/face-recognition` | JWT | Activa o desactiva el reconocimiento facial, con proxy a la Edge API |
+| POST | `/api/v1/devices/{id}/commands` | JWT | Encola un comando manual (pan/tilt, luz, buzzer, abrir o cerrar puerta), con proxy a la Edge API |
+| GET | `/api/v1/devices/{id}/frame` | JWT | Devuelve el último frame de la cámara, con proxy en vivo a la Edge API |
+| GET | `/api/v1/devices/{id}/commands/status` | JWT | Estado de entrega (pending, delivered o none) del último comando manual de un actuador |
+| GET | `/api/v1/devices/{id}/occupancy` | JWT | Contador de ocupación de la zona del día, con proxy en vivo a la Edge API |
+| GET | `/api/v1/devices/{id}/rules` | JWT | Lista las reglas del dispositivo, con proxy a la Edge API |
+| POST | `/api/v1/devices/{id}/rules` | JWT | Crea una regla, con proxy a la Edge API |
+| PATCH | `/api/v1/devices/{id}/rules/{ruleId}` | JWT | Actualiza una regla, incluida su activación o desactivación |
+| DELETE | `/api/v1/devices/{id}/rules/{ruleId}` | JWT | Elimina una regla |
+| POST | `/api/v1/devices/{id}/rules/{ruleId}/dry-run` | JWT | Dispara manualmente la acción configurada de una regla para probarla (RULE-11) |
+
+**Grupo `billing`**
+
+| Método | Ruta | Autenticación | Descripción |
+| --- | --- | --- | --- |
+| GET | `/api/v1/billing/plans` | Pública | Lista los planes fijos. Los precios están en soles (PEN) antes del IGV |
+| POST | `/api/v1/billing/checkout` | JWT | Pago SIMULADO. No se procesa ninguna tarjeta real ni se cobra nada |
+| GET | `/api/v1/billing/subscription` | JWT | Suscripción activa (o null) y pagos, del más reciente al más antiguo |
+| POST | `/api/v1/billing/subscription/cancel` | JWT | Cancela la suscripción activa |
+
+**Capturas de Swagger UI (consultadas en el despliegue real, 14/11/2026)**
+
+**Figura 6.2.2.a.** Vista general de Swagger UI de la Cloud API.
+
+![Vista general de Swagger UI](docs/assets/chapter6/sprint3-swagger-overview.png)
+
+**Figura 6.2.2.b.** Grupo `auth`.
+
+![Swagger grupo auth](docs/assets/chapter6/sprint3-swagger-auth.png)
+
+**Figura 6.2.2.c.** Grupos `telemetry` y `alerts`.
+
+![Swagger grupo telemetry](docs/assets/chapter6/sprint3-swagger-telemetry.png)
+
+![Swagger grupo alerts](docs/assets/chapter6/sprint3-swagger-alerts.png)
+
+**Figura 6.2.2.d.** Grupo `zones`.
+
+![Swagger grupo zones](docs/assets/chapter6/sprint3-swagger-zones.png)
+
+**Figura 6.2.2.e.** Grupo `devices` (18 operaciones, incluidas rotación de clave, QR de configuración, feed, ocupación y reglas).
+
+![Swagger grupo devices](docs/assets/chapter6/sprint3-swagger-devices.png)
+
+**Figura 6.2.2.f.** Grupo `billing`, con `GET /billing/plans` y `POST /billing/checkout` expandidos (cuerpo de ejemplo y códigos de respuesta 201, 400, 401, 402 y 409).
+
+![Swagger grupo billing](docs/assets/chapter6/sprint3-swagger-billing.png)
+
+**Contrato de facturación**
+
+La facturación vive en el bounded context de la sección 4.2.5. La pasarela de pago es una simulación hecha para el curso: la clase `PaymentGatewaySimulator` nunca contacta a un procesador real ni mueve dinero, no guarda estado y no registra lo que recibe. La Cloud API tampoco guarda el número de tarjeta ni el CVC: de cada pago solo conserva la marca y los últimos cuatro dígitos.
+
+| Operación | Entrada | Resultado |
 | --- | --- | --- |
-| PATCH | `/devices/:id` | Actualiza el dispositivo, incluida la URL de su Edge API |
-| POST | `/devices/:id/faces` | Envía una fotografía al Edge para registrar una persona autorizada |
-| GET / PATCH | `/devices/:id/face-recognition` | Consulta y cambia la activación del reconocimiento facial |
-| POST | `/devices/:id/commands` | Encola un comando manual (`pan_tilt`, `light` o `buzzer`) |
+| `GET /billing/plans` | Sin cuerpo | `{ currency, igvRate, plans[] }` con la moneda (PEN), el IGV (0,18) y los tres planes |
+| `POST /billing/checkout` | `planId` (`basic`, `standard` o `plus`), `cameras` y `card` (`number`, `holder`, `expMonth`, `expYear`, `cvc`) | 201 con `{ payment, subscription }`. 402 con `{ payment }` y el motivo del rechazo, sin suscripción. 409 si ya existe una suscripción activa |
+| `GET /billing/subscription` | JWT | Suscripción activa (o `null`) y pagos, del más reciente al más antiguo |
+| `POST /billing/subscription/cancel` | JWT | Cancela la suscripción activa |
 
-La Edge API publica los siguientes endpoints, que la Cloud API consume como proxy. Todos exigen la cabecera `X-Admin-Key`, salvo `/frames` e `/ingest`, que usan la clave del dispositivo.
-
-| Método | Ruta | Descripción |
+| Plan | Precio mensual por cámara (antes de IGV) | Instalación por cámara |
 | --- | --- | --- |
-| POST | `/faces` | Registra una identidad para el reconocimiento facial |
-| GET / PATCH | `/devices/<device_id>/face-recognition` | Activación del reconocimiento facial por dispositivo |
-| POST | `/commands` | Encola un comando manual con vencimiento |
-| GET / POST | `/rules` | Lista y crea reglas |
-| PATCH / DELETE | `/rules/<rule_id>` | Edita y elimina una regla |
+| Basic | S/ 39 | S/ 350 |
+| Standard | S/ 49 | S/ 350 |
+| Plus | S/ 69 | S/ 350 |
 
-**Documentación desplegada (Swagger UI):** https://securiot-api.juan-tech.com/api/docs
-**Repositorio:** securiot2026/securiot-cloud-api (rama `develop`)
+El IGV es del 18 %. Estos valores salen de la respuesta real de `GET /billing/plans`.
+
+Tarjetas de prueba que reconoce el simulador (según `payment-gateway-simulator.service.ts`). Cualquier otro número, incluida una tarjeta real, se rechaza con `unknown_test_card`.
+
+| Número de prueba | Resultado |
+| --- | --- |
+| 4242 4242 4242 4242 | Aprobada (marca Visa) |
+| 4000 0000 0000 0002 | Rechazada, `card_declined` |
+| 4000 0000 0000 9995 | Rechazada, `insufficient_funds` |
+| 4000 0000 0000 0069 | Rechazada, `expired_card` |
+
+La latencia simulada es aleatoria entre 600 y 1200 ms, o fija si se define `BILLING_SIMULATED_LATENCY_MS`.
+
+**Endpoints de la Edge API**
+
+La Edge API es un servicio Flask. No publica Swagger: su contrato vive en este informe y en el README de `securiot-edge-api`. La tabla sale de las rutas registradas en la rama `develop` (módulos `app/*.py`). Las rutas de operador exigen la cabecera `X-Admin-Key`. `/frames` e `/ingest` autentican con la cabecera `X-Device-Key`, que se compara con `DEVICE_SHARED_SECRET`.
+
+| Método | Ruta | Autenticación | Descripción |
+| --- | --- | --- | --- |
+| POST | `/frames` | `X-Device-Key` | Recibe el frame de la cámara, detecta, evalúa reglas y responde con la acción para el dispositivo |
+| POST | `/ingest` | `X-Device-Key` | Recibe lecturas de sensores y evalúa reglas de umbral |
+| POST | `/faces` | `X-Admin-Key` | Registra una identidad para el reconocimiento facial |
+| GET / PATCH | `/devices/<device_id>/face-recognition` | `X-Admin-Key` | Consulta y cambia la activación del reconocimiento facial por dispositivo |
+| POST | `/commands` | `X-Admin-Key` | Encola un comando manual con vencimiento |
+| GET | `/commands/<device_id>/status` | `X-Admin-Key` | Estado pendiente, entregado o ninguno del último comando |
+| GET | `/frames/latest/<device_id>` | `X-Admin-Key` | Último frame con su hora de captura (feed en vivo) |
+| GET | `/occupancy/<device_id>` | `X-Admin-Key` | Contador de ocupación del día |
+| GET / POST | `/rules` | `X-Admin-Key` | Lista y crea reglas |
+| PATCH / DELETE | `/rules/<rule_id>` | `X-Admin-Key` | Edita y elimina una regla |
+| POST | `/rules/<rule_id>/dry-run` | `X-Admin-Key` | Ejecuta la acción de una regla para probarla |
+
 
 #### 6.2.2.8. Software Deployment Evidence for Sprint Review
 
-La Cloud API, la Web App y la Edge API siguen desplegadas en el VPS bajo el dominio `juan-tech.com`, con Dokploy como orquestador y Docker Swarm de un solo nodo. Cada servicio es un clon de su repositorio que sigue la rama `develop`.
+La Cloud API, la Web App, la Landing Page y la Edge API siguen desplegadas en un VPS bajo el dominio `juan-tech.com`, con Dokploy como orquestador y Docker Swarm de un solo nodo, y Cloudflare por delante. Cada aplicación de Dokploy construye la rama `develop` de su repositorio. El 14 de noviembre de 2026 se comprobó con `curl` que la Web App, la Landing Page y Swagger UI responden HTTP 200 y que la Edge API responde en su dominio (HTTP 404 en la ruta raíz, que no define contenido).
 
-Los cambios del Sprint 2 (reglas, comandos manuales y registro de rostros) ya están desplegados en el VPS.
+| Producto | URL / Destino | Infraestructura | Cómo se despliega |
+| --- | --- | --- | --- |
+| Web App | https://securiot.juan-tech.com | Docker + nginx (VPS, Dokploy) | CD por webhook al hacer `push` a `develop` |
+| Landing Page | https://securiot-landing.juan-tech.com | Docker + nginx (VPS, Dokploy) | CD por webhook al hacer `push` a `develop` |
+| Cloud API | https://securiot-api.juan-tech.com/api/v1 (docs en `/api/docs`) | Docker (VPS), PostgreSQL 17 | CD por webhook al hacer `push` a `develop` |
+| Edge API (demo) | https://securiot-edge.juan-tech.com | Docker (VPS), detección `mock` | CD por webhook al hacer `push` a `develop` |
+| Firmware ESP32-CAM | Carga por cable con PlatformIO, o por aire (OTA) con el entorno `esp32cam_ota` | Placa física ESP32-CAM | Workflow `Release` en etiquetas `v*`: publica `firmware.bin`, `partitions.bin`, `bootloader.bin` y `SHA256SUMS.txt` |
+| App Móvil | Firebase App Distribution, proyecto `securiot-centinela-labs`, grupo `testers` | APK Android | Workflow `CD` en `develop`, cuando existen los secretos de Firebase |
 
-| Producto | URL / Destino | Infraestructura |
+La Edge API del VPS usa `DETECTION_BACKEND=mock`: sirve para ejercitar la ruta de ingesta, el relay y las reglas sin un dispositivo físico. La detección real con YOLO y ArcFace corre en una máquina local de la misma red que la cámara, descrita en el README de `securiot-edge-api`.
+
+Este Sprint agregó dos variables a la Edge API: `EDGE_ADMIN_API_KEY` para proteger las rutas de operador y `COMMAND_EXPIRY_SECONDS` (8 segundos por defecto). El enfriamiento de la puerta sigue en `DOOR_ACTION_COOLDOWN_SECONDS` (30 segundos por defecto). La Cloud API sumó `@nestjs/schedule` para revisar periódicamente los dispositivos fuera de línea.
+
+**App Móvil distribuida.** Se distribuyó la versión 1.1.0 (build 2) por Firebase App Distribution el 14 de noviembre de 2026. La aplicación se llama SecurIoT y usa el ícono de la marca. El APK de release se firma hoy con la configuración de debug, algo aceptable para distribuir a testers pero no para publicar en una tienda. No se construyó una versión para iOS.
+
+**Flujo de CI/CD por repositorio (leído de `.github/workflows` en `develop`, 14/11/2026)**
+
+| Repositorio | Workflow | Disparador | Qué hace | Secretos (solo nombres) |
+| --- | --- | --- | --- | --- |
+| securiot-cloud-api | `ci.yml` | Pull Request y `push` a `develop` y `main` | `npm ci`, pruebas unitarias, pruebas e2e, `npm run build` y `docker build` | Ninguno |
+| securiot-cloud-api | `cd.yml` | `push` a `develop` | Llama al webhook de Dokploy con la cabecera `X-GitHub-Event: push` | `DOKPLOY_DEPLOY_HOOK` |
+| securiot-web-app | `ci.yml` | Pull Request y `push` a `develop` y `main` | `npm ci`, `npm run build`, `ng test` en Chrome sin interfaz y `nginx -t` sobre la configuración que viaja en la imagen | Ninguno |
+| securiot-web-app | `cd.yml` | `push` a `develop` | Webhook de Dokploy | `DOKPLOY_DEPLOY_HOOK` |
+| securiot-edge-api | `ci.yml` | Pull Request y `push` a `develop` y `main` | PyTorch para CPU, dependencias y `pytest` con detección `mock` | Ninguno |
+| securiot-edge-api | `cd.yml` | `push` a `develop` | Webhook de Dokploy | `DOKPLOY_DEPLOY_HOOK` |
+| securiot-landing | `ci.yml` | Pull Request y `push` a `develop` y `main` | `docker build` de la imagen | Ninguno |
+| securiot-landing | `cd.yml` | `push` a `develop` | Webhook de Dokploy | `DOKPLOY_DEPLOY_HOOK` |
+| securiot-embedded | `ci.yml` | Pull Request y `push` a `develop` y `main` | `pio test -e native` y compilación del firmware con `secrets.h.example` | Ninguno |
+| securiot-embedded | `release.yml` | Etiqueta `v*` | Prueba, compila y crea una GitHub Release con los binarios y sus sumas SHA256 | Usa el `GITHUB_TOKEN` del propio workflow |
+| securiot-mobile-app | `ci.yml` | Pull Request y `push` a `develop` y `main` | `flutter analyze`, `flutter test` y `flutter build apk --debug` | Ninguno |
+| securiot-mobile-app | `cd.yml` | `push` a `develop` | Compila el APK de release y lo distribuye a Firebase App Distribution | `FIREBASE_SERVICE_ACCOUNT_JSON`, `GOOGLE_SERVICES_JSON` |
+
+**Protección de ramas (consulta con `gh api`, 14/11/2026).**
+
+| Repositorio | `main` y `develop` | Verificación obligatoria |
 | --- | --- | --- |
-| Web App | https://securiot.juan-tech.com | Docker + nginx (VPS) |
-| Cloud API | https://securiot-api.juan-tech.com/api/v1 (docs en `/api/docs`) | Docker (VPS), PostgreSQL 17 |
-| Edge API (demo) | https://securiot-edge.juan-tech.com | Docker (VPS), detección `mock` |
-| Firmware ESP32-CAM | Carga por cable con PlatformIO | Placa física o simulación en Wokwi |
+| securiot-cloud-api | Exigen Pull Request | `lint-test-build` |
+| securiot-web-app | Exigen Pull Request | `build-and-test` |
+| securiot-edge-api | Exigen Pull Request | `test` |
+| securiot-embedded, securiot-mobile-app, securiot-landing, securiot-report | Sin protección de rama configurada | No aplica |
 
-La Edge API del VPS usa `DETECTION_BACKEND=mock`: sirve para ejercitar la ruta de ingesta, el relay y las reglas sin un dispositivo físico. La detección real con YOLO y ArcFace corre en una máquina local de la misma red que la cámara, descrita en el README del repositorio `securiot-edge-api`.
+Pendiente: el equipo declaró que la protección de ramas no está disponible en el repositorio privado del firmware. La consulta de `gh api` confirma que no hay protección en `securiot-embedded`, `securiot-mobile-app`, `securiot-landing` ni `securiot-report`, pero no se verificó el motivo en cada caso. Responsable: Juan Angulo.
 
-Este Sprint agregó dos variables de configuración al despliegue de la Edge API: `EDGE_ADMIN_API_KEY` para proteger las rutas de operador y `COMMAND_EXPIRY_SECONDS` (8 segundos por defecto) para el vencimiento de comandos. El enfriamiento de la puerta sigue controlado por `DOOR_ACTION_COOLDOWN_SECONDS` (30 segundos por defecto). La Cloud API sumó la dependencia `@nestjs/schedule` para la revisión periódica de dispositivos fuera de línea.
+**Cómo llega un cambio a producción.** 1) Se crea una rama `feature/*`, `fix/*` o `ci/*` desde `develop`. 2) Se abre un Pull Request hacia `develop`, donde corre el CI. 3) Con el CI en verde y el PR integrado, el `push` a `develop` dispara el CD, que avisa a Dokploy y este reconstruye la imagen y la despliega. 4) Para publicar una versión se abre un Pull Request de `develop` hacia `main`, con el mismo CI como verificación. 5) El firmware se publica con una etiqueta `v*`. La guía completa está en `docs/OPERATIONS.md` de la Cloud API y de la Web App.
+
+Al 14 de noviembre de 2026, ya no hay commits de `develop` pendientes de integrar en `main` en ningún repositorio de código (`git rev-list main..develop` da 0), lo que reemplaza las cifras de la sección 6.2.3.8 de un día antes. En cambio, `main` tiene entre 2 y 8 commits que `develop` no tiene, que son los merges de integración de esos Pull Requests.
 
 #### 6.2.2.9. Team Collaboration Insights during Sprint
 
-El equipo siguió el flujo GitFlow, con ramas `feature/*` hacia `develop`, y registró el avance en el tablero de Trello. Los commits del Sprint 2 en los repositorios de código quedaron así:
+El equipo siguió el flujo GitFlow, con ramas `feature/*` hacia `develop`, y registró el avance en el tablero de Trello. La tabla siguiente se conserva como estaba en el cierre del Sprint 2.
 
 | Repositorio | Contribuidor | Commits listados en 6.2.2.4 |
 | --- | --- | --- |
@@ -4156,7 +4399,19 @@ El equipo siguió el flujo GitFlow, con ramas `feature/*` hacia `develop`, y reg
 | securiot-cloud-api | `Sve-nnN` | 4 |
 | securiot-web-app | `Sve-nnN` | 1 |
 
-**Interpretación:** la implementación del Sprint 2 volvió a concentrarse en `Sve-nnN`. Ese resultado no cumple el acuerdo del Sprint 1 de repartir la implementación entre más integrantes. Una causa probable es la dependencia entre las piezas: el motor de reglas, los comandos y el reconocimiento facial comparten el flujo de `/frames`, y dos personas editándolo a la vez habrían generado conflictos. Para el Sprint 3 los contratos REST ya están definidos, lo que permite que cada integrante tome una pantalla o un endpoint concreto.
+**Recálculo con los repositorios reales (14/11/2026).** Se contaron los commits sin merge de la rama `develop` entre el 8 y el 24 de septiembre de 2026 con `git log --no-merges`. La cuenta `Sve-nnN` de GitHub corresponde a Juan Angulo (perfil `Juan Angulo`) y sus commits salen con ese nombre como autor.
+
+| Repositorio | Juan Angulo (`Sve-nnN`) | Pietro Osores (`Maximoff19`) |
+| --- | --- | --- |
+| securiot-cloud-api | 9 | 0 |
+| securiot-web-app | 6 | 0 |
+| securiot-edge-api | 8 | 4 |
+| securiot-embedded | 8 | 0 |
+| securiot-mobile-app | 6 | 0 |
+| securiot-landing | 2 | 0 |
+| Total | 39 | 4 |
+
+**Interpretación:** el resultado cambia poco la lectura anterior. El 91 % de los commits de ese rango (39 de 43) son de una sola cuenta. La corrección es que no fue el único contribuidor: Pietro Osores aportó en la Edge API el módulo de visión con YOLO y ArcFace y la documentación del flujo de arquitectura el 11 de septiembre. Eso sigue sin cumplir el acuerdo del Sprint 1 de repartir la implementación entre más integrantes. Una causa probable es la dependencia entre las piezas: el motor de reglas, los comandos y el reconocimiento facial comparten el flujo de `/frames`, y dos personas editándolo a la vez habrían generado conflictos. El rango de fechas es una decisión de esta sección y no una fecha oficial de cierre del Sprint, porque el informe no define un cierre único.
 
 <div style="page-break-after: always;"></div>
 
@@ -4331,6 +4586,14 @@ Durante el Sprint 3 se implementaron el feed de cámara, las pantallas del motor
 - **Restablecer sin reflashear.** Mantener el botón de GPIO12 durante 3 s borra la configuración y reabre el portal. El portal también se reabre tras 120 s sin WiFi.
 - **OTA con ruta de recuperación.** La tabla de particiones tiene dos ranuras de aplicación de 1,875 MB. El LED naranja fijo indica una actualización en curso. El registro se replica en un servidor TCP de solo lectura en el puerto 23, con un búfer de 2048 bytes.
 
+**Alcance posterior del Sprint 3 (13 y 14 de noviembre de 2026).** Después del cierre del Sprint se integraron cuatro bloques de trabajo adicionales. Los commits y Pull Requests figuran en la tabla de la sección 6.2.2.4.
+
+- **Facturación con pasarela simulada.** La Cloud API incorporó el módulo `billing` (planes, checkout, suscripción y cancelación, PR #8) y la Web App la página Plan y facturación (PR #5). El pago es una simulación hecha para el curso: acepta solo tarjetas de prueba publicadas, no cobra dinero real y guarda solo la marca y los últimos cuatro dígitos. La Landing Page muestra los tres planes por cámara (S/ 39, S/ 49 y S/ 69 al mes más S/ 350 de instalación, sin IGV) y avisa que el pago es una simulación. El contrato completo está en la sección 6.2.2.7.
+- **Marca y patrones de interfaz.** Astryx (un sistema de diseño de React 19 y StyleX, licencia MIT) no se puede instalar en Angular ni en Flutter. El equipo portó sus patrones de página (tiles de estado, filtros con búsqueda, estados vacíos, rail lateral colapsable, indicador de pasos del checkout) a Angular Material y a Flutter, con los tokens de color de SecurIoT. El detalle está en la sección "Patterns adopted from Astryx" de los `DESIGN.md` de `securiot-web-app` y `securiot-mobile-app`. La App Móvil pasó a llamarse SecurIoT y ganó ícono y pantalla de arranque propios (PR #6).
+- **Crítica y pulido de la Web App.** Una pasada de crítica con la herramienta Impeccable corrigió fechas en formato de EE. UU., claves de traducción visibles, tablas en tipografía monoespaciada, acciones ocultas en móvil, un aviso de facturación demasiado pesado, falta de confirmación al eliminar, restos del tema claro y un logo genérico de escudo (PR #9, #10, #11, #12 y #13). Los resultados se resumen como evaluación heurística en la sección 6.3.3.
+- **Rediseño de la Landing Page.** Nuevas secciones, microanimaciones, copia en español e inglés, fotos gratuitas con licencia y créditos en `assets/CREDITS.md`, y una corrección de caché (PR #7 a #12). El razonamiento de diseño está en `docs/LANDING_DESIGN.md` del repositorio de la Landing.
+- **Firmware.** La captura pasó a una cada 100 ms y se resolvió el conflicto de temporizadores entre servos y cámara (PR #3 y #4).
+
 #### 6.2.3.5. Testing Suite Evidence for Sprint Review
 
 El Sprint 3 sumó pruebas sobre los contratos nuevos. Al cierre, la Edge API pasa 88 pruebas y la Cloud API 63 pruebas e2e y 5 unitarias. La Web App compila con `ng build` sin errores y la App Móvil pasa `flutter analyze` sin observaciones en el código del Sprint.
@@ -4347,6 +4610,8 @@ El Sprint 3 sumó pruebas sobre los contratos nuevos. Al cierre, la Edge API pas
 
 > **Nota (deuda técnica):** las pantallas de la Web App y de la App Móvil se verificaron con compilación y análisis estático, no con pruebas de interfaz ni en un dispositivo real. Además, `lib/firebase_options.dart` arrastra errores de compilación por la dependencia `firebase_core`, anteriores al Sprint 3 e independientes de este trabajo. Ambos puntos quedan como tarea del siguiente ciclo.
 
+**Actualización al 14 de noviembre de 2026.** Los conteos de este Sprint (88 pruebas de la Edge API, 63 e2e y 5 unitarias de la Cloud API) son los del cierre. Los conteos vigentes, con enlace a la ejecución de CI correspondiente, están en la sección 6.2.2.5: Cloud API 54 unitarias y 127 e2e, Web App 90, Edge API 165, firmware 206 y App Móvil 65. La Web App y la App Móvil ya tienen pruebas automáticas de interfaz que corren en CI, por lo que la nota de deuda técnica anterior sobre la ausencia de pruebas de interfaz ya no describe el estado actual. La verificación sobre un teléfono real sigue sin registro.
+
 #### 6.2.3.6. Execution Evidence for Sprint Review
 
 Al cierre del Sprint 3, el operador completa tres recorridos de punta a punta.
@@ -4355,9 +4620,25 @@ Al cierre del Sprint 3, el operador completa tres recorridos de punta a punta.
 2. **Ver la cámara.** En la pantalla de feed en vivo, la Web App muestra el último frame con su hora de captura y el contador de ocupación de la zona, y se actualiza cada 5 segundos.
 3. **Controlar el dispositivo desde el teléfono.** La App Móvil ofrece el control de pan/tilt, el interruptor de luz y el botón de buzzer. Tras cada envío, la pantalla indica si el comando está pendiente o ya se entregó. También muestra el feed con un indicador de «actualizado hace X segundos» y el contador de ocupación.
 
-<!-- AGREGAR capturas y video: pantalla de reglas y feed en vivo de la Web App, pantalla de control de la App Móvil. -->
+Las pantallas de reglas, feed en vivo, control del dispositivo y facturación no tienen captura en este informe, porque requieren una sesión autenticada. Pendiente: capturas de la pantalla de reglas, del feed en vivo, de Plan y facturación y de la pantalla de control de la App Móvil, además del video. Responsable: Juan Angulo. Las capturas públicas disponibles (inicio de sesión, Landing Page y Swagger UI) están en las secciones 6.2.2.6, 6.2.2.7 y a continuación.
 
-La ejecución sobre el dispositivo físico (servos, LED y buzzer respondiendo a un comando manual) y sobre un teléfono real sigue pendiente. El Sprint 3 se limita a lo que las pruebas automáticas, la compilación y el análisis estático confirman.
+**Figura 6.2.3.a.** Landing Page, sección principal (https://securiot-landing.juan-tech.com).
+
+![Landing Page, hero](docs/assets/chapter6/sprint3-landing-hero.jpg)
+
+**Figura 6.2.3.b.** Landing Page, sección de precios por cámara, con el aviso de que el pago es una simulación.
+
+![Landing Page, precios](docs/assets/chapter6/sprint3-landing-pricing.png)
+
+**Figura 6.2.3.c.** Landing Page, preguntas frecuentes (incluye si el pago de la web cobra dinero real).
+
+![Landing Page, preguntas frecuentes](docs/assets/chapter6/sprint3-landing-faq.png)
+
+**Figura 6.2.3.d.** Landing Page en un teléfono de 390 px de ancho.
+
+![Landing Page en móvil](docs/assets/chapter6/sprint3-landing-mobile-hero.jpg)
+
+La verificación sobre el ESP32-CAM físico que el líder del equipo reportó el 14 de noviembre de 2026 está resumida en la sección 6.2.2.6. Una verificación sobre un teléfono real sigue sin registro.
 
 #### 6.2.3.7. Services Documentation Evidence for Sprint Review
 
@@ -4450,10 +4731,10 @@ Las nuevas pantallas dependen de que cada dispositivo tenga registrada la URL de
 | Repositorio | CI (GitHub Actions) | CD |
 | --- | --- | --- |
 | securiot-cloud-api | Node 22: `npm ci`, pruebas unitarias, pruebas e2e, `npm run build` y construcción de la imagen Docker con el mismo lockfile que usa el VPS | Webhook de Dokploy desde `develop` |
-| securiot-web-app | Node 22: `npm ci`, `npm run build` y pruebas con `ng test` en Chrome sin interfaz | Webhook de Dokploy desde `develop` |
-| securiot-edge-api | Python 3.12 con PyTorch para CPU: `pytest` con detección `mock`, sin descargar modelos | No tiene workflow de CD |
-| securiot-embedded | PlatformIO: `pio test -e native` (pruebas en el host, sin hardware) y `pio run -e esp32cam` (compilación del firmware) | No aplica: el firmware se carga por cable o por OTA |
-| securiot-mobile-app | Sin workflow | Distribución por Firebase App Distribution, fuera de Actions |
+| securiot-web-app | Node 22: `npm ci`, `npm run build`, pruebas con `ng test` en Chrome sin interfaz y `nginx -t` | Webhook de Dokploy desde `develop` |
+| securiot-edge-api | Python 3.12 con PyTorch para CPU: `pytest` con detección `mock`, sin descargar modelos | Webhook de Dokploy desde `develop` (agregado el 14/11/2026) |
+| securiot-embedded | PlatformIO: `pio test -e native` (pruebas en el host, sin hardware) y `pio run -e esp32cam` (compilación del firmware) | Release por etiqueta `v*`. El firmware se carga por cable o por OTA |
+| securiot-mobile-app | `flutter analyze`, `flutter test` y `flutter build apk --debug` (agregado el 14/11/2026) | Workflow de CD hacia Firebase App Distribution desde `develop` |
 
 El webhook de Dokploy se guarda como el secreto `DOKPLOY_DEPLOY_HOOK` del repositorio y la ejecución falla si no está definido. El webhook de Dokploy exige la cabecera `X-GitHub-Event: push`, que el primer workflow no enviaba. El equipo lo corrigió el mismo día en la Cloud API (`d0a89a2`) y en la Web App (`46b4af5`). En la Cloud API también se corrigió un `package-lock.json` desincronizado, que hacía fallar `npm ci` durante la construcción de la imagen (`f943466`).
 
@@ -4470,23 +4751,13 @@ Con el botón de GPIO12 y el QR de configuración, un dispositivo se reconfigura
 
 **App Móvil.** El commit `b7641c5` eliminó `lib/firebase_options.dart`, porque `firebase_core` nunca fue una dependencia y nada lo importaba. La distribución por Firebase App Distribution solo necesita `google-services.json`, `firebase.json` y el plugin de Gradle. Con ello se resuelve la deuda técnica que la sección 6.2.3.5 señala sobre ese archivo.
 
-**Estado de las ramas.** El flujo GitFlow integra primero en `develop`, y el CD despliega desde esa rama. Al 13 de noviembre de 2026, `develop` está por delante de `main` en todos los repositorios de código:
-
-| Repositorio | Commits de `develop` que aún no están en `main` |
-| --- | --- |
-| securiot-cloud-api | 26 |
-| securiot-edge-api | 23 |
-| securiot-web-app | 4 |
-| securiot-embedded | 36 |
-| securiot-mobile-app | 8 |
-
-La integración de `develop` a `main` por Pull Request sigue pendiente en cada repositorio, como recomienda la sección 6.2.3.9.
+**Estado de las ramas.** Al 13 de noviembre de 2026 `develop` estaba por delante de `main` en todos los repositorios de código (26 commits en la Cloud API, 23 en la Edge API, 4 en la Web App, 36 en el firmware y 8 en la App Móvil). El 14 de noviembre de 2026 esos cambios se integraron en `main` mediante Pull Requests, y `git rev-list main..develop` da 0 en los seis repositorios de código (sección 6.2.2.8).
 
 **Seguridad de los repositorios.** Durante el Sprint se encontró en `securiot-edge-api`, `securiot-mobile-app` y `securiot-embedded` una tarea de `.vscode/tasks.json` con `runOn: folderOpen` que ejecutaba un archivo `.lfk` de JavaScript ofuscado, escondido como si fuera una fuente (`public/fonts/fa-solid.lfk`). Se eliminó la carpeta `.vscode/` y los archivos señuelo, y se bloquearon esas extensiones en `.gitignore` (`f6aa97a` en la Edge API, `9f3fbb7` en la App Móvil y `df12a8b` en el firmware).
 
-**Verificación pendiente.** La evidencia de despliegue de este Sprint se apoya en los workflows y en los commits. No hay registro de una captura de Dokploy ni del resultado de las ejecuciones de Actions, y la actualización OTA sobre un ESP32-CAM real no está documentada.
+**Verificación del despliegue.** Al 14 de noviembre de 2026 las ejecuciones de Actions están en verde y sus enlaces figuran en las secciones 6.2.2.5 y 6.2.2.8, junto con la tabla completa de workflows y la protección de ramas. Pendiente: capturas de la lista de despliegues de Dokploy y de la salida de `pio run -e esp32cam_ota -t upload`. Responsable: Juan Angulo. La actualización OTA sobre el ESP32-CAM físico se reportó como verificada por el líder, sin registro versionado.
 
-<!-- AGREGAR capturas: pestaña Actions con CI en verde en cada repositorio, lista de despliegues de Dokploy tras un merge a develop, pantalla de QR de configuración de la Web App y salida de `pio run -e esp32cam_ota -t upload`. -->
+**Incidentes de despliegue resueltos (según los repositorios).** Estos problemas quedaron en el historial de commits: la falta de la cabecera `X-GitHub-Event` en el webhook (`d0a89a2`, `46b4af5`), un `package-lock.json` desincronizado que rompía `npm ci` con Node 22, un error 502 de la Web App causado por una expresión regular de nginx sin comillas (`aff38e4`, y desde entonces el CI ejecuta `nginx -t`) y un desafío de Bot Fight Mode de Cloudflare que bloqueaba las llamadas hacia el VPS.
 
 #### 6.2.3.9. Team Collaboration Insights during Sprint
 
@@ -4500,6 +4771,8 @@ El equipo mantuvo GitFlow y el tablero de Trello. Los commits del Sprint 3 en lo
 | securiot-mobile-app | `Sve-nnN` | 1 |
 
 **Interpretación:** el código del Sprint 3 volvió a concentrarse en `Sve-nnN`, con la única excepción de `rommelDN`, que aportó la vista de la simulación física del firmware en Wokwi. La concentración limita la revisión cruzada y deja a la mayor parte del equipo sin contribuciones de código en los repositorios. Para la siguiente etapa conviene que los demás integrantes tomen las pruebas de interfaz pendientes de la Web App y la App Móvil, y que revisen mediante Pull Requests la integración de `develop` a `main` en cada repositorio.
+
+**Actualización con datos de GitHub (consulta del 14/11/2026).** Pull Requests integrados por cuenta en los repositorios de código: `Sve-nnN` 57 (Cloud API 8, Web App 14, Edge API 7, firmware 9, App Móvil 7 y Landing 12). No hay Pull Requests integrados de otras cuentas en esos repositorios. Hay 3 Pull Requests abiertos (2 en App Móvil y 1 en Landing). En `develop`, los commits sin merge por autor son: Juan Angulo 201 (Cloud API 44, Web App 40, Edge API 34, firmware 37, App Móvil 27, Landing 19), Pietro Osores 7 (Edge API 6, firmware 1), Rommel Hurtado 2 (firmware, simulación en Wokwi) y Daniel Aquino 1 (Edge API). La concentración que describe esta sección se mantiene: 201 de 211 commits (95 %).
 
 <div style="page-break-after: always;"></div>
 
@@ -4695,13 +4968,64 @@ Frente al escenario de intrusión simulado, la entrevistada manifestó que conta
 
 ### 6.3.3. Evaluaciones según heurísticas
 
-_Pendiente de desarrollo._
+**Método y alcance.** Esta evaluación es una revisión de expertos hecha por el propio equipo, no una prueba con usuarios. Se revisó la Web App con capturas a cuatro anchos de pantalla, en español y en inglés, contra una API simulada (mock), usando las 10 heurísticas de usabilidad de Nielsen (Nielsen, 1994). La revisión se apoyó en la crítica con la herramienta Impeccable, antes y después de las correcciones que integraron los Pull Requests #9 a #13 de `securiot-web-app`. La severidad usa la escala de Nielsen de 0 a 4 (0 no es un problema, 1 cosmético, 2 menor, 3 mayor, 4 catastrófico) y la asignó el equipo evaluador, por lo que es una apreciación subjetiva. Esta evaluación no reemplaza las Validation Interviews de las secciones 6.3.1 y 6.3.2 ni mide tiempos ni errores de usuarios reales.
+
+| Heurística | Hallazgo | Severidad | Pantalla | Estado |
+| --- | --- | --- | --- | --- |
+| H1. Visibilidad del estado del sistema | Las listas no mostraban de un vistazo cuántos dispositivos estaban en línea o fuera de línea. Se agregaron tiles de estado y, en el checkout, un indicador de pasos con resumen en vivo | 2 | Zonas, dispositivos, checkout | Corregido |
+| H2. Relación entre el sistema y el mundo real | Las fechas aparecían en formato de EE. UU. aun con la interfaz en español. Ahora se formatean según el idioma activo | 2 | Alertas, facturación | Corregido |
+| H2. Relación entre el sistema y el mundo real | Algunas etiquetas mostraban la clave de traducción cruda en lugar del texto | 3 | Varias | Corregido |
+| H3. Control y libertad del usuario | Eliminar un elemento no pedía confirmación. Se agregó un diálogo de confirmación compartido | 3 | Listas de zonas, dispositivos y reglas | Corregido |
+| H4. Consistencia y estándares | Quedaban restos del tema claro dentro del tema oscuro de la marca | 2 | Varias | Corregido |
+| H4. Consistencia y estándares | El logo era un escudo genérico que no coincidía con la marca. Se reemplazó por la marca SecurIoT en el encabezado de la tarjeta de acceso | 1 | Inicio de sesión | Corregido |
+| H5. Prevención de errores | El pago simulado rechaza tarjetas desconocidas con un motivo explícito, y la Landing avisa que no se cobra dinero real, lo que evita que alguien escriba una tarjeta real creyendo que paga | 2 | Plan y facturación, Landing | Corregido |
+| H6. Reconocimiento antes que recuerdo | Las acciones de las filas quedaban ocultas en pantallas pequeñas. Las tablas pasaron a filas de tarjeta con las acciones visibles | 3 | Tablas de dispositivos, reglas y alertas | Corregido |
+| H7. Flexibilidad y eficiencia de uso | Las listas no se podían buscar ni filtrar. Se sumaron búsqueda y filtros con etiquetas más cortas y un selector de idioma más visible | 2 | Listas | Corregido |
+| H8. Diseño estético y minimalista | Las tablas usaban tipografía monoespaciada que dificultaba su lectura | 2 | Tablas | Corregido |
+| H8. Diseño estético y minimalista | El aviso de facturación era demasiado pesado visualmente. Se rediseñó con menos énfasis | 2 | Plan y facturación | Corregido |
+| H9. Ayuda a reconocer y recuperarse de errores | El rechazo de un pago devuelve el motivo (`card_declined`, `insufficient_funds`, `expired_card` o `unknown_test_card`). Falta revisar cómo se traduce y se presenta cada motivo en pantalla | 2 | Plan y facturación | Abierto |
+| H10. Ayuda y documentación | La Landing explica en sus preguntas frecuentes si el pago cobra dinero real. La Web App no tiene una ayuda contextual propia | 1 | Web App | Abierto |
+| H8. Diseño estético y minimalista | La tabla del historial de pagos queda apretada a 375 px de ancho | 2 | Plan y facturación | Abierto |
+| H4. Consistencia y estándares (accesibilidad) | El anillo de foco del teclado no se inspeccionó con detalle | 2 | Todas | Abierto |
+| H2. Relación entre el sistema y el mundo real | Las pantallas en inglés a ancho móvil solo se revisaron de forma puntual | 1 | Varias, en inglés | Abierto |
+| Todas | No se hizo ninguna prueba con usuarios reales. Los hallazgos son juicios del equipo | 3 | Toda la Web App | Abierto |
+
+**Lectura de los resultados.** De las 17 filas, 11 están corregidas y 6 siguen abiertas. Ninguna fila abierta tiene severidad 4. La más relevante es la ausencia de pruebas con usuarios, que impide afirmar que las correcciones mejoran la experiencia: solo se verificó que los defectos listados desaparecen en las capturas posteriores. Pendiente: capturas de antes y después de cada hallazgo, porque requieren sesión autenticada y no están versionadas. Responsable: Juan Angulo. La lista de hallazgos proviene de las notas del líder del equipo sobre la crítica de Impeccable y de los mensajes de commit de los PR #9 a #13.
 
 <div style="page-break-after: always;"></div>
 
 ## 6.4. Video About-the-Product
 
-_Pendiente de desarrollo._
+Esta sección contiene el guion y la lista de tomas. El video todavía no existe: no se grabó ni se publicó. Pendiente: grabación, edición y enlace. Responsable: Juan Angulo, con apoyo de Pietro Osores en la edición, que ya editó el video de exposición de AV1.
+
+**Duración objetivo:** 3 minutos (180 segundos). **Idioma:** español. **Solo muestra funciones que existen** en los despliegues del 14 de noviembre de 2026, con datos de demostración. La pasarela de pago es una simulación y la narración lo dice.
+
+**Guion por escenas**
+
+| Escena | Tiempo | En pantalla | Narración |
+| --- | --- | --- | --- |
+| 1. Problema | 0:00 a 0:20 | Landing Page, sección principal (https://securiot-landing.juan-tech.com) | "Las pymes industriales del Perú suelen vigilar con guardias y cámaras que nadie mira, y reaccionan cuando el robo ya ocurrió. SecurIoT detecta personas en accesos y zonas restringidas y responde en el momento." |
+| 2. Cómo funciona | 0:20 a 0:40 | Landing Page, sección "Cómo funciona", y diagrama de arquitectura Embedded, Edge y Cloud (sección 4.1.3) | "Una cámara ESP32-CAM envía imágenes a una unidad Edge en el local. La Edge detecta personas y rostros y decide al instante. La nube guarda alertas y las muestra en la Web App y en el teléfono." |
+| 3. Configuración del dispositivo | 0:40 a 1:05 | Web App, página del QR de configuración de un dispositivo; teléfono escaneando el QR; portal cautivo del ESP32-CAM | "Para instalar una cámara nueva no hace falta recompilar nada. El administrador abre el QR de configuración, el teléfono lo escanea y el dispositivo recibe el WiFi, la dirección de la Edge y su clave. Más tarde se actualiza por aire (OTA)." |
+| 4. Monitoreo | 1:05 a 1:35 | Web App: zonas, dispositivos en línea, feed en vivo de un dispositivo de demostración, contador de ocupación | "El operador ve sus zonas y dispositivos, el estado de cada uno, el último cuadro de la cámara y cuántas personas entraron hoy." |
+| 5. Reglas y alertas | 1:35 a 2:05 | Web App, pantalla de reglas (crear una regla y usar la prueba `dry-run`); lista de alertas | "Las alertas ya no son fijas. El administrador crea reglas con una condición, un umbral y una acción, como alerta, luz, buzzer o bloqueo de puerta, y puede probarlas antes de activarlas." |
+| 6. Control desde el teléfono | 2:05 a 2:25 | App móvil: lista de alertas y pantalla de control de pan y tilt, luz y buzzer con estado pendiente y entregado | "Desde la app móvil el operador recibe las alertas y mueve la cámara, enciende la luz o activa el buzzer, y ve si el comando ya llegó al dispositivo." |
+| 7. Planes y pago simulado | 2:25 a 2:45 | Landing, sección de precios; Web App, página Plan y facturación con el checkout | "El servicio se cobra por cámara: S/ 39, S/ 49 o S/ 69 al mes, más S/ 350 de instalación, sin IGV. El pago de esta demostración es una simulación del curso: acepta solo tarjetas de prueba y no cobra dinero real." |
+| 8. Cierre | 2:45 a 3:00 | Logo y URL de la Landing Page; créditos del equipo Centinela Labs | "SecurIoT es el proyecto del equipo Centinela Labs para el curso Desarrollo de Soluciones IoT. Está desplegado y funcionando. Gracias." |
+
+**Lista de tomas (shot list)**
+
+1. Pantalla completa del navegador a 1440 px de ancho, tema oscuro, con la Landing Page en español. Desplazamiento lento hasta "Cómo funciona".
+2. Plano fijo del diagrama de la sección 4.1.3 exportado desde Structurizr.
+3. Captura de pantalla de la página del QR de configuración con datos de un dispositivo de demostración y toma del teléfono escaneando. No mostrar la clave del dispositivo en pantalla.
+4. Toma del ESP32-CAM encendido con el LED de estado visible, sin mostrar rostros reales.
+5. Web App con la API de demostración: zonas, dispositivos y contador de ocupación. El feed en vivo debe mostrar una escena sin personas identificables o a un integrante que haya dado su consentimiento.
+6. Creación de una regla y ejecución de `dry-run`, con el actuador reaccionando en cámara.
+7. App móvil grabada en un teléfono Android: alertas y pantalla de control.
+8. Landing, sección de precios, y Web App en la página de facturación con la tarjeta de prueba 4242 4242 4242 4242.
+9. Plano final con el logo.
+
+**Recursos de apoyo:** música sin derechos de autor, subtítulos en español y en inglés (el producto ya tiene interfaz en ambos idiomas), y resolución 1080p.
 
 <div style="page-break-after: always;"></div>
 
@@ -4725,7 +5049,17 @@ _Pendiente de desarrollo._
 
 7. La implementación de los Sprints 2 y 3 confirma que la arquitectura de la sección 4.1 soporta el crecimiento del producto. Las reglas, los comandos manuales y el feed de cámara se sumaron sobre el mismo patrón de proxy entre la Cloud API y la Edge API, sin rediseñar los contextos delimitados. El motor de reglas reemplazó la alerta fija de apertura de puerta por reglas editables que la Edge API evalúa dentro del mismo ciclo de `/frames`, de modo que una detección de arma o de fuego actúa sin esperar a la nube.
 
-8. Con los Sprints 2 y 3, el producto cubre el recorrido completo del operador, pero su verificación llega solo hasta las pruebas automáticas: la Edge API pasa 88 pruebas, la Cloud API 63 e2e y 5 unitarias, y la Web App y el firmware compilan. Ninguna función de esos Sprints se comprobó todavía en el ESP32-CAM físico ni en un teléfono real, así que el equipo no puede presentarlas como validadas en campo.
+8. Con los Sprints 2 y 3, el producto cubre el recorrido completo del operador, pero su verificación llega solo hasta las pruebas automáticas: la Edge API pasa 88 pruebas, la Cloud API 63 e2e y 5 unitarias, y la Web App y el firmware compilan. Esas cifras son las del cierre de los Sprints: al 14 de noviembre de 2026 la Cloud API pasa 54 pruebas unitarias y 127 e2e, la Web App 90, la Edge API 165, el firmware 206 y la App Móvil 65. El líder verificó el flujo principal sobre un ESP32-CAM físico (aprovisionamiento con QR, OTA, detección, seguimiento y feed en vivo), pero esa verificación aún no tiene evidencia versionada y no hubo pruebas en un teléfono real ni en campo, así que el equipo no puede presentarlas como validadas con clientes.
+
+9. Después de los Sprints 2 y 3, la Cloud API suma el contexto de Facturación y Suscripciones con una pasarela de pago simulada. La simulación es deliberada: acepta solo cuatro tarjetas de prueba, no guarda el número ni el CVC (solo marca y últimos cuatro dígitos) y la Landing y la Web App avisan que no se cobra dinero real. El equipo no puede afirmar que el cobro funcione con un procesador real.
+
+10. La entrega continua se automatizó con GitHub Actions: cada repositorio ejecuta CI en cada Pull Request y los repositorios de la Cloud API, la Web App, la Landing y la Edge API despliegan en Dokploy por webhook desde `develop`. El firmware publica binarios por etiqueta y la App Móvil se distribuye por Firebase App Distribution (versión 1.1.0). La Cloud API, la Web App y la Edge API tienen protección de ramas. Las pruebas automáticas actuales son 181 en la Cloud API, 90 en la Web App, 165 en la Edge API, 206 en el firmware y 65 en la App Móvil.
+
+11. La marca SecurIoT se aplicó a la Web App, la App Móvil y la Landing Page. Astryx no se pudo instalar en Angular ni en Flutter, así que se portaron sus patrones a Angular Material y a Flutter. La evaluación heurística de la sección 6.3.3 es una revisión de expertos del equipo, con seis hallazgos abiertos, y no reemplaza las pruebas con usuarios.
+
+12. El líder del equipo verificó en el ESP32-CAM físico el aprovisionamiento con QR, la actualización OTA, la detección de personas, el seguimiento con pan y tilt, la detección de rostros y el feed en vivo, a unos 2,5 cuadros por segundo de extremo a extremo con la detección corriendo en una computadora portátil. Esa verificación todavía no tiene evidencia versionada.
+
+13. El análisis de negocio del equipo (carpeta de trabajo del fundador) concluye con el veredicto "Not yet": el problema es real y el prototipo funciona, pero con el hardware actual los números no cierran. Según ese análisis, el costo de la computadora Edge en el local, de unos S/ 1.707 por sitio (S/ 569 por cámara con tres cámaras por sitio, una sola fuente), hace que el margen del plan sea de -103 % por cámara-día y que el punto de equilibrio (376 cámaras-día al día) supere la capacidad prevista de 200. De los 20 compradores simulados, 8 probarían un piloto. Son proyecciones con insumos estimados y compradores simulados, no clientes reales. Se presentan aquí como una limitación honesta del producto: la solución funciona técnicamente, pero su viabilidad comercial depende de reducir el costo de la Edge y de validar con clientes que paguen.
 
 ### Recomendaciones
 
@@ -4735,11 +5069,19 @@ _Pendiente de desarrollo._
 
 3. La siguiente iteración debe registrar métricas verificables, como tiempo de notificación, disponibilidad del servicio, sincronización después de una desconexión y tasa de falsas alarmas. Estos resultados permitirán contrastar los criterios de éxito de Lean UX con evidencia cuantitativa.
 
-4. Se recomienda completar la documentación detallada de los endpoints, fortalecer la evidencia del despliegue móvil y probar el dispositivo IoT con hardware físico en condiciones cercanas a una instalación industrial.
+4. Se recomienda completar la documentación detallada de los endpoints, fortalecer la evidencia del despliegue móvil y probar el dispositivo IoT en condiciones cercanas a una instalación industrial, porque la verificación reportada se hizo con un solo ESP32-CAM.
 
 5. El equipo debe distribuir con mayor equilibrio las tareas de implementación, testing y despliegue, conservando la trazabilidad mediante ramas, pull requests y commits asociados a cada integrante y producto.
 
 6. El contador de ocupación solo suma entradas, porque la cámara reporta presencia y no dirección. Si las Validation Interviews muestran que los clientes necesitan también las salidas, el equipo debe evaluar un segundo sensor o una segunda cámara antes de prometer ese requisito.
+
+7. Antes de ofrecer el producto a un cliente se debe medir cuántas cámaras atiende una sola computadora Edge y evaluar hardware más barato, porque ese costo es la causa principal del veredicto "Not yet". Después conviene hacer tres pilotos pagados, como plantea el plan de lanzamiento del equipo (fecha objetivo 2027-01-11).
+
+8. Reemplazar la pasarela simulada por un procesador real exige revisión legal y de seguridad (por ejemplo, cumplimiento PCI y tratamiento de datos personales) antes de cobrar. No debe hacerse solo cambiando la clase `PaymentGatewaySimulator`.
+
+9. Firmar el APK de release con una llave propia, y no con la de debug, antes de publicar fuera de Firebase App Distribution. Activar la protección de ramas en los repositorios que todavía no la tienen, cuando el plan de GitHub lo permita, y adjuntar capturas de Dokploy y de Actions como evidencia.
+
+10. Completar las pendientes de evidencia que figuran como `Pendiente:` en el informe: capturas autenticadas, video del producto, registro de horas por tarea y pruebas de usabilidad con usuarios reales.
 
 <div style="page-break-after: always;"></div>
 
@@ -4819,3 +5161,7 @@ La numeración de épicas sigue el patrón del Product Backlog (EP-0n correspond
 | Muestra reducida y poco representativa del segmento gerencial | Análisis de entrevistas (3 por segmento) | Ampliar a 3 a 5 entrevistas con gerentes de pymes industriales reales | TB1 |
 | Entrada de un competidor global o una capa de IA de un incumbente | Análisis competitivo | Consolidar clientes pyme, precio accesible y soporte local | Roadmap posterior a TB2 |
 | Disposición a pagar la suscripción sin comprobar | Pregunta 7 del Lean UX Canvas | Preguntas de precio en las Validation Interviews | TB1 |
+
+## Anexo D. Individual Member Performance Report
+
+Informe individual del Team Leader, Juan Angulo, con su alcance por repositorio, entregables, evidencias, decisiones, dificultades y mejoras: [docs/individual-reports/juan-angulo.md](docs/individual-reports/juan-angulo.md).
