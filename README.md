@@ -1,62 +1,29 @@
-<div align="center">
+<div align="center" style="text-align:center;padding-top:0.4in;">
 
-<img src="https://raw.githubusercontent.com/rommelDN/KAMPO_MARKDOWN/refs/heads/develop/docs/assets/img/Capítulo1/UPC-logo.png" alt="Logo de la Universidad Peruana de Ciencias Aplicadas" width="80"/>
-
-# **Universidad Peruana de Ciencias Aplicadas**
-
-### **Carrera de Ingeniería de Software**
-
-<br>
-
-**1ASI0572**
-
-**Desarrollo de Soluciones IoT**
-
-<br>
-
-**NRC**
-
-**8729**
-
-<br>
-
-# **Informe del Trabajo Final**
-
-<br>
-
-**Docente**
-
-**León Baca, Marco Antonio**
-
-<br>
-
-**Equipo**
-
-**Centinela Labs**
-
-<br>
-
-**Proyecto**
-
-**SECURIOT**
-
-<br>
-
-### **Integrantes**
-
-| Código | Apellidos y Nombres |
-| :---: | :--- |
-| U202317692 | Angulo Abud, Juan Carlos |
-| U202217678 | Aquino Solorzano, Daniel Jonatan |
-| U202517474 | Hurtado Balcazar, Rommel Daniel |
-| U20221G099 | Nikaido Vargas, Javier Masaru |
-| U202310971 | Osores Marchese, Pietro |
-| U202319698 | Salcedo Champi, Matias Rodolfo |
-| U202216058 | Santillan Alvarado, Melina Liz |
-
-<br>
-
-**Período 202620**
+<p align="center" style="margin:0;"><img src="docs/assets/upc-logo.png" alt="Logo de la Universidad Peruana de Ciencias Aplicadas" width="84" height="84"/></p>
+<p align="center" style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:12pt;font-weight:400;line-height:1.5;margin:0;text-align:center;">Universidad Peruana de Ciencias Aplicadas</p>
+<p align="center" style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:12pt;font-weight:400;line-height:1.5;margin:0;text-align:center;">Carrera de Ingeniería de Software</p>
+<p align="center" style="line-height:1.5;margin:0;font-size:12pt;">&nbsp;</p>
+<p align="center" style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:14pt;font-weight:700;line-height:1.5;margin:0;text-align:center;">1ASI0572</p>
+<p align="center" style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:14pt;font-weight:700;line-height:1.5;margin:0;text-align:center;">Desarrollo de Soluciones IoT</p>
+<p align="center" style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:12pt;font-weight:400;line-height:1.5;margin:0;text-align:center;">NRC</p>
+<p align="center" style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:14pt;font-weight:700;line-height:1.5;margin:0;text-align:center;">8729</p>
+<p align="center" style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:16pt;font-weight:700;line-height:1.5;margin:0;text-align:center;">Informe del Trabajo Final</p>
+<p align="center" style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:12pt;font-weight:400;line-height:1.5;margin:0;text-align:center;">Docente</p>
+<p align="center" style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:14pt;font-weight:700;line-height:1.5;margin:0;text-align:center;">León Baca, Marco Antonio</p>
+<p align="center" style="line-height:1.5;margin:0;font-size:12pt;">&nbsp;</p>
+<p align="center" style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:12pt;font-weight:400;line-height:1.5;margin:0;text-align:center;">Equipo</p>
+<p align="center" style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:14pt;font-weight:700;line-height:1.5;margin:0;text-align:center;">Centinela Labs</p>
+<p align="center" style="line-height:1.5;margin:0;font-size:12pt;">&nbsp;</p>
+<p align="center" style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:12pt;font-weight:400;line-height:1.5;margin:0;text-align:center;">Proyecto</p>
+<p align="center" style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:14pt;font-weight:700;line-height:1.5;margin:0;text-align:center;">SECURIOT</p>
+<p align="center" style="line-height:1.5;margin:0;font-size:12pt;">&nbsp;</p>
+<p align="center" style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:12pt;font-weight:700;line-height:1.5;margin:0;text-align:center;">Integrantes</p>
+<table align="center" style="border:0;border-collapse:collapse;margin:0 auto;width:3.9in;"><thead><tr><th style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:12pt;font-weight:700;line-height:1.5;padding:0 14px 0 0;border:0;background:transparent;text-align:left;">Código</th><th style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:12pt;font-weight:700;line-height:1.5;padding:0 14px 0 0;border:0;background:transparent;text-align:left;">Apellidos y Nombres</th></tr></thead><tbody><tr><td style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:11pt;line-height:1.5;padding:0 14px 0 0;border:0;text-align:left;">U202317692</td><td style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:11pt;line-height:1.5;padding:0 14px 0 0;border:0;text-align:left;">Angulo Abud, Juan Carlos</td></tr><tr><td style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:11pt;line-height:1.5;padding:0 14px 0 0;border:0;text-align:left;">U202217678</td><td style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:11pt;line-height:1.5;padding:0 14px 0 0;border:0;text-align:left;">Aquino Solorzano, Daniel Jonatan</td></tr><tr><td style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:11pt;line-height:1.5;padding:0 14px 0 0;border:0;text-align:left;">U202517474</td><td style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:11pt;line-height:1.5;padding:0 14px 0 0;border:0;text-align:left;">Hurtado Balcazar, Rommel Daniel</td></tr><tr><td style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:11pt;line-height:1.5;padding:0 14px 0 0;border:0;text-align:left;">U20221G099</td><td style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:11pt;line-height:1.5;padding:0 14px 0 0;border:0;text-align:left;">Nikaido Vargas, Javier Masaru</td></tr><tr><td style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:11pt;line-height:1.5;padding:0 14px 0 0;border:0;text-align:left;">U202310971</td><td style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:11pt;line-height:1.5;padding:0 14px 0 0;border:0;text-align:left;">Osores Marchese, Pietro</td></tr><tr><td style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:11pt;line-height:1.5;padding:0 14px 0 0;border:0;text-align:left;">U202319698</td><td style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:11pt;line-height:1.5;padding:0 14px 0 0;border:0;text-align:left;">Salcedo Champi, Matias Rodolfo</td></tr><tr><td style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:11pt;line-height:1.5;padding:0 14px 0 0;border:0;text-align:left;">U202216058</td><td style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:11pt;line-height:1.5;padding:0 14px 0 0;border:0;text-align:left;">Santillan Alvarado, Melina Liz</td></tr></tbody></table>
+<p align="center" style="line-height:1.5;margin:0;font-size:12pt;">&nbsp;</p>
+<p align="center" style="line-height:1.5;margin:0;font-size:12pt;">&nbsp;</p>
+<p align="center" style="line-height:1.5;margin:0;font-size:12pt;">&nbsp;</p>
+<p align="center" style="font-family:Aptos,Calibri,'Helvetica Neue',Arial,sans-serif;font-size:12pt;font-weight:700;line-height:1.5;margin:0;text-align:center;">Período 202620</p>
 
 </div>
 
@@ -244,7 +211,7 @@ Las siguientes capturas se obtuvieron el **14/11/2026** en [Insights → Contrib
 
 El historial permite identificar quién incorporó cada cambio y cómo llegó a `develop`. La revisión del Sprint 2 relacionó trece tareas con catorce commits de cuatro componentes; los catorce registros corresponden a Juan Angulo. La distribución de responsabilidades de AV2 debe contrastarse con las contribuciones de código y los materiales de cada responsable antes del cierre.
 
-Matias facilitó el acceso demo y confirmó el tablero de Trello y la fecha de planificación consignados. Esta rama reúne las capturas actuales de colaboración y de la Landing, y documenta las vistas disponibles de la Web App. La comprobación de la Landing incluye español, inglés, vista móvil, menú, teclado y acceso al panel. Quedan sin demostrar los flujos que requieren Edge y el dispositivo físico; el dominio configurado para Edge no resolvió durante la revisión. La consulta autenticada de Trello confirmó diez historias por 53 SP, sin responsables asignados ni registro de horas; por eso las estimaciones se conservan como NR. Las capturas de Swagger, Landing y login ya se integraron desde el PR #38; faltan las evidencias visuales de los flujos de IoT que el líder reportó.
+Matias facilitó el acceso demo y confirmó el tablero de Trello y la fecha de planificación consignados. Esta rama reúne las capturas actuales de colaboración y de la Landing, y documenta las vistas disponibles de la Web App. La comprobación de la Landing incluye español, inglés, vista móvil, menú, teclado y acceso al panel. La consulta autenticada de Trello confirmó diez historias por 53 SP, sin responsables asignados ni registro de horas; por eso las estimaciones se conservan como NR. Las capturas de Swagger, Landing y login integradas desde el PR #38 se complementan con las evidencias del montaje físico y modelado 3D, el registro y reconocimiento facial en Edge Console con ESP32-CAM, y las reglas y alertas en la Web App.
 
 ## Sprint 2 y Sprint 3
 
@@ -4369,20 +4336,6 @@ Este resultado se conserva como declaración de Juan Angulo en el [PR #38](https
 ![Alertas generadas por ESP32-CAM y reglas en la Web App](docs/assets/chapter6/sprint2-exec-web-alerts-esp32cam.png)
 
 *Figura 6.2.2.6-18. Pantalla de Alertas en la Web App con cuatro registros: dos alertas `[Dry-run] Persona no identificada detectada por ESP32-CAM` (14/11/26 14:30 y 15:21, activas), desconexión de `Front Door Sensor` marcada como resuelta y alerta simulada por temperatura > 30 °C.*
-
-**Pendientes de evidencia visual del Sprint 2.** Juan Angulo y Pietro Osores aportan los materiales técnicos; Matias Salcedo los recopila e incorpora al informe.
-
-| Flujo | Recorrido que debe demostrarse | Evidencia que falta / estado actual | Responsable de aportar / consolidar | Estado |
-| --- | --- | --- | --- | --- |
-| Montaje físico | Mostrar el ESP32-CAM y sus conexiones. | Fotografía real del montaje físico y 3 vistas CAD 3D incorporadas (Figuras 6.2.2.6-10 a 6.2.2.6-13). | Pietro Osores / Matias Salcedo | Completado |
-| Aprovisionamiento | Abrir el portal, guardar WiFi y conexión a Edge, reiniciar y comprobar persistencia; repetir el caso de conexión fallida. | Capturas del portal y registro serial; indicar placa y versión de firmware. | Pietro Osores / Matias Salcedo | Pendiente |
-| Registro de rostros | Configurar edgeUrl, cargar fotografías de prueba y consultar el estado del reconocimiento. | Registro de 5 muestras y reconocimiento en vivo con `ESP32-CAM-01` en Edge Console incorporados (Figuras 6.2.2.6-14 y 6.2.2.6-15); pendiente validar el proxy desde la Web App autenticada. | Juan Angulo, con apoyo de Pietro Osores / Matias Salcedo | Parcial |
-| Reglas | Crear y consultar una regla en Edge; enviar una lectura compatible y observar la alerta. | Listado de 5 reglas activas, formulario «Nueva regla» y alertas generadas por ESP32-CAM incorporados (Figuras 6.2.2.6-16 a 6.2.2.6-18). | Juan Angulo y Pietro Osores / Matias Salcedo | Completado |
-| Comando manual | Enviar un comando, comprobar su entrega en /frames y observar la acción; demostrar vencimiento sin entrega. | Capturas de petición/respuesta y del resultado del actuador; distinguir cola, entrega y acción física. | Juan Angulo y Pietro Osores / Matias Salcedo | Pendiente |
-
-**Material audiovisual.** Esta actualización incorpora evidencia en imágenes. El enlace y la captura del video de navegación del Sprint 2 no están incorporados; su requisito de entrega permanece pendiente por separado.
-
-El líder reportó una verificación física, pero aún falta su evidencia visual versionada. Una compilación o una prueba automatizada del servicio tampoco acredita por sí sola el funcionamiento del portal en el teléfono, la captura de la cámara ni la actuación de luz, buzzer o puerta. La [lista de evidencias y datos por completar](docs/sprint2/pendientes-matias.md) organiza la recopilación para cerrar esta sección.
 
 **App Móvil.** La App Móvil reutiliza las capturas reales de ejecución del Sprint 1 (`docs/assets/chapter6/sprint1-exec-mobile-login.png`, `sprint1-exec-mobile-zones.png`, `sprint1-exec-mobile-devices.png` y `sprint1-exec-mobile-alerts.png`), que ya aparecen en la sección 6.2.1.6.
 
