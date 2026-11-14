@@ -7,6 +7,10 @@ workspace "SecurIoT Architecture" "C4 model for the target SecurIoT edge and clo
         guard = person "Field Guard" "Receives and handles alerts while moving through the customer site."
         visitor = person "Website Visitor" "Learns about the SecurIoT product."
 
+        paymentGateway = softwareSystem "Payment Gateway (simulated)" "External payment processor that is simulated inside the Cloud API for the course project." {
+            tags "External System"
+        }
+
         device = element "Vision Node Hardware" "Hardware System" "ESP32-S3, camera, sensors, Wi-Fi, and local actuators; controlled by the Embedded Application." {
             tags "Hardware"
         }
@@ -24,7 +28,7 @@ workspace "SecurIoT Architecture" "C4 model for the target SecurIoT edge and clo
             mobile = container "Mobile App" "Mobile alerts and event review for field guards." "Flutter" {
                 tags "Mobile"
             }
-            cloudApi = container "Hosted Cloud API" "Provides authentication, zones, devices, identities, telemetry, alerts, and multi-site APIs." "NestJS and TypeORM" {
+            cloudApi = container "Hosted Cloud API" "Provides authentication, zones, devices, identities, telemetry, alerts, billing, and multi-site APIs." "NestJS and TypeORM" {
                 tags "Cloud"
 
                 telemetryController = component "TelemetryController" "Exposes POST and GET /telemetry." "NestJS Controller" {
@@ -86,8 +90,27 @@ workspace "SecurIoT Architecture" "C4 model for the target SecurIoT edge and clo
                 deviceRepository = component "Device Repository" "Persists devices." "TypeORM Repository" {
                     tags "Repository"
                 }
+
+                billingController = component "BillingController" "Exposes GET /billing/plans (public), POST /billing/checkout, GET /billing/subscription, and POST /billing/subscription/cancel (JWT)." "NestJS Controller" {
+                    tags "Controller"
+                }
+                billingService = component "BillingService" "Runs checkout, reads the owner subscription, and cancels it." "NestJS Service" {
+                    tags "Service"
+                }
+                pricingCatalog = component "PricingCatalog" "Holds the fixed plans (basic S/ 39, standard S/ 49), S/ 69 per camera per month, S/ 350 install fee per camera, and 18 percent IGV." "Domain Service" {
+                    tags "Service"
+                }
+                paymentGatewaySimulator = component "PaymentGatewaySimulator" "In-process stand-in for a real payment gateway; approves only published test cards and keeps only brand and last4." "NestJS Provider" {
+                    tags "Service" "Simulated"
+                }
+                subscriptionRepository = component "Subscription Repository" "Persists subscriptions." "TypeORM Repository" {
+                    tags "Repository"
+                }
+                paymentRepository = component "Payment Repository" "Persists payment attempts without card numbers or CVC." "TypeORM Repository" {
+                    tags "Repository"
+                }
             }
-            cloudDb = container "Cloud Database" "Persists users, zones, devices, recognition events, readings, and alerts." "PostgreSQL" {
+            cloudDb = container "Cloud Database" "Persists users, zones, devices, recognition events, readings, alerts, subscriptions, and payments." "PostgreSQL" {
                 tags "Database"
             }
             edgeApi = container "On-site Edge API" "Receives candidate frames, extracts face regions, runs ArcFace recognition, decides local actions, and relays results to the hosted backend." "Flask, Peewee, OpenCV, ONNX Runtime, and ArcFace" {
@@ -144,6 +167,9 @@ workspace "SecurIoT Architecture" "C4 model for the target SecurIoT edge and clo
         edgeContext = softwareSystem "Edge Detection and Relay" "Core bounded context that makes local decisions and relays telemetry to the hosted backend." {
             tags "Bounded Context"
         }
+        billingContext = softwareSystem "Billing and Subscriptions" "Supporting bounded context that publishes plans, charges subscriptions through the simulated gateway, and records payments." {
+            tags "Bounded Context"
+        }
         protectedContexts = softwareSystem "Protected Bounded Contexts" "Cloud API routes that trust JWT validation from Identity and Access." {
             tags "External Context"
         }
@@ -174,6 +200,38 @@ workspace "SecurIoT Architecture" "C4 model for the target SecurIoT edge and clo
             tags "Table"
         }
         monitoringAlertsTable = element "ALERTS (Monitoring)" "Database Table" "id: uuid PK; zoneId: uuid FK; deviceId: uuid FK; readingId: uuid FK [unique, nullable]; ruleType: string; severity: string; status: string; message: string; createdAt: timestamp" {
+            tags "Table"
+        }
+
+        billingSubscriptionClass = element "Subscription" "Domain Class" "id: string; ownerId: string; owner: User; planId: string; cameras: number; status: active | canceled; monthlyPerCamera: number; currentPeriodEnd: Date; createdAt: Date; updatedAt: Date" {
+            tags "Class"
+        }
+        billingPaymentClass = element "Payment" "Domain Class" "id: string; ownerId: string; owner: User; subscriptionId: string?; planId: string; cameras: number; status: approved | declined; reason: string?; subtotal: number; igv: number; total: number; currency: string; cardBrand: string; last4: string; createdAt: Date" {
+            tags "Class"
+        }
+        billingPlanClass = element "Plan" "Value Object" "id: basic | standard | plus; name: string; fixed monthly price; per-camera price S/ 69; install fee S/ 350 per camera" {
+            tags "DTO"
+        }
+        billingChargeClass = element "Charge" "Value Object" "subtotal: number; igv: number; total: number; computed by computeCharge(plan, cameras)" {
+            tags "DTO"
+        }
+        billingServiceClass = element "BillingService" "Application Class" "checkout(dto, ownerId); getForOwner(ownerId); cancel(ownerId)" {
+            tags "Service Class"
+        }
+        billingGatewayClass = element "PaymentGatewaySimulator" "Application Class" "charge(cardNumber): GatewayResult; never persists number or CVC; returns brand and last4" {
+            tags "Service Class"
+        }
+        billingOwnerClass = element "Owner Reference" "External Class" "id: string; owned by the Identity and Access context" {
+            tags "External Class"
+        }
+
+        billingUsersTable = element "USERS (Billing Reference)" "Database Table" "id: uuid PK; email: string UK; passwordHash: string; createdAt: timestamp" {
+            tags "External Table"
+        }
+        billingSubscriptionsTable = element "SUBSCRIPTIONS" "Database Table" "id: uuid PK; ownerId: uuid FK; planId: string; cameras: int; status: string; monthlyPerCamera: decimal(12,2); currentPeriodEnd: timestamp; createdAt: timestamp; updatedAt: timestamp" {
+            tags "Table"
+        }
+        billingPaymentsTable = element "PAYMENTS" "Database Table" "id: uuid PK; ownerId: uuid FK; subscriptionId: string?; planId: string; cameras: int; status: string; reason: string?; subtotal: decimal(12,2); igv: decimal(12,2); total: decimal(12,2); currency: string; cardBrand: string; last4: char(4); createdAt: timestamp" {
             tags "Table"
         }
 
@@ -234,6 +292,10 @@ workspace "SecurIoT Architecture" "C4 model for the target SecurIoT edge and clo
         platform.web -> platform.cloudApi "Consumes the REST API" "HTTPS/JSON and JWT"
         platform.mobile -> platform.cloudApi "Consumes the REST API" "HTTPS/JSON and JWT"
         platform.cloudApi -> platform.cloudDb "Reads from and writes to" "TypeORM/SQL"
+        operator -> platform.web "Views plans and pays the subscription on the Plan y facturacion page" "HTTPS"
+        visitor -> platform.landing "Sees the pricing section" "HTTPS"
+        platform.web -> platform.cloudApi "Calls the billing endpoints" "HTTPS/JSON and JWT"
+        platform.cloudApi -> paymentGateway "Requests card authorization (simulated in process; replace with a real gateway such as Culqi in production)" "In-process call"
 
         device -> platform.embedded "Provides camera frames and sensor signals" "Camera interface and GPIO"
         platform.embedded -> device "Applies pan/tilt, door, and alarm commands" "GPIO/PWM"
@@ -246,6 +308,8 @@ workspace "SecurIoT Architecture" "C4 model for the target SecurIoT edge and clo
         identityContext -> zonesContext "Publishes user identity" "Customer/Supplier and Published Language"
         zonesContext -> monitoringContext "Publishes opaque zone and device identifiers" "Customer/Supplier"
         edgeContext -> monitoringContext "Translates local readings into the cloud telemetry contract" "Customer/Supplier and Anticorruption Layer"
+        identityContext -> billingContext "Publishes user identity as the subscription owner" "Customer/Supplier and Published Language"
+        billingContext -> paymentGateway "Requests card authorization (simulated in process)" "Anticorruption Layer"
         device -> edgeContext "Uses the Embedded Application to follow the Edge HTTP contract" "Conformist"
 
         platform.edgeApi -> platform.cloudApi.telemetryController "POST /telemetry" "Outbound HTTPS/JSON and X-Device-Key"
@@ -290,6 +354,18 @@ workspace "SecurIoT Architecture" "C4 model for the target SecurIoT edge and clo
         platform.cloudApi.deviceRepository -> platform.cloudDb "SQL"
         platform.cloudApi.zoneRepository -> identityContext "References User through ownerId"
 
+        platform.web -> platform.cloudApi.billingController "GET /billing/plans, POST /billing/checkout, GET /billing/subscription, POST /billing/subscription/cancel" "HTTPS/JSON and JWT"
+        platform.cloudApi.billingController -> platform.cloudApi.jwtAuthGuard "Uses for all routes except GET /billing/plans"
+        platform.cloudApi.billingController -> platform.cloudApi.billingService "Delegates"
+        platform.cloudApi.billingService -> platform.cloudApi.pricingCatalog "Looks up plans and computes the charge"
+        platform.cloudApi.billingService -> platform.cloudApi.paymentGatewaySimulator "Requests card authorization"
+        platform.cloudApi.billingService -> platform.cloudApi.subscriptionRepository "Reads from and writes to"
+        platform.cloudApi.billingService -> platform.cloudApi.paymentRepository "Reads from and writes to"
+        platform.cloudApi.paymentGatewaySimulator -> paymentGateway "Stands in for (simulated in process; replace with a real gateway such as Culqi in production)"
+        platform.cloudApi.subscriptionRepository -> platform.cloudDb "SQL"
+        platform.cloudApi.paymentRepository -> platform.cloudDb "SQL"
+        platform.cloudApi.subscriptionRepository -> identityContext "References User through ownerId"
+
         platform.embedded -> platform.edgeApi.ingestBlueprint "POST /ingest" "Wi-Fi LAN, HTTP/JSON and X-Device-Key"
         platform.embedded -> platform.edgeApi.framesBlueprint "POST /frames" "Wi-Fi LAN, HTTP multipart and X-Device-Key"
         platform.edgeApi.ingestBlueprint -> platform.edgeApi.deviceKeyCheck "Uses"
@@ -331,6 +407,19 @@ workspace "SecurIoT Architecture" "C4 model for the target SecurIoT edge and clo
         zonesReadingClass -> zonesDeviceClass "deviceId (many to 1; external reference)"
         zonesZonesTable -> zonesDevicesTable "zoneId (1 to many)"
 
+        billingServiceClass -> billingGatewayClass "Requests authorization"
+        billingServiceClass -> billingPlanClass "Looks up"
+        billingServiceClass -> billingChargeClass "Computes"
+        billingServiceClass -> billingSubscriptionClass "Creates and cancels"
+        billingServiceClass -> billingPaymentClass "Records"
+        billingSubscriptionClass -> billingOwnerClass "ownerId (many to 1)"
+        billingPaymentClass -> billingOwnerClass "ownerId (many to 1)"
+        billingPaymentClass -> billingSubscriptionClass "subscriptionId (many to 0..1; logical reference)"
+
+        billingUsersTable -> billingSubscriptionsTable "owns (1 to many)"
+        billingUsersTable -> billingPaymentsTable "pays (1 to many)"
+        billingSubscriptionsTable -> billingPaymentsTable "charged by (1 to many; subscriptionId is not a foreign key)"
+
         production = deploymentEnvironment "Production" {
             deploymentNode "Operator Device" "Operator PC or laptop." "Web browser" {
                 containerInstance platform.web
@@ -345,7 +434,7 @@ workspace "SecurIoT Architecture" "C4 model for the target SecurIoT edge and clo
             }
 
             deploymentNode "Hosted Backend" "Internet-facing server separated from the customer-site edge network." "VPS or PaaS with Docker" {
-                deploymentNode "Cloud API Runtime" "Managed application runtime." "Node.js 20" {
+                deploymentNode "Cloud API Runtime" "Managed application runtime; the simulated payment gateway runs in this same process, so no extra node exists." "Node.js 20" {
                     containerInstance platform.cloudApi
                 }
                 deploymentNode "Managed Database" "Private database runtime." "PostgreSQL 16" {
@@ -374,6 +463,7 @@ workspace "SecurIoT Architecture" "C4 model for the target SecurIoT edge and clo
             include visitor
             include device
             include platform
+            include paymentGateway
             autoLayout lr
         }
 
@@ -383,6 +473,7 @@ workspace "SecurIoT Architecture" "C4 model for the target SecurIoT edge and clo
             include visitor
             include device
             include platform
+            include paymentGateway
             autoLayout lr
         }
 
@@ -400,10 +491,11 @@ workspace "SecurIoT Architecture" "C4 model for the target SecurIoT edge and clo
             include platform.edgeApi
             include platform.edgeDb
             include platform.identityStore
+            include paymentGateway
             autoLayout lr
         }
 
-        deployment platform production "Deployment" "Embedded firmware on ESP32-S3; Edge API and its SQLite database on the local Edge host; hosted Cloud API and PostgreSQL." {
+        deployment platform production "Deployment" "Embedded firmware on ESP32-S3; Edge API and its SQLite database on the local Edge host; hosted Cloud API (including the simulated payment gateway) and PostgreSQL." {
             include *
             autoLayout lr
         }
@@ -413,6 +505,8 @@ workspace "SecurIoT Architecture" "C4 model for the target SecurIoT edge and clo
             include zonesContext
             include monitoringContext
             include edgeContext
+            include billingContext
+            include paymentGateway
             include device
             autoLayout lr
         }
@@ -508,6 +602,39 @@ workspace "SecurIoT Architecture" "C4 model for the target SecurIoT edge and clo
             autoLayout tb
         }
 
+        component platform.cloudApi "BillingComponents" "Billing and Subscriptions bounded-context components." {
+            include platform.web
+            include platform.cloudDb
+            include identityContext
+            include paymentGateway
+            include platform.cloudApi.billingController
+            include platform.cloudApi.jwtAuthGuard
+            include platform.cloudApi.billingService
+            include platform.cloudApi.pricingCatalog
+            include platform.cloudApi.paymentGatewaySimulator
+            include platform.cloudApi.subscriptionRepository
+            include platform.cloudApi.paymentRepository
+            autoLayout lr
+        }
+
+        custom "BillingClasses" "Billing and Subscriptions domain and application classes." {
+            include billingSubscriptionClass
+            include billingPaymentClass
+            include billingPlanClass
+            include billingChargeClass
+            include billingServiceClass
+            include billingGatewayClass
+            include billingOwnerClass
+            autoLayout lr
+        }
+
+        custom "BillingDatabase" "Billing and Subscriptions relational data model in the Cloud database." {
+            include billingUsersTable
+            include billingSubscriptionsTable
+            include billingPaymentsTable
+            autoLayout tb
+        }
+
         component platform.edgeApi "EdgeComponents" "Edge Detection and Relay bounded-context components." {
             include platform.embedded
             include monitoringContext
@@ -564,6 +691,16 @@ workspace "SecurIoT Architecture" "C4 model for the target SecurIoT edge and clo
             element "Bounded Context" {
                 background #2563eb
                 color #ffffff
+                border dashed
+            }
+            element "External System" {
+                background #fed7aa
+                color #111827
+                stroke #9a3412
+                border dashed
+            }
+            element "Simulated" {
+                stroke #9a3412
                 border dashed
             }
             element "External Context" {
