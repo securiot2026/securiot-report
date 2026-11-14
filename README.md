@@ -4692,31 +4692,6 @@ Frente al escenario de intrusión simulado, la entrevistada manifestó que conta
 
 ---
 
-##### Entrevista 2: Christopher Cabán
-
-| Dato | Información |
-|---|---|
-| **Nombres y apellidos** | Christopher Cabán |
-| **Edad** | 41 años |
-| **Distrito de residencia** | Los Olivos |
-| **Segmento** | Personal de Vigilancia In Situ |
-| **Medio de entrevista** | Google Meet |
-| **Inicio** | 00:00 |
-| **Duración** | 3:14 |
-| **Video de la entrevista** | [Ver entrevista en One Drive](<link_entrevista>) <link_entrevista> |
-**Evidencia de entrevista**
-
-<p align="center">
-  <img src="docs/assets/chapter2/IMGs/interviews/seg2/interview2.png" alt="Entrevista a Christopher Cabán" width="700"/>
-</p>
-
-**Resumen de la entrevista**
-
-A partir de la sesión de validación realizada a Christopher Cabán, de 41 años y vigilante de seguridad privada en una planta metalmecánica y almacén de insumos en Los Olivos, se registró una evaluación sumamente favorable sobre la funcionalidad de la aplicación móvil de SECURIOT. El participante ejecutó con fluidez las acciones de inicio de sesión, revisión de zonas y atención de alertas de intrusión, resaltando que la sencillez de los menús y la amplitud de los controles táctiles resultan ideales para operar en un entorno industrial con alta congestión de camiones, talleres y áreas de maniobra. 
-En el aspecto visual y de interacción, Christopher valoró positivamente la paleta con fondo oscuro, señalando que evita el encandilamiento durante rondas nocturnas al transitar entre zonas con escasa iluminación. Asimismo, destacó la visibilidad del distintivo rojo para alertas activas y la ausencia de términos técnicos rebuscados, lo que le permitió identificar la ubicación y severidad del incidente sin riesgo de confusión. 
-En cuanto a la respuesta operativa ante siniestros, el entrevistado afirmó que recibir con antelación la zona comprometida, el sensor activado y la hora exacta reduce drásticamente la incertidumbre de acudir a ciegas únicamente con linterna y radio. Concluyó destacando que SECURIOT alivia el cansancio físico propio de turnos extensos al evitar desplazamientos innecesarios por falsas alarmas y eliminar los hasta 40 minutos que actualmente dedica a redactar incidencias de forma manual en libretas de campo.
-
----
 
 ### 6.3.3. Evaluaciones según heurísticas
 
