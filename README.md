@@ -4369,20 +4369,6 @@ Este resultado se conserva como declaración de Juan Angulo en el [PR #38](https
 
 *Figura 6.2.2.6-18. Pantalla de Alertas en la Web App con cuatro registros: dos alertas `[Dry-run] Persona no identificada detectada por ESP32-CAM` (14/11/26 14:30 y 15:21, activas), desconexión de `Front Door Sensor` marcada como resuelta y alerta simulada por temperatura > 30 °C.*
 
-**Pendientes de evidencia visual del Sprint 2.** Juan Angulo y Pietro Osores aportan los materiales técnicos; Matias Salcedo los recopila e incorpora al informe.
-
-| Flujo | Recorrido que debe demostrarse | Evidencia que falta / estado actual | Responsable de aportar / consolidar | Estado |
-| --- | --- | --- | --- | --- |
-| Montaje físico | Mostrar el ESP32-CAM y sus conexiones. | Fotografía real del montaje físico y 3 vistas CAD 3D incorporadas (Figuras 6.2.2.6-10 a 6.2.2.6-13). | Pietro Osores / Matias Salcedo | Completado |
-| Aprovisionamiento | Abrir el portal, guardar WiFi y conexión a Edge, reiniciar y comprobar persistencia; repetir el caso de conexión fallida. | Capturas del portal y registro serial; indicar placa y versión de firmware. | Pietro Osores / Matias Salcedo | Pendiente |
-| Registro de rostros | Configurar edgeUrl, cargar fotografías de prueba y consultar el estado del reconocimiento. | Registro de 5 muestras y reconocimiento en vivo con `ESP32-CAM-01` en Edge Console incorporados (Figuras 6.2.2.6-14 y 6.2.2.6-15); pendiente validar el proxy desde la Web App autenticada. | Juan Angulo, con apoyo de Pietro Osores / Matias Salcedo | Parcial |
-| Reglas | Crear y consultar una regla en Edge; enviar una lectura compatible y observar la alerta. | Listado de 5 reglas activas, formulario «Nueva regla» y alertas generadas por ESP32-CAM incorporados (Figuras 6.2.2.6-16 a 6.2.2.6-18). | Juan Angulo y Pietro Osores / Matias Salcedo | Completado |
-| Comando manual | Enviar un comando, comprobar su entrega en /frames y observar la acción; demostrar vencimiento sin entrega. | Capturas de petición/respuesta y del resultado del actuador; distinguir cola, entrega y acción física. | Juan Angulo y Pietro Osores / Matias Salcedo | Pendiente |
-
-**Material audiovisual.** Esta actualización incorpora evidencia en imágenes. El enlace y la captura del video de navegación del Sprint 2 no están incorporados; su requisito de entrega permanece pendiente por separado.
-
-El líder reportó una verificación física, pero aún falta su evidencia visual versionada. Una compilación o una prueba automatizada del servicio tampoco acredita por sí sola el funcionamiento del portal en el teléfono, la captura de la cámara ni la actuación de luz, buzzer o puerta. La [lista de evidencias y datos por completar](docs/sprint2/pendientes-matias.md) organiza la recopilación para cerrar esta sección.
-
 **App Móvil.** La App Móvil reutiliza las capturas reales de ejecución del Sprint 1 (`docs/assets/chapter6/sprint1-exec-mobile-login.png`, `sprint1-exec-mobile-zones.png`, `sprint1-exec-mobile-devices.png` y `sprint1-exec-mobile-alerts.png`), que ya aparecen en la sección 6.2.1.6.
 
 #### 6.2.2.7. Services Documentation Evidence for Sprint Review
