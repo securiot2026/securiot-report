@@ -1,0 +1,806 @@
+{
+  "verified_on": "2026-11-14",
+  "report_base": "e95359c1bba6a45213e25ec83595985d6e68d860",
+  "source": "GitHub connector: fetch_commit and compare_commits",
+  "scope": "Commits ya consignados para Sprint 2; las fechas se conservan tal como figuran en GitHub y no acreditan ejecución en hardware.",
+  "commits": [
+    {
+      "repository": "securiot2026/securiot-embedded",
+      "sha": "0d3f69faf3a07f5ed99d641038ec930d0f608507",
+      "url": "https://github.com/securiot2026/securiot-embedded/commit/0d3f69faf3a07f5ed99d641038ec930d0f608507",
+      "date": "2026-09-08T22:54:17Z",
+      "author": "Sve-nnN",
+      "message": "feat(provisioning): add MycilaESPConnect captive portal + /provision-extra form\n\nAdds src/provisioning.h/.cpp implementing the two-part field-provisioning\nflow from Phase 6 (v2.0): MycilaESPConnect's native AP+portal collects\nSSID/password only (its Config struct has no other fields), then a custom\n/provision-extra HTTP form on the same shared AsyncWebServer collects Edge\nAPI URL and device key once WiFi connects. All four values persist to NVS\nvia Preferences (namespace \"securiot\") only after the submitted Edge API\nURL passes a reachability ping — an unreachable URL re-serves the retry\nform instead of saving or restarting.\n\nsetAutoRestart(false) is set explicitly before espConnect.begin(): without\nit MycilaESPConnect restarts the device on WiFi connect, before the\noperator ever reaches /provision-extra.\n\nAdds indicatePortalActive() to local_alert.h/.cpp: a non-blocking pulsing\nblue LED pattern, distinct from the existing solid-blue \"connecting\" color.\n\nAdds MycilaESPConnect, AsyncTCP and ESPAsyncWebServer (ESP32Async fork,\nnot the unmaintained me-no-dev original) to platformio.ini lib_deps.",
+      "files": [
+        "platformio.ini",
+        "src/local_alert.cpp",
+        "src/local_alert.h",
+        "src/provisioning.cpp",
+        "src/provisioning.h"
+      ]
+    },
+    {
+      "repository": "securiot2026/securiot-embedded",
+      "sha": "174078fc2d73d260b4455340840dbd368f3768e0",
+      "url": "https://github.com/securiot2026/securiot-embedded/commit/174078fc2d73d260b4455340840dbd368f3768e0",
+      "date": "2026-09-08T22:54:25Z",
+      "author": "Sve-nnN",
+      "message": "feat(wifi_manager): read WiFi credentials from Preferences, reopen portal on 3 failed attempts\n\nwifiConnect() no longer reads secrets.h's WIFI_SSID/WIFI_PASSWORD macros.\nIt calls provisioningBegin() first, then attempts WiFi.begin() with the\nstored Preferences credentials up to 3 times (20s timeout each, reusing\nthe existing kInitialConnectTimeoutMs). If all 3 attempts fail, it reopens\nthe captive portal (provisioningBegin(force=true), since Preferences still\nsays \"configured\" with now-stale credentials) instead of hanging on a dead\nconnection — the portal blocks the operator can reach and successfully\nprovision, which restarts the device.\n\nwifiConnect()/wifiEnsureConnected()'s public signatures are unchanged.",
+      "files": [
+        "src/wifi_manager.cpp",
+        "src/wifi_manager.h"
+      ]
+    },
+    {
+      "repository": "securiot2026/securiot-embedded",
+      "sha": "35df98c873894b94dcaf5abdc0a57353328fbc2a",
+      "url": "https://github.com/securiot2026/securiot-embedded/commit/35df98c873894b94dcaf5abdc0a57353328fbc2a",
+      "date": "2026-09-08T22:54:35Z",
+      "author": "Sve-nnN",
+      "message": "feat(main): source Edge API URL and device key from the provisioning module\n\nmain.cpp now reads the Edge API base URL and device key exclusively from\nprovisioning.h's Preferences-backed getters instead of secrets.h macros or\nedge_discovery.cpp's mDNS resolution — DEVICE_ID/ZONE_ID stay hardcoded in\nsecrets.h, unaffected. loop() calls provisioningLoop() every iteration and\nskips capture/send entirely while provisioningActive() is true (AP/portal\nphase, or STA-connected-but-awaiting-/provision-extra phase).\n\nsecrets.h.example's WiFi/Edge API/device-key fields are now documentation\nonly, marked [PORTAL-MANAGED] since the firmware no longer reads them at\nruntime; DEVICE_ID/ZONE_ID remain real compile-time constants.",
+      "files": [
+        "src/main.cpp",
+        "src/secrets.h.example"
+      ]
+    },
+    {
+      "repository": "securiot2026/securiot-embedded",
+      "sha": "821036e20fb37cf861bf763416d125903692d1b9",
+      "url": "https://github.com/securiot2026/securiot-embedded/commit/821036e20fb37cf861bf763416d125903692d1b9",
+      "date": "2026-09-10T19:35:27Z",
+      "author": "Sve-nnN",
+      "message": "fix(provisioning): keep phone on the AP for the whole flow instead of requiring a manual rejoin\n\nMycilaESPConnect's own loop() tears down the SoftAP (WiFi.softAPdisconnect())\non the very next iteration after WiFi credentials validate (PORTAL_COMPLETE),\neven with setAutoRestart(false) — kicking the operator's phone off\nSecurIoT-Setup-XXXX before it could ever reach /provision-extra, and forcing\na manual IP hunt after rejoining the real WiFi network.\n\nFix: stop calling espConnect.loop() the instant PORTAL_COMPLETE fires\n(g_espConnectLoopPaused) — the SoftAP and STA connection the library already\nopened during credential testing both stay up, since neither AsyncWebServer\nnor the DNS server are loop()-driven. /provision-extra is now served at the\nSoftAP's fixed gateway IP (4.3.2.1), and \"/\" redirects there once credentials\nvalidate, ahead of MycilaESPConnect's own \"/\" handler — so the OS's periodic\ncaptive-portal re-probes (which the library always redirects to \"/\"\nregardless of state) chain straight into /provision-extra automatically,\nwithout the operator's phone ever leaving the AP network.",
+      "files": [
+        "src/provisioning.cpp"
+      ]
+    },
+    {
+      "repository": "securiot2026/securiot-embedded",
+      "sha": "86de4d367947ae664525c4c9dfa312738cb45dac",
+      "url": "https://github.com/securiot2026/securiot-embedded/commit/86de4d367947ae664525c4c9dfa312738cb45dac",
+      "date": "2026-09-17T18:23:03Z",
+      "author": "Sve-nnN",
+      "message": "feat(07): dispatch manual_command from the /frames response\n\nAdds setManualLight()/setManualBuzzer() as non-coupled, non-blocking\nfunctions (not built on triggerLocalAlert(), which hard-codes red+buzzer\ntogether and blocks for kBuzzerPulseMs). handleFramesResponse() parses the\nnew manual_command field and dispatches pan_tilt/light/buzzer — the Edge\nAPI already resolved precedence against the same-cycle automatic pan/tilt\ntracking delta, firmware only dispatches what it receives. pio run: SUCCESS.",
+      "files": [
+        "src/local_alert.cpp",
+        "src/local_alert.h",
+        "src/main.cpp"
+      ]
+    },
+    {
+      "repository": "securiot2026/securiot-edge-api",
+      "sha": "e060a7315f5dcead8ad11dcc4f6fd6614ffed060",
+      "url": "https://github.com/securiot2026/securiot-edge-api/commit/e060a7315f5dcead8ad11dcc4f6fd6614ffed060",
+      "date": "2026-09-17T16:29:56Z",
+      "author": "Sve-nnN",
+      "message": "feat(06.1-01): add protected POST /faces enrollment endpoint\n\nAdmin-key gated (X-Admin-Key/EDGE_ADMIN_API_KEY), calls the existing\nenroll_identity() unmodified, sanitizes uploaded filenames, and\ndeletes every temp file/dir on every code path including failures.\n\nD-01, D-02, D-07.",
+      "files": [
+        ".env.example",
+        "app/__init__.py",
+        "app/auth.py",
+        "app/config.py",
+        "app/faces.py",
+        "tests/test_faces.py"
+      ]
+    },
+    {
+      "repository": "securiot2026/securiot-edge-api",
+      "sha": "2e8d98be1b8ac38833e690b2d281037cbd6467eb",
+      "url": "https://github.com/securiot2026/securiot-edge-api/commit/2e8d98be1b8ac38833e690b2d281037cbd6467eb",
+      "date": "2026-09-17T16:34:05Z",
+      "author": "Sve-nnN",
+      "message": "feat(06.1-02): port capture-quality gates + per-device face-recognition toggle\n\nTask 1: laplacian_variance + validate_capture_quality (ported from the\nunmerged feature/yolo-standalone branch) reject blurry/too-small/no-face/\nmulti-face photos before they reach enroll_identity(); FACE_MINIMUM_\nENROLLMENT_IMAGES stays the single \"not enough\" threshold (D-03).\nConfirmed yolo/ was never merged into develop (D-04).\n\nTask 2: DeviceSetting Peewee model + GET/PATCH /devices/<id>/face-\nrecognition, admin-key gated, falling back to the global config default\nwhen no per-device override exists.\n\nTask 3: /frames now reads the per-device setting via\nget_face_recognition_enabled(device_id) instead of the global config\ndirectly (D-05).",
+      "files": [
+        ".env.example",
+        "app/__init__.py",
+        "app/config.py",
+        "app/device_settings.py",
+        "app/faces.py",
+        "app/frames.py",
+        "app/models.py",
+        "app/vision/enrollment.py",
+        "app/vision/image.py",
+        "app/vision/settings.py",
+        "tests/test_device_settings.py",
+        "tests/test_faces.py",
+        "tests/test_frames.py",
+        "tests/test_vision.py"
+      ]
+    },
+    {
+      "repository": "securiot2026/securiot-edge-api",
+      "sha": "4bd89eb85270d82b3c0fb9f9766485cd81d9718b",
+      "url": "https://github.com/securiot2026/securiot-edge-api/commit/4bd89eb85270d82b3c0fb9f9766485cd81d9718b",
+      "date": "2026-09-17T18:19:15Z",
+      "author": "Sve-nnN",
+      "message": "feat(07): add manual command queue with TTL and door-action suppression\n\nAdds POST /commands (admin-key gated) with a one-pending-slot-per-actuator\nin-memory queue (pan_tilt/light/buzzer), delivered piggybacked on the next\n/frames response regardless of detection state, discarded silently after\nCOMMAND_EXPIRY_SECONDS. A manual pan/tilt command overrides the same-cycle\nautomatic tracking delta rather than blending with it. Extends the existing\ndoor-action cooldown check to also suppress on manual delivery (CTRL-06),\nverified at the unit level per 07-CONTEXT.md D-R2 since the actuator enum\nhas no public \"door\" value.",
+      "files": [
+        ".env.example",
+        "app/__init__.py",
+        "app/commands.py",
+        "app/config.py",
+        "app/frames.py",
+        "tests/test_commands.py",
+        "tests/test_frames.py"
+      ]
+    },
+    {
+      "repository": "securiot2026/securiot-edge-api",
+      "sha": "8baa1aa79caa6910f5d953bf64961b18b4502d7c",
+      "url": "https://github.com/securiot2026/securiot-edge-api/commit/8baa1aa79caa6910f5d953bf64961b18b4502d7c",
+      "date": "2026-09-17T18:39:40Z",
+      "author": "Sve-nnN",
+      "message": "feat(08): replace hardcoded door_contact_open with configurable rules engine\n\nRULE-05/06/07/08/09/12: new Rule model + REST CRUD (admin-key gated),\nevaluation engine wired into /frames (weapon via COCO knife class, fire via\ncolor/brightness heuristic, object_class/occupancy, priority-based\nmost-restrictive-wins conflict resolution) and /ingest (sensor_threshold\nconditions on arbitrary readings, shared dispatch path with frames.py).\nMigrates the old hardcoded person/backpack door-lock check into two\nequivalent seeded rules on first boot (RULE-12), removing the duplicated\nlogic. 71/71 tests passing.",
+      "files": [
+        ".env.example",
+        "app/__init__.py",
+        "app/config.py",
+        "app/detection.py",
+        "app/fire_detection.py",
+        "app/frames.py",
+        "app/ingest.py",
+        "app/models.py",
+        "app/occupancy.py",
+        "app/rules_admin.py",
+        "app/rules_engine.py",
+        "tests/test_ingest_rules.py",
+        "tests/test_rules_admin.py",
+        "tests/test_rules_engine.py"
+      ]
+    },
+    {
+      "repository": "securiot2026/securiot-cloud-api",
+      "sha": "e111d45f33673b81e2971285d1d1b64af65631e9",
+      "url": "https://github.com/securiot2026/securiot-cloud-api/commit/e111d45f33673b81e2971285d1d1b64af65631e9",
+      "date": "2026-09-17T16:30:05Z",
+      "author": "Sve-nnN",
+      "message": "feat(06.1-01): proxy face enrollment to a device's Edge API\n\nAdds Device.edgeUrl (operator-configurable via PATCH /devices/:id,\nrejecting loopback/link-local hosts), and POST /devices/:id/faces\nwhich proxies to the device's edge-api with X-Admin-Key and mirrors\nits response, remapping a raw Edge 401 to Cloud 502.\n\nD-06, D-07.",
+      "files": [
+        ".env.example",
+        "src/devices/device.entity.ts",
+        "src/devices/devices.controller.ts",
+        "src/devices/devices.service.ts",
+        "src/devices/dto/device-response.dto.ts",
+        "src/devices/dto/update-device.dto.ts",
+        "test/devices-faces.e2e-spec.ts"
+      ]
+    },
+    {
+      "repository": "securiot2026/securiot-cloud-api",
+      "sha": "b1601d82507ce496fcc93fd720aae8f6e3cf551a",
+      "url": "https://github.com/securiot2026/securiot-cloud-api/commit/b1601d82507ce496fcc93fd720aae8f6e3cf551a",
+      "date": "2026-09-17T16:36:03Z",
+      "author": "Sve-nnN",
+      "message": "feat(06.1-03): proxy the per-device face-recognition toggle to Edge\n\nGET/PATCH /api/v1/devices/:id/face-recognition, IDOR-safe (findOneForOwner\nbefore any Edge call), targeting the GET/PATCH /devices/<id>/face-\nrecognition contract app/device_settings.py exposes on the edge-api.\n\nRefactors the Edge-proxy request/401-remap logic shared with enrollFace\n(06.1-01) into one callDeviceEdgeApi() helper, now used by all three\nCloud->Edge proxy call sites.",
+      "files": [
+        "src/devices/devices.controller.ts",
+        "src/devices/devices.service.ts",
+        "src/devices/dto/set-face-recognition.dto.ts",
+        "test/devices-face-recognition.e2e-spec.ts"
+      ]
+    },
+    {
+      "repository": "securiot2026/securiot-cloud-api",
+      "sha": "1266edacbc0ed13ae4b62ae95ca6bac9b3fb0430",
+      "url": "https://github.com/securiot2026/securiot-cloud-api/commit/1266edacbc0ed13ae4b62ae95ca6bac9b3fb0430",
+      "date": "2026-09-17T18:21:18Z",
+      "author": "Sve-nnN",
+      "message": "feat(07): add POST /devices/:id/commands proxy to Edge\n\nSame JWT-guarded ownership-checked proxy pattern as the Phase 06.1\nface-recognition endpoints, reusing callDeviceEdgeApi() unmodified\n(including its 401->502 remap). Validates actuator against\npan_tilt/light/buzzer before ever contacting Edge.",
+      "files": [
+        "src/devices/devices.controller.ts",
+        "src/devices/devices.service.ts",
+        "src/devices/dto/create-command.dto.ts",
+        "test/devices-commands.e2e-spec.ts"
+      ]
+    },
+    {
+      "repository": "securiot2026/securiot-cloud-api",
+      "sha": "9edffbb4f47bfc3aba9fd8a7d8c83bd467c1ff70",
+      "url": "https://github.com/securiot2026/securiot-cloud-api/commit/9edffbb4f47bfc3aba9fd8a7d8c83bd467c1ff70",
+      "date": "2026-09-17T18:46:01Z",
+      "author": "Sve-nnN",
+      "message": "feat(08): retire hardcoded door_contact_open Alert logic, add device offline alert\n\nRULE-12: AlertsService.evaluateRule() no longer hardcodes a door_contact/open\ncheck — it now turns any Edge-relayed \"rule_alert\" Reading (from the new\nEdge rules engine) into an Alert generically, no duplicated rule logic on\nthis side. Updated e2e coverage accordingly.\n\nEXTR-01: new DeviceOfflineCheckService (@nestjs/schedule, checks every\nminute) creates a device_offline Alert when a device's last reading falls\noutside DEVICE_ONLINE_WINDOW_SECONDS, and auto-resolves it once the device\nreports again. 5 unit + 44 e2e tests passing, build clean.",
+      "files": [
+        "package-lock.json",
+        "package.json",
+        "src/alerts/alerts.module.ts",
+        "src/alerts/alerts.service.ts",
+        "src/alerts/device-offline-check.service.spec.ts",
+        "src/alerts/device-offline-check.service.ts",
+        "src/app.module.ts",
+        "test/alerts.e2e-spec.ts",
+        "test/telemetry.e2e-spec.ts"
+      ]
+    },
+    {
+      "repository": "securiot2026/securiot-web-app",
+      "sha": "552045881b082fd3b7ff922d2f89283da35120f5",
+      "url": "https://github.com/securiot2026/securiot-web-app/commit/552045881b082fd3b7ff922d2f89283da35120f5",
+      "date": "2026-09-17T16:39:56Z",
+      "author": "Sve-nnN",
+      "message": "feat(06.1-04): Web UI for device edge URL, face enrollment, and toggle\n\nNew DeviceFaceRecognitionComponent at /devices/:id/face-recognition,\nreachable from the devices list: configure the device's edgeUrl,\nregister a face (multi-photo upload + name, showing accepted/skipped\ncounts and per-photo skip reasons), and toggle face recognition on/off\n— all through the Cloud proxy endpoints only (D-06), never the device's\nedge-api directly.\n\nA11Y: native labeled file input, no color-only toggle state (adjacent\ntext), aria-live status/alert regions, visible focus, no [innerHTML] on\nbackend-supplied strings (T-06.1-12).\n\nNew i18n keys in both en-US and es-419 (neutral Spanish, tuteo).",
+      "files": [
+        "public/assets/i18n/en-US.json",
+        "public/assets/i18n/es-419.json",
+        "src/app/app.routes.ts",
+        "src/app/core/models/device.model.ts",
+        "src/app/core/services/devices.service.ts",
+        "src/app/features/dashboard/devices/devices-list.component.html",
+        "src/app/features/dashboard/devices/devices-list.component.ts",
+        "src/app/features/dashboard/devices/face-recognition/device-face-recognition.component.html",
+        "src/app/features/dashboard/devices/face-recognition/device-face-recognition.component.scss",
+        "src/app/features/dashboard/devices/face-recognition/device-face-recognition.component.ts"
+      ]
+    }
+  ],
+  "integration_checks": [
+    {
+      "repository": "securiot2026/securiot-embedded",
+      "repository_full_name": "securiot2026/securiot-embedded",
+      "base": "86de4d3",
+      "head": "develop",
+      "status": "ahead",
+      "ahead_by": 35,
+      "behind_by": 0,
+      "total_commits": 35,
+      "too_large": null,
+      "base_commit": {
+        "sha": "86de4d367947ae664525c4c9dfa312738cb45dac",
+        "url": "https://api.github.com/repos/securiot2026/securiot-embedded/commits/86de4d367947ae664525c4c9dfa312738cb45dac",
+        "html_url": "https://github.com/securiot2026/securiot-embedded/commit/86de4d367947ae664525c4c9dfa312738cb45dac"
+      },
+      "merge_base_commit": {
+        "sha": "86de4d367947ae664525c4c9dfa312738cb45dac",
+        "url": "https://api.github.com/repos/securiot2026/securiot-embedded/commits/86de4d367947ae664525c4c9dfa312738cb45dac",
+        "html_url": "https://github.com/securiot2026/securiot-embedded/commit/86de4d367947ae664525c4c9dfa312738cb45dac"
+      }
+    },
+    {
+      "repository": "securiot2026/securiot-edge-api",
+      "repository_full_name": "securiot2026/securiot-edge-api",
+      "base": "8baa1aa",
+      "head": "develop",
+      "status": "ahead",
+      "ahead_by": 19,
+      "behind_by": 0,
+      "total_commits": 19,
+      "too_large": null,
+      "base_commit": {
+        "sha": "8baa1aa79caa6910f5d953bf64961b18b4502d7c",
+        "url": "https://api.github.com/repos/securiot2026/securiot-edge-api/commits/8baa1aa79caa6910f5d953bf64961b18b4502d7c",
+        "html_url": "https://github.com/securiot2026/securiot-edge-api/commit/8baa1aa79caa6910f5d953bf64961b18b4502d7c"
+      },
+      "merge_base_commit": {
+        "sha": "8baa1aa79caa6910f5d953bf64961b18b4502d7c",
+        "url": "https://api.github.com/repos/securiot2026/securiot-edge-api/commits/8baa1aa79caa6910f5d953bf64961b18b4502d7c",
+        "html_url": "https://github.com/securiot2026/securiot-edge-api/commit/8baa1aa79caa6910f5d953bf64961b18b4502d7c"
+      }
+    },
+    {
+      "repository": "securiot2026/securiot-cloud-api",
+      "repository_full_name": "securiot2026/securiot-cloud-api",
+      "base": "9edffbb",
+      "head": "develop",
+      "status": "ahead",
+      "ahead_by": 26,
+      "behind_by": 0,
+      "total_commits": 26,
+      "too_large": null,
+      "base_commit": {
+        "sha": "9edffbb4f47bfc3aba9fd8a7d8c83bd467c1ff70",
+        "url": "https://api.github.com/repos/securiot2026/securiot-cloud-api/commits/9edffbb4f47bfc3aba9fd8a7d8c83bd467c1ff70",
+        "html_url": "https://github.com/securiot2026/securiot-cloud-api/commit/9edffbb4f47bfc3aba9fd8a7d8c83bd467c1ff70"
+      },
+      "merge_base_commit": {
+        "sha": "9edffbb4f47bfc3aba9fd8a7d8c83bd467c1ff70",
+        "url": "https://api.github.com/repos/securiot2026/securiot-cloud-api/commits/9edffbb4f47bfc3aba9fd8a7d8c83bd467c1ff70",
+        "html_url": "https://github.com/securiot2026/securiot-cloud-api/commit/9edffbb4f47bfc3aba9fd8a7d8c83bd467c1ff70"
+      }
+    },
+    {
+      "repository": "securiot2026/securiot-web-app",
+      "repository_full_name": "securiot2026/securiot-web-app",
+      "base": "5520458",
+      "head": "develop",
+      "status": "ahead",
+      "ahead_by": 38,
+      "behind_by": 0,
+      "total_commits": 38,
+      "too_large": null,
+      "base_commit": {
+        "sha": "552045881b082fd3b7ff922d2f89283da35120f5",
+        "url": "https://api.github.com/repos/securiot2026/securiot-web-app/commits/552045881b082fd3b7ff922d2f89283da35120f5",
+        "html_url": "https://github.com/securiot2026/securiot-web-app/commit/552045881b082fd3b7ff922d2f89283da35120f5"
+      },
+      "merge_base_commit": {
+        "sha": "552045881b082fd3b7ff922d2f89283da35120f5",
+        "url": "https://api.github.com/repos/securiot2026/securiot-web-app/commits/552045881b082fd3b7ff922d2f89283da35120f5",
+        "html_url": "https://github.com/securiot2026/securiot-web-app/commit/552045881b082fd3b7ff922d2f89283da35120f5"
+      }
+    }
+  ],
+  "landing": {
+    "release": "3619c0ad7ed2dc4c07c256e98393a55937c224a6",
+    "release_url": "https://github.com/securiot2026/securiot-landing/commit/3619c0ad7ed2dc4c07c256e98393a55937c224a6",
+    "observed_url": "https://securiot-landing.juan-tech.com/",
+    "capture_date": "2026-11-14",
+    "deployed_sha_verified": false,
+    "captures": [
+      "docs/assets/chapter6/sprint2-exec-landing-desktop.jpg",
+      "docs/assets/chapter6/sprint2-exec-landing-product.jpg",
+      "docs/assets/chapter6/sprint2-exec-landing-english.jpg",
+      "docs/assets/chapter6/sprint2-exec-landing-mobile.jpg"
+    ],
+    "html_provenance": {
+      "file": "index.html",
+      "reference_commit": "3619c0ad7ed2dc4c07c256e98393a55937c224a6",
+      "normalization": "Normalize line endings to LF and trim outer whitespace",
+      "sha256": "0509d7928f8690a093eacbfdbd7971b40fc5356351c24f20c1d26a33fb3348a6",
+      "public_html_matches_reference": true,
+      "scope_limit": "Only index.html was compared; other assets and deployment settings are not certified."
+    },
+    "checks": {
+      "language_change": "Observed es-419 to en-US, including Tab and Space activation.",
+      "mobile_viewport": {
+        "width": 390,
+        "height": 844,
+        "observed_content_width": 375,
+        "horizontal_overflow": false
+      },
+      "mobile_menu": "Opened and closed with Escape.",
+      "cta": "Get started navigated to https://securiot.juan-tech.com/zones with the existing demo session."
+    }
+  },
+  "additional_av2_commits": [
+    {
+      "repository": "securiot2026/securiot-cloud-api",
+      "sha": "b6820c20716433ebdc1e2cfe5104a39570279b90",
+      "url": "https://github.com/securiot2026/securiot-cloud-api/commit/b6820c20716433ebdc1e2cfe5104a39570279b90",
+      "date": "2026-11-14T04:48:07Z",
+      "author": "Sve-nnN",
+      "message": "feat(billing): add simulated payment gateway, plans, checkout and subscription\n\nNothing is charged. Only four documented test cards are recognised, card\nnumber, holder and cvc are never stored or logged.\n\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>",
+      "files": [
+        "README.md",
+        "docs/OPERATIONS.md",
+        "src/app.module.ts",
+        "src/billing/billing.controller.ts",
+        "src/billing/billing.module.ts",
+        "src/billing/billing.service.ts",
+        "src/billing/dto/checkout.dto.ts",
+        "src/billing/money.transformer.ts",
+        "src/billing/payment-gateway-simulator.service.spec.ts",
+        "src/billing/payment-gateway-simulator.service.ts",
+        "src/billing/payment.entity.ts",
+        "src/billing/plans.ts",
+        "src/billing/pricing.spec.ts",
+        "src/billing/pricing.ts",
+        "src/billing/subscription.entity.ts",
+        "src/config/typeorm.config.ts",
+        "test/billing.e2e-spec.ts",
+        "test/setup-env.ts"
+      ]
+    },
+    {
+      "repository": "securiot2026/securiot-web-app",
+      "sha": "83d6e46cbff67ac7a61e48176d037fa0ad7f5873",
+      "url": "https://github.com/securiot2026/securiot-web-app/commit/83d6e46cbff67ac7a61e48176d037fa0ad7f5873",
+      "date": "2026-11-14T04:49:23Z",
+      "author": "Sve-nnN",
+      "message": "feat(billing): add plans and checkout page with simulated payment gateway\n\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>",
+      "files": [
+        "docs/OPERATIONS.md",
+        "public/assets/i18n/en-US.json",
+        "public/assets/i18n/es-419.json",
+        "src/app/app.routes.ts",
+        "src/app/core/models/billing.model.ts",
+        "src/app/core/services/billing.service.spec.ts",
+        "src/app/core/services/billing.service.ts",
+        "src/app/core/services/billing.util.ts",
+        "src/app/features/dashboard/billing/billing.component.html",
+        "src/app/features/dashboard/billing/billing.component.scss",
+        "src/app/features/dashboard/billing/billing.component.spec.ts",
+        "src/app/features/dashboard/billing/billing.component.ts",
+        "src/app/features/dashboard/billing/cancel-subscription-dialog.component.ts",
+        "src/app/features/dashboard/billing/checkout-dialog.component.html",
+        "src/app/features/dashboard/billing/checkout-dialog.component.scss",
+        "src/app/features/dashboard/billing/checkout-dialog.component.spec.ts",
+        "src/app/features/dashboard/billing/checkout-dialog.component.ts",
+        "src/app/features/dashboard/shell/shell.component.html"
+      ]
+    },
+    {
+      "repository": "securiot2026/securiot-web-app",
+      "sha": "e2412801cf6fad21b99d825e39ad3fc124842a99",
+      "url": "https://github.com/securiot2026/securiot-web-app/commit/e2412801cf6fad21b99d825e39ad3fc124842a99",
+      "date": "2026-11-14T05:56:54Z",
+      "author": "Sve-nnN",
+      "message": "fix(dashboard): scannable tables with card rows on small screens, merged filters, clearer billing and rules, localized dates and copy",
+      "files": [
+        "public/assets/i18n/en-US.json",
+        "public/assets/i18n/es-419.json",
+        "src/app/features/dashboard/alerts/alerts-list.component.html",
+        "src/app/features/dashboard/alerts/alerts-list.component.scss",
+        "src/app/features/dashboard/alerts/alerts-list.component.ts",
+        "src/app/features/dashboard/billing/billing.component.html",
+        "src/app/features/dashboard/billing/billing.component.scss",
+        "src/app/features/dashboard/billing/billing.component.ts",
+        "src/app/features/dashboard/billing/cancel-subscription-dialog.component.ts",
+        "src/app/features/dashboard/billing/checkout-dialog.component.html",
+        "src/app/features/dashboard/billing/checkout-dialog.component.ts",
+        "src/app/features/dashboard/devices/devices-list.component.html",
+        "src/app/features/dashboard/devices/devices-list.component.ts",
+        "src/app/features/dashboard/devices/face-recognition/device-face-recognition.component.scss",
+        "src/app/features/dashboard/devices/live-feed/device-live-feed.component.html",
+        "src/app/features/dashboard/devices/live-feed/device-live-feed.component.scss",
+        "src/app/features/dashboard/devices/live-feed/device-live-feed.component.ts",
+        "src/app/features/dashboard/devices/rules/device-rules.component.html",
+        "src/app/features/dashboard/devices/rules/device-rules.component.scss",
+        "src/app/features/dashboard/devices/rules/device-rules.component.ts",
+        "src/app/features/dashboard/devices/setup/device-setup.component.scss",
+        "src/app/features/dashboard/zones/zones-list.component.html",
+        "src/app/features/dashboard/zones/zones-list.component.ts",
+        "src/styles.scss",
+        "src/styles/_plans.scss"
+      ]
+    }
+  ],
+  "additional_av2_integration_checks": [
+    {
+      "repository": "securiot2026/securiot-cloud-api",
+      "repository_full_name": "securiot2026/securiot-cloud-api",
+      "base": "b6820c20716433ebdc1e2cfe5104a39570279b90",
+      "head": "develop",
+      "status": "ahead",
+      "ahead_by": 1,
+      "behind_by": 0,
+      "total_commits": 1,
+      "too_large": null,
+      "base_commit": {
+        "sha": "b6820c20716433ebdc1e2cfe5104a39570279b90",
+        "url": "https://api.github.com/repos/securiot2026/securiot-cloud-api/commits/b6820c20716433ebdc1e2cfe5104a39570279b90",
+        "html_url": "https://github.com/securiot2026/securiot-cloud-api/commit/b6820c20716433ebdc1e2cfe5104a39570279b90"
+      },
+      "merge_base_commit": {
+        "sha": "b6820c20716433ebdc1e2cfe5104a39570279b90",
+        "url": "https://api.github.com/repos/securiot2026/securiot-cloud-api/commits/b6820c20716433ebdc1e2cfe5104a39570279b90",
+        "html_url": "https://github.com/securiot2026/securiot-cloud-api/commit/b6820c20716433ebdc1e2cfe5104a39570279b90"
+      }
+    },
+    {
+      "repository": "securiot2026/securiot-web-app",
+      "repository_full_name": "securiot2026/securiot-web-app",
+      "base": "e2412801cf6fad21b99d825e39ad3fc124842a99",
+      "head": "develop",
+      "status": "ahead",
+      "ahead_by": 8,
+      "behind_by": 0,
+      "total_commits": 8,
+      "too_large": null,
+      "base_commit": {
+        "sha": "e2412801cf6fad21b99d825e39ad3fc124842a99",
+        "url": "https://api.github.com/repos/securiot2026/securiot-web-app/commits/e2412801cf6fad21b99d825e39ad3fc124842a99",
+        "html_url": "https://github.com/securiot2026/securiot-web-app/commit/e2412801cf6fad21b99d825e39ad3fc124842a99"
+      },
+      "merge_base_commit": {
+        "sha": "e2412801cf6fad21b99d825e39ad3fc124842a99",
+        "url": "https://api.github.com/repos/securiot2026/securiot-web-app/commits/e2412801cf6fad21b99d825e39ad3fc124842a99",
+        "html_url": "https://github.com/securiot2026/securiot-web-app/commit/e2412801cf6fad21b99d825e39ad3fc124842a99"
+      }
+    }
+  ],
+  "user_confirmation": {
+    "confirmed_on": "2026-11-14",
+    "trello_board": "https://trello.com/b/EzAo1DBl/securiot-product-backlog",
+    "recorded_planning_date": "2026-09-25",
+    "hours_provided": false
+  },
+  "execution_observations": {
+    "date": "2026-11-14",
+    "environment": "Current public demo; not a historical Sprint 2 build",
+    "web_url": "https://securiot.juan-tech.com/",
+    "login": "Successful demo login; credentials not included in this record",
+    "devices": "One device, Front Door Sensor, shown offline; last reading displayed 2026-11-13 20:36.",
+    "face_recognition": "Page loaded; edge URL configured, recognition shown disabled. No enrollment performed.",
+    "rules": "Page displayed 'No pudimos cargar las reglas. Intenta de nuevo.'; no successful rule read or execution demonstrated.",
+    "billing": "Simulated gateway notice, Basic/Standard/Plus plans, no active subscription. Checkout not executed.",
+    "deployed_shas_verified": false,
+    "captures": [
+      "docs/assets/chapter6/sprint2-exec-web-devices.jpg",
+      "docs/assets/chapter6/sprint2-exec-web-face-recognition.jpg",
+      "docs/assets/chapter6/sprint2-exec-web-rules-unavailable.jpg",
+      "docs/assets/chapter6/av2-exec-web-billing.jpg"
+    ]
+  },
+  "video_in_current_scope": false,
+  "connectivity_diagnostic": {
+    "edge_url": "https://edge-local.juan-tech.com/",
+    "edge_result": "curl exit 6: Could not resolve host",
+    "cloud_docs_url": "https://securiot-api.juan-tech.com/api/docs",
+    "cloud_docs_status": 200,
+    "proof_limit": "DNS failed from the review environment. The Cloud API proxy is configured to use this address. Physical device state and the tunnel administration state were not verified.",
+    "source": "https://github.com/securiot2026/securiot-edge-api/blob/develop/docs/LOCAL_DEPLOYMENT.md"
+  },
+  "report_collaboration": {
+    "base_commit": "e95359c1bba6a45213e25ec83595985d6e68d860",
+    "committer_date_from": "2026-10-09T00:00:00-05:00",
+    "committer_date_to": "2026-11-14T23:59:59-05:00",
+    "exclude_merges": true,
+    "counts": {
+      "Daniel Aquino": 6,
+      "rommelDN": 4,
+      "Juan Angulo": 5
+    },
+    "count_limit": "Counts Git records, including both a squash and retained original commits; not unique tasks or effort.",
+    "github_insights": {
+      "branch": "develop",
+      "period_label": "Last 3 months",
+      "exclude_merges": true,
+      "observed_member_counts": {
+        "rommelDN": 28,
+        "DanielAquinoSolorzano": 25,
+        "Sve-nnN": 23,
+        "melinaasantillan": 18,
+        "MassiFlip": 14,
+        "matiAAsc": 11,
+        "Maximoff19": 10
+      },
+      "captures": [
+        "docs/assets/chapter6/av2-report-contributors-overview.jpg",
+        "docs/assets/chapter6/av2-report-contributors-members.jpg"
+      ]
+    }
+  },
+  "teammate_screenshots": {
+    "checked_ref": "e95359c1bba6a45213e25ec83595985d6e68d860",
+    "integrated_pull_request": "https://github.com/securiot2026/securiot-report/pull/38",
+    "integrated_at": "2026-11-14T12:01:04-05:00",
+    "new_report_capture_files": [
+      "docs/assets/chapter6/sprint3-landing-faq.png",
+      "docs/assets/chapter6/sprint3-landing-hero.jpg",
+      "docs/assets/chapter6/sprint3-landing-mobile-hero.jpg",
+      "docs/assets/chapter6/sprint3-landing-pricing.png",
+      "docs/assets/chapter6/sprint3-swagger-alerts.png",
+      "docs/assets/chapter6/sprint3-swagger-auth.png",
+      "docs/assets/chapter6/sprint3-swagger-billing.png",
+      "docs/assets/chapter6/sprint3-swagger-devices.png",
+      "docs/assets/chapter6/sprint3-swagger-overview.png",
+      "docs/assets/chapter6/sprint3-swagger-telemetry.png",
+      "docs/assets/chapter6/sprint3-swagger-zones.png",
+      "docs/assets/chapter6/sprint3-webapp-login.png"
+    ],
+    "hardware_reported_by": "Juan Angulo, via PR #38",
+    "hardware_report_independently_verified": false,
+    "still_missing": [
+      "Physical assembly photo",
+      "Captive portal / serial monitor evidence",
+      "Successful end-to-end face enrollment",
+      "Successful rule and actuator execution evidence",
+      "Successful live camera feed at time of current review"
+    ],
+    "conclusion": "The teammate's promised captures are partially integrated. Swagger, Landing and public login are present. This branch adds authenticated UI views; the physical and successful end-to-end evidence remains pending."
+  },
+  "trello_access": {
+    "board_url": "https://trello.com/b/EzAo1DBl/securiot-product-backlog",
+    "plugin_status": "Available; authenticated read succeeded",
+    "plugin_tools_available_in_this_session": true,
+    "registered_hour_estimates_found": false,
+    "source_export": "docs/sprint2/trello-sprint2-verificado.json",
+    "stories": 10,
+    "planned_story_points": 53,
+    "assigned_cards": 0,
+    "completed_cards": 0,
+    "native_board_screenshot_obtained": false,
+    "notes": "The earlier browser login barrier no longer blocks data access through the plugin. The textual table and JSON are based on returned source data; no synthetic screenshot is presented as Trello UI."
+  },
+  "team_post_sprint2_commits": [
+    {
+      "repository": "securiot2026/securiot-cloud-api",
+      "sha": "b6820c20716433ebdc1e2cfe5104a39570279b90",
+      "url": "https://github.com/securiot2026/securiot-cloud-api/commit/b6820c20716433ebdc1e2cfe5104a39570279b90",
+      "author": "Sve-nnN",
+      "author_date": "2026-11-14T04:48:07Z",
+      "committer_date": "2026-11-14T04:48:07Z",
+      "message": "feat(billing): add simulated payment gateway, plans, checkout and subscription\n\nNothing is charged. Only four documented test cards are recognised, card\nnumber, holder and cvc are never stored or logged.\n\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>",
+      "source": "GitHub commits collection for develop; metadata verification",
+      "pull_request": "#8"
+    },
+    {
+      "repository": "securiot2026/securiot-cloud-api",
+      "sha": "d0c56ea3fa75773be7c4f53a6c4d83d91d239ee2",
+      "url": "https://github.com/securiot2026/securiot-cloud-api/commit/d0c56ea3fa75773be7c4f53a6c4d83d91d239ee2",
+      "author": "Sve-nnN",
+      "author_date": "2026-11-14T01:44:02Z",
+      "committer_date": "2026-11-14T01:44:02Z",
+      "message": "docs: add operations runbook (GitFlow, CI/CD, deployment, troubleshooting)\n\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>",
+      "source": "GitHub commits collection for develop; metadata verification",
+      "pull_request": "#7"
+    },
+    {
+      "repository": "securiot2026/securiot-web-app",
+      "sha": "83d6e46cbff67ac7a61e48176d037fa0ad7f5873",
+      "url": "https://github.com/securiot2026/securiot-web-app/commit/83d6e46cbff67ac7a61e48176d037fa0ad7f5873",
+      "author": "Sve-nnN",
+      "author_date": "2026-11-14T04:49:23Z",
+      "committer_date": "2026-11-14T04:49:23Z",
+      "message": "feat(billing): add plans and checkout page with simulated payment gateway\n\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>",
+      "source": "GitHub commits collection for develop; metadata verification",
+      "pull_request": "#5"
+    },
+    {
+      "repository": "securiot2026/securiot-web-app",
+      "sha": "9726610a73f82fc3af7cef9d5b137a2116684d2a",
+      "url": "https://github.com/securiot2026/securiot-web-app/commit/9726610a73f82fc3af7cef9d5b137a2116684d2a",
+      "author": "Sve-nnN",
+      "author_date": "2026-11-14T04:51:50Z",
+      "committer_date": "2026-11-14T04:51:50Z",
+      "message": "feat(web): add SecurIoT favicon set, web manifest and meta tags\n\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>",
+      "source": "GitHub commits collection for develop; metadata verification",
+      "pull_request": "#6"
+    },
+    {
+      "repository": "securiot2026/securiot-web-app",
+      "sha": "19ff46cafebf343ee9f3dce15c79fec10223438d",
+      "url": "https://github.com/securiot2026/securiot-web-app/commit/19ff46cafebf343ee9f3dce15c79fec10223438d",
+      "author": "Sve-nnN",
+      "author_date": "2026-11-14T05:06:11Z",
+      "committer_date": "2026-11-14T05:06:11Z",
+      "message": "feat(web): collapsible side rail with grouped navigation and mobile drawer",
+      "source": "GitHub commits collection for develop; metadata verification",
+      "pull_request": "#7"
+    },
+    {
+      "repository": "securiot2026/securiot-web-app",
+      "sha": "e2412801cf6fad21b99d825e39ad3fc124842a99",
+      "url": "https://github.com/securiot2026/securiot-web-app/commit/e2412801cf6fad21b99d825e39ad3fc124842a99",
+      "author": "Sve-nnN",
+      "author_date": "2026-11-14T05:56:54Z",
+      "committer_date": "2026-11-14T05:56:54Z",
+      "message": "fix(dashboard): scannable tables with card rows on small screens, merged filters, clearer billing and rules, localized dates and copy",
+      "source": "GitHub commits collection for develop; metadata verification",
+      "pull_request": "#11"
+    },
+    {
+      "repository": "securiot2026/securiot-web-app",
+      "sha": "aff38e443276c889b93d9681a6ae247dc21f472b",
+      "url": "https://github.com/securiot2026/securiot-web-app/commit/aff38e443276c889b93d9681a6ae247dc21f472b",
+      "author": "Sve-nnN",
+      "author_date": "2026-11-14T06:24:41Z",
+      "committer_date": "2026-11-14T06:24:41Z",
+      "message": "fix(web): quote the hashed bundle regex so nginx starts\n\nUnquoted braces in the location regex made nginx reject the config and the container served 502.",
+      "source": "GitHub commits collection for develop; metadata verification",
+      "pull_request": "#12"
+    },
+    {
+      "repository": "securiot2026/securiot-web-app",
+      "sha": "b24ed4e2f5c29d75cdd2ef283421e22626d39150",
+      "url": "https://github.com/securiot2026/securiot-web-app/commit/b24ed4e2f5c29d75cdd2ef283421e22626d39150",
+      "author": "Sve-nnN",
+      "author_date": "2026-11-14T06:27:06Z",
+      "committer_date": "2026-11-14T06:27:06Z",
+      "message": "ci(web): run nginx -t on the shipped config",
+      "source": "GitHub commits collection for develop; metadata verification",
+      "pull_request": "#13"
+    },
+    {
+      "repository": "securiot2026/securiot-edge-api",
+      "sha": "010d700ace3ea3e7ccbeb1608389f6a28dfb6556",
+      "url": "https://github.com/securiot2026/securiot-edge-api/commit/010d700ace3ea3e7ccbeb1608389f6a28dfb6556",
+      "author": "Sve-nnN",
+      "author_date": "2026-11-14T05:16:59Z",
+      "committer_date": "2026-11-14T05:17:59Z",
+      "message": "ci: add Dokploy CD workflow for the edge API",
+      "source": "GitHub commits collection for develop; metadata verification",
+      "pull_request": "#5"
+    },
+    {
+      "repository": "securiot2026/securiot-embedded",
+      "sha": "28b3142f7370154455f88a5083ee14ab8e9bd38d",
+      "url": "https://github.com/securiot2026/securiot-embedded/commit/28b3142f7370154455f88a5083ee14ab8e9bd38d",
+      "author": "Sve-nnN",
+      "author_date": "2026-11-14T01:26:38Z",
+      "committer_date": "2026-11-14T01:26:38Z",
+      "message": "fix(firmware): move camera XCLK to LEDC timer 3 so servos stop killing the camera\n\nThe servos allocated LEDC timer 0 and retuned it to 50 Hz, the same timer the\ncamera used for its 20 MHz XCLK, so captures failed once the servos moved.\n\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>",
+      "source": "GitHub commits collection for develop; metadata verification",
+      "pull_request": "#3"
+    },
+    {
+      "repository": "securiot2026/securiot-embedded",
+      "sha": "3098f358b4415cce32834c3fac81fbc98de34b2f",
+      "url": "https://github.com/securiot2026/securiot-embedded/commit/3098f358b4415cce32834c3fac81fbc98de34b2f",
+      "author": "Sve-nnN",
+      "author_date": "2026-11-14T01:32:57Z",
+      "committer_date": "2026-11-14T01:32:57Z",
+      "message": "feat(firmware): capture every 100 ms with double-buffered latest-frame grab\n\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>",
+      "source": "GitHub commits collection for develop; metadata verification",
+      "pull_request": "#4"
+    },
+    {
+      "repository": "securiot2026/securiot-embedded",
+      "sha": "78773459bc1f9db8d94b1231f9b56868b40892cd",
+      "url": "https://github.com/securiot2026/securiot-embedded/commit/78773459bc1f9db8d94b1231f9b56868b40892cd",
+      "author": "Sve-nnN",
+      "author_date": "2026-11-14T05:17:16Z",
+      "committer_date": "2026-11-14T05:17:59Z",
+      "message": "ci: add tag-triggered firmware release workflow",
+      "source": "GitHub commits collection for develop; metadata verification",
+      "pull_request": "#6"
+    },
+    {
+      "repository": "securiot2026/securiot-embedded",
+      "sha": "a336a74cc603360836700e8530054745684fe5f4",
+      "url": "https://github.com/securiot2026/securiot-embedded/commit/a336a74cc603360836700e8530054745684fe5f4",
+      "author": "Sve-nnN",
+      "author_date": "2026-11-14T06:17:58Z",
+      "committer_date": "2026-11-14T06:17:58Z",
+      "message": "docs: add steps to bring up a new Edge machine and re-pair the board",
+      "source": "GitHub commits collection for develop; metadata verification",
+      "pull_request": "#8"
+    },
+    {
+      "repository": "securiot2026/securiot-mobile-app",
+      "sha": "6877f83d8173e0cceff42064bae1d96bcce543b6",
+      "url": "https://github.com/securiot2026/securiot-mobile-app/commit/6877f83d8173e0cceff42064bae1d96bcce543b6",
+      "author": "Sve-nnN",
+      "author_date": "2026-11-14T04:51:52Z",
+      "committer_date": "2026-11-14T04:51:52Z",
+      "message": "feat(brand): rename app to SecurIoT and set dark native splash\n\nAndroid label, iOS display name, web manifest and index, theme and\nbackground color #0B0E14, Android 12 splash and iOS launch screen.",
+      "source": "GitHub commits collection for develop; metadata verification",
+      "pull_request": "#6"
+    },
+    {
+      "repository": "securiot2026/securiot-mobile-app",
+      "sha": "dcfb783dd781ccfe0326a8d6f18adb2b7623ff2e",
+      "url": "https://github.com/securiot2026/securiot-mobile-app/commit/dcfb783dd781ccfe0326a8d6f18adb2b7623ff2e",
+      "author": "Sve-nnN",
+      "author_date": "2026-11-14T05:18:36Z",
+      "committer_date": "2026-11-14T05:24:55Z",
+      "message": "ci: add CI and Firebase App Distribution CD for the mobile app",
+      "source": "GitHub commits collection for develop; metadata verification",
+      "pull_request": "#7"
+    },
+    {
+      "repository": "securiot2026/securiot-landing",
+      "sha": "1349cabee2f4cdb8075016b789c03c96815a324e",
+      "url": "https://github.com/securiot2026/securiot-landing/commit/1349cabee2f4cdb8075016b789c03c96815a324e",
+      "author": "Sve-nnN",
+      "author_date": "2026-11-14T04:47:28Z",
+      "committer_date": "2026-11-14T04:47:28Z",
+      "message": "feat(landing): add pricing section with three per-camera plans\n\nSection #precios with Basic, Standard (recommended) and Plus plans,\ninstall fee note, honest scope lines and simulation disclaimer. ES/EN\ncopy via existing i18n, nav link added, plans as semantic lists, CTAs\nlink to the web app billing page.\n\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>",
+      "source": "GitHub commits collection for develop; metadata verification",
+      "pull_request": "#4"
+    },
+    {
+      "repository": "securiot2026/securiot-landing",
+      "sha": "f70f026812c1edf02c359c65788611fa562c5e32",
+      "url": "https://github.com/securiot2026/securiot-landing/commit/f70f026812c1edf02c359c65788611fa562c5e32",
+      "author": "Sve-nnN",
+      "author_date": "2026-11-14T05:13:47Z",
+      "committer_date": "2026-11-14T05:13:47Z",
+      "message": "feat(landing): redesign with new sections, micro animations and ES/EN copy\n\nHero with real screen, features, product tour, privacy and offline, comparison, FAQ, footer. Motion respects prefers-reduced-motion.",
+      "source": "GitHub commits collection for develop; metadata verification",
+      "pull_request": "#7"
+    },
+    {
+      "repository": "securiot2026/securiot-landing",
+      "sha": "2025f8026561fe86d75ca292e4de82e90a013606",
+      "url": "https://github.com/securiot2026/securiot-landing/commit/2025f8026561fe86d75ca292e4de82e90a013606",
+      "author": "Sve-nnN",
+      "author_date": "2026-11-14T05:16:39Z",
+      "committer_date": "2026-11-14T05:17:59Z",
+      "message": "ci: add CI checks and Dokploy CD for the landing page",
+      "source": "GitHub commits collection for develop; metadata verification",
+      "pull_request": "#8"
+    },
+    {
+      "repository": "securiot2026/securiot-landing",
+      "sha": "eb46f1a62f48c318edd3ad823d17e5f1c90c8e8b",
+      "url": "https://github.com/securiot2026/securiot-landing/commit/eb46f1a62f48c318edd3ad823d17e5f1c90c8e8b",
+      "author": "Sve-nnN",
+      "author_date": "2026-11-14T05:50:29Z",
+      "committer_date": "2026-11-14T05:50:29Z",
+      "message": "fix(landing): stop caching CSS and JS as immutable and version asset URLs\n\nCSS and JS kept fixed names under a 30 day immutable cache, so returning visitors saw old styles next to the new HTML and the layout broke below the hero.",
+      "source": "GitHub commits collection for develop; metadata verification",
+      "pull_request": "#12"
+    }
+  ]
+}

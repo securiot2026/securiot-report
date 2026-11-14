@@ -1,0 +1,287 @@
+{
+  "verified_on": "2026-11-14",
+  "source": "Trello plugin: read board, all board cards, each Sprint 2 card, custom fields and board membership; read-only consultation",
+  "board": {
+    "id": "ari:cloud:trello::board/workspace/6678b795bce92f9d8878b4cc/6aa0ce92540b12b8ef92dfe7",
+    "name": "SecurIoT — Product Backlog",
+    "url": "https://trello.com/b/EzAo1DBl/securiot-product-backlog",
+    "last_activity_at": "2026-09-09T03:15:15.795Z"
+  },
+  "sprint_list": {
+    "id": "ari:cloud:trello::list/workspace/6678b795bce92f9d8878b4cc/6aa0ce9d37ec6d37b91acbd5",
+    "name": "Sprint 2"
+  },
+  "pagination": {
+    "all_board_lists_read": true,
+    "all_sprint2_cards_read": true,
+    "truncated_checklists": false,
+    "truncated_comments": false
+  },
+  "board_lists": [
+    {
+      "id": "ari:cloud:trello::list/workspace/6678b795bce92f9d8878b4cc/6aa0ce9766a3926a0fa2a192",
+      "name": "Product Backlog",
+      "card_count": 0
+    },
+    {
+      "id": "ari:cloud:trello::list/workspace/6678b795bce92f9d8878b4cc/6aa0ce9bda5a87a12fe787e2",
+      "name": "Sprint 1",
+      "card_count": 7
+    },
+    {
+      "id": "ari:cloud:trello::list/workspace/6678b795bce92f9d8878b4cc/6aa0ce9d37ec6d37b91acbd5",
+      "name": "Sprint 2",
+      "card_count": 10
+    },
+    {
+      "id": "ari:cloud:trello::list/workspace/6678b795bce92f9d8878b4cc/6aa0cea19c855708a3b64731",
+      "name": "Sprint 3",
+      "card_count": 6
+    },
+    {
+      "id": "ari:cloud:trello::list/workspace/6678b795bce92f9d8878b4cc/6aa0cea4edcac712224464db",
+      "name": "Doing",
+      "card_count": 0
+    },
+    {
+      "id": "ari:cloud:trello::list/workspace/6678b795bce92f9d8878b4cc/6aa0cea80fddce96573f3af8",
+      "name": "Done",
+      "card_count": 0
+    }
+  ],
+  "custom_fields": [],
+  "summary": {
+    "stories": 10,
+    "story_points": 53,
+    "assigned_cards": 0,
+    "completed_cards": 0,
+    "cards_with_start": 0,
+    "cards_with_due": 0,
+    "cards_with_checklists": 0,
+    "cards_with_comments": 0,
+    "registered_hour_estimates_found": false
+  },
+  "cards": [
+    {
+      "story_id": "US-07",
+      "story_points": 8,
+      "title": "Configuración de reglas de alerta",
+      "id": "ari:cloud:trello::card/workspace/6678b795bce92f9d8878b4cc/6aa0ced2f1c6a2eb6793c63e",
+      "url": "https://trello.com/c/k9nTlF68",
+      "description": "Como administrador de seguridad quiero configurar reglas de alerta sobre las lecturas\nde los sensores para que la notificación se dispare apenas se detecte una intrusión.\n\nScenario: Create an alert rule\n  Given the administrator is on the \"Alert rules\" section\n  When they define a rule with a condition, a target zone and a severity level\n  Then the rule is activated and evaluated against incoming telemetry",
+      "list_id": "ari:cloud:trello::list/workspace/6678b795bce92f9d8878b4cc/6aa0ce9d37ec6d37b91acbd5",
+      "closed": false,
+      "complete": false,
+      "members": [],
+      "started_at": null,
+      "due": {
+        "date": null,
+        "complete": false
+      },
+      "last_activity_at": "2026-09-09T03:13:22.960Z",
+      "checklists": [],
+      "checklists_has_more": false,
+      "comments": [],
+      "comments_has_more": false
+    },
+    {
+      "story_id": "US-09",
+      "story_points": 3,
+      "title": "Atención y cierre de una alerta",
+      "id": "ari:cloud:trello::card/workspace/6678b795bce92f9d8878b4cc/6aa0ced68de777d28c2f458a",
+      "url": "https://trello.com/c/0mlx70IS",
+      "description": "Como personal de vigilancia quiero actualizar el estado de una alerta que atendí\npara dejar registro de la respuesta ejecutada.\n\nScenario: Update alert status after response\n  Given the guard opens an active alert\n  When they mark it as \"attended\" and add a response note\n  Then the alert changes to \"attended\" with the guard, note and timestamp recorded",
+      "list_id": "ari:cloud:trello::list/workspace/6678b795bce92f9d8878b4cc/6aa0ce9d37ec6d37b91acbd5",
+      "closed": false,
+      "complete": false,
+      "members": [],
+      "started_at": null,
+      "due": {
+        "date": null,
+        "complete": false
+      },
+      "last_activity_at": "2026-09-09T03:13:26.883Z",
+      "checklists": [],
+      "checklists_has_more": false,
+      "comments": [],
+      "comments_has_more": false
+    },
+    {
+      "story_id": "US-03",
+      "story_points": 3,
+      "title": "Detalle de un dispositivo",
+      "id": "ari:cloud:trello::card/workspace/6678b795bce92f9d8878b4cc/6aa0cedb1a421083c96e3673",
+      "url": "https://trello.com/c/isOoRQ9z",
+      "description": "Como administrador de seguridad quiero abrir el detalle de un dispositivo\npara revisar sus últimas lecturas y su configuración.\n\nScenario: View device detail\n  Given the administrator selects a device from the list\n  When the device detail view opens\n  Then it shows the device identifier, zone, current status and the last telemetry readings",
+      "list_id": "ari:cloud:trello::list/workspace/6678b795bce92f9d8878b4cc/6aa0ce9d37ec6d37b91acbd5",
+      "closed": false,
+      "complete": false,
+      "members": [],
+      "started_at": null,
+      "due": {
+        "date": null,
+        "complete": false
+      },
+      "last_activity_at": "2026-09-09T03:13:31.053Z",
+      "checklists": [],
+      "checklists_has_more": false,
+      "comments": [],
+      "comments_has_more": false
+    },
+    {
+      "story_id": "US-06",
+      "story_points": 5,
+      "title": "Gestión de personas autorizadas",
+      "id": "ari:cloud:trello::card/workspace/6678b795bce92f9d8878b4cc/6aa0cedfec27c5adcd563cb0",
+      "url": "https://trello.com/c/tiSvl0ji",
+      "description": "Como administrador de seguridad quiero administrar la lista de personas autorizadas\npor zona para mantener actualizado quién puede ingresar.\n\nScenario: Add an authorized person to a zone\n  Given the administrator is managing a restricted zone\n  When they add a person with valid identification data\n  Then that person is included in the zone's authorized list for future validations",
+      "list_id": "ari:cloud:trello::list/workspace/6678b795bce92f9d8878b4cc/6aa0ce9d37ec6d37b91acbd5",
+      "closed": false,
+      "complete": false,
+      "members": [],
+      "started_at": null,
+      "due": {
+        "date": null,
+        "complete": false
+      },
+      "last_activity_at": "2026-09-09T03:13:35.070Z",
+      "checklists": [],
+      "checklists_has_more": false,
+      "comments": [],
+      "comments_has_more": false
+    },
+    {
+      "story_id": "US-10",
+      "story_points": 5,
+      "title": "Consulta del historial de eventos",
+      "id": "ari:cloud:trello::card/workspace/6678b795bce92f9d8878b4cc/6aa0cee3726a8f2cbe587757",
+      "url": "https://trello.com/c/C0AXOSVd",
+      "description": "Como administrador de seguridad quiero consultar el historial de eventos filtrado\npor sede, zona y fecha para auditar lo ocurrido.\n\nScenario: Filter the event history\n  Given the administrator is on the \"Event history\" section\n  When they filter by site, zone and a date range\n  Then the list shows only the events matching the filters, ordered by most recent",
+      "list_id": "ari:cloud:trello::list/workspace/6678b795bce92f9d8878b4cc/6aa0ce9d37ec6d37b91acbd5",
+      "closed": false,
+      "complete": false,
+      "members": [],
+      "started_at": null,
+      "due": {
+        "date": null,
+        "complete": false
+      },
+      "last_activity_at": "2026-09-09T03:13:39.308Z",
+      "checklists": [],
+      "checklists_has_more": false,
+      "comments": [],
+      "comments_has_more": false
+    },
+    {
+      "story_id": "US-13",
+      "story_points": 5,
+      "title": "Dashboard de indicadores",
+      "id": "ari:cloud:trello::card/workspace/6678b795bce92f9d8878b4cc/6aa0cee7fc1ce01a66d8d53a",
+      "url": "https://trello.com/c/Y5N3lMI7",
+      "description": "Como gerente de la pyme quiero un dashboard con indicadores agregados\npara evaluar si el servicio justifica su costo.\n\nScenario: View aggregated indicators\n  Given the manager is authenticated\n  When they open the dashboard\n  Then it shows the number of active alerts, incidents by zone and response times for their sites",
+      "list_id": "ari:cloud:trello::list/workspace/6678b795bce92f9d8878b4cc/6aa0ce9d37ec6d37b91acbd5",
+      "closed": false,
+      "complete": false,
+      "members": [],
+      "started_at": null,
+      "due": {
+        "date": null,
+        "complete": false
+      },
+      "last_activity_at": "2026-09-09T03:13:43.594Z",
+      "checklists": [],
+      "checklists_has_more": false,
+      "comments": [],
+      "comments_has_more": false
+    },
+    {
+      "story_id": "US-14",
+      "story_points": 8,
+      "title": "Aplicación móvil para vigilancia",
+      "id": "ari:cloud:trello::card/workspace/6678b795bce92f9d8878b4cc/6aa0ceebd2d2af66e4a39169",
+      "url": "https://trello.com/c/Xyq3CTKu",
+      "description": "Como personal de vigilancia quiero usar la app móvil durante mis rondas\npara recibir alertas y atenderlas desde el celular.\n\nScenario: Attend an alert from the mobile app\n  Given the guard is logged into the mobile app\n  When an intrusion alert arrives\n  Then the app shows the alert detail and lets the guard mark it as attended in the field",
+      "list_id": "ari:cloud:trello::list/workspace/6678b795bce92f9d8878b4cc/6aa0ce9d37ec6d37b91acbd5",
+      "closed": false,
+      "complete": false,
+      "members": [],
+      "started_at": null,
+      "due": {
+        "date": null,
+        "complete": false
+      },
+      "last_activity_at": "2026-09-09T03:13:47.813Z",
+      "checklists": [],
+      "checklists_has_more": false,
+      "comments": [],
+      "comments_has_more": false
+    },
+    {
+      "story_id": "US-18",
+      "story_points": 3,
+      "title": "Comprensión de la propuesta de valor (Landing)",
+      "id": "ari:cloud:trello::card/workspace/6678b795bce92f9d8878b4cc/6aa0cf20af530ab786bf769c",
+      "url": "https://trello.com/c/KoOAmUAn",
+      "description": "Como visitante de la Landing Page quiero entender qué resuelve SECURIOT para decidir si es relevante para mi empresa.\n\nScenario: Value proposition is clear\nGiven a visitor opens the landing page\nWhen the page loads\nThen it presents the problem, the SECURIOT solution and its main benefits for industrial SMEs",
+      "list_id": "ari:cloud:trello::list/workspace/6678b795bce92f9d8878b4cc/6aa0ce9d37ec6d37b91acbd5",
+      "closed": false,
+      "complete": false,
+      "members": [],
+      "started_at": null,
+      "due": {
+        "date": null,
+        "complete": false
+      },
+      "last_activity_at": "2026-09-09T03:14:40.458Z",
+      "checklists": [],
+      "checklists_has_more": false,
+      "comments": [],
+      "comments_has_more": false
+    },
+    {
+      "story_id": "US-21",
+      "story_points": 8,
+      "title": "Procesamiento en el borde tolerante a desconexión",
+      "id": "ari:cloud:trello::card/workspace/6678b795bce92f9d8878b4cc/6aa0cf246d24959397d46882",
+      "url": "https://trello.com/c/r3fDkpRU",
+      "description": "Como integrante técnico del equipo quiero que la Edge API procese y reencole la telemetría cuando se pierde conexión con la nube para no perder eventos de seguridad.\n\nScenario: Edge buffers telemetry while offline\nGiven the Edge API loses connection with the Cloud API\nWhen devices keep reporting telemetry\nThen the Edge API stores the readings locally\nAnd forwards them to the Cloud API once the connection is restored",
+      "list_id": "ari:cloud:trello::list/workspace/6678b795bce92f9d8878b4cc/6aa0ce9d37ec6d37b91acbd5",
+      "closed": false,
+      "complete": false,
+      "members": [],
+      "started_at": null,
+      "due": {
+        "date": null,
+        "complete": false
+      },
+      "last_activity_at": "2026-09-09T03:14:44.728Z",
+      "checklists": [],
+      "checklists_has_more": false,
+      "comments": [],
+      "comments_has_more": false
+    },
+    {
+      "story_id": "US-22",
+      "story_points": 5,
+      "title": "Despliegue con contenedores y CI/CD",
+      "id": "ari:cloud:trello::card/workspace/6678b795bce92f9d8878b4cc/6aa0cf2a6159dd7ef8969c17",
+      "url": "https://trello.com/c/VZ82RdMa",
+      "description": "Como integrante técnico del equipo quiero empaquetar los servicios con Docker y automatizar el despliegue para garantizar entornos reproducibles siguiendo GitFlow.\n\nScenario: Containerized build and deploy\nGiven the source code of a service on the develop branch\nWhen the pipeline builds the Docker image\nThen the image is produced and the service can be deployed in a reproducible environment",
+      "list_id": "ari:cloud:trello::list/workspace/6678b795bce92f9d8878b4cc/6aa0ce9d37ec6d37b91acbd5",
+      "closed": false,
+      "complete": false,
+      "members": [],
+      "started_at": null,
+      "due": {
+        "date": null,
+        "complete": false
+      },
+      "last_activity_at": "2026-09-09T03:14:50.374Z",
+      "checklists": [],
+      "checklists_has_more": false,
+      "comments": [],
+      "comments_has_more": false
+    }
+  ],
+  "interpretation": "This is the planning list's current state. Story Points are not hours or completed velocity. Technical work-item IDs and author-based assignments in the report are reconstructed from implementation records and are not Trello checklist fields."
+}

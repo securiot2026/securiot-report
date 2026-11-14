@@ -166,6 +166,52 @@ La división por aspectos permitió que cada integrante asumiera una responsabil
 
 Como oportunidad de mejora, la implementación de código quedó concentrada principalmente en los responsables técnicos de los servicios. Para las siguientes iteraciones, el equipo debe distribuir con mayor equilibrio las tareas de programación, pruebas y despliegue, manteniendo responsables claros y revisiones cruzadas antes de integrar cada cambio.
 
+## AV2 – Sprint Review (Semana 12)
+
+### Organización del trabajo y responsabilidades
+
+Para AV2, el equipo distribuyó las responsabilidades de cierre entre desarrollo, gestión del Sprint, validación y documentación. Matias Salcedo consolida el Sprint Backlog 2, relaciona las tareas con los commits y reúne las evidencias de ejecución. La implementación se atribuye al autor registrado en cada repositorio.
+
+| Integrante | Responsabilidad asignada para AV2 |
+| --- | --- |
+| Juan Angulo | Cloud API e integración; capturas de Swagger; revisión técnica e informe individual de desempeño como Team Leader. |
+| Pietro Osores | Edge API e IoT; commits, capturas, demostración y revisión de evidencias técnicas. |
+| Rommel Hurtado | Sprint Planning 2, documentación de servicios con los responsables técnicos, despliegue, ZIP y About-the-Team. |
+| Matias Salcedo | Sprint Backlog 2, commits, Execution Evidence, Project Report Collaboration Insights y coordinación de Landing Page. |
+| Melina Santillan | Testing Suite, heurísticas, coordinación de Web App, resultados de pruebas, conclusiones y recomendaciones. |
+| Daniel Aquino | Diseño y registro de entrevistas, validación real, coordinación de Mobile App y Final Project Keynote. |
+| Javier Nikaido | Aspect Leaders and Collaborators, Team Collaboration Insights del Sprint, Registro de Versiones, Student Outcome y About-the-Product. |
+
+### Evidencia de integración del informe
+
+El corte de este análisis es `e95359c`, integrado en `develop` el **14/11/2026**. Entre los cambios posteriores a TB1 están las correcciones de [PR #32](https://github.com/securiot2026/securiot-report/pull/32), el diseño de validación de [PR #33](https://github.com/securiot2026/securiot-report/pull/33), el Sprint 3 de [PR #34](https://github.com/securiot2026/securiot-report/pull/34), la arquitectura de facturación de [PR #35](https://github.com/securiot2026/securiot-report/pull/35), las entrevistas de [PR #37](https://github.com/securiot2026/securiot-report/pull/37) y su ajuste en [PR #39](https://github.com/securiot2026/securiot-report/pull/39). También se incorporaron CI del informe en [PR #36](https://github.com/securiot2026/securiot-report/pull/36) y las nuevas evidencias y correcciones de [PR #38](https://github.com/securiot2026/securiot-report/pull/38).
+
+| Autor registrado en Git | Commits sin merge entre el 09/10 y el 14/11/2026 | Ejemplo verificable |
+| --- | --- | --- |
+| Daniel Aquino | 6 | [Diseño de validación](https://github.com/securiot2026/securiot-report/commit/251693e6c0e4739b14840d880350db92a7e7d235) y [registro de entrevistas](https://github.com/securiot2026/securiot-report/commit/d19a723ae1c80a4cba07fd3f8a779aa50c07b1aa). |
+| rommelDN (Rommel Hurtado) | 4 | [Documentación de Sprint 3](https://github.com/securiot2026/securiot-report/commit/c92556d) e integración de PR #34. |
+| Juan Angulo | 5 | [Facturación y Suscripciones](https://github.com/securiot2026/securiot-report/commit/cfdf9430b2927152d4f0fcde95da71fb9b781a73). |
+
+El conteo usa la fecha de registro del commit y excluye merges. Incluye un squash de PR #34 y commits originales que siguen en el historial: representa registros de Git y no cambios únicos, horas ni calidad del aporte. Los integrantes sin registros en ese intervalo no se califican como inactivos; sus tareas de coordinación, prueba y validación requieren evidencias propias. Los cambios de esta rama de Matias se preparan después del corte y no se incluyen en esos números.
+
+### Capturas actuales de GitHub Insights
+
+Las siguientes capturas se obtuvieron el **14/11/2026** en [Insights → Contributors](https://github.com/securiot2026/securiot-report/graphs/contributors). GitHub identifica la rama `develop`, el periodo «Last 3 months» y la exclusión de merges. Este alcance acumulado es distinto del intervalo posterior a TB1 de la tabla anterior; sus cifras no deben sumarse ni interpretarse como horas de trabajo.
+
+![GitHub Insights: actividad del informe en develop](docs/assets/chapter6/av2-report-contributors-overview.jpg)
+
+*Figura AV2-C1. Actividad semanal del informe y periodo seleccionado en GitHub Insights.*
+
+![GitHub Insights: contribuciones de integrantes, incluida matiAAsc](docs/assets/chapter6/av2-report-contributors-members.jpg)
+
+*Figura AV2-C2. Detalle acumulado de contribuciones. La tarjeta de `matiAAsc` muestra 11 commits en el periodo de la vista, anteriores a la integración de esta rama.*
+
+### Evaluación y cierre de la colaboración
+
+El historial permite identificar quién incorporó cada cambio y cómo llegó a `develop`. La revisión del Sprint 2 relacionó trece tareas con catorce commits de cuatro componentes; los catorce registros corresponden a Juan Angulo. La distribución de responsabilidades de AV2 debe contrastarse con las contribuciones de código y los materiales de cada responsable antes del cierre.
+
+Matias facilitó el acceso demo y confirmó el tablero de Trello y la fecha de planificación consignados. Esta rama reúne las capturas actuales de colaboración y de la Landing, y documenta las vistas disponibles de la Web App. La comprobación de la Landing incluye español, inglés, vista móvil, menú, teclado y acceso al panel. Quedan sin demostrar los flujos que requieren Edge y el dispositivo físico; el dominio configurado para Edge no resolvió durante la revisión. La consulta autenticada de Trello confirmó diez historias por 53 SP, sin responsables asignados ni registro de horas; por eso las estimaciones se conservan como NR. Las capturas de Swagger, Landing y login ya se integraron desde el PR #38; faltan las evidencias visuales de los flujos de IoT que el líder reportó.
+
 ## Sprint 2 y Sprint 3 (datos de GitHub al 14/11/2026)
 
 Esta sección recalcula los aportes con datos de GitHub consultados el 14 de noviembre de 2026 (`gh api repos/securiot2026/<repo>/contributors` y `git log origin/develop --no-merges`). Las cifras de `contributors` cuentan la rama por defecto de cada repositorio. Las tablas de AV1 y TB1 se conservan sin cambios.
@@ -4052,46 +4098,74 @@ Pendiente: confirmar con el equipo si la matriz LACX del Sprint 1 se mantuvo sin
 
 #### 6.2.2.3. Sprint Backlog 2
 
-El Sprint Backlog 2 descompone las historias seleccionadas en tareas rastreables. El equipo no registró horas por tarea en este Sprint, por lo que la tabla identifica cada tarea por el requisito que cubre.
+El Sprint Backlog 2 reúne trece tareas de firmware, Edge API, Cloud API y Web App. Cada tarea conserva su identificador y se relaciona con los commits verificados en 6.2.2.4. La asignación de implementación corresponde al autor registrado en GitHub; la recopilación y revisión documental de este backlog corresponde a Matias Salcedo.
 
 **Tablero del Sprint (Trello):** https://trello.com/b/EzAo1DBl/securiot-product-backlog
 
-| Story Id | Story Title | Task Id | Task Title | Requisito | Assigned To | Status |
-| --- | --- | --- | --- | --- | --- | --- |
-| US-21 | Procesamiento en el borde tolerante a desconexión | T-21.1 | Portal cautivo en el ESP32-CAM para configurar WiFi, URL de la Edge API y clave del dispositivo | PROV-01, PROV-02 | Angulo (`Sve-nnN`) | Done |
-| US-21 | | T-21.2 | Persistencia de la configuración en memoria no volátil y reapertura del portal tras tres intentos fallidos de conexión | PROV-03, PROV-04, PROV-05 | Angulo (`Sve-nnN`) | Done |
-| US-06 | Gestión de personas autorizadas | T-06.1 | Endpoint `POST /faces` en la Edge API protegido con clave de administrador | Reconocimiento facial | Angulo (`Sve-nnN`) | Done |
-| US-06 | | T-06.2 | Proxy `POST /api/v1/devices/:id/faces` y campo `edgeUrl` por dispositivo en la Cloud API | Reconocimiento facial | Angulo (`Sve-nnN`) | Done |
-| US-06 | | T-06.3 | Activación por dispositivo del reconocimiento facial (Edge y Cloud) | Reconocimiento facial | Angulo (`Sve-nnN`) | Done |
-| US-06 | | T-06.4 | Pantalla de la Web App para la URL del Edge, el registro de rostros y la activación | Reconocimiento facial | Angulo (`Sve-nnN`) | Done |
-| Técnica | Control manual del dispositivo | T-CMD.1 | Cola de comandos manuales en la Edge API con vencimiento y supresión de la acción automática | CTRL-04, CTRL-06 | Angulo (`Sve-nnN`) | Done |
-| Técnica | Control manual del dispositivo | T-CMD.2 | Proxy `POST /api/v1/devices/:id/commands` en la Cloud API | CTRL-04 | Angulo (`Sve-nnN`) | Done |
-| Técnica | Control manual del dispositivo | T-CMD.3 | Despacho de `manual_command` desde la respuesta de `/frames` en el firmware | CTRL-04 | Angulo (`Sve-nnN`) | Done |
-| US-07 | Configuración de reglas de alerta | T-07.1 | Modelo `Rule`, motor de evaluación y CRUD `/rules` en la Edge API | RULE-05, RULE-06, RULE-12 | Angulo (`Sve-nnN`) | Done |
-| US-07 | | T-07.2 | Condiciones de arma (clase `knife`), fuego y ocupación diaria de zona | RULE-07, RULE-08, RULE-09 | Angulo (`Sve-nnN`) | Done |
-| US-07 | | T-07.3 | Retiro de la regla fija `door_contact_open` y alerta genérica `rule_alert` en la Cloud API | RULE-12 | Angulo (`Sve-nnN`) | Done |
-| US-21 | | T-21.3 | Alerta automática cuando un dispositivo pasa a estado fuera de línea | EXTR-01 | Angulo (`Sve-nnN`) | Done |
+**Planificación verificada en Trello (14/11/2026).** La lista Sprint 2 contiene **10 historias y 53 Story Points**. Ninguna tiene miembros asignados, fecha de inicio, vencimiento, checklist, comentarios ni marca de completada. El tablero tampoco define campos personalizados de horas. Las listas Doing y Done están vacías. La [consulta exportada](docs/sprint2/trello-sprint2-verificado.json) conserva el detalle y los enlaces de las tarjetas.
+
+| Story Id | Story Title | SP en Trello | Asignación en Trello | Estado en Trello |
+| --- | --- | --- | --- | --- |
+| [US-07](https://trello.com/c/k9nTlF68) | Configuración de reglas de alerta | 8 | Sin asignar | En lista Sprint 2; sin completar |
+| [US-09](https://trello.com/c/0mlx70IS) | Atención y cierre de una alerta | 3 | Sin asignar | En lista Sprint 2; sin completar |
+| [US-03](https://trello.com/c/isOoRQ9z) | Detalle de un dispositivo | 3 | Sin asignar | En lista Sprint 2; sin completar |
+| [US-06](https://trello.com/c/tiSvl0ji) | Gestión de personas autorizadas | 5 | Sin asignar | En lista Sprint 2; sin completar |
+| [US-10](https://trello.com/c/C0AXOSVd) | Consulta del historial de eventos | 5 | Sin asignar | En lista Sprint 2; sin completar |
+| [US-13](https://trello.com/c/Y5N3lMI7) | Dashboard de indicadores | 5 | Sin asignar | En lista Sprint 2; sin completar |
+| [US-14](https://trello.com/c/Xyq3CTKu) | Aplicación móvil para vigilancia | 8 | Sin asignar | En lista Sprint 2; sin completar |
+| [US-18](https://trello.com/c/KoOAmUAn) | Comprensión de la propuesta de valor (Landing) | 3 | Sin asignar | En lista Sprint 2; sin completar |
+| [US-21](https://trello.com/c/r3fDkpRU) | Procesamiento en el borde tolerante a desconexión | 8 | Sin asignar | En lista Sprint 2; sin completar |
+| [US-22](https://trello.com/c/VZ82RdMa) | Despliegue con contenedores y CI/CD | 5 | Sin asignar | En lista Sprint 2; sin completar |
+| **Total planificado en la lista** | | **53** | | |
+
+El total de 53 SP representa la lista de planificación y no la velocidad lograda. El Planning del informe selecciona US-06 y US-21 (13 SP) y adelanta el motor de US-07; por eso el alcance técnico documentado es menor que el conjunto de tarjetas. La ubicación en Trello se conserva tal como se consultó, incluso para US-03 y US-14, cuyo desarrollo se documenta después en el Sprint 3.
+
+Los identificadores T-21, T-06, T-CMD y T-07 de la tabla siguiente pertenecen a la descomposición técnica del informe y a sus commits; no son checklists registrados en las tarjetas. La asignación a Juan Angulo y Done proceden del registro de implementación, no de los campos de Trello.
+
+**Sprint #:** Sprint 2. **Estimación en horas:** NR significa «no registrada en el tablero consultado ni en la documentación disponible»; no equivale a cero horas. Los Story Points no se convierten en horas. Done conserva el cierre de implementación consignado en el informe; la evidencia de ejecución y la validación física se detallan en 6.2.2.6.
+
+| Story Id | Story Title | Task Id | Task Title | Task Description | Estimation (Hours) | Assigned To | Status | Evidencia de desarrollo |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| US-21 | Procesamiento en el borde tolerante a desconexión | T-21.1 | Portal cautivo del ESP32-CAM | Capturar WiFi, URL de Edge y clave del dispositivo (PROV-01, PROV-02). | NR | Juan Angulo (`Sve-nnN`) | Done | [`0d3f69f`](https://github.com/securiot2026/securiot-embedded/commit/0d3f69faf3a07f5ed99d641038ec930d0f608507), [`35df98c`](https://github.com/securiot2026/securiot-embedded/commit/35df98c873894b94dcaf5abdc0a57353328fbc2a), [`821036e`](https://github.com/securiot2026/securiot-embedded/commit/821036e20fb37cf861bf763416d125903692d1b9) |
+| US-21 |  | T-21.2 | Persistencia y recuperación | Guardar los datos en NVS y reabrir el portal tras tres intentos fallidos (PROV-03 a PROV-05). | NR | Juan Angulo (`Sve-nnN`) | Done | [`174078f`](https://github.com/securiot2026/securiot-embedded/commit/174078fc2d73d260b4455340840dbd368f3768e0) |
+| US-06 | Gestión de personas autorizadas | T-06.1 | Registro de rostros en Edge | Implementar POST /faces protegido y limpiar los archivos temporales. | NR | Juan Angulo (`Sve-nnN`) | Done | [`e060a73`](https://github.com/securiot2026/securiot-edge-api/commit/e060a7315f5dcead8ad11dcc4f6fd6614ffed060) |
+| US-06 |  | T-06.2 | Integración del registro facial en Cloud | Añadir edgeUrl y el proxy POST /api/v1/devices/:id/faces. | NR | Juan Angulo (`Sve-nnN`) | Done | [`e111d45`](https://github.com/securiot2026/securiot-cloud-api/commit/e111d45f33673b81e2971285d1d1b64af65631e9) |
+| US-06 |  | T-06.3 | Activación por dispositivo | Exponer GET/PATCH de face-recognition en Edge y su proxy en Cloud. | NR | Juan Angulo (`Sve-nnN`) | Done | [`2e8d98b`](https://github.com/securiot2026/securiot-edge-api/commit/2e8d98be1b8ac38833e690b2d281037cbd6467eb), [`b1601d8`](https://github.com/securiot2026/securiot-cloud-api/commit/b1601d82507ce496fcc93fd720aae8f6e3cf551a) |
+| US-06 |  | T-06.4 | Interfaz de registro y configuración | Configurar edgeUrl, cargar fotografías y mostrar el estado del reconocimiento en Web. | NR | Juan Angulo (`Sve-nnN`) | Done | [`5520458`](https://github.com/securiot2026/securiot-web-app/commit/552045881b082fd3b7ff922d2f89283da35120f5) |
+| Técnica | Control manual del dispositivo | T-CMD.1 | Cola de comandos en Edge | Gestionar vencimiento y precedencia sobre la acción automática (CTRL-04, CTRL-06). | NR | Juan Angulo (`Sve-nnN`) | Done | [`4bd89eb`](https://github.com/securiot2026/securiot-edge-api/commit/4bd89eb85270d82b3c0fb9f9766485cd81d9718b) |
+| Técnica |  | T-CMD.2 | Proxy de comandos en Cloud | Validar el propietario y el actuador antes de enviar el comando a Edge (CTRL-04). | NR | Juan Angulo (`Sve-nnN`) | Done | [`1266eda`](https://github.com/securiot2026/securiot-cloud-api/commit/1266edacbc0ed13ae4b62ae95ca6bac9b3fb0430) |
+| Técnica |  | T-CMD.3 | Despacho en el firmware | Interpretar manual_command de /frames para pan/tilt, luz y buzzer (CTRL-04). | NR | Juan Angulo (`Sve-nnN`) | Done | [`86de4d3`](https://github.com/securiot2026/securiot-embedded/commit/86de4d367947ae664525c4c9dfa312738cb45dac) |
+| US-07 | Configuración de reglas de alerta | T-07.1 | Modelo y administración de reglas | Implementar Rule, CRUD protegido y evaluación (RULE-05, RULE-06, RULE-12). | NR | Juan Angulo (`Sve-nnN`) | Done | [`8baa1aa`](https://github.com/securiot2026/securiot-edge-api/commit/8baa1aa79caa6910f5d953bf64961b18b4502d7c) |
+| US-07 |  | T-07.2 | Condiciones y prioridad | Evaluar knife, fuego y ocupación; resolver conflictos por prioridad (RULE-07 a RULE-09). | NR | Juan Angulo (`Sve-nnN`) | Done | [`8baa1aa`](https://github.com/securiot2026/securiot-edge-api/commit/8baa1aa79caa6910f5d953bf64961b18b4502d7c) |
+| US-07 |  | T-07.3 | Alertas de reglas en Cloud | Sustituir la evaluación fija de puerta por el procesamiento genérico de rule_alert (RULE-12). | NR | Juan Angulo (`Sve-nnN`) | Done | [`9edffbb`](https://github.com/securiot2026/securiot-cloud-api/commit/9edffbb4f47bfc3aba9fd8a7d8c83bd467c1ff70) |
+| US-21 |  | T-21.3 | Alerta por dispositivo fuera de línea | Revisar la última lectura y resolver la alerta cuando el dispositivo vuelve a reportar (EXTR-01). | NR | Juan Angulo (`Sve-nnN`) | Done | [`9edffbb`](https://github.com/securiot2026/securiot-cloud-api/commit/9edffbb4f47bfc3aba9fd8a7d8c83bd467c1ff70) |
+
+**Alcance de las historias.** US-07 entrega aquí el motor de reglas; su pantalla y cierre se documentan en el Sprint 3. El aprovisionamiento y la presencia asociados a US-21 son soporte técnico para operar el dispositivo: estos commits no demuestran por sí solos el almacenamiento y reenvío de telemetría con reintentos que exige esa historia en 3.1. El registro de rostros de US-06 requiere una comprobación adicional de las autorizaciones por zona y periodo de vigencia previstas en sus criterios de aceptación. El cierre de tareas de código no acredita automáticamente todos los criterios de una User Story.
 
 #### 6.2.2.4. Development Evidence for Sprint Review
 
-Durante el Sprint 2 se implementaron el aprovisionamiento del firmware, el registro de rostros autorizados, la cola de comandos manuales y el motor de reglas. Las ramas de trabajo se integraron en `develop` siguiendo GitFlow. La siguiente tabla lista los commits representativos por repositorio.
+La implementación documentada para el Sprint 2 incorpora aprovisionamiento del ESP32-CAM, registro de rostros, comandos manuales y reglas configurables. Se verificaron en GitHub los catorce commits ya consignados: cinco de firmware, cuatro de Edge, cuatro de Cloud y uno de Web App. Todos figuran bajo el autor `Sve-nnN` (Juan Angulo). La rama indicada es la de integración; un commit no permite reconstruir por sí solo su rama de origen.
 
-| Repository | Branch | Commit Id | Commit Message | Committed on |
-| --- | --- | --- | --- | --- |
-| securiot2026/securiot-embedded | develop | `0d3f69f` | feat(provisioning): add MycilaESPConnect captive portal + /provision-extra form | 2026-09-08 |
-| securiot2026/securiot-embedded | develop | `174078f` | feat(wifi_manager): read WiFi credentials from Preferences, reopen portal on 3 failed attempts | 2026-09-08 |
-| securiot2026/securiot-embedded | develop | `35df98c` | feat(main): source Edge API URL and device key from the provisioning module | 2026-09-08 |
-| securiot2026/securiot-embedded | develop | `821036e` | fix(provisioning): keep phone on the AP for the whole flow instead of requiring a manual rejoin | 2026-09-10 |
-| securiot2026/securiot-embedded | develop | `86de4d3` | feat(07): dispatch manual_command from the /frames response | 2026-09-17 |
-| securiot2026/securiot-edge-api | develop | `e060a73` | feat(06.1-01): add protected POST /faces enrollment endpoint | 2026-09-17 |
-| securiot2026/securiot-edge-api | develop | `2e8d98b` | feat(06.1-02): port capture-quality gates + per-device face-recognition toggle | 2026-09-17 |
-| securiot2026/securiot-edge-api | develop | `4bd89eb` | feat(07): add manual command queue with TTL and door-action suppression | 2026-09-17 |
-| securiot2026/securiot-edge-api | develop | `8baa1aa` | feat(08): replace hardcoded door_contact_open with configurable rules engine | 2026-09-17 |
-| securiot2026/securiot-cloud-api | develop | `e111d45` | feat(06.1-01): proxy face enrollment to a device's Edge API | 2026-09-17 |
-| securiot2026/securiot-cloud-api | develop | `b1601d8` | feat(06.1-03): proxy the per-device face-recognition toggle to Edge | 2026-09-17 |
-| securiot2026/securiot-cloud-api | develop | `1266eda` | feat(07): add POST /devices/:id/commands proxy to Edge | 2026-09-17 |
-| securiot2026/securiot-cloud-api | develop | `9edffbb` | feat(08): retire hardcoded door_contact_open Alert logic, add device offline alert | 2026-09-17 |
-| securiot2026/securiot-web-app | develop | `5520458` | feat(06.1-04): Web UI for device edge URL, face enrollment, and toggle | 2026-09-17 |
+La consulta se realizó el **14/11/2026**. Los cambios finales de cada componente están contenidos en `develop`, según las comparaciones de [Embedded](https://github.com/securiot2026/securiot-embedded/compare/86de4d3...develop), [Edge](https://github.com/securiot2026/securiot-edge-api/compare/8baa1aa...develop), [Cloud](https://github.com/securiot2026/securiot-cloud-api/compare/9edffbb...develop) y [Web App](https://github.com/securiot2026/securiot-web-app/compare/5520458...develop). El [registro de verificación](docs/sprint2/commits-verificados.json) conserva SHA completos, autor, fecha, mensaje y archivos modificados para los catorce commits originales, además de los metadatos de los diecinueve commits posteriores incorporados por el equipo.
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body (resumen) | Committed on (Date) |
+| --- | --- | --- | --- | --- | --- |
+| [securiot2026/securiot-embedded](https://github.com/securiot2026/securiot-embedded) | develop (integración) | [`0d3f69f`](https://github.com/securiot2026/securiot-embedded/commit/0d3f69faf3a07f5ed99d641038ec930d0f608507) | feat(provisioning): add MycilaESPConnect captive portal + /provision-extra form | Portal WiFi y /provision-extra; persistencia en NVS después de comprobar que Edge responde. | 2026-09-08 |
+| [securiot2026/securiot-embedded](https://github.com/securiot2026/securiot-embedded) | develop (integración) | [`174078f`](https://github.com/securiot2026/securiot-embedded/commit/174078fc2d73d260b4455340840dbd368f3768e0) | feat(wifi_manager): read WiFi credentials from Preferences, reopen portal on 3 failed attempts | Lectura de Preferences y reapertura del portal tras tres intentos fallidos. | 2026-09-08 |
+| [securiot2026/securiot-embedded](https://github.com/securiot2026/securiot-embedded) | develop (integración) | [`35df98c`](https://github.com/securiot2026/securiot-embedded/commit/35df98c873894b94dcaf5abdc0a57353328fbc2a) | feat(main): source Edge API URL and device key from the provisioning module | URL y clave de Edge desde aprovisionamiento; captura suspendida mientras el portal está activo. | 2026-09-08 |
+| [securiot2026/securiot-embedded](https://github.com/securiot2026/securiot-embedded) | develop (integración) | [`821036e`](https://github.com/securiot2026/securiot-embedded/commit/821036e20fb37cf861bf763416d125903692d1b9) | fix(provisioning): keep phone on the AP for the whole flow instead of requiring a manual rejoin | Mantiene el teléfono en el punto de acceso y sirve el formulario adicional en 4.3.2.1. | 2026-09-10 |
+| [securiot2026/securiot-embedded](https://github.com/securiot2026/securiot-embedded) | develop (integración) | [`86de4d3`](https://github.com/securiot2026/securiot-embedded/commit/86de4d367947ae664525c4c9dfa312738cb45dac) | feat(07): dispatch manual_command from the /frames response | Despacha pan_tilt, light y buzzer; el cuerpo registra compilación exitosa. | 2026-09-17 |
+| [securiot2026/securiot-edge-api](https://github.com/securiot2026/securiot-edge-api) | develop (integración) | [`e060a73`](https://github.com/securiot2026/securiot-edge-api/commit/e060a7315f5dcead8ad11dcc4f6fd6614ffed060) | feat(06.1-01): add protected POST /faces enrollment endpoint | Registro protegido por X-Admin-Key y limpieza de archivos temporales. | 2026-09-17 |
+| [securiot2026/securiot-edge-api](https://github.com/securiot2026/securiot-edge-api) | develop (integración) | [`2e8d98b`](https://github.com/securiot2026/securiot-edge-api/commit/2e8d98be1b8ac38833e690b2d281037cbd6467eb) | feat(06.1-02): port capture-quality gates + per-device face-recognition toggle | Validación de fotografías y configuración individual del reconocimiento facial. | 2026-09-17 |
+| [securiot2026/securiot-edge-api](https://github.com/securiot2026/securiot-edge-api) | develop (integración) | [`4bd89eb`](https://github.com/securiot2026/securiot-edge-api/commit/4bd89eb85270d82b3c0fb9f9766485cd81d9718b) | feat(07): add manual command queue with TTL and door-action suppression | Cola por actuador, entrega en /frames y vencimiento; precedencia del comando manual. | 2026-09-17 |
+| [securiot2026/securiot-edge-api](https://github.com/securiot2026/securiot-edge-api) | develop (integración) | [`8baa1aa`](https://github.com/securiot2026/securiot-edge-api/commit/8baa1aa79caa6910f5d953bf64961b18b4502d7c) | feat(08): replace hardcoded door_contact_open with configurable rules engine | CRUD, evaluación en /frames e /ingest y migración de reglas; el cuerpo reporta 71 pruebas. | 2026-09-17 |
+| [securiot2026/securiot-cloud-api](https://github.com/securiot2026/securiot-cloud-api) | develop (integración) | [`e111d45`](https://github.com/securiot2026/securiot-cloud-api/commit/e111d45f33673b81e2971285d1d1b64af65631e9) | feat(06.1-01): proxy face enrollment to a device's Edge API | Campo edgeUrl y proxy de registro facial; traduce un 401 de Edge a 502 de Cloud. | 2026-09-17 |
+| [securiot2026/securiot-cloud-api](https://github.com/securiot2026/securiot-cloud-api) | develop (integración) | [`b1601d8`](https://github.com/securiot2026/securiot-cloud-api/commit/b1601d82507ce496fcc93fd720aae8f6e3cf551a) | feat(06.1-03): proxy the per-device face-recognition toggle to Edge | Proxy de consulta y activación facial con comprobación del propietario. | 2026-09-17 |
+| [securiot2026/securiot-cloud-api](https://github.com/securiot2026/securiot-cloud-api) | develop (integración) | [`1266eda`](https://github.com/securiot2026/securiot-cloud-api/commit/1266edacbc0ed13ae4b62ae95ca6bac9b3fb0430) | feat(07): add POST /devices/:id/commands proxy to Edge | Proxy con JWT; valida el actuador antes de contactar a Edge. | 2026-09-17 |
+| [securiot2026/securiot-cloud-api](https://github.com/securiot2026/securiot-cloud-api) | develop (integración) | [`9edffbb`](https://github.com/securiot2026/securiot-cloud-api/commit/9edffbb4f47bfc3aba9fd8a7d8c83bd467c1ff70) | feat(08): retire hardcoded door_contact_open Alert logic, add device offline alert | Alertas rule_alert y revisión de dispositivos sin lecturas; el cuerpo reporta 5 pruebas unitarias y 44 E2E. | 2026-09-17 |
+| [securiot2026/securiot-web-app](https://github.com/securiot2026/securiot-web-app) | develop (integración) | [`5520458`](https://github.com/securiot2026/securiot-web-app/commit/552045881b082fd3b7ff922d2f89283da35120f5) | feat(06.1-04): Web UI for device edge URL, face enrollment, and toggle | Pantalla /devices/:id/face-recognition con URL de Edge, carga de fotografías, activación, a11y e i18n. | 2026-09-17 |
+
+Las fechas se conservan como aparecen en GitHub: van del 8 al 17 de septiembre de 2026 y son anteriores al Sprint Planning registrado el 25 de septiembre. La tabla acredita la existencia de la implementación seleccionada. El equipo debe conciliar esa cronología antes de presentar los commits como trabajo realizado dentro del periodo del Sprint 2. Los resultados de pruebas mencionados en los cuerpos son registros históricos de sus autores; esta revisión documental no vuelve a ejecutar esas pruebas.
 
 **Decisiones de diseño relevantes del Sprint:**
 
@@ -4101,31 +4175,33 @@ Durante el Sprint 2 se implementaron el aprovisionamiento del firmware, el regis
 - **Comandos manuales con vencimiento.** Un comando se entrega en la siguiente consulta de `/frames` y caduca a los 8 segundos si el dispositivo no lo recoge. Un comando manual también suspende la acción automática sobre el mismo actuador durante el tiempo de enfriamiento.
 - **Aprovisionamiento en dos partes.** La librería MycilaESPConnect solo recoge los datos de WiFi, por lo que la URL de la Edge API y la clave del dispositivo se capturan en una ruta propia `/provision-extra`, servida por el mismo servidor web.
 
+**Actualización de la Landing Page para AV2.** Se identificó la [integración de develop en main del 14/11/2026](https://github.com/securiot2026/securiot-landing/commit/3619c0ad7ed2dc4c07c256e98393a55937c224a6). Entre los cambios recientes figuran el [ajuste de las capturas del recorrido del producto y los enlaces de créditos](https://github.com/securiot2026/securiot-landing/commit/6e6c1f4b76fc2e402dcd33d126919a18866b603a) y la [corrección de caché de CSS y JavaScript](https://github.com/securiot2026/securiot-landing/commit/eb46f1a62f48c318edd3ad823d17e5f1c90c8e8b), ambos de Juan Angulo. Se registra como evidencia complementaria de AV2 y no se añade a los catorce commits ni a los Story Points del Sprint 2.
+
 **Commits y Pull Requests posteriores al cierre del Sprint 2 (verificados en `git log` de `develop`, consulta del 14/11/2026)**
 
 La tabla anterior se conserva. Las filas siguientes agregan trabajo integrado en `develop` entre el 13 y el 14 de noviembre de 2026, con el número de Pull Request que lo integró.
 
 | Repository | PR | Commit Id | Commit Message | Committed on |
 | --- | --- | --- | --- | --- |
-| securiot2026/securiot-cloud-api | #8 | `b6820c2` | feat(billing): add simulated payment gateway, plans, checkout and subscription | 2026-11-13 |
-| securiot2026/securiot-cloud-api | #7 | `d0c56ea` | docs: add operations runbook (GitFlow, CI/CD, deployment, troubleshooting) | 2026-11-13 |
-| securiot2026/securiot-web-app | #5 | `83d6e46` | feat(billing): add plans and checkout page with simulated payment gateway | 2026-11-13 |
-| securiot2026/securiot-web-app | #6 | `9726610` | feat(web): add SecurIoT favicon set, web manifest and meta tags | 2026-11-13 |
-| securiot2026/securiot-web-app | #7 | `19ff46c` | feat(web): collapsible side rail with grouped navigation and mobile drawer | 2026-11-14 |
-| securiot2026/securiot-web-app | #11 | `e241280` | fix(dashboard): scannable tables with card rows on small screens, merged filters, clearer billing and rules, localized dates | 2026-11-14 |
-| securiot2026/securiot-web-app | #12 | `aff38e4` | fix(web): quote the hashed bundle regex so nginx starts | 2026-11-14 |
-| securiot2026/securiot-web-app | #13 | `b24ed4e` | ci(web): run nginx -t on the shipped config | 2026-11-14 |
-| securiot2026/securiot-edge-api | #5 | `010d700` | ci: add Dokploy CD workflow for the edge API | 2026-11-14 |
-| securiot2026/securiot-embedded | #3 | `28b3142` | fix(firmware): move camera XCLK to LEDC timer 3 so servos stop killing the camera | 2026-11-13 |
-| securiot2026/securiot-embedded | #4 | `3098f35` | feat(firmware): capture every 100 ms with double-buffered latest-frame grab | 2026-11-13 |
-| securiot2026/securiot-embedded | #6 | `7877345` | ci: add tag-triggered firmware release workflow | 2026-11-14 |
-| securiot2026/securiot-embedded | #8 | `a336a74` | docs: add steps to bring up a new Edge machine and re-pair the board | 2026-11-14 |
-| securiot2026/securiot-mobile-app | #6 | `6877f83` | feat(brand): rename app to SecurIoT and set dark native splash | 2026-11-13 |
-| securiot2026/securiot-mobile-app | #7 | `dcfb783` | ci: add CI and Firebase App Distribution CD for the mobile app | 2026-11-14 |
-| securiot2026/securiot-landing | #4 | `1349cab` | feat(landing): add pricing section with three per-camera plans | 2026-11-13 |
-| securiot2026/securiot-landing | #7 | `f70f026` | feat(landing): redesign with new sections, micro animations and ES/EN copy | 2026-11-14 |
-| securiot2026/securiot-landing | #8 | `2025f80` | ci: add CI checks and Dokploy CD for the landing page | 2026-11-14 |
-| securiot2026/securiot-landing | #12 | `eb46f1a` | fix(landing): stop caching CSS and JS as immutable and version asset URLs | 2026-11-14 |
+| securiot2026/securiot-cloud-api | #8 | [`b6820c2`](https://github.com/securiot2026/securiot-cloud-api/commit/b6820c20716433ebdc1e2cfe5104a39570279b90) | feat(billing): add simulated payment gateway, plans, checkout and subscription | 2026-11-13 |
+| securiot2026/securiot-cloud-api | #7 | [`d0c56ea`](https://github.com/securiot2026/securiot-cloud-api/commit/d0c56ea3fa75773be7c4f53a6c4d83d91d239ee2) | docs: add operations runbook (GitFlow, CI/CD, deployment, troubleshooting) | 2026-11-13 |
+| securiot2026/securiot-web-app | #5 | [`83d6e46`](https://github.com/securiot2026/securiot-web-app/commit/83d6e46cbff67ac7a61e48176d037fa0ad7f5873) | feat(billing): add plans and checkout page with simulated payment gateway | 2026-11-13 |
+| securiot2026/securiot-web-app | #6 | [`9726610`](https://github.com/securiot2026/securiot-web-app/commit/9726610a73f82fc3af7cef9d5b137a2116684d2a) | feat(web): add SecurIoT favicon set, web manifest and meta tags | 2026-11-13 |
+| securiot2026/securiot-web-app | #7 | [`19ff46c`](https://github.com/securiot2026/securiot-web-app/commit/19ff46cafebf343ee9f3dce15c79fec10223438d) | feat(web): collapsible side rail with grouped navigation and mobile drawer | 2026-11-14 |
+| securiot2026/securiot-web-app | #11 | [`e241280`](https://github.com/securiot2026/securiot-web-app/commit/e2412801cf6fad21b99d825e39ad3fc124842a99) | fix(dashboard): scannable tables with card rows on small screens, merged filters, clearer billing and rules, localized dates | 2026-11-14 |
+| securiot2026/securiot-web-app | #12 | [`aff38e4`](https://github.com/securiot2026/securiot-web-app/commit/aff38e443276c889b93d9681a6ae247dc21f472b) | fix(web): quote the hashed bundle regex so nginx starts | 2026-11-14 |
+| securiot2026/securiot-web-app | #13 | [`b24ed4e`](https://github.com/securiot2026/securiot-web-app/commit/b24ed4e2f5c29d75cdd2ef283421e22626d39150) | ci(web): run nginx -t on the shipped config | 2026-11-14 |
+| securiot2026/securiot-edge-api | #5 | [`010d700`](https://github.com/securiot2026/securiot-edge-api/commit/010d700ace3ea3e7ccbeb1608389f6a28dfb6556) | ci: add Dokploy CD workflow for the edge API | 2026-11-14 |
+| securiot2026/securiot-embedded | #3 | [`28b3142`](https://github.com/securiot2026/securiot-embedded/commit/28b3142f7370154455f88a5083ee14ab8e9bd38d) | fix(firmware): move camera XCLK to LEDC timer 3 so servos stop killing the camera | 2026-11-13 |
+| securiot2026/securiot-embedded | #4 | [`3098f35`](https://github.com/securiot2026/securiot-embedded/commit/3098f358b4415cce32834c3fac81fbc98de34b2f) | feat(firmware): capture every 100 ms with double-buffered latest-frame grab | 2026-11-13 |
+| securiot2026/securiot-embedded | #6 | [`7877345`](https://github.com/securiot2026/securiot-embedded/commit/78773459bc1f9db8d94b1231f9b56868b40892cd) | ci: add tag-triggered firmware release workflow | 2026-11-14 |
+| securiot2026/securiot-embedded | #8 | [`a336a74`](https://github.com/securiot2026/securiot-embedded/commit/a336a74cc603360836700e8530054745684fe5f4) | docs: add steps to bring up a new Edge machine and re-pair the board | 2026-11-14 |
+| securiot2026/securiot-mobile-app | #6 | [`6877f83`](https://github.com/securiot2026/securiot-mobile-app/commit/6877f83d8173e0cceff42064bae1d96bcce543b6) | feat(brand): rename app to SecurIoT and set dark native splash | 2026-11-13 |
+| securiot2026/securiot-mobile-app | #7 | [`dcfb783`](https://github.com/securiot2026/securiot-mobile-app/commit/dcfb783dd781ccfe0326a8d6f18adb2b7623ff2e) | ci: add CI and Firebase App Distribution CD for the mobile app | 2026-11-14 |
+| securiot2026/securiot-landing | #4 | [`1349cab`](https://github.com/securiot2026/securiot-landing/commit/1349cabee2f4cdb8075016b789c03c96815a324e) | feat(landing): add pricing section with three per-camera plans | 2026-11-13 |
+| securiot2026/securiot-landing | #7 | [`f70f026`](https://github.com/securiot2026/securiot-landing/commit/f70f026812c1edf02c359c65788611fa562c5e32) | feat(landing): redesign with new sections, micro animations and ES/EN copy | 2026-11-14 |
+| securiot2026/securiot-landing | #8 | [`2025f80`](https://github.com/securiot2026/securiot-landing/commit/2025f8026561fe86d75ca292e4de82e90a013606) | ci: add CI checks and Dokploy CD for the landing page | 2026-11-14 |
+| securiot2026/securiot-landing | #12 | [`eb46f1a`](https://github.com/securiot2026/securiot-landing/commit/eb46f1a62f48c318edd3ad823d17e5f1c90c8e8b) | fix(landing): stop caching CSS and JS as immutable and version asset URLs | 2026-11-14 |
 
 Los commits `d3528af` (web-app, PR #4) y `5b32482` (edge-api, PR #4) agregan el mismo runbook de operaciones a sus repositorios. Los repositorios con protección de rama (Cloud API, Web App y Edge API) exigen Pull Request, y el resto del equipo de código también adoptó ese flujo. El detalle completo de cada PR está en la pestaña Pull requests de cada repositorio.
 
@@ -4164,21 +4240,73 @@ Las cinco ejecuciones de la tabla terminaron en verde. La Web App y la App Móvi
 
 #### 6.2.2.6. Execution Evidence for Sprint Review
 
-Al cierre del Sprint 2, el administrador puede preparar un dispositivo nuevo sin tocar el código: el ESP32-CAM abre su propio punto de acceso, el administrador escribe el WiFi, la URL de la Edge API y la clave del dispositivo, y el dispositivo conserva esos datos tras cada reinicio. Si la conexión falla tres veces, el portal vuelve a abrirse, de modo que el dispositivo nunca queda sin respuesta. En la Web App, el administrador registra la URL del Edge de cada dispositivo, sube fotografías de personas autorizadas y activa o desactiva el reconocimiento facial.
+Los cambios del Sprint 2 permiten configurar la conexión del ESP32-CAM, registrar rostros desde la Web App, enviar comandos manuales y administrar reglas en Edge. El código se relaciona en 6.2.2.4 y las pruebas registradas en 6.2.2.5. Para la revisión se debe mostrar el recorrido entre interfaz, servicio y resultado, identificando cuándo se utiliza detección `mock` y cuándo interviene un dispositivo físico.
 
-Las reglas se ejecutan en la Edge API. Un administrador crea una regla con una condición, un umbral, una severidad y una acción (alerta, color de luz, buzzer o bloqueo de puerta), y la Edge la evalúa contra cada lectura. La regla fija de apertura de puerta del Sprint 1 ya no existe como código aparte: el arranque la migra a dos reglas equivalentes en la tabla `Rule`, que se pueden editar o desactivar.
+**Landing Page: ejecución pública comprobada.** El 14/11/2026 se accedió a [la Landing Page desplegada](https://securiot-landing.juan-tech.com/). La portada presenta la propuesta de valor, el selector ES/EN y accesos a la Web App. La sección Producto muestra zonas, dispositivos y alertas mediante capturas de la aplicación móvil con datos de demostración.
 
-Las capturas siguientes se tomaron el 14 de noviembre de 2026 sobre los despliegues reales. Para la Cloud API se consultó Swagger UI (figuras de la sección 6.2.2.7). Para la Web App se muestra la pantalla pública de inicio de sesión, porque las pantallas autenticadas exigen credenciales y el equipo no las incluyó en esta captura.
+![Landing Page desplegada: portada y accesos al producto](docs/assets/chapter6/sprint2-exec-landing-desktop.jpg)
 
-**Figura 6.2.2.g.** Inicio de sesión de la Web App en español (https://securiot.juan-tech.com/login).
+*Figura 6.2.2.6-1. Portada observada el 14/11/2026. «Iniciar sesión» y «Empezar ahora» apuntan a la Web App.*
 
-![Inicio de sesión de la Web App](docs/assets/chapter6/sprint3-webapp-login.png)
+![Landing Page desplegada: recorrido de zonas, dispositivos y alertas](docs/assets/chapter6/sprint2-exec-landing-product.jpg)
 
-La App Móvil reutiliza las capturas reales de ejecución del Sprint 1 (`docs/assets/chapter6/sprint1-exec-mobile-login.png`, `sprint1-exec-mobile-zones.png`, `sprint1-exec-mobile-devices.png` y `sprint1-exec-mobile-alerts.png`), que ya aparecen en la sección 6.2.1.6.
+*Figura 6.2.2.6-2. Sección Producto observada el 14/11/2026. Las pantallas incluidas son imágenes de demostración; la captura comprueba la presentación pública del producto y no una nueva sesión de ejecución de Mobile.*
 
-**Resultado en hardware físico.** El líder del equipo verificó sobre el ESP32-CAM físico lo siguiente: aprovisionamiento con el QR de configuración, actualización OTA, detección de personas con deltas de pan y tilt, detección de rostros, feed en vivo en la Web App y estado en línea del dispositivo. La captura del dispositivo cada 100 ms rinde cerca de 2,5 cuadros por segundo de extremo a extremo con YOLO y ArcFace corriendo en una computadora portátil. Un conflicto de temporizadores hacía que los servos apagaran la cámara, y el commit `28b3142` lo resolvió al mover el reloj de la cámara al temporizador LEDC 3.
+La publicación se observó directamente. Además, el HTML público de `index.html` coincide con el de la [release 3619c0a](https://github.com/securiot2026/securiot-landing/blob/3619c0ad7ed2dc4c07c256e98393a55937c224a6/index.html): SHA-256 `0509d7928f8690a093eacbfdbd7971b40fc5356351c24f20c1d26a33fb3348a6`, normalizando saltos de línea a LF y retirando espacios exteriores. La comparación identifica ese archivo; no certifica todos los recursos ni la configuración del servidor.
 
-Pendiente: las capturas autenticadas de la Web App (registro de rostros, reglas, feed en vivo, página Plan y facturación, página del QR de configuración), una foto del montaje físico y el monitor serial del portal cautivo. No se simulan. Responsable: Juan Angulo, que tiene acceso a la cuenta y al dispositivo. Esta verificación en hardware no tiene registro versionado en los repositorios, por eso se declara como resultado reportado por el líder hasta que se adjunte la evidencia.
+**Idioma, móvil y navegación de la Landing.** Se comprobó el cambio de español (`es-419`) a inglés (`en-US`). En una vista de **390 × 844 px**, el contenido no presentó desbordamiento horizontal en la comprobación de ancho. El menú se abrió y cerró con Escape; el selector de idioma recibió foco con Tab y se activó con la barra espaciadora. El enlace «Get started» llevó a `/zones` en la Web App con la sesión demo activa. Estas comprobaciones son puntuales y no sustituyen una auditoría completa de accesibilidad.
+
+![Landing Page en inglés](docs/assets/chapter6/sprint2-exec-landing-english.jpg)
+
+*Figura 6.2.2.6-3. Portada en inglés tras cambiar el idioma desde el selector.*
+
+![Landing Page en una vista móvil de 390 por 844 píxeles](docs/assets/chapter6/sprint2-exec-landing-mobile.jpg)
+
+*Figura 6.2.2.6-4. Portada en español y navegación adaptable en la vista móvil comprobada.*
+
+**Web App: recorrido observado con la cuenta demo.** El 14/11/2026 se inició sesión correctamente y se consultaron las vistas de dispositivos, reconocimiento facial, reglas y facturación. Las capturas corresponden a la versión pública de ese día, que incluye cambios posteriores al alcance original del Sprint 2.
+
+![Web App: dispositivo de demostración sin conexión](docs/assets/chapter6/sprint2-exec-web-devices.jpg)
+
+*Figura 6.2.2.6-5. Front Door Sensor aparece sin conexión, con última lectura del 13/11/2026 a las 20:36. La captura comprueba el estado reportado; no demuestra disponibilidad para ejecutar acciones.*
+
+![Web App: URL de Edge y configuración del reconocimiento facial](docs/assets/chapter6/sprint2-exec-web-face-recognition.jpg)
+
+*Figura 6.2.2.6-6. La pantalla presenta la URL de Edge, el reconocimiento desactivado y el formulario de registro. Se comprobó el acceso a la interfaz; no se enviaron fotografías ni se validó un registro exitoso.*
+
+![Web App: error al consultar las reglas](docs/assets/chapter6/sprint2-exec-web-rules-unavailable.jpg)
+
+*Figura 6.2.2.6-7. La consulta muestra «No pudimos cargar las reglas. Intenta de nuevo.». El estado vacío simultáneo no permite concluir que no existan reglas. El flujo requiere revisión técnica y una nueva demostración.*
+
+![Web App: planes y facturación con pasarela simulada](docs/assets/chapter6/av2-exec-web-billing.jpg)
+
+*Figura 6.2.2.6-8. La versión actual presenta Basic, Standard y Plus y señala que la pasarela es simulada. La cuenta no tiene suscripción activa. Se comprobó la visualización; no se efectuó checkout ni se demostró una autorización de pago.*
+
+**Evidencias añadidas por el equipo (PR #38).** El 14/11/2026 se integraron capturas de Swagger, la Landing y el acceso público a la Web App. Las de Swagger se conservan en 6.2.2.7; las vistas autenticadas recopiladas en esta rama complementan la siguiente captura pública.
+
+![Inicio de sesión de la Web App incorporado por el equipo](docs/assets/chapter6/sprint3-webapp-login.png)
+
+*Figura 6.2.2.6-9. Inicio de sesión en español, aportado por el equipo e integrado mediante el PR #38.*
+
+**Resultado en hardware físico reportado por el líder.** El líder del equipo verificó sobre el ESP32-CAM físico lo siguiente: aprovisionamiento con el QR de configuración, actualización OTA, detección de personas con deltas de pan y tilt, detección de rostros, feed en vivo en la Web App y estado en línea del dispositivo. La captura del dispositivo cada 100 ms rinde cerca de 2,5 cuadros por segundo de extremo a extremo con YOLO y ArcFace corriendo en una computadora portátil. Un conflicto de temporizadores hacía que los servos apagaran la cámara, y el commit `28b3142` lo resolvió al mover el reloj de la cámara al temporizador LEDC 3.
+
+Este resultado se conserva como declaración de Juan Angulo en el [PR #38](https://github.com/securiot2026/securiot-report/pull/38). No sustituye las capturas del montaje y del monitor serial, que aún no se adjuntaron, ni garantiza la disponibilidad de Edge en el momento de esta revisión. La referencia a Mobile de esa actualización remite a las capturas originales del Sprint 1 en 6.2.1.6; no se presentan como nuevas pruebas del Sprint 2.
+
+**Límite observado de la integración con Edge.** La configuración del dispositivo apunta a `https://edge-local.juan-tech.com`. La consulta pública devolvió un fallo de resolución del nombre de host (`curl: (6) Could not resolve host`), mientras que la documentación de Cloud respondió HTTP 200. El [proxy de dispositivos](https://github.com/securiot2026/securiot-cloud-api/blob/develop/src/devices/devices.service.ts) usa esa URL y la [guía del Edge](https://github.com/securiot2026/securiot-edge-api/blob/develop/docs/LOCAL_DEPLOYMENT.md) exige un túnel público hacia la máquina local. La evidencia identifica un bloqueo de conectividad/DNS de la dirección configurada; no permite confirmar el estado de la cámara ni la causa administrativa del fallo del túnel. Para la demostración completa se necesita restaurar una dirección Edge accesible desde Cloud.
+
+**Pendientes de evidencia visual del Sprint 2.** Juan Angulo y Pietro Osores aportan los materiales técnicos; Matias Salcedo los recopila e incorpora al informe.
+
+| Flujo | Recorrido que debe demostrarse | Evidencia que falta | Responsable de aportar / consolidar | Estado |
+| --- | --- | --- | --- | --- |
+| Montaje físico | Mostrar el ESP32-CAM y sus conexiones. | Fotografía del montaje real. | Pietro Osores / Matias Salcedo | Pendiente |
+| Aprovisionamiento | Abrir el portal, guardar WiFi y conexión a Edge, reiniciar y comprobar persistencia; repetir el caso de conexión fallida. | Capturas del portal y registro serial; indicar placa y versión de firmware. | Pietro Osores / Matias Salcedo | Pendiente |
+| Registro de rostros | Configurar edgeUrl, cargar fotografías de prueba y consultar el estado del reconocimiento. | Interfaz incorporada; faltan un registro exitoso y la respuesta del proxy. | Juan Angulo, con apoyo de Pietro Osores / Matias Salcedo | Pendiente |
+| Reglas | Crear y consultar una regla en Edge; enviar una lectura compatible y observar la alerta. | Error de carga documentado; faltan consulta exitosa, petición/respuesta y alerta con detección mock o real. | Juan Angulo y Pietro Osores / Matias Salcedo | Pendiente |
+| Comando manual | Enviar un comando, comprobar su entrega en /frames y observar la acción; demostrar vencimiento sin entrega. | Capturas de petición/respuesta y del resultado del actuador; distinguir cola, entrega y acción física. | Juan Angulo y Pietro Osores / Matias Salcedo | Pendiente |
+
+**Material audiovisual.** Esta actualización incorpora evidencia en imágenes. El enlace y la captura del video de navegación del Sprint 2 no están incorporados; su requisito de entrega permanece pendiente por separado.
+
+El líder reportó una verificación física, pero aún falta su evidencia visual versionada. Una compilación o una prueba automatizada del servicio tampoco acredita por sí sola el funcionamiento del portal en el teléfono, la captura de la cámara ni la actuación de luz, buzzer o puerta. La [lista de evidencias y datos por completar](docs/sprint2/pendientes-matias.md) organiza la recopilación para cerrar esta sección.
 
 #### 6.2.2.7. Services Documentation Evidence for Sprint Review
 
