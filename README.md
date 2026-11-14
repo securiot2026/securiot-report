@@ -4954,31 +4954,93 @@ Frente al escenario de intrusión simulado, la entrevistada manifestó que conta
 
 ### 6.3.3. Evaluaciones según heurísticas
 
-**Método y alcance.** Esta evaluación es una revisión de expertos hecha por el propio equipo, no una prueba con usuarios. Se revisó la Web App con capturas a cuatro anchos de pantalla, en español y en inglés, contra una API simulada (mock), usando las 10 heurísticas de usabilidad de Nielsen (Nielsen, 1994). La revisión se apoyó en la crítica con la herramienta Impeccable, antes y después de las correcciones que integraron los Pull Requests #9 a #13 de `securiot-web-app`. La severidad usa la escala de Nielsen de 0 a 4 (0 no es un problema, 1 cosmético, 2 menor, 3 mayor, 4 catastrófico) y la asignó el equipo evaluador, por lo que es una apreciación subjetiva. Esta evaluación no reemplaza las Validation Interviews de las secciones 6.3.1 y 6.3.2 ni mide tiempos ni errores de usuarios reales.
+La evaluación heurística complementa las entrevistas de validación mediante la revisión de los flujos priorizados para la Landing Page, la Web App y la evidencia disponible de la Mobile App. Su finalidad es identificar problemas de usabilidad, arquitectura de información y diseño inclusivo que puedan afectar la comprensión de la propuesta, la orientación dentro de la interfaz y la respuesta ante alertas. Los hallazgos se derivan de los flujos definidos para validación, de las capturas documentadas en el Capítulo V y de la revisión en modo lectura de la Web App desplegada.
 
-| Heurística | Hallazgo | Severidad | Pantalla | Estado |
-| --- | --- | --- | --- | --- |
-| H1. Visibilidad del estado del sistema | Las listas no mostraban de un vistazo cuántos dispositivos estaban en línea o fuera de línea. Se agregaron tiles de estado y, en el checkout, un indicador de pasos con resumen en vivo | 2 | Zonas, dispositivos, checkout | Corregido |
-| H2. Relación entre el sistema y el mundo real | Las fechas aparecían en formato de EE. UU. aun con la interfaz en español. Ahora se formatean según el idioma activo | 2 | Alertas, facturación | Corregido |
-| H2. Relación entre el sistema y el mundo real | Algunas etiquetas mostraban la clave de traducción cruda en lugar del texto | 3 | Varias | Corregido |
-| H3. Control y libertad del usuario | Eliminar un elemento no pedía confirmación. Se agregó un diálogo de confirmación compartido | 3 | Listas de zonas, dispositivos y reglas | Corregido |
-| H4. Consistencia y estándares | Quedaban restos del tema claro dentro del tema oscuro de la marca | 2 | Varias | Corregido |
-| H4. Consistencia y estándares | El logo era un escudo genérico que no coincidía con la marca. Se reemplazó por la marca SecurIoT en el encabezado de la tarjeta de acceso | 1 | Inicio de sesión | Corregido |
-| H5. Prevención de errores | El pago simulado rechaza tarjetas desconocidas con un motivo explícito, y la Landing avisa que no se cobra dinero real, lo que evita que alguien escriba una tarjeta real creyendo que paga | 2 | Plan y facturación, Landing | Corregido |
-| H6. Reconocimiento antes que recuerdo | Las acciones de las filas quedaban ocultas en pantallas pequeñas. Las tablas pasaron a filas de tarjeta con las acciones visibles | 3 | Tablas de dispositivos, reglas y alertas | Corregido |
-| H7. Flexibilidad y eficiencia de uso | Las listas no se podían buscar ni filtrar. Se sumaron búsqueda y filtros con etiquetas más cortas y un selector de idioma más visible | 2 | Listas | Corregido |
-| H8. Diseño estético y minimalista | Las tablas usaban tipografía monoespaciada que dificultaba su lectura | 2 | Tablas | Corregido |
-| H8. Diseño estético y minimalista | El aviso de facturación era demasiado pesado visualmente. Se rediseñó con menos énfasis | 2 | Plan y facturación | Corregido |
-| H9. Ayuda a reconocer y recuperarse de errores | El rechazo de un pago devuelve el motivo (`card_declined`, `insufficient_funds`, `expired_card` o `unknown_test_card`). Falta revisar cómo se traduce y se presenta cada motivo en pantalla | 2 | Plan y facturación | Abierto |
-| H10. Ayuda y documentación | La Landing explica en sus preguntas frecuentes si el pago cobra dinero real. La Web App no tiene una ayuda contextual propia | 1 | Web App | Abierto |
-| H8. Diseño estético y minimalista | La tabla del historial de pagos queda apretada a 375 px de ancho | 2 | Plan y facturación | Abierto |
-| H4. Consistencia y estándares (accesibilidad) | El anillo de foco del teclado no se inspeccionó con detalle | 2 | Todas | Abierto |
-| H2. Relación entre el sistema y el mundo real | Las pantallas en inglés a ancho móvil solo se revisaron de forma puntual | 1 | Varias, en inglés | Abierto |
-| Todas | No se hizo ninguna prueba con usuarios reales. Los hallazgos son juicios del equipo | 3 | Toda la Web App | Abierto |
+#### Ficha de evaluación
 
-**Lectura de los resultados.** De las 17 filas, 11 están corregidas y 6 siguen abiertas. Ninguna fila abierta tiene severidad 4. La más relevante es la ausencia de pruebas con usuarios, que impide afirmar que las correcciones mejoran la experiencia: solo se verificó que los defectos listados desaparecen en las capturas posteriores. Pendiente: capturas de antes y después de cada hallazgo, porque requieren sesión autenticada y no están versionadas. Responsable: Juan Angulo. La lista de hallazgos proviene de las notas del líder del equipo sobre la crítica de Impeccable y de los mensajes de commit de los PR #9 a #13.
+| Campo | Información |
+|---|---|
+| Carrera | Ingeniería de Software |
+| Curso | Desarrollo de Soluciones IoT |
+| Sección | 8729 |
+| Profesores | Marco Antonio Leon Baca |
+| Auditor | Melina Liz Santillan Alvarado |
+| Cliente(s) | Bianca Beltrán, Nadia Cárdenas, Dante Zavala, Julieta Cordero y Christopher Cabán |
+| Sitio o aplicaciones evaluadas | Landing Page de SecurIoT, Web App desplegada y mock-ups de la Mobile App |
+| Tareas incluidas | Comprender la propuesta de valor, revisar los planes y ubicar una acción para iniciar el proceso comercial desde la Landing Page.<br>Consultar zonas, dispositivos y alertas desde la Web App sin alterar la información registrada.<br>Consultar zonas, dispositivos y alertas en la evidencia disponible de la Mobile App, identificando el estado y el origen de cada alerta.<br>Iniciar sesión, interpretar mensajes de error y ubicar una alternativa de recuperación de credenciales en la evidencia disponible de la Mobile App. |
+| Tareas no incluidas | Contratación de un plan, envío de formularios, resolución de alertas, modificación de zonas o dispositivos y controles sobre hardware físico. Estas acciones requieren recorridos transaccionales, una versión interactiva de la Mobile App o acceso al dispositivo IoT. |
 
-<div style="page-break-after: always;"></div>
+#### Escala de severidad
+
+| Nivel | Descripción |
+|---:|---|
+| 1 | Problema superficial. No requiere corrección prioritaria. |
+| 2 | Problema menor. Debe corregirse con prioridad baja. |
+| 3 | Problema mayor. Debe corregirse con prioridad alta. |
+| 4 | Problema muy grave. Impide continuar con la tarea y debe corregirse antes del lanzamiento. |
+
+#### Tabla resumen
+
+| # | Problema | Escala de severidad | Heurística o principio vulnerado |
+|---:|---|---:|---|
+| H-01 | La Landing Page no ofrece una acción pública y explícita para solicitar una demostración. Sus CTA conducen al inicio de sesión o a la facturación de la Web App. | 3 | Arquitectura de información: encontrabilidad de la acción principal. Usabilidad: correspondencia entre la acción y el resultado esperado. |
+| H-02 | El mock-up móvil muestra errores de credenciales, pero no expone en esa pantalla una alternativa visible para recuperar el acceso. | 2 | Usabilidad: ayudar a reconocer, diagnosticar y recuperarse de errores. |
+| H-03 | Con el idioma Español seleccionado, la Web App y la Mobile App muestran mensajes de alerta en inglés. | 3 | Usabilidad: consistencia y estándares. Diseño inclusivo: comprensión del contenido. |
+| H-04 | Los tres filtros de alertas muestran la misma etiqueta “Todas” sin identificar el criterio que controla cada uno. | 2 | Arquitectura de información: etiquetado y encontrabilidad de filtros. |
+
+#### Descripción de problemas
+
+##### Problema H-01: acción comercial no encontrable desde la Landing Page
+
+**Severidad:** 3 - problema mayor.<br>
+**Heurística o principio vulnerado:** arquitectura de información - encontrabilidad de la acción principal. Usabilidad - correspondencia entre la acción y el resultado esperado.
+
+La Landing Page comunica una propuesta dirigida a responsables de seguridad y gerentes de pymes industriales. Sin embargo, el CTA **“Empezar ahora”** dirige al inicio de sesión y los CTA de los planes dirigen a la facturación de la Web App. Para un visitante que todavía no dispone de una cuenta, no existe una acción pública y explícita para solicitar una demostración o iniciar el contacto comercial. Esto obliga a inferir el siguiente paso y puede interrumpir el recorrido esperado de evaluación del servicio.
+
+![Evidencia del CTA “Empezar ahora” en la Landing Page](docs/assets/chapter6/sprint1-exec-landing-desktop.png)
+
+**Recomendación:** incorporar un CTA visible de **“Solicitar demostración”** o **“Hablar con el equipo”**, acompañado de un formulario breve o un canal de contacto. El CTA debe mantener una etiqueta consistente en el encabezado, la sección de precios y el cierre de la Landing Page.
+
+##### Problema H-02: recuperación de acceso no visible en el estado de error móvil
+
+**Severidad:** 2 - problema menor.<br>
+**Heurística o principio vulnerado:** usabilidad - ayudar a reconocer, diagnosticar y recuperarse de errores.
+
+La evidencia móvil diferencia los errores de correo y contraseña mediante mensajes y bordes de validación. No obstante, cuando se muestran **“Credenciales incorrectas”**, la misma vista no presenta una acción visible para recuperar la contraseña o solicitar asistencia. Aunque el informe documenta un flujo independiente de recuperación, el usuario que no recuerda sus credenciales debe conocerlo previamente o abandonar el proceso para buscarlo.
+
+![Evidencia de los estados de inicio de sesión y error de credenciales en la Mobile App](docs/assets/chapter5/mockups/5-mobile-spanish-ui-atlas.png)
+
+**Recomendación:** añadir en el estado de error un enlace visible de **“¿Olvidaste tu contraseña?”** que conduzca al flujo de recuperación, y mantener la acción disponible también antes de enviar el formulario. Así se ofrece una salida clara sin exponer cuál credencial específica fue incorrecta.
+
+##### Problema H-03: mensajes de alerta no consistentes con el idioma seleccionado
+
+**Severidad:** 3 - problema mayor.<br>
+**Heurística o principio vulnerado:** usabilidad - consistencia y estándares. Diseño inclusivo - comprensión del contenido.
+
+En las vistas de alertas de la Web App y de la Mobile App, el selector muestra **“Español”** como idioma activo y las etiquetas de interfaz se presentan en español, por ejemplo **“Alertas”**, **“Media”** y **“Activa”**. Sin embargo, el mensaje principal de la alerta se muestra en inglés: **“Door contact sensor reported open”**. Esta combinación rompe la expectativa generada por el selector de idioma y puede dificultar la comprensión inmediata del evento para usuarios que trabajan en español.
+
+![Evidencia actual de mensajes de alerta en inglés con Español seleccionado en la Web App](docs/assets/chapter6/heuristic-web-alerts-current.png)
+
+![Evidencia de mensajes de alerta en inglés con Español seleccionado en la Mobile App](docs/assets/chapter6/sprint1-exec-mobile-alerts.png)
+
+**Recomendación:** localizar los mensajes de alerta generados por el sistema de acuerdo con el idioma seleccionado y aplicar el mismo criterio en la Web App y la Mobile App. Cuando un identificador técnico deba mantenerse, debe acompañarse de una descripción comprensible en el idioma de la interfaz.
+
+##### Problema H-04: filtros de alertas sin criterios identificables
+
+**Severidad:** 2 - problema menor.<br>
+**Heurística o principio vulnerado:** arquitectura de información - etiquetado y encontrabilidad de filtros.
+
+La vista móvil de alertas presenta tres controles desplegables consecutivos, todos con la etiqueta **“Todas”**. Como la captura no muestra una etiqueta asociada a cada control, no es posible identificar si filtran por severidad, estado, zona u otro criterio antes de abrirlos. Esto obliga al usuario a explorar cada control para comprender cómo acotar las alertas, en lugar de permitirle elegir el filtro adecuado de forma directa.
+
+![Evidencia de filtros sin criterio visible en la vista de alertas móvil](docs/assets/chapter6/sprint1-exec-mobile-alerts.png)
+
+**Recomendación:** incorporar etiquetas visibles para cada filtro, por ejemplo **“Severidad”**, **“Estado”** y **“Zona”**, y conservar **“Todas”** como valor predeterminado dentro de cada control. De esta forma se mantiene la claridad del criterio aun cuando no se haya aplicado ningún filtro.
+
+#### Alcance y limitaciones de la evaluación
+
+La revisión de la Web App se concentró en recorridos de consulta y observación. La Mobile App se evaluó a partir de los mock-ups y de los flujos documentados, porque no se contó con una sesión interactiva independiente durante esta revisión. Por ello, los hallazgos describen problemas de interfaz observables y deben complementarse con nuevas sesiones de validación cuando se disponga de acceso operativo a todas las aplicaciones y de entrevistas completas para los tres segmentos objetivo.
+
+<div style="page-break-after:always"></div>
 
 ## 6.4. Video About-the-Product
 
