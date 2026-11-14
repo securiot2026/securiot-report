@@ -4138,13 +4138,9 @@ US-07 cierra en este Sprint porque su criterio de aceptación exige que el admin
 
 Este trabajo es complementario: no se le asignaron Story Points, por lo que la velocidad del Sprint (19 SP) no cambia.
 
-<!-- CONFIRMAR con el equipo: fecha real de la reunión de Sprint Planning 3 (el cuadro superior repite la fecha del Sprint 2) y si el alcance complementario se acordó en esa reunión o se incorporó durante el Sprint. -->
-
 #### 6.2.3.2. Aspect Leaders and Collaborators
 
 El Sprint 3 mantiene los mismos siete aspectos. El trabajo se concentró en **Web App**, **Mobile**, **Cloud API** y **Edge/IoT**.
-
-<!-- CONFIRMAR con el equipo: si la matriz LACX del Sprint 1 se mantiene o cambió para el Sprint 3. -->
 
 La matriz del Sprint 1 (sección 6.2.1.2) sigue vigente como referencia de liderazgo por aspecto. Como en el Sprint 2, los commits de código quedaron registrados bajo `Sve-nnN`. En paralelo, `rommelDN` aportó al repositorio del firmware la vista de la simulación física en Wokwi, y el resto del equipo avanzó en el informe.
 
