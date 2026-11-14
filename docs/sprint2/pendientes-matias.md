@@ -42,9 +42,9 @@ La demo mostró Front Door Sensor sin conexión. La dirección configurada de Ed
 | Evidencia que falta | Qué debe mostrar | Responsable de aportar | Estado |
 | --- | --- | --- | --- |
 | Aprovisionamiento | Portal del ESP32-CAM, persistencia tras reinicio y recuperación frente a fallo; monitor serial. | Pietro Osores | Pendiente |
-| Montaje físico | Fotografía del dispositivo y sus conexiones. | Pietro Osores | Pendiente |
-| Registro facial | Registro exitoso de fotografías de prueba autorizadas y respuesta de Edge/Cloud. La interfaz ya está capturada. | Juan Angulo y Pietro Osores | Pendiente |
-| Reglas | Consulta exitosa, lectura que cumple una condición y alerta resultante. El error actual ya está capturado. | Juan Angulo y Pietro Osores | Pendiente |
+| Montaje físico | Fotografía del dispositivo, conexiones y vistas 3D del soporte pan/tilt. | Pietro Osores | Completado |
+| Registro facial | Registro exitoso en Edge Console (5 muestras) y reconocimiento en vivo con ESP32-CAM incorporados; pendiente proxy Web App. | Juan Angulo y Pietro Osores | Parcial |
+| Reglas | Listado de 5 reglas activas, formulario de nueva regla y alertas en Web App incorporados. | Juan Angulo y Pietro Osores | Completado |
 | Cámara y comando manual | Frame actual con hora de captura, entrega del comando y resultado real en el actuador. | Juan Angulo y Pietro Osores | Pendiente |
 
 La [guía del Edge](https://github.com/securiot2026/securiot-edge-api/blob/develop/docs/LOCAL_DEPLOYMENT.md) requiere un equipo local y un túnel público. Para completar la demostración se necesita una dirección Edge alcanzable desde Cloud o los materiales reales del responsable técnico. Las compilaciones y las capturas de formulario no sustituyen esta evidencia.
