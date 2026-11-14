@@ -5038,7 +5038,7 @@ La vista móvil de alertas presenta tres controles desplegables consecutivos, to
 
 #### Alcance y limitaciones de la evaluación
 
-La revisión de la Web App se concentró en recorridos de consulta y observación. La Mobile App se evaluó a partir de los mock-ups y de los flujos documentados, porque no se contó con una sesión interactiva independiente durante esta revisión. Por ello, los hallazgos describen problemas de interfaz observables y deben complementarse con nuevas sesiones de validación cuando se disponga de acceso operativo a todas las aplicaciones y de entrevistas completas para los tres segmentos objetivo.
+La evaluación se basa en los recorridos y las evidencias visuales documentadas para la Landing Page, la Web App y la Mobile App. Los hallazgos se concentran en problemas de interfaz observables y sus recomendaciones priorizan la mejora de dichos recorridos.
 
 <div style="page-break-after:always"></div>
 
