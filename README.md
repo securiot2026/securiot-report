@@ -4124,6 +4124,22 @@ El Sprint 3 toma como entrada los contratos REST que dejó el Sprint 2 y el Prod
 
 US-07 cierra en este Sprint porque su criterio de aceptación exige que el administrador configure las reglas, y eso depende de la pantalla de la Web App. US-14 se cubre con las funciones que el personal de vigilancia necesita desde el teléfono: control manual, feed de cámara y ocupación. US-03 se cubre con las pantallas de detalle del dispositivo.
 
+**Alcance técnico complementario (23 de octubre al 12 de noviembre de 2026).** Además de las historias anteriores, el Sprint 3 incorporó trabajo que no tenía historia propia, pero que surgió de operar el sistema con el ESP32-CAM y la Web App en uso: cerrar brechas de control, de aprovisionamiento, de presencia del dispositivo, de cuentas y de automatización de entregas. Los repositorios lo registran entre el 23 de octubre y el 12 de noviembre de 2026. La siguiente tabla lo agrupa por frente.
+
+| Frente | Objetivo | Repositorios |
+| --- | --- | --- |
+| Control físico del dispositivo | Abrir y cerrar la puerta desde las apps, mover pan/tilt con una rampa suave y probar una regla ejecutando de verdad sus efectos sobre el dispositivo | embedded, edge-api, cloud-api, web-app, mobile-app |
+| Aprovisionamiento y robustez del firmware | Configurar el ESP32-CAM con un código QR, restablecerlo con un botón físico, recuperar el portal cuando se pierde el WiFi y actualizarlo por aire (OTA) con un registro remoto | embedded, cloud-api, web-app |
+| Presencia del dispositivo | Distinguir un dispositivo conectado con la escena vacía de uno desconectado, mediante un latido (heartbeat) que no genera lecturas | embedded, edge-api, cloud-api |
+| Cuentas y notificaciones | Recuperar la contraseña por un flujo mediado por el administrador, avisar por correo cuando se crea una alerta y rotar la clave de un dispositivo | cloud-api, web-app |
+| Reconocimiento facial | Explicar por qué se rechaza cada fotografía de registro y ofrecer una consola local para monitorear la cámara y registrar rostros | edge-api, web-app |
+| Entrega continua | Ejecutar las pruebas en cada Pull Request y redesplegar automáticamente desde `develop` | cloud-api, edge-api, web-app, embedded |
+| Seguridad de los repositorios | Eliminar una tarea de `.vscode` que ejecutaba un archivo ofuscado al abrir la carpeta | edge-api, mobile-app, embedded |
+
+Este trabajo es complementario: no se le asignaron Story Points, por lo que la velocidad del Sprint (19 SP) no cambia.
+
+<!-- CONFIRMAR con el equipo: fecha real de la reunión de Sprint Planning 3 (el cuadro superior repite la fecha del Sprint 2) y si el alcance complementario se acordó en esa reunión o se incorporó durante el Sprint. -->
+
 #### 6.2.3.2. Aspect Leaders and Collaborators
 
 El Sprint 3 mantiene los mismos siete aspectos. El trabajo se concentró en **Web App**, **Mobile**, **Cloud API** y **Edge/IoT**.
@@ -4151,6 +4167,31 @@ El Sprint Backlog 3 descompone las historias seleccionadas en tareas rastreables
 | US-14 | | T-14.3 | Feed de cámara con indicador de frescura y contador de ocupación en la App Móvil | FEED-02, FEED-05, EXTR-02 | Angulo (`Sve-nnN`) | Done |
 | US-03 | | T-03.4 | Contador de ocupación de la zona en el feed de la Web App | EXTR-02 | Angulo (`Sve-nnN`) | Done |
 
+**Tareas del alcance complementario.** La siguiente tabla continúa el Sprint Backlog 3. Las tareas se identifican por el requisito que cubren cuando existe uno, y por el frente de trabajo cuando no.
+
+| Story Id | Story Title | Task Id | Task Title | Requisito | Assigned To | Status |
+| --- | --- | --- | --- | --- | --- | --- |
+| US-07 | Configuración de reglas de alerta | T-07.7 | La prueba de una regla con la opción `execute` encola luz, buzzer y puerta en el dispositivo, resuelve la zona real y marca la alerta como `[Dry-run]` | RULE-11 | Angulo (`Sve-nnN`) | Done |
+| US-07 | | T-07.8 | Casilla «Ejecutar en el dispositivo» en la pantalla de reglas de la Web App, con resultado honesto de lo ejecutado | RULE-11 | Angulo (`Sve-nnN`) | Done |
+| US-06 | Gestión de personas autorizadas | T-06.5 | Motivos de rechazo por fotografía en `POST /faces` y su lista en la Web App | Reconocimiento facial | Angulo (`Sve-nnN`) | Done |
+| US-06 | | T-06.6 | Consola local en la Edge API para monitorear la cámara y registrar rostros | Reconocimiento facial | Osores (`Maximoff19`) | Done |
+| US-21 | Procesamiento en el borde tolerante a desconexión | T-21.4 | Latido cada 30 s desde la Edge, `sensor_type: heartbeat` en `/telemetry` y regla común de presencia en la Cloud API | EXTR-01 | Angulo (`Sve-nnN`) | Done |
+| US-21 | | T-21.5 | Página de QR de configuración (`/devices/:id/setup`) y endpoint `setup-payload` para el portal cautivo | Aprovisionamiento | Angulo (`Sve-nnN`) | Done |
+| US-21 | | T-21.6 | Identificadores de dispositivo y zona capturados en el portal y persistidos en memoria no volátil | Aprovisionamiento | Angulo (`Sve-nnN`) | Done |
+| US-21 | | T-21.7 | Botón de restablecimiento en GPIO12, estados del LED y reapertura del portal tras 120 s sin WiFi | Aprovisionamiento | Angulo (`Sve-nnN`) | Done |
+| US-21 | | T-21.8 | WiFi sin ahorro de energía y tiempos de espera acotados en las llamadas a la Edge API | — | Angulo (`Sve-nnN`) | Done |
+| US-21 | | T-21.9 | Actualización OTA, partición con dos ranuras y espejo del registro por TCP | Aprovisionamiento | Angulo (`Sve-nnN`) | Done |
+| US-14 | Aplicación móvil para el personal de vigilancia | T-14.4 | Comandos `door` (`open` o `close`) en Edge, Cloud, firmware, Web y App Móvil, con rampa suave de la puerta | CTRL-04 | Angulo (`Sve-nnN`) | Done |
+| US-14 | | T-14.5 | Movimiento suave del pan/tilt con un perfil de 50 Hz sin bloqueo | CTRL-01 | Angulo (`Sve-nnN`) | Done |
+| US-14 | | T-14.6 | Errores tipados y localizados cuando falta la URL del Edge o no responde, y comandos fallidos visibles en la App Móvil | CTRL-05 | Angulo (`Sve-nnN`) | Done |
+| Técnica | Cuentas | T-AUTH.1 | Recuperación y restablecimiento de contraseña con token de un solo uso, límite de intentos y páginas en la Web App | Autenticación | Angulo (`Sve-nnN`) | Done |
+| Técnica | Cuentas | T-AUTH.2 | Rotación de la clave de un dispositivo, solo para su propietario | Autenticación | Angulo (`Sve-nnN`) | Done |
+| Técnica | Notificaciones | T-ALR.1 | Correo al administrador cuando el motor crea una alerta o un dispositivo pasa a fuera de línea, con límite de uno cada 10 minutos | EXTR-01 | Angulo (`Sve-nnN`) | Done |
+| Técnica | Entrega continua | T-OPS.1 | Workflows de GitHub Actions: CI en cuatro repositorios y CD hacia Dokploy en la Cloud API y la Web App | — | Angulo (`Sve-nnN`) | Done |
+| Técnica | Seguridad | T-SEC.1 | Retiro de la tarea `.vscode` que ejecutaba un archivo ofuscado y de la fuente falsa que lo contenía | — | Aquino (`DanielAquinoSolorzano`), Angulo (`Sve-nnN`) | Done |
+
+Done significa que el código está integrado en `develop`. La verificación sobre el dispositivo físico no está registrada como evidencia y se trata en la sección 6.2.3.6.
+
 #### 6.2.3.4. Development Evidence for Sprint Review
 
 Durante el Sprint 3 se implementaron el feed de cámara, las pantallas del motor de reglas y la pantalla de control de la App Móvil. Las ramas se integraron en `develop` siguiendo GitFlow. La siguiente tabla lista los commits por repositorio.
@@ -4175,6 +4216,63 @@ Durante el Sprint 3 se implementaron el feed de cámara, las pantallas del motor
 - **La prueba de una regla ejecuta la acción real.** `dry-run` ignora el enfriamiento, pero sí actualiza la última ejecución. Una regla desactivada se rechaza con un 400, para evitar probar algo que no se ejecutaría en producción.
 - **Control de pan/tilt con cuatro direcciones.** La App Móvil envía un desplazamiento fijo de 15 unidades por toque, con botones de 44 × 44 píxeles. Esta opción cumple el requisito sin sumar un control de gestos.
 - **El contador de ocupación cuenta episodios.** La cámara reporta presencia, no dirección, por lo que el contador suma una entrada por cada episodio de detección confirmado y se reinicia a medianoche UTC. El equipo no puede contar salidas con el hardware actual.
+
+**Commits del alcance complementario (23 de octubre al 12 de noviembre de 2026).**
+
+| Repository | Branch | Commit Id | Commit Message | Committed on |
+| --- | --- | --- | --- | --- |
+| securiot2026/securiot-edge-api | develop | `6653dc4` | fix(frames): Validate camera uploads before detection | 2026-10-23 |
+| securiot2026/securiot-edge-api | develop | `0ec54df` | feat(console): Add local camera monitoring and face enrollment | 2026-10-23 |
+| securiot2026/securiot-edge-api | develop | `f6aa97a` | fix(security): sanitize develop, remove malicious vscode tasks and public font decoys | 2026-10-26 |
+| securiot2026/securiot-edge-api | develop | `c5c8135` | fix(06.1-05): include quality-gate reasons in POST /faces 400 body | 2026-10-30 |
+| securiot2026/securiot-edge-api | develop | `1ad721a` | fix(12-02): dry-run resolves real zone, keeps last_triggered_at and marks alerts | 2026-10-30 |
+| securiot2026/securiot-edge-api | develop | `b7bce94` | feat(12-02): dry-run execute flag queues device effects via manual queue | 2026-10-30 |
+| securiot2026/securiot-edge-api | develop | `15d6114` | feat(12-04): edge records last-seen on /frames and pushes rate-limited heartbeat | 2026-10-30 |
+| securiot2026/securiot-edge-api | develop | `617dab6` | feat(quick-261031-2ow): door open and close manual commands | 2026-10-31 |
+| securiot2026/securiot-edge-api | develop | `44f36b7` | ci: add CI workflow (pytest with mock detection backend) | 2026-11-12 |
+| securiot2026/securiot-cloud-api | develop | `7a0748e` | feat(12-02): dry-run proxy forwards Device id, zone id and execute flag | 2026-10-30 |
+| securiot2026/securiot-cloud-api | develop | `47edcf0` | feat(12-04): cloud heartbeat sets Device.lastSeenAt without creating a Reading | 2026-10-30 |
+| securiot2026/securiot-cloud-api | develop | `46c1ad5` | feat(12-04): shared presence rule for offline cron and device status | 2026-10-30 |
+| securiot2026/securiot-cloud-api | develop | `d0c35e5` | feat(quick-261030-wtb): add owner-scoped GET /devices/:id/setup-payload for device setup QR | 2026-10-30 |
+| securiot2026/securiot-cloud-api | develop | `41f64af` | feat(quick-261031-0ad): add Resend mail service and admin-mediated password reset flow | 2026-10-31 |
+| securiot2026/securiot-cloud-api | develop | `93d8f77` | feat(quick-261031-0ad): rate limit and harden password reset, document admin-mediated flow | 2026-10-31 |
+| securiot2026/securiot-cloud-api | develop | `8d14d4c` | feat(quick-261031-0ad): email the admin when the alerts engine creates an alert | 2026-10-31 |
+| securiot2026/securiot-cloud-api | develop | `ea14fcd` | feat(quick-261031-0ad): notify admin on device offline alerts and document alert emails | 2026-10-31 |
+| securiot2026/securiot-cloud-api | develop | `573352d` | feat(quick-261031-2ow): door open and close manual commands | 2026-10-31 |
+| securiot2026/securiot-cloud-api | develop | `ce53fa4` | ci: add CI (lint, test, build, docker) and CD (Dokploy deploy webhook) workflows | 2026-11-12 |
+| securiot2026/securiot-cloud-api | develop | `027ec3e` | feat(devices): add owner-only rotate-key endpoint | 2026-11-12 |
+| securiot2026/securiot-web-app | develop | `5206f69` | fix(quick-261030-w6a): add Execute on the device checkbox and honest dry-run result to Web rules | 2026-10-30 |
+| securiot2026/securiot-web-app | develop | `e8cc843` | fix(06.1-05): show per-photo skip reasons when face enrollment fails | 2026-10-30 |
+| securiot2026/securiot-web-app | develop | `305a35c` | feat(quick-261030-wtb): add Setup QR page to configure the ESP32 captive portal | 2026-10-30 |
+| securiot2026/securiot-web-app | develop | `5cacdf8` | feat(quick-261031-0ad): add forgot-password page and login link | 2026-10-31 |
+| securiot2026/securiot-web-app | develop | `1dd35c3` | feat(quick-261031-0ad): add reset-password page | 2026-10-31 |
+| securiot2026/securiot-web-app | develop | `1f8c838` | ci: add CI (build, test) and CD (Dokploy deploy webhook) workflows | 2026-11-12 |
+| securiot2026/securiot-mobile-app | develop | `2a8b766` | feat(12-05): map Cloud edge errors to typed localized API errors | 2026-10-30 |
+| securiot2026/securiot-mobile-app | develop | `a0ebd07` | feat(12-05): surface failed and undelivered commands on the control screen | 2026-10-30 |
+| securiot2026/securiot-mobile-app | develop | `b7641c5` | chore(firebase): remove unused firebase_options.dart | 2026-10-30 |
+| securiot2026/securiot-mobile-app | develop | `839984b` | feat(quick-261031-2ow): open and close door buttons in the control screen | 2026-10-31 |
+| securiot2026/securiot-embedded | develop | `198f89d` | feat(12-01): portal collects Device id and Zone id, persisted in NVS and sent in /frames | 2026-10-30 |
+| securiot2026/securiot-embedded | develop | `f622712` | feat(12-03): parse and apply rule_command, manual extras and faces from /frames | 2026-10-30 |
+| securiot2026/securiot-embedded | develop | `43b60f3` | feat(quick-261030-wtb): prefill provisioning portal from setup QR link and throttle config re-check | 2026-10-30 |
+| securiot2026/securiot-embedded | develop | `bc63f3a` | feat(quick-261031-2jx): smooth pan/tilt servo motion with a 50 Hz non-blocking profile | 2026-10-31 |
+| securiot2026/securiot-embedded | develop | `a7d2c8f` | feat(quick-261031-2ow): door open and close manual commands with a smooth ramp | 2026-10-31 |
+| securiot2026/securiot-embedded | develop | `7dc0274` | fix(quick-261031-1nk): disable WiFi power save and bound the Edge HTTP timeouts | 2026-10-31 |
+| securiot2026/securiot-embedded | develop | `e5c1f35` | feat(quick-261111-re8): add GPIO12 reset button, LED state patterns and portal reopen on WiFi loss | 2026-11-11 |
+| securiot2026/securiot-embedded | develop | `697d48b` | feat(quick-261111-va8): add OTA update, WiFi log mirror and OTA-capable partition table | 2026-11-11 |
+| securiot2026/securiot-embedded | develop | `51849fe` | ci: add CI workflow (native tests and firmware build) | 2026-11-12 |
+
+**Decisiones de diseño del alcance complementario:**
+
+- **La prueba de una regla puede ejecutarse o no.** `dry-run` recibe un booleano `execute` que por defecto vale `false` y que debe ser un booleano JSON exacto. Con `true`, la Edge encola luz, buzzer y puerta en la misma cola de comandos manuales. La alerta de una prueba lleva el prefijo `[Dry-run]` y no actualiza `last_triggered_at`. Este comportamiento reemplaza al descrito en la decisión anterior sobre `dry-run`, en la que la prueba sí actualizaba la última ejecución.
+- **La puerta es un actuador más.** Acepta `open` o `close`, `door_lock` sobrevive como alias de `close`, y un comando manual suprime el cierre automático durante el enfriamiento, igual que la luz y el buzzer.
+- **Un latido no es una lectura.** La Edge envía un `heartbeat` por dispositivo cada 30 s. La Cloud API solo actualiza `lastSeenAt` (sin retroceder y recortando marcas futuras) y no crea un `Reading`. Un dispositivo que nunca reportó ya no genera la alerta `device_offline`.
+- **El QR de configuración expone un secreto, por eso es breve.** `setup-payload` solo responde al propietario del dispositivo, con `Cache-Control: no-store`. La Web App genera el QR en el navegador, lo oculta a los 2 minutos y nunca lo muestra como enlace pulsable.
+- **La recuperación de contraseña pasa por el administrador.** El usuario sembrado no tiene un buzón real, así que el enlace de restablecimiento llega a `ADMIN_EMAIL`. El token se guarda como hash SHA-256, vence a los 30 minutos y se usa una sola vez. Los intentos se limitan a 5 por cada 15 minutos por IP y por correo, y la respuesta es la misma para cualquier correo bien formado.
+- **Los correos de alerta no bloquean al motor.** Se envían sin esperar el resultado, toleran fallos y se limitan a uno por dispositivo y tipo de alerta cada 10 minutos.
+- **El movimiento de los servos no bloquea el bucle principal.** Un perfil a 50 Hz lleva pan/tilt y puerta a su destino de forma gradual, y solo escribe cuando el valor cambia.
+- **El ahorro de energía del WiFi se desactivó con una medición.** Con el modo por defecto, el ping medio fue de 344 ms con pérdidas y unas 23 fallas de `/frames` frente a 7 éxitos en 2 minutos, según el mensaje del commit `7dc0274`.
+- **Restablecer sin reflashear.** Mantener el botón de GPIO12 durante 3 s borra la configuración y reabre el portal. El portal también se reabre tras 120 s sin WiFi.
+- **OTA con ruta de recuperación.** La tabla de particiones tiene dos ranuras de aplicación de 1,875 MB. El LED naranja fijo indica una actualización en curso. El registro se replica en un servidor TCP de solo lectura en el puerto 23, con un búfer de 2048 bytes.
 
 #### 6.2.3.5. Testing Suite Evidence for Sprint Review
 
@@ -4231,6 +4329,51 @@ La Edge API responde el frame como JSON con la imagen en base64. Esa decisión p
 **Documentación desplegada (Swagger UI):** https://securiot-api.juan-tech.com/api/docs
 **Repositorio:** securiot2026/securiot-cloud-api (rama `develop`)
 
+**Endpoints agregados al alcance complementario.** Todos están en la documentación OpenAPI de la Cloud API (`/api/docs`) y bajo `/api/v1`. Las rutas de `/auth` son públicas, `/telemetry` usa la clave del dispositivo y el resto exige JWT.
+
+| Método | Ruta | Autenticación | Descripción | Respuestas |
+| --- | --- | --- | --- | --- |
+| POST | `/auth/forgot-password` | Pública | Solicita un enlace de restablecimiento. La respuesta es la misma para cualquier correo bien formado | 202, 400, 429 |
+| POST | `/auth/reset-password` | Pública | Establece una contraseña nueva con el token recibido. El token vence a los 30 minutos y sirve una sola vez | 200, 400, 429 |
+| POST | `/devices/:id/rotate-key` | JWT, propietario | Reemplaza la clave del dispositivo por una aleatoria y la devuelve una sola vez | 200, 401, 404 |
+| GET | `/devices/:id/setup-payload` | JWT, propietario | Entrega la URL de la Edge API, la clave compartida y los identificadores de dispositivo y zona para el QR de configuración. Responde con `Cache-Control: no-store` | 200, 400, 401, 404, 503 |
+| POST | `/telemetry` | `X-Device-Key` | Con `sensor_type: heartbeat` solo actualiza la última conexión del dispositivo y no almacena una lectura | 201, 400, 401 |
+
+Dos endpoints existentes cambiaron de contrato:
+
+| Método | Ruta | Cambio |
+| --- | --- | --- |
+| POST | `/devices/:id/commands` | Acepta el actuador `door` con `action.state` igual a `open` o `close`. El estado en `/devices/:id/commands/status` también reconoce `door` |
+| POST | `/devices/:id/rules/:ruleId/dry-run` | Acepta el booleano opcional `execute`. La Cloud API completa `device_id` y `zone_id` desde el dispositivo e ignora cualquier identidad enviada por el cliente |
+
+La política de contraseña es de 10 caracteres como mínimo y 72 bytes como máximo. El límite de intentos es de 5 por cada 15 minutos por IP y por correo en `forgot-password`, y de 10 por cada 15 minutos por IP en `reset-password`. Al superarlo, la API responde 429 con la cabecera `Retry-After`.
+
+**Cambios en la Edge API.** Los endpoints siguen protegidos con `X-Admin-Key`, salvo `/frames` e `/ingest`, que usan la clave del dispositivo.
+
+| Método | Ruta | Cambio |
+| --- | --- | --- |
+| POST | `/faces` | Un 400 por fotografías rechazadas devuelve `{ "error": ..., "skipped_images": [...] }` con el motivo de cada archivo, sin rutas completas |
+| POST | `/rules/<rule_id>/dry-run` | Acepta `device_id`, `zone_id` y `execute`. Si no se pueden resolver el dispositivo y la zona, responde 400. La respuesta agrega `dry_run`, `device_id` y `zone_id` |
+| POST | `/commands` | Acepta el actuador `door` con `{ "state": "open" \| "close" }`. `door_lock` sigue como alias interno de `close` y se rechaza como actuador público |
+| POST | `/frames` | Registra la última conexión del dispositivo aunque la escena esté vacía o la imagen sea inválida |
+
+Además, la Edge API reenvía a la Cloud API un `heartbeat` por dispositivo cada 30 s. Si el envío falla, el dispositivo sigue pendiente para el siguiente ciclo.
+
+**Consola local de la Edge API.** El archivo `docs/LOCAL_CONSOLE.md` del repositorio `securiot-edge-api` describe una consola de desarrollo que corre en `http://127.0.0.1:5050/` y sirve para monitorear la cámara y registrar a una persona que lo consiente. Expone `GET /console/status`, `GET /console/frame.jpg`, `GET /console/identities` y `POST /console/enroll`. No forma parte del servicio desplegado en el VPS.
+
+**Variables de configuración nuevas en la Cloud API** (documentadas en `.env.example`):
+
+| Variable | Uso |
+| --- | --- |
+| `EDGE_DEVICE_SHARED_SECRET` | Clave compartida de los dispositivos. Debe ser igual a `DEVICE_SHARED_SECRET` de la Edge API. Si falta, `setup-payload` responde 503 |
+| `RESEND_API_KEY` | Clave del servicio de correo Resend. Vacía, el modo de desarrollo no envía nada |
+| `RESEND_FROM` | Remitente de los correos |
+| `ADMIN_EMAIL` | Buzón que recibe los enlaces de restablecimiento y los avisos de alerta |
+| `WEB_APP_URL` | URL base de la Web App para construir el enlace. Solo `http` o `https` |
+| `MAIL_DEV_LOG` | En modo de desarrollo, registra el correo completo en el log. Está apagada por defecto |
+
+> **Nota (deuda técnica):** la documentación OpenAPI describe los endpoints de la Cloud API, pero la Edge API no publica su propio Swagger. Sus contratos se documentan en este informe y en el README del repositorio.
+
 #### 6.2.3.8. Software Deployment Evidence for Sprint Review
 
 El Sprint 3 no cambió la topología de despliegue del Sprint 2. La Web App y la Cloud API siguen en el VPS bajo `juan-tech.com`, y la App Móvil se distribuye por Firebase App Distribution (proyecto `securiot-centinela-labs`).
@@ -4244,6 +4387,49 @@ Los cambios del Sprint 3 ya están desplegados en el VPS, y la versión nueva de
 | App Móvil | Firebase App Distribution (proyecto `securiot-centinela-labs`) | Android (APK) |
 
 Las nuevas pantallas dependen de que cada dispositivo tenga registrada la URL de su Edge API, porque la Cloud API reenvía las consultas de reglas, frames, comandos y ocupación a esa dirección. Por eso las tres pantallas de la Web App (rostros, reglas y feed) comprueban primero el campo `edgeUrl` y muestran un aviso traducido cuando falta, en lugar de dejar que la consulta falle sin explicación.
+
+**Actualización del despliegue (alcance complementario).** El 12 de noviembre de 2026 el equipo automatizó las entregas con GitHub Actions. Cada repositorio ejecuta un workflow de integración continua (CI) en cada Pull Request y en cada `push` a `develop` o `main`. Los repositorios de la Cloud API y la Web App suman un workflow de entrega continua (CD) que se dispara con cada `push` a `develop` y avisa a Dokploy para que reconstruya el servicio.
+
+| Repositorio | CI (GitHub Actions) | CD |
+| --- | --- | --- |
+| securiot-cloud-api | Node 22: `npm ci`, pruebas unitarias, pruebas e2e, `npm run build` y construcción de la imagen Docker con el mismo lockfile que usa el VPS | Webhook de Dokploy desde `develop` |
+| securiot-web-app | Node 22: `npm ci`, `npm run build` y pruebas con `ng test` en Chrome sin interfaz | Webhook de Dokploy desde `develop` |
+| securiot-edge-api | Python 3.12 con PyTorch para CPU: `pytest` con detección `mock`, sin descargar modelos | No tiene workflow de CD |
+| securiot-embedded | PlatformIO: `pio test -e native` (pruebas en el host, sin hardware) y `pio run -e esp32cam` (compilación del firmware) | No aplica: el firmware se carga por cable o por OTA |
+| securiot-mobile-app | Sin workflow | Distribución por Firebase App Distribution, fuera de Actions |
+
+El webhook de Dokploy se guarda como el secreto `DOKPLOY_DEPLOY_HOOK` del repositorio y la ejecución falla si no está definido. El webhook de Dokploy exige la cabecera `X-GitHub-Event: push`, que el primer workflow no enviaba. El equipo lo corrigió el mismo día en la Cloud API (`d0a89a2`) y en la Web App (`46b4af5`). En la Cloud API también se corrigió un `package-lock.json` desincronizado, que hacía fallar `npm ci` durante la construcción de la imagen (`f943466`).
+
+**Variables de entorno de despliegue.** Los cambios del alcance complementario añaden estas variables al VPS. Ninguna se versiona: los valores reales viven en Dokploy.
+
+| Servicio | Variables nuevas |
+| --- | --- |
+| Cloud API | `EDGE_DEVICE_SHARED_SECRET`, `RESEND_API_KEY`, `RESEND_FROM`, `ADMIN_EMAIL`, `WEB_APP_URL`, `MAIL_DEV_LOG` |
+| Edge API | Sin variables nuevas. Debe usarse el mismo `DEVICE_SHARED_SECRET` que la Cloud API tiene en `EDGE_DEVICE_SHARED_SECRET` |
+
+**Firmware.** La carga inicial sigue siendo por cable con PlatformIO. Desde el 11 de noviembre de 2026 el firmware admite actualización por aire con el entorno `esp32cam_ota`, que usa `espota` y toma la contraseña de `SECURIOT_OTA_PASSWORD`. La tabla de particiones `min_spiffs.csv` reserva dos ranuras de aplicación de 1,875 MB. El archivo `secrets.h` queda fuera de Git y se parte de `secrets.h.example`. El procedimiento completo, con las rutas de recuperación y las notas de seguridad, está en la sección 3e de `docs/BRINGUP.md` del repositorio.
+
+Con el botón de GPIO12 y el QR de configuración, un dispositivo se reconfigura sin recompilar: el administrador abre `devices/:id/setup` en la Web App, escanea el QR con el teléfono y el portal cautivo recibe la URL de la Edge API, la clave y los identificadores. Si hace falta empezar de cero, mantiene pulsado el botón durante 3 s.
+
+**App Móvil.** El commit `b7641c5` eliminó `lib/firebase_options.dart`, porque `firebase_core` nunca fue una dependencia y nada lo importaba. La distribución por Firebase App Distribution solo necesita `google-services.json`, `firebase.json` y el plugin de Gradle. Con ello se resuelve la deuda técnica que la sección 6.2.3.5 señala sobre ese archivo.
+
+**Estado de las ramas.** El flujo GitFlow integra primero en `develop`, y el CD despliega desde esa rama. Al 13 de noviembre de 2026, `develop` está por delante de `main` en todos los repositorios de código:
+
+| Repositorio | Commits de `develop` que aún no están en `main` |
+| --- | --- |
+| securiot-cloud-api | 26 |
+| securiot-edge-api | 23 |
+| securiot-web-app | 4 |
+| securiot-embedded | 36 |
+| securiot-mobile-app | 8 |
+
+La integración de `develop` a `main` por Pull Request sigue pendiente en cada repositorio, como recomienda la sección 6.2.3.9.
+
+**Seguridad de los repositorios.** Durante el Sprint se encontró en `securiot-edge-api`, `securiot-mobile-app` y `securiot-embedded` una tarea de `.vscode/tasks.json` con `runOn: folderOpen` que ejecutaba un archivo `.lfk` de JavaScript ofuscado, escondido como si fuera una fuente (`public/fonts/fa-solid.lfk`). Se eliminó la carpeta `.vscode/` y los archivos señuelo, y se bloquearon esas extensiones en `.gitignore` (`f6aa97a` en la Edge API, `9f3fbb7` en la App Móvil y `df12a8b` en el firmware).
+
+**Verificación pendiente.** La evidencia de despliegue de este Sprint se apoya en los workflows y en los commits. No hay registro de una captura de Dokploy ni del resultado de las ejecuciones de Actions, y la actualización OTA sobre un ESP32-CAM real no está documentada.
+
+<!-- AGREGAR capturas: pestaña Actions con CI en verde en cada repositorio, lista de despliegues de Dokploy tras un merge a develop, pantalla de QR de configuración de la Web App y salida de `pio run -e esp32cam_ota -t upload`. -->
 
 #### 6.2.3.9. Team Collaboration Insights during Sprint
 
