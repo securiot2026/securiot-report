@@ -100,6 +100,7 @@
 | v1.31 | 14/11/2026 | Juan Angulo | Student Outcome 5: aportes de AV2 del Team Leader en liderazgo conjunto y en planificación, y conclusiones de AV2. |
 | v1.32 | 14/11/2026 | Juan Angulo | Sprint 2: matriz LACX con la evidencia de commits (6.2.2.2) y aportes al informe en el análisis de colaboración (6.2.2.9). |
 | v1.33 | 14/11/2026 | Juan Angulo | Revisión de completitud del informe: corrección de enlaces del índice (secciones 4.2.3 y 5.6) y verificación de imágenes, secciones y evidencias. |
+| v1.34 | 14/11/2026 | Pietro Osores | Desarrollo y optimización del software embebido de la ESP32-CAM, participación en el ensamblaje del dispositivo y desarrollo del sistema Edge con reconocimiento facial y gestión del registro de rostros autorizados y no autorizados para su ejecución local. |
 
 <div style="page-break-after: always;"></div>
 
