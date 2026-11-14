@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [develop, main]
+  push:
+    branches: [develop, main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate the Structurizr workspace
+        run: |
+          docker run --rm -v "$PWD/docs/architecture:/usr/local/structurizr" \
+            structurizr/structurizr validate -workspace /usr/local/structurizr/workspace.dsl
+      - name: Images referenced in README.md exist
+        run: python3 scripts/check-readme-images.py
