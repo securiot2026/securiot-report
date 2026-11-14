@@ -1,24 +1,44 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/rommelDN/KAMPO_MARKDOWN/refs/heads/develop/docs/assets/img/Capítulo1/UPC-logo.png" alt="Logo de la Universidad Peruana de Ciencias Aplicadas" width="150"/>
+<img src="https://raw.githubusercontent.com/rommelDN/KAMPO_MARKDOWN/refs/heads/develop/docs/assets/img/Capítulo1/UPC-logo.png" alt="Logo de la Universidad Peruana de Ciencias Aplicadas" width="80"/>
 
-### **Universidad Peruana de Ciencias Aplicadas**
+# **Universidad Peruana de Ciencias Aplicadas**
 
 ### **Carrera de Ingeniería de Software**
 
-**Ciclo académico: 2026-20**
+<br>
 
-**Código y nombre del curso:** 1ASI0572 - Desarrollo de Soluciones IoT
+**1ASI0572**
 
-**NRC: 8729**
+**Desarrollo de Soluciones IoT**
 
-# **Informe de Trabajo Final**
+<br>
 
-**Docente:** León Baca, Marco Antonio
+**NRC**
 
-**Startup:** Centinela Labs
+**8729**
 
-**Producto:** SECURIOT
+<br>
+
+# **Informe del Trabajo Final**
+
+<br>
+
+**Docente**
+
+**León Baca, Marco Antonio**
+
+<br>
+
+**Equipo**
+
+**Centinela Labs**
+
+<br>
+
+**Proyecto**
+
+**SECURIOT**
 
 <br>
 
@@ -36,7 +56,7 @@
 
 <br>
 
-**Septiembre de 2026**
+**Período 202620**
 
 </div>
 
